@@ -1,5 +1,3 @@
-.. highlight:: console
-
 Try a service locally
 =====================
 
@@ -22,10 +20,10 @@ Try a service locally
 1. Choose your module
 ---------------------
 
-The first step is to choose a module from the `DEEP Open Catalog marketplace <https://marketplace.deep-hybrid-datacloud.eu/>`__.
-For educational purposes we are going to use a `general model to identify images <https://marketplace.deep-hybrid-datacloud.eu/modules/train-an-image-classifier.html>`__. This will allow us to see the general workflow.
+The first step is to choose a module from the :doc:`Dashboard<../overview/dashboard>`.
+For educational purposes we are going to use a `general model to identify images <https://dashboard.cloud.ai4eosc.eu/modules/DEEP-OC-image-classification-tf>`__. This will allow us to see the general workflow.
 
-Once we have chosen the model at the `DEEP Open Catalog marketplace <https://marketplace.deep-hybrid-datacloud.eu/>`__ we will
+Once we have chosen the Module page we will
 find that it has an associated docker container in `DockerHub <https://hub.docker.com/u/deephdc/>`__. For example, in the
 example we are running here, the container would be ``deephdc/deep-oc-image-classification-tf``. This means that to pull the
 docker image and run it you should:

@@ -19,14 +19,14 @@
 
 # -- Project information -----------------------------------------------------
 
-project = 'DEEP-Hybrid-DataCloud'
-copyright = '2023, DEEP-Hybrid-DataCloud consortium'
-author = 'DEEP-Hybrid-DataCloud consortium'
+project = 'AI4EOSC'
+copyright = '2023, AI4EOSC consortium'
+author = 'AI4EOSC consortium'
 
 # The short X.Y version
-version = 'DEEP-2'  #todo: add deep version
+version = 'AI4OS-1'
 # The full version, including alpha/beta/rc tags
-release = 'DEEP-2'
+release = 'AI4OS-2'
 
 
 # -- General configuration ---------------------------------------------------
@@ -98,7 +98,7 @@ html_theme_options = {
     'collapse_navigation': False,
 }
 
-html_logo = "_static/logo-deep-solid-white.png"
+html_logo = "_static/logo.png"
 
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,

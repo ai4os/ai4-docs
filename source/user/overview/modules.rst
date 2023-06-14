@@ -1,7 +1,7 @@
 Modules
 =======
 
-All  modules are found at the `DEEP Marketplace <https://marketplace.deep-hybrid-datacloud.eu/>`_, the source code is
+All  modules are found at the :doc:`AI4OS Dashboard <dashboard>`, the source code is
 hosted under `Github's deephdc <https://github.com/deephdc>`__ organization and the corresponding Docker images are
 hosted under `DockerHub's deephdc <https://hub.docker.com/u/deephdc/>`__ organization.
 

@@ -1,15 +1,15 @@
-.. highlight:: console
-
 Try a service remotely
 ======================
+
+.. TODO: Add Oscar instructions when ready
 
 .. admonition:: Useful video demos
    :class: important
 
-    - `Performing inference in the cloud with the DEEP training dashboard <https://www.youtube.com/watch?v=FyELMIr5Wbo&list=PLJ9x9Zk1O-J_UZfNO2uWp2pFMmbwLvzXa&index=4>`__
+    - `Performing inference in the cloud with the AI4OS dashboard <https://www.youtube.com/watch?v=FyELMIr5Wbo&list=PLJ9x9Zk1O-J_UZfNO2uWp2pFMmbwLvzXa&index=4>`__
 
 The first step is to go to the `DEEP as a Service (or DEEPaaS) <https://deepaas.deep-hybrid-datacloud.eu/>`__.
-For educational purposes we are going to use a `general model to identify images <https://marketplace.deep-hybrid-datacloud.eu/modules/train-an-image-classifier.html>`__. This will allow us to see the general workflow.
+For educational purposes we are going to use a `general model to identify images <https://dashboard.cloud.ai4eosc.eu/modules/DEEP-OC-image-classification-tf>`__. This will allow us to see the general workflow.
 
 Go to ``Swagger Interfaces`` and click ``Swagger UI for "image-classification-tf"``.
 You will see the API documentation, where you can test the module's functionality, as well as perform other actions.

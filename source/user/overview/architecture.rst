@@ -1,33 +1,19 @@
 Architecture overview
 =====================
 
-There are several different components in the DEEP-HybridDataCloud project that are relevant for the users. Later on you will see
-how each :doc:`different type of user <user-roles>` can take advantage of the different components.
+There are several different components in the AI4OS stack that are relevant for the users.
+Later on you will see how each :doc:`different type of user <user-roles>` can take advantage of the different components.
 
+The Dashboard
+-------------
 
-The Marketplace
----------------
-
-The `DEEP Marketplace <https://marketplace.deep-hybrid-datacloud.eu/>`__ is a catalogue of modules that every user can have access to. Modules can be:
-
-* **Trainable**: Those are modules that an user can train on their own data to create a new service. Like training an
-  `image classifier <https://marketplace.deep-hybrid-datacloud.eu/modules/deep-oc-image-classification-tf.html>`__ with a
-  plants dataset to create a `plant classifier <http://marketplace.deep-hybrid-datacloud.eu/modules/plants-species-classifier.html>`__
-  service.
-  Look for the ``trainable`` tag in the marketplace to find those modules.
-
-* **Trained (inference-ready)**: Those are modules that have been pre-trained for a specific task (like the
-  `plant classifier <https://marketplace.deep-hybrid-datacloud.eu/modules/deep-oc-plants-classification-tf.html>`__ mentioned earlier).
-  Look for the ``inference`` and ``pre-trained`` tags in the marketplace to find those modules.
-
-Some modules can both be trainable and trained.
-For example the `image classifier <https://marketplace.deep-hybrid-datacloud.eu/modules/deep-oc-image-classification-tf.html>`__
-can be trained to create other image classifiers but can also be deployed for inference as it comes pre-trained with a
-general-purpose image classifier.
+The :doc:`AI4OS dashboard <dashboard>`. allow users to access computing resources to deploy, perform inference,
+and train Artificial Intelligence modules.
+The Dashboard simplifies the deployment and hides some of the technical parts that most users do not need to worry about.
 
 
 ..
-  TODO: uncomment when serverless is running back again
+  TODO: uncomment when OSCAR is ready
 
   DEEP as a Service
   -----------------
@@ -38,7 +24,7 @@ general-purpose image classifier.
   new features that the automation system receives as an input.
 
   The serverless framework allows any user to automatically deploy from the browser any module in real time to try it.
-  It only supports prediction. For training, which is more resource consuming, users must use the DEEP Training Dashboard.
+  It only supports prediction. For training, which is more resource consuming, users must use the AI4OS Dashboard.
 
 
 The DEEPaaS API
@@ -58,15 +44,3 @@ Storage is essential for user that want to create new services by training modul
 we support hosting data in `DEEP-Nextcloud <https://data-deep.a.incd.pt/>`__ (up to 2 Terabytes by default), as well
 as integration with popular cloud storage options like  `Google Drive <https://www.google.com/drive/>`__,
 `Dropbox <https://www.dropbox.com/>`__, `Amazon S3 <https://aws.amazon.com/s3/>`__ and `many more <https://rclone.org/>`__.
-
-We are currently exploring more advanced features such as data caching (see `OneData <https://onedata.org/>`__),
-in cooperation with the `eXtreme-DataCloud <http://www.extreme-datacloud.eu/>`__ project.
-
-
-The Dashboard
--------------
-
-The :doc:`DEEP dashboard <dashboard>`. allow users to access computing resources to deploy, perform inference,
-and train modules hosted at the `DEEP Open Catalog <https://marketplace.deep-hybrid-datacloud.eu/>`__, as well
-as deploying external Docker images hosted in Dockerhub.
-The Dashboard simplifies the deployment and hides some of the technical parts that most users do not need to worry about.

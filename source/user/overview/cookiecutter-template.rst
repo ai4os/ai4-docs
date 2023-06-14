@@ -1,8 +1,8 @@
 .. include:: <isonum.txt>
 .. highlight:: console
 
-DEEP Modules Template
-=====================
+AI4OS Modules Template
+======================
 
 To simplify the development of new modules, and make the integration of your model with the
 :doc:`DEEPaaS API <api>` easier, we provide a `standard template <https://github.com/deephdc/cookiecutter-deep>`__
@@ -48,7 +48,7 @@ Based on your answers, we will fill the template and create two repositories
 
 * ``~/your_project``: this is where the code of your module goes
 * ``~/DEEP-OC-your_project``: this is where the Docker files to build your module go.
-  It also has the metadata of your module that will be shown in the Marketplace.
+  It also has the metadata of your module that will be shown in the Dashboard.
 
 Each repository has two branches: ``master`` (to commit stable changes) and ``test``
 (to test features without disrupting your users).
@@ -57,10 +57,7 @@ Via User Interface
 ~~~~~~~~~~~~~~~~~~
 
 Go to the `Template creation webpage <https://templates.cloud.ai4eosc.eu/>`__.
-You will need an `EGI Check-In <https://aai-demo.egi.eu/>`__ account to access to this
-webpage, so if you don't have one already, you will need to create it.
-
-.. TODO: replace demo EGI Check-in with production Check-in once ready
+You will need an :doc:`authentication <auth>` to access to this webpage.
 
 Then select which version of the template you want and answer the questions.
 Click on ``Generate`` and you will be able to download a ``.zip`` file with both
@@ -133,7 +130,7 @@ The content of these files is populated based on your answer to the questions.
     │
     ├─ README.md              <- README for developers and users.
     │
-    └─ metadata.json          <- Defines information propagated to the DEEP Marketplace
+    └─ metadata.json          <- Defines information propagated to the AI4OS Dashboard
 
 
 **Child-module branch**
@@ -151,7 +148,7 @@ The content of these files is populated based on your answer to the questions.
     │
     ├─ README.md              <- README for developers and users.
     │
-    └─ metadata.json          <- Defines information propagated to the DEEP Marketplace
+    └─ metadata.json          <- Defines information propagated to the AI4OS Dashboard
 
 
 **Advanced branch**
@@ -224,4 +221,4 @@ The content of these files is populated based on your answer to the questions.
     ├─ docker-compose.yml     <- Allows running the application with various configurations
     │                            via docker-compose
     │
-    └─ metadata.json          <- Defines information propagated to the DEEP Marketplace
+    └─ metadata.json          <- Defines information propagated to the AI4OS Dashboard

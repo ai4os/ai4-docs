@@ -1,29 +1,27 @@
 User documentation
 ==================
 
-.. admonition:: Useful project links
+.. admonition:: Useful links
    :class: important
 
-    | :fa:`home` `Homepage <https://deep-hybrid-datacloud.eu/>`__
+    | :fa:`home` `Homepage <https://ai4eosc.eu/>`__
     |   A high level overview of the project.
-    | :fa:`book` `Documentation <https://docs.deep-hybrid-datacloud.eu/en/latest/>`__
+    | :fa:`book` `Documentation <https://docs.ai4eosc.eu/>`__
     |   The main source of knowledge on how to use the project. Refer always to here in case of doubt.
-    | :fa:`rotate` `Marketplace <https://marketplace.deep-hybrid-datacloud.eu/>`__
-    |   Where users will typically search for modules developed by the community, and find the relevant pointers to use them.
-    | :fa:`sliders` `Dashboard <https://train.deep-hybrid-datacloud.eu/>`__
-    |   Deploy virtual machines on specific hardware (eg. gpus) to train a module. Access is restricted to authenticated users.
-    | :fa:`id-badge` `DEEP IAM <https://iam.deep-hybrid-datacloud.eu/>`__
-    |   The authentication manager of the project, where you should register to get access to the Dashboard for example.
+    | :fa:`id-badge` :doc:`Authentication <overview/auth>`
+    |   The authentication management for accessing the AI4OS stack.
+    | :fa:`sliders` :doc:`Dashboard <overview/dashboard>`
+    |   Where users will typically search for modules developed by the community, and find the relevant pointers to use them. It allows authenticated users to deploy virtual machines on specific hardware (eg. gpus) to train a module.
     | :fa:`database` `NextCloud <https://data-deep.a.incd.pt/>`__
     |   The service that allows to store your data remotely and access them from inside your deployment.
-    | :fa:`github` `Github <https://github.com/deephdc>`__
+    | :fa:`github` `Github <https://github.com/ai4eosc>`__
     |   The code of all the modules and services behind the project is stored.
     | :fa:`docker` `DockerHub <https://hub.docker.com/u/deephdc/>`__
     |   Where the Docker images of the modules are stored.
     | :fa:`timeline` `CI/CD pipeline <https://jenkins.indigo-datacloud.eu/job/Pipeline-as-code/job/DEEP-OC-org/>`__
     |   Continuous Integration and Continuous Development Jenkins instance to keep everything up-to-date with latest code changes.
-    | :fa:`temperature-half` `Status of services <https://status.deep-hybrid-datacloud.eu/>`__
-    |   Check if a specific DEEP service might be down for some reason.
+    | :fa:`temperature-half` `Status of services <https://status.ai4eosc.eu/>`__
+    |   Check if a specific AI4OS service might be down for some reason.
     | :fa:`folder-plus` `Module template <https://templates.cloud.ai4eosc.eu/>`__
     |   Create new modules based on our project's template.
 
@@ -47,12 +45,13 @@ components is provided in the following sections.
 .. toctree::
    :maxdepth: 2
 
-   DEEP architecture <overview/architecture>
+   AI4OS architecture <overview/architecture>
    User roles and workflows <overview/user-roles>
-   DEEP Modules <overview/modules>
-   DEEP Modules Template <overview/cookiecutter-template>
+   Authentication <overview/auth>
+   AI4OS Modules <overview/modules>
+   AI4OS Modules Template <overview/cookiecutter-template>
    DEEPaaS API <overview/api>
-   DEEP Dashboard <overview/dashboard>
+   AI4OS Dashboard <overview/dashboard>
 
 How-to's
 --------

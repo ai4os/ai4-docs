@@ -1,5 +1,3 @@
-.. highlight:: console
-
 Develop a model from scratch
 ============================
 
@@ -9,9 +7,9 @@ Develop a model from scratch
         <iframe src="https://www.youtube.com/embed/Ajgz51Sd1SU" frameborder="0" allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
     </div>
 
-This tutorial explains how to develop a DEEP module from scratch on your local machine.
+This tutorial explains how to develop a AI4OS module from scratch on your local machine.
 
-You could also use the **DEEP Development environment** from the :doc:`Dashboard<../overview/dashboard>`
+You could also use the **DEEP Development environment** from the :doc:`AI4OS Dashboard<../overview/dashboard>`
 if you want to develop your code in a ready made environment based on some predefined Docker container
 (eg. official Tensorflow or Pytorch containers). The tutorial still applies the same.
 You only need to go to the Dashboard, select the **DEEP Development environment** and
@@ -23,16 +21,16 @@ If you are new to Machine Learning, you might want to check some
 
 .. admonition:: Requirements
 
-    * If you plan to use the **DEEP Development environment**, you need  a `DEEP-IAM <https://iam.deep-hybrid-datacloud.eu/>`__ account to be able to access the Dashboard.
+    * If you plan to use the **DEEP Development environment**, you need :doc:`Authentication <../overview/auth>` to be able to access the Dashboard.
     * For **Step 7** we recommend having `docker <https://docs.docker.com/install/#supported-platforms>`__ installed (though it's not strictly mandatory).
 
 
 1. Setting the framework
 ------------------------
 
-First start by running :doc:`the DEEP Modules Template <../overview/cookiecutter-template>`:
+First start by running :doc:`the AI4OS Modules Template <../overview/cookiecutter-template>`:
 
-.. code-block::
+.. code-block:: console
 
     $ pip install cookiecutter
     $ cookiecutter https://github.com/deephdc/cookiecutter-deep --checkout master
@@ -65,7 +63,7 @@ Install your project as a Python module in **editable** mode (so that the change
 Now you can start writing your code.
 
 .. tip::
-    
+
     Some users have reported issues in some systems when installing ``deepaas`` (which is always present in the ``requirements.txt`` of your project).
     Those issues have been resolved as following:
 
@@ -144,7 +142,7 @@ your application, along with deepaas and any other dependency.
 You need to modify the following files according to your needs:
 
 * ``Dockerfile``:
-    Check the installation steps are fine. 
+    Check the installation steps are fine.
     If your module needs additional Linux packages add them to the Dockerfile.
     Check your Dockerfile works correctly by building it locally and running it:
 
@@ -156,7 +154,7 @@ You need to modify the following files according to your needs:
     Your module should be visible in http://0.0.0.0:5000/ui .
     You can make a POST request to the ``predict`` method to check everything is working as intended.
 
-* ``metadata.json``: 
+* ``metadata.json``:
     This is the information that will be displayed in the Marketplace.
     Among the fields you might need to edit are:
 
@@ -186,7 +184,7 @@ Once you are fine with the state of ``DEEP-OC-<project-name>``, push the changes
 
 Once your repo is set, it's time to make a PR to add your model to the marketplace!
 
-For this you have to fork the code of the DEEP catalog repo (`deephdc/deep-oc <https://github.com/deephdc/deep-oc>`__)
+For this you have to fork the code of the AI4OS catalog repo (`deephdc/deep-oc <https://github.com/deephdc/deep-oc>`__)
 and add your Docker repo name at the end of the ``MODULES.yml``.
 
 .. code-block:: yaml

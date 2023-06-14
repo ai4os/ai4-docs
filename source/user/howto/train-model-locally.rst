@@ -1,5 +1,4 @@
 .. include:: <isonum.txt>
-.. highlight:: console
 
 Train a model locally
 =====================
@@ -9,10 +8,10 @@ Train a model locally
 
     - `Running a module locally with docker <https://www.youtube.com/watch?v=3ORuymzO7V8&list=PLJ9x9Zk1O-J_UZfNO2uWp2pFMmbwLvzXa&index=13>`__
 
-This is a step by step guide on how to train a module from the Marketplace with your own dataset, on your local machine.
+This is a step by step guide on how to train a module from the :doc:`AI4OS Dashboard<../overview/dashboard>` with your own dataset, on your local machine.
 
-In this tutorial we will see how to retrain a `generic image classifier <https://github.com/deephdc/DEEP-OC-image-classification-tf>`__
-on a custom dataset to create a `phytoplankton classifier <https://github.com/deephdc/DEEP-OC-phytoplankton-classification-tf>`__.
+In this tutorial we will see how to retrain a `generic image classifier <https://dashboard.cloud.ai4eosc.eu/modules/DEEP-OC-image-classification-tf>`__
+on a custom dataset to create a `phytoplankton classifier <https://dashboard.cloud.ai4eosc.eu/modules/DEEP-OC-phytoplankton-classification-tf>`__.
 If you want to follow along, you can download the toy phytoplankton dataset :fa:`download` `here <https://api.cloud.ifca.es:8080/swift/v1/public-datasets/phytoplankton-mini.zip>`__.
 
 If you are new to Machine Learning, you might want to check some
@@ -29,15 +28,17 @@ If you are new to Machine Learning, you might want to check some
 1. Choose a module from the Marketplace
 ---------------------------------------
 
-The first step is to choose a model from the `DEEP Open Catalog marketplace <https://marketplace.deep-hybrid-datacloud.eu/>`__. Make sure to select a module with the ``trainable`` tag.
-For educational purposes we are going to use a `general model to identify images <https://marketplace.deep-hybrid-datacloud.eu/modules/train-an-image-classifier.html>`__. This will allow us to see the general workflow.
+The first step is to choose a model from the :doc:`AI4OS Dashboard<../overview/dashboard>`. Make sure to select a module with the ``trainable`` tag.
+For educational purposes we are going to use a `general model to identify images <https://dashboard.cloud.ai4eosc.eu/modules/DEEP-OC-image-classification-tf>`__.
+Some of the model dependent details can change if using another model, but this tutorial will provide
+a general overview of the workflow to follow when using any of the modules in the AI4OS Dashboard.
 
-Once we have chosen the model at the `DEEP Open Catalog marketplace <https://marketplace.deep-hybrid-datacloud.eu/>`__ we will
+Once we have chosen the model at the AI4OS Dashboard we will
 find that it has an associated docker container in `DockerHub <https://hub.docker.com/u/deephdc/>`__. For example, in the
 example we are running here, the container would be ``deephdc/deep-oc-image-classification-tf``. So let's pull the
 docker image from DockerHub:
 
-.. code-block::
+.. code-block:: console
 
     $ docker pull deephdc/deep-oc-image-classification-tf
 
@@ -51,7 +52,7 @@ Docker images have usually tags depending on whether they are using ``master`` o
 
 You tipically want to run your training on master with a gpu:
 
-.. code-block::
+.. code-block:: console
 
     $ docker pull deephdc/deep-oc-image-classification-tf:gpu
 
@@ -59,7 +60,7 @@ You tipically want to run your training on master with a gpu:
 
     Instead of pulling from Dockerhub, it's also possible to build the image yourself:
 
-    .. code-block::
+    .. code-block:: console
 
         $ git clone https://github.com/deephdc/deep-oc-image-classification-tf
         $ cd deep-oc-image-classification-tf

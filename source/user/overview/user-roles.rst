@@ -1,10 +1,11 @@
 Our different user roles
 ========================
 
-The DEEP-HybridDataCloud project is focused on three different types of users, depending on what you want to achieve you should enter into one or more of the following categories:
+The AI4OS stack is focused on three different types of users.
+Depending on what you want to achieve you should belong into one or more of the following categories:
 
 
-.. image:: ../../_static/DEEP_WP2-User_Viewpoint.png
+.. image:: ../../_static/user-roles.png
 
 
 The basic user
@@ -12,13 +13,13 @@ The basic user
 
 This user wants to use modules that are already pre-trained and :doc:`test them with their data <../howto/inference-locally>`,
 and therefore don't need to have any machine learning knowledge. For example, they can take an already trained module
-for `plant classification <https://marketplace.deep-hybrid-datacloud.eu/modules/deep-oc-plants-classification-tf.html>`__
+for `plant classification <https://dashboard.cloud.ai4eosc.eu/modules/DEEP-OC-plants-classification-tf>`__
 that has been containerized, and use it to classify their own plant images.
 
-**What DEEP can offer to you:**
+**What AI4OS can offer to you:**
 
-* a :ref:`catalogue <user/overview/architecture:The marketplace>` full of ready-to-use modules to perform inference with your data
-* an :ref:`API <user/overview/architecture:The DEEPaaS API>` to easily interact with the services
+* a :doc:`Dashboard <dashboard>` full of ready-to-use modules to perform inference with your data
+* an :doc:`API <api>` to easily interact with the services
 * solutions to run the inference in the Cloud or in your local resources
 * the ability to develop complex topologies by composing different modules
 
@@ -37,13 +38,13 @@ They still might not need high level knowledge on modelling of machine learning 
 programming skills to prepare their own data into the appropriate format.
 Nevertheless, they can re-use the knowledge being captured in a trained network and adjust the network to their problem
 at hand by re-training the network on their own dataset.
-An example could be a user who takes the generic `image classifier <https://marketplace.deep-hybrid-datacloud.eu/modules/deep-oc-image-classification-tf.html>`__
-model and retrains it to perform `seed classification <https://marketplace.deep-hybrid-datacloud.eu/modules/deep-oc-seeds-classification-tf.html>`__.
+An example could be a user who takes the generic `image classifier <https://dashboard.cloud.ai4eosc.eu/modules/DEEP-OC-image-classification-tf>`__
+model and retrains it to perform `seed classification <https://dashboard.cloud.ai4eosc.eu/modules/DEEP-OC-seeds-classification-tf>`__.
 
-**What DEEP can offer to you:**
+**What AI4OS can offer to you:**
 
-* the ability to train out-of-the-box a module of the :ref:`catalogue <user/overview/architecture:The marketplace>` on your personal dataset
-* an :ref:`API <user/overview/architecture:The DEEPaaS API>` to easily interact with the model
+* the ability to train out-of-the-box a module of the :doc:`Dashboard <dashboard>` on your personal dataset
+* an :doc:`API <api>` to easily interact with the model
 * :ref:`data storage resources <user/overview/architecture:The data storage resources>` to access your dataset
   using `DEEP-Nextcloud <https://data-deep.a.incd.pt/>`__ (up to 2 Terabytes by default)
 * integration with popular cloud storage options like
@@ -67,7 +68,7 @@ classification model but the users wanted to perform object localization, which 
 Therefore they will design their own neural network architecture, potentially re-using parts of the code from other
 models.
 
-**What DEEP can offer to you:**
+**What AI4OS can offer to you:**
 
 * a ready-to-use environment with the main DL frameworks running in a dockerized solution running on different types of
   hardware (CPUs, GPUs, etc)
@@ -77,7 +78,7 @@ models.
   `Google Drive <https://www.google.com/drive/>`__, `Dropbox <https://www.dropbox.com/>`__,
   `Amazon S3 <https://aws.amazon.com/s3/>`__ and `many more <https://rclone.org/>`__
 * the ability to deploy the developed module on Cloud resources
-* the ability to share the module with other users in the open :ref:`catalogue <user/overview/architecture:The marketplace>`
+* the ability to share the module with other users in the :doc:`Dashboard <dashboard>`
 * the possibility to :ref:`integrate your module with the API <user/overview/api:Integrate your model with the API>`
   to enable easier user interaction
 

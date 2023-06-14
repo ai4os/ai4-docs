@@ -4,9 +4,8 @@
 Quickstart Guide
 =================
 
-#. Go to the `DEEP Marketplace <https://marketplace.deep-hybrid-datacloud.eu/>`__
-#. Browse `available modules <https://marketplace.deep-hybrid-datacloud.eu/#model-list>`_.
-#. Find the module you are interested in and get it
+Go to the :doc:`Dashboard <overview/dashboard>`, browse the available modules,
+find the module you are interested in and get click on it.
 
 Let's explore what we can do with it!
 
@@ -66,7 +65,7 @@ If you are training a model, you can go to http://0.0.0.0:6006 to monitor the tr
 available for the model).
 
 For more details on particular models, please read the module's documentation
-(see the Marketplace page of the module or the ``README`` of the code repository).
+(see the Dashboard page of the module or the ``README`` of the code repository).
 
 .. image:: ../_static/deepaas.png
    :width: 500 px
@@ -77,20 +76,18 @@ For more details on particular models, please read the module's documentation
 * :doc:`How to perform training locally <howto/train-model-locally>`
 
 
-Train a module on DEEP Dashboard
---------------------------------
+Train a module on AI4OS dashboard
+---------------------------------
 
 .. admonition:: Requirements
 
-    For accessing the Dashboard, you will need to register a `DEEP-IAM <https://iam.deep-hybrid-datacloud.eu/>`__ credential.
+    For accessing the Dashboard, you will need :doc:`authentication <overview/auth>`
 
 Sometimes running a module locally is not enough as one may need more powerful computing resources (like GPUs) in order
-to train a module faster. For that you can use the :doc:`DEEP Dashboard <overview/dashboard>`.
+to train a module faster. For that you can use the :doc:`AI4OS dashboard <overview/dashboard>`.
 
 In the Dashboard select a module you want to run and the computing resources you need.
-Once you have your module deployed, you will be able to train the module and view the training history.
-
-.. image:: ../_static/dashboard-history.png
+Once you have your module deployed, you will be able to train the module.
 
 **Related HowTo's:**
 
@@ -101,7 +98,7 @@ Once you have your module deployed, you will be able to train the module and vie
 Develop and share your own module
 ---------------------------------
 
-The best way to develop a module is to start from the :doc:`DEEP Modules Template <overview/cookiecutter-template>`.
+The best way to develop a module is to start from the :doc:`AI4OS Modules Template <overview/cookiecutter-template>`.
 It will create a project structure and files necessary for an easy :ref:`integration with the DEEPaaS
 API <user/overview/api:Integrate your model with the API>`.
 The :doc:`DEEPaaS API <overview/api>` enables a user-friendly interaction with the underlying Deep Learning modules
@@ -110,6 +107,6 @@ on the definition of entrypoints to the model and the creation of standard API m
 
 **Related HowTo's:**
 
-* :doc:`How to use the DEEP Modules Template for model development <overview/cookiecutter-template>`
+* :doc:`How to use the AI4OS Modules Template for model development <overview/cookiecutter-template>`
 * :doc:`How to develop your own machine learning model <howto/develop-model>`
 * :ref:`How to integrate your model with the DEEPaaS API <user/overview/api:Integrate your model with the API>`

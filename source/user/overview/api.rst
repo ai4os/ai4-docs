@@ -12,7 +12,7 @@ Integrate your model with the API
 
 .. tip::
     The best approach to integrate your code with DEEPaaS is to create an empty template
-    using the :doc:`DEEP Modules Template <cookiecutter-template>`. Once the template is created,
+    using the :doc:`AI4OS Modules Template <cookiecutter-template>`. Once the template is created,
     move your code inside your package and define the API methods that will interface with
     your existing code.
 
