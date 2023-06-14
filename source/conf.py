@@ -19,14 +19,14 @@
 
 # -- Project information -----------------------------------------------------
 
-project = 'AI4EOSC'
+project = 'AI4OS'
 copyright = '2023, AI4EOSC consortium'
 author = 'AI4EOSC consortium'
 
 # The short X.Y version
-version = 'AI4OS-1'
+version = '1'
 # The full version, including alpha/beta/rc tags
-release = 'AI4OS-2'
+release = '1'
 
 
 # -- General configuration ---------------------------------------------------
@@ -86,19 +86,27 @@ pygments_style = 'sphinx'
 
 # The theme to use for HTML and HTML Help pages.  See the documentation for
 # a list of builtin themes.
-#
-html_theme = 'sphinx_rtd_theme'
-
 # Theme options are theme-specific and customize the look and feel of a theme
 # further.  For a list of options available for each theme, see the
 # documentation.
-#
+
+# html_theme = 'sphinx_rtd_theme'
+# html_theme_options = {
+#     'logo_only': True,
+#     'collapse_navigation': False,
+# }
+
+html_theme = 'sphinx_material'
 html_theme_options = {
-    'logo_only': True,
-    'collapse_navigation': False,
+    # 'color_primary': 'teal',
+    'globaltoc_depth': 3,
+    'globaltoc_collapse': True,
+    'html_minify': True,
+    'css_minify': True,
 }
 
 html_logo = "_static/logo.png"
+html_show_sourcelink = False
 
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,
@@ -114,6 +122,9 @@ html_static_path = ['_static']
 # 'searchbox.html']``.
 #
 # html_sidebars = {}
+html_sidebars = {
+    "**": ["logo-text.html", "globaltoc.html", "localtoc.html", "searchbox.html"]
+}
 
 html_show_sphinx = False
 
