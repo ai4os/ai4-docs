@@ -120,7 +120,7 @@ html_show_sphinx = False
 # -- Options for HTMLHelp output ---------------------------------------------
 
 # Output file base name for HTML help builder.
-htmlhelp_basename = 'DEEP-Hybrid-DataClouddocumentationdoc'
+htmlhelp_basename = 'AI4OSdocumentationdoc'
 
 
 # -- Options for LaTeX output ------------------------------------------------
@@ -147,8 +147,8 @@ latex_elements = {
 # (source start file, target name, title,
 #  author, documentclass [howto, manual, or own class]).
 latex_documents = [
-    (master_doc, 'DEEP-Hybrid-DataClouddocumentation.tex', 'DEEP-Hybrid-DataCloud documentation Documentation',
-     'DEEP-Hybrid-DataCloud consortium', 'manual'),
+    (master_doc, 'AI4OSdocumentation.tex', 'AI4OS Documentation Documentation',
+     'AI4OS consortium', 'manual'),
 ]
 
 
@@ -157,7 +157,7 @@ latex_documents = [
 # One entry per manual page. List of tuples
 # (source start file, name, description, authors, manual section).
 man_pages = [
-    (master_doc, 'deep-hybrid-dataclouddocumentation', 'DEEP-Hybrid-DataCloud documentation Documentation',
+    (master_doc, 'AI4OSdocumentation', 'AI4OS Documentation Documentation',
      [author], 1)
 ]
 
@@ -168,8 +168,8 @@ man_pages = [
 # (source start file, target name, title, author,
 #  dir menu entry, description, category)
 texinfo_documents = [
-    (master_doc, 'DEEP-Hybrid-DataClouddocumentation', 'DEEP-Hybrid-DataCloud documentation Documentation',
-     author, 'DEEP-Hybrid-DataClouddocumentation', 'One line description of project.',
+    (master_doc, 'AI4OSdocumentation', 'AI4OS Documentation Documentation',
+     author, 'AI4OSdocumentation', 'One line description of project.',
      'Miscellaneous'),
 ]
 
