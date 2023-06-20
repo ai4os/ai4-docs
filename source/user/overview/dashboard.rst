@@ -30,7 +30,7 @@ in the ``Modules (Marketplace)`` panel.
 Those are basically:
 
 * all the Marketplace modules.
-* ``DEEP Development Environment``: special module especially designed to develop new modules.
+* ``AI4OS Development Environment``: special module especially designed to develop new modules.
 
 .. image:: ../../_static/dashboard-home.png
 

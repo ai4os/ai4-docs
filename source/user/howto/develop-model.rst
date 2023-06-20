@@ -9,10 +9,10 @@ Develop a model from scratch
 
 This tutorial explains how to develop a AI4OS module from scratch on your local machine.
 
-You could also use the **DEEP Development environment** from the :doc:`AI4OS Dashboard<../overview/dashboard>`
+You could also use the **AI4OS Development environment** from the :doc:`AI4OS Dashboard<../overview/dashboard>`
 if you want to develop your code in a ready made environment based on some predefined Docker container
 (eg. official Tensorflow or Pytorch containers). The tutorial still applies the same.
-You only need to go to the Dashboard, select the **DEEP Development environment** and
+You only need to go to the Dashboard, select the **AI4OS Development environment** and
 configure the Docker image and resources you want to use
 (see `video demo <https://www.youtube.com/watch?v=J_l_xWiBGNA&list=PLJ9x9Zk1O-J_UZfNO2uWp2pFMmbwLvzXa&index=3>`__).
 
@@ -21,7 +21,7 @@ If you are new to Machine Learning, you might want to check some
 
 .. admonition:: Requirements
 
-    * If you plan to use the **DEEP Development environment**, you need :doc:`Authentication <../overview/auth>` to be able to access the Dashboard.
+    * If you plan to use the **AI4OS Development environment**, you need :doc:`Authentication <../overview/auth>` to be able to access the Dashboard.
     * For **Step 7** we recommend having `docker <https://docs.docker.com/install/#supported-platforms>`__ installed (though it's not strictly mandatory).
 
 
