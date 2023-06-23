@@ -226,17 +226,19 @@ are different.
 
 To account for this simpler process, we have prepared a version of the
 :doc:`the AI4OS Modules Template <../overview/cookiecutter-template>`
-specially tailored to this task.
+specially tailored to this task:
 
-In your **local machine** (not the Dashboard deployment), run the Template with the ``child-module`` branch.
+* Go to the `Template creation webpage <https://templates.cloud.ai4eosc.eu/>`__.
+  You will need an :doc:`authentication <auth>` to access to this webpage.
+* Then select the ``child-module`` branch of the template and answer the questions.
+* Click on ``Generate`` and you will be able to download a ``.zip`` file with
+  one project directory:
 
-.. code-block::
+  .. code-block:: console
 
-    $ pip install cookiecutter
-    $ cookiecutter https://github.com/deephdc/cookiecutter-deep --checkout child-module
+      ~/DEEP-OC-<project-name>
 
-Proceed to answer the questions you will be prompted.
-This will create a single repo (``DEEP-OC-**``) with the Docker code.
+  Extract it locally.
 
 Once this is done, the following steps are:
 

@@ -28,26 +28,31 @@ If you are new to Machine Learning, you might want to check some
 1. Setting the framework
 ------------------------
 
-First start by running :doc:`the AI4OS Modules Template <../overview/cookiecutter-template>`:
+This first step relies on the
+:doc:`the AI4OS Modules Template <../overview/cookiecutter-template>`
+for creating a template for your new module:
 
-.. code-block:: console
+* Go to the `Template creation webpage <https://templates.cloud.ai4eosc.eu/>`__.
+  You will need an :doc:`authentication <auth>` to access to this webpage.
+* Then select the ``master`` branch of the template and answer the questions.
+* Click on ``Generate`` and you will be able to download a ``.zip`` file with
+  two project directories:
 
-    $ pip install cookiecutter
-    $ cookiecutter https://github.com/deephdc/cookiecutter-deep --checkout master
+  .. code-block:: console
 
-After answering the configuration questions, this will create two project directories:
+      ~/DEEP-OC-<project-name>
+      ~/<project-name>
 
-.. code-block:: console
+  Extract them locally.
+* Go to Github and create the corresponding repositories:
 
-    ~/DEEP-OC-<project-name>
-    ~/<project-name>
+  .. code-block:: console
 
-Go to Github and create the corresponding repositories:
+      https://github.com/<github-user>/<project-name>
+      https://github.com/<github-user>/DEEP-OC-<project-name>
 
-* ``https://github.com/<github-user>/<project-name>``
-* ``https://github.com/<github-user>/DEEP-OC-<project-name>``
-
-Do a ``git push origin --all`` in both created directories to put your initial code in Github.
+* Do a ``git push origin --all`` in both extracted directories to put your initial
+  code in Github.
 
 
 2. Editing ``<project-name>`` code
