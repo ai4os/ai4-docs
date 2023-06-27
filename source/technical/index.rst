@@ -10,6 +10,7 @@ HowTo's (developers)
 .. toctree::
    :maxdepth: 1
 
+   howto-developers/organize-tutorial.rst
    howto-developers/pull_request_workflow.rst
    howto-developers/develop-dashboard.rst
    howto-developers/oidc-agent.rst

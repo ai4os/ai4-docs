@@ -33,7 +33,7 @@ This first step relies on the
 for creating a template for your new module:
 
 * Go to the `Template creation webpage <https://templates.cloud.ai4eosc.eu/>`__.
-  You will need an :doc:`authentication <auth>` to access to this webpage.
+  You will need an :doc:`authentication <../overview/auth>` to access to this webpage.
 * Then select the ``master`` branch of the template and answer the questions.
 * Click on ``Generate`` and you will be able to download a ``.zip`` file with
   two project directories:

@@ -229,7 +229,7 @@ To account for this simpler process, we have prepared a version of the
 specially tailored to this task:
 
 * Go to the `Template creation webpage <https://templates.cloud.ai4eosc.eu/>`__.
-  You will need an :doc:`authentication <auth>` to access to this webpage.
+  You will need an :doc:`authentication <../overview/auth>` to access to this webpage.
 * Then select the ``child-module`` branch of the template and answer the questions.
 * Click on ``Generate`` and you will be able to download a ``.zip`` file with
   one project directory:
