@@ -47,7 +47,7 @@ For other Linux flavors, please refer to the `rclone official site  <https://rcl
 Configuring rclone
 ------------------
 
-.. image:: ../../_static/nc-access.png
+.. image:: ../../_static/images/nc-access.png
 
 After login into `DEEP-Nextcloud  <https://data-deep.a.incd.pt/>`__ with the :doc:`appropriate atuthentication <../overview/auth>`,  go to
 (1) **Settings** (top right corner) ➜ (2) **Security** ➜ (3) **Devices & sessions**. Set a name for your

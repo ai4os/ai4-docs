@@ -47,7 +47,7 @@ to learn the correct way to setting it up.
 
 In the case of the **image classification module**, we will create the following folders:
 
-.. image:: ../../_static/nc-folders.png
+.. image:: ../../_static/images/nc-folders.png
 
 * A folder called ``models`` where the new training weights will be stored after the training is completed
 * A folder called ``data`` that contains two different folders:
@@ -168,7 +168,7 @@ The ``&`` will keep your command running even if you close the terminal, and ``n
 Now go back to the deployments list view.
 In your deployment go to **Access** and choose **DEEPaaS**. You will be redirected to ``http://deepaas_endpoint/ui``.
 
-.. image:: ../../_static/deepaas.png
+.. image:: ../../_static/images/deepaas.png
    :width: 500 px
 
 Look for the ``train`` POST method. Modify the training parameters you wish to change and execute.

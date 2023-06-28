@@ -67,7 +67,7 @@ available for the model).
 For more details on particular models, please read the module's documentation
 (see the Dashboard page of the module or the ``README`` of the code repository).
 
-.. image:: ../_static/deepaas.png
+.. image:: ../_static/images/deepaas.png
    :width: 500 px
 
 **Related HowTo's:**

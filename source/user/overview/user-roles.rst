@@ -5,7 +5,7 @@ The AI4OS stack is focused on three different types of users.
 Depending on what you want to achieve you should belong into one or more of the following categories:
 
 
-.. image:: ../../_static/user-roles.png
+.. image:: ../../_static/images/user-roles.png
 
 
 The basic user

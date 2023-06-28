@@ -81,7 +81,7 @@ to learn the correct way to setting it up.
 
 In the case of the **image classification module**, we will create the following folders:
 
-.. image:: ../../_static/nc-folders.png
+.. image:: ../../_static/images/nc-folders.png
 
 * A folder called ``models`` where the new training weights will be stored after the training is completed
 * A folder called ``data`` that contains two different folders:

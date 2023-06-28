@@ -83,7 +83,7 @@ following page:
 
 .. _Openstack CLI: https://docs.openstack.org/python-openstackclient/rocky/cli/command-list.html
 
-.. |Using Openstack API| image:: ../../_static/rocky-release-logo.png
+.. |Using Openstack API| image:: ../../_static/images/rocky-release-logo.png
   :scale: 50%
-.. |with OIDC tokens| image:: ../../_static/OpenID_Connect.png
+.. |with OIDC tokens| image:: ../../_static/images/OpenID_Connect.png
   :scale: 20 %

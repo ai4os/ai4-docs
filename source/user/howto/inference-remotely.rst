@@ -14,7 +14,7 @@ For educational purposes we are going to use a `general model to identify images
 Go to ``Swagger Interfaces`` and click ``Swagger UI for "image-classification-tf"``.
 You will see the API documentation, where you can test the module's functionality, as well as perform other actions.
 
-.. image:: ../../_static/deepaas.png
+.. image:: ../../_static/images/deepaas.png
   :width: 500
 
 Go to the  ``predict()`` function and upload the file/data you want to predict (in the case of the image classifier
