@@ -63,12 +63,7 @@ Use a model (basic user)
    :maxdepth: 2
 
    Perform inference locally <howto/inference-locally>
-
-..
-  // comment because right now deepaas serverless is not working correctly,
-  // thus this guide can be potentially confusing.
-  // TODO: uncomment when ready
-  Perform inference remotely <howto/inference-remotely>
+   Perform inference remotely <howto/inference-remotely>
 
 Train a model (intermediate user)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^

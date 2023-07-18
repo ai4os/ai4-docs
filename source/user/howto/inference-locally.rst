@@ -58,7 +58,9 @@ Instead of pulling from Dockerhub you can choose to build the image yourself:
 2. Launch the API and predict
 -----------------------------
 
-Run the container with::
+Run the container with
+
+.. code-block:: console
 
 	$ docker run -ti -p 5000:5000 -p 6006:6006 -p 8888:8888 deephdc/deep-oc-image-classification-tf
 

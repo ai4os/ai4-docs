@@ -1,18 +1,32 @@
 Try a service remotely
 ======================
 
-.. TODO: Add Oscar instructions when ready
+.. TODO: Replace with Oscar instructions when ready
 
-.. admonition:: Useful video demos
-   :class: important
+.. raw:: html
 
-    - `Performing inference in the cloud with the AI4OS dashboard <https://www.youtube.com/watch?v=FyELMIr5Wbo&list=PLJ9x9Zk1O-J_UZfNO2uWp2pFMmbwLvzXa&index=4>`__
+    <div style="position: relative; padding-bottom: 56.25%; margin-bottom: 2em; height: 0; overflow: hidden; max-width: 100%; height: auto;">
+        <iframe src="https://www.youtube.com/embed/FyELMIr5Wbo" frameborder="0" allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
+    </div>
 
-The first step is to go to the `DEEP as a Service (or DEEPaaS) <https://deepaas.deep-hybrid-datacloud.eu/>`__.
-For educational purposes we are going to use a `general model to identify images <https://dashboard.cloud.ai4eosc.eu/modules/DEEP-OC-image-classification-tf>`__. This will allow us to see the general workflow.
 
-Go to ``Swagger Interfaces`` and click ``Swagger UI for "image-classification-tf"``.
-You will see the API documentation, where you can test the module's functionality, as well as perform other actions.
+1. Choose your module and deploy
+--------------------------------
+
+The first step is to choose a module from the :doc:`Dashboard<../overview/dashboard>`.
+There you will be able to find all the modules ready to be used under the tag ``Inference``.
+
+For educational purposes we are going to use a `general model to identify images <https://dashboard.cloud.ai4eosc.eu/modules/DEEP-OC-image-classification-tf>`__.
+This will allow us to see the general workflow.
+Select that module and :ref:`follow the instructions <user/overview/dashboard:Making a deployment>`
+to deploy it, making sure to select ``DEEPaaS`` as the ``Service`` in the configuration.
+
+2. Accessing the module and make predictions
+--------------------------------------------
+
+Go to the ``Deployments`` tab and select the ``deepaas`` endpoint in your newly deployed module.
+It will open the Swagger UI with the API documentation,
+where you can test the module's functionality, as well as perform other actions.
 
 .. image:: ../../_static/images/deepaas.png
   :width: 500
