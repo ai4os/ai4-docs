@@ -70,7 +70,7 @@ This page will allow you to configure mainly three aspects:
   optionally choosing the physical site where the machine must be deployed.
 * **The remote storage options**, like tokens for authentication with Nextcloud.
 
-Use the ``Show help`` toggle to view additional info about the fields to fill.
+Use the :fa:`toggle-on` ``Show help`` toggle to view additional info about the fields to fill.
 
 Once you are happy with the state of your configuration, click ``Submit`` and you will
 be redirected to the page listing all the current deployments.
