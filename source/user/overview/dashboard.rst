@@ -44,16 +44,16 @@ Those are basically:
 Modules can be:
 
 * **Trainable**: Those are modules that an user can train on their own data to create a new service. Like training an
-  `image classifier <https://dashboard.cloud.ai4eosc.eu/modules/DEEP-OC-image-classification-tf>`__ with a
-  plants dataset to create a `plant classifier <https://dashboard.cloud.ai4eosc.eu/modules/DEEP-OC-plants-classification-tf>`__
+  `image classifier <https://dashboard.cloud.ai4eosc.eu/marketplace/modules/deep-oc-image-classification-tf>`__ with a
+  plants dataset to create a `plant classifier <https://dashboard.cloud.ai4eosc.eu/marketplace/modules/deep-oc-plants-classification-tf>`__
   service.
   Look for the ``trainable`` tag in the marketplace to find those modules.
 
 * **Trained (inference-ready)**: Those are modules that have been pre-trained for a specific task (like the
-  `plant classifier <https://dashboard.cloud.ai4eosc.eu/modules/DEEP-OC-plants-classification-tf>`__ mentioned earlier).
+  `plant classifier <https://dashboard.cloud.ai4eosc.eu/marketplace/modules/deep-oc-plants-classification-tf>`__ mentioned earlier).
 
 Some modules can both be trainable and trained.
-For example the `image classifier <https://dashboard.cloud.ai4eosc.eu/modules/DEEP-OC-image-classification-tf>`__
+For example the `image classifier <https://dashboard.cloud.ai4eosc.eu/marketplace/modules/deep-oc-image-classification-tf>`__
 can be trained to create other image classifiers but can also be deployed for inference as it comes pre-trained with a
 general-purpose image classifier.
 

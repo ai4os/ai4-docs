@@ -4,7 +4,7 @@ Develop Dashboard
 Right now we have two Dev Dashboards:
 
 * https://dashboard.dev.ai4eosc.eu/
-* https://dashboard.dev.imagine-ai.eu/modules
+* https://dashboard.dev.imagine-ai.eu/
 
 Dev Dashboards are querying
 

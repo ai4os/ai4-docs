@@ -12,8 +12,8 @@ Train a model remotely
 This is a step by step guide on how to train a general model from the :doc:`AI4OS Dashboard <../overview/dashboard>`
 with your own dataset.
 
-In this tutorial we will see how to retrain a `generic image classifier <https://dashboard.cloud.ai4eosc.eu/modules/DEEP-OC-image-classification-tf>`__
-on a custom dataset to create a `phytoplankton classifier <https://dashboard.cloud.ai4eosc.eu/modules/DEEP-OC-phytoplankton-classification-tf>`__.
+In this tutorial we will see how to retrain a `generic image classifier <https://dashboard.cloud.ai4eosc.eu/marketplace/modules/deep-oc-image-classification-tf>`__
+on a custom dataset to create a `phytoplankton classifier <https://dashboard.cloud.ai4eosc.eu/marketplace/modules/deep-oc-phytoplankton-classification-tf>`__.
 If you want to follow along, you can download the toy phytoplankton dataset :fa:`download` `here <https://api.cloud.ifca.es:8080/swift/v1/public-datasets/phytoplankton-mini.zip>`__.
 
 If you are new to Machine Learning, you might want to check some
@@ -28,7 +28,7 @@ If you are new to Machine Learning, you might want to check some
 ---------------------------------------
 
 The first step is to choose a model from the :doc:`AI4OS Dashboard<../overview/dashboard>`. Make sure to select a module with the ``trainable`` tag.
-For educational purposes we are going to use a `general model to identify images <https://dashboard.cloud.ai4eosc.eu/modules/DEEP-OC-image-classification-tf>`__.
+For educational purposes we are going to use a `general model to identify images <https://dashboard.cloud.ai4eosc.eu/marketplace/modules/deep-oc-image-classification-tf>`__.
 Some of the model dependent details can change if using another model, but this tutorial will provide
 a general overview of the workflow to follow when using any of the modules in the AI4OS Dashboard.
 

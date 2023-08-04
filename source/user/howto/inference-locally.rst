@@ -21,7 +21,7 @@ Try a service locally
 ---------------------
 
 The first step is to choose a module from the :doc:`Dashboard<../overview/dashboard>`.
-For educational purposes we are going to use a `general model to identify images <https://dashboard.cloud.ai4eosc.eu/modules/DEEP-OC-image-classification-tf>`__. This will allow us to see the general workflow.
+For educational purposes we are going to use a `general model to identify images <https://dashboard.cloud.ai4eosc.eu/marketplace/modules/deep-oc-image-classification-tf>`__. This will allow us to see the general workflow.
 
 Once we have chosen the Module page we will
 find that it has an associated docker container in `DockerHub <https://hub.docker.com/u/deephdc/>`__. For example, in the
