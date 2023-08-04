@@ -164,13 +164,17 @@ Once you are fine with the state of ``<project-name>`` folder, push the changes 
 ..     Failing to do so could potentially make your process being killed for surpassing
 ..     the available resources.
 
+..     .. dropdown:: ㅤㅤ More info
 
-.. For example trying to allocate 8GB in a machine with 4GB will fail
-.. root@2dc9e20f923e:/srv# stress -m 1 --vm-bytes 8G
-.. stress: info: [69] dispatching hogs: 0 cpu, 0 io, 1 vm, 0 hdd
-.. stress: FAIL: [69] (415) <-- worker 70 got signal 9
-.. stress: WARN: [69] (417) now reaping child worker processes
-.. stress: FAIL: [69] (451) failed run completed in 6s
+..         For example trying to allocate 8GB in a machine with 4GB will fail.
+
+..         .. code-block:: console
+
+..             root@2dc9e20f923e:/srv# stress -m 1 --vm-bytes 8G
+..             stress: info: [69] dispatching hogs: 0 cpu, 0 io, 1 vm, 0 hdd
+..             stress: FAIL: [69] (415) <-- worker 70 got signal 9
+..             stress: WARN: [69] (417) now reaping child worker processes
+..             stress: FAIL: [69] (451) failed run completed in 6s
 
 3. Editing ``DEEP-OC-<project-name>`` code
 ------------------------------------------
