@@ -40,7 +40,7 @@ to make them available to the whole community. This can be easily done, since it
 The data storage resources
 --------------------------
 
-Storage is essential for user that want to create new services by training modules on their custom data. For the moment
-we support hosting data in `DEEP-Nextcloud <https://data-deep.a.incd.pt/>`__ (up to 2 Terabytes by default), as well
+:doc:`Storage <storage>` is essential for users that want to create new services by training modules on their custom data. For the moment
+we support hosting data in `AI4OS Nextcloud <https://data-deep.a.incd.pt/>`__  instance (up to 2 Terabytes by default), as well
 as integration with popular cloud storage options like  `Google Drive <https://www.google.com/drive/>`__,
 `Dropbox <https://www.dropbox.com/>`__, `Amazon S3 <https://aws.amazon.com/s3/>`__ and `many more <https://rclone.org/>`__.

@@ -21,6 +21,12 @@ The Dashboard has a two views:
 
 In the remaining part of this doc we will assume you have access to this private view.
 
+The Dashboard is divided between modules (AI models) and tools (eg. an image labelling tool,
+a federated server, etc). In the remaining part of this doc we will focus on how to deploy
+a module but the workflow is similar for tools. For more details, on tools, please check
+the :ref:`How to use a tool <user/index:Use a tool (Intermediate user)>` section.
+
+
 
 Selecting the modules
 ---------------------
@@ -130,14 +136,17 @@ In the ``Deployments`` tab you have a view of all the deployments you have made 
 
 .. image:: ../../_static/images/dashboard-deployments.png
 
-Under the ``Access`` button, you will find the URLs for:
+
+Under :fa:`circle-info` ``Info`` you will find details about your deployment such as UUID,
+hardware, error messages, endpoints of all services, etc.
+For the endpoints of the services you have:
 
 * ``DEEPaaS`` , only accessible if you launched with the DEEPaaS command or launched JupyterLab then ran DEEPaaS.
 * ``IDE`` , only accessible if you launched with the JupyterLab or VScode command
 * ``Monitor`` : this is the training monitoring page. Only accessible if the module has been coded to explicitly
   display monitoring (check the module's README or training arguments) and if a training is currently running.
 
-Under ``Info`` you will find details about your deployment such as UUID, hardware, error messages, etc.
+Under :fa:`rectangle-list` ``Quick access`` you will be able to access the service you deployed at launch time.
 
 .. important::
   GPUs are scarce resources, so we kindly ask you to limit the number of GPUs you are using

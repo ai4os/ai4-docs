@@ -52,6 +52,7 @@ components is provided in the following sections.
    AI4OS Modules Template <overview/cookiecutter-template>
    DEEPaaS API <overview/api>
    AI4OS Dashboard <overview/dashboard>
+   AI4OS Storage <overview/storage>
 
 How-to's
 --------
@@ -82,6 +83,17 @@ Develop a model (advanced user)
    :maxdepth: 2
 
    Develop a model <howto/develop-model>
+
+
+Use a tool (intermediate user)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+We have specific guides for each of the tools.
+
+.. toctree::
+   :maxdepth: 2
+
+   Federated server <howto/tools/federated-server>
 
 Others
 ------
