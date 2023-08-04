@@ -13,10 +13,10 @@ different remote storages (Dropbox, Google Drive, Amazon S3, etc)
 Installing rclone
 -----------------
 
-All applications in the :doc:`AI4OS Dashboard<../overview/dashboard>` are packed in a Docker image and have
+All applications in the :doc:`AI4OS Dashboard</user/overview/dashboard>` are packed in a Docker image and have
 `rclone <https://rclone.org/>`__ installed by default. If you want to create a Docker containing your own application, you should install rclone
 in the container to be able to access the data stored remotely.
-When developing an application with the :doc:`AI4OS Modules Template <../overview/cookiecutter-template>`,
+When developing an application with the :doc:`AI4OS Modules Template </user/overview/cookiecutter-template>`,
 the Dockerfile already includes installation of rclone.
 
 To install rclone on a Docker container based on Ubuntu you should add the following code:
@@ -47,12 +47,14 @@ For other Linux flavors, please refer to the `rclone official site  <https://rcl
 Configuring rclone
 ------------------
 
-.. image:: ../../_static/images/nc-access.png
+First, you need to get your RCLONE credentials.
 
-After login into `DEEP-Nextcloud  <https://data-deep.a.incd.pt/>`__ with the :doc:`appropriate atuthentication <../overview/auth>`,  go to
+After login into `DEEP-Nextcloud  <https://data-deep.a.incd.pt/>`__ with the :doc:`appropriate authentication </user/overview/auth>`,  go to
 (1) **Settings** (top right corner) ➜ (2) **Security** ➜ (3) **Devices & sessions**. Set a name for your
 application (typically in the docs we will use ``rshare``) and click on **Create new app password**.
 This will generate your ``<user>`` and ``<password>`` credentials. Your username should start with ``DEEP-IAM-...``.
+
+.. image:: /_static/images/nc-access.png
 
 Now you have several options to configure rclone:
 

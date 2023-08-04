@@ -38,7 +38,7 @@ Those are basically:
 * all the Marketplace modules.
 * ``AI4OS Development Environment``: special module especially designed to develop new modules.
 
-.. image:: ../../_static/images/dashboard-home.png
+.. image:: /_static/images/dashboard-home.png
 
 
 Modules can be:
@@ -63,11 +63,11 @@ Making a deployment
 
 Once you choose the module, you will be presented with the module's information:
 
-.. image:: ../../_static/images/dashboard-module.png
+.. image:: /_static/images/dashboard-module.png
 
 To deploy click in ``Train module`` and you will be redirected to a configuration page.
 
-.. image:: ../../_static/images/dashboard-configure.png
+.. image:: /_static/images/dashboard-configure.png
 
 This page will allow you to configure mainly three aspects:
 
@@ -134,7 +134,7 @@ Managing the deployments
 
 In the ``Deployments`` tab you have a view of all the deployments you have made so far:
 
-.. image:: ../../_static/images/dashboard-deployments.png
+.. image:: /_static/images/dashboard-deployments.png
 
 
 Under :fa:`circle-info` ``Info`` you will find details about your deployment such as UUID,

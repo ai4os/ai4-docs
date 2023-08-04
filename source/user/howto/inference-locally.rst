@@ -20,7 +20,7 @@ Try a service locally
 1. Choose your module
 ---------------------
 
-The first step is to choose a module from the :doc:`Dashboard<../overview/dashboard>`.
+The first step is to choose a module from the :doc:`Dashboard</user/overview/dashboard>`.
 For educational purposes we are going to use a `general model to identify images <https://dashboard.cloud.ai4eosc.eu/marketplace/modules/deep-oc-image-classification-tf>`__. This will allow us to see the general workflow.
 
 Once we have chosen the Module page we will
@@ -67,7 +67,7 @@ Run the container with
 Once running, point your browser to http://127.0.0.1:5000/ui and you will see the API documentation, where you can
 test the module's functionality, as well as perform other actions.
 
-.. image:: ../../_static/images/deepaas.png
+.. image:: /_static/images/deepaas.png
   :width: 500
 
 Go to the  ``predict()`` function and upload the file/data you want to predict (in the case of the image classifier

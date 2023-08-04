@@ -9,7 +9,7 @@ Train a model remotely
         <iframe src="https://www.youtube.com/embed/W1bPmUhzYFY" frameborder="0" allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
     </div>
 
-This is a step by step guide on how to train a general model from the :doc:`AI4OS Dashboard <../overview/dashboard>`
+This is a step by step guide on how to train a general model from the :doc:`AI4OS Dashboard </user/overview/dashboard>`
 with your own dataset.
 
 In this tutorial we will see how to retrain a `generic image classifier <https://dashboard.cloud.ai4eosc.eu/marketplace/modules/deep-oc-image-classification-tf>`__
@@ -17,17 +17,17 @@ on a custom dataset to create a `phytoplankton classifier <https://dashboard.clo
 If you want to follow along, you can download the toy phytoplankton dataset :fa:`download` `here <https://api.cloud.ifca.es:8080/swift/v1/public-datasets/phytoplankton-mini.zip>`__.
 
 If you are new to Machine Learning, you might want to check some
-:doc:`useful Machine Learning resources <../others/useful-ml-resources>` we compiled to help you getting started.
+:doc:`useful Machine Learning resources </user/others/useful-ml-resources>` we compiled to help you getting started.
 
 .. admonition:: Requirements
 
-    * You need  a :doc:`Authentication <../overview/auth>` to be able to access the Dashboard and Nextcloud storage.
+    * You need  a :doc:`Authentication </user/overview/auth>` to be able to access the Dashboard and Nextcloud storage.
     * For **Step 7** we recommend having `docker <https://docs.docker.com/install/#supported-platforms>`__ installed (though it's not strictly mandatory).
 
 1. Choose a module from the Marketplace
 ---------------------------------------
 
-The first step is to choose a model from the :doc:`AI4OS Dashboard<../overview/dashboard>`. Make sure to select a module with the ``trainable`` tag.
+The first step is to choose a model from the :doc:`AI4OS Dashboard</user/overview/dashboard>`. Make sure to select a module with the ``trainable`` tag.
 For educational purposes we are going to use a `general model to identify images <https://dashboard.cloud.ai4eosc.eu/marketplace/modules/deep-oc-image-classification-tf>`__.
 Some of the model dependent details can change if using another model, but this tutorial will provide
 a general overview of the workflow to follow when using any of the modules in the AI4OS Dashboard.
@@ -47,7 +47,7 @@ to learn the correct way to setting it up.
 
 In the case of the **image classification module**, we will create the following folders:
 
-.. image:: ../../_static/images/nc-folders.png
+.. image:: /_static/images/nc-folders.png
 
 * A folder called ``models`` where the new training weights will be stored after the training is completed
 * A folder called ``data`` that contains two different folders:
@@ -82,7 +82,7 @@ and do an :ref:`rclone copy <user/howto/rclone:Using rclone>` to move your data 
 3. Deploy with the Training Dashboard
 -------------------------------------
 
-Now go to the `AI4OS Dashboard <https://marketplace.deep-hybrid-datacloud.eu/>`__  and login with your :doc:`credentials <../overview/auth>`.
+Now go to the `AI4OS Dashboard <https://marketplace.deep-hybrid-datacloud.eu/>`__  and login with your :doc:`credentials </user/overview/auth>`.
 Then go to (1) **Modules (marketplace)** ➜ (2) **Train image classifier** ➜ (3) **Train module**.
 
 Now you will be presented with a configuration form.
@@ -102,7 +102,7 @@ For the purposes of running a retraining, it should be filled as following:
   :ref:`Go here <user/howto/rclone:Configuring rclone>` in order to find how to create them.
 
 Now that you are done configuring, click **Submit** to create the deployment.
-See the :doc:`Dashboard guide <../overview/dashboard>` for more details.
+See the :doc:`Dashboard guide </user/overview/dashboard>` for more details.
 
 
 4. Go to JupyterLab and mount your dataset
@@ -168,7 +168,7 @@ The ``&`` will keep your command running even if you close the terminal, and ``n
 Now go back to the deployments list view.
 In your deployment go to **Access** and choose **DEEPaaS**. You will be redirected to ``http://deepaas_endpoint/ui``.
 
-.. image:: ../../_static/images/deepaas.png
+.. image:: /_static/images/deepaas.png
    :width: 500 px
 
 Look for the ``train`` POST method. Modify the training parameters you wish to change and execute.
@@ -225,11 +225,11 @@ as your code is the same as the original application, only your model weights
 are different.
 
 To account for this simpler process, we have prepared a version of the
-:doc:`the AI4OS Modules Template <../overview/cookiecutter-template>`
+:doc:`the AI4OS Modules Template </user/overview/cookiecutter-template>`
 specially tailored to this task:
 
 * Go to the `Template creation webpage <https://templates.cloud.ai4eosc.eu/>`__.
-  You will need an :doc:`authentication <../overview/auth>` to access to this webpage.
+  You will need an :doc:`authentication </user/overview/auth>` to access to this webpage.
 * Then select the ``child-module`` branch of the template and answer the questions.
 * Click on ``Generate`` and you will be able to download a ``.zip`` file with
   one project directory:

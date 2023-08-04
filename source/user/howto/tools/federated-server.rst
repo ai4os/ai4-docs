@@ -5,7 +5,7 @@ Deploying a Federated server
 ----------------------------
 
 The workflow for deploying a Federated server is similar to the one for
-:doc:`deploying a module <../../overview/dashboard>`, so please refer that.
+:doc:`deploying a module </user/overview/dashboard>`, so please refer that.
 
 The main differences in the configuration are:
 

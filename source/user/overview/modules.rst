@@ -34,6 +34,6 @@ across the project are always up-to-date with your code.
 
 This is an example of actions tha are performed by the pipeline:
 
-.. image:: ../../_static/images/Jenkins-pipeline.png
+.. image:: /_static/images/Jenkins-pipeline.png
 
 The steps are defined in the ``Jenkinsfile`` of your repos.

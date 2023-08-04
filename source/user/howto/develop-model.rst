@@ -9,7 +9,7 @@ Develop a model from scratch
 
 This tutorial explains how to develop a AI4OS module from scratch on your local machine.
 
-You could also use the **AI4OS Development environment** from the :doc:`AI4OS Dashboard<../overview/dashboard>`
+You could also use the **AI4OS Development environment** from the :doc:`AI4OS Dashboard</user/overview/dashboard>`
 if you want to develop your code in a ready made environment based on some predefined Docker container
 (eg. official Tensorflow or Pytorch containers). The tutorial still applies the same.
 You only need to go to the Dashboard, select the **AI4OS Development environment** and
@@ -17,11 +17,11 @@ configure the Docker image and resources you want to use
 (see `video demo <https://www.youtube.com/watch?v=J_l_xWiBGNA&list=PLJ9x9Zk1O-J_UZfNO2uWp2pFMmbwLvzXa&index=3>`__).
 
 If you are new to Machine Learning, you might want to check some
-:doc:`useful Machine Learning resources <../others/useful-ml-resources>` we compiled to help you getting started.
+:doc:`useful Machine Learning resources </user/others/useful-ml-resources>` we compiled to help you getting started.
 
 .. admonition:: Requirements
 
-    * If you plan to use the **AI4OS Development environment**, you need :doc:`Authentication <../overview/auth>` to be able to access the Dashboard.
+    * If you plan to use the **AI4OS Development environment**, you need :doc:`Authentication </user/overview/auth>` to be able to access the Dashboard.
     * For **Step 7** we recommend having `docker <https://docs.docker.com/install/#supported-platforms>`__ installed (though it's not strictly mandatory).
 
 
@@ -29,11 +29,11 @@ If you are new to Machine Learning, you might want to check some
 ------------------------
 
 This first step relies on the
-:doc:`the AI4OS Modules Template <../overview/cookiecutter-template>`
+:doc:`the AI4OS Modules Template </user/overview/cookiecutter-template>`
 for creating a template for your new module:
 
 * Go to the `Template creation webpage <https://templates.cloud.ai4eosc.eu/>`__.
-  You will need an :doc:`authentication <../overview/auth>` to access to this webpage.
+  You will need an :doc:`authentication </user/overview/auth>` to access to this webpage.
 * Then select the ``master`` branch of the template and answer the questions.
 * Click on ``Generate`` and you will be able to download a ``.zip`` file with
   two project directories:

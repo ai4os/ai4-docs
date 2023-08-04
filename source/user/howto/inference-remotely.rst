@@ -13,7 +13,7 @@ Try a service remotely
 1. Choose your module and deploy
 --------------------------------
 
-The first step is to choose a module from the :doc:`Dashboard<../overview/dashboard>`.
+The first step is to choose a module from the :doc:`Dashboard</user/overview/dashboard>`.
 There you will be able to find all the modules ready to be used under the tag ``Inference``.
 
 For educational purposes we are going to use a `general model to identify images <https://dashboard.cloud.ai4eosc.eu/marketplace/modules/deep-oc-image-classification-tf>`__.
@@ -28,7 +28,7 @@ Go to the ``Deployments`` tab and select the ``deepaas`` endpoint in your newly 
 It will open the Swagger UI with the API documentation,
 where you can test the module's functionality, as well as perform other actions.
 
-.. image:: ../../_static/images/deepaas.png
+.. image:: /_static/images/deepaas.png
   :width: 500
 
 Go to the  ``predict()`` function and upload the file/data you want to predict (in the case of the image classifier
