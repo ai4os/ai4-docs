@@ -14,7 +14,7 @@ The main differences in the configuration are:
   as a way to authenticate them and keep the training private and secure.
 
 * ``Federated configuration`` section will let you choose how many rounds you will train,
-  the minimm number of clients, the federated averaging methods, and the metric analyzed.
+  the minimum number of clients, the federated averaging methods, and the metric analyzed.
 
 Federated learning training in AI4EOSC
 --------------------------------------
