@@ -137,44 +137,44 @@ in some parts of the code if long lines are really needed.
 
 Once you are fine with the state of ``<project-name>`` folder, push the changes to Github.
 
-.. # TODO: uncomment when ready
+.. warning::
 
-.. .. warning::
+    The deployments in the platform are created via Docker.
+    Therefore some resources might not be properly virtualized like in a traditional
+    Virtual Machine.
+    This means that standard commands for checking up resources might give you higher
+    numbers than what is really available (ie. they give you the resources of the
+    full node, not your single deployment).
 
-..     The deployments in the platform are created via Docker.
-..     Therefore some resources might not be properly virtualized like in a traditional
-..     Virtual Machine.
-..     This means that standard commands for checking up resources might give you higher
-..     numbers than what is really available (ie. they give you the resources of the
-..     full node, not your single deployment).
+    Standard commands:
 
-..     Standard commands:
+    * **CPU**: ``lscpu | grep -E '^Thread|^Core|^Socket|^CPU\('``
+    * **RAM memory**: ``free -h``
+    * **Disk**: ``df -h``
 
-..     * CPU cores: ``lscpu | grep -E '^Thread|^Core|^Socket|^CPU\('``
-..     * RAM memory: ``free -h``
-..     * Disk: ``df -h``
+    Real available resources can be found with the following commands:
 
-..     Real available resources can be found with the following commands:
+    * **CPU**: ``printenv | grep NOMAD_CPU`` will show both reserved cores (``NOMAD_CPU_CORES``) and maximum CPU limit (in MHz) (``NOMAD_CPU_LIMIT``).
+    * **RAM memory**: ``echo $NOMAD_MEMORY_LIMIT`` or ``cat /sys/fs/cgroup/memory/memory.limit_in_bytes``
+    * **Disk**: :fa:`hourglass-half` we are working on properly limiting disk space, for the time being we ask you to kindly stick to the 20-25 GB quota .
 
-..     * CPU cores:
-..     * RAM memory: ``echo $NOMAD_MEMORY_LIMIT`` or ``cat /sys/fs/cgroup/memory/memory.limit_in_bytes``
-..     * Disk:
+    .. #TODO: modify disk commands when ready
 
-..     It is your job to program your application to make use of these real resources.
-..     Failing to do so could potentially make your process being killed for surpassing
-..     the available resources.
+    It is your job to program your application to make use of these real resources.
+    Failing to do so could potentially make your process being killed for surpassing
+    the available resources.
 
-..     .. dropdown:: ㅤㅤ More info
+    .. dropdown:: ㅤㅤ More info
 
-..         For example trying to allocate 8GB in a machine with 4GB will fail.
+        For example trying to allocate 8GB in a 4GB RAM machine will lead to failure.
 
-..         .. code-block:: console
+        .. code-block:: console
 
-..             root@2dc9e20f923e:/srv# stress -m 1 --vm-bytes 8G
-..             stress: info: [69] dispatching hogs: 0 cpu, 0 io, 1 vm, 0 hdd
-..             stress: FAIL: [69] (415) <-- worker 70 got signal 9
-..             stress: WARN: [69] (417) now reaping child worker processes
-..             stress: FAIL: [69] (451) failed run completed in 6s
+            root@2dc9e20f923e:/srv# stress -m 1 --vm-bytes 8G
+            stress: info: [69] dispatching hogs: 0 cpu, 0 io, 1 vm, 0 hdd
+            stress: FAIL: [69] (415) <-- worker 70 got signal 9
+            stress: WARN: [69] (417) now reaping child worker processes
+            stress: FAIL: [69] (451) failed run completed in 6s
 
 3. Editing ``DEEP-OC-<project-name>`` code
 ------------------------------------------
