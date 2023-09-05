@@ -123,8 +123,11 @@ In our case, the final command, mounting the data folder and the model weights f
 Go to `<http://0.0.0.0:5000/ui>`__ and look for the ``train`` POST method.
 Modify the training parameters you wish to change and execute.
 
-If some kind of monitorization tool is available for this model you will be able to follow the training
-progress from `<http://0.0.0.0:6006>`__.
+If some kind of monitorization tool is available for this model you will be able to
+follow the training progress from `<http://0.0.0.0:6006>`__. For example, in the image
+classification module, you can monitor training progress with Tensorboard.
+
+.. image:: /_static/images/tensorboard.png
 
 
 5. Test and export the newly trained model

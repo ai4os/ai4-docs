@@ -98,6 +98,8 @@ Try running it with python so you get a more detailed debug message.
 Remember to leave untouched the ``get_metadata()`` function that comes predefined with your module,
 as all modules should have proper metadata.
 
+You can also use port ``6006`` to expose some training monitoring tool, like Tensorboard.
+
 In order to improve the readability of the code and the overall maintainability of the project,
 we enforce proper Python coding styles (``pep8``) to all modules added to the Marketplace.
 Modules that fail to pass style tests won't be able to build docker images.

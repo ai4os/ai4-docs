@@ -171,10 +171,16 @@ In your deployment go to **Access** and choose **DEEPaaS**. You will be redirect
 .. image:: /_static/images/deepaas.png
    :width: 500 px
 
-Look for the ``train`` POST method. Modify the training parameters you wish to change and execute.
+Look for the ``train`` POST method. Modify the training parameters you wish to change
+and execute.
 
-If some kind of monitorization tool is available for the module, you will be able to follow the training
-progress at ``http://monitor_endpoint`` (click **Access** button ➜ **Monitoring**, in the deployments page).
+If some kind of monitorization tool is available for the module, you will be able to
+follow the training progress at ``http://monitor_endpoint`` (click **Access** button
+➜ **Monitoring**, in the deployments page).
+For example, in the image classification module, you can monitor training progress with
+Tensorboard.
+
+.. image:: /_static/images/tensorboard.png
 
 
 6. Test and export the newly trained model
