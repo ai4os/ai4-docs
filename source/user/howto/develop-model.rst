@@ -141,12 +141,13 @@ Once you are fine with the state of ``<project-name>`` folder, push the changes 
 
 .. warning::
 
-    The deployments in the platform are created via Docker.
+    The deployments in the platform are created as Docker containers.
     Therefore some resources might not be properly virtualized like in a traditional
     Virtual Machine.
     This means that standard commands for checking up resources might give you higher
     numbers than what is really available (ie. they give you the resources of the
-    full node, not your single deployment).
+    full Virtual Machine where Docker is running, not the resources avaible to your 
+    individual Docker container).
 
     Standard commands:
 
@@ -162,7 +163,8 @@ Once you are fine with the state of ``<project-name>`` folder, push the changes 
 
     .. #TODO: modify disk commands when ready
 
-    It is your job to program your application to make use of these real resources.
+    It is your job to program your application to make use of these real resources
+    (eg. load smaller models, load less data, etc).
     Failing to do so could potentially make your process being killed for surpassing
     the available resources.
 
