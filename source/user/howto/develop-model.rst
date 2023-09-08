@@ -146,7 +146,7 @@ Once you are fine with the state of ``<project-name>`` folder, push the changes 
     Virtual Machine.
     This means that standard commands for checking up resources might give you higher
     numbers than what is really available (ie. they give you the resources of the
-    full Virtual Machine where Docker is running, not the resources avaible to your 
+    full Virtual Machine where Docker is running, not the resources avaible to your
     individual Docker container).
 
     Standard commands:
@@ -167,6 +167,8 @@ Once you are fine with the state of ``<project-name>`` folder, push the changes 
     (eg. load smaller models, load less data, etc).
     Failing to do so could potentially make your process being killed for surpassing
     the available resources.
+    For example, check how to limit CPU usage in `Tensorflow <https://stackoverflow.com/questions/57925061/how-can-i-reduce-the-number-of-cpus-used-by-tensorlfow-keras>`__
+    or `Pytorch <https://pytorch.org/docs/stable/generated/torch.set_num_threads.html#torch.set_num_threads>`__.
 
     .. dropdown:: ㅤㅤ More info
 
