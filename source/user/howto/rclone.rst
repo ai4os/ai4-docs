@@ -24,9 +24,8 @@ To install rclone on a Docker container based on Ubuntu you should add the follo
 .. code-block:: docker
 
     # Install rclone (needed if syncing with NextCloud for training; otherwise remove)
-    RUN curl -O https://downloads.rclone.org/rclone-current-linux-amd64.deb && \
-        dpkg -i rclone-current-linux-amd64.deb && \
-        apt install -f && \
+    RUN curl -O https://downloads.rclone.org/v1.62.2/rclone-v1.62.2-linux-amd64.deb && \
+        apt install ./rclone-v1.62.2-linux-amd64.deb && \
         mkdir /srv/.rclone/ && \
         touch /srv/.rclone/rclone.conf && \
         rm rclone-current-linux-amd64.deb && \
@@ -36,12 +35,58 @@ To install it directly on your machine:
 
 .. code-block:: console
 
-    $ curl -O https://downloads.rclone.org/rclone-current-linux-amd64.deb
-    $ dpkg -i rclone-current-linux-amd64.deb
-    $ apt install -f
+    $ curl -O https://downloads.rclone.org/v1.62.2/rclone-v1.62.2-linux-amd64.deb
+    $ apt install ./rclone-v1.62.2-linux-amd64.deb
     $ rm rclone-current-linux-amd64.deb
 
 For other Linux flavors, please refer to the `rclone official site  <https://rclone.org/downloads/>`__.
+
+.. warning::
+
+    RCLONE introduced a `bug <https://github.com/rclone/rclone/issues/7103>`__ in version
+    ``1.63.X`` which changed the remote url from:
+
+    .. code-block:: console
+
+        https://data-deep.a.incd.pt/remote.php/webdav/
+
+    to:
+
+    .. code-block:: console
+
+        https://data-deep.a.incd.pt/remote.php/dav/files/USER
+
+    To maintain backward compatibility with old modules, we have decided to freeze the
+    RCLONE version to ``1.62.2`` till the bug is fixed.
+
+
+
+.. TODO: uncomment when [1] is fixed
+.. [1]: https://github.com/rclone/rclone/issues/7103
+..
+.. To install rclone on a Docker container based on Ubuntu you should add the following code:
+
+.. .. code-block:: docker
+
+..     # Install rclone (needed if syncing with NextCloud for training; otherwise remove)
+..     RUN curl -O https://downloads.rclone.org/rclone-current-linux-amd64.deb && \
+..         dpkg -i rclone-current-linux-amd64.deb && \
+..         apt install -f && \
+..         mkdir /srv/.rclone/ && \
+..         touch /srv/.rclone/rclone.conf && \
+..         rm rclone-current-linux-amd64.deb && \
+..         rm -rf /var/lib/apt/lists/*
+
+.. To install it directly on your machine:
+
+.. .. code-block:: console
+
+..     $ curl -O https://downloads.rclone.org/rclone-current-linux-amd64.deb
+..     $ dpkg -i rclone-current-linux-amd64.deb
+..     $ apt install -f
+..     $ rm rclone-current-linux-amd64.deb
+
+.. For other Linux flavors, please refer to the `rclone official site  <https://rclone.org/downloads/>`__.
 
 
 Configuring rclone
