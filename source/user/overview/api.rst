@@ -84,3 +84,10 @@ and go to http://0.0.0.0:5000/ui. You will see a nice UI with all the methods:
 
 .. image:: /_static/images/deepaas.png
    :width: 500 px
+
+If running the API from inside a module's Docker container, you can use the command:
+
+.. code-block:: console
+
+    deep-start --deepaas
+
