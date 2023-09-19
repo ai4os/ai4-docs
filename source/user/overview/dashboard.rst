@@ -138,13 +138,27 @@ In the ``Deployments`` tab you have a view of all the deployments you have made 
 
 
 Under :fa:`circle-info` ``Info`` you will find details about your deployment such as UUID,
-hardware, error messages, endpoints of all services, etc.
+resources assigned/requested, error messages, endpoints of all services, etc.
 For the endpoints of the services you have:
 
 * ``DEEPaaS`` , only accessible if you launched with the DEEPaaS command or launched JupyterLab then ran DEEPaaS.
 * ``IDE`` , only accessible if you launched with the JupyterLab or VScode command
 * ``Monitor`` : this is the training monitoring page. Only accessible if the module has been coded to explicitly
   display monitoring (check the module's README or training arguments) and if a training is currently running.
+
+.. TODO: remove when ready
+.. warning::
+  You might see that under ``Disk memory`` your deployment has 500 MB assigned, which
+  is much less than what you might have asked initially.
+
+  For the time being, this number is meaningless, because we are not
+  enforcing correctly the disk limits.
+  Users have access to all the resources of the node, and they might conflict with other users disk space.
+  This is why we kindly ask users to respect a **maximum** of 20 GB of disk usage per deployment.
+
+  We are working on fixing this issue. If 20 GB is not enough for your usecase, please
+  check :doc:`the provided option </user/overview/storage>` of accessing
+  your dataset via a virtual filesystem, in order to avoid overloading the disk.
 
 Under :fa:`rectangle-list` ``Quick access`` you will be able to access the service you deployed at launch time.
 
