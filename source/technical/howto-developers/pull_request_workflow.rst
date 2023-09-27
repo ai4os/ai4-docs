@@ -185,3 +185,20 @@ The change could look like this:
     path = ...
     url = ...
     branch = main
+
+4. Add the module as a git submodule
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Clone the ``deep-oc`` repo and add the module:
+
+.. code-block::
+
+  git submodule add https://github.com/deephdc/UC-<original_account>-DEEP-OC-<original_repo_name>
+
+If the user has a default ``<branchname>`` different from ``master`` (eg. ``main``), you should add this parameter in the submodule command:
+
+.. code-block::
+
+  git submodule add -b <branchname> https://github.com/deephdc/UC-<original_account>-DEEP-OC-<original_repo_name>
+
+Then commit back and push the changes to the repo.
