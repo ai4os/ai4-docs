@@ -14,16 +14,19 @@ Welcome to AI4OS documentation!
     |   Where users will typically search for modules developed by the community, and find the relevant pointers to use them. It allows authenticated users to deploy virtual machines on specific hardware (eg. gpus) to train a module.
     | :fa:`database` `NextCloud <https://data-deep.a.incd.pt/>`__
     |   The service that allows to store your data remotely and access them from inside your deployment.
-    | :fab:`github` `Github <https://github.com/ai4eosc>`__
+    | :fab:`github` `GitHub <https://github.com/ai4eosc>`__
     |   The code of all the modules and services behind the project is stored.
     | :fab:`docker` `DockerHub <https://hub.docker.com/u/deephdc/>`__
     |   Where the Docker images of the modules are stored.
     | :fa:`timeline` `CI/CD pipeline <https://jenkins.indigo-datacloud.eu/job/Pipeline-as-code/job/DEEP-OC-org/>`__
     |   Continuous Integration and Continuous Development Jenkins instance to keep everything up-to-date with latest code changes.
+    | :fa:`rocket` `Inference platform (OSCAR) <https://inference.cloud.ai4eosc.eu/>`__
+    |    Scalable serverless inference of AI models.
     | :fa:`temperature-half` `Status of services <https://status.ai4eosc.eu/>`__
     |   Check if a specific AI4OS service might be down for some reason.
     | :fa:`folder-plus` `Module template <https://templates.cloud.ai4eosc.eu/>`__
     |   Create new modules based on our project's template.
+    
 
     You can also watch this `tutorial <https://www.youtube.com/watch?v=cRMIviobF_c>`__
     for a quick overview of the project from the user's point of view (`attached slides <https://cdn.jsdelivr.net/gh/ai4eosc/ai4-docs@master/source/_static/overview.pdf>`__).

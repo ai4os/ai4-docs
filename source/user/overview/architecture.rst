@@ -44,3 +44,9 @@ The data storage resources
 we support hosting data in `AI4OS Nextcloud <https://data-deep.a.incd.pt/>`__  instance (up to 2 Terabytes by default), as well
 as integration with popular cloud storage options like  `Google Drive <https://www.google.com/drive/>`__,
 `Dropbox <https://www.dropbox.com/>`__, `Amazon S3 <https://aws.amazon.com/s3/>`__ and `many more <https://rclone.org/>`__.
+
+
+The Inference Platform (OSCAR)
+------------------------------
+
+The :doc:`Inference platform (OSCAR) <inference-oscar>` is a fully managed service to facilitate users to deploy pre-trained AI models with horizontal scalability thanks to a serverless approach. 
