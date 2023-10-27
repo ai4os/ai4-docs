@@ -14,14 +14,16 @@ The main differences in the configuration are:
   as a way to authenticate them and keep the training private and secure.
 
 * ``Federated configuration`` section will let you choose how many rounds you will train,
-  the federated averaging methods, etc.
+  the minimum number of clients, the federated averaging methods, and the metric analyzed.
 
-Training with that server
--------------------------
-
+Federated learning training in AI4EOSC
+--------------------------------------
 Once your federated server is deployed, you have to:
 
-1) *(Optional)*:
+1) (Recomended) When starting the deployment of the federated learning server, use ``fedserver`
+as service to run.
+
+   *(Optional)*:
    If you deployed with Jupyterlab, you will need to open a terminal and start the server:
 
    .. code-block:: console
@@ -31,9 +33,12 @@ Once your federated server is deployed, you have to:
    If you want to change any parameters in the federated configuration, you can always
    modify ``fedserver/server.py``.
 
-2) Once you server is running, find the ``fedserver`` endpoint, located
-   in the :fa:`circle-info` ``Info`` in the deployments table.
-   Share the endpoint and the token with the clients that will take part in the training.
+2) Once you server is running, find the ``fedserver`` deployment ID or the endpoint, located
+   in the ``Info`` in the deployments table.
+   Share the deployment ID or the endpoint and the token with the clients that will take part in the training.
    They will then add that information in their code to be able to connect with the server.
-   We provide `some examples of client implementations <https://github.com/deephdc/federated-server/tree/main/fedserver/client_samples>`__
-   to serve as a reference.
+   We provide `some examples of client implementations <https://github.com/deephdc/federated-server/tree/main/fedserver/examples>`__
+   to serve as reference.
+
+.. note::
+    For more information, see the *Getting Started* step by step guide available in the `federated server repository <https://github.com/deephdc/federated-server>`__. 
