@@ -26,10 +26,7 @@ Welcome to AI4OS documentation!
     |   Check if a specific AI4OS service might be down for some reason.
     | :fa:`folder-plus` `Module template <https://templates.cloud.ai4eosc.eu/>`__
     |   Create new modules based on our project's template.
-    
 
-    You can also watch this `tutorial <https://www.youtube.com/watch?v=cRMIviobF_c>`__
-    for a quick overview of the project from the user's point of view (`attached slides <https://cdn.jsdelivr.net/gh/ai4eosc/ai4-docs@master/source/_static/overview.pdf>`__).
 
 .. important::
 

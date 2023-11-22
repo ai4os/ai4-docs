@@ -27,9 +27,6 @@ User documentation
     | :fa:`folder-plus` `Module template <https://templates.cloud.ai4eosc.eu/>`__
     |   Create new modules based on our project's template.
 
-    You can also watch this `tutorial <https://www.youtube.com/watch?v=cRMIviobF_c>`__
-    for a quick overview of the project from the user's point of view (`attached slides <https://cdn.jsdelivr.net/gh/deephdc/deep-docs@master/source/_static/overview.pdf>`__).
-
 
 New to the project? How about a quick dive?
 
