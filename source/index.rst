@@ -1,6 +1,21 @@
 Welcome to AI4OS documentation!
 ===============================
 
+.. important::
+
+   A quick note on terminology. ``AI4OS`` is the name of the generic software stack that is
+   powering the deployments of different platforms (``AI4EOSC``, ``iMagine``).
+   So for example the **AI4OS Dashboard** is the component that can be deployed as the
+   **AI4EOSC Dashboard** or the **iMagine Dashboard**.
+   These platform-specific Dashboards can have minor customizations but the underlying
+   technology remains the same.
+
+   Current supported platforms:
+
+   * `AI4EOSC <https://ai4eosc.eu/>`__: AI for the European Open Science Cloud
+   * `iMagine <https://imagine-ai.eu/>`__: Imaging data and services for aquatic science
+
+
 .. admonition:: Useful links
    :class: important
 
@@ -26,21 +41,6 @@ Welcome to AI4OS documentation!
     |   Check if a specific AI4OS service might be down for some reason.
     | :fa:`folder-plus` `Module template <https://templates.cloud.ai4eosc.eu/>`__
     |   Create new modules based on our project's template.
-
-
-.. important::
-
-   A quick note on terminology. ``AI4OS`` is the name of the generic software stack that is
-   powering the deployments of different platforms (``AI4EOSC``, ``iMagine``).
-   So for example the **AI4OS Dashboard** is the component that can be deployed as the
-   **AI4EOSC Dashboard** or the **iMagine Dashboard**.
-   These platform-specific Dashboards can have minor customizations but the underlying
-   technology remains the same.
-
-   Current supported platforms:
-
-   * `AI4EOSC <https://ai4eosc.eu/>`__: AI for the European Open Science Cloud
-   * `iMagine <https://imagine-ai.eu/>`__: Imaging data and services for aquatic science
 
 
 User documentation
