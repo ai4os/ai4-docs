@@ -4,7 +4,7 @@ User documentation
 .. admonition:: Useful links
    :class: important
 
-    | :fa:`home` `Homepage <https://ai4eosc.eu/>`__
+    | :fa:`home` `Homepage <https://ai4os.eu/>`__
     |   A high level overview of the project.
     | :fa:`book` `Documentation <https://docs.ai4eosc.eu/>`__
     |   The main source of knowledge on how to use the project. Refer always to here in case of doubt.
@@ -14,7 +14,7 @@ User documentation
     |   Where users will typically search for modules developed by the community, and find the relevant pointers to use them. It allows authenticated users to deploy virtual machines on specific hardware (eg. gpus) to train a module.
     | :fa:`database` `NextCloud <https://data-deep.a.incd.pt/>`__
     |   The service that allows to store your data remotely and access them from inside your deployment.
-    | :fab:`github` `Github <https://github.com/ai4eosc>`__
+    | :fab:`github` `Github <https://github.com/ai4os>`__
     |   The code of all the modules and services behind the project is stored.
     | :fab:`docker` `DockerHub <https://hub.docker.com/u/deephdc/>`__
     |   Where the Docker images of the modules are stored.
