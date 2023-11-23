@@ -6,7 +6,7 @@ User documentation
 
     | :fa:`home` `Homepage <https://ai4os.eu/>`__
     |   A high level overview of the project.
-    | :fa:`book` `Documentation <https://docs.ai4eosc.eu/>`__
+    | :fa:`book` `Documentation <https://docs.ai4os.eu/>`__
     |   The main source of knowledge on how to use the project. Refer always to here in case of doubt.
     | :fa:`id-badge` :doc:`Authentication <overview/auth>`
     |   The authentication management for accessing the AI4OS stack.
