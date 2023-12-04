@@ -35,8 +35,8 @@ How to create an account
 EGI Check-In (prod)
 ^^^^^^^^^^^^^^^^^^^
 
-Go to the `EGI Check-In (prod) <https://aai.egi.eu/>`__ and login preferably with your institutional 
-account (university, research center). If this is not possible, please, use one of Github or ORCID 
+Go to the `EGI Check-In (prod) <https://aai.egi.eu/>`__ and login preferably with your **institutional 
+account** (university, research center). If this is not possible, please, use one of **Github** or **ORCID** 
 but with the E-Mail domain which identifies your organisation.
 This will automatically create your new account at EGI Check-In.
 
