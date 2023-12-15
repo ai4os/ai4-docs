@@ -20,20 +20,18 @@ Federated learning training in AI4EOSC
 --------------------------------------
 Once your federated server is deployed, you have to:
 
-1) (Recomended) When starting the deployment of the federated learning server, use ``fedserver`
-as service to run.
+1. (Recomended) When starting the deployment of the federated learning server, use JupyterLab or VisualStudio Code as service to run if you want to monitor the process. Execute:
 
-   *(Optional)*:
-   If you deployed with Jupyterlab, you will need to open a terminal and start the server:
-
-   .. code-block:: console
+  .. code-block:: console
 
        python3 -m fedsever.server
 
-   If you want to change any parameters in the federated configuration, you can always
-   modify ``fedserver/server.py``.
+If you want to change any parameters in the federated configuration, you can always modify ``fedserver/server.py``.
 
-2) Once you server is running, find the ``fedserver`` deployment ID or the endpoint, located
+   *(Optional)*: if you deploy it using ``fedserver`` the federated learning server will be started automatically, but you will not be able to monitor the process (e.g. if there is a failure, how the clients are connected or if any of them is disconnected).
+
+
+2. Once you server is running, find the ``fedserver`` deployment ID or the endpoint, located
    in the ``Info`` in the deployments table.
    Share the deployment ID or the endpoint and the token with the clients that will take part in the training.
    They will then add that information in their code to be able to connect with the server.
@@ -42,3 +40,4 @@ as service to run.
 
 .. note::
     For more information, see the *Getting Started* step by step guide available in the `federated server repository <https://github.com/deephdc/federated-server>`__. 
+
