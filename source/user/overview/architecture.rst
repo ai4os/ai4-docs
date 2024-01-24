@@ -7,8 +7,7 @@ Later on you will see how each :doc:`different type of user <user-roles>` can ta
 The Dashboard
 -------------
 
-The :doc:`AI4OS dashboard <dashboard>`. allow users to access computing resources to deploy, perform inference,
-and train Artificial Intelligence modules.
+The :doc:`AI4OS dashboard <dashboard>`. allow users to access computing resources to deploy, perform inference and train AI modules.
 The Dashboard simplifies the deployment and hides some of the technical parts that most users do not need to worry about.
 
 
@@ -25,6 +24,14 @@ The Dashboard simplifies the deployment and hides some of the technical parts th
 
   The serverless framework allows any user to automatically deploy from the browser any module in real time to try it.
   It only supports prediction. For training, which is more resource consuming, users must use the AI4OS Dashboard.
+
+
+The AI modules
+--------------
+
+The :doc:`AI modules <modules>` are developed both by the platform and by users.
+For creating modules, we provide the  :doc:`AI4OS Modules Template <cookiecutter-template>`
+as a starting point.
 
 
 The DEEPaaS API
@@ -49,4 +56,4 @@ as integration with popular cloud storage options like  `Google Drive <https://w
 The Inference Platform (OSCAR)
 ------------------------------
 
-The :doc:`Inference platform (OSCAR) <inference-oscar>` is a fully managed service to facilitate users to deploy pre-trained AI models with horizontal scalability thanks to a serverless approach. 
+The :doc:`Inference platform (OSCAR) <inference-oscar>` is a fully managed service to facilitate users to deploy pre-trained AI models with horizontal scalability thanks to a serverless approach.
