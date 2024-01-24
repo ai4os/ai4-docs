@@ -30,8 +30,11 @@ The AI modules
 --------------
 
 The :doc:`AI modules <modules>` are developed both by the platform and by users.
-For creating modules, we provide the  :doc:`AI4OS Modules Template <cookiecutter-template>`
+For creating modules, we provide the :doc:`AI4OS Modules Template <cookiecutter-template>`
 as a starting point.
+
+In addition to AI modules, the Dashboard also allows to deploy tools
+(eg. a :doc:`Federated Server </user/howto/tools/federated-server>`).
 
 
 The DEEPaaS API

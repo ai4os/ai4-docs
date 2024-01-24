@@ -29,8 +29,10 @@ Welcome to AI4OS documentation!
     |   Where users will typically search for modules developed by the community, and find the relevant pointers to use them. It allows authenticated users to deploy virtual machines on specific hardware (eg. gpus) to train a module.
     | :fa:`database` `NextCloud <https://data-deep.a.incd.pt/>`__
     |   The service that allows to store your data remotely and access them from inside your deployment.
-    | :fab:`github` `GitHub <https://github.com/ai4os>`__
-    |   The code of all the modules and services behind the project is stored.
+    | :fab:`github` `Github (software) <https://github.com/ai4os>`__
+    |   The code of the software powering the platform.
+    | :fab:`github` `Github (modules) <https://github.com/deephdc>`__
+    |   The code of all the modules available in the platform.
     | :fab:`docker` `DockerHub <https://hub.docker.com/u/deephdc/>`__
     |   Where the Docker images of the modules are stored.
     | :fa:`timeline` `CI/CD pipeline <https://jenkins.indigo-datacloud.eu/job/Pipeline-as-code/job/DEEP-OC-org/>`__
