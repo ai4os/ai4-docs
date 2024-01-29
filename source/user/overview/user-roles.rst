@@ -46,7 +46,7 @@ model and retrains it to perform `seed classification <https://dashboard.cloud.a
 * the ability to train out-of-the-box a module of the :doc:`Dashboard <dashboard>` on your personal dataset
 * an :doc:`API <api>` to easily interact with the model
 * :ref:`data storage resources <user/overview/architecture:The data storage resources>` to access your dataset
-  using `DEEP-Nextcloud <https://data-deep.a.incd.pt/>`__ (up to 2 Terabytes by default)
+  using `DEEP-Nextcloud <https://share.services.ai4os.eu/>`__ (up to 2 Terabytes by default)
 * integration with popular cloud storage options like
   `Google Drive <https://www.google.com/drive/>`__, `Dropbox <https://www.dropbox.com/>`__,
   `Amazon S3 <https://aws.amazon.com/s3/>`__ and `many more <https://rclone.org/>`__
@@ -73,7 +73,7 @@ models.
 * a ready-to-use environment with the main DL frameworks running in a dockerized solution running on different types of
   hardware (CPUs, GPUs, etc)
 * :ref:`data storage resources <user/overview/architecture:The data storage resources>` to access your dataset
-  using `DEEP-Nextcloud <https://data-deep.a.incd.pt/>`__ (up to 2 Terabytes by default)
+  using `DEEP-Nextcloud <https://share.services.ai4os.eu/>`__ (up to 2 Terabytes by default)
 * integration with popular cloud storage options like
   `Google Drive <https://www.google.com/drive/>`__, `Dropbox <https://www.dropbox.com/>`__,
   `Amazon S3 <https://aws.amazon.com/s3/>`__ and `many more <https://rclone.org/>`__

@@ -1,7 +1,7 @@
 Storage
 =======
 
-Storage is  currently taken care of by the `AI4OS Nextcloud <https://data-deep.a.incd.pt/>`__ instance.
+Storage is  currently taken care of by the `AI4OS Nextcloud <https://share.services.ai4os.eu/>`__ instance.
 
 You have currently two ways of accessing your Nextcloud files from your deployment:
 

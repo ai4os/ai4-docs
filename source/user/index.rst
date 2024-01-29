@@ -12,8 +12,8 @@ User documentation
     |   The authentication management for accessing the AI4OS stack.
     | :fa:`sliders` :doc:`Dashboard <overview/dashboard>`
     |   Where users will typically search for modules developed by the community, and find the relevant pointers to use them. It allows authenticated users to deploy virtual machines on specific hardware (eg. gpus) to train a module.
-    | :fa:`database` `NextCloud <https://data-deep.a.incd.pt/>`__
-    |   The service that allows to store your data remotely and access them from inside your deployment.
+    | :fa:`database` `NextCloud <https://https://share.services.ai4os.eu/>`__
+    |   The service that allows to store your data remotely and access them from inside your deployment. (`old instance <https://data-deep.a.incd.pt/>`__)
     | :fab:`github` `Github (software) <https://github.com/ai4os>`__
     |   The code of the software powering the platform.
     | :fab:`github` `Github (modules) <https://github.com/deephdc>`__

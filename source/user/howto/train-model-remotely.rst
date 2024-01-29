@@ -35,7 +35,7 @@ a general overview of the workflow to follow when using any of the modules in th
 2. Upload your files to Nextcloud
 ---------------------------------
 
-For this example we are going to use `DEEP-Nextcloud <https://data-deep.a.incd.pt/>`__ for storing
+For this example we are going to use `DEEP-Nextcloud <https://share.services.ai4os.eu/>`__ for storing
 the dataset you want to retrain the model with.
 
 So login to Nextcloud with your DEEP-IAM credentials and you should access to an overview of your files.
@@ -278,7 +278,7 @@ In our case, this could look something like this:
 
 .. code-block:: docker
 
-    ENV SWIFT_CONTAINER https://data-deep.a.incd.pt/index.php/s/r8y3WMK9jwEJ3Ei/download
+    ENV SWIFT_CONTAINER https://share.services.ai4os.eu/index.php/s/r8y3WMK9jwEJ3Ei/download
     ENV MODEL_TAR phytoplankton.tar.xz
 
     RUN rm -rf image-classification-tf/models/*

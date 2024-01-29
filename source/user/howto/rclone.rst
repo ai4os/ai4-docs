@@ -48,13 +48,13 @@ For other Linux flavors, please refer to the `rclone official site  <https://rcl
 
     .. code-block:: console
 
-        https://data-deep.a.incd.pt/remote.php/webdav/
+        https://share.services.ai4os.eu/remote.php/webdav/
 
     to:
 
     .. code-block:: console
 
-        https://data-deep.a.incd.pt/remote.php/dav/files/USER
+        https://share.services.ai4os.eu/remote.php/dav/files/USER
 
     To maintain backward compatibility with old modules, we have decided to freeze the
     RCLONE version to ``1.62.2`` till the bug is fixed.
@@ -94,7 +94,7 @@ Configuring rclone
 
 First, you need to get your RCLONE credentials.
 
-After login into `DEEP-Nextcloud  <https://data-deep.a.incd.pt/>`__ with the :doc:`appropriate authentication </user/overview/auth>`,  go to
+After login into `DEEP-Nextcloud  <https://share.services.ai4os.eu/>`__ with the :doc:`appropriate authentication </user/overview/auth>`,  go to
 (1) **Settings** (top right corner) ➜ (2) **Security** ➜ (3) **Devices & sessions**. Set a name for your
 application (typically in the docs we will use ``rshare``) and click on **Create new app password**.
 This will generate your ``<user>`` and ``<password>`` credentials. Your username should start with ``DEEP-IAM-...``.
@@ -129,7 +129,7 @@ You can always check those env variables afterwards:
     $ printenv | grep RCLONE_CONFIG_RSHARE_
     RCLONE_CONFIG_RSHARE_VENDOR=nextcloud
     RCLONE_CONFIG_RSHARE_PASS=***some-password***
-    RCLONE_CONFIG_RSHARE_URL=https://data-deep.a.incd.pt/remote.php/webdav/
+    RCLONE_CONFIG_RSHARE_URL=https://share.services.ai4os.eu/remote.php/webdav/
     RCLONE_CONFIG_RSHARE_TYPE=webdav
     RCLONE_CONFIG_RSHARE_USER=***some-user***
 
@@ -167,7 +167,7 @@ Then run ``rclone config`` and answer the questions to configure the new remote:
     choose "n"  for "New remote"
     choose name for DEEP-Nextcloud --> rshare
     choose "Type of Storage" --> Webdav
-    provide DEEP-Nextcloud URL for webdav access --> https://data-deep.a.incd.pt/remote.php/webdav/
+    provide DEEP-Nextcloud URL for webdav access --> https://share.services.ai4os.eu/remote.php/webdav/
     choose Vendor --> Nextcloud
     specify "user" --> (see `<user>` in "Configuring rclone" above).
     password --> y (Yes type in my own password)
@@ -183,7 +183,7 @@ This will create an configuration file like the following:
 
     [rshare]
     type = webdav
-    url = https://data-deep.a.incd.pt/remote.php/webdav/
+    url = https://share.services.ai4os.eu/remote.php/webdav/
     vendor = nextcloud
     user = ***some-username***
     pass = ***some-userpassword**  --> this is equivalent to `rclone obscure <password>`
