@@ -376,3 +376,11 @@ One would add an additional stage to the Jenkins pipeline like so:
     }
 
 So if you want this step to be performed, you must submit a PR to the original module Docker repo with similar changes as above.
+
+
+10. Next steps
+--------------
+
+Do you want to go further?
+
+* What about trying to integrate :doc:`MLflow Experiment tracking </user/howto/mlops/mlflow>` into your deployment?
