@@ -76,6 +76,13 @@ but you still find that there is not disk left, please contact support.
 🔥 My GPU just disappeared from my deployment
 ---------------------------------------------
 
+You try to list to GPU and it doesn't appear:
+
+.. code-block:: console
+
+    $ nvidia-smi
+    Failed to initialize NVML: Unknown Error"
+
 This is due to `this issue <https://github.com/NVIDIA/nvidia-docker/issues/1730>`__.
 It should get fixed when we upgrade the GPU drivers, and this is planned for
 the next Nomad cluster we are setting up.
