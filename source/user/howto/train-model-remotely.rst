@@ -121,6 +121,8 @@ First let's check we are seeing our GPU correctly:
     $ nvidia-smi
 
 This should output the GPU model along with some extra info.
+
+Then :ref:`configure rclone <user/howto/rclone:Configuring rclone>`.
 We can also check rclone is correctly configured with:
 
 .. code-block:: console

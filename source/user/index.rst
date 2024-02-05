@@ -103,5 +103,6 @@ Others
 .. toctree::
    :maxdepth: 2
 
+   Frequently Asked Questions (FAQ) <others/faq>
    Useful Machine Learning resources <others/useful-ml-resources>
    Video demos <others/video-demos>
