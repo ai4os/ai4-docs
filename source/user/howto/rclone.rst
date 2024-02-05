@@ -94,10 +94,10 @@ Configuring rclone
 
 First, you need to get your RCLONE credentials.
 
-After login into `DEEP-Nextcloud  <https://share.services.ai4os.eu/>`__ with the :doc:`appropriate authentication </user/overview/auth>`,  go to
+After login into the `AI4OS Nextcloud  <https://share.services.ai4os.eu/>`__ with the :doc:`appropriate authentication </user/overview/auth>`,  go to
 (1) **Settings** (top right corner) ➜ (2) **Security** ➜ (3) **Devices & sessions**. Set a name for your
 application (typically in the docs we will use ``rshare``) and click on **Create new app password**.
-This will generate your ``<user>`` and ``<password>`` credentials. Your username should start with ``DEEP-IAM-...``.
+This will generate your ``<user>`` and ``<password>`` credentials. Your username should start with ``EGI_Checkin-...``.
 
 .. image:: /_static/images/nc-access.png
 
@@ -165,9 +165,9 @@ Then run ``rclone config`` and answer the questions to configure the new remote:
 
     $ rclone config
     choose "n"  for "New remote"
-    choose name for DEEP-Nextcloud --> rshare
+    choose name for AI4OS Nextcloud --> rshare
     choose "Type of Storage" --> Webdav
-    provide DEEP-Nextcloud URL for webdav access --> https://share.services.ai4os.eu/remote.php/webdav/
+    provide AI4OS Nextcloud URL for webdav access --> https://share.services.ai4os.eu/remote.php/webdav/
     choose Vendor --> Nextcloud
     specify "user" --> (see `<user>` in "Configuring rclone" above).
     password --> y (Yes type in my own password)

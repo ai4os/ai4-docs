@@ -35,10 +35,11 @@ a general overview of the workflow to follow when using any of the modules in th
 2. Upload your files to Nextcloud
 ---------------------------------
 
-For this example we are going to use `DEEP-Nextcloud <https://share.services.ai4os.eu/>`__ for storing
+For this example we are going to use the `AI4OS Nextcloud <https://share.services.ai4os.eu/>`__ for storing
 the dataset you want to retrain the model with.
 
-So login to Nextcloud with your DEEP-IAM credentials and you should access to an overview of your files.
+So login to Nextcloud with your :doc:`credentials </user/overview/auth>`
+and you should access to an overview of your files.
 Now it's time to upload your dataset.
 When training a model, the data has usually to be in a specific format and folder structure.
 It's usually helpful to read the README in the source code of the module
@@ -260,7 +261,7 @@ Among the fields you might need to edit are:
 * ``dataset_url`` (`optional`): the URL dataset URL,
 * ``cite_url`` (`optional`): the DOI URL of any related publication,
 
-Most other fields are pre-filled via the cookiecutter and usually do not need to be modified.
+Most other fields are pre-filled via the AI4OS Modules Template and usually do not need to be modified.
 Check you didn't mess up the JSON formatting by running:
 
 .. code-block:: console

@@ -215,7 +215,7 @@ You need to modify the following files according to your needs:
     * ``dataset_url`` (`optional`): the URL dataset URL,
     * ``cite_url`` (`optional`): the DOI URL of any related publication,
 
-    Most other fields are pre-filled via the cookiecutter and usually do not need to be modified.
+    Most other fields are pre-filled via the AI4OS Modules Template and usually do not need to be modified.
     Check you didn't mess up the JSON formatting by running:
 
     .. code-block:: console

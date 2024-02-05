@@ -46,7 +46,7 @@ model and retrains it to perform `seed classification <https://dashboard.cloud.a
 * the ability to train out-of-the-box a module of the :doc:`Dashboard <dashboard>` on your personal dataset
 * an :doc:`API <api>` to easily interact with the model
 * :ref:`data storage resources <user/overview/architecture:The data storage resources>` to access your dataset
-  using `DEEP-Nextcloud <https://share.services.ai4os.eu/>`__ (up to 2 Terabytes by default)
+  using the `AI4OS Nextcloud <https://share.services.ai4os.eu/>`__ (up to 2 Terabytes by default)
 * integration with popular cloud storage options like
   `Google Drive <https://www.google.com/drive/>`__, `Dropbox <https://www.dropbox.com/>`__,
   `Amazon S3 <https://aws.amazon.com/s3/>`__ and `many more <https://rclone.org/>`__
@@ -73,7 +73,7 @@ models.
 * a ready-to-use environment with the main DL frameworks running in a dockerized solution running on different types of
   hardware (CPUs, GPUs, etc)
 * :ref:`data storage resources <user/overview/architecture:The data storage resources>` to access your dataset
-  using `DEEP-Nextcloud <https://share.services.ai4os.eu/>`__ (up to 2 Terabytes by default)
+  using the `AI4OS Nextcloud <https://share.services.ai4os.eu/>`__ (up to 2 Terabytes by default)
 * integration with popular cloud storage options like
   `Google Drive <https://www.google.com/drive/>`__, `Dropbox <https://www.dropbox.com/>`__,
   `Amazon S3 <https://aws.amazon.com/s3/>`__ and `many more <https://rclone.org/>`__
@@ -85,6 +85,6 @@ models.
 
 **Related HowTo's:**
 
-* :doc:`How to use the DEEP Cookiecutter template for model development <cookiecutter-template>`
+* :doc:`How to use the AI4OS Modules Template for model development <cookiecutter-template>`
 * :doc:`How to develop your own machine learning model </user/howto/develop-model>`
 * :ref:`How to integrate your model with the DEEPaaS API <user/overview/api:Integrate your model with the API>`
