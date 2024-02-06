@@ -4,7 +4,55 @@ Frequently Asked Questions (FAQ)
 This page gathers know issues of the platform, along with possible solutions.
 If your issue does not appear here, please contact support.
 
-.. TODO: check if the FAQ still apply
+.. TODO: check if the FAQ issues still apply
+
+
+🔥 Service X is not working
+---------------------------
+
+Check the `Status page <https://status.ai4eosc.eu/>`__ to see if there is any
+maintenance action going on.
+If you don't see anything, wait a couple of hours to make sure it is not a
+temporary issue.
+
+If the issue persists, please contact support.
+
+
+🔥 The Dashboard says I only have 500 MB of disk in my deployment
+-----------------------------------------------------------------
+
+In your deployment information, you might see that under ``Disk memory`` your deployment
+has 500 MB assigned, which is much less than what you might have asked initially.
+
+For the time being, this number is meaningless, because we are not enforcing correctly the disk limits.
+Users have access to all the resources of the node, and they might conflict with other users disk space.
+This is why we kindly ask users to respect a **maximum** of 20 GB of disk usage per deployment.
+
+We are planning to fix this issue in the new cluster we are setting up.
+
+If you need more than 20 GB, please check :doc:`the provided option </user/overview/storage>` of accessing
+your dataset via a virtual filesystem, in order to avoid overloading the disk.
+
+
+🔥 I ran out of disk in my deployment
+--------------------------------------
+
+The current Nomad cluster has not the ability to properly isolate disk between
+different users using the same physical machine. So it might be the case that some
+user might be using more resources than their due share, thus consuming the disk
+of other users that share their same node.
+We are planning to fix this issue in the new cluster we are setting up.
+
+First, make sure to delete files in the Trash (``/root/.local/share/Trash/files``).
+Files end up there when deleted from the JupyterLab UI, thus not freeing up the space
+correctly.
+
+In the meantime, if you are sure that `you are using less than 20 GB of disk`,
+but you still find that there is not disk left, please contact support.
+
+If you need more than 20 GB, please check :doc:`the provided option </user/overview/storage>` of accessing
+your dataset via a virtual filesystem, in order to avoid overloading the disk.
+
 
 🔥 rclone fails to connect
 --------------------------
@@ -60,17 +108,49 @@ More info on how to :ref:`configure rclone <user/howto/rclone:Configuring rclone
 ..     $ rm rclone-current-linux-amd64.deb
 
 
-🔥 I ran out of disk in my deployment
---------------------------------------
+🔥 My deployment does not correctly list my resources
+-----------------------------------------------------
 
-The current Nomad cluster has not the ability to properly isolate disk between
-different users using the same physical machine. So it might be the case that some
-user might be using more resources than their due share, thus consuming the disk
-of other users that share their same node.
-We are planning to fix this issue in the new cluster we are setting up.
+The deployments in the platform are created as Docker containers.
+Therefore some resources might not be properly virtualized like in a traditional
+Virtual Machine.
+This means that standard commands for checking up resources might give you higher
+numbers than what is really available (ie. they give you the resources of the
+full Virtual Machine where Docker is running, not the resources avaible to your
+individual Docker container).
 
-In the meantime, if you are sure that `you are using less than 20 GB of disk`,
-but you still find that there is not disk left, please contact support.
+Standard commands:
+
+* **CPU**: ``lscpu | grep -E '^Thread|^Core|^Socket|^CPU\('``
+* **RAM memory**: ``free -h``
+* **Disk**: ``df -h``
+
+Real available resources can be found with the following commands:
+
+* **CPU**: ``printenv | grep NOMAD_CPU`` will show both reserved cores (``NOMAD_CPU_CORES``) and maximum CPU limit (in MHz) (``NOMAD_CPU_LIMIT``).
+* **RAM memory**: ``echo $NOMAD_MEMORY_LIMIT`` or ``cat /sys/fs/cgroup/memory/memory.limit_in_bytes``
+* **Disk**: ⏳🔧 we are working on properly limiting disk space, for the time being we ask you to kindly stick to the 20-25 GB quota .
+
+.. #TODO: modify disk commands when ready
+
+It is your job to program your application to make use of these real resources
+(eg. load smaller models, load less data, etc).
+Failing to do so could potentially make your process being killed for surpassing
+the available resources.
+For example, check how to limit CPU usage in `Tensorflow <https://stackoverflow.com/questions/57925061/how-can-i-reduce-the-number-of-cpus-used-by-tensorlfow-keras>`__
+or `Pytorch <https://pytorch.org/docs/stable/generated/torch.set_num_threads.html#torch.set_num_threads>`__.
+
+.. dropdown:: ㅤㅤ More info
+
+    For example trying to allocate 8GB in a 4GB RAM machine will lead to failure.
+
+    .. code-block:: console
+
+        root@2dc9e20f923e:/srv# stress -m 1 --vm-bytes 8G
+        stress: info: [69] dispatching hogs: 0 cpu, 0 io, 1 vm, 0 hdd
+        stress: FAIL: [69] (415) <-- worker 70 got signal 9
+        stress: WARN: [69] (417) now reaping child worker processes
+        stress: FAIL: [69] (451) failed run completed in 6s
 
 
 🔥 My GPU just disappeared from my deployment
@@ -96,14 +176,3 @@ In the meantime, your best option is to delete your deployment and create a new 
 No fix for this yet. Happens from time to time, for unknown reasons.
 Hopefully this will be magically fixed in the new cluster we are setting up with
 the upgraded Nomad version.
-
-
-🔥 Service X is not working
----------------------------
-
-Check the `Status page <https://status.ai4eosc.eu/>`__ to see if there is any
-maintenance action going on.
-If you don't see anything, wait a couple of hours to make sure it is not a
-temporary issue.
-
-If the issue persists, please contact support.

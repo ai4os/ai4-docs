@@ -21,3 +21,7 @@ Now, here are some guiding steps for your first contact with the AI4OS platform:
    choice to get a grasp of the Platform functionalities.
 
 Enjoy! 🚀
+
+.. tip::
+
+    If you run into problems you can always check the :doc:`Frequently Asked Questions (FAQ) </user/others/faq>`.

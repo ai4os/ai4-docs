@@ -78,7 +78,7 @@ This is because, to connect with the remote, rclone needs to use an obscured ver
 
 If your rclone version is higher than ``1.62.2``, then you must need to adapt the
 endpoint, running this command
-(see :ref:`FAQ <user/others/faq:rclone fails to connect>` for more info):
+(see :ref:`Frequently Asked Questions <user/others/faq:🔥 rclone fails to connect>` for more info):
 
 .. code-block:: console
 

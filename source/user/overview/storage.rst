@@ -33,8 +33,3 @@ really big dataset.
       this means you probably submitted the wrong :ref:`RCLONE credentials <user/howto/rclone:Configuring rclone>` during deployment.
       So please try to make a new deployment with the correct credentials.
 
-.. tip::
-    To free some space in your deployment, always make sure to delete files in the Trash
-    (``/root/.local/share/Trash/files``).
-
-:fa:`gear` In parallel, we are working on expanding disk capacity in the deployments! :fa:`gear`

@@ -139,48 +139,6 @@ in some parts of the code if long lines are really needed.
 
 Once you are fine with the state of ``<project-name>`` folder, push the changes to Github.
 
-.. warning::
-
-    The deployments in the platform are created as Docker containers.
-    Therefore some resources might not be properly virtualized like in a traditional
-    Virtual Machine.
-    This means that standard commands for checking up resources might give you higher
-    numbers than what is really available (ie. they give you the resources of the
-    full Virtual Machine where Docker is running, not the resources avaible to your
-    individual Docker container).
-
-    Standard commands:
-
-    * **CPU**: ``lscpu | grep -E '^Thread|^Core|^Socket|^CPU\('``
-    * **RAM memory**: ``free -h``
-    * **Disk**: ``df -h``
-
-    Real available resources can be found with the following commands:
-
-    * **CPU**: ``printenv | grep NOMAD_CPU`` will show both reserved cores (``NOMAD_CPU_CORES``) and maximum CPU limit (in MHz) (``NOMAD_CPU_LIMIT``).
-    * **RAM memory**: ``echo $NOMAD_MEMORY_LIMIT`` or ``cat /sys/fs/cgroup/memory/memory.limit_in_bytes``
-    * **Disk**: :fa:`hourglass-half` we are working on properly limiting disk space, for the time being we ask you to kindly stick to the 20-25 GB quota .
-
-    .. #TODO: modify disk commands when ready
-
-    It is your job to program your application to make use of these real resources
-    (eg. load smaller models, load less data, etc).
-    Failing to do so could potentially make your process being killed for surpassing
-    the available resources.
-    For example, check how to limit CPU usage in `Tensorflow <https://stackoverflow.com/questions/57925061/how-can-i-reduce-the-number-of-cpus-used-by-tensorlfow-keras>`__
-    or `Pytorch <https://pytorch.org/docs/stable/generated/torch.set_num_threads.html#torch.set_num_threads>`__.
-
-    .. dropdown:: ㅤㅤ More info
-
-        For example trying to allocate 8GB in a 4GB RAM machine will lead to failure.
-
-        .. code-block:: console
-
-            root@2dc9e20f923e:/srv# stress -m 1 --vm-bytes 8G
-            stress: info: [69] dispatching hogs: 0 cpu, 0 io, 1 vm, 0 hdd
-            stress: FAIL: [69] (415) <-- worker 70 got signal 9
-            stress: WARN: [69] (417) now reaping child worker processes
-            stress: FAIL: [69] (451) failed run completed in 6s
 
 3. Editing ``DEEP-OC-<project-name>`` code
 ------------------------------------------
@@ -257,3 +215,7 @@ When your module gets approved, you may need to commit and push a change to ``me
 in your ``https://github.com/<github-user>/DEEP-OC-<project-name>`` so that
 `the Pipeline <https://github.com/deephdc/DEEP-OC-demo_app/blob/726e068d54a05839abe8aef741b3ace8a078ae6f/Jenkinsfile#L104>`__
 is run for the first time, and your module gets rendered in the marketplace.
+
+.. tip::
+
+    If you run into problems you can always check the :doc:`Frequently Asked Questions (FAQ) </user/others/faq>`.
