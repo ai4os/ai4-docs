@@ -24,8 +24,9 @@ To install rclone on a Docker container based on Ubuntu you should add the follo
 .. code-block:: docker
 
     # Install rclone (needed if syncing with NextCloud for training; otherwise remove)
-    RUN curl -O https://downloads.rclone.org/v1.62.2/rclone-v1.62.2-linux-amd64.deb && \
-        apt install ./rclone-v1.62.2-linux-amd64.deb && \
+    RUN curl -O https://downloads.rclone.org/rclone-current-linux-amd64.deb && \
+        dpkg -i rclone-current-linux-amd64.deb && \
+        apt install -f && \
         mkdir /srv/.rclone/ && \
         touch /srv/.rclone/rclone.conf && \
         rm rclone-current-linux-amd64.deb && \
@@ -35,58 +36,12 @@ To install it directly on your machine:
 
 .. code-block:: console
 
-    $ curl -O https://downloads.rclone.org/v1.62.2/rclone-v1.62.2-linux-amd64.deb
-    $ apt install ./rclone-v1.62.2-linux-amd64.deb
+    $ curl -O https://downloads.rclone.org/rclone-current-linux-amd64.deb
+    $ dpkg -i rclone-current-linux-amd64.deb
+    $ apt install -f
     $ rm rclone-current-linux-amd64.deb
 
-For other Linux flavors, please refer to the `rclone official site  <https://rclone.org/downloads/>`__.
-
-.. warning::
-
-    RCLONE introduced a `bug <https://github.com/rclone/rclone/issues/7103>`__ in version
-    ``1.63.X`` which changed the remote url from:
-
-    .. code-block:: console
-
-        https://share.services.ai4os.eu/remote.php/webdav/
-
-    to:
-
-    .. code-block:: console
-
-        https://share.services.ai4os.eu/remote.php/dav/files/USER
-
-    To maintain backward compatibility with old modules, we have decided to freeze the
-    RCLONE version to ``1.62.2`` till the bug is fixed.
-
-
-
-.. TODO: uncomment when [1] is fixed
-.. [1]: https://github.com/rclone/rclone/issues/7103
-..
-.. To install rclone on a Docker container based on Ubuntu you should add the following code:
-
-.. .. code-block:: docker
-
-..     # Install rclone (needed if syncing with NextCloud for training; otherwise remove)
-..     RUN curl -O https://downloads.rclone.org/rclone-current-linux-amd64.deb && \
-..         dpkg -i rclone-current-linux-amd64.deb && \
-..         apt install -f && \
-..         mkdir /srv/.rclone/ && \
-..         touch /srv/.rclone/rclone.conf && \
-..         rm rclone-current-linux-amd64.deb && \
-..         rm -rf /var/lib/apt/lists/*
-
-.. To install it directly on your machine:
-
-.. .. code-block:: console
-
-..     $ curl -O https://downloads.rclone.org/rclone-current-linux-amd64.deb
-..     $ dpkg -i rclone-current-linux-amd64.deb
-..     $ apt install -f
-..     $ rm rclone-current-linux-amd64.deb
-
-.. For other Linux flavors, please refer to the `rclone official site  <https://rclone.org/downloads/>`__.
+For other Linux flavors, please refer to the `rclone official site <https://rclone.org/downloads/>`__.
 
 
 Configuring rclone
@@ -94,10 +49,10 @@ Configuring rclone
 
 First, you need to get your RCLONE credentials.
 
-After login into `DEEP-Nextcloud  <https://share.services.ai4os.eu/>`__ with the :doc:`appropriate authentication </user/overview/auth>`,  go to
+After login into the `AI4OS Nextcloud <https://share.services.ai4os.eu/>`__ with the :doc:`appropriate authentication </user/overview/auth>`,  go to
 (1) **Settings** (top right corner) ➜ (2) **Security** ➜ (3) **Devices & sessions**. Set a name for your
 application (typically in the docs we will use ``rshare``) and click on **Create new app password**.
-This will generate your ``<user>`` and ``<password>`` credentials. Your username should start with ``DEEP-IAM-...``.
+This will generate your ``<user>`` and ``<password>`` credentials. Your username should start with ``EGI_Checkin-...``.
 
 .. image:: /_static/images/nc-access.png
 
@@ -117,10 +72,19 @@ Once you machine is launched, you must run the following command in the terminal
     $ echo export RCLONE_CONFIG_RSHARE_PASS=$(rclone obscure $RCLONE_CONFIG_RSHARE_PASS) >> /root/.bashrc
     $ source /root/.bashrc
 
-..
-    Comment: We do this to spare users from having to install rclone in their local machines just to obscure the password.
+.. We do this to spare users from having to install rclone in their local machines just to obscure the password.
 
 This is because, to connect with the remote, rclone needs to use an obscured version of the password, not the raw one.
+
+If your rclone version is higher than ``1.62.2``, then you must need to adapt the
+endpoint, running this command
+(see :ref:`Frequently Asked Questions <user/others/faq:🔥 rclone fails to connect>` for more info):
+
+.. code-block:: console
+
+    $ echo export RCLONE_CONFIG_RSHARE_URL=${RCLONE_CONFIG_RSHARE_URL//webdav}/dav/files/${RCLONE_CONFIG_RSHARE_USER} >> /root/.bashrc
+
+.. TODO: change this commmand if the default endpoint in the API changes
 
 You can always check those env variables afterwards:
 
@@ -165,9 +129,9 @@ Then run ``rclone config`` and answer the questions to configure the new remote:
 
     $ rclone config
     choose "n"  for "New remote"
-    choose name for DEEP-Nextcloud --> rshare
+    choose name for AI4OS Nextcloud --> rshare
     choose "Type of Storage" --> Webdav
-    provide DEEP-Nextcloud URL for webdav access --> https://share.services.ai4os.eu/remote.php/webdav/
+    provide AI4OS Nextcloud URL for webdav access --> https://share.services.ai4os.eu/remote.php/webdav/
     choose Vendor --> Nextcloud
     specify "user" --> (see `<user>` in "Configuring rclone" above).
     password --> y (Yes type in my own password)

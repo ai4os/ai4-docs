@@ -12,7 +12,7 @@ There are different versions of this template:
 
 * `master <https://github.com/deephdc/cookiecutter-deep/tree/master>`__:
   this is what 99% of users are probably looking for. Simple, minimal template,
-  with the minimum requirements to integrate your code in DEEP.
+  with the minimum requirements to integrate your code in the AI4OS catalog.
 * `child-module <https://github.com/deephdc/cookiecutter-deep/tree/child-module>`__:
   this is a fork of the ``master`` branch specifically tailored to users performing a
   retraining of an existing module. It only creates a Docker repo whose container is
@@ -110,7 +110,7 @@ The content of these files is populated based on your answer to the questions.
     │   │
     │   ├── __init__.py        <- Makes {{cookiecutter.repo_name}} a Python module
     │   │
-    │   ├── api.py             <- Main script for the integration with DEEP API
+    │   ├── api.py             <- Main script for the integration with DEEPaaS API
     │   │
     │   ├── misc.py            <- Misc functions that were helpful across projects
     │   │

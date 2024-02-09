@@ -11,8 +11,6 @@ Current supported platforms use the following Identity providers:
 * **AI4EOSC**: :ref:`EGI Check-In (prod)  <user/overview/auth:EGI Check-In (prod)>`
 * **iMagine**: :ref:`EGI Check-In (prod)  <user/overview/auth:EGI Check-In (prod)>`
 
-Some services (eg. Nextcloud) still rely on the :ref:`DEEP IAM  <user/overview/auth:DEEP IAM>` provider.
-
 
 How to create an account
 ------------------------
@@ -54,9 +52,3 @@ You will need to wait until you are **approved** before being able to start usin
     * Reason to use the platform (e.g. use case)
     * Your institution or organization
     * How did you learn about the platform
-
-DEEP IAM
-^^^^^^^^
-
-Go to the `DEEP IAM <https://iam.deep-hybrid-datacloud.eu/login>`__ and select
-``Apply for an account``.

@@ -38,3 +38,8 @@ in the module's Marketplace page.
 The response from the ``predict()`` function will vary from module to module but usually consists on a JSON dict
 with the predictions. For example the image classifier return a list of predicted classes along with predicted accuracy.
 Other modules might return files instead of a JSON.
+
+
+.. tip::
+
+    If you run into problems you can always check the :doc:`Frequently Asked Questions (FAQ) </user/others/faq>`.
