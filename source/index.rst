@@ -43,6 +43,8 @@ Welcome to AI4OS documentation!
     |   Check if a specific AI4OS service might be down for some reason.
     | :fa:`folder-plus` `Module template <https://templates.cloud.ai4eosc.eu/>`__
     |   Create new modules based on our project's template.
+    | :fa:`chart-line` `MLflow server <https://mlflow.dev.ai4eosc.eu/>`__
+    |   Log your trainings parameters and models with our MLflow server.
 
 
 User documentation
