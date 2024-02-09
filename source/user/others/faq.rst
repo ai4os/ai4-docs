@@ -176,3 +176,21 @@ In the meantime, your best option is to delete your deployment and create a new 
 No fix for this yet. Happens from time to time, for unknown reasons.
 Hopefully this will be magically fixed in the new cluster we are setting up with
 the upgraded Nomad version.
+
+
+🚀 I would like to suggest a new feature
+----------------------------------------
+
+We are always happy improve our software based on user feedback.
+
+Please open an issue in the Github repo of the component you are interested in:
+
+* `The Dashboard <https://github.com/ai4os/ai4-dashboard/issues>`__
+* `FlowFuse/Oscar/Elyra <https://github.com/ai4os/ai4-compose/issues>`__
+* `The ML flow server <https://github.com/ai4os/ai4-mlflow/issues>`__
+* `Frouros <https://github.com/IFCA-Advanced-Computing/frouros/issues>`__
+
+If you think the documentation itself can be improved, don't hesitate to open
+an issue or submit a Pull Request.
+
+* `AI4OS documentation <https://github.com/ai4os/ai4-docs>`__
