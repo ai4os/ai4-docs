@@ -1,8 +1,13 @@
 Technical documentation
 =======================
 
-These pages contain technical notes software documentations, guides, tutorials,
-logbooks and similar documents produced for the AI4OS stack.
+These pages contain miscellaneous technical notes on the software produced for
+the AI4OS stack.
+
+A more comprehensive technical documentation of the components of the stack can be
+found in our `internal Confluence <https://confluence.ifca.es/display/AI4/>`__,
+as well as in the `Github repos <https://github.com/ai4os>`__ of each component.
+
 
 HowTo's (developers)
 --------------------
@@ -14,4 +19,3 @@ HowTo's (developers)
    howto-developers/pull_request_workflow.rst
    howto-developers/develop-dashboard.rst
    howto-developers/oidc-agent.rst
-   howto-developers/oidc-auth.rst

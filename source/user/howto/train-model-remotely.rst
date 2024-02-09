@@ -65,9 +65,9 @@ This structure is just an example in order to complete the workflow for this tut
 Once you have prepared your data locally, you can drag your folder to the Nextcloud Web UI to upload it.
 
 If you have your dataset in a remote machine, you will have to
-:ref:`install rclone <user/howto/rclone:Installing rclone>` on your remote machine,
-:ref:`configure it <user/howto/rclone:Configuring rclone>`
-and do an :ref:`rclone copy <user/howto/rclone:Using rclone>` to move your data to Nextcloud.
+:ref:`install rclone <user/howto/rclone:1. Installing rclone>` on your remote machine,
+:ref:`configure it <user/howto/rclone:2. Configuring rclone>`
+and do an :ref:`rclone copy <user/howto/rclone:3. Using rclone>` to move your data to Nextcloud.
 
 .. tip::
 
@@ -100,7 +100,7 @@ For the purposes of running a retraining, it should be filled as following:
 
 * ``jupyter password``, you have to provide a password at least 9 characters long, so that nobody will be able to access your machine, which will be exposed on a public IP.
 * ``rclone_user``, ``rclone_password``: those are the credentials to be able to mount your Nextcloud directory in your deployment.
-  :ref:`Go here <user/howto/rclone:Configuring rclone>` in order to find how to create them.
+  :ref:`Go here <user/howto/rclone:2. Configuring rclone>` in order to find how to create them.
 
 Now that you are done configuring, click **Submit** to create the deployment.
 See the :doc:`Dashboard guide </user/overview/dashboard>` for more details.
@@ -122,7 +122,7 @@ First let's check we are seeing our GPU correctly:
 
 This should output the GPU model along with some extra info.
 
-Then :ref:`configure rclone <user/howto/rclone:Configuring rclone>`.
+Then :ref:`configure rclone <user/howto/rclone:2. Configuring rclone>`.
 We can also check rclone is correctly configured with:
 
 .. code-block:: console

@@ -10,8 +10,8 @@ Although we will demonstrate here how to use it with Nextcloud, it can be used w
 different remote storages (Dropbox, Google Drive, Amazon S3, etc)
 
 
-Installing rclone
------------------
+1. Installing rclone
+--------------------
 
 All applications in the :doc:`AI4OS Dashboard</user/overview/dashboard>` are packed in a Docker image and have
 `rclone <https://rclone.org/>`__ installed by default. If you want to create a Docker containing your own application, you should install rclone
@@ -44,8 +44,8 @@ To install it directly on your machine:
 For other Linux flavors, please refer to the `rclone official site <https://rclone.org/downloads/>`__.
 
 
-Configuring rclone
-------------------
+2. Configuring rclone
+---------------------
 
 First, you need to get your RCLONE credentials.
 
@@ -171,8 +171,8 @@ One can also mount the ``rclone.conf`` file at a custom location and tell rclone
     $ rclone --config /custom/path/to/rclone.conf
 
 
-Using rclone
-------------
+3. Using rclone
+---------------
 
 You can check that everything works fine with:
 
