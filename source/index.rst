@@ -37,15 +37,16 @@ Welcome to AI4OS documentation!
     |   Where the Docker images of the modules are stored.
     | :fa:`timeline` `CI/CD pipeline <https://jenkins.indigo-datacloud.eu/job/Pipeline-as-code/job/DEEP-OC-org/>`__
     |   Continuous Integration and Continuous Development Jenkins instance to keep everything up-to-date with latest code changes.
-    | :fa:`rocket` `Inference platform (OSCAR) <https://inference.cloud.ai4eosc.eu/>`__
-    |    Scalable serverless inference of AI models.
     | :fa:`temperature-half` `Status of services <https://status.ai4eosc.eu/>`__
     |   Check if a specific AI4OS service might be down for some reason.
     | :fa:`folder-plus` `Module template <https://templates.cloud.ai4eosc.eu/>`__
     |   Create new modules based on our project's template.
     | :fa:`chart-line` `MLflow server <https://mlflow.dev.ai4eosc.eu/>`__
     |   Log your trainings parameters and models with our MLflow server.
-
+    | :fa:`rocket` `Inference platform (OSCAR) <https://inference.cloud.ai4eosc.eu/>`__
+    |    Scalable serverless inference of AI models.
+    | :fa:`rocket` `Workflows platform (Flowfuse) <https://forge.flows.dev.ai4eosc.eu/>`__
+    |    Compose custom AI workflows.
 
 User documentation
 ------------------

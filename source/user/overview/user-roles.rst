@@ -25,7 +25,7 @@ that has been containerized, and use it to classify their own plant images.
 
 **Related HowTo's:**
 
-* :doc:`How to perform inference remotely </user/howto/inference-remotely>`
+* :doc:`How to perform inference remotely </user/howto/inference-dashboard>`
 * :doc:`How to perform inference locally </user/howto/inference-locally>`
 
 
@@ -56,7 +56,7 @@ model and retrains it to perform `seed classification <https://dashboard.cloud.a
 **Related HowTo's:**
 
 * :doc:`How to train a model locally </user/howto/train-model-locally>`
-* :doc:`How to train a model remotely </user/howto/train-model-remotely>`
+* :doc:`How to train a model remotely </user/howto/train-model-dashboard>`
 
 
 The advanced user

@@ -158,4 +158,4 @@ In Nextcloud, go to the ``tar`` file you just created:
 6. Next steps
 -------------
 
-The next steps are common with the :ref:`remote training tutorial <user/howto/train-model-remotely:7. Create a Docker repo for your new module>`.
+The next steps are common with the :ref:`remote training tutorial <user/howto/train-model-dashboard:7. Create a Docker repo for your new module>`.
