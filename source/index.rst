@@ -61,9 +61,11 @@ If you are a user (current or potential) you should :doc:`start here <user/index
 Component documentation
 -----------------------
 
-Individual components' documentation can be found here:
+Here we share the documentation of components develop within the platform but that
+have their own documentation pages:
 
-* `DEEPaaS documentation <https://docs.deep-hybrid-datacloud.eu/projects/deepaas/>`__
+* `DEEPaaS documentation <https://docs.ai4os.eu/projects/deepaas>`__
+* `OSCAR <https://docs.oscar.grycap.net>`__
 
 
 Technical documentation

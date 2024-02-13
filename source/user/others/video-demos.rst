@@ -1,17 +1,15 @@
 Video demos
 ===========
 
-Check this `tutorial <https://www.youtube.com/watch?v=cRMIviobF_c>`__ for an updated overview of the platform.
-
-Please refer to the Youtube channel `playlist <https://www.youtube.com/playlist?list=PLJ9x9Zk1O-J_UZfNO2uWp2pFMmbwLvzXa>`_
-for a comprehensive list of video demos.
-
 Available demos include:
 
-* How to use the AI4OS Modules Template
-* How to deploy/train a module locally and remotely
-* How to use some of the modules available in the Marketplace
-* How to develop a module in the Testbed
-* ...
+* `Overview of the platform  <https://www.youtube.com/watch?v=cRMIviobF_c>`__
+* `How to develop a new AI module <https://www.youtube.com/watch?v=Ajgz51Sd1SU>`__
+* `How to train an AI module <https://www.youtube.com/watch?v=W1bPmUhzYFY>`__
+
+.. Please refer to the Youtube channel `playlist <https://www.youtube.com/playlist?list=PLJ9x9Zk1O-J_UZfNO2uWp2pFMmbwLvzXa>`_
+.. for a comprehensive list of video demos.
+
+.. todo: uncomment when the new playlist is ready
 
 Bear in mind the demos can become quickly **outdated** so please refer to the docs for the latest information.
