@@ -83,7 +83,7 @@ To fix this run the following command which will overwrite your endpoint:
     $ echo export RCLONE_CONFIG_RSHARE_URL=${RCLONE_CONFIG_RSHARE_URL//webdav}/dav/files/${RCLONE_CONFIG_RSHARE_USER} >> /root/.bashrc
 
 
-More info on how to :ref:`configure rclone <user/howto/rclone:Configuring rclone>`.
+More info on how to :ref:`configure rclone <user/howto/rclone:2. Configuring rclone>`.
 
 .. TODO: another option is to fix the rclone version to 1.62.2
 
@@ -130,6 +130,7 @@ Real available resources can be found with the following commands:
 * **CPU**: ``printenv | grep NOMAD_CPU`` will show both reserved cores (``NOMAD_CPU_CORES``) and maximum CPU limit (in MHz) (``NOMAD_CPU_LIMIT``).
 * **RAM memory**: ``echo $NOMAD_MEMORY_LIMIT`` or ``cat /sys/fs/cgroup/memory/memory.limit_in_bytes``
 * **Disk**: ⏳🔧 we are working on properly limiting disk space, for the time being we ask you to kindly stick to the 20-25 GB quota .
+
 .. #TODO: modify disk commands when ready
 .. * **Disk**: ``df -h | grep overlay`` will show you respectively ``Total|Used|Remaining`` disk
 

@@ -5,12 +5,12 @@ Storage is  currently taken care of by the `AI4OS Nextcloud <https://share.servi
 
 You have currently two ways of accessing your Nextcloud files from your deployment:
 
-1. you can :ref:`copy them locally <user/howto/rclone:Using rclone>` to your deployment disk using rclone.
+1. you can :ref:`copy them locally <user/howto/rclone:3. Using rclone>` to your deployment disk using rclone.
 
 2. you can access them in the ``/storage`` path in your deployment. This is a `virtual
    filesystem <https://rclone.org/commands/rclone_mount/>`__ that lets you access the Nextcloud storage via the network.
 
-For these options to work, you need to configure your :ref:`RCLONE credentials <user/howto/rclone:Configuring rclone>`
+For these options to work, you need to configure your :ref:`RCLONE credentials <user/howto/rclone:2. Configuring rclone>`
 when launching your deployment (under **Storage** options).
 
 Reading files from disk (**1**) is faster than reading them via the network (**2**).
@@ -30,6 +30,5 @@ really big dataset.
 
         ls: reading directory '/storage/': Input/output error
 
-      this means you probably submitted the wrong :ref:`RCLONE credentials <user/howto/rclone:Configuring rclone>` during deployment.
+      this means you probably submitted the wrong :ref:`RCLONE credentials <user/howto/rclone:2. Configuring rclone>` during deployment.
       So please try to make a new deployment with the correct credentials.
-

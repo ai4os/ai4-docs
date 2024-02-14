@@ -126,7 +126,7 @@ Choose the hardware type to run on:
 Storage configuration
 ^^^^^^^^^^^^^^^^^^^^^
 This is where you have to provide the **rclone** credentials to be able to mount your Nextcloud directory in your deployment.
-:ref:`Go here <user/howto/rclone:Configuring rclone>` in order to find how to create them.
+:ref:`Go here <user/howto/rclone:2. Configuring rclone>` in order to find how to create them.
 
 
 Managing the deployments
