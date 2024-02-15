@@ -45,7 +45,7 @@ Welcome to AI4OS documentation!
     |   Log your trainings parameters and models with our MLflow server.
     | :fa:`rocket` `Inference platform (OSCAR) <https://inference.cloud.ai4eosc.eu/>`__
     |    Scalable serverless inference of AI models.
-    | :fa:`rocket` `Workflows platform (Flowfuse) <https://forge.flows.dev.ai4eosc.eu/>`__
+    | :fa:`network-wired` `Workflows platform (Flowfuse) <https://forge.flows.dev.ai4eosc.eu/>`__
     |    Compose custom AI workflows.
 
 User documentation

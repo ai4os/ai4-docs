@@ -30,7 +30,7 @@ User documentation
     |   Log your trainings parameters and models with our MLflow server.
     | :fa:`rocket` `Inference platform (OSCAR) <https://inference.cloud.ai4eosc.eu/>`__
     |    Scalable serverless inference of AI models.
-    | :fa:`rocket` `Workflows platform (Flowfuse) <https://forge.flows.dev.ai4eosc.eu/>`__
+    | :fa:`network-wired` `Workflows platform (Flowfuse) <https://forge.flows.dev.ai4eosc.eu/>`__
     |    Compose custom AI workflows.
 
 
@@ -69,9 +69,9 @@ Use a model (basic user)
    :maxdepth: 2
 
    Perform inference locally <howto/inference-locally>
-   Perform inference remotely <howto/inference-dashboard>
-   Perform inference with AI4OS Inference (OSCAR) <howto/inference-oscar>
-   Create an AI inference workflow with Node-RED & FlowFuse <howto/ai4-compose/flows>
+   Perform inference with the Dashboard <howto/inference-dashboard>
+   Perform inference with OSCAR <howto/inference-oscar>
+   Create AI inference workflows with FlowFuse <howto/ai4-compose/flows>
 
 Train a model (intermediate user)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -80,7 +80,7 @@ Train a model (intermediate user)
    :maxdepth: 2
 
    Train a model locally <howto/train-model-locally>
-   Train a model remotely <howto/train-model-dashboard>
+   Train a model with the Dashboard <howto/train-model-dashboard>
    Use rclone to sync your dataset <howto/rclone>
    Use MLFlow for tracking your trainings <howto/mlops/mlflow>
 
