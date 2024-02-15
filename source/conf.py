@@ -95,7 +95,7 @@ pygments_style = 'sphinx'
 html_theme = 'sphinx_material'
 html_theme_options = {
     # 'color_primary': 'teal',
-    'globaltoc_depth': 3,
+    'globaltoc_depth': 4,
     'globaltoc_collapse': True,
     'html_minify': True,
     'css_minify': True,
@@ -197,3 +197,13 @@ todo_emit_warnings = True
 # -- Options for autosectionlabel extension ----------------------------------------------
 
 autosectionlabel_prefix_document = True
+
+
+# Enable reloading custom.css even if no changes where made to the RST
+# ref: https://github.com/sphinx-doc/sphinx/issues/2090#issuecomment-572902572
+
+def env_get_outdated(app, env, added, changed, removed):
+    return ['index']
+
+def setup(app):
+    app.connect('env-get-outdated', env_get_outdated)

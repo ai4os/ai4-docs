@@ -15,3 +15,38 @@ a.reference.external {
 a.reference.external:hover {
   color: rgba(61, 185, 209, 1);
 }
+
+
+/* Make nicer global TOC */
+/* For smaller screens, default to standard layout which is mobile friendly */
+@media screen and (min-width: 1800px) {
+
+  /* Lighter color in global TOC */
+  nav.md-nav--primary {
+    color: rgba(38,38,66,0.7)
+  }
+
+  /* Smaller fonts in both TOCs (global and contents) */
+  nav.md-nav {
+    font-size: 15px;
+  }
+
+  /* Properly align everything */
+  div.md-main__inner {
+    display: inline-flex;
+    max-width: none;
+  }
+  div.md-sidebar--primary {
+    width: 20rem;
+  }
+  div.md-sidebar--secondary {
+    margin-left: 99%;
+    width: 15rem;
+  }
+  div.md-content {
+    margin-left: 22rem;
+    margin-right: 22rem;
+    max-width: 1000px;
+  }
+
+}
