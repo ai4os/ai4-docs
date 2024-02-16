@@ -20,6 +20,8 @@ User documentation
     |   The code of all the modules available in the platform.
     | :fab:`docker` `DockerHub <https://hub.docker.com/u/deephdc/>`__
     |   Where the Docker images of the modules are stored.
+    | :fab:`docker` `Harbor <https://registry.services.ai4os.eu/>`__
+    |   Custom Docker image registry we deployed to overcome DockerHub limitations.
     | :fa:`timeline` `CI/CD pipeline <https://jenkins.indigo-datacloud.eu/job/Pipeline-as-code/job/DEEP-OC-org/>`__
     |   Continuous Integration and Continuous Development Jenkins instance to keep everything up-to-date with latest code changes.
     | :fa:`temperature-half` `Status of services <https://status.ai4eosc.eu/>`__
