@@ -36,10 +36,10 @@ To install it directly on your machine:
 
 .. code-block:: console
 
-    $ curl -O https://downloads.rclone.org/rclone-current-linux-amd64.deb
-    $ dpkg -i rclone-current-linux-amd64.deb
-    $ apt install -f
-    $ rm rclone-current-linux-amd64.deb
+    curl -O https://downloads.rclone.org/rclone-current-linux-amd64.deb
+    dpkg -i rclone-current-linux-amd64.deb
+    apt install -f
+    rm rclone-current-linux-amd64.deb
 
 For other Linux flavors, please refer to the `rclone official site <https://rclone.org/downloads/>`__.
 
@@ -69,8 +69,8 @@ Once you machine is launched, you must run the following command in the terminal
 
 .. code-block:: console
 
-    $ echo export RCLONE_CONFIG_RSHARE_PASS=$(rclone obscure $RCLONE_CONFIG_RSHARE_PASS) >> /root/.bashrc
-    $ source /root/.bashrc
+    echo export RCLONE_CONFIG_RSHARE_PASS=$(rclone obscure $RCLONE_CONFIG_RSHARE_PASS) >> /root/.bashrc
+    source /root/.bashrc
 
 .. We do this to spare users from having to install rclone in their local machines just to obscure the password.
 
@@ -82,7 +82,9 @@ endpoint, running this command
 
 .. code-block:: console
 
-    $ echo export RCLONE_CONFIG_RSHARE_URL=${RCLONE_CONFIG_RSHARE_URL//webdav}/dav/files/${RCLONE_CONFIG_RSHARE_USER} >> /root/.bashrc
+    echo export RCLONE_CONFIG_RSHARE_URL=${RCLONE_CONFIG_RSHARE_URL//webdav}/dav/files/${RCLONE_CONFIG_RSHARE_USER} >> /root/.bashrc
+    source /root/.bashrc
+
 
 .. TODO: change this commmand if the default endpoint in the API changes
 
@@ -90,18 +92,19 @@ You can always check those env variables afterwards:
 
 .. code-block:: console
 
-    $ printenv | grep RCLONE_CONFIG_RSHARE_
-    RCLONE_CONFIG_RSHARE_VENDOR=nextcloud
-    RCLONE_CONFIG_RSHARE_PASS=***some-password***
-    RCLONE_CONFIG_RSHARE_URL=https://share.services.ai4os.eu/remote.php/webdav/
-    RCLONE_CONFIG_RSHARE_TYPE=webdav
-    RCLONE_CONFIG_RSHARE_USER=***some-user***
+    printenv | grep RCLONE_CONFIG_RSHARE_
+    # RCLONE_CONFIG_RSHARE_VENDOR=nextcloud
+    # RCLONE_CONFIG_RSHARE_PASS=***some-password***
+    # RCLONE_CONFIG_RSHARE_URL=https://share.services.ai4os.eu/remote.php/webdav/
+    # RCLONE_CONFIG_RSHARE_TYPE=webdav
+    # RCLONE_CONFIG_RSHARE_USER=***some-user***
 
 and modify them if needed:
 
 .. code-block:: console
 
-    $ export RCLONE_CONFIG_RSHARE_PASS=***new-password***  # remember this should an obscured version of the raw password --> `rclone obscure <raw-password>`
+    export RCLONE_CONFIG_RSHARE_PASS=***new-password***
+    # remember this should an obscured version of the raw password --> `rclone obscure <raw-password>`
 
 
 Configuring via ``rclone config`` (local development)
@@ -114,32 +117,32 @@ First, make sure you don't have a remote with the same name already configured, 
 
 .. code-block:: console
 
-    $ rclone listremotes
+    rclone listremotes
 
 This should return an empty output. If this is not the case, make sure you don't have a remote configured via environment variables (previous section), which is the case if you are running this in a Dashboard deployment. To clear that remote, you just need to unset the variables:
 
 .. code-block:: console
 
-    $ echo 'unset RCLONE_CONFIG_RSHARE_VENDOR RCLONE_CONFIG_RSHARE_PASS RCLONE_CONFIG_RSHARE_URL RCLONE_CONFIG_RSHARE_TYPE RCLONE_CONFIG_RSHARE_USER' >> ~/.bashrc
-    $ source ~/.bashrc
+    echo 'unset RCLONE_CONFIG_RSHARE_VENDOR RCLONE_CONFIG_RSHARE_PASS RCLONE_CONFIG_RSHARE_URL RCLONE_CONFIG_RSHARE_TYPE RCLONE_CONFIG_RSHARE_USER' >> ~/.bashrc
+    source ~/.bashrc
 
 Then run ``rclone config`` and answer the questions to configure the new remote:
 
 .. code-block:: console
 
-    $ rclone config
-    choose "n"  for "New remote"
-    choose name for AI4OS Nextcloud --> rshare
-    choose "Type of Storage" --> Webdav
-    provide AI4OS Nextcloud URL for webdav access --> https://share.services.ai4os.eu/remote.php/webdav/
-    choose Vendor --> Nextcloud
-    specify "user" --> (see `<user>` in "Configuring rclone" above).
-    password --> y (Yes type in my own password)
-    specify "password" --> (see `<password>` in "Configuring rclone" above).
-    bearer token --> ""
-    Edit advanced config? --> n (No)
-    Remote config --> y (Yes this is OK)
-    Current remotes --> q (Quit config)
+    rclone config
+    # choose "n"  for "New remote"
+    # choose name for AI4OS Nextcloud --> rshare
+    # choose "Type of Storage" --> Webdav
+    # provide AI4OS Nextcloud URL for webdav access --> https://share.services.ai4os.eu/remote.php/webdav/
+    # choose Vendor --> Nextcloud
+    # specify "user" --> (see `<user>` in "Configuring rclone" above).
+    # password --> y (Yes type in my own password)
+    # specify "password" --> (see `<password>` in "Configuring rclone" above).
+    # bearer token --> ""
+    # Edit advanced config? --> n (No)
+    # Remote config --> y (Yes this is OK)
+    # Current remotes --> q (Quit config)
 
 This will create an configuration file like the following:
 
@@ -161,14 +164,14 @@ For security reasons, the ``rclone.conf`` should never be saved as part of the D
 
 .. code-block:: console
 
-    $ docker run -ti -v $HOSTDIR_WITH_RCLONE_CONF/rclone.conf:/$HOME/.config/rclone/rclone.conf <your-docker-image>
+    docker run -ti -v $HOSTDIR_WITH_RCLONE_CONF/rclone.conf:/$HOME/.config/rclone/rclone.conf <your-docker-image>
 
 One can also mount the ``rclone.conf`` file at a custom location and tell rclone where to find it:
 
 .. code-block:: console
 
-    $ docker run -ti -v $HOSTDIR_WITH_RCLONE_CONF/rclone.conf:/custom/path/to/rclone.conf <your-docker-image>
-    $ rclone --config /custom/path/to/rclone.conf
+    docker run -ti -v $HOSTDIR_WITH_RCLONE_CONF/rclone.conf:/custom/path/to/rclone.conf <your-docker-image>
+    rclone --config /custom/path/to/rclone.conf
 
 
 3. Using rclone
@@ -178,8 +181,8 @@ You can check that everything works fine with:
 
 .. code-block:: console
 
-    $ rclone listremotes    # check you don't have two remote storages with same name
-    $ rclone about rshare:  # should output your used space in Nextcloud.
+    rclone listremotes    # check you don't have two remote storages with same name
+    rclone about rshare:  # should output your used space in Nextcloud.
 
 .. tip::
 
@@ -192,7 +195,7 @@ You can start copying files from your remote to your local:
 
 .. code-block:: console
 
-    $ rclone copy rshare:/some/remote/path /some/local/path
+    rclone copy rshare:/some/remote/path /some/local/path
 
 .. tip::
 
@@ -201,5 +204,5 @@ You can start copying files from your remote to your local:
 
     .. code-block:: console
 
-        $ zip -r <foldername>.zip <foldername>
-        $ unzip <foldername>.zip
+        zip -r <foldername>.zip <foldername>
+        unzip <foldername>.zip
