@@ -3,7 +3,7 @@ Experiment Tracking and Model versioning in MLflow
 
 We currently have two instances of MLflow running:
 
-* `MLflow AI4EOSC <https://mlflow.dev.ai4eosc.eu>`__
+* `MLflow AI4EOSC <https://mlflow.cloud.ai4eosc.eu>`__
 * `MLflow iMagine <https://mlflow.dev.imagine.eu>`__
 
 When following this tutorial, adapt the MLflow links depending on which
@@ -15,7 +15,7 @@ In case you already have a MLflow account, you can proceed to step 2.
 1. Register for an account in MLflow
 -------------------------------------
 
-Go to the `Sign Up page <https://mlflow.dev.ai4eosc.eu/signup>`__ for self registration.
+Go to the `Sign Up page <https://mlflow.cloud.ai4eosc.eu/signup>`__ for self registration.
 
 .. image:: /_static/images/mlflow_self_registration.png
    :width: 500 px
@@ -38,7 +38,7 @@ Once you are ready, proceed to the new step by clicking in ``Go to mlflow``.
 2. Login the MLflow UI
 ----------------------
 
-In the `MLflow login page <https://mlflow.dev.ai4eosc.eu/signup>`__ you will be asked
+In the `MLflow login page <https://mlflow.cloud.ai4eosc.eu/signup>`__ you will be asked
 to input your credentials:
 
 * ``Username``: the email associated with your :doc:`authentication </user/overview/auth>`
@@ -80,7 +80,7 @@ For this you have to do the following steps in your deployment.
       os.environ['MLFLOW_TRACKING_USERNAME'] = MLFLOW_TRACKING_USERNAME
       os.environ['MLFLOW_TRACKING_PASSWORD'] = MLFLOW_TRACKING_PASSWORD
       # Remote MLflow server
-      MLFLOW_REMOTE_SERVER="https://mlflow.dev.ai4eosc.eu"
+      MLFLOW_REMOTE_SERVER="https://mlflow.cloud.ai4eosc.eu"
       #Set the MLflow server and backend and artifact stores
       mlflow.set_tracking_uri(MLFLOW_REMOTE_SERVER)
       # Name of the experiment (e.g. name of the code repository)
