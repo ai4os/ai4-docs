@@ -161,7 +161,7 @@ There exists two Logging options as illustrated in the following Figures.
    # Log Param (Log a parameter under the current run):
    mlflow.log_param("batch_size", 64)
    # Log Params (Log multiple parameter under the current run):
-   mlflow.log_param({"hidden_units": 100,
+   mlflow.log_params({"hidden_units": 100,
                      "activation": "relu",
                      "batch_size”:64,
                      "validation_split": 0.2})
@@ -180,3 +180,5 @@ There exists two Logging options as illustrated in the following Figures.
    fig, ax  = plt.subplots()
    ax.plot ([1,2],[4,5])
    mlflow.log_figure(fig, "fig_plot.png")
+   # Log a dataset (CSV format) as an artifact in MLflow
+   mlflow.log_artifact(data_csv, artifact_path="artifacts")
