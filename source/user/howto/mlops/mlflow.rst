@@ -139,3 +139,44 @@ deployment:
    result = mlflow.register_model(
       f"runs:/{run_id}/artifacts/", MLFLOW_MODEL_NAME
    )
+
+
+4. MLflow AutoLogging and CustomLogging
+---------------------------------------
+
+There exists two Logging options as illustrated in the following Figures.
+
+.. image:: /_static/images/mlflow_autolog_quickview.png
+   :width: 1000 px
+
+.. image:: /_static/images/mlflow_custom_log_quickview.png
+   :width: 1000 px
+
+**Important commands to know**
+
+* Log Experiment-Run
+
+.. code-block:: python
+
+   # Log Param (Log a parameter under the current run):
+   mlflow.log_param("batch_size", 64)
+   # Log Params (Log multiple parameter under the current run):
+   mlflow.log_param({"hidden_units": 100,
+                     "activation": "relu",
+                     "batch_size”:64,
+                     "validation_split": 0.2})
+   # Log Metric  (Log a metric under the current run):
+   mlflow.log_metric("mse", 90.00)
+   # Log Metric  (Log multiple metrics under the current run):
+   mlflow.log_metrics({"mse": 90.00,
+                     "rmse": 75.00})
+
+* Log Artifact(s)
+
+.. code-block:: python
+
+   # Log Figure (Log a figure as an artifact)
+   import matplotlib.pyplot as plt
+   fig, ax  = plt.subplots()
+   ax.plot ([1,2],[4,5])
+   mlflow.log_figure(fig, "fig_plot.png")
