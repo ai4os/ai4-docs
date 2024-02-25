@@ -41,3 +41,5 @@ If you want to change any parameters in the federated configuration, you can alw
 .. note::
     For more information, see the *Getting Started* step by step guide available in the `federated server repository <https://github.com/deephdc/federated-server>`__. 
 
+    Also, you can check the tutorial on the use of `Federated Learning within the AI4EOSC Platform <https://youtu.be/FrgVummLNbU>`__.
+
