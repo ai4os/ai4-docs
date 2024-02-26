@@ -15,7 +15,8 @@ In case you already have a MLflow account, you can proceed to step 2.
 1. Register for an account in MLflow
 -------------------------------------
 
-Go to the Sign Up page of the project for self registration:
+Go to the Sign Up page for self registration in MLflow:
+
 * AI4EOSC: `Sign Up page <https://mlflow.cloud.ai4eosc.eu/signup>`__
 * iMagine: `Sign Up page <https://mlflow.cloud.imagine-ai.eu/signup>`__
 
