@@ -74,6 +74,7 @@ Use a model (basic user)
    Perform inference with the Dashboard <howto/inference-dashboard>
    Perform inference with OSCAR <howto/inference-oscar>
    Create AI inference workflows with FlowFuse <howto/ai4-compose/flows>
+   Create AI inference workflows with Elyra <howto/ai4-compose/elyra>
 
 Train a model (intermediate user)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
