@@ -4,7 +4,7 @@ Experiment Tracking and Model versioning in MLflow
 We currently have two instances of MLflow running:
 
 * `MLflow AI4EOSC <https://mlflow.cloud.ai4eosc.eu>`__
-* `MLflow iMagine <https://mlflow.dev.imagine.eu>`__
+* `MLflow iMagine <https://mlflow.cloud.imagine-ai.eu>`__
 
 When following this tutorial, adapt the MLflow links depending on which
 :doc:`Virtual Organization you belong to </user/overview/auth>`.
@@ -15,7 +15,10 @@ In case you already have a MLflow account, you can proceed to step 2.
 1. Register for an account in MLflow
 -------------------------------------
 
-Go to the `Sign Up page <https://mlflow.cloud.ai4eosc.eu/signup>`__ for self registration.
+Go to the Sign Up page for self registration in MLflow:
+
+* AI4EOSC: `Sign Up page <https://mlflow.cloud.ai4eosc.eu/signup>`__
+* iMagine: `Sign Up page <https://mlflow.cloud.imagine-ai.eu/signup>`__
 
 .. image:: /_static/images/mlflow_self_registration.png
    :width: 500 px

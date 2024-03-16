@@ -12,3 +12,6 @@ make hmtl
 
 If you upload new images as part of your modifications, make sure
 [to compress them](https://www.iloveimg.com/compress-image/compress-png).
+
+When you feel your PR is ready, tag [IgnacioHeredia](https://github.com/IgnacioHeredia)
+as a reviewer.
