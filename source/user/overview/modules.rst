@@ -5,6 +5,12 @@ All  modules are found at the :doc:`AI4OS Dashboard <dashboard>`, the source cod
 hosted under `Github's deephdc <https://github.com/deephdc>`__ organization and the corresponding Docker images are
 hosted under `DockerHub's deephdc <https://hub.docker.com/u/deephdc/>`__ organization.
 
+.. important::
+
+    The module structure will change soon. We will move to a single repo structure
+    hosted in the `Github's ai4os-hub <https://github.com/ai4os-hub>`__ organization.
+    Keep tuned for the updates! 📢
+
 Modules developed by **deephdc members** follow the following convention:
 
 * ``deephdc/<project-name>``: source code of the module
