@@ -1,6 +1,12 @@
 Composing AI Inference pipelines based on OSCAR services with Elyra in EGI Notebooks
 ====================================================================================
 
+.. raw:: html
+
+    <div style="position: relative; padding-bottom: 56.25%; margin-bottom: 2em; height: 0; overflow: hidden; max-width: 100%; height: auto;">
+        <iframe src="https://www.youtube.com/watch?v=1pFjs0LND4E" frameborder="0" allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
+    </div>
+
 .. image:: /_static/images/elyra/elyra_icon.png
     :width: 500
     :align: center
@@ -156,13 +162,3 @@ For all the examples, you'll again need the credentials node to send the necessa
 variables.
 Additionally, other nodes will be involved to perform tasks like converting images to
 and from Base64 format.
-
-
-4. Deploying Elyra pipelines in EGI Notebooks: A video tutorial
------------------------
-
-In the following `link <https://youtu.be/1pFjs0LND4E?si=BrL15mwVteiCPzl8>`_, you can find a video tutorial on deploying pipelines using Elyra in EGI Notebooks.
-
-
-
-
