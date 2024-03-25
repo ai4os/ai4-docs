@@ -361,3 +361,8 @@ After installation, it's good practice to test the new modules or nodes to ensur
 work as expected.
 
 .. image:: /_static/images/flows/35.png
+
+6. Deploying Node-RED workflows in FlowFuse: A video tutorial
+-----------------------
+
+In the following `link <https://youtu.be/9a019SA5GW4?si=FXh6qcf0_6DUh2Ry>`_, you can find a video tutorial on deploying workflows using Node-RED in FlowFuse.
