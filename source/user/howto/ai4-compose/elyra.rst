@@ -156,3 +156,13 @@ For all the examples, you'll again need the credentials node to send the necessa
 variables.
 Additionally, other nodes will be involved to perform tasks like converting images to
 and from Base64 format.
+
+
+4. Deploying Elyra pipelines in EGI Notebooks: A video tutorial
+-----------------------
+
+In the following `link <https://youtu.be/1pFjs0LND4E?si=BrL15mwVteiCPzl8>`_, you can find a video tutorial on deploying pipelines using Elyra in EGI Notebooks.
+
+
+
+
