@@ -1,6 +1,12 @@
 Composing AI Inference workflows with Node-RED & Flowfuse
 =========================================================
 
+.. raw:: html
+
+    <div style="position: relative; padding-bottom: 56.25%; margin-bottom: 2em; height: 0; overflow: hidden; max-width: 100%; height: auto;">
+        <iframe src="https://www.youtube.com/watch?v=9a019SA5GW4" frameborder="0" allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
+    </div>
+
 In this document, we will learn about Composing AI Inference workflows based on OSCAR
 services with Node-RED & FlowFuse, specifically:
 
@@ -361,8 +367,3 @@ After installation, it's good practice to test the new modules or nodes to ensur
 work as expected.
 
 .. image:: /_static/images/flows/35.png
-
-6. Deploying Node-RED workflows in FlowFuse: A video tutorial
------------------------
-
-In the following `link <https://youtu.be/9a019SA5GW4?si=FXh6qcf0_6DUh2Ry>`_, you can find a video tutorial on deploying workflows using Node-RED in FlowFuse.
