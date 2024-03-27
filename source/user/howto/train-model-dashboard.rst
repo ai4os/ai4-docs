@@ -221,8 +221,15 @@ through an URL so they can be downloaded in your Docker container.
 In Nextcloud, go to the ``tar`` file you just created:
 :fa:`share-nodes` ➜ Share Link ➜ :fa:`square-plus` (Create a new share link)
 
-`Optionally`, in order to improve the reproducibility of your code, you can share the dataset you trained on.
-If your dataset is not already publicly available, we have a `Zenodo community <https://zenodo.org/communities/ai4eosc>`__ we you are more than welcomed to contribute your dataset.
+.. admonition:: Zenodo preservation
+
+    `Optionally`, in order to improve the reproducibility of your code, we encourage you
+    to share your training dataset on `Zenodo <https://zenodo.org>`__.
+    Once you upload the dataset, make sure to link it with our
+    `Zenodo community <https://zenodo.org/communities/ai4eosc>`__.
+
+    If long-term preservation and versioning of model weights is important to you, you can
+    also upload the model weights to Zenodo in addition to Nextcloud.
 
 
 7. Create a Docker repo for your new module
