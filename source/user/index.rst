@@ -41,7 +41,8 @@ New to the project? How about a quick dive?
 .. toctree::
    :maxdepth: 2
 
-   Quickstart <quickstart>
+   📝 Quickstart <quickstart>
+   ⭐ New features <new-features>
 
 Overview
 --------
