@@ -1,8 +1,18 @@
 Authentication
 ==============
 
-The authentication for the AI4OS stack depends on the platform it is deployed.
+To proceed with creating an account, you need to be a member of one of the following
+projects:
 
+* `AI4EOSC <https://ai4eosc.eu/>`__: AI for the European Open Science Cloud
+* `iMagine <https://imagine-ai.eu/>`__: Imaging data and services for aquatic science
+
+If you are not a member of them, consider joining by applying to the *Open calls for
+external usecases*. More information about the Calls can be found in their respective
+homepages.
+
+Once you are a member of either platform, you can proceed to create an account.
+The authentication for the AI4OS stack depends on the platform it is deployed.
 Current supported platforms use the following Identity providers:
 
 * **AI4EOSC**: :ref:`EGI Check-In (prod)  <user/overview/auth:EGI Check-In (prod)>`
