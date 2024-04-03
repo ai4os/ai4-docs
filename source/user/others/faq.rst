@@ -54,6 +54,24 @@ If you need more than 20 GB, please check :doc:`the provided option </user/overv
 your dataset via a virtual filesystem, in order to avoid overloading the disk.
 
 
+🔥 I cannot access ``/storage``
+-------------------------------
+
+You try to :doc:`access "/storage" </user/overview/storage>` and you get the message:
+
+.. code:: console
+
+    root@226c02330e9f:/srv# ls /storage
+    ls: reading directory '/storage': Input/output error
+
+This probably means that you have entered the wrong credentials when configuring your
+deployment in the :doc:`Dashboard </user/overview/dashboard>`.
+
+You will need to delete the current deployment and make a new one.
+Follow our guidelines on how to :ref:`get an RCLONE user and password <user/howto/rclone:2. Configuring rclone>`
+to fill the deployment configuration form.
+
+
 🔥 rclone fails to connect
 --------------------------
 
