@@ -1,6 +1,3 @@
-.. include:: <isonum.txt>
-.. highlight:: console
-
 Rclone code examples
 ====================
 
@@ -129,4 +126,3 @@ Source, check if after copying two versions match exactly.
 
     sync_nextcloud('rshare:/your/dataset/folder', '/your/data/path/inside/the/container') # sync local with nextcloud
     sync_nextcloud('/your/data/path/inside/the/container', 'rshare:/your/dataset/folder') # sync nextcloud with local
-

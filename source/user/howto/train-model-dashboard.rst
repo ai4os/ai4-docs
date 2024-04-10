@@ -1,5 +1,3 @@
-.. include:: <isonum.txt>
-
 Train a model remotely
 ======================
 
@@ -251,7 +249,7 @@ specially tailored to this task:
 * Click on ``Generate`` and you will be able to download a ``.zip`` file with
   one project directory:
 
-  .. code-block:: console
+  .. code-block::
 
       ~/DEEP-OC-<project-name>
 
@@ -301,7 +299,7 @@ In our case, this could look something like this:
 
 Check your Dockerfile works correctly by building it locally and running it:
 
-  .. code-block:: console
+.. code-block:: console
 
     $ docker build --no-cache -t your_project .
     $ docker run -ti -p 5000:5000 -p 6006:6006 -p 8888:8888 your_project

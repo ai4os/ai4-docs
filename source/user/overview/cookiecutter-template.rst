@@ -1,6 +1,3 @@
-.. include:: <isonum.txt>
-.. highlight:: console
-
 AI4OS Modules Template
 ======================
 

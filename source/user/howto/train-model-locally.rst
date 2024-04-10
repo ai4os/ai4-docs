@@ -1,5 +1,3 @@
-.. include:: <isonum.txt>
-
 Train a model locally
 =====================
 

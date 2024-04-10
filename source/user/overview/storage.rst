@@ -26,7 +26,7 @@ really big dataset.
 
     * If you see the following error message when trying to access ``/storage``:
 
-      .. code-block:: console
+      .. code-block::
 
         ls: reading directory '/storage/': Input/output error
 

@@ -65,9 +65,9 @@ For this you have to do the following steps in your deployment.
 1. First install mlflow client from the IDE that you are using to build your AI model,
    by executing:
 
-  .. code-block:: console
+   .. code-block:: console
 
-      pip install mlflow[extras]
+       $ pip install mlflow[extras]
 
 2. Edit your code to insert MLflow constants (env vars) and statements so that your
    experiments will be logged to the tracking server we deployed.

@@ -22,11 +22,11 @@ Once your federated server is deployed, you have to:
 
 1. (Recomended) When starting the deployment of the federated learning server, use JupyterLab or VisualStudio Code as service to run if you want to monitor the process. Execute:
 
-  .. code-block:: console
+   .. code-block:: console
 
-       python3 -m fedsever.server
+       $ python3 -m fedsever.server
 
-If you want to change any parameters in the federated configuration, you can always modify ``fedserver/server.py``.
+   If you want to change any parameters in the federated configuration, you can always modify ``fedserver/server.py``.
 
    *(Optional)*: if you deploy it using ``fedserver`` the federated learning server will be started automatically, but you will not be able to monitor the process (e.g. if there is a failure, how the clients are connected or if any of them is disconnected).
 
@@ -39,7 +39,6 @@ If you want to change any parameters in the federated configuration, you can alw
    to serve as reference.
 
 .. note::
-    For more information, see the *Getting Started* step by step guide available in the `federated server repository <https://github.com/deephdc/federated-server>`__. 
+    For more information, see the *Getting Started* step by step guide available in the `federated server repository <https://github.com/deephdc/federated-server>`__.
 
     Also, you can check the tutorial on the use of `Federated Learning within the AI4EOSC Platform <https://youtu.be/FrgVummLNbU>`__.
-

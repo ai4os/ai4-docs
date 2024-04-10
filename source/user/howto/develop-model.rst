@@ -38,7 +38,7 @@ for creating a template for your new module:
 * Click on ``Generate`` and you will be able to download a ``.zip`` file with
   two project directories:
 
-  .. code-block:: console
+  .. code-block::
 
       ~/DEEP-OC-<project-name>
       ~/<project-name>
@@ -46,7 +46,7 @@ for creating a template for your new module:
   Extract them locally.
 * Go to Github and create the corresponding repositories:
 
-  .. code-block:: console
+  .. code-block::
 
       https://github.com/<github-user>/<project-name>
       https://github.com/<github-user>/DEEP-OC-<project-name>

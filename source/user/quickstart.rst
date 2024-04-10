@@ -1,5 +1,3 @@
-.. highlight:: console
-
 Quickstart Guide
 =================
 
