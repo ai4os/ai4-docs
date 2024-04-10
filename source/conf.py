@@ -43,7 +43,14 @@ extensions = [
     'sphinx_markdown_tables',
     'sphinx.ext.autosectionlabel',
     'sphinx_design',  # for fonts-awesome icons
+    'sphinx_copybutton',  # copy button for code blocks
 ]
+
+# In code blocks, the copy button will exclude:
+#   .lineos: line numbers
+#   .gp: prompts
+#   .go: console outputs
+copybutton_exclude = '.linenos, .gp, .go'
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
@@ -51,7 +58,6 @@ templates_path = ['_templates']
 source_parsers = {
     '.md': 'recommonmark.parser.CommonMarkParser',
 }
-
 
 # The suffix(es) of source filenames.
 # You can specify multiple suffix as a list of string:
