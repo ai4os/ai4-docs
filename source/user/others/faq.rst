@@ -98,7 +98,7 @@ To fix this run the following command which will overwrite your endpoint:
 
 .. code-block:: console
 
-    $ echo export RCLONE_CONFIG_RSHARE_URL=${RCLONE_CONFIG_RSHARE_URL//webdav}/dav/files/${RCLONE_CONFIG_RSHARE_USER} >> /root/.bashrc
+    $ echo export RCLONE_CONFIG_RSHARE_URL=${RCLONE_CONFIG_RSHARE_URL//webdav\/}dav/files/${RCLONE_CONFIG_RSHARE_USER} >> /root/.bashrc
 
 
 More info on how to :ref:`configure rclone <user/howto/rclone:2. Configuring rclone>`.

@@ -82,7 +82,7 @@ endpoint, running this command
 
 .. code-block:: console
 
-    echo export RCLONE_CONFIG_RSHARE_URL=${RCLONE_CONFIG_RSHARE_URL//webdav}/dav/files/${RCLONE_CONFIG_RSHARE_USER} >> /root/.bashrc
+    echo export RCLONE_CONFIG_RSHARE_URL=${RCLONE_CONFIG_RSHARE_URL//webdav\/}dav/files/${RCLONE_CONFIG_RSHARE_USER} >> /root/.bashrc
     source /root/.bashrc
 
 
