@@ -39,7 +39,10 @@ Once your federated server is deployed, you have to:
 Client-server authentication
 ----------------------------
 AIOS provide users with a secret management system that can be used for authenticating theimplementationimplementation clients prior to their incorporation into the federated training through the use of tokens.
-You can generate as many federated secrets (tokens) for authenticating the clients with the server as needed (label them so that you can revoke them if necessary).
+You can generate as many federated secrets (tokens) for authenticating the clients with the server as needed (label them so that you can revoke them if necessary):
+
+.. image:: /_static/images/test-secrets.png
+   :width: 500 px
 
 From the client side: 
 
