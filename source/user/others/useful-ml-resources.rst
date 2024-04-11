@@ -4,6 +4,13 @@ Useful Machine Learning resources
 This is a piece of documentation trying to offer some advice on tools to
 use to answer common problems (non ML expert) users might face.
 
+AI4EOSC webinars
+----------------
+The AI4EOSC project has organized a series of webinars on the use of the platform (based on the AI4OS software stack), AI, machine learning, deep learning, image processing, image segmentation and other relevant topics. These can be accessed on YouTube at the following links:
+
+* `Introduction to the platform <https://www.youtube.com/watch?v=op70toJFBrk>`__
+* `Image processing with AI4EOSC <https://www.youtube.com/watch?v=JQOWmsEQANs>`__
+
 
 Tutorials
 ---------
@@ -111,10 +118,10 @@ Dataset shift
 
 Is your dataset likely to degrade over time (eg. cam gets dirty). Keep on eye on it!
 
+* `Frouros <https://github.com/IFCA/frouros>`__ 
 * `Alibi-detect <https://github.com/SeldonIO/alibi-detect>`__
 * `Avalanche <https://github.com/ContinualAI/avalanche>`__ - Continual Learning library based on Pytorch
 * `River <https://github.com/online-ml/river>`__ - Online learning
-* `Frouros <https://github.com/IFCA/frouros>`__ - Jaime's library
 * `Cinnamon <https://github.com/zelros/cinnamon>`__
 * `Eurybia <https://github.com/MAIF/eurybia>`__
 
