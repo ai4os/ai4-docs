@@ -49,29 +49,7 @@ From the client side:
       from pathlib import Path
       import certifi
       import ai4flwr.auth.bearer
-import flwr as fl
-import numpy as np
-from pathlib import Path
 
-import tensorflow as tf
-tf.get_logger().setLevel('ERROR')
-
-from tensorflow.keras.models import Sequential
-from tensorflow.keras.layers import Conv2D
-from tensorflow.keras.layers import MaxPooling2D
-from tensorflow.keras.layers import Flatten
-from tensorflow.keras.layers import Dense
-from tensorflow.keras.layers import Dropout
-from tensorflow.keras.layers import BatchNormalization
-
-from sklearn.model_selection import train_test_split
-from sklearn import metrics
-
-import matplotlib.pyplot as plt
-
-import certifi
-
-import ai4flwr.auth.bearer
       # Read the data, create the model
       # (...)
 
@@ -103,7 +81,8 @@ import ai4flwr.auth.bearer
           client=Client1(),
           root_certificates=Path(certifi.where()).read_bytes(),
           call_credentials=auth_plugin.call_credentials()
-)
+      )
+
 
 .. note::
     For more information, see the *Getting Started* step by step guide available in the `federated server repository <https://github.com/deephdc/federated-server>`__.
