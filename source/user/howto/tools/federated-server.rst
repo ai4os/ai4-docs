@@ -53,8 +53,7 @@ From the client side:
       # Read the data, create the model
       # (...)
 
-      # Create the class Client(), example:
-      # Flower client
+      # Create the class Client(), example of Flower client:
       class Client1(fl.client.NumPyClient):
           def get_parameters(self, config):
               return model.get_weights()
@@ -69,7 +68,7 @@ From the client side:
               loss, accuracy = model.evaluate(x_test, y_test)
               return loss, len(x_test), {"accuracy": accuracy}
 
-      
+        
       token = "12345" # Token generated in the dashboard
       auth_plugin = ai4flwr.auth.bearer.BearerTokenAuthPlugin(token)
       
