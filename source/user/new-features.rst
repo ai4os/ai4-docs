@@ -10,6 +10,7 @@ notified here.
 .. Template
 .. * 📘 new :doc:`... </user/...>` page (``2024-04-03``)
 
+* 📘 support for token authentication in :doc:`Federated Learning trainings </user/howto/tools/federated-server>` (``2024-04-16``)
 * 📘 new :doc:`New features  </user/new-features>` page (meta!) (``2024-04-03``)
 * 📘 new tutorials for using AI workflows tools (:doc:`Elyra </user/howto/ai4-compose/elyra>`, :doc:`Flowfuse </user/howto/ai4-compose/flows>`) (``2024-03-18``)
 * 📘 new :doc:`MLflow </user/howto/mlops/mlflow>` tutorials (``2024-02-09``)
