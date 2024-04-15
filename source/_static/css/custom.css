@@ -18,10 +18,10 @@ a.reference.external:hover {
 
 /* Improve inline code display */
 code.literal {
-  color: rgb(57 56 56);
-  background-color: rgb(223 218 218);
+  color: rgba(57, 56, 56, 1);
+  background-color: rgba(223, 218, 218, 1);
   border-radius: 3px;
-  border: 1px solid rgb(147 147 147);
+  border: 1px solid rgba(147, 147, 147, 1);
   padding-left: 3px;
   padding-right: 3px;
 }
