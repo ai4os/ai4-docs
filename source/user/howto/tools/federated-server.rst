@@ -30,7 +30,7 @@ In this particular case, you will need to pay attention to:
   enabled between the server and the clients (more info in the next sections).
 
 * **The Federated configuration**:
-  The last section (``Federated configuration``) section will let you choose specific
+  The last section (``Federated configuration``) will let you choose specific
   configuration for the FL training server like:
 
   - how many rounds you will train,
@@ -143,4 +143,4 @@ More examples are `available here <https://github.com/deephdc/federated-server/t
     )
 
 If you didn't selected token authentication, feel free to remove the
-``call_credentials``parameter in the ``start_client()`` function.
+``call_credentials`` parameter in the ``start_client()`` function.

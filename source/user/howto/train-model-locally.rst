@@ -84,11 +84,11 @@ In the case of the **image classification module**, we will create the following
 * A folder called ``models`` where the new training weights will be stored after the training is completed
 * A folder called ``data`` that contains two different folders:
 
-    * The sub folder ``images`` containing the input images needed for the training
-    * The sub folder ``dataset_files`` containing a couple of files:
+  * The sub folder ``images`` containing the input images needed for the training
+  * The sub folder ``dataset_files`` containing a couple of files:
 
-        * ``train.txt`` indicating the relative path to the training images
-        * ``classes.txt`` indicating which are the categories for the training
+    * ``train.txt`` indicating the relative path to the training images
+    * ``classes.txt`` indicating which are the categories for the training
 
 Again, the folder structure and their content will of course depend on the module to be used.
 This structure is just an example in order to complete the workflow for this tutorial.
