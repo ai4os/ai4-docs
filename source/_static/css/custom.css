@@ -32,6 +32,16 @@ div.highlight {
   border: 1px solid rgba(147, 147, 147, 1);
 }
 
+/* Smaller admonitions */
+div.admonition {
+  font-size: 80% !important;
+}
+
+p.admonition-title {
+    line-height: 1.2;
+    margin:-10px 0 -10px 0;
+}
+
 /* Make nicer global TOC */
 /* For smaller screens, default to standard layout which is mobile friendly */
 @media screen and (min-width: 1800px) {
