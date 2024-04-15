@@ -21,7 +21,11 @@ If you select ``fedserver``, the FL server will be started automatically,
 but you will not be able to monitor the process (e.g. if there is a failure, how the
 clients are connected or if any of them is disconnected).
 
-.. TODO: explain that you have to select the tokens branch if want authentication
+.. admonition:: Note
+
+    In the first configuration step you must select the docker tag. Note that the tag ``token`` will
+    deploy the federated server including the authentication between the server and the clients (explained in the section *Client-server authentication*)
+
 
 The last section (``Federated configuration``) section will let you choose specific
 configuration for the FL training server like:
@@ -55,14 +59,14 @@ always modify ``fedserver/server.py``.
 Retrieve the configuration
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Now that your fedserver is running, you need to do two things:
+Now that your fedserver is running, you need to do the following steps:
 
 1. **Find the endpoint where your server is deployed:**
 
    Once your FL server is running, go back to the Dashboard, find your deployment,
    click on :fa:`circle-info` ``Info`` and copy the URL of ``fedserver`` endpoint.
 
-2. **Find the secret of your deployment:**
+2. **In case you deployed it using the docker tag tokens, generate new secrets (if you need more that one) and distribute them to the clients:**
 
    AI4OS provides users with a token-based system that can be used for authenticating
    the clients prior to their incorporation into the federated training.
@@ -83,15 +87,11 @@ training.
 Client-server authentication
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-In the AI4OS project, we use the ``flwr`` library to perform FL trainings.
-
-.. TODO: add link to flwr library: link should be to our own fork or to the main repo?
+In the AI4OS project, we use an `adapted version of the flwr library <https://github.com/AI4EOSC/flower>`__ to perform FL trainings.
 
 In the code below, we provide an example on how to integrate the previously obtained
 token and endpoint into the client code.
 More examples are `available here <https://github.com/deephdc/federated-server/tree/main/fedserver/examples>`__.
-
-.. TODO: modify the python code to add tokens
 
 .. code-block:: python
 
@@ -104,7 +104,7 @@ More examples are `available here <https://github.com/deephdc/federated-server/t
     # (...)
 
     # Create the class Client(), example of Flower client:
-    class Client1(fl.client.NumPyClient):
+    class Client(fl.client.NumPyClient):
         def get_parameters(self, config):
             return model.get_weights()
 
@@ -119,14 +119,14 @@ More examples are `available here <https://github.com/deephdc/federated-server/t
             return loss, len(x_test), {"accuracy": accuracy}
 
 
-    token = "12345" # Token generated in the dashboard
+    token = "*********************" # INCLUDE THE TOKEN GENERATED IN THE DASHBOARD 
     auth_plugin = ai4flwr.auth.bearer.BearerTokenAuthPlugin(token)
 
     # Start -> connecting with the server
-    endpoint = "*********************"  # Fill with endpoint
+    endpoint = "*********************"  # FILL IN WITH THE ENDPOINT (dashboard)
     fl.client.start_client(
         server_address=f"{endpoint}:443",
-        client=Client1(),
+        client=Client(),
         root_certificates=Path(certifi.where()).read_bytes(),
         call_credentials=auth_plugin.call_credentials()
     )
