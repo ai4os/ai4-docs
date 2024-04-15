@@ -16,6 +16,14 @@ a.reference.external:hover {
   color: rgba(61, 185, 209, 1);
 }
 
+/* Improve inline code display */
+code.literal {
+  color: rgb(57 56 56);
+  background-color: rgb(210 207 207);
+  border-radius: 3px;
+  padding-left: 3px;
+  padding-right: 3px;
+}
 
 /* Make nicer global TOC */
 /* For smaller screens, default to standard layout which is mobile friendly */
