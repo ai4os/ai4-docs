@@ -26,6 +26,12 @@ code.literal {
   padding-right: 3px;
 }
 
+/* Improve code blocks display */
+div.highlight {
+  background-color: rgba(223, 218, 218, 1);
+  border: 1px solid rgba(147, 147, 147, 1);
+}
+
 /* Make nicer global TOC */
 /* For smaller screens, default to standard layout which is mobile friendly */
 @media screen and (min-width: 1800px) {
