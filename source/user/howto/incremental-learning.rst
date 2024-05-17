@@ -35,14 +35,14 @@ In particular, if you are applying machine learning models such as those availab
         }
     
     model = compose.Pipeline(
-        # Features ques erán utilziadas por el modelo
+        # Features used as input for the model
         ('features', compose.TransformerUnion(
             ('ordinal_date', compose.FuncTransformer(get_ordinal_date)),
             ('month', compose.FuncTransformer(get_month)),
         )),
-        # Escalamos losd atos
+        # Scaling the data
         ('scale', preprocessing.StandardScaler()),
-        # Aplicamos el modelo
+        # Applying the model
         ('lin_reg', linear_model.LinearRegression(intercept_lr=0))
     )
     
