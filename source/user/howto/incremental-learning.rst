@@ -151,7 +151,11 @@ For example, using tensorflow, to solve this problem of new data arriving, it is
         # Note: new data must be obtained, in this example the final 30% of the train set would be retaken.
         time.sleep(3600)
         
-        
+
+.. note::
+    This approach can be followed by connecting your current deployment with a Nextcloud instance which is receiving new data periodically. 
+
+
 [1] van de Ven, G.M., Tuytelaars, T. & Tolias, A.S. Three types of incremental learning. Nat Mach Intell 4, 1185–1197 (2022). https://doi.org/10.1038/s42256-022-00568-3.  
 
 [2] River example (AirlinePassengers): https://riverml.xyz/latest/examples/building-a-simple-nowcasting-model.
