@@ -16,7 +16,8 @@ You should access one of those Dashboards depending on the project you are a mem
 The Dashboard has a two views:
 
 * a **public view** that let's you browse through the modules
-* a **private view** that additionally allows you to make deployments based on those modules.
+* a **private view** that additionally allows you to make deployments based on those
+  modules and check the statistics.
   To access this view you need :doc:`authentication <auth>`.
 
 In the remaining part of this doc we will assume you have access to this private view.
@@ -32,7 +33,7 @@ Selecting the modules
 ---------------------
 
 Once you log into the Dashboard, you are able to see all possible modules for deploying
-in the ``Modules (Marketplace)`` panel.
+in the ``Marketplace`` panel.
 Those are basically:
 
 * all the Marketplace modules.
@@ -132,7 +133,8 @@ This is where you have to provide the **rclone** credentials to be able to mount
 Managing the deployments
 ------------------------
 
-In the ``Deployments`` tab you have a view of all the deployments you have made so far:
+In the ``Deployments`` panel you have a view of all the
+deployments you have made so far:
 
 .. image:: /_static/images/dashboard-deployments.png
 
@@ -154,3 +156,48 @@ Under :fa:`rectangle-list` ``Quick access`` you will be able to access the servi
   created/deleted deployments might be consuming resources, so don't forget to delete them.
 
   And remember to do periodic review of your deployments (either CPU or GPU) to delete the ones you no longer use.
+
+
+
+View your statistics
+--------------------
+
+In the ``Dashboard`` panel you can access different types of
+statistics from the platform.
+
+Current usage
+^^^^^^^^^^^^^
+
+In this section, you can see how the resources are currently being used:
+
+.. image:: /_static/images/dashboard-stats-overview.png
+
+* In ``Cluster Usage Overview`` you will see how many resources are currently
+  consumed/available in the platform.
+* In ``Your Usage`` you will see how many resources you are currently consuming.
+
+Datacenters
+^^^^^^^^^^^
+
+In this section you will see a map of the datacenters that are providing resources for
+the platform, along with their metrics:
+
+.. image:: /_static/images/dashboard-stats-datacenters.png
+
+Graphs
+^^^^^^
+
+In this section you can see the historical usage metrics of the platform.
+
+.. image:: /_static/images/dashboard-stats-graphs.png
+
+* In ``Usage over time`` you can see the daily usage time-series over the last 3 months.
+  In addition to the standard resources, we show how many jobs where running and were
+  queued at each point in time.
+
+* In ``Aggregate Resource Usage`` you will be able to see to total use  of resources,
+  aggregated over the lifetime of the project. We show both the whole project aggregate
+  use, as well as your particular use.
+
+  The metrics units are ``<resource> / day``. Therefore 2000 CPU consumed means that you
+  have consumed the equivalent of 1 CPU for 2000 days (eg. same as 2 CPU for 1000 days).
