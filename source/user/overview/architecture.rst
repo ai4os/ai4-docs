@@ -62,3 +62,16 @@ The Inference Platform (OSCAR)
 The :doc:`Inference platform (OSCAR) </user/howto/inference-oscar>` is a fully managed service to facilitate users to deploy pre-trained AI models with horizontal scalability thanks to a serverless approach.
 
 User can also compose those models in :doc:`complex AI workflow </user/howto/ai4-compose/flows>`
+
+
+
+More info
+---------
+
+If you are curious this is a very high level overview of how the platform is structured:
+
+.. image:: /_static/images/ai4eosc-architecture.png
+
+And if you are feeling super-nerdy 🤓️, these are the low-level
+`C4 diagrams <https://structurizr.com/share/73873/2f769b91-f208-41b0-b79f-5e196435bdb1>`__
+of the platform architecture.
