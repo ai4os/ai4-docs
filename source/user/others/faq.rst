@@ -72,6 +72,15 @@ Follow our guidelines on how to :ref:`get an RCLONE user and password <user/howt
 to fill the deployment configuration form.
 
 
+🔥 Accessing ``/storage`` runs abnormally slow
+----------------------------------------------
+
+This happens from time to time due to connectivity issues. If this behavior persists
+for more than a few days, try creating a new deployment.
+
+If latency is still slow in the new deployment, please contact support.
+
+
 🔥 rclone fails to connect
 --------------------------
 
