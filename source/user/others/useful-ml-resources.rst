@@ -4,6 +4,7 @@ Useful Machine Learning resources
 This is a piece of documentation trying to offer some advice on tools to
 use to answer common problems (non ML expert) users might face.
 
+
 AI4EOSC webinars
 ----------------
 The AI4EOSC project has organized a series of webinars on the use of the platform (based on the AI4OS software stack), AI, machine learning, deep learning, image processing, image segmentation and other relevant topics. These can be accessed on YouTube at the following links:
@@ -24,7 +25,6 @@ Books
 * *The FastAI book*
 * *Deep Learning Book*, Ian Goodfellow
 
-
 Courses
 ^^^^^^^
 
@@ -33,8 +33,6 @@ Courses
 * `DAIR ML YouTube Courses <https://github.com/dair-ai/ML-YouTube-Courses>`__
 * `Stanford CS231N (2017): Introduction to Convolutional Neural Networks for Visual Recognition <https://www.youtube.com/playlist?list=PL3FW7Lu3i5JvHM8ljYj-zLfQRF3EO8sYv>`__
 * `Stanford CS230 (2018): Deep Learning <https://www.youtube.com/playlist?list=PLoROMvodv4rOABXSygHTsbvUz4G_YQhOb>`__
-
-
 
 
 Datasets
@@ -70,8 +68,6 @@ If you don't have any data, try find an open dataset that suits you.
 * `Dataworld datasets <https://data.world/datasets/agriculture>`__
 * `Eden library <https://edenlibrary.ai/>`__ - agriculture datasets
 
-
-
 Explore your dataset
 ^^^^^^^^^^^^^^^^^^^^
 
@@ -85,8 +81,6 @@ Less make sure the dataset does not contain errors.
 * `kangas <https://github.com/comet-ml/kangas>`__ -  exploring, analyzing, and visualizing large-scale multimedia data
 * `Impyute <https://github.com/eltonlaw/impyute>`__ - missing data
 
-
-
 Feature selection
 ^^^^^^^^^^^^^^^^^
 
@@ -95,14 +89,12 @@ Some times less is more. Learn how to select the appropriate features of your da
 * `sklearn - feature selection <https://scikit-learn.org/stable/modules/classes.html#module-sklearn.feature_selection>`__
 * `mlxtend <https://rasbt.github.io/mlxtend/>`__
 
-
 Imbalanced learning
 ^^^^^^^^^^^^^^^^^^^
 
 Do you have too much data from one class and too few from others. Let's balance things out!
 
 * `Sklearn imbalanced <https://github.com/scikit-learn-contrib/imbalanced-learn>`__
-
 
 Data augmentation
 ^^^^^^^^^^^^^^^^^
@@ -112,13 +104,12 @@ Do you have few data? Make the most out of it!
 * `Augly <https://github.com/facebookresearch/AugLy>`__ - General augmentation (text, images, etc.)
 * `imgaug <https://github.com/aleju/imgaug>`__ - Image augmentation
 
-
 Dataset shift
 ^^^^^^^^^^^^^
 
 Is your dataset likely to degrade over time (eg. cam gets dirty). Keep on eye on it!
 
-* `Frouros <https://github.com/IFCA/frouros>`__ 
+* `Frouros <https://github.com/IFCA/frouros>`__
 * `Alibi-detect <https://github.com/SeldonIO/alibi-detect>`__
 * `Avalanche <https://github.com/ContinualAI/avalanche>`__ - Continual Learning library based on Pytorch
 * `River <https://github.com/online-ml/river>`__ - Online learning
@@ -137,7 +128,6 @@ If you want to develop a model from scratch don't try to be a hero!
 for multiple tasks with their corresponding code. Reuse them for your usecases! Try not to look
 for the top model but for the one with the cleanest code.
 
-
 Training monitoring
 ^^^^^^^^^^^^^^^^^^^
 
@@ -147,7 +137,6 @@ Let's keep an eye on the training status.
 * `TensorboardX <https://github.com/lanpa/tensorboardX>`__ - framework agnostic
 * `LabML <https://github.com/labmlai/labml>`__
 
-
 Training debugging
 ^^^^^^^^^^^^^^^^^^
 
@@ -155,7 +144,6 @@ Is your training failing for some reason?
 
 * `Netron <https://github.com/lutzroeder/netron>`__ - visualize DL models
 * `Cockpit <https://github.com/f-dangel/cockpit>`__ - debug training
-
 
 Model optimization
 ^^^^^^^^^^^^^^^^^^
