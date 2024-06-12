@@ -7,13 +7,19 @@ projects:
 * `AI4EOSC <https://ai4eosc.eu/>`__: AI for the European Open Science Cloud
 * `iMagine <https://imagine-ai.eu/>`__: Imaging data and services for aquatic science
 
-If you are not a member of them, consider joining by applying to the *Open calls for
-external usecases*. More information about the Calls can be found in their respective
-homepages.
+.. admonition:: External users
+   :class: info
 
-Once you are a member of either platform, you can proceed to create an account.
-The authentication for the AI4OS stack depends on the platform it is deployed.
-Current supported platforms use the following Identity providers:
+   If you are not a member of the above projects, consider joining either one of them
+   by applying to the *Open calls for external usecases*.
+   More information about the Calls can be found in their respective project's homepages.
+
+   If you were not able to apply in time to an Open Call, you can always try to `reach us <https://ai4eosc.eu/contact/>`__
+   explaining why and how you would like to use the platform.
+
+Once you are a member of either project, you can proceed to create an account.
+The authentication for the AI4OS stack depends on the project it serves.
+Current projects use the following Identity providers:
 
 * **AI4EOSC**: :ref:`EGI Check-In (prod)  <user/overview/auth:EGI Check-In (prod)>`
 * **iMagine**: :ref:`EGI Check-In (prod)  <user/overview/auth:EGI Check-In (prod)>`
