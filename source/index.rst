@@ -1,11 +1,17 @@
 Welcome to AI4OS documentation!
 ===============================
 
+The ``AI4OS`` stack empowers scientist by lowering the barrier to adopt the latest AI
+models and tools. It covers the full ML cycle: from model creation, to training, deployment
+and monitoring in production. Following the FAIR principles for science, both our software
+(platform and models) are fully open-source and easily portable to any other platform
+(no vendor lock-in!).
+
 .. important::
 
    A quick note on terminology. ``AI4OS`` is the name of the generic software stack that is
    powering the deployments of different platforms (``AI4EOSC``, ``iMagine``).
-   So for example the **AI4OS Dashboard** is the component that can be deployed as the
+   So, for example, the **AI4OS Dashboard** is the component that can be deployed as the
    **AI4EOSC Dashboard** or the **iMagine Dashboard**.
    These platform-specific Dashboards can have minor customizations but the underlying
    technology remains the same.
