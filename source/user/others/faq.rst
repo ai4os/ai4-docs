@@ -18,6 +18,15 @@ temporary issue.
 If the issue persists, please contact support.
 
 
+🔥 The Dashboard shows there are free GPUs but my deployment is still queued
+----------------------------------------------------------------------------
+
+This can happen sometimes when a GPU gets stuck in the system and is not correctly
+freed.
+
+Please contact support if this happens to you!
+
+
 🔥 The Dashboard says I only have 500 MB of disk in my deployment
 -----------------------------------------------------------------
 
