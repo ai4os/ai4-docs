@@ -106,6 +106,15 @@ We have specific guides for each of the tools.
    :maxdepth: 2
 
    Federated server <howto/tools/federated-server>
+   
+   
+Use advanced AI techniques (intermediate user)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. toctree::
+   :maxdepth: 2
+   
+   Incremental learning <howto/incremental-learning>
 
 Others
 ------
