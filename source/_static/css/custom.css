@@ -35,6 +35,10 @@ p.admonition-title {
     margin:-10px 0 -10px 0;
 }
 
+details.sd-dropdown {
+  font-size: 80% !important;
+}
+
 /* Make nicer global TOC */
 /* For smaller screens, default to standard layout which is mobile friendly */
 @media screen and (min-width: 1800px) {

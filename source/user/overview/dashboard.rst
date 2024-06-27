@@ -24,7 +24,7 @@ In the remaining part of this doc we will assume you have access to this private
 
 The Dashboard is divided between modules (AI models) and tools (eg. an image labelling tool,
 a federated server, etc). In the remaining part of this doc we will focus on how to deploy
-a module but the workflow is similar for tools. For more details, on tools, please check
+a module but the workflow is similar for tools. For more details on tools, please check
 the :ref:`How to use a tool <user/index:Use a tool (Intermediate user)>` section.
 
 
@@ -36,11 +36,11 @@ Once you log into the Dashboard, you are able to see all possible modules for de
 in the ``Marketplace`` panel.
 Those are basically:
 
-* all the Marketplace modules.
-* ``AI4OS Development Environment``: special module especially designed to develop new modules.
+* ``AI4OS Development Environment``: special module especially designed to :doc:`develop new AI models </user/howto/develop-model>`.
+* ``Modules``: set of AI models designed to perform given tasks (eg. image classification)
+* ``Tools``: set of AI tools that come handy in the Machine Learning workflow (eg. image labeling)
 
 .. image:: /_static/images/dashboard-home.png
-
 
 Modules can be:
 
@@ -100,14 +100,15 @@ The parameters to configure are:
 
   If you select either ``JupyterLab`` or ``VScode`` you must set a password at least 9 characters long.
 
-.. important::
-  We do not provide the option to run both JupyterLab and DEEPaaS at the same time,  as code changes performed subsequently via JupyterLab wouldn't be
-  reflected in DEEPaaS (which is launched with the initial codebase), thus potentially leading to confusion.
+  .. dropdown:: ㅤㅤ What if I want both ``DEEPaaS`` and ``VSCode`` ?
 
-  If you want to have access to both services in the same deployment, launch with JupyterLab.
-  In JupyterLab, open a **Terminal** window (:fa:`square-plus` (New launcher) ➜ **Others** ➜ **Terminal**).
-  Then run ``deep-start --deepaas`` to launch DEEPaaS.
-  If you make subsequent code changes, you will have to kill the old DEEPaaS process and launch a new one.
+    We do not provide the option to run both JupyterLab and DEEPaaS at the same time,  as code changes performed subsequently via JupyterLab wouldn't be
+    reflected in DEEPaaS (which is launched with the initial codebase), thus potentially leading to confusion.
+
+    If you want to have access to both services in the same deployment, launch with JupyterLab.
+    In JupyterLab, open a **Terminal** window (:fa:`square-plus` (New launcher) ➜ **Others** ➜ **Terminal**).
+    Then run ``deep-start --deepaas`` to launch DEEPaaS.
+    If you make subsequent code changes, you will have to kill the old DEEPaaS process and launch a new one.
 
 * ``Hostame``: select a custom name to access your services (eg. selecting  ``my-custom-name`` will make your service available under ``http://deepaas.my-custom-name.deployments.cloud.ai4eosc.eu`` if the address is available)
 
@@ -123,11 +124,33 @@ Choose the hardware type to run on:
 
 * For inference and code development, we recommend using ``CPU`` as they are low intensity tasks.
 * For (re)training, we recommend using ``GPU`` as this is a more demanding task.
+  For the time being we limit to 1 GPU per deployment (and 2 GPUs per user) to allow for a
+  fair distribution of resources.
 
 Storage configuration
 ^^^^^^^^^^^^^^^^^^^^^
-This is where you have to provide the **rclone** credentials to be able to mount your Nextcloud directory in your deployment.
-:ref:`Go here <user/howto/rclone:2. Configuring rclone>` in order to find how to create them.
+
+This is where you can configure how to connect your storage to your deployment.
+You have two sections:
+
+1. **Provide your RCLONE credentials**
+
+   This is what will allow you to access your Nextcloud storage from inside your deployment.
+   For this, you have to provide your **rclone** credentials.
+   Please :ref:`go here <user/howto/rclone:2. Configuring rclone>` in order to find how to create them.
+
+2. **Download external datasets**
+
+   This section provides the option to sync with datasets from multiple external repositories, including
+   `Zenodo <https://zenodo.org/>`__, `Hugginsface <https://huggingface.co/>`__, `Figshare <https://figshare.com/>`__, `Github <https://github.com/>`__, `Dryad <https://datadryad.org/>`__, `Open Science Framework (OSF) <https://osf.io/>`__, `Mendeley Data <https://data.mendeley.com/>`__ and `many more <https://j535d165.github.io/datahugger/repositories/>`__!
+
+   * For Zenodo, we provide an embedded search functionality to find the datasets attached to any community.
+   * For all repositories, we provide the ability to directly provide a DOI.
+
+   With any dataset, you can select a ``force_pull`` option, so that if your dataset
+   already exists in your storage it will overwrite the existing files.
+
+.. image:: /_static/images/dashboard-storage.png
 
 
 Managing the deployments
@@ -149,14 +172,6 @@ For the endpoints of the services you have:
   display monitoring (check the module's README or training arguments) and if a training is currently running.
 
 Under :fa:`rectangle-list` ``Quick access`` you will be able to access the service you deployed at launch time.
-
-.. important::
-  GPUs are scarce resources, so we kindly ask you to limit the number of GPUs you are using
-  to at most 1 per user (2 if **really** needed). Take into account that sometimes even failed
-  created/deleted deployments might be consuming resources, so don't forget to delete them.
-
-  And remember to do periodic review of your deployments (either CPU or GPU) to delete the ones you no longer use.
-
 
 
 View your statistics
