@@ -8,7 +8,7 @@ Train a model locally
 
 This is a step by step guide on how to train a module from the :doc:`AI4OS Dashboard </user/overview/dashboard>` with your own dataset, on your local machine.
 
-In this tutorial we will see how to retrain a `generic image classifier <https://dashboard.cloud.ai4eosc.eu/marketplace/modules/deep-oc-image-classification-tf>`__
+In this tutorial we will see how to retrain a `generic image classifier <https://dashboard.cloud.ai4eosc.eu/marketplace/modules/ai4os-image-classification-tf>`__
 on a custom dataset to create a `phytoplankton classifier <https://dashboard.cloud.ai4eosc.eu/marketplace/modules/deep-oc-phytoplankton-classification-tf>`__.
 If you want to follow along, you can download the toy phytoplankton dataset :fa:`download` `here <https://api.cloud.ifca.es:8080/swift/v1/public-datasets/phytoplankton-mini.zip>`__.
 
@@ -27,18 +27,18 @@ If you are new to Machine Learning, you might want to check some
 ---------------------------------------
 
 The first step is to choose a model from the :doc:`AI4OS Dashboard</user/overview/dashboard>`. Make sure to select a module with the ``trainable`` tag.
-For educational purposes we are going to use a `general model to identify images <https://dashboard.cloud.ai4eosc.eu/marketplace/modules/deep-oc-image-classification-tf>`__.
+For educational purposes we are going to use a `general model to identify images <https://dashboard.cloud.ai4eosc.eu/marketplace/modules/ai4os-image-classification-tf>`__.
 Some of the model dependent details can change if using another model, but this tutorial will provide
 a general overview of the workflow to follow when using any of the modules in the AI4OS Dashboard.
 
 Once we have chosen the model at the AI4OS Dashboard we will
-find that it has an associated docker container in `DockerHub <https://hub.docker.com/u/deephdc/>`__. For example, in the
-example we are running here, the container would be ``deephdc/deep-oc-image-classification-tf``. So let's pull the
+find that it has an associated docker container in `DockerHub <https://hub.docker.com/u/ai4oshub/>`__. For example, in the
+example we are running here, the container would be ``ai4os-hub/ai4os-image-classification-tf``. So let's pull the
 docker image from DockerHub:
 
 .. code-block:: console
 
-    $ docker pull deephdc/deep-oc-image-classification-tf
+    $ docker pull ai4oshub/ai4os-image-classification-tf
 
 Docker images have usually tags depending on whether they are using ``master`` or ``test`` and whether they use
 ``cpu`` or ``gpu``. Tags are usually:
@@ -52,7 +52,7 @@ You tipically want to run your training on master with a gpu:
 
 .. code-block:: console
 
-    $ docker pull deephdc/deep-oc-image-classification-tf:gpu
+    $ docker pull ai4oshub/ai4os-image-classification-tf:gpu
 
 .. tip::
 
@@ -60,9 +60,9 @@ You tipically want to run your training on master with a gpu:
 
     .. code-block:: console
 
-        $ git clone https://github.com/deephdc/deep-oc-image-classification-tf
-        $ cd deep-oc-image-classification-tf
-        $ docker build -t deephdc/deep-oc-image-classification-tf .
+        $ git clone https://github.com/ai4os-hub/ai4os-image-classification-tf
+        $ cd ai4os-image-classification-tf
+        $ docker build -t ai4oshub/ai4os-image-classification-tf .
 
 
 2. Prepare your dataset
@@ -74,7 +74,7 @@ to see of you can copy them to your local machine.
 
 When training a model, the data has usually to be in a specific format and folder structure.
 It's usually helpful to read the README in the source code of the module
-(in this case located `here <https://github.com/deephdc/image-classification-tf>`__)
+(in this case located `here <https://github.com/ai4os-hub/ai4os-image-classification-tf>`__)
 to learn the correct way to setting it up.
 
 In the case of the **image classification module**, we will create the following folders:
@@ -102,7 +102,7 @@ accessible from inside the container. This is done via the Docker volume ``-v`` 
 
 .. code-block:: console
 
-	$ docker run -ti -p 5000:5000 -p 6006:6006  -p 8888:8888 -v path_to_local_folder:path_to_docker_folder deephdc/deep-oc-image-classification-tf
+	$ docker run -ti -p 5000:5000 -p 6006:6006  -p 8888:8888 -v path_to_local_folder:path_to_docker_folder ai4oshub/ai4os-image-classification-tf
 
 We also need to make GPUs visible from inside the container using the ``--runtime=nvidia``
 (or the ``--gpus all`` flag).
@@ -112,7 +112,7 @@ In our case, the final command, mounting the data folder and the model weights f
 
 .. code-block:: console
 
-	$ docker run -ti -p 5000:5000 -p 6006:6006  -p 8888:8888 -v /home/ubuntu/data:/srv/image-classification-tf/data -v /home/ubuntu/models:/srv/image-classification-tf/models --runtime=nvidia deephdc/deep-oc-image-classification-tf:gpu
+	$ docker run -ti -p 5000:5000 -p 6006:6006  -p 8888:8888 -v /home/ubuntu/data:/srv/ai4os-image-classification-tf/data -v /home/ubuntu/models:/srv/ai4os-image-classification-tf/models --runtime=nvidia ai4oshub/ai4os-image-classification-tf:gpu
 
 
 4. Open the DEEPaaS API and train the model
@@ -153,7 +153,32 @@ through an URL so they can be downloaded in your Docker container.
 In Nextcloud, go to the ``tar`` file you just created:
 :fa:`share-nodes` ➜ Share Link ➜ :fa:`square-plus` (Create a new share link)
 
-6. Next steps
+
+6. Update your project's metadata
+---------------------------------
+
+.. include:: /user/snippets/edit-metadata.rst
+
+
+7. Update your project's Dockerfile
+-----------------------------------
+
+.. include:: /user/snippets/edit-dockerfile-train.rst
+
+
+8. Integrating the module in the Marketplace
+--------------------------------------------
+
+.. include:: /user/snippets/integrate-marketplace.rst
+
+
+9. Next steps
 -------------
 
-The next steps are common with the :ref:`remote training tutorial <user/howto/train-model-dashboard:7. Create a Docker repo for your new module>`.
+Do you want to go further?
+
+* What about trying to integrate :doc:`MLflow Experiment tracking </user/howto/mlops/mlflow>` into your deployment?
+
+.. tip::
+
+    If you run into problems you can always check the :doc:`Frequently Asked Questions (FAQ) </user/others/faq>`.

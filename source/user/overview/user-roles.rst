@@ -38,8 +38,8 @@ They still might not need high level knowledge on modelling of machine learning 
 programming skills to prepare their own data into the appropriate format.
 Nevertheless, they can re-use the knowledge being captured in a trained network and adjust the network to their problem
 at hand by re-training the network on their own dataset.
-An example could be a user who takes the generic `image classifier <https://dashboard.cloud.ai4eosc.eu/marketplace/modules/deep-oc-image-classification-tf>`__
-model and retrains it to perform `seed classification <https://dashboard.cloud.ai4eosc.eu/marketplace/modules/deep-oc-seeds-classification-tf>`__.
+An example could be a user who takes the generic `image classifier <https://dashboard.cloud.ai4eosc.eu/marketplace/modules/ai4os-image-classification-tf>`__
+model and retrains it to perform `seed classification <https://dashboard.cloud.ai4eosc.eu/marketplace/modules/seeds-classification-tf>`__.
 
 **What AI4OS can offer to you:**
 

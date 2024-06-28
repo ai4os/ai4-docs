@@ -10,8 +10,8 @@ Train a model remotely
 This is a step by step guide on how to train a general model from the :doc:`AI4OS Dashboard </user/overview/dashboard>`
 with your own dataset.
 
-In this tutorial we will see how to retrain a `generic image classifier <https://dashboard.cloud.ai4eosc.eu/marketplace/modules/deep-oc-image-classification-tf>`__
-on a custom dataset to create a `phytoplankton classifier <https://dashboard.cloud.ai4eosc.eu/marketplace/modules/deep-oc-phytoplankton-classification-tf>`__.
+In this tutorial we will see how to retrain a `generic image classifier <https://dashboard.cloud.ai4eosc.eu/marketplace/modules/ai4os-image-classification-tf>`__
+on a custom dataset to create a `phytoplankton classifier <https://dashboard.cloud.ai4eosc.eu/marketplace/modules/uc-lifewatch-deep-oc-phyto-plankton-classification>`__.
 If you want to follow along, you can download the toy phytoplankton dataset :fa:`download` `here <https://api.cloud.ifca.es:8080/swift/v1/public-datasets/phytoplankton-mini.zip>`__.
 
 If you are new to Machine Learning, you might want to check some
@@ -22,13 +22,15 @@ If you are new to Machine Learning, you might want to check some
     * You need  a :doc:`Authentication </user/overview/auth>` to be able to access the Dashboard and Nextcloud storage.
     * For **Step 7** we recommend having `docker <https://docs.docker.com/install/#supported-platforms>`__ installed (though it's not strictly mandatory).
 
+
 1. Choose a module from the Marketplace
 ---------------------------------------
 
 The first step is to choose a model from the :doc:`AI4OS Dashboard</user/overview/dashboard>`. Make sure to select a module with the ``trainable`` tag.
-For educational purposes we are going to use a `general model to identify images <https://dashboard.cloud.ai4eosc.eu/marketplace/modules/deep-oc-image-classification-tf>`__.
+For educational purposes we are going to use a `general model to identify images <https://dashboard.cloud.ai4eosc.eu/marketplace/modules/ai4os-image-classification-tf>`__.
 Some of the model dependent details can change if using another model, but this tutorial will provide
 a general overview of the workflow to follow when using any of the modules in the AI4OS Dashboard.
+
 
 2. Upload your files to Nextcloud
 ---------------------------------
@@ -41,7 +43,7 @@ and you should access to an overview of your files.
 Now it's time to upload your dataset.
 When training a model, the data has usually to be in a specific format and folder structure.
 It's usually helpful to read the README in the source code of the module
-(in this case located `here <https://github.com/deephdc/image-classification-tf>`__)
+(in this case `located here <https://github.com/ai4os-hub/ai4os-image-classification-tf>`__)
 to learn the correct way to setting it up.
 
 In the case of the **image classification module**, we will create the following folders:
@@ -81,7 +83,7 @@ and do an :ref:`rclone copy <user/howto/rclone:3. Using rclone>` to move your da
 3. Deploy with the Training Dashboard
 -------------------------------------
 
-Now go to the `AI4OS Dashboard <https://marketplace.deep-hybrid-datacloud.eu/>`__  and login with your :doc:`credentials </user/overview/auth>`.
+Now go to the :doc:`AI4OS Dashboard </user/overview/dashboard>`  and login with your :doc:`credentials </user/overview/auth>`.
 Then go to (1) **Modules (marketplace)** ➜ (2) **Train image classifier** ➜ (3) **Train module**.
 
 Now you will be presented with a configuration form.
@@ -142,8 +144,8 @@ Now we will mount our remote Nextcloud folders in our local containers:
 
 .. code-block:: console
 
-    $ rclone copy rshare:/data/dataset_files /srv/image-classification-tf/data/dataset_files
-    $ rclone copy rshare:/data/images /srv/image-classification-tf/data/images
+    $ rclone copy rshare:/data/dataset_files /srv/ai4os-image-classification-tf/data/dataset_files
+    $ rclone copy rshare:/data/images /srv/ai4os-image-classification-tf/data/images
 
 Paths with the ``rshare`` prefix are Nextcloud paths.
 As always, paths are specific to this example. Your module might need different paths.
@@ -208,9 +210,9 @@ So go back to JupyterLab, open a Terminal window and run:
 
 .. code-block:: console
 
-    $ cd /srv/image-classification-tf/models
+    $ cd /srv/ai4os-image-classification-tf/models
     $ tar cfJ <modelname.tar.xz> <foldername>
-    $ rclone copy /srv/image-classification-tf/models rshare:/models
+    $ rclone copy /srv/ai4os-image-classification-tf/models rshare:/models
 
 Now you should be able to see your new models weights in Nextcloud.
 
@@ -231,8 +233,8 @@ In Nextcloud, go to the ``tar`` file you just created:
     also upload the model weights to Zenodo in addition to Nextcloud.
 
 
-7. Create a Docker repo for your new module
--------------------------------------------
+7. Create a repo for your new module
+------------------------------------
 
 Now, let's say you want to share your new application with your colleagues.
 The process is much simpler that when :doc:`developing a new module from scratch <develop-model>`,
@@ -247,146 +249,28 @@ specially tailored to this task:
   You will need an :doc:`authentication </user/overview/auth>` to access to this webpage.
 * Then select the ``child-module`` branch of the template and answer the questions.
 * Click on ``Generate`` and you will be able to download a ``.zip`` file with
-  one project directory:
-
-  .. code-block::
-
-      ~/DEEP-OC-<project-name>
-
-  Extract it locally.
-
-Once this is done, the following steps are:
-
-**(1)** Modify ``metadata.json`` with the proper description of your new module.
-This is the information that will be displayed in the Marketplace.
-Among the fields you might need to edit are:
-
-* ``title`` (`mandatory`): short title,
-* ``summary`` (`mandatory`): one liner summary of your module,
-* ``description`` (`optional`): extended description of your module, like a README,
-* ``keywords`` (`mandatory`): tags to make your module more findable
-* ``training_files_url`` (`optional`): the URL  of your model weights and additional training information,
-* ``dataset_url`` (`optional`): the URL dataset URL,
-* ``cite_url`` (`optional`): the DOI URL of any related publication,
-
-Most other fields are pre-filled via the AI4OS Modules Template and usually do not need to be modified.
-Check you didn't mess up the JSON formatting by running:
-
-.. code-block:: console
-
-    $ pip install git+https://github.com/deephdc/schema4apps
-    $ deep-app-schema-validator metadata.json
-
-:fa:`warning` Due to some issues with the JSON format parsing **avoid** using ``:``  in the values you are filling.
+  the project's directory. Extract it locally.
 
 
-**(2)** Then go to the ``Dockerfile``. You will see that the base Docker image
-is the image of the original repo. Modify the appropriate lines to replace
-the original model weights with the new model weights.
-In our case, this could look something like this:
+8. Update your project's metadata
+---------------------------------
 
-.. code-block:: docker
-
-    ENV SWIFT_CONTAINER https://share.services.ai4os.eu/index.php/s/r8y3WMK9jwEJ3Ei/download
-    ENV MODEL_TAR phytoplankton.tar.xz
-
-    RUN rm -rf image-classification-tf/models/*
-    RUN curl --insecure -o ./image-classification-tf/models/${MODEL_TAR} \
-        ${SWIFT_CONTAINER}/${MODEL_TAR}
-    RUN cd image-classification-tf/models && \
-        tar -xf ${MODEL_TAR} &&\
-        rm ${MODEL_TAR}
-
-Check your Dockerfile works correctly by building it locally and running it:
-
-.. code-block:: console
-
-    $ docker build --no-cache -t your_project .
-    $ docker run -ti -p 5000:5000 -p 6006:6006 -p 8888:8888 your_project
-
-Your module should be visible in http://0.0.0.0:5000/ui
-
-Once you are fine with the state of your module, got to Github to create the repo
-``https://github.com/<github-user>/DEEP-OC-<project-name>`` and push the changes.
+.. include:: /user/snippets/edit-metadata.rst
 
 
-8. Share your new module in the Marketplace
--------------------------------------------
+9. Update your project's Dockerfile
+-----------------------------------
 
-Once your repo is set, it's time to make a PR to add your model to the marketplace!
-
-For this you have to fork the code of the DEEP catalog repo (`deephdc/deep-oc <https://github.com/deephdc/deep-oc>`__)
-and add your Docker repo name at the end of the ``MODULES.yml``.
-
-.. code-block:: yaml
-
-    - module: https://github.com/deephdc/UC-<github-user>-DEEP-OC-<project-name>
-
-You can do this directly `online on GitHub <https://github.com/deephdc/deep-oc/edit/master/MODULES.yml>`__ or via the command line:
-
-.. code-block:: console
-
-    $ git clone https://github.com/[my-github-fork]
-    $ cd [my-github-fork]
-    $ echo '- module: https://github.com/deephdc/UC-<github-user>-DEEP-OC-<project-name>' >> MODULES.yml
-    $ git commit -a -m "adding new module to the catalogue"
-    $ git push
-
-Once the changes are done, make a PR of your fork to the original repo and wait for approval.
-Check the `GitHub Standard Fork & Pull Request Workflow <https://gist.github.com/Chaser324/ce0505fbed06b947d962>`__ in case of doubt.
-
-When your module gets approved, you may need to commit and push a change to ``metadata.json``
-in your ``https://github.com/<github-user>/DEEP-OC-<project-name>`` so that
-`the Pipeline <https://github.com/deephdc/DEEP-OC-demo_app/blob/726e068d54a05839abe8aef741b3ace8a078ae6f/Jenkinsfile#L104>`__
-is run for the first time, and your module gets rendered in the marketplace.
+.. include:: /user/snippets/edit-dockerfile-train.rst
 
 
-9. [optional] Add your new module to the original Continuous Integration pipeline
----------------------------------------------------------------------------------
+10. Integrating the module in the Marketplace
+---------------------------------------------
 
-Your module is already in the Marketplace.
-But what happens if the code in the original image-classification module changes?
-This should trigger a rebuild of your Docker container as it is based on that code.
+.. include:: /user/snippets/integrate-marketplace.rst
 
-This can be achieved by modifying the ``Jenkinsfile`` in the `image-classification Docker repo <https://github.com/deephdc/DEEP-OC-image-classification-tf/blob/master/Jenkinsfile>`__.
-One would add an additional stage to the Jenkins pipeline like so:
 
-.. code-block::
-
-    stage("Re-build DEEP-OC Docker images for derived services") {
-        when {
-            anyOf {
-               branch 'master'
-               branch 'test'
-               buildingTag()
-            }
-        }
-        steps {
-
-            // Wait for the base image to be correctly updated in DockerHub as it is going to be used as base for
-            // building the derived images
-            sleep(time:5, unit:"MINUTES")
-
-            script {
-                def derived_job_locations =
-                ['Pipeline-as-code/DEEP-OC-org/DEEP-OC-plants-classification-tf',
-                 'Pipeline-as-code/DEEP-OC-org/DEEP-OC-conus-classification-tf',
-                 'Pipeline-as-code/DEEP-OC-org/DEEP-OC-seeds-classification-tf',
-                 'Pipeline-as-code/DEEP-OC-org/DEEP-OC-phytoplankton-classification-tf'
-                 ]
-
-                for (job_loc in derived_job_locations) {
-                    job_to_build = "${job_loc}/${env.BRANCH_NAME}"
-                    def job_result = JenkinsBuildJob(job_to_build)
-                    job_result_url = job_result.absoluteUrl
-                }
-            }
-        }
-    }
-
-So if you want this step to be performed, you must submit a PR to the original module Docker repo with similar changes as above.
-
-10. Next steps
+11. Next steps
 --------------
 
 Do you want to go further?
@@ -396,3 +280,51 @@ Do you want to go further?
 .. tip::
 
     If you run into problems you can always check the :doc:`Frequently Asked Questions (FAQ) </user/others/faq>`.
+
+
+.. TODO: renable when ready
+
+.. 9. [optional] Add your new module to the original Continuous Integration pipeline
+.. ---------------------------------------------------------------------------------
+
+.. Your module is already in the Marketplace.
+.. But what happens if the code in the original image-classification module changes?
+.. This should trigger a rebuild of your Docker container as it is based on that code.
+
+.. This can be achieved by modifying the ``Jenkinsfile`` in the `image-classification Docker repo <https://github.com/ai4os-hub/ai4os-image-classification-tf/blob/master/Jenkinsfile>`__.
+.. One would add an additional stage to the Jenkins pipeline like so:
+
+.. .. code-block::
+
+..     stage("Re-build DEEP-OC Docker images for derived services") {
+..         when {
+..             anyOf {
+..                branch 'master'
+..                branch 'test'
+..                buildingTag()
+..             }
+..         }
+..         steps {
+
+..             // Wait for the base image to be correctly updated in DockerHub as it is going to be used as base for
+..             // building the derived images
+..             sleep(time:5, unit:"MINUTES")
+
+..             script {
+..                 def derived_job_locations =
+..                 ['Pipeline-as-code/DEEP-OC-org/DEEP-OC-plants-classification-tf',
+..                  'Pipeline-as-code/DEEP-OC-org/DEEP-OC-conus-classification-tf',
+..                  'Pipeline-as-code/DEEP-OC-org/DEEP-OC-seeds-classification-tf',
+..                  'Pipeline-as-code/DEEP-OC-org/DEEP-OC-phytoplankton-classification-tf'
+..                  ]
+
+..                 for (job_loc in derived_job_locations) {
+..                     job_to_build = "${job_loc}/${env.BRANCH_NAME}"
+..                     def job_result = JenkinsBuildJob(job_to_build)
+..                     job_result_url = job_result.absoluteUrl
+..                 }
+..             }
+..         }
+..     }
+
+.. So if you want this step to be performed, you must submit a PR to the original module Docker repo with similar changes as above.

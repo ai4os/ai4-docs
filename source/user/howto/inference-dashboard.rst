@@ -16,7 +16,7 @@ Try a service remotely
 The first step is to choose a module from the :doc:`Dashboard</user/overview/dashboard>`.
 There you will be able to find all the modules ready to be used under the tag ``Inference``.
 
-For educational purposes we are going to use a `general model to identify images <https://dashboard.cloud.ai4eosc.eu/marketplace/modules/deep-oc-image-classification-tf>`__.
+For educational purposes we are going to use a `general model to identify images <https://dashboard.cloud.ai4eosc.eu/marketplace/modules/ai4os-image-classification-tf>`__.
 This will allow us to see the general workflow.
 Select that module and :ref:`follow the instructions <user/overview/dashboard:Making a deployment>`
 to deploy it, making sure to select ``DEEPaaS`` as the ``Service`` in the configuration.

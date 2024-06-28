@@ -17,7 +17,7 @@ The Dashboard simplifies the deployment and hides some of the technical parts th
   DEEP as a Service
   -----------------
 
-  `DEEP as a Service (or DEEPaaS) <https://deepaas.deep-hybrid-datacloud.eu/>`__ is a fully managed service that allows
+  `DEEP as a Service (or DEEPaaS) <https://docs.ai4eosc.eu/projects/deepaas/en/stable/>`__ is a fully managed service that allows
   to easily and automatically deploy developed applications as services, with horizontal scalability thanks to a
   serverless approach. Module owners only need to care about the application development process, and incorporate
   new features that the automation system receives as an input.

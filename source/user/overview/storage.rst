@@ -25,6 +25,6 @@ sometimes you have no other option than going with (**2**) if you want to train 
 really big dataset.
 
 If you configured the :ref:`Download of an external dataset <user/overview/dashboard:Storage configuration>`
-the dataset will be available under ``/storage/ai4os-storage``.
+the dataset will be available under ``/storage/ai4os-storage/datasets``.
 
 Do you have any issues? Please check the :ref:`FAQ (storage) questions <user/others/faq:Storage issues>`.
