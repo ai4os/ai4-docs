@@ -6,10 +6,7 @@ Essentially, carrying out the training of AI/ML/DL models in a distributed way c
 * **Data parallelism:** this is the most common case, and is used when the data avilable for training the model does not fit in memory in a single node or worker. Thus, the data is distributed among the different available workers or machines. Then, the model is trained on each data subset and the resulting model is aggregated using the parameters obtained in each case. 
 
 * **Model parallelism:** the model, usually a neural network, is split and distributed among different available computation nodes. An important aspect here is to ensure a correct synchronization and coordination between the different workers when performing gradient descent and backward propagation. This method is used in case of very large models that do not fit in memory.
-Specifically, in an incremental learning scenario, the model to be trained does not have
-all the data at the beginning, but they arrive sequentially or in different steps, which
-may cause the distributions to vary over time. The idea is that the model is able to
-adapt to new data without losing the knowledge previously acquired.
+
 
 From the point of view of the development and training of a model in a distributed way using the AI4EOSC platform, the following solutions are proposed depending on the user's needs:
 
