@@ -115,6 +115,7 @@ Use advanced AI techniques (intermediate user)
    :maxdepth: 2
 
    Incremental learning <howto/incremental-learning>
+   Distributed learning <howto/distributed-learning>
 
 Others
 ------
