@@ -25,7 +25,8 @@ that has been containerized, and use it to classify their own plant images.
 
 **Related HowTo's:**
 
-* :doc:`How to perform inference remotely </user/howto/inference-dashboard>`
+* :doc:`How to perform inference in the Dashboard (DEEPaaS) </user/howto/inference-dashboard-nomad>`
+* :doc:`How to perform inference in the Dashboard (OSCAR) </user/howto/inference-dashboard-oscar>`
 * :doc:`How to perform inference locally </user/howto/inference-locally>`
 
 

@@ -72,10 +72,11 @@ Use a model (basic user)
    :maxdepth: 2
 
    Perform inference locally <howto/inference-locally>
-   Perform inference with the Dashboard <howto/inference-dashboard>
-   Perform inference with OSCAR <howto/inference-oscar>
+   Perform inference with the Dashboard (DEEPaaS) <howto/inference-dashboard-nomad>
+   Perform inference with the Dashboard (OSCAR) <howto/inference-dashboard-oscar>
    Create AI inference workflows with FlowFuse <howto/ai4-compose/flows>
    Create AI inference workflows with Elyra <howto/ai4-compose/elyra>
+   OSCAR technical documentation <howto/inference-oscar>
 
 Train a model (intermediate user)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
