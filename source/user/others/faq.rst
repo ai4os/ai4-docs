@@ -76,10 +76,7 @@ Real available resources can be found with the following commands:
 
 * **CPU**: ``printenv | grep NOMAD_CPU`` will show both reserved cores (``NOMAD_CPU_CORES``) and maximum CPU limit (in MHz) (``NOMAD_CPU_LIMIT``).
 * **RAM memory**: ``echo $NOMAD_MEMORY_LIMIT`` or ``cat /sys/fs/cgroup/memory/memory.limit_in_bytes``
-* **Disk**: ⏳🔧 we are working on properly limiting disk space, for the time being we ask you to kindly stick to the 20-25 GB quota .
-
-.. #TODO: modify disk commands when ready
-.. * **Disk**: ``df -h | grep overlay`` will show you respectively ``Total|Used|Remaining`` disk
+* **Disk**: ``df -h | grep overlay`` will show you three values, respectively the ``Total | Used | Remaining`` disk
 
 It is your job to program your application to make use of these real resources
 (eg. load smaller models, load less data, etc).

@@ -10,6 +10,7 @@ notified here.
 .. Template
 .. * 📘 new :doc:`... </user/...>` page (``2024-04-03``)
 
+* 📌 new federated cluster is available in production (``2024-08-05``)
 * 📈 new :ref:`external datasets download <user/overview/dashboard:Storage configuration>` feature (``2024-06-30``)
 * 📘 new guides to perform :doc:`Incremental Learning </user/howto/incremental-learning>` (``2024-06-20``)
 * 📈 new :ref:`stats section <user/overview/dashboard:View your statistics>` in the Dashboard (``2024-05-14``)
