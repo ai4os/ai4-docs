@@ -83,7 +83,7 @@ endpoint, running this command
     $ source /root/.bashrc
 
 
-.. TODO: change this commmand if the default endpoint in the API changes
+.. TODO: change this command if the default endpoint in the API changes
 
 You can always check those env variables afterwards:
 

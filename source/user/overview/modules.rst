@@ -2,24 +2,13 @@ Modules
 =======
 
 All  modules are found at the :doc:`AI4OS Dashboard <dashboard>`, the source code is
-hosted under `Github's deephdc <https://github.com/deephdc>`__ organization and the corresponding Docker images are
-hosted under `DockerHub's deephdc <https://hub.docker.com/u/deephdc/>`__ organization.
+hosted under `Github's ai4os-hub <https://github.com/ai4os-hub>`__ organization and the corresponding Docker images are
+hosted under `DockerHub's ai4oshub <https://hub.docker.com/u/ai4oshub/>`__ organization.
 
-.. important::
+Modules follow the following convention:
 
-    The module structure will change soon. We will move to a single repo structure
-    hosted in the `Github's ai4os-hub <https://github.com/ai4os-hub>`__ organization.
-    Keep tuned for the updates! 📢
-
-Modules developed by **deephdc members** follow the following convention:
-
-* ``deephdc/<project-name>``: source code of the module
-* ``deephdc/DEEP-OC-<project-name>``: Dockerfiles and metadata of that module.
-
-Modules developed by **external users** follow the following convention:
-
-* ``deephdc/UC-<github-user>-<project-name>``: source code of the module
-* ``deephdc/UC-<github-user>-DEEP-OC-<project-name>``: Dockerfiles and metadata of that module.
+* ``ai4os-hub/ai4-<project-name>``: module officially developed by the project
+* ``ai4os-hub/<project-name>``: modules developed by external users
 
 Docker images have usually tags depending on whether they are using Github's ``master`` or ``test`` and
 whether they use ``cpu`` or ``gpu``. Tags are usually:
@@ -33,7 +22,7 @@ whether they use ``cpu`` or ``gpu``. Tags are usually:
 CI /CD pipeline
 ---------------
 
-In the project we use `Jenkins <https://jenkins.indigo-datacloud.eu/job/Pipeline-as-code/job/DEEP-OC-org/>`__
+In the project we use `Jenkins <https://jenkins.services.ai4os.eu/job/AI4OS-hub>`__
 for implementing CI/CD (Continuous Integration / Continuous Development) pipeline. This pipeline automatically performs a
 series of actions for you each time you commit a change in your code. This ensures that all the information and builds
 across the project are always up-to-date with your code.
@@ -41,5 +30,3 @@ across the project are always up-to-date with your code.
 This is an example of actions tha are performed by the pipeline:
 
 .. image:: /_static/images/Jenkins-pipeline.png
-
-The steps are defined in the ``Jenkinsfile`` of your repos.

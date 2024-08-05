@@ -10,7 +10,10 @@ notified here.
 .. Template
 .. * 📘 new :doc:`... </user/...>` page (``2024-04-03``)
 
-* 📈 new section in the :doc:`Dashboard </user/overview/dashboard>` with usage stats (``2024-05-14``)
+* 📌 new federated cluster is available in production (``2024-08-05``)
+* 📈 new :ref:`external datasets download <user/overview/dashboard:Storage configuration>` feature (``2024-06-30``)
+* 📘 new guides to perform :doc:`Incremental Learning </user/howto/incremental-learning>` (``2024-06-20``)
+* 📈 new :ref:`stats section <user/overview/dashboard:View your statistics>` in the Dashboard (``2024-05-14``)
 * 📘 support for token authentication in :doc:`Federated Learning trainings </user/howto/tools/federated-server>` (``2024-04-16``)
 * 📘 new :doc:`New features  </user/new-features>` page (meta!) (``2024-04-03``)
 * 📘 new tutorials for using AI workflows tools (:doc:`Elyra </user/howto/ai4-compose/elyra>`, :doc:`Flowfuse </user/howto/ai4-compose/flows>`) (``2024-03-18``)
@@ -32,11 +35,11 @@ First, the are a number of mature features that are in the process of being inte
 in the stack:
 
 * 📌 new unified AI module structure
-* 📈 usage stats (per user and per VO) are displayed in the Dashboard
-* 📈 support for secrets in the Dashboard (eg. Federated Learning server)
 * 📈 inference endpoints with OSCAR
-* 📈 short-lived endpoints to try the modules
-* 📈 email notifications for deployments that take a longer to deploy
+* 📈 inference endpoints with Nomad
+* 📈 try model endpoints with OSCAR
+* 📈 try model endpoints with Nomad
+* 📈 email notifications for training deployments that take a longer to deploy
 * 📈 new tool for image annotation (CVAT)
 * 📈 new tool for efficient video streaming (Kafka)
 
@@ -44,7 +47,6 @@ Along with these upcoming features, we are exploring more improvements. These ar
 in an experimental status and might not finally get integrated in the stack.
 
 * 📈 carbon footprint estimator for your deployments
-* 📈 show map with datacenter usage stats
 * 📈 graph visualizations of your module/deployment metadata
 * 📈 ability to pause deployments
 * 📌 using volumes in deployments to better share data across deployments

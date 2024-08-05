@@ -89,6 +89,11 @@ Now that your fedserver is running, you need to do the following steps:
 
 3. **Share them with the clients**:
 
+   .. note::
+
+      This step is only needed if you selected the ``tokens`` Docker tag during
+      configuration.	
+
    You will need to share the endpoint and the appropriate token with the clients that
    will take part in the training.
    In the section below we will explain how the clients can use them to connect to the

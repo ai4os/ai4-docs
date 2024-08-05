@@ -1,11 +1,17 @@
 Welcome to AI4OS documentation!
 ===============================
 
+The ``AI4OS`` stack empowers scientist by lowering the barrier to adopt the latest AI
+models and tools. It covers the full ML cycle: from model creation, to training, deployment
+and monitoring in production. Following the FAIR principles for science, both our software
+(platform and models) are fully open-source and easily portable to any other platform
+(no vendor lock-in!).
+
 .. important::
 
    A quick note on terminology. ``AI4OS`` is the name of the generic software stack that is
    powering the deployments of different platforms (``AI4EOSC``, ``iMagine``).
-   So for example the **AI4OS Dashboard** is the component that can be deployed as the
+   So, for example, the **AI4OS Dashboard** is the component that can be deployed as the
    **AI4EOSC Dashboard** or the **iMagine Dashboard**.
    These platform-specific Dashboards can have minor customizations but the underlying
    technology remains the same.
@@ -31,13 +37,13 @@ Welcome to AI4OS documentation!
     |   The service that allows to store your data remotely and access them from inside your deployment. (`old instance <https://data-deep.a.incd.pt/>`__)
     | :fab:`github` `Github (software) <https://github.com/ai4os>`__
     |   The code of the software powering the platform.
-    | :fab:`github` `Github (modules) <https://github.com/deephdc>`__
+    | :fab:`github` `Github (modules) <https://github.com/ai4os-hub>`__
     |   The code of all the modules available in the platform.
-    | :fab:`docker` `DockerHub <https://hub.docker.com/u/deephdc/>`__
+    | :fab:`docker` `DockerHub <https://hub.docker.com/u/ai4oshub/>`__
     |   Where the Docker images of the modules are stored.
     | :fab:`docker` `Harbor <https://registry.services.ai4os.eu/>`__
     |   Custom Docker image registry we deployed to overcome DockerHub limitations.
-    | :fa:`timeline` `CI/CD pipeline <https://jenkins.indigo-datacloud.eu/job/Pipeline-as-code/job/DEEP-OC-org/>`__
+    | :fa:`timeline` `CI/CD pipeline <https://jenkins.services.ai4os.eu/job/AI4OS-hub>`__
     |   Continuous Integration and Continuous Development Jenkins instance to keep everything up-to-date with latest code changes.
     | :fa:`temperature-half` `Status of services <https://status.ai4eosc.eu/>`__
     |   Check if a specific AI4OS service might be down for some reason.

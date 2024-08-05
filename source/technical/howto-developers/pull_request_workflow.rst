@@ -1,6 +1,8 @@
 Module integration workflow for external (non-deephdc) users
 ============================================================
 
+.. TODO: update
+
 In the case the PR to :ref:`integrate a module <user/howto/develop-model:4. Integrating the module in the Marketplace>`
 comes from a **non-deephdc** member, remember you have to perform the following
 additional steps for integration:

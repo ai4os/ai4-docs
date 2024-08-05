@@ -21,16 +21,16 @@ Try a service locally
 ---------------------
 
 The first step is to choose a module from the :doc:`Dashboard</user/overview/dashboard>`.
-For educational purposes we are going to use a `general model to identify images <https://dashboard.cloud.ai4eosc.eu/marketplace/modules/deep-oc-image-classification-tf>`__. This will allow us to see the general workflow.
+For educational purposes we are going to use a `general model to identify images <https://dashboard.cloud.ai4eosc.eu/marketplace/modules/ai4os-image-classification-tf>`__. This will allow us to see the general workflow.
 
 Once we have chosen the Module page we will
-find that it has an associated docker container in `DockerHub <https://hub.docker.com/u/deephdc/>`__. For example, in the
-example we are running here, the container would be ``deephdc/deep-oc-image-classification-tf``. This means that to pull the
+find that it has an associated docker container in `DockerHub <https://hub.docker.com/u/ai4oshub/>`__. For example, in the
+example we are running here, the container would be ``ai4oshub/ai4os-image-classification-tf``. This means that to pull the
 docker image and run it you should:
 
 .. code-block:: console
 
-    $ docker pull deephdc/deep-oc-image-classification-tf
+    $ docker pull ai4oshub/ai4os-image-classification-tf
 
 Docker images have usually tags depending on whether they are using ``master`` or ``test`` and whether they use
 ``cpu`` or ``gpu``. Tags are usually:
@@ -44,15 +44,15 @@ So if you wanted to use gpu and the test branch you could run:
 
 .. code-block:: console
 
-    $ docker pull deephdc/deep-oc-image-classification-tf:gpu-test
+    $ docker pull ai4oshub/ai4os-image-classification-tf:gpu-test
 
 Instead of pulling from Dockerhub you can choose to build the image yourself:
 
 .. code-block:: console
 
-    $ git clone https://github.com/deephdc/deep-oc-image-classification-tf
-    $ cd deep-oc-image-classification-tf
-    $ docker build -t deephdc/deep-oc-image-classification-tf .
+    $ git clone https://github.com/ai4os-hub/ai4os-image-classification-tf
+    $ cd ai4os-image-classification-tf
+    $ docker build -t ai4oshub/ai4os-image-classification-tf .
 
 
 2. Launch the API and predict
@@ -62,7 +62,7 @@ Run the container with
 
 .. code-block:: console
 
-	$ docker run -ti -p 5000:5000 -p 6006:6006 -p 8888:8888 deephdc/deep-oc-image-classification-tf
+	$ docker run -ti -p 5000:5000 -p 6006:6006 -p 8888:8888 ai4oshub/ai4os-image-classification-tf
 
 Once running, point your browser to http://127.0.0.1:5000/ui and you will see the API documentation, where you can
 test the module's functionality, as well as perform other actions.
