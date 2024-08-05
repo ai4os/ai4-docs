@@ -109,10 +109,9 @@ You try to list to GPU and it doesn't appear:
     Failed to initialize NVML: Unknown Error"
 
 This is due to `this issue <https://github.com/NVIDIA/nvidia-docker/issues/1730>`__.
-It should get fixed when we upgrade the GPU drivers, and this is planned for
-the next Nomad cluster we are setting up.
+We are working on fixing this issue. If this is happening to you, please contact support.
 
-In the meantime, your best option is to delete your deployment and create a new one.
+In the meantime, your best option is to backup your data, delete your deployment and create a new one.
 
 
 Storage issues
