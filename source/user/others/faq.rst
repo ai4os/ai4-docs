@@ -19,40 +19,33 @@ freed.
 Please contact support if this happens to you!
 
 
-🔥 The Dashboard says I only have 500 MB of disk in my deployment
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-In your deployment information, you might see that under ``Disk memory`` your deployment
-has 500 MB assigned, which is much less than what you might have asked initially.
-
-For the time being, this number is meaningless, because we are not enforcing correctly the disk limits.
-Users have access to all the resources of the node, and they might conflict with other users disk space.
-This is why we kindly ask users to respect a **maximum** of 20 GB of disk usage per deployment.
-
-We are planning to fix this issue in the new cluster we are setting up.
-
-If you need more than 20 GB, please check :doc:`the provided option </user/overview/storage>` of accessing
-your dataset via a virtual filesystem, in order to avoid overloading the disk.
-
-
 🔥 I ran out of disk in my deployment
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-The current Nomad cluster has not the ability to properly isolate disk between
-different users using the same physical machine. So it might be the case that some
-user might be using more resources than their due share, thus consuming the disk
-of other users that share their same node.
-We are planning to fix this issue in the new cluster we are setting up.
+You are trying to download some data but the following error is raised:
 
-First, make sure to delete files in the Trash (``/root/.local/share/Trash/files``).
+.. code-block:: console
+
+    RESOURCE_EXHAUSTED: Out of memory while trying to allocate ******** bytes
+
+This means that you have consumed more disk than what you initially requested.
+You can see your current disk consumption using:
+
+.. code-block:: console
+
+    $ df -h | grep overlay
+
+This will show you three values, respectively the ``Total | Used | Remaining`` disk.
+
+To solve this first, make sure to delete files in the Trash (``/root/.local/share/Trash/files``).
 Files end up there when deleted from the JupyterLab UI, thus not freeing up the space
 correctly.
 
-In the meantime, if you are sure that `you are using less than 20 GB of disk`,
-but you still find that there is not disk left, please contact support.
+If you still find you have not enough disk, you have two options:
 
-If you need more than 20 GB, please check :doc:`the provided option </user/overview/storage>` of accessing
-your dataset via a virtual filesystem, in order to avoid overloading the disk.
+* create a new deployment, requesting more disk in the configuration,
+* access your Nextcloud dataset files :doc:`via a virtual filesystem </user/overview/storage>`,
+  in order to avoid overloading the disk.
 
 
 🔥 My deployment does not correctly list my resources
