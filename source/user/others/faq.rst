@@ -216,17 +216,6 @@ temporary issue.
 If the issue persists, please contact support.
 
 
-🔥 I delete my deployment but it keeps reappearing
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-Happens from time to time, for unknown reasons.
-We are removing those dangling deployments *daily*. If your deployments remains
-undeleted for more than a day, please contact support.
-
-Hopefully this will be magically fixed in the new cluster we are setting up with
-the upgraded Nomad version.
-
-
 🚀 I would like to suggest a new feature
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
