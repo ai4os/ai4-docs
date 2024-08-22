@@ -138,6 +138,11 @@ You have two sections:
    This is what will allow you to access your Nextcloud storage from inside your deployment.
    For this, you have to provide your **rclone** credentials.
    Please :ref:`go here <user/howto/rclone:2. Configuring rclone>` in order to find how to create them.
+   
+   If you have previously linked a Nextcloud account in the profile section, you will be able to select which storage service you want to use and
+   your credentials will be filled automatically. Otherwise you will have to introduce them manually.
+
+.. image:: /_static/images/dashboard-storage-rlone.png
 
 2. **Download external datasets**
 
