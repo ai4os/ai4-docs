@@ -140,9 +140,10 @@ You have two sections:
    Please :ref:`go here <user/howto/rclone:2. Configuring rclone>` in order to find how to create them.
    
    If you have previously linked a Nextcloud account in the profile section, you will be able to select which storage service you want to use and
-   your credentials will be filled automatically. Otherwise you will have to introduce them manually.
+   your credentials will be filled automatically. Otherwise you will have to introduce them manually. If you want to know more information about how to link your Nextcloud account, please :ref:`check this <user/overview/dashboard.html#profile>`.
 
-.. image:: /_static/images/dashboard-storage-rlone.png
+
+.. image:: /_static/images/dashboard-storage-rclone.png
 
 2. **Download external datasets**
 
@@ -226,3 +227,22 @@ In this section you can see the historical usage metrics of the platform.
   measuring *real* usage, but *allocated* usage. So if you create a 1-CPU deployment for
   10 days, the aggregate usage will show 10 CPU days, even if you did not actually use
   the CPU at all.
+
+Profile
+^^^^^^
+
+In this section you can see your profile details.
+
+.. image:: /_static/images/profile-section.png
+
+* ``Personal information``: your full name and your email.
+
+* ``Virtual organizations``: the VOs you are a member of and which roles you have in them.
+
+* ``Linked services``: list of the available services which can be linked to your dashboard account. In order to do it, you have to click on the ``Sync`` button and log in in the popup window. You will also have to grant access to your Nexcloud account. If you have previosuly linked an account, you will be able to ``Resync`` it. Currently, there are two services:
+   
+   * ``AI4OS Nexcloud``
+
+   * ``Custom Nexcloud``: you can link your account from a custom Nextcloud. This may require some extra configuration in the server side, you can check how to do it :ref:`here <technical/howto-developers/custom-nextcloud-configuration>`.
+
+
