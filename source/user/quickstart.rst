@@ -22,4 +22,4 @@ Enjoy! 🚀
 
 .. tip::
 
-    If you run into problems you can always check the :doc:`Frequently Asked Questions (FAQ) </user/others/faq>`.
+    If you run into problems you can always check the :doc:`Frequently Asked Questions (FAQ) </user/support/faq>`.

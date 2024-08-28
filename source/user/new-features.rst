@@ -18,7 +18,7 @@ notified here.
 * 📘 new :doc:`New features  </user/new-features>` page (meta!) (``2024-04-03``)
 * 📘 new tutorials for using AI workflows tools (:doc:`Elyra </user/howto/ai4-compose/elyra>`, :doc:`Flowfuse </user/howto/ai4-compose/flows>`) (``2024-03-18``)
 * 📘 new :doc:`MLflow </user/howto/mlops/mlflow>` tutorials (``2024-02-09``)
-* 📘 new :doc:`Frequently Asked Questions (FAQ) </user/others/faq>` page (``2024-02-05``)
+* 📘 new :doc:`Frequently Asked Questions (FAQ) </user/support/faq>` page (``2024-02-05``)
 * 📌 :doc:`MLflow </user/howto/mlops/mlflow>` available under new domain (``2024-01-29``)
 * 📈 we enforce a quota of 2 GPUs per user for better resource distribution (``2024-01-25``)
 * 📘 updated :doc:`Quickstart </user/quickstart>` page (``2024-01-24``)
@@ -52,4 +52,4 @@ in an experimental status and might not finally get integrated in the stack.
 * 📌 using volumes in deployments to better share data across deployments
 
 Do you find something missing? Please check
-:ref:`how to suggest a new feature <user/others/faq:🚀 I would like to suggest a new feature>`.
+:ref:`how to suggest a new feature <user/support/faq:🚀 I would like to suggest a new feature>`.

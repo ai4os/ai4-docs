@@ -123,6 +123,26 @@ Others
 .. toctree::
    :maxdepth: 2
 
-   Frequently Asked Questions (FAQ) <others/faq>
    Useful Machine Learning resources <others/useful-ml-resources>
    Video demos <others/video-demos>
+
+Support
+-------
+
+.. raw:: html
+
+   </embed>
+   <div style="background-color: #243652; padding: 10px; border-radius: 10px; color: #c9daf5;">
+      <p>
+      Do you need additional support? Are you interested in the project and want more
+      information? <br>
+      Please don't hesitate to <a href="mailto:ai4eosc-support@listas.csic.es" style="color: white; text-decoration: underline;">contact support</a>.
+      </p>
+   </div>
+   </embed>
+
+
+.. toctree::
+   :maxdepth: 2
+
+   Frequently Asked Questions (FAQ) <support/faq>

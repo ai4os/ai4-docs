@@ -279,7 +279,7 @@ Do you want to go further?
 
 .. tip::
 
-    If you run into problems you can always check the :doc:`Frequently Asked Questions (FAQ) </user/others/faq>`.
+    If you run into problems you can always check the :doc:`Frequently Asked Questions (FAQ) </user/support/faq>`.
 
 
 .. TODO: renable when ready

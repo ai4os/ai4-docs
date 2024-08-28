@@ -156,4 +156,4 @@ You can make a POST request to the ``predict`` method to check everything is wor
 
 .. tip::
 
-    If you run into problems you can always check the :doc:`Frequently Asked Questions (FAQ) </user/others/faq>`.
+    If you run into problems you can always check the :doc:`Frequently Asked Questions (FAQ) </user/support/faq>`.
