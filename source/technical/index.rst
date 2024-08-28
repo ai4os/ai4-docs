@@ -19,4 +19,4 @@ HowTo's (developers)
    howto-developers/pull_request_workflow.rst
    howto-developers/develop-dashboard.rst
    howto-developers/oidc-agent.rst
-   howto-developers/custom-nextcloud-configuration.rst
+   howto-developers/storage-providers.rst
