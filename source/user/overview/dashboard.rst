@@ -39,8 +39,8 @@ In this section you can see your profile details.
 
 * ``Virtual organizations``: the VOs you are a member of and which roles you have in them.
 
-* ``Linked services``: list of the :doc:`compatible storage providers </technical/howto-developers/storage-providers>`.
-  that can linked to your account.
+* ``Linked services``: list of the :doc:`compatible storage providers </technical/howto-developers/storage-providers>`
+  that can be linked to your account.
 
   In order to link a storage provider, you have to click on the ``Sync`` button, log
   in the popup window and grant access to the Dashboard.
@@ -156,7 +156,7 @@ You have two sections:
    This is what will allow you to access your storage from inside your deployment.
 
    You will be able to select any storage from the ones you have configured in
-   you :ref:`Profile section <user/overview/dashboard:profile>`.
+   your :ref:`Profile section <user/overview/dashboard:profile>`.
 
    For advanced users, it is also possible to fill your RCLONE credentials manually.
    Please :ref:`go here <user/howto/rclone:2. Configuring rclone>` in order to find how to create them.
