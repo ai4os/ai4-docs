@@ -14,7 +14,7 @@ when creating your deployment.
 
 You have currently two ways of accessing your Nextcloud files from your deployment:
 
-1. you can :ref:`copy them locally <user/howto/rclone:3. Using rclone>` to your deployment disk using rclone.
+1. you can :ref:`copy them locally <user/howto/train/rclone:3. Using rclone>` to your deployment disk using rclone.
 
 2. you can access them in the ``/storage`` path in your deployment. This is a `virtual
    filesystem <https://rclone.org/commands/rclone_mount/>`__ that lets you access the Nextcloud storage via the network.

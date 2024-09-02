@@ -34,7 +34,7 @@ For creating modules, we provide the :doc:`AI4OS Modules Template <cookiecutter-
 as a starting point.
 
 In addition to AI modules, the Dashboard also allows to deploy tools
-(eg. a :doc:`Federated Server </user/howto/tools/federated-server>`).
+(eg. a :doc:`Federated Server </user/howto/train/federated-server>`).
 
 
 The DEEPaaS API
@@ -59,9 +59,9 @@ as integration with popular cloud storage options like  `Google Drive <https://w
 The Inference Platform (OSCAR)
 ------------------------------
 
-The :doc:`Inference platform (OSCAR) </user/howto/inference-oscar>` is a fully managed service to facilitate users to deploy pre-trained AI models with horizontal scalability thanks to a serverless approach.
+The :doc:`Inference platform (OSCAR) </user/howto/deploy/oscar>` is a fully managed service to facilitate users to deploy pre-trained AI models with horizontal scalability thanks to a serverless approach.
 
-User can also compose those models in :doc:`complex AI workflow </user/howto/ai4-compose/flows>`
+User can also compose those models in :doc:`complex AI workflow </user/howto/deploy/flowfuse>`
 
 
 

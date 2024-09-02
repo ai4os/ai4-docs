@@ -24,8 +24,7 @@ In the remaining part of this doc we will assume you have access to this private
 
 The Dashboard is divided between modules (AI models) and tools (eg. an image labelling tool,
 a federated server, etc). In the remaining part of this doc we will focus on how to deploy
-a module but the workflow is similar for tools. For more details on tools, please check
-the :ref:`How to use a tool <user/index:Use a tool (Intermediate user)>` section.
+a module but the workflow is similar for tools.
 
 
 
@@ -36,7 +35,7 @@ Once you log into the Dashboard, you are able to see all possible modules for de
 in the ``Marketplace`` panel.
 Those are basically:
 
-* ``AI4OS Development Environment``: special module especially designed to :doc:`develop new AI models </user/howto/develop-model>`.
+* ``AI4OS Development Environment``: special module especially designed to :doc:`develop new AI models </user/howto/develop/dashboard>`.
 * ``Modules``: set of AI models designed to perform given tasks (eg. image classification)
 * ``Tools``: set of AI tools that come handy in the Machine Learning workflow (eg. image labeling)
 
@@ -137,7 +136,7 @@ You have two sections:
 
    This is what will allow you to access your Nextcloud storage from inside your deployment.
    For this, you have to provide your **rclone** credentials.
-   Please :ref:`go here <user/howto/rclone:2. Configuring rclone>` in order to find how to create them.
+   Please :ref:`go here <user/howto/train/rclone:2. Configuring rclone>` in order to find how to create them.
 
 2. **Download external datasets**
 

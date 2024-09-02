@@ -1,6 +1,8 @@
 Train a model locally
 =====================
 
+.. todo: remove?
+
 .. admonition:: Useful video demos
    :class: important
 
@@ -177,7 +179,7 @@ In Nextcloud, go to the ``tar`` file you just created:
 
 Do you want to go further?
 
-* What about trying to integrate :doc:`MLflow Experiment tracking </user/howto/mlops/mlflow>` into your deployment?
+* What about trying to integrate :doc:`MLflow Experiment tracking </user/howto/develop/mlflow>` into your deployment?
 
 .. tip::
 
