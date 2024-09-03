@@ -51,7 +51,7 @@ After login into the `AI4OS Nextcloud <https://share.services.ai4os.eu/>`__ with
 application (typically in the docs we will use ``rshare``) and click on **Create new app password**.
 This will generate your ``<user>`` and ``<password>`` credentials. Your username should start with ``EGI_Checkin-...``.
 
-.. image:: /_static/images/nc-access.png
+.. image:: /_static/images/nextcloud/access.png
 
 Now you have several options to configure rclone:
 

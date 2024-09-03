@@ -70,8 +70,8 @@ More info
 
 If you are curious this is a very high level overview of how the platform is structured:
 
-.. image:: /_static/images/ai4eosc-architecture.png
+.. image:: /_static/images/ai4eosc/architecture.png
 
 And if you are feeling super-nerdy 🤓️, these are the low-level
-`C4 diagrams <https://structurizr.com/share/73873/2f769b91-f208-41b0-b79f-5e196435bdb1>`__
-of the platform architecture.
+`C4 architecture diagrams <https://structurizr.com/share/73873/2f769b91-f208-41b0-b79f-5e196435bdb1>`__
+of the platform.

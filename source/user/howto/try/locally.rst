@@ -67,7 +67,7 @@ Run the container with
 Once running, point your browser to http://127.0.0.1:5000/ui and you will see the API documentation, where you can
 test the module's functionality, as well as perform other actions.
 
-.. image:: /_static/images/deepaas.png
+.. image:: /_static/images/endpoints/deepaas.png
   :width: 500
 
 Go to the  ``predict()`` function and upload the file/data you want to predict (in the case of the image classifier

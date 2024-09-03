@@ -39,7 +39,7 @@ Those are basically:
 * ``Modules``: set of AI models designed to perform given tasks (eg. image classification)
 * ``Tools``: set of AI tools that come handy in the Machine Learning workflow (eg. image labeling)
 
-.. image:: /_static/images/dashboard-home.png
+.. image:: /_static/images/dashboard/home.png
 
 Modules can be:
 
@@ -63,11 +63,11 @@ Making a deployment
 
 Once you choose the module, you will be presented with the module's information:
 
-.. image:: /_static/images/dashboard-module.png
+.. image:: /_static/images/dashboard/module.png
 
 To deploy click in ``Train module`` and you will be redirected to a configuration page.
 
-.. image:: /_static/images/dashboard-configure.png
+.. image:: /_static/images/dashboard/configure.png
 
 This page will allow you to configure mainly three aspects:
 
@@ -149,7 +149,7 @@ You have two sections:
    With any dataset, you can select a ``force_pull`` option, so that if your dataset
    already exists in your storage it will overwrite the existing files.
 
-.. image:: /_static/images/dashboard-storage.png
+.. image:: /_static/images/dashboard/storage.png
 
 
 Managing the deployments
@@ -158,7 +158,7 @@ Managing the deployments
 In the ``Deployments`` panel you have a view of all the
 deployments you have made so far:
 
-.. image:: /_static/images/dashboard-deployments.png
+.. image:: /_static/images/dashboard/deployments.png
 
 
 Under :fa:`circle-info` ``Info`` you will find details about your deployment such as UUID,
@@ -184,7 +184,7 @@ Current usage
 
 In this section, you can see how the resources are currently being used:
 
-.. image:: /_static/images/dashboard-stats-overview.png
+.. image:: /_static/images/dashboard/stats-overview.png
 
 * In ``Cluster Usage Overview`` you will see how many resources are currently
   consumed/available in the platform.
@@ -196,14 +196,14 @@ Datacenters
 In this section you will see a map of the datacenters that are providing resources for
 the platform, along with their metrics:
 
-.. image:: /_static/images/dashboard-stats-datacenters.png
+.. image:: /_static/images/dashboard/stats-datacenters.png
 
 Graphs
 ^^^^^^
 
 In this section you can see the historical usage metrics of the platform.
 
-.. image:: /_static/images/dashboard-stats-graphs.png
+.. image:: /_static/images/dashboard/stats-graphs.png
 
 * In ``Usage over time`` you can see the daily usage time-series over the last 3 months.
   In addition to the standard resources, we show how many jobs where running and were

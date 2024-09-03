@@ -48,7 +48,7 @@ to learn the correct way to setting it up.
 
 In the case of the **image classification module**, we will create the following folders:
 
-.. image:: /_static/images/nc-folders.png
+.. image:: /_static/images/nextcloud/folders.png
 
 * A folder called ``models`` where the new training weights will be stored after the training is completed
 * A folder called ``data`` that contains two different folders:
@@ -171,7 +171,7 @@ The ``&`` will keep your command running even if you close the terminal, and ``n
 Now go back to the deployments list view.
 In your deployment go to **Access** and choose **DEEPaaS**. You will be redirected to ``http://deepaas_endpoint/ui``.
 
-.. image:: /_static/images/deepaas.png
+.. image:: /_static/images/endpoints/deepaas.png
    :width: 500 px
 
 Look for the ``train`` POST method. Modify the training parameters you wish to change
@@ -183,7 +183,7 @@ follow the training progress at ``http://monitor_endpoint`` (click **Access** bu
 For example, in the image classification module, you can monitor training progress with
 Tensorboard.
 
-.. image:: /_static/images/tensorboard.png
+.. image:: /_static/images/endpoints/tensorboard.png
 
 
 6. Test and export the newly trained model

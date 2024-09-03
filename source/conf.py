@@ -107,7 +107,7 @@ html_theme_options = {
     'css_minify': True,
 }
 
-html_logo = "_static/images/logo.png"
+html_logo = "_static/images/ai4eosc/logo.png"
 html_show_sourcelink = False
 
 # Add any paths that contain custom static files (such as style sheets) here,
