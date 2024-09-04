@@ -10,6 +10,7 @@ notified here.
 .. Template
 .. * 📘 new :doc:`... </user/...>` page (``2024-04-03``)
 
+* 📈 new :doc:`try-me deployments </user/howto/try/dashboard-gradio>` (``2024-09-03``)
 * 📌 new federated cluster is available in production (``2024-08-05``)
 * 📈 new :ref:`external datasets download <user/overview/dashboard:Storage configuration>` feature (``2024-06-30``)
 * 📘 new guides to perform :doc:`Incremental Learning </user/howto/develop/incremental-learning>` (``2024-06-20``)
@@ -34,11 +35,9 @@ In this section, we will offer some insight on to where the AI4OS stack is headi
 First, the are a number of mature features that are in the process of being integrated
 in the stack:
 
-* 📌 new unified AI module structure
 * 📈 inference endpoints with OSCAR
 * 📈 inference endpoints with Nomad
 * 📈 try model endpoints with OSCAR
-* 📈 try model endpoints with Nomad
 * 📈 email notifications for training deployments that take a longer to deploy
 * 📈 new tool for image annotation (CVAT)
 * 📈 new tool for efficient video streaming (Kafka)

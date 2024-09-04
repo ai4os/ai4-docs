@@ -5,8 +5,9 @@ For hosting the data necessary for your trainings, we provide access form inside
 deployments to the following hosting platforms:
 
 * `AI4OS Nextcloud <https://share.services.ai4os.eu/>`__: this is a Nextcloud instance
-  deployed for the project users. Each user gets a free 5 TB of storage there.
-
+  deployed for the project users. Each user gets a free 500 GB of storage there.
+  The first time you access this storage, you will need to contact the admins to validate
+  your account.
 
 To able able to access storage from your deployment, you need to properly
 :ref:`configure your Storage <user/overview/dashboard:Storage configuration>`

@@ -60,7 +60,7 @@ Now you can start writing your code.
     * In other systems, sometimes ``python3-dev`` is needed (``apt install python3-dev``).
 
 
-To be able to interface with DEEPaaS :ref:`you have to define <user/overview/api:1. Define the API methods for your model>`
+To be able to interface with DEEPaaS :ref:`you have to define <user/overview/api:Integrate your model with the API>`
 in ``api.py`` the functions you want to make accessible to the user.
 For this tutorial we are going to head to our `official demo module <https://github.com/ai4os-hub/ai4os-demo-app/blob/master/demo_app/api.py>`__
 and copy-paste its ``api.py`` file.

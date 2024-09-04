@@ -1,7 +1,7 @@
 Train a model locally
 =====================
 
-.. todo: remove?
+.. todo: remove? --> check if we need to move some parts to the other tuutorial
 
 .. admonition:: Useful video demos
    :class: important

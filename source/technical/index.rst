@@ -17,4 +17,3 @@ HowTo's (developers)
 
    howto-developers/organize-tutorial.rst
    howto-developers/develop-dashboard.rst
-   howto-developers/pull_request_workflow.rst

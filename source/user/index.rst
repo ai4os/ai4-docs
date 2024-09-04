@@ -71,7 +71,7 @@ Try a model
 .. toctree::
    :maxdepth: 2
 
-   Try with the Dashboard <howto/try/dashboard>
+   Try with the Dashboard (Gradio) <howto/try/dashboard-gradio>
    Try locally <howto/try/locally>
 
 
@@ -114,7 +114,7 @@ Deploy a model in production
    :maxdepth: 2
 
    Deploy with OSCAR <howto/deploy/oscar>
-   Deploy in your cloud <howto/deploy/im>
+   Deploy in your cloud <howto/deploy/cloud>
 
 In addition to deploying standalone modules, we support the concatenation of different
 AI modules into a multi-step workflow.

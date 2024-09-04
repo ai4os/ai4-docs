@@ -28,8 +28,8 @@ a module but the workflow is similar for tools.
 
 
 
-Selecting the modules
----------------------
+Navigating the Marketplace
+--------------------------
 
 Once you log into the Dashboard, you are able to see all possible modules for deploying
 in the ``Marketplace`` panel.

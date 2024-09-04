@@ -3,6 +3,7 @@ DEEPaaS API
 
 The `DEEPaaS API <https://github.com/ai4os/DEEPaaS>`__ enables a user friendly interaction with the underlying Deep
 Learning modules and can be used both for training models and doing inference with services.
+It provides some common methods to query all the modules in the Marketplace.
 
 For a detailed up-to-date documentation please refer to the `official DEEPaaS documentation <https://docs.ai4eosc.eu/projects/deepaas/en/stable/>`_.
 
@@ -10,36 +11,39 @@ For a detailed up-to-date documentation please refer to the `official DEEPaaS do
 Integrate your model with the API
 ---------------------------------
 
-.. tip::
-    The best approach to integrate your code with DEEPaaS is to create an empty template
-    using the :doc:`AI4OS Modules Template <cookiecutter-template>`. Once the template is created,
-    move your code inside your package and define the API methods that will interface with
-    your existing code.
+The best approach to integrate your code with DEEPaaS is to create an empty template
+using the :doc:`AI4OS Modules Template <cookiecutter-template>`.
+This will take care of creating a Python package of your model with all the appropriate
+structure for your model (entrypoints, files, etc).
 
-To make your Deep Learning model compatible with the DEEPaaS API you have to:
+Once the template is created, install the package in editable mode and move your existing
+code (if any) it.
 
-1. Define the API methods for your model
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.. code-block:: console
 
-Create a Python file (named for example ``api.py``) inside your package. In this file you can define any of the
-`API methods <https://docs.ai4eosc.eu/projects/deepaas/en/stable/user/v2-api.html>`_.
+    $ pip install -e .
+
+To define the API methods that will interface with your existing code, we have to
+modify the ``api.py`` file.
+The `API methods <https://docs.ai4eosc.eu/projects/deepaas/en/stable/user/v2-api.html>`__
+methods you can define are:
+
+* **Enable prediction**: implement ``get_predict_args()`` and ``predict()``.
+* **Enable training**: implement ``get_train_args()`` and ``train()``.
+* **Enable model weights preloading**: implement ``warm()``.
+
 You don't need to define all the methods, just the ones you need.
 Every other method will return a ``NotImplementError`` when  queried from the API.
-For example:
+The ``get_metadata()`` should be already defined for you.
 
-* **Enable prediction**: implement ``get_predict_args`` and ``predict``.
-* **Enable training**: implement ``get_train_args`` and ``train``.
-* **Enable model weights preloading**: implement ``warm``.
-* **Enable model info**: implement ``get_metadata``.
+If you don't feel like reading the DEEPaaS docs (which you should), we recommend taking
+a look at the `AI4OS demo app <https://github.com/ai4os-hub/ai4os-demo-app/blob/master/ai4os_demo_app/api.py>`__.
+There, you will be able to see examples on:
 
-If you don't feel like reading the DEEPaaS docs (which you should), here are some
-examples of files you can quickly drawn inspiration from:
-
-* `returning a JSON response <https://github.com/ai4os-hub/ai4os-demo-app/blob/master/demo_app/api.py>`__
-  for ``predict()``.
-* `returning a file (eg. image, zip, etc) <https://github.com/ai4os-hub/ai4os-demo-app/blob/return-files/demo_app/api.py>`__
-  for ``predict()``.
-* a `more complex example <https://github.com/ai4os-hub/ai4os-image-classification-tf/blob/master/imgclas/api.py>`__ which also includes ``train()`` with monitoring.
+* how to define you predict function, with multiple types of inputs and outputs.
+* how to choose to return different formats, be it a JSON or a file (eg. image, zip).
+  If you choose to return a JSON, please define a ``schema`` to validate the output predictions.
+* how to define a training function that logs metrics into Tensorboard monitoring.
 
 .. tip::
     Try to keep you module's code as decoupled as possible from DEEPaaS code, so that
@@ -58,29 +62,17 @@ examples of files you can quickly drawn inspiration from:
             resp = postprocess(out)    # transform your standard output to deepaas output
             return resp
 
-2. Define the entrypoints to your model
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-You must define the entrypoints pointing to this file in the ``setup.cfg`` as following:
-::
-
-    [entry_points]
-    deepaas.v2.model =
-        pkg_name = pkg_name.api
-
-Here is an `example <https://github.com/ai4os-hub/ai4os-demo-app/blob/cca3cb8e0838b0b6473549c595674e92f561f435/setup.cfg#L25-L27>`__ of the entrypoint
-definition in the ``setup.cfg`` file.
-
 
 Running the API
 ---------------
 
 To start the API run:
-::
 
-    deepaas-run --listen-ip 0.0.0.0
+.. code-block:: console
 
-and go to http://0.0.0.0:5000/ui. You will see a nice UI with all the methods:
+    $ deepaas-run --listen-ip 0.0.0.0
+
+and go to http://0.0.0.0:5000/ui. You will see the Swagger UI with all the methods:
 
 .. image:: /_static/images/endpoints/deepaas.png
    :width: 500 px
@@ -89,4 +81,4 @@ If running the API from inside a module's Docker container, you can use the comm
 
 .. code-block:: console
 
-    deep-start --deepaas
+    $ deep-start --deepaas

@@ -15,11 +15,11 @@ Now, here are some guiding steps for your first contact with the AI4OS platform:
    HowTo tutorials.
 
    If you still don't know where to start, deploying a module in the Dashboard to
-   :doc:`perform a simple inference </user/howto/try/dashboard>` is always a good
+   :doc:`perform a simple inference </user/howto/try/dashboard-gradio>` is always a good
    choice to get a grasp of the Platform functionalities.
 
 Enjoy! 🚀
 
 .. tip::
 
-    If you run into problems you can always check the :doc:`Frequently Asked Questions (FAQ) </user/support/faq>`.
+    If you run into problems you can always :ref:`contact support <user/index:support>`!
