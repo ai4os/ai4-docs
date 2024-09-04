@@ -1,6 +1,8 @@
 Train a model locally
 =====================
 
+.. todo: remove? --> check if we need to move some parts to the other tuutorial
+
 .. admonition:: Useful video demos
    :class: important
 
@@ -79,7 +81,7 @@ to learn the correct way to setting it up.
 
 In the case of the **image classification module**, we will create the following folders:
 
-.. image:: /_static/images/nc-folders.png
+.. image:: /_static/images/nextcloud/folders.png
 
 * A folder called ``models`` where the new training weights will be stored after the training is completed
 * A folder called ``data`` that contains two different folders:
@@ -125,7 +127,7 @@ If some kind of monitorization tool is available for this model you will be able
 follow the training progress from `<http://0.0.0.0:6006>`__. For example, in the image
 classification module, you can monitor training progress with Tensorboard.
 
-.. image:: /_static/images/tensorboard.png
+.. image:: /_static/images/endpoints/tensorboard.png
 
 
 5. Test and export the newly trained model
@@ -177,7 +179,7 @@ In Nextcloud, go to the ``tar`` file you just created:
 
 Do you want to go further?
 
-* What about trying to integrate :doc:`MLflow Experiment tracking </user/howto/mlops/mlflow>` into your deployment?
+* What about trying to integrate :doc:`MLflow Experiment tracking </user/howto/develop/mlflow>` into your deployment?
 
 .. tip::
 

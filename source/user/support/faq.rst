@@ -124,7 +124,7 @@ This probably means that you have entered the wrong credentials when configuring
 deployment in the :doc:`Dashboard </user/overview/dashboard>`.
 
 You will need to delete the current deployment and make a new one.
-Follow our guidelines on how to :ref:`get an RCLONE user and password <user/howto/rclone:2. Configuring rclone>`
+Follow our guidelines on how to :ref:`get an RCLONE user and password <user/howto/train/rclone:2. Configuring rclone>`
 to fill the deployment configuration form.
 
 
@@ -177,7 +177,7 @@ To fix this run the following command which will overwrite your endpoint:
     $ echo export RCLONE_CONFIG_RSHARE_URL=${RCLONE_CONFIG_RSHARE_URL//webdav\/}dav/files/${RCLONE_CONFIG_RSHARE_USER} >> /root/.bashrc
 
 
-More info on how to :ref:`configure rclone <user/howto/rclone:2. Configuring rclone>`.
+More info on how to :ref:`configure rclone <user/howto/train/rclone:2. Configuring rclone>`.
 
 .. TODO: another option is to fix the rclone version to 1.62.2
 

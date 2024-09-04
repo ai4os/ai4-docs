@@ -27,7 +27,7 @@ First of all, let's understand what FlowFuse, Node-RED, OSCAR, and AI4EOSC are:
   for Node-RED application development and delivery.
 * `OSCAR <https://oscar.grycap.net/>`__ is an open-source serverless platform to support
   scalable event-driven computations.
-  See the our documentation on :doc:`how to make an inference in OSCAR </user/howto/inference-oscar>`
+  See the our documentation on :doc:`how to make an inference in OSCAR </user/howto/deploy/oscar>`
   for more information.
 
 In AI4EOSC, we use Node-Red to visually compose AI model inference pipelines.

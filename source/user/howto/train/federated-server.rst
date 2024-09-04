@@ -84,7 +84,7 @@ Now that your fedserver is running, you need to do the following steps:
    You can generate as many tokens as needed (eg. 1 token per client), as well as
    revoke them:
 
-   .. image:: /_static/images/test-secrets.png
+   .. image:: /_static/images/dashboard/secrets.png
      :width: 500 px
 
 3. **Share them with the clients**:
@@ -92,7 +92,7 @@ Now that your fedserver is running, you need to do the following steps:
    .. note::
 
       This step is only needed if you selected the ``tokens`` Docker tag during
-      configuration.	
+      configuration.
 
    You will need to share the endpoint and the appropriate token with the clients that
    will take part in the training.
