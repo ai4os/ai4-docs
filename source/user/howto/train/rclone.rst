@@ -51,7 +51,7 @@ After login into the `AI4OS Nextcloud <https://share.services.ai4os.eu/>`__ with
 application (typically in the docs we will use ``rshare``) and click on **Create new app password**.
 This will generate your ``<user>`` and ``<password>`` credentials. Your username should start with ``EGI_Checkin-...``.
 
-.. image:: /_static/images/nc-access.png
+.. image:: /_static/images/nextcloud/access.png
 
 Now you have several options to configure rclone:
 
@@ -75,7 +75,7 @@ This is because, to connect with the remote, rclone needs to use an obscured ver
 
 If your rclone version is higher than ``1.62.2``, then you must need to adapt the
 endpoint, running this command
-(see :ref:`Frequently Asked Questions <user/others/faq:🔥 rclone fails to connect>` for more info):
+(see :ref:`Frequently Asked Questions <user/support/faq:🔥 rclone fails to connect>` for more info):
 
 .. code-block:: console
 

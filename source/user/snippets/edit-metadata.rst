@@ -19,3 +19,5 @@ Check you didn't mess up the JSON formatting by running:
     $ ai4-metadata-validator metadata.json
 
 :fa:`warning` Due to some issues with the JSON format parsing **avoid** using ``:``  in the values you are filling.
+
+.. TODO: update to YAML

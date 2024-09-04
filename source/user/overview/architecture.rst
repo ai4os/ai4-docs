@@ -34,7 +34,7 @@ For creating modules, we provide the :doc:`AI4OS Modules Template <cookiecutter-
 as a starting point.
 
 In addition to AI modules, the Dashboard also allows to deploy tools
-(eg. a :doc:`Federated Server </user/howto/tools/federated-server>`).
+(eg. a :doc:`Federated Server </user/howto/train/federated-server>`).
 
 
 The DEEPaaS API
@@ -51,17 +51,18 @@ The data storage resources
 --------------------------
 
 :doc:`Storage <storage>` is essential for users that want to create new services by training modules on their custom data. For the moment
-we support hosting data in `AI4OS Nextcloud <https://share.services.ai4os.eu/>`__  instance (up to 2 Terabytes by default), as well
-as integration with popular cloud storage options like  `Google Drive <https://www.google.com/drive/>`__,
+we support hosting data in `AI4OS Nextcloud <https://share.services.ai4os.eu/>`__  instance.
+
+In the future we will try to integrate as well with popular cloud storage options like  `Google Drive <https://www.google.com/drive/>`__,
 `Dropbox <https://www.dropbox.com/>`__, `Amazon S3 <https://aws.amazon.com/s3/>`__ and `many more <https://rclone.org/>`__.
 
 
 The Inference Platform (OSCAR)
 ------------------------------
 
-The :doc:`Inference platform (OSCAR) </user/howto/inference-oscar>` is a fully managed service to facilitate users to deploy pre-trained AI models with horizontal scalability thanks to a serverless approach.
+The :doc:`Inference platform (OSCAR) </user/howto/deploy/oscar>` is a fully managed service to facilitate users to deploy pre-trained AI models with horizontal scalability thanks to a serverless approach.
 
-User can also compose those models in :doc:`complex AI workflow </user/howto/ai4-compose/flows>`
+User can also compose those models in :doc:`complex AI workflow </user/howto/deploy/flowfuse>`
 
 
 
@@ -70,8 +71,8 @@ More info
 
 If you are curious this is a very high level overview of how the platform is structured:
 
-.. image:: /_static/images/ai4eosc-architecture.png
+.. image:: /_static/images/ai4eosc/architecture.png
 
 And if you are feeling super-nerdy 🤓️, these are the low-level
-`C4 diagrams <https://structurizr.com/share/73873/2f769b91-f208-41b0-b79f-5e196435bdb1>`__
-of the platform architecture.
+`C4 architecture diagrams <https://structurizr.com/share/73873/2f769b91-f208-41b0-b79f-5e196435bdb1>`__
+of the platform.

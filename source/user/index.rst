@@ -65,57 +65,66 @@ components is provided in the following sections.
 How-to's
 --------
 
-Use a model (basic user)
-^^^^^^^^^^^^^^^^^^^^^^^^
+Try a model
+^^^^^^^^^^^
 
 .. toctree::
    :maxdepth: 2
 
-   Perform inference locally <howto/inference-locally>
-   Perform inference with the Dashboard <howto/inference-dashboard>
-   Perform inference with OSCAR <howto/inference-oscar>
-   Create AI inference workflows with FlowFuse <howto/ai4-compose/flows>
-   Create AI inference workflows with Elyra <howto/ai4-compose/elyra>
+   Try with the Dashboard (Gradio) <howto/try/dashboard-gradio>
+   Try locally <howto/try/locally>
 
-Train a model (intermediate user)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Develop a model
+^^^^^^^^^^^^^^^
 
 .. toctree::
    :maxdepth: 2
 
-   Train a model locally <howto/train-model-locally>
-   Train a model with the Dashboard <howto/train-model-dashboard>
-   Use rclone to sync your dataset <howto/rclone>
-   Use MLFlow for tracking your trainings <howto/mlops/mlflow>
+   Develop a model <howto/develop/dashboard>
 
-Develop a model (advanced user)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+We also provide guides for developers to implement and support advanced training
+techniques in their modules:
+
+.. toctree::
+   :maxdepth: 1
+
+   Use Incremental learning <howto/develop/incremental-learning>
+   Use Distributed learning <howto/develop/distributed-learning>
+   Use MLFlow for tracking your trainings <howto/develop/mlflow>
+
+
+Train a model
+^^^^^^^^^^^^^
 
 .. toctree::
    :maxdepth: 2
 
-   Develop a model <howto/develop-model>
+   Train a model with the Dashboard <howto/train/dashboard>
+   Use rclone to sync your dataset <howto/train/rclone>
+   Make a federated training <howto/train/federated-server>
+
+.. Train a model locally <howto/train/locally>
 
 
-Use a tool (intermediate user)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-We have specific guides for each of the tools.
-
-.. toctree::
-   :maxdepth: 2
-
-   Federated server <howto/tools/federated-server>
-
-
-Use advanced AI techniques (intermediate user)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Deploy a model in production
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. toctree::
    :maxdepth: 2
 
-   Incremental learning <howto/incremental-learning>
-   Distributed learning <howto/distributed-learning>
+   Deploy with OSCAR <howto/deploy/oscar>
+   Deploy in your cloud <howto/deploy/cloud>
+
+In addition to deploying standalone modules, we support the concatenation of different
+AI modules into a multi-step workflow.
+
+.. toctree::
+   :maxdepth: 2
+
+   Create a workflow with FlowFuse <howto/deploy/flowfuse>
+   Create a workflow with Elyra <howto/deploy/elyra>
+
 
 Others
 ------
@@ -123,6 +132,26 @@ Others
 .. toctree::
    :maxdepth: 2
 
-   Frequently Asked Questions (FAQ) <others/faq>
    Useful Machine Learning resources <others/useful-ml-resources>
    Video demos <others/video-demos>
+
+Support
+-------
+
+.. raw:: html
+
+   </embed>
+   <div style="background-color: #243652; padding: 10px; border-radius: 10px; color: #c9daf5;">
+      <p>
+      Do you need additional support? Are you interested in the project and want more
+      information? <br>
+      Please don't hesitate to <a href="mailto:ai4eosc-support@listas.csic.es" style="color: white; text-decoration: underline;">contact support</a>.
+      </p>
+   </div>
+   </embed>
+
+
+.. toctree::
+   :maxdepth: 2
+
+   Frequently Asked Questions (FAQ) <support/faq>

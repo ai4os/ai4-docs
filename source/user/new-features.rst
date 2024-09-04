@@ -10,16 +10,17 @@ notified here.
 .. Template
 .. * 📘 new :doc:`... </user/...>` page (``2024-04-03``)
 
+* 📈 new :doc:`try-me deployments </user/howto/try/dashboard-gradio>` (``2024-09-03``)
 * 📌 new federated cluster is available in production (``2024-08-05``)
 * 📈 new :ref:`external datasets download <user/overview/dashboard:Storage configuration>` feature (``2024-06-30``)
-* 📘 new guides to perform :doc:`Incremental Learning </user/howto/incremental-learning>` (``2024-06-20``)
+* 📘 new guides to perform :doc:`Incremental Learning </user/howto/develop/incremental-learning>` (``2024-06-20``)
 * 📈 new :ref:`stats section <user/overview/dashboard:View your statistics>` in the Dashboard (``2024-05-14``)
-* 📘 support for token authentication in :doc:`Federated Learning trainings </user/howto/tools/federated-server>` (``2024-04-16``)
+* 📘 support for token authentication in :doc:`Federated Learning trainings </user/howto/train/federated-server>` (``2024-04-16``)
 * 📘 new :doc:`New features  </user/new-features>` page (meta!) (``2024-04-03``)
-* 📘 new tutorials for using AI workflows tools (:doc:`Elyra </user/howto/ai4-compose/elyra>`, :doc:`Flowfuse </user/howto/ai4-compose/flows>`) (``2024-03-18``)
-* 📘 new :doc:`MLflow </user/howto/mlops/mlflow>` tutorials (``2024-02-09``)
-* 📘 new :doc:`Frequently Asked Questions (FAQ) </user/others/faq>` page (``2024-02-05``)
-* 📌 :doc:`MLflow </user/howto/mlops/mlflow>` available under new domain (``2024-01-29``)
+* 📘 new tutorials for using AI workflows tools (:doc:`Elyra </user/howto/deploy/elyra>`, :doc:`Flowfuse </user/howto/deploy/flowfuse>`) (``2024-03-18``)
+* 📘 new :doc:`MLflow </user/howto/develop/mlflow>` tutorials (``2024-02-09``)
+* 📘 new :doc:`Frequently Asked Questions (FAQ) </user/support/faq>` page (``2024-02-05``)
+* 📌 :doc:`MLflow </user/howto/develop/mlflow>` available under new domain (``2024-01-29``)
 * 📈 we enforce a quota of 2 GPUs per user for better resource distribution (``2024-01-25``)
 * 📘 updated :doc:`Quickstart </user/quickstart>` page (``2024-01-24``)
 * 📈 users are able to select specific GPU models (``2024-01-18``)
@@ -34,11 +35,9 @@ In this section, we will offer some insight on to where the AI4OS stack is headi
 First, the are a number of mature features that are in the process of being integrated
 in the stack:
 
-* 📌 new unified AI module structure
 * 📈 inference endpoints with OSCAR
 * 📈 inference endpoints with Nomad
 * 📈 try model endpoints with OSCAR
-* 📈 try model endpoints with Nomad
 * 📈 email notifications for training deployments that take a longer to deploy
 * 📈 new tool for image annotation (CVAT)
 * 📈 new tool for efficient video streaming (Kafka)
@@ -52,4 +51,4 @@ in an experimental status and might not finally get integrated in the stack.
 * 📌 using volumes in deployments to better share data across deployments
 
 Do you find something missing? Please check
-:ref:`how to suggest a new feature <user/others/faq:🚀 I would like to suggest a new feature>`.
+:ref:`how to suggest a new feature <user/support/faq:🚀 I would like to suggest a new feature>`.

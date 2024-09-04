@@ -5,35 +5,36 @@ The AI4OS stack is focused on three different types of users.
 Depending on what you want to achieve you should belong into one or more of the following categories:
 
 
-.. image:: /_static/images/ai4eosc-user-roles.png
+.. image:: /_static/images/ai4eosc/user-roles.png
 
 
 The basic user
 --------------
 
-This user wants to use modules that are already pre-trained and :doc:`test them with their data </user/howto/inference-locally>`,
-and therefore don't need to have any machine learning knowledge. For example, they can take an already trained module
+This user wants to use modules that are already pre-trained and test them with their data.
+Therefore, they don't need to have any particular machine learning knowledge. For example, they can take an already trained module
 for `plant classification <https://dashboard.cloud.ai4eosc.eu/marketplace/modules/deep-oc-plants-classification-tf>`__
 that has been containerized, and use it to classify their own plant images.
 
 **What AI4OS can offer to you:**
 
-* a :doc:`Dashboard <dashboard>` full of ready-to-use modules to perform inference with your data
-* an :doc:`API <api>` to easily interact with the services
-* solutions to run the inference in the Cloud or in your local resources
-* the ability to develop complex topologies by composing different modules
+* a :doc:`Dashboard <dashboard>` full of ready-to-use modules to perform inference with your data,
+* an :doc:`API <api>` to easily interact with the services,
+* solutions to run the inference in the Cloud or in your local resources,
+* the ability to develop complex topologies by composing different modules.
 
-**Related HowTo's:**
+.. admonition:: Related HowTo's
+   :class: info
 
-* :doc:`How to perform inference remotely </user/howto/inference-dashboard>`
-* :doc:`How to perform inference locally </user/howto/inference-locally>`
+   * :ref:`How to try a model <user/index:Try a model>`
+   * :ref:`How to deploy a model in production <user/index:Deploy a model in production>`
 
 
 The intermediate user
 ---------------------
 
-The intermediate user wants to :doc:`retrain an available module </user/howto/train-model-locally>` to perform the same
-task but fine tuning it to their own data.
+The intermediate user wants to retrain an available module to perform the same task but
+fine-tuning it to their own data.
 They still might not need high level knowledge on modelling of machine learning problems, but typically do need basic
 programming skills to prepare their own data into the appropriate format.
 Nevertheless, they can re-use the knowledge being captured in a trained network and adjust the network to their problem
@@ -43,48 +44,39 @@ model and retrains it to perform `seed classification <https://dashboard.cloud.a
 
 **What AI4OS can offer to you:**
 
-* the ability to train out-of-the-box a module of the :doc:`Dashboard <dashboard>` on your personal dataset
-* an :doc:`API <api>` to easily interact with the model
-* :ref:`data storage resources <user/overview/architecture:The data storage resources>` to access your dataset
-  using the `AI4OS Nextcloud <https://share.services.ai4os.eu/>`__ (up to 2 Terabytes by default)
-* integration with popular cloud storage options like
-  `Google Drive <https://www.google.com/drive/>`__, `Dropbox <https://www.dropbox.com/>`__,
-  `Amazon S3 <https://aws.amazon.com/s3/>`__ and `many more <https://rclone.org/>`__
-* the ability to deploy the developed service on Cloud resources
-* the ability to share the service with other users in the user's catalogue
+* the ability to train out-of-the-box a module of the :doc:`Dashboard <dashboard>`,
+* the ability to easily connect your training to your dataset hosted on our :doc:`data storage resources </user/overview/storage>`,
+* the ability to use GPUs to accelerate your training,
+* an :doc:`API <api>` to easily interact with the model,
+* the ability to deploy the developed service on Cloud resources,
+* the ability to share your module with other users in the :ref:`Dashboard Marketplace <user/overview/dashboard:Navigating the Marketplace>`.
 
-**Related HowTo's:**
+.. admonition:: Related HowTo's
+   :class: info
 
-* :doc:`How to train a model locally </user/howto/train-model-locally>`
-* :doc:`How to train a model remotely </user/howto/train-model-dashboard>`
+   * :ref:`How to train a model <user/index:Train a model>`
 
 
 The advanced user
 -----------------
 
-The advanced users are the ones that will :doc:`develop their own machine learning models </user/howto/develop-model>`
-and therefore need to be competent in machine learning. This would be the case for example if we provided an image
-classification model but the users wanted to perform object localization, which is a fundamentally different task.
+The advanced users are the ones that will develop their own machine learning models
+and therefore need to be competent in machine learning.
+This would be the case for example if we provided an image classification model
+but the users wanted to perform object localization, which is a fundamentally different task.
 Therefore they will design their own neural network architecture, potentially re-using parts of the code from other
 models.
 
 **What AI4OS can offer to you:**
 
-* a ready-to-use environment with the main DL frameworks running in a dockerized solution running on different types of
-  hardware (CPUs, GPUs, etc)
-* :ref:`data storage resources <user/overview/architecture:The data storage resources>` to access your dataset
-  using the `AI4OS Nextcloud <https://share.services.ai4os.eu/>`__ (up to 2 Terabytes by default)
-* integration with popular cloud storage options like
-  `Google Drive <https://www.google.com/drive/>`__, `Dropbox <https://www.dropbox.com/>`__,
-  `Amazon S3 <https://aws.amazon.com/s3/>`__ and `many more <https://rclone.org/>`__
-* the ability to deploy the developed module on Cloud resources
-* the ability to share the module with other users in the :doc:`Dashboard <dashboard>`
-* the possibility to :ref:`integrate your module with the API <user/overview/api:Integrate your model with the API>`
-  to enable easier user interaction
+* a ready-to-use environment with the main DL frameworks (Pytorch, Tensorflow) as well as the main IDEs (VScode, Jupyterlab),
+* the ability to easily connect your environment to your dataset hosted on our :doc:`data storage resources </user/overview/storage>`,
+* the ability to use GPUs to accelerate your training and development,
+* the possibility to :ref:`integrate your module with the API <user/overview/api:Integrate your model with the API>` to enable easier user interaction,
+* the ability to deploy the developed module on Cloud resources,
+* the ability to share your module with other users in the :ref:`Dashboard Marketplace <user/overview/dashboard:Navigating the Marketplace>`.
 
+.. admonition:: Related HowTo's
+   :class: info
 
-**Related HowTo's:**
-
-* :doc:`How to use the AI4OS Modules Template for model development <cookiecutter-template>`
-* :doc:`How to develop your own machine learning model </user/howto/develop-model>`
-* :ref:`How to integrate your model with the DEEPaaS API <user/overview/api:Integrate your model with the API>`
+   * :ref:`How to develop a model <user/index:Develop a model>`

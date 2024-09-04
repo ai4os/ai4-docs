@@ -8,13 +8,12 @@ Try a service locally
 
 .. admonition:: Requirements
 
-    This section requires having `docker <https://docs.docker.com/install/#supported-platforms>`__ installed.
+    This section requires having `Docker <https://docs.docker.com/install/#supported-platforms>`__ installed:
 
-    Starting from version 19.03 docker supports NVIDIA GPUs (see `here <https://docs.docker.com/engine/release-notes/>`__ and `here <https://github.com/moby/moby/pull/38828>`__).
-    If you happen to be using an older version you can give a try to `nvidia-docker <https://github.com/nvidia/nvidia-docker/wiki/Installation-(version-2.0)>`__
-
-    If you need to use docker in an environment without root privileges (eg. an HPC cluster)
-    check `udocker <https://github.com/indigo-dc/udocker/releases>`__ instead of docker.
+    * Starting from version 19.03 docker supports NVIDIA GPUs (see `here <https://docs.docker.com/engine/release-notes/>`__ and `here <https://github.com/moby/moby/pull/38828>`__).
+      If you happen to be using an older version you can give a try to `nvidia-docker <https://github.com/nvidia/nvidia-docker/wiki/Installation-(version-2.0)>`__
+    * If you need to use docker in an environment without root privileges (eg. an HPC cluster),
+      check `udocker <https://github.com/indigo-dc/udocker/releases>`__ instead of docker.
 
 
 1. Choose your module
@@ -67,7 +66,7 @@ Run the container with
 Once running, point your browser to http://127.0.0.1:5000/ui and you will see the API documentation, where you can
 test the module's functionality, as well as perform other actions.
 
-.. image:: /_static/images/deepaas.png
+.. image:: /_static/images/endpoints/deepaas.png
   :width: 500
 
 Go to the  ``predict()`` function and upload the file/data you want to predict (in the case of the image classifier

@@ -1,6 +1,9 @@
 Modules
 =======
 
+Every component in the platform is open-source, including the modules!
+This means that everything you develop in the platform can be :doc:`deployed anywhere else </user/howto/deploy/cloud>`.
+
 All  modules are found at the :doc:`AI4OS Dashboard <dashboard>`, the source code is
 hosted under `Github's ai4os-hub <https://github.com/ai4os-hub>`__ organization and the corresponding Docker images are
 hosted under `DockerHub's ai4oshub <https://hub.docker.com/u/ai4oshub/>`__ organization.
@@ -29,4 +32,4 @@ across the project are always up-to-date with your code.
 
 This is an example of actions tha are performed by the pipeline:
 
-.. image:: /_static/images/Jenkins-pipeline.png
+.. image:: /_static/images/ai4eosc/jenkins.png
