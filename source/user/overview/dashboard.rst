@@ -32,7 +32,7 @@ Profile
 
 In this section you can see your profile details.
 
-.. image:: /_static/images/dashboard-profile.png
+.. image:: /_static/images/dashboard/profile.png
 
 * ``Personal information``: your full name and your email.
 
@@ -158,9 +158,9 @@ You have two sections:
    your :ref:`Profile section <user/overview/dashboard:profile>`.
 
    For advanced users, it is also possible to fill your RCLONE credentials manually.
-   Please :ref:`go here <user/howto/rclone:2. Configuring rclone>` in order to find how to create them.
+   Please :ref:`go here <user/howto/train/rclone:2. Configuring rclone>` in order to find how to create them.
 
-.. image:: /_static/images/dashboard-storage-rclone.png
+.. image:: /_static/images/dashboard/storage-rclone.png
 
 2. **Download external datasets**
 
@@ -173,7 +173,7 @@ You have two sections:
    With any dataset, you can select a ``force_pull`` option, so that if your dataset
    already exists in your storage it will overwrite the existing files.
 
-.. image:: /_static/images/dashboard-storage-datasets.png
+.. image:: /_static/images/dashboard/storage-datasets.png
 
 
 Managing the deployments
