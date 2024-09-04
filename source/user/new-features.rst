@@ -10,6 +10,7 @@ notified here.
 .. Template
 .. * 📘 new :doc:`... </user/...>` page (``2024-04-03``)
 
+* 📈 new :ref:`Profile section <user/overview/dashboard:Profile>` where you can link your storage providers (``2024-09-04``)
 * 📈 new :doc:`try-me deployments </user/howto/try/dashboard-gradio>` (``2024-09-03``)
 * 📌 new federated cluster is available in production (``2024-08-05``)
 * 📈 new :ref:`external datasets download <user/overview/dashboard:Storage configuration>` feature (``2024-06-30``)
