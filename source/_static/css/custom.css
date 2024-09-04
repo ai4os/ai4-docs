@@ -25,6 +25,11 @@ div.highlight {
   border: 1px solid rgba(147, 147, 147, 1);
 }
 
+/* Round image corners */
+img {
+  border-radius: 10px;
+}
+
 /* Smaller admonitions */
 div.admonition {
   font-size: 80% !important;
