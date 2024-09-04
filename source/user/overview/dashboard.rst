@@ -27,6 +27,24 @@ a federated server, etc). In the remaining part of this doc we will focus on how
 a module but the workflow is similar for tools.
 
 
+Profile
+-------
+
+In this section you can see your profile details.
+
+.. image:: /_static/images/dashboard/profile.png
+
+* ``Personal information``: your full name and your email.
+
+* ``Virtual organizations``: the VOs you are a member of and which roles you have in them.
+
+* ``Linked services``: list of the :doc:`compatible storage providers </technical/howto-developers/storage-providers>`
+  that can be linked to your account.
+
+  In order to link a storage provider, you have to click on the ``Sync`` button, log
+  in the popup window and grant access to the Dashboard.
+  If you have previously linked a storage provider, you also have to option to ``Resync`` it.
+
 
 Navigating the Marketplace
 --------------------------
@@ -132,11 +150,17 @@ Storage configuration
 This is where you can configure how to connect your storage to your deployment.
 You have two sections:
 
-1. **Provide your RCLONE credentials**
+1. **Storage configuration**
 
-   This is what will allow you to access your Nextcloud storage from inside your deployment.
-   For this, you have to provide your **rclone** credentials.
+   This is what will allow you to access your storage from inside your deployment.
+
+   You will be able to select any storage from the ones you have configured in
+   your :ref:`Profile section <user/overview/dashboard:profile>`.
+
+   For advanced users, it is also possible to fill your RCLONE credentials manually.
    Please :ref:`go here <user/howto/train/rclone:2. Configuring rclone>` in order to find how to create them.
+
+.. image:: /_static/images/dashboard/storage-rclone.png
 
 2. **Download external datasets**
 
@@ -149,7 +173,7 @@ You have two sections:
    With any dataset, you can select a ``force_pull`` option, so that if your dataset
    already exists in your storage it will overwrite the existing files.
 
-.. image:: /_static/images/dashboard/storage.png
+.. image:: /_static/images/dashboard/storage-datasets.png
 
 
 Managing the deployments
