@@ -205,6 +205,21 @@ More info on how to :ref:`configure rclone <user/howto/train/rclone:2. Configuri
 Other issues
 ------------
 
+🔥 The Quick access button is not working
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+This happens when you launched a module/tool from the Dashboard and try to immediately
+click on ``Quick Access``. The new tab it opens is returning either
+*404 page not found* or *Bad Gateway*.
+
+You might need to wait a few seconds, still the endpoint is really ready and shows as
+an active endpoint in the ⓘ ``Info`` section.
+
+.. We are not disabling the `Quick Access` view based on the active endpoints,
+.. because parsing active endpoints in the main view is very costly (we have to ping
+.. at least 1 endpoint, ~0.4s, per deployment)
+
+
 🔥 Service X is not working
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
