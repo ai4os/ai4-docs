@@ -10,7 +10,7 @@ and monitoring in production. Following the FAIR principles for science, both ou
 .. important::
 
    A quick note on terminology. ``AI4OS`` is the name of the generic software stack that is
-   powering the deployments of different platforms (``AI4EOSC``, ``iMagine``).
+   powering the deployments of different platforms (``AI4EOSC``, ``iMagine``, etc).
    So, for example, the **AI4OS Dashboard** is the component that can be deployed as the
    **AI4EOSC Dashboard** or the **iMagine Dashboard**.
    These platform-specific Dashboards can have minor customizations but the underlying
@@ -20,6 +20,7 @@ and monitoring in production. Following the FAIR principles for science, both ou
 
    * `AI4EOSC <https://ai4eosc.eu/>`__: AI for the European Open Science Cloud
    * `iMagine <https://imagine-ai.eu/>`__: Imaging data and services for aquatic science
+   * `AI4Life <https://ai4life.eurobioimaging.eu/>`__: AI models and methods for the life sciences
 
 
 .. admonition:: Useful links

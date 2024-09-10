@@ -3,18 +3,13 @@ How to use Nextcloud with rclone
 
 **rclone** is a tool that enables you to synchronize contents between your machine and a remote storage.
 It is kind of an `rsync <https://linux.die.net/man/1/rsync>`__ but for remote storages.
-Although we will demonstrate here how to use it with Nextcloud, it can be used with many
-different remote storages (Dropbox, Google Drive, Amazon S3, etc)
+Although we will demonstrate here how to use it with Nextcloud, it can be used with many different remote storages (Dropbox, Google Drive, Amazon S3, etc)
 
 
 1. Installing rclone
 --------------------
 
-All applications in the :doc:`AI4OS Dashboard</user/overview/dashboard>` are packed in a Docker image and have
-`rclone <https://rclone.org/>`__ installed by default. If you want to create a Docker containing your own application, you should install rclone
-in the container to be able to access the data stored remotely.
-When developing an application with the :doc:`AI4OS Modules Template </user/overview/cookiecutter-template>`,
-the Dockerfile already includes installation of rclone.
+All applications in the :doc:`AI4OS Dashboard</user/overview/dashboard>` are packed in a Docker image and have `rclone <https://rclone.org/>`__ installed by default. If you want to create a Docker containing your own application, you should install rclone in the container to be able to access the data stored remotely. When developing an application with the :doc:`AI4OS Modules Template </user/overview/cookiecutter-template>`, the Dockerfile already includes installation of rclone.
 
 To install rclone on a Docker container based on Ubuntu you should add the following code:
 
@@ -44,25 +39,15 @@ For other Linux flavors, please refer to the `rclone official site <https://rclo
 2. Configuring rclone
 ---------------------
 
-First, you need to get your RCLONE credentials.
+... in a Dashboard deployment
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-After login into the `AI4OS Nextcloud <https://share.services.ai4os.eu/>`__ with the :doc:`appropriate authentication </user/overview/auth>`,  go to
-(1) **Settings** (top right corner) ➜ (2) **Security** ➜ (3) **Devices & sessions**. Set a name for your
-application (typically in the docs we will use ``rshare``) and click on **Create new app password**.
-This will generate your ``<user>`` and ``<password>`` credentials. Your username should start with ``EGI_Checkin-...``.
+Before creating the deployment you must do the following:
 
-.. image:: /_static/images/nextcloud/access.png
+1. :ref:`Sync Nextcloud from the profile section <user/overview/dashboard:Profile>`. This will create your rclone credentials.
+2. :ref:`Select Nextcloud when configuring the deployment <user/overview/dashboard:Storage configuration>`. This will set set up rclone configuration for you via setting environment variables in your deployment.
 
-Now you have several options to configure rclone:
-
-Configuring via ``env`` variables (Dashboard users)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-If your are creating a deployment from the **Dashboard**, then you only need to fill the
-``rclone_user`` and ``rclone_password`` parameters in the configuration form (**Storage options**) and we will
-automatically set up rclone configuration for you via setting environment variables.
-
-Once you machine is launched, you must run the following command in the terminal to properly configure rclone:
+Once your deployment is running, you must run the following command in the terminal to properly configure rclone:
 
 .. code-block:: console
 
@@ -82,9 +67,6 @@ endpoint, running this command
     $ echo export RCLONE_CONFIG_RSHARE_URL=${RCLONE_CONFIG_RSHARE_URL//webdav\/}dav/files/${RCLONE_CONFIG_RSHARE_USER} >> /root/.bashrc
     $ source /root/.bashrc
 
-
-.. TODO: change this command if the default endpoint in the API changes
-
 You can always check those env variables afterwards:
 
 .. code-block:: console
@@ -103,27 +85,14 @@ and modify them if needed:
     $ export RCLONE_CONFIG_RSHARE_PASS=***new-password***
     # remember this should an obscured version of the raw password --> `rclone obscure <raw-password>`
 
+... in your local machine
+^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Configuring via ``rclone config`` (local development)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+First, you need to generate your RCLONE credentials. For this, log into the `AI4OS Nextcloud <https://share.services.ai4os.eu/>`__,  go to (1) **Settings** (top right corner) ➜ (2) **Security** ➜ (3) **Devices & sessions**. Set a name for your application (typically in the docs we will use ``rshare``) and click on **Create new app password**. This will generate your ``<user>`` and ``<password>`` credentials. Your username should start with ``EGI_Checkin-...``.
 
-If you are developing in a Docker container deployed in your **local machine**,
-one can use instead the ``rclone config`` command that will create a configuration file (``rclone.conf``) for rclone.
+.. image:: /_static/images/nextcloud/access.png
 
-First, make sure you don't have a remote with the same name already configured, as names will collide.
-
-.. code-block:: console
-
-    $ rclone listremotes
-
-This should return an empty output. If this is not the case, make sure you don't have a remote configured via environment variables (previous section), which is the case if you are running this in a Dashboard deployment. To clear that remote, you just need to unset the variables:
-
-.. code-block:: console
-
-    $ echo 'unset RCLONE_CONFIG_RSHARE_VENDOR RCLONE_CONFIG_RSHARE_PASS RCLONE_CONFIG_RSHARE_URL RCLONE_CONFIG_RSHARE_TYPE RCLONE_CONFIG_RSHARE_USER' >> ~/.bashrc
-    $ source ~/.bashrc
-
-Then run ``rclone config`` and answer the questions to configure the new remote:
+Then run ``rclone config`` command, these are the answers you should provide:
 
 .. code-block:: console
 
@@ -141,7 +110,7 @@ Then run ``rclone config`` and answer the questions to configure the new remote:
     # Remote config --> y (Yes this is OK)
     # Current remotes --> q (Quit config)
 
-This will create an configuration file like the following:
+This will create an configuration file in ``$HOME/.config/rclone/rclone.conf``.:
 
 .. code-block::
 
@@ -152,23 +121,21 @@ This will create an configuration file like the following:
     user = ***some-username***
     pass = ***some-userpassword**  --> this is equivalent to `rclone obscure <password>`
 
-By default:
+.. admonition:: Security warning
+    :class: tip
 
-* if you are on your local machine or inside a local Docker container, ``rclone.conf`` is created in ``$HOME/.config/rclone/rclone.conf``.
-* if you are inside a Dashboard deployment, ``rclone.conf`` is created in ``/srv/.rclone/rclone.conf``.
+    For security reasons, the ``rclone.conf`` should never be saved as part of the Docker image. If you are running rclone from inside a Docker container, you should mount ``rclone.conf`` at runtime directly as a volume.
 
-For security reasons, the ``rclone.conf`` should never be saved as part of the Docker image. If you are running rclone from inside a Docker container, you should mount ``rclone.conf`` at runtime directly as a volume.
+    .. code-block:: console
 
-.. code-block:: console
+        $ docker run -ti -v $HOSTDIR_WITH_RCLONE_CONF/rclone.conf:/$HOME/.config/rclone/rclone.conf <your-docker-image>
 
-    $ docker run -ti -v $HOSTDIR_WITH_RCLONE_CONF/rclone.conf:/$HOME/.config/rclone/rclone.conf <your-docker-image>
+    One can also mount the ``rclone.conf`` file at a custom location and tell rclone where to find it:
 
-One can also mount the ``rclone.conf`` file at a custom location and tell rclone where to find it:
+    .. code-block:: console
 
-.. code-block:: console
-
-    $ docker run -ti -v $HOSTDIR_WITH_RCLONE_CONF/rclone.conf:/custom/path/to/rclone.conf <your-docker-image>
-    $ rclone --config /custom/path/to/rclone.conf
+        $ docker run -ti -v $HOSTDIR_WITH_RCLONE_CONF/rclone.conf:/custom/path/to/rclone.conf <your-docker-image>
+        $ rclone --config /custom/path/to/rclone.conf
 
 
 3. Using rclone

@@ -101,10 +101,8 @@ Train a model
    :maxdepth: 2
 
    Train a model with the Dashboard <howto/train/dashboard>
-   Use rclone to sync your dataset <howto/train/rclone>
    Make a federated training <howto/train/federated-server>
-
-.. Train a model locally <howto/train/locally>
+   Use rclone to sync your dataset (advanced) <howto/train/rclone>
 
 
 Deploy a model in production

@@ -33,7 +33,7 @@ projects:
 
 * `AI4EOSC <https://ai4eosc.eu/>`__: AI for the European Open Science Cloud
 * `iMagine <https://imagine-ai.eu/>`__: Imaging data and services for aquatic science
-
+* `AI4Life <https://ai4life.eurobioimaging.eu/>`__: AI models and methods for the life sciences
 
 .. admonition:: External users
    :class: info

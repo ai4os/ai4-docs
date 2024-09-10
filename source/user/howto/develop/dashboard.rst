@@ -1,47 +1,50 @@
 Develop a model from scratch
 ============================
 
-.. raw:: html
+This tutorial explains how to develop a AI4OS module from scratch.
 
-    <div style="position: relative; padding-bottom: 56.25%; margin-bottom: 2em; height: 0; overflow: hidden; max-width: 100%; height: auto;">
-        <iframe src="https://www.youtube.com/embed/Ajgz51Sd1SU" frameborder="0" allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
-    </div>
-
-This tutorial explains how to develop a AI4OS module from scratch on your local machine.
-
-You could also use the **AI4OS Development environment** from the :doc:`AI4OS Dashboard </user/overview/dashboard>`
-if you want to develop your code in a ready made environment based on some predefined Docker container
-(eg. official Tensorflow or Pytorch containers). The tutorial still applies the same.
-You only need to go to the Dashboard, select the **AI4OS Development environment** and
-configure the Docker image and resources you want to use
-(see `video demo <https://www.youtube.com/watch?v=J_l_xWiBGNA&list=PLJ9x9Zk1O-J_UZfNO2uWp2pFMmbwLvzXa&index=3>`__).
-
-If you are new to Machine Learning, you might want to check some
-:doc:`useful Machine Learning resources </user/others/useful-ml-resources>` we compiled to help you getting started.
+If you are new to Machine Learning, you might want to check some :doc:`useful Machine Learning resources </user/others/useful-ml-resources>` we compiled to help you getting started.
 
 .. admonition:: Requirements
+    :class: info
 
-    * If you plan to use the **AI4OS Development environment**, you need :doc:`Authentication </user/overview/auth>` to be able to access the Dashboard.
-    * For **Step 7** we recommend having `docker <https://docs.docker.com/install/#supported-platforms>`__ installed (though it's not strictly mandatory).
+    * For **Step 1**, to use the Module's template webpage, you need at least :ref:`basic authentication <user/overview/auth:Basic authentication>`.
+    * For **Step 2**, if you plan to use the AI4OS Development environment, you need :ref:`full authentication <user/overview/auth:Full authentication>` to be able to access the Dashboard.
+      Otherwise you can develop locally.
+    * For **Step 4** we recommend having `docker <https://docs.docker.com/install/#supported-platforms>`__ installed (though it's not strictly mandatory).
 
 
 1. Setting the framework
 ------------------------
 
-This first step relies on the
-:doc:`the AI4OS Modules Template </user/overview/cookiecutter-template>`
-for creating a template for your new module:
+This first step relies on the :doc:`the AI4OS Modules Template </user/overview/cookiecutter-template>` for creating a template for your new module:
 
-* Go to the `Template creation webpage <https://templates.cloud.ai4eosc.eu/>`__.
-  You will need an :doc:`authentication </user/overview/auth>` to access to this webpage.
+* Access and authenticate in the `Template creation webpage <https://templates.cloud.ai4eosc.eu/>`__.
 * Then select the ``minimal`` branch of the template and answer the questions.
-* Click on ``Generate`` and you will be able to download a ``.zip`` file with
-  with your project directory. Extract it locally.
+* Click on ``Generate`` and you will be able to download a ``.zip`` file with with your project directory. Extract it locally.
+
+2. Prepare your development environment
+---------------------------------------
+
+Although it is possible to develop your code locally, we also offer the possibility to develop from our `AI4OS Development Environment <https://dashboard.cloud.ai4eosc.eu/marketplace/modules/ai4os-dev-env>`__.
+
+This offers the benefits of:
+
+* developing on dedicated resources (including GPUs),
+* have direct access to your Nextcloud storage,
+* develop on Docker image that is already packaged with your favorite Deep Learning framework (eg. Pytorch, Tensorflow),
+* develop on your favorite IDE (Jupyterlab or VScode),
+
+Check :ref:`how to configure <user/overview/dashboard:Making a deployment>` the AI4OS Development Environment.
+For example, this is what an AI4OS Development Environment with VScode would look out-of-the-box:
+
+.. image:: /_static/images/endpoints/vscode.png
 
 
-2. Editing the module's code
+3. Editing the module's code
 ----------------------------
 
+Unpack, the zip file created in Step 1.
 Install your project as a Python module in **editable** mode (so that the changes you make to the codebase are picked by Python).
 
 .. code-block:: console
@@ -62,7 +65,7 @@ Now you can start writing your code.
 
 To be able to interface with DEEPaaS :ref:`you have to define <user/overview/api:Integrate your model with the API>`
 in ``api.py`` the functions you want to make accessible to the user.
-For this tutorial we are going to head to our `official demo module <https://github.com/ai4os-hub/ai4os-demo-app/blob/master/demo_app/api.py>`__
+For this tutorial we are going to head to our `official demo module <https://github.com/ai4os-hub/ai4os-demo-app/blob/main/ai4os_demo_app/api.py>`__
 and copy-paste its ``api.py`` file.
 
 Once this is done, check that DEEPaaS is interfacing correctly by running:
@@ -84,14 +87,14 @@ as all modules should have proper metadata.
 
 You can also use port ``6006`` to expose some training monitoring tool, like Tensorboard.
 
-In order to improve the readability of the code and the overall maintainability of the project,
-we enforce proper Python coding styles (``pep8``) to all modules added to the Marketplace.
+In order to improve the readability of the code and the overall maintainability of your module,
+we enforce some quality standards in tox (including style, security, etc).
 Modules that fail to pass style tests won't be able to build docker images.
-If you want to check if your module pass the tests, go to your project folder and type:
+You can check locally if your module passes the tests:
 
 .. code-block:: console
 
-    $ flake8
+    $ tox -e .
 
 There you should see a detailed report of the offending lines (if any).
 You can always `turn off flake8 testing <https://stackoverflow.com/a/64431741>`__
@@ -122,7 +125,7 @@ in some parts of the code if long lines are really needed.
     Remember to have a backup before reformatting, just in case!
 
 
-3. Editing the module's Dockerfile
+4. Editing the module's Dockerfile
 ----------------------------------
 
 Your ``./Dockerfile`` is in charge of creating a docker image that integrates
@@ -131,7 +134,7 @@ You can modify that file according to your needs.
 
 We recommend checking the installation steps are fine.
 If your module needs additional Linux packages add them to the Dockerfile.
-Check your Dockerfile works correctly by building it locally and running it:
+Check your Dockerfile works correctly by building it **locally** (outside the AI4OS Development Environment) and running it:
 
 .. code-block:: console
 
@@ -142,18 +145,23 @@ Your module should be visible in http://0.0.0.0:5000/ui .
 You can make a POST request to the ``predict`` method to check everything is working as intended.
 
 
-4. Editing the module's metadata
+5. Editing the module's metadata
 --------------------------------
 
 .. include:: /user/snippets/edit-metadata.rst
 
 
-5. Integrating the module in the Marketplace
+6. Integrating the module in the Marketplace
 --------------------------------------------
 
 .. include:: /user/snippets/integrate-marketplace.rst
 
 
-.. tip::
+.. admonition:: Next steps
+    :class: tip
 
-    If you run into problems you can always check the :doc:`Frequently Asked Questions (FAQ) </user/support/faq>`.
+    If to go further, check our tutorials on how to:
+
+    * :doc:`develop a module that support incremental learning </user/howto/develop/incremental-learning>`
+    * :doc:`develop a module that supports distributed learning </user/howto/develop/distributed-learning>`
+    * :doc:`develop a module that support MLflow for tracking experiments </user/howto/develop/mlflow>`

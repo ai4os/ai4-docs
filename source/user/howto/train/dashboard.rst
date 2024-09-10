@@ -1,54 +1,30 @@
-Train a model remotely
-======================
+Train a model
+=============
 
-.. raw:: html
+This is a step by step guide on how to train a model with your own dataset.
 
-    <div style="position: relative; padding-bottom: 56.25%; margin-bottom: 2em; height: 0; overflow: hidden; max-width: 100%; height: auto;">
-        <iframe src="https://www.youtube.com/embed/W1bPmUhzYFY" frameborder="0" allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
-    </div>
-
-This is a step by step guide on how to train a general model from the :doc:`AI4OS Dashboard </user/overview/dashboard>`
-with your own dataset.
-
-In this tutorial we will see how to retrain a `generic image classifier <https://dashboard.cloud.ai4eosc.eu/marketplace/modules/ai4os-image-classification-tf>`__
-on a custom dataset to create a `phytoplankton classifier <https://dashboard.cloud.ai4eosc.eu/marketplace/modules/uc-lifewatch-deep-oc-phyto-plankton-classification>`__.
-If you want to follow along, you can download the toy phytoplankton dataset :fa:`download` `here <https://api.cloud.ifca.es:8080/swift/v1/public-datasets/phytoplankton-mini.zip>`__.
-
-If you are new to Machine Learning, you might want to check some
-:doc:`useful Machine Learning resources </user/others/useful-ml-resources>` we compiled to help you getting started.
+If you are new to Machine Learning, you might want to check some :doc:`useful Machine Learning resources </user/others/useful-ml-resources>` we compiled to help you getting started.
 
 .. admonition:: Requirements
+    :class: info
 
-    * You need  a :doc:`Authentication </user/overview/auth>` to be able to access the Dashboard and Nextcloud storage.
-    * For **Step 7** we recommend having `docker <https://docs.docker.com/install/#supported-platforms>`__ installed (though it's not strictly mandatory).
-
-
-1. Choose a module from the Marketplace
----------------------------------------
-
-The first step is to choose a model from the :doc:`AI4OS Dashboard</user/overview/dashboard>`. Make sure to select a module with the ``trainable`` tag.
-For educational purposes we are going to use a `general model to identify images <https://dashboard.cloud.ai4eosc.eu/marketplace/modules/ai4os-image-classification-tf>`__.
-Some of the model dependent details can change if using another model, but this tutorial will provide
-a general overview of the workflow to follow when using any of the modules in the AI4OS Dashboard.
+    * You need :ref:`full authentication <user/overview/auth:Full authentication>` to be able to access both the Dashboard and Nextcloud storage.
+    * For **Step 8** we recommend having `docker <https://docs.docker.com/install/#supported-platforms>`__ installed (though it's not strictly mandatory).
 
 
-2. Upload your files to Nextcloud
----------------------------------
+1. Upload your dataset to Nextcloud
+-----------------------------------
 
 For this example we are going to use the `AI4OS Nextcloud <https://share.services.ai4os.eu/>`__ for storing
-the dataset you want to retrain the model with.
-
-So login to Nextcloud with your :doc:`credentials </user/overview/auth>`
-and you should access to an overview of your files.
-Now it's time to upload your dataset.
-When training a model, the data has usually to be in a specific format and folder structure.
-It's usually helpful to read the README in the source code of the module
-(in this case `located here <https://github.com/ai4os-hub/ai4os-image-classification-tf>`__)
-to learn the correct way to setting it up.
-
-In the case of the **image classification module**, we will create the following folders:
+the dataset you want to retrain the model with. So login to Nextcloud with your credentials and you should access to an overview of your files.
 
 .. image:: /_static/images/nextcloud/folders.png
+
+Now it's time to upload your dataset.
+When training a model, the data has usually to be in a specific format and folder structure.
+It's usually helpful to read the README in the source code of the module (in this case `located here <https://github.com/ai4os-hub/ai4os-image-classification-tf>`__) to learn the correct way to setting it up.
+
+In the case of the **image classification module**, we will create the following folders:
 
 * A folder called ``models`` where the new training weights will be stored after the training is completed
 * A folder called ``data`` that contains two different folders:
@@ -60,168 +36,133 @@ In the case of the **image classification module**, we will create the following
     * ``classes.txt`` indicating which are the categories for the training
 
 Again, the folder structure and their content will of course depend on the module to be used.
-This structure is just an example in order to complete the workflow for this tutorial.
 
 Once you have prepared your data locally, you can drag your folder to the Nextcloud Web UI to upload it.
 
-If you have your dataset in a remote machine, you will have to
-:ref:`install rclone <user/howto/train/rclone:1. Installing rclone>` on your remote machine,
-:ref:`configure it <user/howto/train/rclone:2. Configuring rclone>`
-and do an :ref:`rclone copy <user/howto/train/rclone:3. Using rclone>` to move your data to Nextcloud.
+.. admonition:: Uploading tips
+    :class: tip
 
-.. tip::
+    * If you need to upload your dataset from a remote machine (ie. no GUI), you can :ref:`install rclone <user/howto/train/rclone:1. Installing rclone>` on your remote machine, :ref:`configure it <user/howto/train/rclone:2. Configuring rclone>` and do an :ref:`rclone copy <user/howto/train/rclone:3. Using rclone>` to move your data to Nextcloud.
 
-    Uploading to Nextcloud can be particularly slow if your dataset is composed of lots of small files.
-    Considering zipping your folder before uploading.
+    * Uploading to Nextcloud can be particularly slow if your dataset is composed of lots of small files.
+      Considering zipping your folder before uploading.
 
-    .. code-block:: console
+      .. code-block:: console
 
-        $ zip -r <foldername>.zip <foldername>
-        $ unzip <foldername>.zip
+          $ zip -r <foldername>.zip <foldername>
+          $ unzip <foldername>.zip
 
 
-3. Deploy with the Training Dashboard
--------------------------------------
+2. Prepare your training environment
+------------------------------------
 
-Now go to the :doc:`AI4OS Dashboard </user/overview/dashboard>`  and login with your :doc:`credentials </user/overview/auth>`.
-Then go to (1) **Modules (marketplace)** ➜ (2) **Train image classifier** ➜ (3) **Train module**.
+In this tutorial we will see how to retrain a `generic image classifier <https://dashboard.cloud.ai4eosc.eu/marketplace/modules/ai4os-image-classification-tf>`__
+on a custom dataset to create a `phytoplankton classifier <https://dashboard.cloud.ai4eosc.eu/marketplace/modules/phyto-plankton-classification>`__.
+If you want to follow along, you can download the toy phytoplankton dataset :fa:`download` `here <https://api.cloud.ifca.es:8080/swift/v1/public-datasets/phytoplankton-mini.zip>`__.
 
-Now you will be presented with a configuration form.
-For the purposes of running a retraining, it should be filled as following:
+The first step is to choose a model from the :doc:`AI4OS Dashboard</user/overview/dashboard>`. Make sure to select a module with the ``AI4 trainable`` tag.
+For educational purposes we are going to retrain a `generic image classifier <https://dashboard.cloud.ai4eosc.eu/marketplace/modules/ai4os-image-classification-tf>`__.
+Some of the model dependent details can change if using another model, but this tutorial will provide a general overview of the workflow to follow when using any of the modules in the AI4OS Dashboard.
 
-1. In the **General configuration** you should select:
+Check :ref:`how to configure <user/overview/dashboard:Making a deployment>` the  image classifier.
+During the configuration, you should make sure:
 
-* ``Template = default (with storage options)``, unless stated otherwise in your modules README.
-* ``Command = JupyterLab`` because we want the flexibility of being able to interact with the code and the terminal, not just the API.
-* ``Hardware configuration = GPU`` because training is a very resource consuming task.
-* ``Docker tag = gpu`` because Docker tag has to match the hardware it will be run on.
-
-2. Once this is set, you can proceed to fill the **Specific configuration**:
-
-* ``jupyter password``, you have to provide a password at least 9 characters long, so that nobody will be able to access your machine, which will be exposed on a public IP.
-* ``rclone_user``, ``rclone_password``: those are the credentials to be able to mount your Nextcloud directory in your deployment.
-  :ref:`Go here <user/howto/train/rclone:2. Configuring rclone>` in order to find how to create them.
-
-Now that you are done configuring, click **Submit** to create the deployment.
-See the :doc:`Dashboard guide </user/overview/dashboard>` for more details.
+* to select either ``JupyterLab`` or ``VScode`` as the **service** to run, because we want the flexibility of being able to interact with the code and the terminal, not just the API.
+* to select ``GPU`` as **hardware**, because training is a very resource consuming task. This will also imply that you might need to select a **Docker tag** that is compatible with GPUs.
+* to connect with one of your synced **storage providers**  (in our case, the project's Nextcloud instance)
 
 
-4. Go to JupyterLab and mount your dataset
-------------------------------------------
+3. Access your deployment
+-------------------------
 
 After submitting you will be redirected to the deployment's list.
-In your new deployment go to **Access** and choose **JupyterLab**. You will be redirected to ``http://jupyterlab_endpoint``
+In your new deployment, select ⓘ ``Info`` and click in the IDE endpoint, when it becomes active.
+After logging in you should be able to to see your IDE:
 
-Now that you are in JupyterLab, open a **Terminal** window (:fa:`square-plus` (New launcher) ➜ **Others** ➜ **Terminal**).
+.. image:: /_static/images/endpoints/vscode.png
 
-First let's check we are seeing our GPU correctly:
+Now, open a Terminal to perform some sanity checks:
 
-.. code-block:: console
+* **Check the GPU is correctly mounted**:
+
+  .. code-block:: console
 
     $ nvidia-smi
 
-This should output the GPU model along with some extra info.
+  This should output the GPU model along with some extra info.
 
-Then :ref:`configure rclone <user/howto/train/rclone:2. Configuring rclone>`.
-We can also check rclone is correctly configured with:
+* **Your storage is correctly mounted**:
 
-.. code-block:: console
+  .. code-block:: console
 
-    $ rclone about rshare:
+    $ ls /storage
 
-which should output your used space in Nextcloud.
+  This should output your Nextcloud folder structure.
 
-.. tip::
-    If you happen to need additional packages, you will have to update the package index first.
-    Note that sudo is not needed as you are always root in your Docker containers:
+  .. admonition:: Accessing storage
+    :class: info
 
-    .. code-block:: console
+    Your files under ``/storage`` are mounted via a virtual filesystem.
+    This has :doc:`pros and cons </user/overview/storage>`.
+    We also offer the possibility to :ref:`copy the files to the local machine <user/howto/train/rclone:3. Using rclone>` as long as they fit the available disk.
 
-        $ apt update
-        $ apt install vim
 
-Now we will mount our remote Nextcloud folders in our local containers:
+4. Start training the model
+---------------------------
 
-.. code-block:: console
-
-    $ rclone copy rshare:/data/dataset_files /srv/ai4os-image-classification-tf/data/dataset_files
-    $ rclone copy rshare:/data/images /srv/ai4os-image-classification-tf/data/images
-
-Paths with the ``rshare`` prefix are Nextcloud paths.
-As always, paths are specific to this example. Your module might need different paths.
-If you zipped your files before uploading to Nextcloud you will have to ``rclone copy`` the ``zip`` file,
-unzip it and copy the contents to the appropriate folders.
-
-Mounting your dataset *might take some time*, depending on the dataset size, file structure (lots of small files vs few big files), and so on.
-So grab a cup of coffee and prepare for the next steps.
-
-Now that you dataset is mounted, we will run DEEPaaS to interactively run the training. In your terminal window type:
+We will use the DEEPaaS API to interactively run the training. In your Terminal type:
 
 .. code-block:: console
 
     $ nohup deep-start --deepaas &
 
-The ``&`` will keep your command running even if you close the terminal, and ``nohup`` will produce a log file
-``nohup.out`` that you can always look at if you want to know what is going on under the hood.
+The ``&`` will keep your command running even if you close the terminal, and ``nohup`` will produce a log file ``nohup.out`` that you can always look at if you want to know what is going on under the hood.
 
-
-5. Open the DEEPaaS API and train the model
--------------------------------------------
-
-Now go back to the deployments list view.
-In your deployment go to **Access** and choose **DEEPaaS**. You will be redirected to ``http://deepaas_endpoint/ui``.
+Now go back to the Dashboard, in the ``Deployments`` list view.
+In your deployment go to ⓘ ``Info`` and click on the ``API`` active endpoint.
 
 .. image:: /_static/images/endpoints/deepaas.png
    :width: 500 px
 
-Look for the ``train`` POST method. Modify the training parameters you wish to change
-and execute.
+Look for the ``train`` POST method. Modify the training parameters you wish to change and execute. In our case, you might need to correctly point to the training dataset location.
 
-If some kind of monitorization tool is available for the module, you will be able to
-follow the training progress at ``http://monitor_endpoint`` (click **Access** button
-➜ **Monitoring**, in the deployments page).
-For example, in the image classification module, you can monitor training progress with
-Tensorboard.
+If some kind of monitorization tool is available for the module, you will be able to follow the training progress at ``Monitor`` active endpoint. In the case of the image classification module, you can monitor training progress with Tensorboard.
 
 .. image:: /_static/images/endpoints/tensorboard.png
 
 
-6. Test and export the newly trained model
+5. Test and export the newly trained model
 ------------------------------------------
 
-Once the training has finished, you can directly test it by clicking on the ``predict`` POST method.
-For this you have to kill the process running deepaas, and launch it again.
+Once the training has finished, you can directly test it by clicking on the ``predict`` POST method. For this you have to kill the process running deepaas, and launch it again.
 
 .. code-block:: console
 
     $ kill -9 $(ps aux | grep '[d]eepaas-run' | awk '{print $2}')
     $ kill -9 $(ps aux | grep '[t]ensorboard' | awk '{print $2}')  # optionally also kill monitoring process
+    $ nohup deep-start --deepaas &  # relaunch
 
-This is because the user inputs for deepaas are generated at the deepaas launching.
-Thus it is not aware of the newly trained model. Once deepaas is restarted, head to the
-``predict`` POST method, select you new model weights and upload the image your want to classify.
+.. admonition:: Note
+    :class: info
 
-If you are satisfied with your model, then it's time to save it into your remote storage,
-so that you still have access to it if your machine is deleted.
-For this we have to create a ``tar`` file with the model folder (in this case, the foldername is
-the timestamp at which the training was launched) so that we can download in our Docker container.
+    We need to do this because the user inputs for deepaas are generated at the deepaas launching. Thus the original deepaas process is not aware of the newly trained model.
 
-So go back to JupyterLab, open a Terminal window and run:
+Once deepaas is restarted, head to the ``predict`` POST method, select you new model weights and upload the image your want to classify.
+
+If you are satisfied with your model, then it's time to save it into your remote storage.
+Open a Terminal window and run:
 
 .. code-block:: console
 
     $ cd /srv/ai4os-image-classification-tf/models
-    $ tar cfJ <modelname.tar.xz> <foldername>
-    $ rclone copy /srv/ai4os-image-classification-tf/models rshare:/models
+    $ tar cfJ <modelname.tar.xz> <foldername>  # create a tar file
+    $ cp <modelname.tar.xz> /storage/  # save to storage
 
 Now you should be able to see your new models weights in Nextcloud.
-
-For the next step, you need to make them `publicly available <https://docs.nextcloud.com/server/latest/user_manual/en/files/sharing.html>`__
-through an URL so they can be downloaded in your Docker container.
-In Nextcloud, go to the ``tar`` file you just created:
-:fa:`share-nodes` ➜ Share Link ➜ :fa:`square-plus` (Create a new share link)
+For **Step 8**, you will need to download the weights from the Dockerfile. To allow this, make the weights atr file `publicly available <https://docs.nextcloud.com/server/latest/user_manual/en/files/sharing.html>`__. For this, click on :fa:`share-nodes` ➜ Share Link ➜ :fa:`square-plus` (Create a new share link)
 
 .. admonition:: Zenodo preservation
+    :class: info
 
     `Optionally`, in order to improve the reproducibility of your code, we encourage you
     to share your training dataset on `Zenodo <https://zenodo.org>`__.
@@ -233,7 +174,7 @@ In Nextcloud, go to the ``tar`` file you just created:
     also upload the model weights to Zenodo in addition to Nextcloud.
 
 
-7. Create a repo for your new module
+6. Create a repo for your new module
 ------------------------------------
 
 Now, let's say you want to share your new application with your colleagues.
@@ -252,79 +193,54 @@ specially tailored to this task:
   the project's directory. Extract it locally.
 
 
-8. Update your project's metadata
+7. Update your project's metadata
 ---------------------------------
 
 .. include:: /user/snippets/edit-metadata.rst
 
 
-9. Update your project's Dockerfile
+8. Update your project's Dockerfile
 -----------------------------------
 
-.. include:: /user/snippets/edit-dockerfile-train.rst
+Your ``./Dockerfile`` is in charge of creating a docker image that integrates
+your application, along with deepaas and any other dependency.
+
+You will see that the base Docker image is the image of the original repo.
+Modify the appropriate lines to replace
+the original model weights with the new model weights.
+In our case, this could look something like this:
+
+.. code-block:: docker
+
+    ENV SWIFT_CONTAINER https://share.services.ai4os.eu/index.php/s/r8y3WMK9jwEJ3Ei/download
+    ENV MODEL_TAR phytoplankton.tar.xz
+
+    RUN rm -rf ai4os-image-classification-tf/models/*
+    RUN curl --insecure -o ./image-classification-tf/models/${MODEL_TAR} \
+        ${SWIFT_CONTAINER}/${MODEL_TAR}
+    RUN cd ai4os-image-classification-tf/models && \
+        tar -xf ${MODEL_TAR} &&\
+        rm ${MODEL_TAR}
+
+Check your Dockerfile works correctly by building it locally and running it:
+
+.. code-block:: console
+
+    $ docker build --no-cache -t your_project .
+    $ docker run -ti -p 5000:5000 -p 6006:6006 -p 8888:8888 your_project
+
+Your module should be visible in http://0.0.0.0:5000/ui
 
 
-10. Integrating the module in the Marketplace
----------------------------------------------
+9. Integrating the module in the Marketplace
+--------------------------------------------
 
 .. include:: /user/snippets/integrate-marketplace.rst
 
 
-11. Next steps
---------------
+.. admonition:: Next steps
+    :class: tip
 
-Do you want to go further?
+    If to go further, check our tutorials on how to:
 
-* What about trying to integrate :doc:`MLflow Experiment tracking </user/howto/develop/mlflow>` into your deployment?
-
-.. tip::
-
-    If you run into problems you can always check the :doc:`Frequently Asked Questions (FAQ) </user/support/faq>`.
-
-
-.. TODO: renable when ready
-
-.. 9. [optional] Add your new module to the original Continuous Integration pipeline
-.. ---------------------------------------------------------------------------------
-
-.. Your module is already in the Marketplace.
-.. But what happens if the code in the original image-classification module changes?
-.. This should trigger a rebuild of your Docker container as it is based on that code.
-
-.. This can be achieved by modifying the ``Jenkinsfile`` in the `image-classification Docker repo <https://github.com/ai4os-hub/ai4os-image-classification-tf/blob/master/Jenkinsfile>`__.
-.. One would add an additional stage to the Jenkins pipeline like so:
-
-.. .. code-block::
-
-..     stage("Re-build DEEP-OC Docker images for derived services") {
-..         when {
-..             anyOf {
-..                branch 'master'
-..                branch 'test'
-..                buildingTag()
-..             }
-..         }
-..         steps {
-
-..             // Wait for the base image to be correctly updated in DockerHub as it is going to be used as base for
-..             // building the derived images
-..             sleep(time:5, unit:"MINUTES")
-
-..             script {
-..                 def derived_job_locations =
-..                 ['Pipeline-as-code/DEEP-OC-org/DEEP-OC-plants-classification-tf',
-..                  'Pipeline-as-code/DEEP-OC-org/DEEP-OC-conus-classification-tf',
-..                  'Pipeline-as-code/DEEP-OC-org/DEEP-OC-seeds-classification-tf',
-..                  'Pipeline-as-code/DEEP-OC-org/DEEP-OC-phytoplankton-classification-tf'
-..                  ]
-
-..                 for (job_loc in derived_job_locations) {
-..                     job_to_build = "${job_loc}/${env.BRANCH_NAME}"
-..                     def job_result = JenkinsBuildJob(job_to_build)
-..                     job_result_url = job_result.absoluteUrl
-..                 }
-..             }
-..         }
-..     }
-
-.. So if you want this step to be performed, you must submit a PR to the original module Docker repo with similar changes as above.
+    * :doc:`run a federated learning training </user/howto/train/federated-server>`

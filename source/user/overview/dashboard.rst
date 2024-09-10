@@ -9,9 +9,10 @@ users do not need to worry about.
 Currently, the following platforms have deployed a version of the AI4OS Dashboard.
 You should access one of those Dashboards depending on the project you are a member of:
 
-* `AI4EOSC Dashboard <https://dashboard.cloud.ai4eosc.eu/>`_
-* `iMagine Dashboard <https://dashboard.cloud.imagine-ai.eu>`_
-* `Tutorials Dashboard <https://tutorials.cloud.ai4eosc.eu>`_
+* `AI4EOSC Dashboard <https://dashboard.cloud.ai4eosc.eu/>`__
+* `iMagine Dashboard <https://dashboard.cloud.imagine-ai.eu>`__
+* `AI4Life Dashboard <https://ai4life.cloud.imagine-ai.eu>`__
+* `Tutorials Dashboard <https://tutorials.cloud.ai4eosc.eu>`__
 
 The Dashboard has a two views:
 
@@ -63,12 +64,12 @@ Modules can be:
 
 * **Trainable**: Those are modules that an user can train on their own data to create a new service. Like training an
   `image classifier <https://dashboard.cloud.ai4eosc.eu/marketplace/modules/ai4os-image-classification-tf>`__ with a
-  plants dataset to create a `plant classifier <https://dashboard.cloud.ai4eosc.eu/marketplace/modules/deep-oc-plants-classification-tf>`__
+  plants dataset to create a `plant classifier <https://dashboard.cloud.ai4eosc.eu/marketplace/modules/plants-classification>`__
   service.
   Look for the ``trainable`` tag in the marketplace to find those modules.
 
 * **Trained (inference-ready)**: Those are modules that have been pre-trained for a specific task (like the
-  `plant classifier <https://dashboard.cloud.ai4eosc.eu/marketplace/modules/deep-oc-plants-classification-tf>`__ mentioned earlier).
+  `plant classifier <https://dashboard.cloud.ai4eosc.eu/marketplace/modules/plants-classification>`__ mentioned earlier).
 
 Some modules can both be trainable and trained.
 For example the `image classifier <https://dashboard.cloud.ai4eosc.eu/marketplace/modules/ai4os-image-classification-tf>`__

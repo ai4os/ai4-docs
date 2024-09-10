@@ -10,6 +10,7 @@ notified here.
 .. Template
 .. * 📘 new :doc:`... </user/...>` page (``2024-04-03``)
 
+* 📌 we started supporting the `AI4Life project <https://ai4life.eurobioimaging.eu/>`__ (``2024-09-15``)
 * 📈 new :ref:`Profile section <user/overview/dashboard:Profile>` where you can link your storage providers (``2024-09-04``)
 * 📈 new :doc:`try-me deployments </user/howto/try/dashboard-gradio>` (``2024-09-03``)
 * 📌 new federated cluster is available in production (``2024-08-05``)
