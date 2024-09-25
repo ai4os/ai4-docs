@@ -77,3 +77,8 @@ details.sd-dropdown {
   }
 
 }
+
+/* Make ai4-metadata options table slightly wider  */
+table {
+  width: 600px !important;
+}

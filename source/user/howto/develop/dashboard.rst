@@ -145,8 +145,8 @@ Your module should be visible in http://0.0.0.0:5000/ui .
 You can make a POST request to the ``predict`` method to check everything is working as intended.
 
 
-5. Editing the module's metadata
---------------------------------
+5. Update your project's metadata
+---------------------------------
 
 .. include:: /user/snippets/edit-metadata.rst
 
