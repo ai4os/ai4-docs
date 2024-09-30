@@ -1,80 +1,223 @@
-Inference platform (OSCAR)
-===========================
+Deploy a model on the Inference platform (OSCAR) with the Dashboard
+===================================================================
 
-Scalable AI model inference is handled by the `AI4OS Inference <https://inference.cloud.ai4eosc.eu/>`__ platform, powered by the `OSCAR <https://oscar.grycap.net>`__
-open-source serverless platform.
+OSCAR is the serverless platform we use in the project to perform inference.
+The Dashboard offers the possibility to deploy OSCAR services for the modules in the Marketplace.
 
-An OSCAR cluster consists of, among other components:
+1. Choose your module and deploy
+--------------------------------
 
-* a Kubernetes cluster than can optionally auto-scale, in terms of number of nodes,
-  within a certain boundaries.
-* configured with `MinIO <https://min.io>`__, a high-performance object storage system,
-  so that file uploads to a MinIO bucket can trigger the invocation of an OSCAR service
-  to perform AI model inference.
-* configured with `Knative <http://knative.dev>`__, a FaaS platform, so that synchronous
-  requests to an OSCAR service are handled via dynamically provisioned pods (containers)
-  in the Kubenetes cluster.
+The first step is to choose a module from the :doc:`Dashboard</user/overview/dashboard>`.
+There you will be able to find all the modules ready to be used under the tag ``Inference``.
 
-The `AI4OS Inference <https://inference.cloud.ai4eosc.eu/>`__ platform consists of a
-pre-deployed OSCAR cluster exclusively accessible for :doc:`AI4OS users </user/overview/auth>`.
+We will first start doing a simple prediction using the popular `YOLO module <https://dashboard.cloud.ai4eosc.eu/marketplace/modules/ai4os-yolov8-torch>`__.
 
-You can access the OSCAR cluster via:
+.. image:: /_static/images/dashboard/module-yolo.png
 
-* A `web-based UI <https://inference.cloud.ai4eosc.eu/>`__
-* A `command-line interface (CLI) <https://docs.oscar.grycap.net/oscar-cli/>`__
+In the module page, click on the option ``Deploy > Inference API (serverless)``.
+This will automatically deploy your OSCAR service with some predefined configuration.
 
-.. warning::
-  This cluster is provided for testing purposes and OSCAR services may be removed at
-  any time depending on the underlying infrastructure capacity and usage rates.
-  Should this happen, you can easily re-deploy the services from the corresponding FDL file.
+.. admonition:: Module compatibility
+   :class: warning
 
-1. Configuring an OSCAR service
--------------------------------
+   * Inference endpoints only work form models that return a JSON response (most models).
+   * Modules require a deepaas version higher than ``2.5.0`` to work with OSCAR inference endpoints.
+     If the module does not have a supported DEEPaaS, you will be show a clear error message when trying to make an inference.
+     We are actively working on improving compatibility with all modules.
 
-The cluster is used to deploy OSCAR services, which are described by a
-`Functions Definition Language (FDL) <https://docs.oscar.grycap.net/fdl/>`__
-file which specifies (among other features):
 
-* The Docker image, which includes the AI model that supports the
-  :doc:`DEEPaaS API </user/overview/api>` and all the required libraries and data to
-  perform the inference.
-* The computing requirements (CPUs, RAM, GPUs, etc.).
-* The shell-script to be executed inside the container created out of the Docker image
-  for each service invocation.
-* (Optional) The link to a MinIO bucket and an input folder.
+2. Predicting with YOLO
+-----------------------
 
-2. Invoking an OSCAR service
-----------------------------
+Synchronous predictions
+^^^^^^^^^^^^^^^^^^^^^^^
 
-OSCAR services can be invoked (see `Invoking services <https://docs.oscar.grycap.net/invoking/>`__ for further details):
+In the ``Deployments`` tab, go to the ``OSCAR services`` table and find your newly
+selected service. Copy the endpoint url and the secret token.
 
-* Asynchronously, by uploading files to a MinIO bucket to trigger the OSCAR service upon
-  file uploads.
-* Synchronously, by invoking the service from OSCAR CLI or via the
-  `OSCAR Manager's REST API <https://docs.oscar.grycap.net/api/>`__.
-  A certain number of pre-deployed containers can be kept up and running to mitigate the
-  cold start problem (initial delays when performing the first invocations to the service).
-* Through Exposed Services, where stateless services created out of large containers
-  require too much time to be started to process a service invocation.
-  This is the case when supporting the fast inference of pre-trained AI models that
-  require close to real-time processing with high throughput.
-  In a traditional serverless approach, the AI model weights would be loaded in memory
-  for each service invocation (thus creating a new container).
-  With this approach AI model weights could be loaded just once and the service would
-  perform the AI model inference for each subsequent request.
-  An auto-scaled load-balanced approach for these stateless services is supported.
+.. image:: /_static/images/dashboard/oscar-info.png
+    :width: 400px
 
-3. More info and examples
--------------------------
+To make a prediction with that service, you first need to know what are the required inputs.
+For this run the following command from your console:
 
-* `Official OSCAR documentation <https://docs.oscar.grycap.net>`__
-* Examples to `deploy AI models with DEEPaaS support <https://github.com/grycap/oscar/tree/master/examples>`__,
-  including:
+.. code-block:: console
 
-  - The deployment of the `Body pose detection <https://dashboard.cloud.ai4eosc.eu/marketplace/modules/deep-oc-posenet-tf>`__
-    AI model from the AI4EOSC Marketplace is documented in the `body-pose-detection <https://github.com/grycap/oscar/tree/master/examples/body-pose-detection>`__
-    folder, used to perform asynchronous invocations via MinIO.
-  - The deployment of the `Plants Species Classifier <https://dashboard.cloud.ai4eosc.eu/marketplace/modules/plants-classification>`__
-    AI model from the AI4EOSC Marketplace is documented in the
-    `plant-classification-sync <https://github.com/grycap/oscar/tree/master/examples/plant-classification-sync>`__
-    folder, used to perform synchronous invocations.
+    $ curl --location '***endpoint***' \
+           --header 'Content-Type: application/json' \
+           --header 'Authorization: Bearer ***token***' \
+           --data '{"help": ""}'
+
+As a response, you will receive what are the input args you should pass to the module.
+
+.. code-block::
+
+    [...]
+
+    options:
+    -h, --help
+            show this help message and exit
+    --files FILES
+            Input an image or Video.
+            accepted image formats: .bmo, .dng, .jpg, .jpeg, .mpo, .png, .tif, .tiff, .pfm, and .webp.
+            accepted video formats: .asf, .avi, .gif, .m4v, .mkv,.mov, .mp4, .mpeg, .mpg, .ts, .wmv, .webm
+            Type: str (filepath)
+            *Required*
+    [...]
+
+Now it's time to make a prediction call on a `bear image <https://upload.wikimedia.org/wikipedia/commons/9/9e/Ours_brun_parcanimalierpyrenees_1.jpg>`__.
+All parameters should be passed inside a JSON payload.
+If the model inputs needs a file, it should be passed encoded as base64 in the ``oscar-files`` field in the data.
+
+.. code-block:: console
+
+    # Create a JSON payload with the base64 data and save it to a temporary file
+    JSON_PAYLOAD=$(cat <<EOF
+    {
+    "oscar-files": [
+        {
+        "key": "files",
+        "file_format": "jpg",
+        "data": "$(base64 /home/iheredia/bear.jpg | tr -d "\n")"
+        }
+    ]
+    }
+    EOF
+    )
+
+    # Save the JSON payload to a temporary file
+    TEMP_JSON_FILE=$(mktemp)
+    echo "$JSON_PAYLOAD" > "$TEMP_JSON_FILE"
+
+    # Step 3: Use curl to send the request with the JSON payload from the temporary file
+    curl --location ***endpoint***' \
+    --header 'Content-Type: application/json' \
+    --header 'Authorization: Bearer ***token***' \
+    --data @"$TEMP_JSON_FILE"
+
+    # Clean up the temporary file
+    rm "$TEMP_JSON_FILE"
+
+The response will give you the JSON output of the model (classifier.
+
+.. code-block:: console
+
+    2024-09-30 12:09:19.502 29 INFO deepaas.cmd.cli [-] return: ['[\n  {\n    "name": "bear",\n    "class": 21,\n    "confidence": 0.93346,\n    "box": {\n      "x1": 109.39322,\n      "y1": 26.39718,\n      "x2": 627.42999,\n      "y2": 597.74689\n    }\n  }\n]']
+
+
+3. Full example: AI4EOSC toy model
+----------------------------------
+
+In this second part, we are going to demonstrate how to send a more complete set of input parameters to OSCAR, now using Python instead of CURL.
+
+For educational purposes, we are going to use the `official AI4EOSC demo module <https://dashboard.cloud.ai4eosc.eu/marketplace/modules/deep-oc-demo_app>`__.
+While this model does not perform an AI task, it is very helpful as it shows the wide variety of inputs that can be sent to OSCAR inference endoints.
+
+So go back to the previous steps and deploy the
+`ai4os-demo-app <https://dashboard.cloud.ai4eosc.eu/marketplace/modules/ai4os-demo-app>`__.
+Once you have retrieved your endpoint and token, you can run the following Python script to make the prediction from your local computer:
+
+.. code-block:: python
+
+    import ast
+    import base64
+
+    import requests
+
+
+    token = '*************************'
+    url = '***************************'
+
+    headers = {
+        'Content-Type': 'application/json',
+        'Authorization': f'Bearer {token}',
+    }
+
+    def get_base64(fpath):
+        with open(fpath, "rb") as f:
+            encoded_str = base64.b64encode(f.read()).decode('utf-8')
+        return encoded_str
+
+    data = {
+        'demo_str': 'hi there!!!!',
+        'demo_str_choice': 'choice1',
+        'demo_int': -3,
+        'demo_int_range': 42,
+        'demo_float': -0.9,
+        'demo_bool': False,
+        'demo_dict': '{"c": "d"}',
+        'demo_list_of_floats': "[1.2, -1.8]",
+        'oscar-files': [
+            {
+                'key': 'demo_image',
+                'file_format': 'png',
+                'data': get_base64('./sample-image.png'),
+            },
+            {
+                'key': 'demo_audio',
+                'file_format': 'wav',
+                'data': get_base64('./sample-audio.wav'),
+            },
+            {
+                'key': 'demo_video',
+                'file_format': 'mp4',
+                'data': get_base64('./sample-video.mp4'),
+            },
+        ]
+    }
+    # data = {'help': ''}
+
+    r = requests.post(url=url, headers=headers, json=data)
+    out = r.text
+
+    if r.status_code == 401:
+        raise Exception('Invalid token.')
+
+    # Save OSCAR output
+    with open("./output-oscar.txt", "w") as f:
+        f.write(out)
+
+    ####################################################################################
+    # As the demo-app is a dummy model that returns the same inputs it has been fed    #
+    # with, we can load the OSCAR output to check it matches with our input            #
+    ####################################################################################
+
+    # Load OSCAR output
+    with open("./output-oscar.txt", "r") as f:
+        out = f.read()
+
+    # Stop if error message detected
+    error_msgs = [
+        'deepaas-cli: error',
+        'deepaas-cli predict: error',
+        'ERROR deepaas-cli',
+        'Traceback ',
+    ]
+    if any([e in out for e in error_msgs]):
+        print(out)
+        raise Exception()
+
+    # Find was is the line of deepaas output (startswith "{") and only keep that
+    for line in out.split('\n')[::-1]:
+        msg = 'deepaas.cmd.cli [-] return:'
+        if msg in line:
+            out = line.split(msg)[-1].strip()
+            out = ast.literal_eval(out)
+            break
+
+    # Check deepaas output matches input
+    keys = list(data.keys())
+    if 'oscar-files' in data.keys():
+        keys.remove('oscar-files')
+    for k in keys:
+        if k in ['demo_dict', 'demo_list_of_floats']:
+            data[k] = ast.literal_eval(data[k])
+        if data[k] != out[k]:
+            print(f'Failed to validate {k}: {data[k]} != {out[k]}')
+
+
+.. admonition:: Advanced usage
+   :class: info
+
+   Do you want to manually deploy your OSCAR services for greater customization?
+   Check how to :doc:`Manually deploy a serverless inference endpoint  </user/howto/deploy/oscar-manual>`

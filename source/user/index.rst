@@ -111,7 +111,7 @@ Deploy a model in production
 .. toctree::
    :maxdepth: 2
 
-   Deploy with OSCAR <howto/deploy/oscar>
+   Deploy a serverless API <howto/deploy/oscar>
    Deploy in your cloud <howto/deploy/cloud>
 
 In addition to deploying standalone modules, we support the concatenation of different
@@ -122,6 +122,14 @@ AI modules into a multi-step workflow.
 
    Create a workflow with FlowFuse <howto/deploy/flowfuse>
    Create a workflow with Elyra <howto/deploy/elyra>
+
+In addition, for advanced user requirements, we support the deployment of custom
+serverless services:
+
+.. toctree::
+   :maxdepth: 2
+
+   Manual serverless deployment <howto/deploy/oscar-manual>
 
 
 Others
