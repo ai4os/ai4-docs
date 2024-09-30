@@ -15,6 +15,7 @@ HowTo's (developers)
 .. toctree::
    :maxdepth: 1
 
+   howto-developers/support-new-project.rst
    howto-developers/organize-tutorial.rst
    howto-developers/develop-dashboard.rst
    howto-developers/storage-providers.rst

@@ -213,5 +213,5 @@ Online learning can be integrated in two ways:
 
 1. Create a cronjob in your train deployment that periodically parses your Nextcloud and
    retrains in the new data found
-2. As it to the :ref:`deepaas.predict() <user/howto/develop/dashboard:2. Editing the module's code>` to retrain the model
+2. As it to the :ref:`deepaas.predict() <user/howto/develop/dashboard:3. Editing the module's code>` to retrain the model
    at inference time on the new data it receives.
