@@ -1,8 +1,17 @@
-Deploy a model on the Inference platform (OSCAR) with the Dashboard
-===================================================================
+Deploy a model on the AI4OS Inference platform using the Dashboard
+==================================================================
 
-OSCAR is the serverless platform we use in the project to perform inference.
-The Dashboard offers the possibility to deploy OSCAR services for the modules in the Marketplace.
+The Dashboard offers the possibility to deploy a model as serverless using the AI4OS Inference Platform (based on OSCAR).
+
+.. list-table::
+    :header-rows: 1
+
+    * - ✅ Pros
+      - ❌ Cons
+    * - - You are not consuming resources when you are not using the model,
+        - Deployments can auto-scale to fit peaks in user queries,
+        - Zero configuration needed as the model is deployed in the AI4OS stack.
+      - - Predictions can have some latency, due to the AI model being loaded at each prediction.
 
 1. Choose your module and deploy
 --------------------------------
@@ -26,14 +35,13 @@ This will automatically deploy your OSCAR service with some predefined configura
      We are actively working on improving compatibility with all modules.
 
 
-2. Predicting with YOLO
------------------------
+2. Make a prediction
+--------------------
 
 Synchronous predictions
 ^^^^^^^^^^^^^^^^^^^^^^^
 
-In the ``Deployments`` tab, go to the ``OSCAR services`` table and find your newly
-selected service. Copy the endpoint url and the secret token.
+In the ``Inference`` tab, go to the ``OSCAR`` table and find your newly created service. Copy the endpoint url and the secret token.
 
 .. image:: /_static/images/dashboard/oscar-info.png
     :width: 400px

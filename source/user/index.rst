@@ -111,7 +111,9 @@ Deploy a model in production
 .. toctree::
    :maxdepth: 2
 
-   Deploy a serverless API <howto/deploy/oscar>
+   Overview <howto/deploy/overview>
+   Deploy in AI4OS serverless <howto/deploy/oscar>
+   Deploy in AI4OS dedicated <howto/deploy/nomad>
    Deploy in your cloud <howto/deploy/cloud>
 
 In addition to deploying standalone modules, we support the concatenation of different

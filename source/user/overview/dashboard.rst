@@ -84,7 +84,7 @@ Once you choose the module, you will be presented with the module's information:
 
 .. image:: /_static/images/dashboard/module.png
 
-To deploy click in ``Train module`` and you will be redirected to a configuration page.
+To deploy click in ``Deploy > Inference API (dedicated)`` and you will be redirected to a configuration page.
 
 .. image:: /_static/images/dashboard/configure.png
 
