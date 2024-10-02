@@ -7,9 +7,10 @@ and monitoring in production. Following the FAIR principles for science, both ou
 (platform and models) are fully open-source and easily portable to any other platform
 (no vendor lock-in!).
 
-.. important::
+.. admonition:: A quick note on terminology
+   :class: info
 
-   A quick note on terminology. ``AI4OS`` is the name of the generic software stack that is
+   ``AI4OS`` is the name of the generic software stack that is
    powering the deployments of different platforms (``AI4EOSC``, ``iMagine``, etc).
    So, for example, the **AI4OS Dashboard** is the component that can be deployed as the
    **AI4EOSC Dashboard** or the **iMagine Dashboard**.
@@ -54,8 +55,8 @@ and monitoring in production. Following the FAIR principles for science, both ou
     |   Log your trainings parameters and models with our MLflow server.
     | :fa:`rocket` `Inference platform (OSCAR) <https://inference.cloud.ai4eosc.eu/>`__
     |    Scalable serverless inference of AI models.
-    | :fa:`network-wired` `Workflows platform (Flowfuse) <https://forge.flows.dev.ai4eosc.eu/>`__
-    |    Compose custom AI workflows.
+    | :fa:`network-wired` `Inference pipelines platform (Flowfuse) <https://forge.flows.dev.ai4eosc.eu/>`__
+    |    Compose custom AI inference pipelines.
 
 User documentation
 ------------------

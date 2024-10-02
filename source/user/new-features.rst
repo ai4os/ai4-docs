@@ -19,7 +19,7 @@ notified here.
 * 📈 new :ref:`stats section <user/overview/dashboard:View your statistics>` in the Dashboard (``2024-05-14``)
 * 📘 support for token authentication in :doc:`Federated Learning trainings </user/howto/train/federated-server>` (``2024-04-16``)
 * 📘 new :doc:`New features  </user/new-features>` page (meta!) (``2024-04-03``)
-* 📘 new tutorials for using AI workflows tools (:doc:`Elyra </user/howto/deploy/elyra>`, :doc:`Flowfuse </user/howto/deploy/flowfuse>`) (``2024-03-18``)
+* 📘 new tutorials for creating AI Inference pipelines  (:doc:`Elyra </user/howto/pipelines/elyra>`, :doc:`Flowfuse </user/howto/pipelines/flowfuse>`) (``2024-03-18``)
 * 📘 new :doc:`MLflow </user/howto/develop/mlflow>` tutorials (``2024-02-09``)
 * 📘 new :doc:`Frequently Asked Questions (FAQ) </user/support/faq>` page (``2024-02-05``)
 * 📌 :doc:`MLflow </user/howto/develop/mlflow>` available under new domain (``2024-01-29``)

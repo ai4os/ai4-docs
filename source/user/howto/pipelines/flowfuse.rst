@@ -1,4 +1,4 @@
-Composing AI Inference workflows with Node-RED & Flowfuse
+Composing AI Inference pipelines with Node-RED & Flowfuse
 =========================================================
 
 .. raw:: html
@@ -7,7 +7,7 @@ Composing AI Inference workflows with Node-RED & Flowfuse
         <iframe src="https://www.youtube.com/embed/9a019SA5GW4" frameborder="0" allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
     </div>
 
-In this document, we will learn about Composing AI Inference workflows based on OSCAR
+In this document, we will learn about Composing AI Inference pipelines based on OSCAR
 services with Node-RED & FlowFuse, specifically:
 
 * how to register on the FlowFuse platform for AI4EOSC,
@@ -20,7 +20,7 @@ First of all, let's understand what FlowFuse, Node-RED, OSCAR, and AI4EOSC are:
 * `Node-RED <https://nodered.org/>`__ is an open-source visual programming tool.
   Built on Node.js, it allows users to create event-driven systems by connecting nodes
   representing different functionalities. With a user-friendly web interface and a rich
-  library of pre-built nodes, Node-RED simplifies the visual composition of workflows.
+  library of pre-built nodes, Node-RED simplifies the visual composition of pipelines.
 * `FlowFuse <https://flowfuse.com/>`__ adds to Node-RED: collaborative development,
   management of remote deployments, support for DevOps delivery pipelines, and the
   ability to host Node-RED applications on FlowFuse. FlowFuse is the DevOps platform

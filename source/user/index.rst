@@ -32,8 +32,8 @@ User documentation
     |   Log your trainings parameters and models with our MLflow server.
     | :fa:`rocket` `Inference platform (OSCAR) <https://inference.cloud.ai4eosc.eu/>`__
     |    Scalable serverless inference of AI models.
-    | :fa:`network-wired` `Workflows platform (Flowfuse) <https://forge.flows.dev.ai4eosc.eu/>`__
-    |    Compose custom AI workflows.
+    | :fa:`network-wired` `Inference pipelines platform (Flowfuse) <https://forge.flows.dev.ai4eosc.eu/>`__
+    |    Compose custom AI inference pipelines.
 
 
 New to the project? How about a quick dive?
@@ -112,18 +112,9 @@ Deploy a model in production
    :maxdepth: 2
 
    Overview <howto/deploy/overview>
-   Deploy in AI4OS serverless <howto/deploy/oscar>
-   Deploy in AI4OS dedicated <howto/deploy/nomad>
+   Deploy in AI4OS (serverless) <howto/deploy/oscar>
+   Deploy in AI4OS (dedicated) <howto/deploy/nomad>
    Deploy in your cloud <howto/deploy/cloud>
-
-In addition to deploying standalone modules, we support the concatenation of different
-AI modules into a multi-step workflow.
-
-.. toctree::
-   :maxdepth: 2
-
-   Create a workflow with FlowFuse <howto/deploy/flowfuse>
-   Create a workflow with Elyra <howto/deploy/elyra>
 
 In addition, for advanced user requirements, we support the deployment of custom
 serverless services:
@@ -132,6 +123,19 @@ serverless services:
    :maxdepth: 2
 
    Manual serverless deployment <howto/deploy/oscar-manual>
+
+
+Create an AI Inference pipeline
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+In addition to deploying standalone modules, we support the visual concatenation of different
+AI modules into a multi-step pipeline.
+
+.. toctree::
+   :maxdepth: 2
+
+   Pipelines with FlowFuse <howto/pipelines/flowfuse>
+   Pipelines with Elyra <howto/pipelines/elyra>
 
 
 Others
