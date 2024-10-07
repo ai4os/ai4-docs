@@ -82,3 +82,9 @@ details.sd-dropdown {
 table {
   width: 600px !important;
 }
+
+
+/* Allow to remove default admonition icon (pencil) */
+.remove-default-icon::before {
+  content: none !important;
+}

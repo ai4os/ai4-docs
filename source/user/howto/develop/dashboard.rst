@@ -38,7 +38,20 @@ This offers the benefits of:
 Check :ref:`how to configure <user/overview/dashboard:Making a deployment>` the AI4OS Development Environment.
 For example, this is what an AI4OS Development Environment with VScode would look out-of-the-box:
 
+.. raw:: html
+
+  <details>
+    <summary class='remove-default-icon'>
+      <i class="fa-brands fa-youtube fa-bounce" style="color: #bd0000;"></i>
+      ‎ ‎ Launching a development environment
+    </summary>
+    <div style="position: relative; padding-bottom: 56.25%; margin-bottom: 2em; height: 0; overflow: hidden; max-width: 100%; height: auto;">
+        <iframe src="https://www.youtube.com/embed/mod3fwN8wCI" frameborder="0" allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
+    </div>
+  </details>
+
 .. image:: /_static/images/endpoints/vscode.png
+
 
 
 3. Editing the module's code

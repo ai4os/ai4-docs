@@ -46,6 +46,19 @@ In this section you can see your profile details.
   in the popup window and grant access to the Dashboard.
   If you have previously linked a storage provider, you also have to option to ``Resync`` it.
 
+  .. raw:: html
+
+   <details>
+      <summary class='remove-default-icon'>
+        <i class="fa-brands fa-youtube fa-bounce" style="color: #bd0000;"></i>
+        ‎ ‎ Link with any NextCloud storage service
+      </summary>
+      <div style="position: relative; padding-bottom: 56.25%; margin-bottom: 2em; height: 0; overflow: hidden; max-width: 100%; height: auto;">
+         <iframe src="https://www.youtube.com/embed/PHbHq4KbmwE" frameborder="0" allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
+      </div>
+   </details>
+
+
 
 Navigating the Marketplace
 --------------------------
@@ -173,6 +186,20 @@ You have two sections:
 
    With any dataset, you can select a ``force_pull`` option, so that if your dataset
    already exists in your storage it will overwrite the existing files.
+
+
+.. raw:: html
+
+  <details>
+    <summary class='remove-default-icon'>
+      <i class="fa-brands fa-youtube fa-bounce" style="color: #bd0000;"></i>
+      ‎ ‎ Download a dataset from Zenodo
+    </summary>
+    <div style="position: relative; padding-bottom: 56.25%; margin-bottom: 2em; height: 0; overflow: hidden; max-width: 100%; height: auto;">
+        <iframe src="https://www.youtube.com/embed/QXp85utCr4A" frameborder="0" allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
+    </div>
+  </details>
+
 
 .. image:: /_static/images/dashboard/storage-datasets.png
 

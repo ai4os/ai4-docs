@@ -1,6 +1,12 @@
 Try a model from the Dashboard (Gradio)
 =======================================
 
+.. raw:: html
+
+    <div style="position: relative; padding-bottom: 56.25%; margin-bottom: 2em; height: 0; overflow: hidden; max-width: 100%; height: auto;">
+        <iframe src="https://www.youtube.com/embed/1wDsPj_QtGo" frameborder="0" allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
+    </div>
+
 Try-me deployments are available to anyone with an :ref:`EGI Check-In account <user/overview/auth:Basic authentication>`.
 
 To create a deployment, :ref:`select a module in the Marketplace <user/overview/dashboard:Navigating the Marketplace>` and click on ``Try ▼ Nomad (Gradio)``.
