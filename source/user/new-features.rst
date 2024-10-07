@@ -10,7 +10,9 @@ notified here.
 .. Template
 .. * 📘 new :doc:`... </user/...>` page (``2024-04-03``)
 
-* 📌 we started supporting the `AI4Life project <https://ai4life.eurobioimaging.eu/>`__ (``2024-09-15``)
+* 📌 we started supporting the `AI4Life project <https://ai4life.eurobioimaging.eu/>`__ (``2024-10-07``)
+* 📈 new ability :doc:`deploy OSCAR services </user/howto/deploy/oscar>` from the Dashboard (``2024-09-25``)
+* 📈 redesign the Dashboard+Docs around the main user workflows: :ref:`Try, Develop, Deploy <user/index:how-to's>` (``2024-09-20``)
 * 📈 new :ref:`Profile section <user/overview/dashboard:Profile>` where you can link your storage providers (``2024-09-04``)
 * 📈 new :doc:`try-me deployments </user/howto/try/dashboard-gradio>` (``2024-09-03``)
 * 📌 new federated cluster is available in production (``2024-08-05``)
