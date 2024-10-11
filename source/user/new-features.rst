@@ -10,6 +10,7 @@ notified here.
 .. Template
 .. * 📘 new :doc:`... </user/...>` page (``2024-04-03``)
 
+* 📈 we send notifications to users when deployments take long to deploy (``2024-10-11``)
 * 📌 we started supporting the `AI4Life project <https://ai4life.eurobioimaging.eu/>`__ (``2024-10-07``)
 * 📈 new ability :doc:`deploy OSCAR services </user/howto/deploy/oscar>` from the Dashboard (``2024-09-25``)
 * 📈 redesign the Dashboard+Docs around the main user workflows: :ref:`Try, Develop, Deploy <user/index:how-to's>` (``2024-09-20``)
