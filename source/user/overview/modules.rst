@@ -8,7 +8,7 @@ All  modules are found at the :doc:`AI4OS Dashboard <dashboard>`, the source cod
 hosted under `Github's ai4os-hub <https://github.com/ai4os-hub>`__ organization and the corresponding Docker images are
 hosted under `DockerHub's ai4oshub <https://hub.docker.com/u/ai4oshub/>`__ organization.
 
-Modules follow the following convention:
+Modules follow the following name convention:
 
 * ``ai4os-hub/ai4-<project-name>``: module officially developed by the project
 * ``ai4os-hub/<project-name>``: modules developed by external users

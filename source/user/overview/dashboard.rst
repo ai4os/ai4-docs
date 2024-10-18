@@ -63,31 +63,37 @@ In this section you can see your profile details.
 Navigating the Marketplace
 --------------------------
 
-Once you log into the Dashboard, you are able to see all possible modules for deploying
-in the ``Marketplace`` panel.
+Once you log into the Dashboard, you will be shown all the items the ``Marketplace`` has to offer.
 Those are basically:
 
-* ``AI4OS Development Environment``: special module especially designed to :doc:`develop new AI models </user/howto/develop/dashboard>`.
+* ``Tools``: set of AI tools that come handy in the Machine Learning workflow.
+
+  We currently offer:
+
+  - The **AI4OS Development Environment** to develop new modules (:doc:`tutorial </user/howto/develop/dashboard>`)
+  - The **Flower Federated Learning Server** to make federated privacy-friendly trainings (:doc:`tutorial </user/howto/train/federated-server>`)
+
 * ``Modules``: set of AI models designed to perform given tasks (eg. image classification)
-* ``Tools``: set of AI tools that come handy in the Machine Learning workflow (eg. image labeling)
 
 .. image:: /_static/images/dashboard/home.png
 
-Modules can be:
+You can use filters to quickly find the module you want.
+We provide filtering by:
 
-* **Trainable**: Those are modules that an user can train on their own data to create a new service. Like training an
-  `image classifier <https://dashboard.cloud.ai4eosc.eu/marketplace/modules/ai4os-image-classification-tf>`__ with a
-  plants dataset to create a `plant classifier <https://dashboard.cloud.ai4eosc.eu/marketplace/modules/plants-classification>`__
-  service.
-  Look for the ``trainable`` tag in the marketplace to find those modules.
+* ``Libraries``: this is the Deep Learning the module uses (eg. Pytorch, Tensorflow)
+* ``Tasks``: this is the broad task the module addresses (eg. Computer Vision, Natural Language Processing)
+* ``Platform Categories``: platform-specific tags.
+  Current options include:
 
-* **Trained (inference-ready)**: Those are modules that have been pre-trained for a specific task (like the
-  `plant classifier <https://dashboard.cloud.ai4eosc.eu/marketplace/modules/plants-classification>`__ mentioned earlier).
+  - ``AI4 tools``
+  - ``AI4 pretrained``: modules that already come with a trained AI model
+  - ``AI4 inference``: modules that can be used for inference (usually overlaps with *AI4 pretrained*)
+  - ``AI4 trainable``: modules that can be trained on a new dataset
 
-Some modules can both be trainable and trained.
-For example the `image classifier <https://dashboard.cloud.ai4eosc.eu/marketplace/modules/ai4os-image-classification-tf>`__
-can be trained to create other image classifiers but can also be deployed for inference as it comes pre-trained with a
-general-purpose image classifier.
+  For example the `image classifier <https://dashboard.cloud.ai4eosc.eu/marketplace/modules/ai4os-image-classification-tf>`__ is both pretrained (because is comes with a model trained on ImageNet), inference-ready (because it allows to use that model to do predictions) and trainable (because it allows to retrain that model on a different dataset, to create for example a `plant classifier <https://dashboard.cloud.ai4eosc.eu/marketplace/modules/plants-classification>`__ )
+
+* ``Data type``: type of data the module processes (eg. Image, Audio)
+* ``Tags``: any module-specific tag
 
 
 Making a deployment

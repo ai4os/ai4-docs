@@ -10,6 +10,8 @@ notified here.
 .. Template
 .. * 📘 new :doc:`... </user/...>` page (``2024-04-03``)
 
+* 📈 redesign of the Dashboard Marketplace, with :ref:`new filtering features <user/overview/dashboard:Navigating the Marketplace>` (``2024-10-18``)
+* 📈 redesign of the Dashboard module pages, following the new metadata schema (``2024-10-18``)
 * 📈 we send notifications to users when deployments take long to deploy (``2024-10-11``)
 * 📌 we started supporting the `AI4Life project <https://ai4life.eurobioimaging.eu/>`__ (``2024-10-07``)
 * 📈 new ability :doc:`deploy OSCAR services </user/howto/deploy/oscar>` from the Dashboard (``2024-09-25``)
