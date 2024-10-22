@@ -12,7 +12,7 @@ deployments to the following hosting platforms:
 
      The first time you access this storage, you will need to contact the admins to validate your account.
 
-To able able to access storage from your deployment, you need to properly
+To be able to access storage from your deployment, you need to properly
 :ref:`configure your Storage <user/overview/dashboard:Storage configuration>`
 when creating your deployment.
 

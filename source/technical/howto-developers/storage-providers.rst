@@ -4,10 +4,24 @@ Storage providers
 This section explains additional information about the storage providers compatible
 with the AI4OS stack.
 
+AI4OS Storage
+-------------
+
+The `AI4OS storage <https://share.services.ai4os.eu/>`__ is a custom Nextcloud instance
+deployed for the project users. Each user gets a free 500 GB of storage there.
+
+As expected, this storage is compatible by default with the AI4OS stack.
+
+.. admonition:: Account validation
+    :class: important
+
+    The first time you access this storage, you will need to contact the admins to validate your account.
+
+
 Nextcloud
 ---------
 
-In order to link an account from a custom Nextcloud to the :doc:`AI4OS Dashboard </user/overview/dashboard>`,
+In order to link an account from a **custom Nextcloud** to the :doc:`AI4OS Dashboard </user/overview/dashboard>`,
 you have to make sure that your Nextcloud allows requests from the different dashboard domains.
 This can be done in the Apache configuration file of your Nextcloud.
 
