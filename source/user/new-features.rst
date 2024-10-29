@@ -42,20 +42,19 @@ In this section, we will offer some insight on to where the AI4OS stack is headi
 First, the are a number of mature features that are in the process of being integrated
 in the stack:
 
-* 📈 inference endpoints with OSCAR
-* 📈 inference endpoints with Nomad
 * 📈 try model endpoints with OSCAR
-* 📈 email notifications for training deployments that take a longer to deploy
 * 📈 new tool for image annotation (CVAT)
 * 📈 new tool for efficient video streaming (Kafka)
+* 📈 support for federated learning with NVflare
 
 Along with these upcoming features, we are exploring more improvements. These are
 in an experimental status and might not finally get integrated in the stack.
 
 * 📈 carbon footprint estimator for your deployments
 * 📈 graph visualizations of your module/deployment metadata
-* 📈 ability to pause deployments
-* 📌 using volumes in deployments to better share data across deployments
+* 📈 ability to snapshot deployments
+* 📈 ability to launch trainings in batch
+* 📈 new popularity metrics
 
 Do you find something missing? Please check
 :ref:`how to suggest a new feature <user/support/faq:🚀 I would like to suggest a new feature>`.

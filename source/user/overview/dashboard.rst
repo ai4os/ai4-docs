@@ -188,7 +188,7 @@ You have two sections:
    `Zenodo <https://zenodo.org/>`__, `Hugginsface <https://huggingface.co/>`__, `Figshare <https://figshare.com/>`__, `Github <https://github.com/>`__, `Dryad <https://datadryad.org/>`__, `Open Science Framework (OSF) <https://osf.io/>`__, `Mendeley Data <https://data.mendeley.com/>`__ and `many more <https://j535d165.github.io/datahugger/repositories/>`__!
 
    * For Zenodo, we provide an embedded search functionality to find the datasets attached to any community.
-   * For all repositories, we provide the ability to directly provide a DOI.
+   * For all repositories, we provide the ability to directly provide a DOI or a URL.
 
    With any dataset, you can select a ``force_pull`` option, so that if your dataset
    already exists in your storage it will overwrite the existing files.
@@ -218,7 +218,6 @@ deployments you have made so far:
 
 .. image:: /_static/images/dashboard/deployments.png
 
-
 Under :fa:`circle-info` ``Info`` you will find details about your deployment such as UUID,
 resources assigned/requested, error messages, endpoints of all services, etc.
 For the endpoints of the services you have:
@@ -230,6 +229,7 @@ For the endpoints of the services you have:
 
 Under :fa:`rectangle-list` ``Quick access`` you will be able to access the service you deployed at launch time.
 
+If you had a deployment that took more than a week to deploy you will receive an email notification when it is finally deployed.
 
 View your statistics
 --------------------

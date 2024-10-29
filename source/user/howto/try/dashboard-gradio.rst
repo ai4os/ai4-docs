@@ -15,16 +15,9 @@ To create a deployment, :ref:`select a module in the Marketplace <user/overview/
 
 This will open a new tab where the new try-me environment will be deployed (this can take a few seconds).
 
-Once this is deployed, you will see a `Gradio <https://www.gradio.app/>`__ interface where you can make your prediction.
-In the left hand-side, you will be shown the prediction inputs and in the right hand side you
-will be shown the prediction outputs.
+Once this is deployed, you will see a `Gradio <https://www.gradio.app/>`__ interface where you can make your prediction. In the left hand-side, you will be shown the prediction inputs and in the right hand side you will be shown the prediction outputs.
 
 .. image:: /_static/images/endpoints/gradio.png
-
-Take into account that this try-me endpoints are offered to the general public, thus run
-on limited resources. This means that we limit the maximum duration of a try-me environment
-to 10 minutes. In addition, resource-hungry operations (eg. video processing) might not work
-as expected.
 
 .. admonition:: Advice for model developers
     :class: info
@@ -34,3 +27,9 @@ as expected.
     define an ``schema`` to validate their outputs.
     If you are the developer of the module, please consider defining a schema to
     improve the display of your module.
+
+Take into account that this try-me endpoints are offered to the general public, thus run on limited resources. This means that we limit the maximum duration of a try-me environment to 10 minutes. In addition, resource-hungry operations (eg. video processing) might not work as expected.
+
+In line with this, we also limit the number of try-me endpoints that the user can deploy at the same time. If you reach the limit, you can wait until one of your previous deployments is automatically deleted or you can delete it manually in the ``Try me`` section of the Dashboard.
+
+.. image:: /_static/images/dashboard/tryme.png
