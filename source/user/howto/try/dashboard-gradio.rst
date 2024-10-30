@@ -22,11 +22,7 @@ Once this is deployed, you will see a `Gradio <https://www.gradio.app/>`__ inter
 .. admonition:: Advice for model developers
     :class: info
 
-    In some modules, prediction outputs might be shown as a raw JSON instead that with fancy
-    Gradio fields. This is due to the developer failing the :ref:`user/overview/api:Integrate your model with the API`
-    define an ``schema`` to validate their outputs.
-    If you are the developer of the module, please consider defining a schema to
-    improve the display of your module.
+    If you are a model developer looking to improve the looks of your module's UI, take a look to our :ref:`developer guidelines<user/overview/api:Additional considerations>`.
 
 Take into account that this try-me endpoints are offered to the general public, thus run on limited resources. This means that we limit the maximum duration of a try-me environment to 10 minutes. In addition, resource-hungry operations (eg. video processing) might not work as expected.
 

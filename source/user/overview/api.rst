@@ -12,7 +12,7 @@ Integrate your model with the API
 ---------------------------------
 
 The best approach to integrate your code with DEEPaaS is to create an empty template
-using the :doc:`AI4OS Modules Template <cookiecutter-template>`.
+using the :doc:`AI4OS Modules Template </user/overview/cookiecutter-template>`.
 This will take care of creating a Python package of your model with all the appropriate
 structure for your model (entrypoints, files, etc).
 
@@ -61,6 +61,56 @@ There, you will be able to see examples on:
             out = utils.predict(args)  # make prediction
             resp = postprocess(out)    # transform your standard output to deepaas output
             return resp
+
+
+Additional considerations
+^^^^^^^^^^^^^^^^^^^^^^^^^
+
+The values you use in your ``get_predict_args()`` will be used to generate the Gradio UI in :doc:`Try-me deployments </user/howto/try/dashboard-gradio>`.
+
+In particular, this affects to how files (``webargs.fields.Field``) will be rendered in the UI:
+
+* if "image" in description, it will be rendered as a Gradio image
+* if "audio" in description, it will be rendered as a Gradio audio
+* if "video" in description, it will be rendered as a Gradio video
+* if more than one is found in description (eg. "image" and "video"), it will be rendered as a Gradio generic file
+* if no keyword is found, it will be rendered as a Gradio generic file
+
+.. code-block:: python
+
+    def get_predict_args():
+        arg_dict = {
+            "demo_image": fields.Field(
+                required=True,
+                type="file",
+                location="form",
+                description="test upload",
+                # "image" not in description, thus rendered as a generic file in the Gradio UI
+            ),
+            "demo_image_1": fields.Field(
+                required=True,
+                type="file",
+                location="form",
+                description="test image upload",
+                # "image" is indeed in description, thus rendered as an image in the Gradio UI
+            ),
+        }
+        return arg_dict
+
+In addition, if you have not defined a ``schema`` to validate your JSON response, the output in the UI will be the plain JSON response, instead of a feature-rich UI.
+The same point about rendering files also applies here.
+
+.. code-block:: python
+
+    schema = {
+        "demo_image_2": fields.Str(
+            description="some file"
+        ), # "image" not in description, thus rendered as a generic file in the Gradio UI
+        "demo_image_3": fields.Str(
+            description="some image file"
+        ), # "image" is indeed in description, thus rendered as an image in the Gradio UI
+        "accept": fields.Str(),
+    }
 
 
 Running the API

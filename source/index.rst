@@ -31,9 +31,9 @@ and monitoring in production. Following the FAIR principles for science, both ou
     |   A high level overview of the project.
     | :fa:`book` `Documentation <https://docs.ai4os.eu/>`__
     |   The main source of knowledge on how to use the project. Refer always to here in case of doubt.
-    | :fa:`id-badge` :doc:`Authentication <user/overview/auth>`
+    | :fa:`id-badge` :doc:`Authentication </user/overview/auth>`
     |   The authentication management for accessing the AI4OS stack.
-    | :fa:`sliders` :doc:`Dashboard <user/overview/dashboard>`
+    | :fa:`sliders` :doc:`Dashboard </user/overview/dashboard>`
     |   Where users will typically search for modules developed by the community, and find the relevant pointers to use them. It allows authenticated users to deploy virtual machines on specific hardware (eg. gpus) to train a module.
     | :fa:`database` `NextCloud <https://share.services.ai4os.eu/>`__
     |   The service that allows to store your data remotely and access them from inside your deployment. (`old instance <https://data-deep.a.incd.pt/>`__)
@@ -61,7 +61,7 @@ and monitoring in production. Following the FAIR principles for science, both ou
 User documentation
 ------------------
 
-If you are a user (current or potential) you should :doc:`start here <user/index>`.
+If you are a user (current or potential) you should :doc:`start here </user/index>`.
 
 .. toctree::
    :maxdepth: 3
