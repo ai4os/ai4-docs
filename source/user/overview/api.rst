@@ -70,10 +70,11 @@ The values you use in your ``get_predict_args()`` will be used to generate the G
 
 In particular, this affects to how files (``webargs.fields.Field``) will be rendered in the UI:
 
-* if "image" in description, it will be rendered as a Gradio image
-* if "audio" in description, it will be rendered as a Gradio audio
-* if "video" in description, it will be rendered as a Gradio video
-* if more than one is found in description (eg. "image" and "video"), it will be rendered as a Gradio generic file
+* if ``image`` is found in description, it will be rendered as a Gradio image
+* if ``audio`` is found in description, it will be rendered as a Gradio audio
+* if ``video`` is found in description, it will be rendered as a Gradio video
+* if ``#noparse`` is found in description, it will be rendered as a Gradio generic file
+* if more than one is found in description (eg. ``image`` and ``video``), it will be rendered as a Gradio generic file
 * if no keyword is found, it will be rendered as a Gradio generic file
 
 .. code-block:: python
