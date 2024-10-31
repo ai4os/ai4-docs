@@ -101,7 +101,7 @@ Train a model
    :maxdepth: 2
 
    Train a model with the Dashboard <howto/train/dashboard>
-   Make a federated training <howto/train/federated-server>
+   Make a federated learning training <howto/train/federated-server>
    Use rclone to sync your dataset (advanced) <howto/train/rclone>
 
 
