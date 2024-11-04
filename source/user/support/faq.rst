@@ -151,55 +151,14 @@ Now you should be able to see your dataset.
 🔥 rclone fails to connect
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-You tried to connect to connect to the `AI4OS Nextcloud <https://share.services.ai4os.eu/>`__
-and you are returned the following error message:
+You tried to manually use RCLONE and you are returned the following error message:
 
 .. code:: console
 
-    root@b79d4b9279f6:/srv# rclone about rshare:
-    2024/02/05 13:26:56 Failed to create file system for "rshare:": the remote url looks incorrect. Note that nextcloud chunked uploads require you to use the /dav/files/USER endpoint instead of /webdav. Please check 'rclone config show remotename' to verify that the url field ends in /dav/files/USERNAME
+    2024/11/04 13:04:53 Failed to about: about call failed: No public access to this resource., Username or password was incorrect, No 'Authorization: Bearer' header found. Either the client didn't send one, or the server is mis-configured, Username or password was incorrect: Sabre\DAV\Exception\NotAuthenticated: 401 Unauthorized
 
-This is due to a `change in endpoints <https://github.com/rclone/rclone/issues/7103>`__
-introduced in RCLONE ``1.63.X``:
-
-.. code-block::
-
-    old endpoint: https://share.services.ai4os.eu/remote.php/webdav/
-    new endpoint: https://share.services.ai4os.eu/remote.php/dav/files/<USER>
-
-So you are experiencing this because you are running RCLONE with version higher than
-1.62.
-
-To fix this run the following command which will overwrite your endpoint:
-
-.. code-block:: console
-
-    $ echo export RCLONE_CONFIG_RSHARE_URL=${RCLONE_CONFIG_RSHARE_URL//webdav\/}dav/files/${RCLONE_CONFIG_RSHARE_USER} >> /root/.bashrc
-
-
-More info on how to :ref:`configure rclone <user/howto/train/rclone:2. Configuring rclone>`.
-
-.. TODO: another option is to fix the rclone version to 1.62.2
-
-.. To install rclone on a Docker container based on Ubuntu you should add the following code:
-
-.. .. code-block:: docker
-
-..     # Install rclone (needed if syncing with NextCloud for training; otherwise remove)
-..     RUN curl -O https://downloads.rclone.org/v1.62.2/rclone-v1.62.2-linux-amd64.deb && \
-..         apt install ./rclone-v1.62.2-linux-amd64.deb && \
-..         mkdir /srv/.rclone/ && \
-..         touch /srv/.rclone/rclone.conf && \
-..         rm rclone-current-linux-amd64.deb && \
-..         rm -rf /var/lib/apt/lists/*
-
-.. To install it directly on your machine:
-
-.. .. code-block:: console
-
-..     $ curl -O https://downloads.rclone.org/v1.62.2/rclone-v1.62.2-linux-amd64.deb
-..     $ apt install ./rclone-v1.62.2-linux-amd64.deb
-..     $ rm rclone-current-linux-amd64.deb
+This is probably due because you are using an older RCLONE version (earlier than ``1.63.3``).
+Update to a newer RCLONE version and :ref:`find more information here <user/howto/train/rclone:... in a Dashboard deployment>`.
 
 
 Other issues

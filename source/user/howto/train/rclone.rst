@@ -11,29 +11,17 @@ Although we will demonstrate here how to use it with Nextcloud, it can be used w
 
 All applications in the :doc:`AI4OS Dashboard</user/overview/dashboard>` are packed in a Docker image and have `rclone <https://rclone.org/>`__ installed by default. If you want to create a Docker containing your own application, you should install rclone in the container to be able to access the data stored remotely. When developing an application with the :doc:`AI4OS Modules Template </user/overview/cookiecutter-template>`, the Dockerfile already includes installation of rclone.
 
-To install rclone on a Docker container based on Ubuntu you should add the following code:
+To install rclone on a Docker container you should add the following code to your Dockerfile:
 
 .. code-block:: docker
 
-    # Install rclone (needed if syncing with NextCloud for training; otherwise remove)
-    RUN curl -O https://downloads.rclone.org/rclone-current-linux-amd64.deb && \
-        dpkg -i rclone-current-linux-amd64.deb && \
-        apt install -f && \
-        mkdir /srv/.rclone/ && \
-        touch /srv/.rclone/rclone.conf && \
-        rm rclone-current-linux-amd64.deb && \
-        rm -rf /var/lib/apt/lists/*
+    RUN curl https://rclone.org/install.sh | bash
 
-To install it directly on your machine:
+To install it locally on your machine:
 
 .. code-block:: console
 
-    $ curl -O https://downloads.rclone.org/rclone-current-linux-amd64.deb
-    $ dpkg -i rclone-current-linux-amd64.deb
-    $ apt install -f
-    $ rm rclone-current-linux-amd64.deb
-
-For other Linux flavors, please refer to the `rclone official site <https://rclone.org/downloads/>`__.
+    $ curl https://rclone.org/install.sh | bash
 
 
 2. Configuring rclone
@@ -47,43 +35,34 @@ Before creating the deployment you must do the following:
 1. :ref:`Sync Nextcloud from the profile section <user/overview/dashboard:Profile>`. This will create your rclone credentials.
 2. :ref:`Select Nextcloud when configuring the deployment <user/overview/dashboard:Storage configuration>`. This will set set up rclone configuration for you via setting environment variables in your deployment.
 
-Once your deployment is running, you must run the following command in the terminal to properly configure rclone:
-
-.. code-block:: console
-
-    $ echo export RCLONE_CONFIG_RSHARE_PASS=$(rclone obscure $RCLONE_CONFIG_RSHARE_PASS) >> /root/.bashrc
-    $ source /root/.bashrc
-
-.. We do this to spare users from having to install rclone in their local machines just to obscure the password.
-
-This is because, to connect with the remote, rclone needs to use an obscured version of the password, not the raw one.
-
-If your rclone version is higher than ``1.62.2``, then you must need to adapt the
-endpoint, running this command
-(see :ref:`Frequently Asked Questions <user/support/faq:🔥 rclone fails to connect>` for more info):
-
-.. code-block:: console
-
-    $ echo export RCLONE_CONFIG_RSHARE_URL=${RCLONE_CONFIG_RSHARE_URL//webdav\/}dav/files/${RCLONE_CONFIG_RSHARE_USER} >> /root/.bashrc
-    $ source /root/.bashrc
-
-You can always check those env variables afterwards:
+When the deployment is created, you should have your env variables available to work with the latest RCLONE:
 
 .. code-block:: console
 
     $ printenv | grep RCLONE_CONFIG_RSHARE_
     RCLONE_CONFIG_RSHARE_VENDOR=nextcloud
-    RCLONE_CONFIG_RSHARE_PASS=***some-password***
-    RCLONE_CONFIG_RSHARE_URL=https://share.services.ai4os.eu/remote.php/webdav/
+    RCLONE_CONFIG_RSHARE_PASS=<YOUR-PASSWORD>
+    RCLONE_CONFIG_RSHARE_URL=https://share.services.ai4os.eu/remote.php/dav/files/<YOUR-USER>
     RCLONE_CONFIG_RSHARE_TYPE=webdav
-    RCLONE_CONFIG_RSHARE_USER=***some-user***
+    RCLONE_CONFIG_RSHARE_USER=<YOUR-USER>
 
-and modify them if needed:
+.. dropdown:: ㅤㅤ A note on older RCLONE versions
 
-.. code-block:: console
+    In RCLONE versions ``=< 1.62.2``, the RCLONE environment variables had the following shape (`issue <https://github.com/rclone/rclone/issues/7103>`__).
 
-    $ export RCLONE_CONFIG_RSHARE_PASS=***new-password***
-    # remember this should an obscured version of the raw password --> `rclone obscure <raw-password>`
+    .. code-block:: console
+
+        RCLONE_CONFIG_RSHARE_VENDOR=nextcloud
+        RCLONE_CONFIG_RSHARE_PASS=<YOUR-PASSWORD>
+        RCLONE_CONFIG_RSHARE_URL=https://share.services.ai4os.eu/remote.php/webdav/
+        RCLONE_CONFIG_RSHARE_TYPE=webdav
+        RCLONE_CONFIG_RSHARE_USER=<YOUR-USER>
+
+    So in your module uses an old version of RCLONE, you can either:
+
+    1. Update to a newer RCLONE version,
+    2. Still use and old version but make sure to update your ``.bashrc`` with these variables.
+
 
 ... in your local machine
 ^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -100,7 +79,7 @@ Then run ``rclone config`` command, these are the answers you should provide:
     # choose "n"  for "New remote"
     # choose name for AI4OS Nextcloud --> rshare
     # choose "Type of Storage" --> Webdav
-    # provide AI4OS Nextcloud URL for webdav access --> https://share.services.ai4os.eu/remote.php/webdav/
+    # provide AI4OS Nextcloud URL for webdav access --> ttps://share.services.ai4os.eu/remote.php/dav/files/<YOUR-USER>
     # choose Vendor --> Nextcloud
     # specify "user" --> (see `<user>` in "Configuring rclone" above).
     # password --> y (Yes type in my own password)
@@ -116,10 +95,10 @@ This will create an configuration file in ``$HOME/.config/rclone/rclone.conf``.:
 
     [rshare]
     type = webdav
-    url = https://share.services.ai4os.eu/remote.php/webdav/
+    url = https://share.services.ai4os.eu/remote.php/dav/files/<YOUR-USER>
     vendor = nextcloud
-    user = ***some-username***
-    pass = ***some-userpassword**  --> this is equivalent to `rclone obscure <password>`
+    user = <YOUR-USER>
+    pass = <YOUR-PASSWORD>  --> this is equivalent to `rclone obscure <password>`
 
 .. admonition:: Security warning
     :class: tip
