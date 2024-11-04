@@ -21,7 +21,7 @@ To install it locally on your machine:
 
 .. code-block:: console
 
-    $ curl https://rclone.org/install.sh | bash
+    $ curl https://rclone.org/install.sh | sudo bash
 
 
 2. Configuring rclone
