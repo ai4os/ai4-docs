@@ -10,6 +10,7 @@ notified here.
 .. Template
 .. * 📘 new :doc:`... </user/...>` page (``2024-04-03``)
 
+* 📈 add support for `Seanoe <https://www.seanoe.org/>`__ and `Data Europa <https://data.europa.eu/>`__ datasets :ref:`downloading <user/overview/dashboard:Storage configuration>` (``2024-10-18``)
 * 📈 redesign of the Dashboard Marketplace, with :ref:`new filtering features <user/overview/dashboard:Navigating the Marketplace>` (``2024-10-18``)
 * 📈 redesign of the Dashboard module pages, following the new metadata schema (``2024-10-18``)
 * 📈 we send notifications to users when deployments take long to deploy (``2024-10-11``)

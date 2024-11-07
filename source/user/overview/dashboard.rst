@@ -185,7 +185,7 @@ You have two sections:
 2. **Download external datasets**
 
    This section provides the option to sync with datasets from multiple external repositories, including
-   `Zenodo <https://zenodo.org/>`__, `Hugginsface <https://huggingface.co/>`__, `Figshare <https://figshare.com/>`__, `Github <https://github.com/>`__, `Dryad <https://datadryad.org/>`__, `Open Science Framework (OSF) <https://osf.io/>`__, `Mendeley Data <https://data.mendeley.com/>`__ and `many more <https://j535d165.github.io/datahugger/repositories/>`__!
+   `Zenodo <https://zenodo.org/>`__, `Hugginsface <https://huggingface.co/>`__, `Figshare <https://figshare.com/>`__, `Github <https://github.com/>`__, `Seanoe <https://www.seanoe.org/>`__, `Data Europa <https://data.europa.eu/>`__, `Dryad <https://datadryad.org/>`__, `Open Science Framework (OSF) <https://osf.io/>`__, `Mendeley Data <https://data.mendeley.com/>`__ and `many more <https://j535d165.github.io/datahugger/repositories/>`__!
 
    * For Zenodo, we provide an embedded search functionality to find the datasets attached to any community.
    * For all repositories, we provide the ability to directly provide a DOI or a URL.
