@@ -14,3 +14,5 @@ make html
 ```
 
 This will create a `build/html` folder with the built documentation.
+
+It's recommended to periodically run `check_links.py` to make sure all the URL referenced in the documentation are indeed up and running.
