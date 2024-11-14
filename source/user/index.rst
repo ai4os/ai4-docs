@@ -102,6 +102,7 @@ Train a model
 
    Train a model with the Dashboard <howto/train/dashboard>
    Make a federated learning training <howto/train/federated-server>
+   Label your images with CVAT <howto/train/cvat>
    Use rclone to sync your dataset (advanced) <howto/train/rclone>
 
 

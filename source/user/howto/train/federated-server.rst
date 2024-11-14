@@ -1,7 +1,7 @@
 Federated server
 ================
 
-In this tutorial, we will guide on how to use the Federated Learning (FL) server in the
+In this tutorial, we will guide you on how to use the Federated Learning (FL) server in the
 AI4OS platform to perform a FL training.
 
 For more information, see the *Getting Started* step by step guide available in the
@@ -98,16 +98,16 @@ Now that your fedserver is running, you need to do the following steps:
    will take part in the training.
    In the section below we will explain how the clients can use them to connect to the
    training.
-   
-   
+
+
 Connecting the clients
 ^^^^^^^^^^^^^^^^^^^^^^
 
 In order to connect the clients to the FL server deployed within the platform, two approaches can be followed depending on where the clients are running:
 
-- **Clients running locally on the user's resources or on servers external to the platform.** 
-   This is the most classic approach as in general in a FL training the data should not be leave the server where they are stored for training. 
-   Note that in most cases privacy restrictions are applied on them that prevent their centralization. 
+- **Clients running locally on the user's resources or on servers external to the platform.**
+   This is the most classic approach as in general in a FL training the data should not be leave the server where they are stored for training.
+   Note that in most cases privacy restrictions are applied on them that prevent their centralization.
    Thus, in order to connect each client to the server, the clients must know the UUID of the deployment where the FL server is deployed as well as the datacenter on which it is running (IFCA or IISAS).
    Then, you can add the *call_credentials* parameter if the server has been created using tokens, as will be explained in the following section.
 
@@ -125,16 +125,16 @@ In order to connect the clients to the FL server deployed within the platform, t
          client=Client(),
          root_certificates=Path(certifi.where()).read_bytes(),
       )
-    
-    
-- **Clients running on different deployments of the platform.** 
-   If you are running your clients from different deployments created in the platform, in orde to connect to the server you have to first find the IP of the server form the server side. 
+
+
+- **Clients running on different deployments of the platform.**
+   If you are running your clients from different deployments created in the platform, in orde to connect to the server you have to first find the IP of the server form the server side.
    In this line, you first go to the deployment in which you have started the server, open a terminal an run:
 
    .. code-block:: bash
 
        env | grep NOMAD_HOST_ADDR_fedserver
-    
+
    This will provide the IP and the port in which the FL server is running.
 
    Then, from the client side, you can start the client as follows (again, you can add the *call_credentials* parameter if needed), introducing the IP and port from the server side as *server_address*:
@@ -147,7 +147,7 @@ In order to connect the clients to the FL server deployed within the platform, t
          server_address=server_ip,
          client=Client()
       )
-    
+
 
 Client-server authentication
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -206,7 +206,6 @@ Server side differential privacy
 
 DP states that an algorithm is differentially private if by viewing its result an adversary cannot know whether a particular individual's data is included in the database used to achieve such result. This can be achieved by adding controled noise using different mechanisms, such us Laplace, Exponential, Gaussian, etc. We can use the privacy budget for controlnig the amount of noise, i.e. the level of privacy and the utility of the data.
 
-In case that you want to start a FL server and include more privacy restrictions when building the global aggregated model, you can add differential privacy (DP) from the server side. 
+In case that you want to start a FL server and include more privacy restrictions when building the global aggregated model, you can add differential privacy (DP) from the server side.
 Specifically, you can perform this step from the FL configuration when creating the server. You will need to include the **noise multiplier** for the Gaussian Mechanism, the **clipping norm** and the **number of clients sampled**. Note that this functionality is compatible with each of the aggregation strategies available in the platform. It's important to note that in this case the noise multiplier is not the privacy budget, but here a greater value of the noise multiplier implies more privacy restrictions (more noise) and less utility.
 This allows to ensure central DP from the server-side when building the global model with fixed clipping.
-

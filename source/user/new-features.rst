@@ -10,6 +10,7 @@ notified here.
 .. Template
 .. * 📘 new :doc:`... </user/...>` page (``2024-04-03``)
 
+* 📈 added support to :doc:`label images with CVAT </user/howto/train/cvat>` (``2024-11-14``)
 * 📈 add support for `Seanoe <https://www.seanoe.org/>`__ and `Data Europa <https://data.europa.eu/>`__ datasets :ref:`downloading <user/overview/dashboard:Storage configuration>` (``2024-10-18``)
 * 📈 redesign of the Dashboard Marketplace, with :ref:`new filtering features <user/overview/dashboard:Navigating the Marketplace>` (``2024-10-18``)
 * 📈 redesign of the Dashboard module pages, following the new metadata schema (``2024-10-18``)
