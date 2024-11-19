@@ -34,7 +34,8 @@ links = sorted(links)
 # Check links
 for link in links:
     try:
-        r = session.head(link, allow_redirects=True, timeout=5, verify=False)
+        # We use GET and not HEAD, because HEAD does not return the correct status codes
+        r = session.get(link, allow_redirects=True, timeout=5, verify=False)
         if r.ok:
             print(f"[grey]{link}[/grey]")
         elif r.status_code == 404:
