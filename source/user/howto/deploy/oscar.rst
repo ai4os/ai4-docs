@@ -224,6 +224,13 @@ Once you have retrieved your endpoint and token, you can run the following Pytho
             print(f'Failed to validate {k}: {data[k]} != {out[k]}')
 
 
+.. tip::
+
+    If your call returns a 502 error, you should wait a bit more.
+    You docker image is probably getting pulled!
+
+    If the error persists, please contact support.
+
 .. admonition:: Advanced usage
    :class: info
 
