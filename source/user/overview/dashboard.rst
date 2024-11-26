@@ -66,16 +66,17 @@ Navigating the Marketplace
 Once you log into the Dashboard, you will be shown all the items the ``Marketplace`` has to offer.
 Those are basically:
 
-* ``Tools``: set of AI tools that come handy in the Machine Learning workflow.
+* :material-outlined:`build;1.5em` ``Tools``: set of AI tools that come handy in the Machine Learning workflow.
 
   We currently offer:
 
   - The **AI4OS Development Environment** to develop new modules (:doc:`tutorial </user/howto/develop/dashboard>`)
   - The **Flower Federated Learning Server** to make federated privacy-friendly trainings (:doc:`tutorial </user/howto/train/federated-server>`)
+  - The **Computer Vision Annotation Tool** (CVAT) to label images (:doc:`tutorial </user/howto/train/cvat>`)
 
-* ``Modules``: set of AI models designed to perform given tasks (eg. image classification)
+* :material-outlined:`model_training;1.5em` ``Modules``: set of AI models designed to perform given tasks (eg. image classification)
 
-.. image:: /_static/images/dashboard/home.png
+.. image:: /_static/images/dashboard/marketplace.png
 
 You can use filters to quickly find the module you want.
 We provide filtering by:
@@ -130,7 +131,7 @@ The parameters to configure are:
 
 * ``Service`` determines which service to launch:
 
-  - For performing simple inference, ``DEEPaaS`` is the recommended option, as no code changes are required.
+  - For performing simple inference, ``DEEPaaS`` (API) is the recommended option, as no code changes are required.
   - For retraining a module, ``JupyterLab`` is the recommended option, as it offers access to Terminal windows which are needed to mount remote data into your machine.
   - For developing a new module, ``JupyterLab`` is the recommended option, as it offers the possibility to directly interact with the machine to write code.
     Some modules might offer also ``VScode``.
@@ -146,8 +147,6 @@ The parameters to configure are:
     In JupyterLab, open a **Terminal** window (:fa:`square-plus` (New launcher) ➜ **Others** ➜ **Terminal**).
     Then run ``deep-start --deepaas`` to launch DEEPaaS.
     If you make subsequent code changes, you will have to kill the old DEEPaaS process and launch a new one.
-
-* ``Hostame``: select a custom name to access your services (eg. selecting  ``my-custom-name`` will make your service available under ``http://deepaas.my-custom-name.deployments.cloud.ai4eosc.eu`` if the address is available)
 
 * ``Docker tag`` selects the appropriate Docker tags of your module (tags may vary across modules).
   You should choose Docker tag that match with the hardware you selected in the previous step.
@@ -213,29 +212,40 @@ You have two sections:
 Managing the deployments
 ------------------------
 
-In the ``Deployments`` panel you have a view of all the
-deployments you have made so far:
+In the ``Deployments`` tab (in the Navigation panel on the left) you have a table view of all the deployments you have made so far, separated both in ``Modules`` and ``Tools`` tables:
 
-.. image:: /_static/images/dashboard/deployments.png
+.. image:: /_static/images/dashboard/deployments_modules_tools.png
 
-Under :fa:`circle-info` ``Info`` you will find details about your deployment such as UUID,
-resources assigned/requested, error messages, endpoints of all services, etc.
+Under :material-outlined:`info;1.5em` ``Info`` you will find details about your deployment such as UUID, resources assigned/requested, error messages, endpoints of all services, etc.
 For the endpoints of the services you have:
 
-* ``DEEPaaS`` , only accessible if you launched with the DEEPaaS command or launched JupyterLab then ran DEEPaaS.
-* ``IDE`` , only accessible if you launched with the JupyterLab or VScode command
-* ``Monitor`` : this is the training monitoring page. Only accessible if the module has been coded to explicitly
+* ``API``: only accessible if you launched with the DEEPaaS command or launched JupyterLab then ran DEEPaaS.
+* ``IDE``: only accessible if you launched with the JupyterLab or VScode command
+* ``Monitor``: this is the training monitoring page. Only accessible if the module has been coded to explicitly
   display monitoring (check the module's README or training arguments) and if a training is currently running.
 
-Under :fa:`rectangle-list` ``Quick access`` you will be able to access the service you deployed at launch time.
+Under :material-outlined:`terminal;1.5em` ``Quick access`` you will be able to access the service you deployed at launch time.
 
 If you had a deployment that took more than a week to deploy you will receive an email notification when it is finally deployed.
+
+
+Creating a snapshot of a deployment
+-----------------------------------
+
+In the ``Modules`` table, you will see a :material-outlined:`add_a_photo;1.5em` ``Create snapshot`` option.
+
+This will allow to create a snapshot of any module you have deployed. This come especially handy for example when a downtime of the cluster is expected and you do not want to lose your work, or when you don't plan to keep working on something for a period of time but you don't want to keep consuming the resources.
+
+Once you click in the button, the snapshot will appear below, in the ``Snapshots`` table.
+You can redeploy snapshots at any time by clicking in the :material-outlined:`view_in_ar;1.5em` ``Redeploy snapshot`` button.
+
+.. image:: /_static/images/dashboard/deployments_snapshots.png
+
 
 View your statistics
 --------------------
 
-In the ``Dashboard`` panel you can access different types of
-statistics from the platform.
+In the ``Dashboard`` tab (in the Navigation panel on the left) you can access different types of statistics from the platform.
 
 Current usage
 ^^^^^^^^^^^^^

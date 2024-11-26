@@ -10,6 +10,8 @@ notified here.
 .. Template
 .. * 📘 new :doc:`... </user/...>` page (``2024-04-03``)
 
+* 📈 support the ability of :ref:`making snapshots of deployments <user/overview/dashboard:Creating a snapshot of a deployment>` (``2024-11-26``)
+* 📈 enable Gradio UI for inference on :ref:`AI4OS dedicated resources <user/howto/deploy/nomad:2.1 UI prediction>` (``2024-11-26``)
 * 📈 added support to :doc:`label images with CVAT </user/howto/train/cvat>` (``2024-11-14``)
 * 📈 add support for `Seanoe <https://www.seanoe.org/>`__ and `Data Europa <https://data.europa.eu/>`__ datasets :ref:`downloading <user/overview/dashboard:Storage configuration>` (``2024-10-18``)
 * 📈 redesign of the Dashboard Marketplace, with :ref:`new filtering features <user/overview/dashboard:Navigating the Marketplace>` (``2024-10-18``)

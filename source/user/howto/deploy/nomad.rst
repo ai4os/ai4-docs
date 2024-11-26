@@ -30,7 +30,12 @@ You can directly click on ``Quick submit`` as you don't need to configure anythi
 ----------------------
 
 In the ``Deployments`` tab, go to the ``Modules`` table and find your created deployment.
-Click the :fa:`rectangle-list` ``Quick access`` to access the DEEPaaS UI.
+This deployment offers the ability to perform predictions either via an API or an UI:
+
+2.1 API prediction
+^^^^^^^^^^^^^^^^^^
+
+Click the :material-outlined:`terminal;1.5em` ``Quick access`` to access the DEEPaaS UI.
 
 .. image:: /_static/images/endpoints/deepaas.png
    :width: 500 px
@@ -58,3 +63,11 @@ You will be returned a JSON with the results:
    Sometimes the first prediction you make can be a little slow.
    This is because the AI model has to be download and/or loaded.
    Subsequent predictions should run much faster.
+
+2.1 UI prediction
+^^^^^^^^^^^^^^^^^
+
+Under :material-outlined:`info;1.5em` ``Info`` you will also be able to find the ``UI`` endpoint.
+This endpoint offers a fully fledged Gradio UI to perform inference.
+
+.. image:: /_static/images/endpoints/gradio_deploy.png

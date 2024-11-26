@@ -17,7 +17,7 @@ This will open a new tab where the new try-me environment will be deployed (this
 
 Once this is deployed, you will see a `Gradio <https://www.gradio.app/>`__ interface where you can make your prediction. In the left hand-side, you will be shown the prediction inputs and in the right hand side you will be shown the prediction outputs.
 
-.. image:: /_static/images/endpoints/gradio.png
+.. image:: /_static/images/endpoints/gradio_tryme.png
 
 .. admonition:: Advice for model developers
     :class: info

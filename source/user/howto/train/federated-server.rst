@@ -68,7 +68,7 @@ Now that your fedserver is running, you need to do the following steps:
 1. **Find the endpoint where your server is deployed:**
 
    Once your FL server is running, go back to the Dashboard, find your deployment,
-   click on :fa:`circle-info` ``Info`` and copy the URL of ``fedserver`` endpoint.
+   click on :material-outlined:`terminal;1.5em` ``Info`` and copy the URL of ``fedserver`` endpoint.
 
 2. **Find the secret token of your deployment:**
 
@@ -80,7 +80,7 @@ Now that your fedserver is running, you need to do the following steps:
    AI4OS provides users with a token-based system that can be used for authenticating
    the clients prior to their incorporation into the federated training.
 
-   To access the secret token, find your deployments and click the :fa:`key` icon.
+   To access the secret token, find your deployments and click the :material-outlined:`key;1.5em` icon.
    You can generate as many tokens as needed (eg. 1 token per client), as well as
    revoke them:
 
