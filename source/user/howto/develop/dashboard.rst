@@ -98,7 +98,12 @@ Try running it with python so you get a more detailed debug message.
 Remember to leave untouched the ``get_metadata()`` function that comes predefined with your module,
 as all modules should have proper metadata.
 
-You can also use port ``6006`` to expose some training monitoring tool, like Tensorboard.
+In general, you will have the following ports available when making a deployment in the platform:
+
+* ``5000``: default port used for exposing the API (eg. DEEPaaS)
+* ``6006``: default port used for exposing a monitoring endpoint (eg. Tensorboard)
+* ``8888``: default port used for exposing the IDE (eg. JupyterLab, VScode)
+* ``80``: port available to let developers expose their custom endpoint
 
 In order to improve the readability of the code and the overall maintainability of your module,
 we enforce some quality standards in tox (including style, security, etc).
