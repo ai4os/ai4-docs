@@ -38,6 +38,14 @@ This will automatically deploy your OSCAR service with some predefined configura
 2. Make a prediction
 --------------------
 
+.. admonition:: Response status codes
+   :class: important
+
+    If the call we make returns a 502 error, you should wait a bit more.
+    You docker image is probably getting pulled!
+
+    If the error persists, please contact support.
+
 Synchronous predictions
 ^^^^^^^^^^^^^^^^^^^^^^^
 
