@@ -10,6 +10,21 @@ If your issue does not appear here, please contact support.
 Hardware issues
 ---------------
 
+🔥 The Dashboard shows my deployment but it immediately disappears
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Sometimes it can happen that when you :ref:`create a new deployment <user/overview/dashboard:Making a deployment>`, it initially appears in the :ref:`deployments table <user/overview/dashboard:Managing the deployments>` but disappears immediately, or is marked as ``failed/error``.
+
+This usually happens in deployments that where :ref:`launched using Nextcloud <user/overview/dashboard:Storage configuration>`. It can happen that your Nextcloud credentials become invalid thus leading to failure when trying to launched your deployment with Nextcloud connected.
+
+To fix this issue, please :ref:`re-link your Nextcloud account <user/overview/dashboard:Profile>` and try deploying again.
+
+If you are still experiencing this error after relinking, please contact support.
+If you are experiencing this issue in a deployment that was not linked with Nextcloud, please contact support.
+
+We are debugging why the Nextcloud expiration happens in the first place.
+
+
 🔥 The Dashboard shows there are free GPUs but my deployment is still queued
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 

@@ -42,9 +42,9 @@ In this section you can see your profile details.
 * ``Linked services``: list of the :doc:`compatible storage providers </technical/howto-developers/storage-providers>`
   that can be linked to your account.
 
-  In order to link a storage provider, you have to click on the ``Sync`` button, log
+  In order to link a storage provider, you have to click on the ``Link`` button, log
   in the popup window and grant access to the Dashboard.
-  If you have previously linked a storage provider, you also have to option to ``Resync`` it.
+  If you have previously linked a storage provider, you also have to option to ``Re-link`` it.
 
   .. raw:: html
 
