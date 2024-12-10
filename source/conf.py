@@ -98,14 +98,14 @@ pygments_style = 'sphinx'
 #     'collapse_navigation': False,
 # }
 
-html_theme = 'sphinx_material'
-html_theme_options = {
-    # 'color_primary': 'teal',
-    'globaltoc_depth': 4,
-    'globaltoc_collapse': True,
-    'html_minify': True,
-    'css_minify': True,
-}
+html_theme = 'piccolo_theme'
+# html_theme_options = {
+#     # 'color_primary': 'teal',
+#     'globaltoc_depth': 4,
+#     'globaltoc_collapse': True,
+#     'html_minify': True,
+#     'css_minify': True,
+# }
 
 html_logo = "_static/images/ai4eosc/logo.png"
 html_show_sourcelink = False
@@ -115,10 +115,10 @@ html_show_sourcelink = False
 # so a file named "default.css" will overwrite the builtin "default.css".
 html_static_path = ['_static']
 
-html_css_files = [
-    'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css',
-    'css/custom.css',
-    ]
+# html_css_files = [
+#     'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css',
+#     'css/custom.css',
+#     ]
 
 # Custom sidebar templates, must be a dictionary that maps document names
 # to template names.
@@ -129,9 +129,9 @@ html_css_files = [
 # 'searchbox.html']``.
 #
 # html_sidebars = {}
-html_sidebars = {
-    "**": ["logo-text.html", "globaltoc.html", "localtoc.html", "searchbox.html"]
-}
+# html_sidebars = {
+#     "**": ["logo-text.html", "globaltoc.html", "localtoc.html", "searchbox.html"]
+# }
 
 html_show_sphinx = False
 
