@@ -11,21 +11,6 @@ The :doc:`AI4OS dashboard <dashboard>`. allow users to access computing resource
 The Dashboard simplifies the deployment and hides some of the technical parts that most users do not need to worry about.
 
 
-..
-  TODO: uncomment when OSCAR is ready
-
-  DEEP as a Service
-  -----------------
-
-  `DEEP as a Service (or DEEPaaS) <https://docs.ai4eosc.eu/projects/deepaas/en/stable/>`__ is a fully managed service that allows
-  to easily and automatically deploy developed applications as services, with horizontal scalability thanks to a
-  serverless approach. Module owners only need to care about the application development process, and incorporate
-  new features that the automation system receives as an input.
-
-  The serverless framework allows any user to automatically deploy from the browser any module in real time to try it.
-  It only supports prediction. For training, which is more resource consuming, users must use the AI4OS Dashboard.
-
-
 The AI modules
 --------------
 

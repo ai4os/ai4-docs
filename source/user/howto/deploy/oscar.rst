@@ -30,12 +30,15 @@ This will automatically deploy your OSCAR service with some predefined configura
    :class: warning
 
    * Inference endpoints only work for models that return a JSON response (that is the case for most models).
-   * Modules require a DEEPaaS version higher than ``2.5.0`` to work with OSCAR inference endpoints.
-     If the module does not have a supported DEEPaaS, you will be show a clear error message when trying to make an inference.
+   * Modules require a DEEPaaS version higher than ``2.5.0`` to work with OSCAR inference endpoints (that is the case for most models).
+     If the module does not have a supported DEEPaaS, it will return a clear error message when trying to make an inference.
 
 
 2. Make a prediction
 --------------------
+
+Retrieve the service information
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 In the ``Inference`` tab, go to the ``Serverless (OSCAR)`` table and find your newly created service.
 
@@ -43,18 +46,23 @@ In the ``Inference`` tab, go to the ``Serverless (OSCAR)`` table and find your n
 
 Click on :material-outlined:`info;1.5em` ``Info`` fo your service and you will find all the variables you need for making a prediction:
 
-* **for synchronous calls**: the ``endpoint`` url and the secret ``token`` you need for authentication.
+* **for synchronous calls**: the ``endpoint`` you will query and the secret ``token`` you need for authentication.
+* **for asynchronous calls**: all the variables related to the `MINIO storage <https://min.io/>`__ that handles your predictions.
 
 .. image:: /_static/images/dashboard/oscar-info.png
     :width: 400px
 
 
-Finding what are your model inputs
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.. TODO: update this image when the dashboard is updated
 
-To make a prediction with that service, you first need to know what are the required inputs.
-For this run the following Python script to make a synchronous call asking for help:
 
+Finding the model inputs
+^^^^^^^^^^^^^^^^^^^^^^^^
+
+Before making a prediction with that service, you first need to know what are the required inputs the model needs.
+
+The following Python script demonstrates how to make a *synchronous call* asking for help.
+To use the script, you have to replace the ``endpoint`` and ``token`` variables with the values :ref:`retrieved above <user/howto/deploy/oscar:Retrieve the service information>`.
 
 .. code-block:: python
 
@@ -63,7 +71,7 @@ For this run the following Python script to make a synchronous call asking for h
     import requests
 
 
-    url = "https://inference.cloud.ai4eosc.eu/run/ai4papi-****************************"
+    endpoint = "https://inference.cloud.ai4eosc.eu/run/ai4papi-***********************"
     token = "*************************************************************************"
 
     data = {"help": ""}
@@ -71,7 +79,7 @@ For this run the following Python script to make a synchronous call asking for h
         "Content-Type": "application/json",
         "Authorization": f"Bearer {token}",
     }
-    r = requests.post(url=url, headers=headers, json=data)
+    r = requests.post(url=endpoint, headers=headers, json=data)
 
     if r.status_code == 401:
         raise Exception("Invalid token.")
@@ -80,7 +88,7 @@ For this run the following Python script to make a synchronous call asking for h
 
     print(r.text)
 
-As a response, you will receive what are the input args you should pass to the module.
+In this case, we receive what are the inputs needed by the YOLO model.
 
 .. code-block::
 
@@ -104,12 +112,18 @@ As a response, you will receive what are the input args you should pass to the m
 
    If the error persists, please contact support.
 
+
 Synchronous predictions
 ^^^^^^^^^^^^^^^^^^^^^^^
 
-Now that we now what are the inputs the model needs, it's time to make a prediction call on a `bear image <https://upload.wikimedia.org/wikipedia/commons/9/9e/Ours_brun_parcanimalierpyrenees_1.jpg>`__.
-All parameters should be passed inside a JSON payload.
-If the model inputs needs a file, it should be passed encoded as base64 in the ``oscar-files`` field in the data.
+Now that we know the inputs needed, it's time to make a synchronous prediction call on a `bear image <https://upload.wikimedia.org/wikipedia/commons/9/9e/Ours_brun_parcanimalierpyrenees_1.jpg>`__ with the YOLO model service.
+
+The following Python script demonstrates how to make a *synchronous call* with some model inputs. It is important to note that:
+
+* All parameters for the model should be passed inside a JSON payload.
+* If the model needs a file (as it is the case here), it should be passed encoded as base64 in the ``oscar-files`` field in the data.
+
+As before, to use the script, you have to replace the ``endpoint`` and ``token`` variables with the values :ref:`retrieved above <user/howto/deploy/oscar:Retrieve the service information>`.
 
 .. code-block:: python
 
@@ -118,7 +132,7 @@ If the model inputs needs a file, it should be passed encoded as base64 in the `
     import requests
 
 
-    url = "https://inference.cloud.ai4eosc.eu/run/ai4papi-****************************"
+    endpoint = "https://inference.cloud.ai4eosc.eu/run/ai4papi-***********************"
     token = "*************************************************************************"
 
     def get_base64(fpath):
@@ -139,7 +153,7 @@ If the model inputs needs a file, it should be passed encoded as base64 in the `
         "Content-Type": "application/json",
         "Authorization": f"Bearer {token}",
     }
-    r = requests.post(url=url, headers=headers, json=data)
+    r = requests.post(url=endpoint, headers=headers, json=data)
 
     if r.status_code == 401:
         raise Exception("Invalid token.")
@@ -148,7 +162,7 @@ If the model inputs needs a file, it should be passed encoded as base64 in the `
 
     print(r.text)
 
-The script will print the logs, along with the JSON output of the model.
+The script will print the logs, along with the JSON output of the model (in this case, the prediction made by YOLO).
 
 .. code-block:: console
 
@@ -156,8 +170,122 @@ The script will print the logs, along with the JSON output of the model.
     2024-09-30 12:09:19.502 29 INFO deepaas.cmd.cli [-] return: ['[\n  {\n    "name": "bear",\n    "class": 21,\n    "confidence": 0.93346,\n    "box": {\n      "x1": 109.39322,\n      "y1": 26.39718,\n      "x2": 627.42999,\n      "y2": 597.74689\n    }\n  }\n]']
     [...]
 
-3. More
--------
+
+Asynchronous predictions
+^^^^^^^^^^^^^^^^^^^^^^^^
+
+Finally, it is also possible to make asynchronous calls to the same service.
+
+This approach is especially beneficial when:
+
+* You have lots of data. This is because you upload all the data to the Minio bucket, and we will process that data in parallel. When the predictions are completed you can retrieve them from the bucket.
+
+* You need to automatize the processing of the predictions. This is because with this approach we save separately the logs (in a ``.log`` file) and the predictions (in a ``.json`` file). If the prediction was not successful, you will only retrieve the log file.
+
+The following Python script demonstrates how to upload some inputs to the bucket, list the contents of the bucket and download the outputs when the predictions are ready.
+
+To use the script, you have to replace the Minio-related variables with the values :ref:`retrieved above <user/howto/deploy/oscar:Retrieve the service information>`.
+
+.. code-block:: python
+
+    import base64
+    import json
+    import time
+
+    import boto3
+
+
+    # This information is retrieved from your deployment information window
+    MINIO_BUCKET = "ai4papi-*************************************************"
+    MINIO_URL = "https://****************************************************"
+    MINIO_ACCESS_KEY = "**********************************************@egi.eu"
+    MINIO_SECRET_KEY = "*****************************************************"
+
+    # This is how you decide to name your new prediction
+    prediction_ID = "test-prediction"
+
+    # Local paths (in current folder)
+    pth_local_input = f"input-{prediction_ID}.json"
+    pth_local_output = f"output-{prediction_ID}.json"
+    pth_local_logs = f"output-{prediction_ID}.log"
+
+    # Remote paths (in the bucket)
+    # Two files will be produced in the output folder of the bucket
+    # * <input_filename>.json: this file has the output of the prediction, in JSON format.
+    #   --> this will only be created if the prediction is successful
+    # * <input_filename>.log: this file has the logs of the prediction.
+    #   --> this will always be created
+    pth_remote_input = f"inputs/{prediction_ID}.json"
+    pth_remote_output = f"outputs/{prediction_ID}.json"
+    pth_remote_logs = f"outputs/{prediction_ID}.log"
+
+    # Prepare the data you want to predict
+    def get_base64(fpath):
+        """
+        Encode files as base64. We need to do this to pass files as prediction inputs in
+        the JSON file.
+        """
+        with open(fpath, "rb") as f:
+            encoded_str = base64.b64encode(f.read()).decode("utf-8")
+        return encoded_str
+
+    data = {
+        "oscar-files": [
+            {
+                "key": "files",
+                "file_format": "jpg",
+                "data": get_base64("./bear.jpg"),
+            },
+        ]
+    }
+
+    # Create the JSON file
+    with open(pth_local_input, "w") as f:
+        json.dump(data, f)
+
+    # Init the Minio Object Store
+    client = boto3.client(
+        "s3",
+        endpoint_url=MINIO_URL,
+        region_name="",
+        verify=True,
+        aws_access_key_id=MINIO_ACCESS_KEY,
+        aws_secret_access_key=MINIO_SECRET_KEY,
+    )
+
+    # Upload the inputs to the bucket
+    with open(pth_local_input, "rb") as data:
+        client.upload_fileobj(data, MINIO_BUCKET, pth_remote_input)
+    print(f"Uploaded data to {pth_remote_input} in bucket {MINIO_BUCKET}")
+
+    # Now we wait until the prediction is made
+    while True:
+        # List objects in the bucket
+        r = client.list_objects_v2(Bucket=MINIO_BUCKET)
+        contents = [i["Key"] for i in r["Contents"]]
+
+        # If the output is available, download it
+        if pth_remote_logs in contents:
+            with open(pth_local_logs, "wb") as data:
+                client.download_fileobj(MINIO_BUCKET, pth_remote_logs, data)
+            print(f"Downloaded logs from {pth_remote_logs} in bucket {MINIO_BUCKET}")
+
+            # Prediction JSON will only be available if the prediction was successful
+            if pth_remote_output in contents:
+                with open(pth_local_output, "wb") as data:
+                    client.download_fileobj(MINIO_BUCKET, pth_remote_output, data)
+                print(f"Downloaded data from {pth_remote_output} in bucket {MINIO_BUCKET}")
+
+            break
+
+        else:
+            print("Waiting for the prediction to complete ...")
+            time.sleep(5)
+
+
+
+3. More info
+------------
 
 Make a prediction using Bash
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^

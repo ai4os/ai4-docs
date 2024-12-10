@@ -31,7 +31,12 @@ Given the above specifications, we recommend the following typical workflows:
 * :doc:`Deploy in AI4OS (dedicated resources) </user/howto/deploy/nomad>` if your service needs to handle, with low latency, few concurrent user queries that are close in time.
 * :doc:`Deploy in your own cloud resources </user/howto/deploy/cloud>` if you do not belong to the project.
 
-In addition to these deployment options from the AI4OS Dashboard, there are several additional deployment methods:
+If you need to generate one-off predictions on a given dataset but not maintain a running service, you have two options:
+
+* :doc:`Deploy in AI4OS (dedicated resources) </user/howto/deploy/nomad>` with a GPU, make your predictions and delete the deployment.
+* :doc:`Deploy in AI4OS (serverless) </user/howto/deploy/oscar>` and upload your dataset files to a bucket to perform :ref:`async predictions <user/howto/deploy/oscar:Asynchronous predictions>`. If your dataset is really big, you can contact support to create a custom batch processing pipeline tailored to your usecase.
+
+In addition to the above deployment options from the AI4OS Dashboard, there are several additional deployment methods:
 
 * :doc:`Deploy a model manually in the AI4OS Inference Platform (serverless) </user/howto/deploy/oscar-manual>`
 * :doc:`Deploy a model locally </user/howto/try/locally>`
