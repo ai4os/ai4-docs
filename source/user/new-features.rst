@@ -10,6 +10,7 @@ notified here.
 .. Template
 .. * 📘 new :doc:`... </user/...>` page (``2024-04-03``)
 
+* 📈 added support for async calls to :doc:`OSCAR services </user/howto/deploy/oscar>` (``2024-12-12``)
 * 📈 support the ability of :ref:`making snapshots of deployments <user/overview/dashboard:Creating a snapshot of a deployment>` (``2024-11-26``)
 * 📈 enable Gradio UI for inference on :ref:`AI4OS dedicated resources <user/howto/deploy/nomad:2.1 UI prediction>` (``2024-11-26``)
 * 📈 added support to :doc:`label images with CVAT </user/howto/train/cvat>` (``2024-11-14``)
