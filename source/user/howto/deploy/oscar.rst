@@ -283,6 +283,8 @@ To use the script, you have to replace the Minio-related variables with the valu
             time.sleep(5)
 
 
+This script will produce a ``.log`` file with the OSCAR logs and a ``.json`` file with the prediction of the YOLO model.
+
 
 3. More info
 ------------
