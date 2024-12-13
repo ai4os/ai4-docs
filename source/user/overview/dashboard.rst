@@ -219,14 +219,20 @@ In the ``Deployments`` tab (in the Navigation panel on the left) you have a tabl
 Under :material-outlined:`info;1.5em` ``Info`` you will find details about your deployment such as UUID, resources assigned/requested, error messages, endpoints of all services, etc.
 For the endpoints of the services you have:
 
-* ``API``: only accessible if you launched with the DEEPaaS command or launched JupyterLab then ran DEEPaaS.
-* ``IDE``: only accessible if you launched with the JupyterLab or VScode command
-* ``Monitor``: this is the training monitoring page. Only accessible if the module has been coded to explicitly
-  display monitoring (check the module's README or training arguments) and if a training is currently running.
+* ``API``: :doc:`Module's API </user/overview/api>`, only accessible if you launched with the DEEPaaS command or launched JupyterLab then ran DEEPaaS.
+* ``IDE``: :ref:`Development environment <user/howto/develop/dashboard:2. Prepare your development environment>`, only accessible if you launched with the JupyterLab or VScode command.
+* ``Monitor``: :ref:`Training monitoring <user/howto/train/dashboard:4. Start training the model>`, only accessible if the module has been coded to explicitly display monitoring (check the module's README or training arguments) and if a training is currently running.
+* ``UI``: :ref:`Gradio User Interface <user/howto/deploy/nomad:2.1 UI prediction>`, only accessible if you launched with the DEEPaaS command.
+* ``Custom``: a custom UI created by the module's developer (if any)
 
 Under :material-outlined:`terminal;1.5em` ``Quick access`` you will be able to access the service you deployed at launch time.
 
-If you had a deployment that took more than a week to deploy you will receive an email notification when it is finally deployed.
+If you had a deployment that took more than a week to deploy you will receive an :material-outlined:`mark_email_unread;1.5em` email notification when it is finally deployed.
+
+.. admonition:: Deployment deletion :material-outlined:`delete;1.5em`
+   :class: tip
+
+   Sometimes deployments can get stuck in the deletion process, thus not completely freeing the resources you are consuming (eg. GPUs). If this is the case, please try re-deleting them again. This time it should execute a hard delete, completely purging your deployment.
 
 
 Creating a snapshot of a deployment
