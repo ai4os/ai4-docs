@@ -107,6 +107,11 @@ html_theme = 'piccolo_theme'
 #     'css_minify': True,
 # }
 
+html_theme_options = {
+    "globaltoc_collapse": False
+}
+
+
 html_logo = "_static/images/ai4eosc/logo.png"
 html_show_sourcelink = False
 
