@@ -14,6 +14,43 @@ Current supported platforms:
    * `AI4Life <https://ai4life.eurobioimaging.eu/>`__: AI models and methods for the life sciences
 
 
+
+.. grid:: 3
+    :gutter: 3
+
+    .. grid-item-card::  Getting started
+        :link: /getting-started/index
+        :link-type: doc
+
+        Start here to get an overview of the platform and how to use it.
+
+    .. grid-item-card::  How-Tos
+        :link: /howtos/index
+        :link-type: doc
+
+        How to accomplish common tasks, such as trying a model, developing a new one,
+        training, deploying, etc.
+
+    .. grid-item-card::  Reference
+        :link: /reference/index
+        :link-type: doc
+
+        Detailed information about the platform, dashboard, storage, modules, etc. and
+        how to use them.
+
+    .. grid-item-card::  Help and support
+        :link: /help/index
+        :link-type: doc
+
+        Get help and support, including a FAQ section.
+
+    .. grid-item-card::  Other resources
+        :link: /others/index
+        :link-type: doc
+
+        Useful Machine Learning resources, video demos, and other links.
+
+
 .. toctree::
    :titlesonly:
    :maxdepth: 1
@@ -21,7 +58,12 @@ Current supported platforms:
    :glob:
    :caption: Start here
 
-   getting_started/index
+   getting-started/terminology
+   getting-started/quickstart
+   getting-started/register
+   getting-started/user-roles
+   getting-started/new-features
+
 
 .. toctree::
    :maxdepth: 3

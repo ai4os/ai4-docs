@@ -18,7 +18,7 @@ This level will let use some basic features like:
 * :doc:`Deploy a model in your own cloud </howtos/deploy/cloud>`
 
 To access this authentication level, you need to create an account in the platform.
-Please follow the steps in the :doc:`/getting_started/register` page.
+Please follow the steps in the :doc:`/getting-started/register` page.
 
 .. _authentication_full:
 
@@ -50,5 +50,5 @@ projects:
    explaining why and how you would like to use the platform.
 
 To achieve full authentication, you need to create an account in the platform. Please
-follow the steps in the :doc:`/getting_started/register` page and indicate the project
+follow the steps in the :doc:`/getting-started/register` page and indicate the project
 you are involved with, with a detailed motivation so that it can be approved.

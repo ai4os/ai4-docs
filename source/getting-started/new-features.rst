@@ -33,7 +33,7 @@ notified here.
 * 📘 new :doc:`Frequently Asked Questions (FAQ) </help/faq>` page (``2024-02-05``)
 * 📌 :doc:`MLflow </howtos/develop/mlflow>` available under new domain (``2024-01-29``)
 * 📈 we enforce a quota of 2 GPUs per user for better resource distribution (``2024-01-25``)
-* 📘 updated :doc:`Quickstart </getting_started/quickstart>` page (``2024-01-24``)
+* 📘 updated :doc:`Quickstart </getting-started/quickstart>` page (``2024-01-24``)
 * 📈 users are able to select specific GPU models (``2024-01-18``)
 * 📌 new :doc:`Nextcloud </reference/storage>` storage available (``2024-01-15``)
 

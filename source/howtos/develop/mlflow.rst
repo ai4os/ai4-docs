@@ -45,7 +45,7 @@ In the `MLflow login page <https://mlflow.cloud.ai4eosc.eu/signup>`__ you will b
 to input your credentials:
 
 * ``Username``: the email associated with your :doc:`authentication
-  </getting_started/register>`
+  </getting-started/register>`
   account
 * ``Password``: the password you choose in step 1.
 

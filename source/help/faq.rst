@@ -212,4 +212,4 @@ an issue or submit a Pull Request.
 * `AI4OS documentation <https://github.com/ai4os/ai4-docs>`__
 
 You can always check that your suggested feature is not on the
-:doc:`Upcoming features </getting_started/new-features>` list.
+:doc:`Upcoming features </getting-started/new-features>` list.
