@@ -108,7 +108,8 @@ html_theme = 'piccolo_theme'
 # }
 
 html_theme_options = {
-    "globaltoc_collapse": False
+    "globaltoc_collapse": False,
+    "show_theme_credit": False,
 }
 
 
