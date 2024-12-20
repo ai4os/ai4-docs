@@ -1,4 +1,4 @@
-Concetps and Terminology
+Concepts and Terminology
 ========================
 
 There are several different components in the AI4OS stack that are relevant for the users.
