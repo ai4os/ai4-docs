@@ -1,5 +1,5 @@
 Welcome to AI4OS/AI4EOSC documentation!
-===============================
+=======================================
 
 The ``AI4EOSC`` platform and the ``AI4OS`` stack empowers scientist by lowering the
 barrier to adopt the latest AI models and tools. The platform provides a user-friendly

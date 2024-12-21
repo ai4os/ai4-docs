@@ -24,9 +24,9 @@ copyright = '2024, AI4EOSC consortium'
 author = 'AI4EOSC consortium'
 
 # The short X.Y version
-version = '1'
+version = ''
 # The full version, including alpha/beta/rc tags
-release = '1'
+release = ''
 
 
 # -- General configuration ---------------------------------------------------
