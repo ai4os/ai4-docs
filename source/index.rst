@@ -1,11 +1,15 @@
-Welcome to AI4OS documentation!
+Welcome to AI4OS/AI4EOSC documentation!
 ===============================
 
-The ``AI4OS`` stack empowers scientist by lowering the barrier to adopt the latest AI
-models and tools. It covers the full ML cycle: from model creation, to training, deployment
-and monitoring in production. Following the FAIR principles for science, both our software
-(platform and models) are fully open-source and easily portable to any other platform
-(no vendor lock-in!).
+The ``AI4EOSC`` platform and the ``AI4OS`` stack empowers scientist by lowering the
+barrier to adopt the latest AI models and tools. The platform provides a user-friendly
+workbench to easily train, deploy, share and monitor AI models. The stack provides a set
+of tools and services to easily create and deploy AI models.
+
+It covers the full ML cycle: from model creation, to training, deployment and monitoring
+in production. Following the FAIR principles for science, both our software (platform
+and models) are fully open-source and easily portable to any other platform (no vendor
+lock-in!).
 
 Current supported platforms:
 
@@ -15,7 +19,7 @@ Current supported platforms:
 
 
 
-.. grid:: 3
+.. grid:: 2
     :gutter: 3
 
     .. grid-item-card::  Getting started
