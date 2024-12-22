@@ -9,25 +9,25 @@ federated learning training.
 .. grid:: 1
     :gutter: 3
 
-    .. grid-item-card::  Train a model
+    .. grid-item-card:: :fas:`brain;fa-lg sd-mr-2`  Train a model
         :link: dashboard
         :link-type: doc
 
         Learn how to train a model with the Dashboard.
 
-    .. grid-item-card::  Make a federated learning training
+    .. grid-item-card:: :fas:`brain;fa-lg sd-mr-2`  Make a federated learning training
         :link: federated-server
         :link-type: doc
 
         Learn how to make a federated learning training.
 
-    .. grid-item-card::  Label your images with CVAT
+    .. grid-item-card:: :fas:`tag;fa-lg sd-mr-2`  Label your images with CVAT
         :link: cvat
         :link-type: doc
 
         Learn how to label your images with CVAT.
 
-    .. grid-item-card::  Use rclone to sync your dataset (advanced)
+    .. grid-item-card:: :fas:`rotate;fa-lg sd-mr-2`  Use rclone to sync your dataset (advanced)
         :link: rclone
         :link-type: doc
 

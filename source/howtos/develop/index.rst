@@ -8,7 +8,7 @@ platform via our development environments.
 .. grid:: 1
     :gutter: 3
 
-    .. grid-item-card::  Develop a model
+    .. grid-item-card:: :fas:`code;fa-lg sd-mr-2`  Develop a model
         :link: dashboard
         :link-type: doc
 
@@ -24,19 +24,19 @@ techniques in their modules:
 .. grid:: 1
     :gutter: 3
 
-    .. grid-item-card::  Use Incremental learning
+    .. grid-item-card:: :fas:`brain;fa-lg sd-mr-2`  Use Incremental learning
         :link: incremental-learning
         :link-type: doc
 
         Learn how to use incremental learning in your modules.
 
-    .. grid-item-card::  Use Distributed learning
+    .. grid-item-card:: :fas:`brain;fa-lg sd-mr-2`  Use Distributed learning
         :link: distributed-learning
         :link-type: doc
 
         Learn how to use distributed learning in your modules.
 
-    .. grid-item-card::  Use MLFlow for tracking your trainings
+    .. grid-item-card:: :fas:`chart-line;fa-lg sd-mr-2`  Use MLFlow for tracking your trainings
         :link: mlflow
         :link-type: doc
 

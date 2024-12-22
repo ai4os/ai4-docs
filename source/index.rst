@@ -22,33 +22,33 @@ Current supported platforms:
 .. grid:: 2
     :gutter: 3
 
-    .. grid-item-card::  Getting started
+    .. grid-item-card:: :fas:`sign-hanging;fa-lg sd-mr-2`  Getting started
         :link: /getting-started/index
         :link-type: doc
 
         Start here to get an overview of the platform and how to use it.
 
-    .. grid-item-card::  How-Tos
+    .. grid-item-card:: :fas:`circle-info;fa-lg sd-mr-2`  How-Tos
         :link: /howtos/index
         :link-type: doc
 
         How to accomplish common tasks, such as trying a model, developing a new one,
         training, deploying, etc.
 
-    .. grid-item-card::  Reference
+    .. grid-item-card:: :fas:`book;fa-lg sd-mr-2`  Reference
         :link: /reference/index
         :link-type: doc
 
         Detailed information about the platform, dashboard, storage, modules, etc. and
         how to use them.
 
-    .. grid-item-card::  Help and support
+    .. grid-item-card:: :fas:`question;fa-lg sd-mr-2`  Help and support
         :link: /help/index
         :link-type: doc
 
         Get help and support, including a FAQ section.
 
-    .. grid-item-card::  Other resources
+    .. grid-item-card:: :fas:`link;fa-lg sd-mr-2`  Other resources
         :link: /others/index
         :link-type: doc
 

@@ -1,5 +1,5 @@
-⭐ New features
-===============
+New features
+============
 
 Here is a quick summary of the major updates in the platform that are relevant for
 users. Minor updates to the documentation will still be performed continuously but not

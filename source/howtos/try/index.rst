@@ -8,14 +8,14 @@ the model locally on your own resources.
 .. grid:: 1
     :gutter: 3
 
-    .. grid-item-card::  Try via the Dashboard (Gradio)
+    .. grid-item-card:: :fas:`browser;fa-lg sd-mr-2`  Try via the Dashboard (Gradio)
         :link: dashboard-gradio
         :link-type: doc
 
         Use our short-lived web UI to interact with the model. Batteries included, no
         installation needed.
 
-    .. grid-item-card::  Try locally
+    .. grid-item-card:: :fas:`download;fa-lg sd-mr-2`  Try locally
         :link: locally
         :link-type: doc
 
