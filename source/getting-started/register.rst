@@ -17,3 +17,9 @@ your registration and then you will be approved by an administrator.
 Please remember that the approval process can take some time, so please be patient.
 Also, be aware that just registering does not grant you access to the AI4EOSC platform,
 you can learn more about this on the :doc:`/reference/user-access-levels` page.
+
+Login to the platform
+=====================
+
+Once registered and approved, you can dirctly head to the :doc:`/reference/dashboard`
+page and login to the platform.
