@@ -3,8 +3,7 @@ Register an account
 
 In order to register to the AI4EOSC platform you need to get an account on our `Login
 system <https://login.cloud.ai4eosc.eu/realms/ai4eosc/account>`_. You can do this by
-clicking on the "Register" link on the page, or by clicking the following link:
-`Register <https://login.cloud.ai4eosc.eu/realms/ai4eosc/login-actions/registration>`_.
+clicking on the "Register" link on the login page.
 
 Please provide all the details that are listed in the registration form and preferably
 use your **institutional account** (university, research center). This will speed up the
