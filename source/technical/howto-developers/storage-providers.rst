@@ -21,7 +21,7 @@ As expected, this storage is compatible by default with the AI4OS stack.
 Nextcloud
 ---------
 
-In order to link an account from a **custom Nextcloud** to the :doc:`AI4OS Dashboard </user/overview/dashboard>`,
+In order to link an account from a **custom Nextcloud** to the :doc:`AI4OS Dashboard </reference/dashboard>`,
 you have to make sure that your Nextcloud allows requests from the different dashboard domains.
 This can be done in the Apache configuration file of your Nextcloud.
 
