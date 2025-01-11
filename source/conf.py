@@ -19,14 +19,14 @@
 
 # -- Project information -----------------------------------------------------
 
-project = 'AI4OS'
+project = 'AI4OS/AI4EOSC'
 copyright = '2024, AI4EOSC consortium'
 author = 'AI4EOSC consortium'
 
 # The short X.Y version
-version = '1'
+version = ''
 # The full version, including alpha/beta/rc tags
-release = '1'
+release = ''
 
 
 # -- General configuration ---------------------------------------------------
@@ -98,14 +98,20 @@ pygments_style = 'sphinx'
 #     'collapse_navigation': False,
 # }
 
-html_theme = 'sphinx_material'
+html_theme = 'piccolo_theme'
+# html_theme_options = {
+#     # 'color_primary': 'teal',
+#     'globaltoc_depth': 4,
+#     'globaltoc_collapse': True,
+#     'html_minify': True,
+#     'css_minify': True,
+# }
+
 html_theme_options = {
-    # 'color_primary': 'teal',
-    'globaltoc_depth': 4,
-    'globaltoc_collapse': True,
-    'html_minify': True,
-    'css_minify': True,
+    "globaltoc_collapse": False,
+    "show_theme_credit": False,
 }
+
 
 html_logo = "_static/images/ai4eosc/logo.png"
 html_show_sourcelink = False
@@ -117,7 +123,7 @@ html_static_path = ['_static']
 
 html_css_files = [
     'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css',
-    'css/custom.css',
+#     'css/custom.css',
     ]
 
 # Custom sidebar templates, must be a dictionary that maps document names
@@ -129,9 +135,9 @@ html_css_files = [
 # 'searchbox.html']``.
 #
 # html_sidebars = {}
-html_sidebars = {
-    "**": ["logo-text.html", "globaltoc.html", "localtoc.html", "searchbox.html"]
-}
+# html_sidebars = {
+#     "**": ["logo-text.html", "globaltoc.html", "localtoc.html", "searchbox.html"]
+# }
 
 html_show_sphinx = False
 
