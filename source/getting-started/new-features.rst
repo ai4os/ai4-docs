@@ -10,6 +10,7 @@ notified here.
 .. Template
 .. * 📘 new :doc:`... <...>` page (``2024-04-03``)
 
+* 📈 deployed in beta the :doc:`LLM service </reference/llm>` (``2024-01-15``)
 * 📈 added support for async calls to :doc:`OSCAR services </howtos/deploy/oscar>` (``2024-12-12``)
 * 📈 support the ability of :ref:`making snapshots of deployments <dashboard_snapshots>` (``2024-11-26``)
 * 📈 enable Gradio UI for inference on :ref:`AI4OS dedicated resources <nomad-gradio>` (``2024-11-26``)

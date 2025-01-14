@@ -92,6 +92,7 @@ Current supported platforms:
    AI4OS Storage <reference/storage>
    AI4OS Modules <reference/modules>
    AI4OS Modules Template <reference/cookiecutter-template>
+   AI4OS LLM chatbot <reference/llm>
 
 
 .. toctree::

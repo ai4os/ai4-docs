@@ -20,7 +20,7 @@
 # -- Project information -----------------------------------------------------
 
 project = 'AI4OS/AI4EOSC'
-copyright = '2024, AI4EOSC consortium'
+copyright = '2025, AI4EOSC consortium'
 author = 'AI4EOSC consortium'
 
 # The short X.Y version

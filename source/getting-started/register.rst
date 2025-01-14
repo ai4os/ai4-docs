@@ -1,9 +1,11 @@
 Register an account
 ===================
 
-We current are current transitioning from :ref:`EGI accounts (current) <getting-started/register:EGI account>` to our own :ref:`AI4OS (current) <getting-started/register:AI4OS account>`.
+We current are current transitioning from :ref:`EGI accounts (current) <getting-started/register:EGI account>` to our own :ref:`AI4OS accounts (beta) <getting-started/register:AI4OS account>`.
+
 We recommend that you register for both accounts, so that you will be able to access
 both migrated and non-migrated services at all times.
+If you already have an :ref:`EGI account <getting-started/register:EGI account>`, it is straightforward to use it as a :ref:`federated identity <getting-started/register:Use a federated identity>` for AI4OS accounts.
 
 .. TODO: basic/full authentication info is duplicated with info in user-access-levels.
 .. But we leave i
@@ -72,6 +74,15 @@ services.
 AI4OS account
 -------------
 
+For the time being, this account is used to access the following services:
+
+* :doc:`AI4OS LLM service </reference/dashboard>`
+
+There are two options to create AI4OS accounts.
+
+Register a new account
+^^^^^^^^^^^^^^^^^^^^^^
+
 In order to register to the AI4EOSC platform you need to get an account on our `Login
 system <https://login.cloud.ai4eosc.eu/realms/ai4eosc/account>`_. You can do this by
 clicking on the ``Register`` link on the login page.
@@ -87,10 +98,23 @@ your registration and then you will be approved by an administrator.
 Please remember that the approval process can take some time, so please be patient.
 Also, be aware that just registering does not grant you access to the AI4EOSC platform.
 
-For the time being, this account is only being used to access the platform's LLM service.
+
+Use a federated identity
+^^^^^^^^^^^^^^^^^^^^^^^^
+
+We currently offer several federated authentication options including:
+
+* EGI-CheckIn
+* Github
+* Google
+* IFCA SSO
+* AI4EOSC SSO
+
+In the case of EGI authentication, your VO memberships will be automatically mapped to the groups.
+
 
 Login to the platform
 =====================
 
-Once registered and approved, you can dirctly head to the :doc:`/reference/dashboard`
+Once registered and approved, you can directly head to the :doc:`/reference/dashboard`
 page and login to the platform.

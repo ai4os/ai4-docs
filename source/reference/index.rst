@@ -12,7 +12,7 @@ User reference
 
         Get an overview of the different user access levels and their permissions.
 
-    .. grid-item-card:: :fas:`browser;fa-lg sd-mr-2`  Dashboard
+    .. grid-item-card:: :material-outlined:`dashboard;1.5em`  Dashboard
         :link: /reference/dashboard
         :link-type: doc
 
@@ -35,6 +35,12 @@ User reference
         :link-type: doc
 
         Learn how to create and manage module templates
+
+    .. grid-item-card:: :material-outlined:`chat;1.5em` LLM Chatbot
+        :link: /reference/llm
+        :link-type: doc
+
+        Chat with our LLM bot and interact live with our documentation.
 
 Advanced topics
 ===============

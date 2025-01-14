@@ -35,7 +35,10 @@ Useful links and resources
   Log your trainings parameters and models with our MLflow server.
 
 :fa:`rocket` `Inference platform (OSCAR) <https://inference.cloud.ai4eosc.eu/>`__
-   Scalable serverless inference of AI models.
+  Scalable serverless inference of AI models.
 
 :fa:`network-wired` `Inference pipelines platform (Flowfuse) <https://forge.flows.dev.ai4eosc.eu/>`__
-   Compose custom AI inference pipelines.
+  Compose custom AI inference pipelines.
+
+:material-outlined:`chat;1.5em` `LLM Chatbot <https://llm.dev.ai4eosc.eu/>`__ (beta!)
+  Chat with our LLM bot and interact live with our documentation.
