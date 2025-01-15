@@ -6,13 +6,13 @@ User reference
 .. grid:: 1
     :gutter: 3
 
-    .. grid-item-card:: :fas:`lock;fa-lg sd-mr-2`  User access levels
+    .. grid-item-card:: :material-outlined:`lock;1.5em`  User access levels
         :link: /reference/user-access-levels
         :link-type: doc
 
         Get an overview of the different user access levels and their permissions.
 
-    .. grid-item-card:: :material-outlined:`dashboard;1.5em`  Dashboard
+    .. grid-item-card:: :material-outlined:`dashboard;1.5em`  Dashboard
         :link: /reference/dashboard
         :link-type: doc
 
@@ -24,13 +24,13 @@ User reference
 
         Get an overview of the different storage options and how to manage them.
 
-    .. grid-item-card:: :fas:`code-fork;fa-lg sd-mr-2`  Modules
+    .. grid-item-card:: :material-outlined:`style;1.5em`  Modules
         :link: /reference/modules
         :link-type: doc
 
         Learn how to manage modules and get an overview of the different modules available.
 
-    .. grid-item-card:: :fas:`copy;fa-lg sd-mr-2`  Modules template
+    .. grid-item-card:: :material-outlined:`file_copy;1.5em`  Modules template
         :link: /reference/cookiecutter-template
         :link-type: doc
 
@@ -48,13 +48,13 @@ Advanced topics
 .. grid:: 1
     :gutter: 3
 
-    .. grid-item-card:: :fas:`download;fa-lg sd-mr-2`  RClone
+    .. grid-item-card:: :material-outlined:`download;1.5em`  RClone
         :link: /reference/rclone-code-examples
         :link-type: doc
 
         Learn how to use RClone to manage your data.
 
-    .. grid-item-card:: :fas:`gear;fa-lg sd-mr-2`  DEEPaaS API
+    .. grid-item-card:: :material-outlined:`api;1.5em`  DEEPaaS API
         :link: /reference/api
         :link-type: doc
 

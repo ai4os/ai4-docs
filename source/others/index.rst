@@ -6,19 +6,19 @@ Other resources
 .. grid:: 1
     :gutter: 3
 
-    .. grid-item-card:: :fas:`bookmark;fa-lg sd-mr-2` Other links
+    .. grid-item-card:: :material-outlined:`link;1.5em`  Other links
         :link: /others/other-links
         :link-type: doc
 
         Other useful links to resources related to the platform.
 
-    .. grid-item-card:: :fas:`book;fa-lg sd-mr-2` Useful ML resources
+    .. grid-item-card:: :material-outlined:`book;1.5em`  Useful ML resources
         :link: /others/useful-ml-resources
         :link-type: doc
 
         A list of useful resources for machine learning.
 
-    .. grid-item-card:: :fas:`video;fa-lg sd-mr-2` Video tutorials
+    .. grid-item-card:: :material-outlined:`videocam;1.5em`  Video tutorials
         :link: /others/video-demos
         :link-type: doc
 

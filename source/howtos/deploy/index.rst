@@ -8,13 +8,13 @@ provides several guides in how to deploy your model in different environments.
 .. grid:: 1
     :gutter: 3
 
-    .. grid-item-card:: :fas:`server;fa-lg sd-mr-2`  Overview
+    .. grid-item-card:: :material-outlined:`list;1.5em`    Overview
         :link: overview
         :link-type: doc
 
         Start here to get an overview of the different deployment options.
 
-    .. grid-item-card:: :fas:`server;fa-lg sd-mr-2`  Deploy in the platform (serverless)
+    .. grid-item-card:: :material-outlined:`dns;1.5em`  Deploy in the platform (serverless)
         :link: oscar
         :link-type: doc
 
@@ -28,13 +28,13 @@ provides several guides in how to deploy your model in different environments.
         Deploy your model in the platform using a dedicated deployment and a load
         balancer.
 
-    .. grid-item-card:: :fas:`server;fa-lg sd-mr-2`  Deploy in your cloud
+    .. grid-item-card:: :material-outlined:`cloud;1.5em`  Deploy in your cloud
         :link: cloud
         :link-type: doc
 
         Deploy your model in your cloud using the provided Docker image.
 
-    .. grid-item-card:: :fas:`server;fa-lg sd-mr-2`  Manual serverless deployment
+    .. grid-item-card:: :material-outlined:`handyman;1.5em`  Manual serverless deployment
         :link: oscar-manual
         :link-type: doc
 

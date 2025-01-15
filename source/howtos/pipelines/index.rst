@@ -14,7 +14,7 @@ AI modules into a multi-step pipeline.
 
         Composing AI Inference pipelines with Node-RED & Flowfuse.
 
-    .. grid-item-card:: :fas:`timeline;fa-lg sd-mr-2`  Pipelines with Elyra
+    .. grid-item-card:: :material-outlined:`lan;1.5em`  Pipelines with Elyra
         :link: elyra
         :link-type: doc
 

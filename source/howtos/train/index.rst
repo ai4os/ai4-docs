@@ -21,13 +21,13 @@ federated learning training.
 
         Learn how to make a federated learning training.
 
-    .. grid-item-card:: :fas:`tag;fa-lg sd-mr-2`  Label your images with CVAT
+    .. grid-item-card:: :material-outlined:`sell;1.5em`  Label your images with CVAT
         :link: cvat
         :link-type: doc
 
         Learn how to label your images with CVAT.
 
-    .. grid-item-card:: :fas:`rotate;fa-lg sd-mr-2`  Use rclone to sync your dataset (advanced)
+    .. grid-item-card:: :material-outlined:`sync;1.5em`  Use rclone to sync your dataset (advanced)
         :link: rclone
         :link-type: doc
 
