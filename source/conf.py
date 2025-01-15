@@ -123,7 +123,7 @@ html_static_path = ['_static']
 
 html_css_files = [
     'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css',
-#     'css/custom.css',
+    'css/piccolo-custom.css',
     ]
 
 # Custom sidebar templates, must be a dictionary that maps document names
