@@ -19,6 +19,12 @@ Once you login, you will arrive to a landing page where you will be able to sele
 
 .. image:: /_static/images/llm/landing.png
 
+The current available models are:
+
+* ``Nemo-2407``: a small-size model from the `Mistral family <https://mistral.ai/>`__ (12B parameter) with a large context window (128K tokens), released on July 2024,
+* ``Small-2409``: a medium-size model from the `Mistral family <https://mistral.ai/>`__ (22B parameters) with a smaller context window (32K tokens), released on September 2024,
+* ``Assistant``: our custom model designed to :ref:`help you navigate our documentation <reference/llm:Ask questions about the documentation>`,
+
 Now, let's explore some common usages of the tool. Keep in mind that the AI4OS LLM is built with `OpenWebUI <https://openwebui.com/>`__ so you always find further information in `their documentation <https://docs.openwebui.com/>`__.
 
 
