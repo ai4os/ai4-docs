@@ -9,7 +9,7 @@ users do not need to worry about.
 Currently, the following platforms have deployed a version of the AI4OS Dashboard.
 You should access one of those Dashboards depending on the project you are a member of:
 
-* `AI4EOSC Dashboard <https://dashboard.cloud.ai4eosc.eu/>`__
+* `AI4EOSC Dashboard <https://dashboard.cloud.ai4eosc.eu>`__
 * `iMagine Dashboard <https://dashboard.cloud.imagine-ai.eu>`__
 * `AI4Life Dashboard <https://ai4life.cloud.ai4eosc.eu>`__
 * `Tutorials Dashboard <https://tutorials.cloud.ai4eosc.eu>`__

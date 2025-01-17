@@ -4,7 +4,7 @@ Deploy a model on your own cloud resources
 As every module available in the Marketplace is open-source, we offer the possibility
 to automatically deploy it in your custom cloud resources using the
 `EGI Infrastructure Manager <https://im.egi.eu>`__.
-This feature is available to any registered user (:doc:`/reference/user-access-levels`.
+This feature is available to any registered user (:doc:`/reference/user-access-levels`).
 
 .. list-table::
     :header-rows: 1

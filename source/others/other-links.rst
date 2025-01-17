@@ -7,6 +7,9 @@ Useful links and resources
 :fa:`book` `Documentation <https://docs.ai4os.eu/>`__
   The main source of knowledge on how to use the project. Refer always to here in case of doubt.
 
+:material-outlined:`dashboard;1.5em` **Dashboard** (`AI4EOSC <https://dashboard.cloud.ai4eosc.eu/>`__, `iMagine <https://dashboard.cloud.imagine-ai.eu>`__, `AI4Life <https://ai4life.cloud.ai4eosc.eu>`__, `Tutorials <https://tutorials.cloud.ai4eosc.eu>`__)
+  View the catalog of AI modules and make deployments.
+
 :fa:`database` `NextCloud <https://share.services.ai4os.eu/>`__
   The service that allows to store your data remotely and access them from inside your deployment.
 
@@ -31,10 +34,10 @@ Useful links and resources
 :fa:`folder-plus` `Module template <https://templates.cloud.ai4eosc.eu/>`__
   Create new modules based on our project's template.
 
-:fa:`chart-line` `MLflow server <https://mlflow.cloud.ai4eosc.eu/>`__
+:fa:`chart-line` **MLflow server** (`AI4EOSC <https://mlflow.cloud.ai4eosc.eu/>`__, `iMagine <https://inference-walton.cloud.imagine-ai.eu>`__)
   Log your trainings parameters and models with our MLflow server.
 
-:fa:`rocket` `Inference platform (OSCAR) <https://inference.cloud.ai4eosc.eu/>`__
+:fa:`rocket` **Inference platform (OSCAR)** (`AI4EOSC <https://inference.cloud.ai4eosc.eu/>`__, `iMagine <https://inference-walton.cloud.imagine-ai.eu>`__)
   Scalable serverless inference of AI models.
 
 :fa:`network-wired` `Inference pipelines platform (Flowfuse) <https://forge.flows.dev.ai4eosc.eu/>`__
@@ -42,3 +45,6 @@ Useful links and resources
 
 :material-outlined:`chat;1.5em` `LLM Chatbot <https://llm.dev.ai4eosc.eu/>`__ (beta!)
   Chat with our LLM bot and interact live with our documentation.
+
+:material-outlined:`video_library;1.5em` `Youtube channel <https://www.youtube.com/@ai4eosc>`__
+  Find video-tutorials and more.

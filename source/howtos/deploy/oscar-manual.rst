@@ -14,13 +14,14 @@ An OSCAR cluster consists of, among other components:
   requests to an OSCAR service are handled via dynamically provisioned pods (containers)
   in the Kubenetes cluster.
 
-The `AI4OS Inference <https://inference.cloud.ai4eosc.eu/>`__ platform consists of a
-pre-deployed OSCAR cluster exclusively accessible for :doc:` users </reference/user-access-levels>`.
+The AI4OS Inference platform consists of a pre-deployed OSCAR cluster exclusively accessible for :doc:`fully authenticated users </reference/user-access-levels>`.
 
-You can access the OSCAR cluster via:
+We have different OSCAR clusters depending on the project you belong to:
 
-* A `web-based UI <https://inference.cloud.ai4eosc.eu/>`__
-* A `command-line interface (CLI) <https://docs.oscar.grycap.net/oscar-cli/>`__
+* AI4EOSC, AI4Life: https://inference.cloud.ai4eosc.eu
+* iMagine: https://inference-walton.cloud.imagine-ai.eu
+
+You can also launch services via the `command-line interface (CLI) <https://docs.oscar.grycap.net/oscar-cli/>`__.
 
 .. warning::
   This cluster is provided for testing purposes and OSCAR services may be removed at
