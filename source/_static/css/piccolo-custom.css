@@ -143,3 +143,10 @@ html[data-mode="light"] thead {
 html[data-mode^="dark"] thead {
   background-color: #696969 !important;
 }
+
+/* Add customizations for FontsAwesome "youtube" icon */
+.youtube-icon {
+  color: #fe0135 !important;
+  animation: fa-bounce 1s infinite;
+  /* font-size: 2em !important; */ /* Does not work inside dropdows */
+}
