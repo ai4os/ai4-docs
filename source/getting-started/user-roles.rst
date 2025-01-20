@@ -20,15 +20,17 @@ that has been containerized, and use it to classify their own plant images.
 **What AI4OS can offer to you:**
 
 * a :doc:`Dashboard </reference/dashboard>` full of ready-to-use modules to perform inference with your data,
-* an :doc:`API </reference/api>` to easily interact with the services,
-* solutions to run the inference in the Cloud or in your local resources,
-* the ability to develop complex topologies by composing different modules.
+* a :doc:`GUI </howtos/deploy/nomad>` to easily interact with the services,
+* an :doc:`API </reference/api>` to integrate the AI modules with your own  services,
+* solutions to run the inference in :doc:`the Cloud </howtos/deploy/cloud>` or in your :doc:`local resources </howtos/try/locally>`,
+* the ability to :doc:`create pipelines </howtos/pipelines/index>` by composing different modules.
 
 .. admonition:: Related HowTo's
    :class: info
 
    * :doc:`How to try a model </howtos/try/index>`
    * :doc:`How to deploy a model in production </howtos/deploy/index>`
+   * :doc:`How to create AI model pipelines </howtos/pipelines/index>`
 
 
 The intermediate user
@@ -47,9 +49,11 @@ model and retrains it to perform `plant classification <https://dashboard.cloud.
 
 * the ability to train out-of-the-box a module of the :doc:`Dashboard </reference/dashboard>`,
 * the ability to easily connect your training to your dataset hosted on our :doc:`data storage resources </reference/storage>`,
-* the ability to use GPUs to accelerate your training,
+* a private instance of :doc:`Computer Vision Annotation Tool (CVAT) </howtos/train/cvat>` to annotate your dataset,
+* a private server to create :doc:`Federated Learning trainings with Flower </howtos/train/federated-server>`,
+* the ability to :doc:`use GPUs </howtos/train/dashboard>` to accelerate your training,
 * an :doc:`API </reference/api>` to easily interact with the model,
-* the ability to deploy the developed service on Cloud resources,
+* solutions to deploy your developed model in :doc:`the Cloud </howtos/deploy/cloud>` or in your :doc:`local resources </howtos/try/locally>`,
 * the ability to share your module with other users in the :ref:`Dashboard Marketplace <dashboard_marketplace>`.
 
 .. admonition:: Related HowTo's
@@ -70,11 +74,13 @@ models.
 
 **What AI4OS can offer to you:**
 
-* a ready-to-use environment with the main DL frameworks (Pytorch, Tensorflow) as well as the main IDEs (VScode, Jupyterlab),
+* a :doc:`ready-to-use IDE </howtos/develop/dashboard>` (VScode, Jupyterlab) with the main DL frameworks (Pytorch, Tensorflow) running on different types of hardware (CPUs, GPUs),
 * the ability to easily connect your environment to your dataset hosted on our :doc:`data storage resources </reference/storage>`,
-* the ability to use GPUs to accelerate your training and development,
+* the ability to integrate :doc:`experiment tracking with MLflow </howtos/develop/mlflow>` in your trainings,
+* tutorials on performing different types of trainings (:doc:`incremental learning </howtos/develop/incremental-learning>`, :doc:`distributed learning </howtos/develop/distributed-learning>`)
+* the ability to :doc:`use GPUs </howtos/train/dashboard>` to accelerate your development,
 * the possibility to :ref:`integrate your module with the API <deepaas-integrate>` to enable easier user interaction,
-* the ability to deploy the developed module on Cloud resources,
+* solutions to deploy your developed model in :doc:`the Cloud </howtos/deploy/cloud>` or in your :doc:`local resources </howtos/try/locally>`,
 * the ability to share your module with other users in the :ref:`Dashboard Marketplace <dashboard_marketplace>`.
 
 .. admonition:: Related HowTo's
