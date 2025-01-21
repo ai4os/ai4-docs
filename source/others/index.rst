@@ -6,7 +6,7 @@ Other resources
 .. grid:: 1
     :gutter: 3
 
-    .. grid-item-card:: :material-outlined:`link;1.5em`  Other links
+    .. grid-item-card:: :material-outlined:`link;1.5em`  External links
         :link: /others/other-links
         :link-type: doc
 

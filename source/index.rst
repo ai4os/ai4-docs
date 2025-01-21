@@ -119,9 +119,9 @@ Current supported platforms:
    :caption: Other resources
    :hidden:
 
+   External links <others/other-links>
    Useful Machine Learning resources <others/useful-ml-resources>
    Video demos <others/video-demos>
-   Other links <others/other-links>
 
 .. toctree::
    :maxdepth: 2

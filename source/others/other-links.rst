@@ -1,5 +1,7 @@
-Useful links and resources
-==========================
+External links and resources
+============================
+
+This is a compendium of all the production services that are currently deployed to serve AI4OS users.
 
 :fa:`home` `Homepage <https://ai4eosc.eu/>`__
   A high level overview of the project.
@@ -34,7 +36,7 @@ Useful links and resources
 :fa:`folder-plus` `Module template <https://templates.cloud.ai4eosc.eu/>`__
   Create new modules based on our project's template.
 
-:fa:`chart-line` **MLflow server** (`AI4EOSC <https://mlflow.cloud.ai4eosc.eu/>`__, `iMagine <https://inference-walton.cloud.imagine-ai.eu>`__)
+:fa:`chart-line` **MLflow server** (`AI4EOSC <https://mlflow.cloud.ai4eosc.eu/>`__, `iMagine <https://mlflow.cloud.imagine-ai.eu/>`__)
   Log your trainings parameters and models with our MLflow server.
 
 :fa:`rocket` **Inference platform (OSCAR)** (`AI4EOSC <https://inference.cloud.ai4eosc.eu/>`__, `iMagine <https://inference-walton.cloud.imagine-ai.eu>`__)

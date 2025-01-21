@@ -62,6 +62,6 @@ In the upper left corner, you can select the ``AI4EOSC/Assistant`` model to ask 
 Integrate it with your own services
 -----------------------------------
 
-Under :material-outlined:`account_circle;1.5em` → :material-outlined:`settings;1.5em` ``Settings`` → :material-outlined:`account_circle;1.5em` ``Account`` you will be able to generate your own API keys to access the service. `Learn more <https://docs.openwebui.com/getting-started/advanced-topics/api-endpoints/>`__ on how to use API keys to integrate the AI4OS LLM into your own services.
+Under :material-outlined:`account_circle;1.5em` → :material-outlined:`settings;1.5em` ``Settings`` → :material-outlined:`account_circle;1.5em` ``Account`` you will be able to generate your own API keys to access the service. `Learn more <https://docs.openwebui.com/getting-started/advanced-topics/api-endpoints/>`__ on how to use API keys to integrate the AI4OS LLM into your own services (endpoints are compatible with the OpenAI API spec).
 
 .. image:: /_static/images/llm/api-keys.png
