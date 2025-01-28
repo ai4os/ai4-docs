@@ -49,6 +49,14 @@ For example, this is what an AI4OS Development Environment with VScode would loo
 .. image:: /_static/images/endpoints/vscode.png
 
 
+.. admonition:: Use storage-synced folder to develop
+   :class: info
+
+   We recommend you make a :ref:`deployment synced with storage <dashboard_storage>`.
+
+   By doing so, you can develop your code inside the ``/storage`` folder and any changes you make will automatically be synced with the :doc:`project's Cloud storage </reference/storage>`.
+   This will prevent you from losing your work in the case that a deployment crash occurs.
+
 
 .. _develop_code:
 
