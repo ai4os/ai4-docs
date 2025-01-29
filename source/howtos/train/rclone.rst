@@ -133,12 +133,12 @@ You can check that everything works fine with:
     $ rclone listremotes    # check you don't have two remote storages with same name
     $ rclone about rshare:  # should output your used space in Nextcloud.
 
-.. tip::
+.. dropdown:: ㅤ 🛠️ Troubleshooting duplicate remotes
 
     If ``listremotes`` is listing two remotes with the same name you probably configured the rclone twice.
-    Most likely you ran ``rclone config`` on a machine deployed with the Dashboard, so you
-    have both the ``env`` and ``rclone.conf`` configurations. To fix this, either remove the ``env`` variables
-    (echo ``unset`` command into the ``.bashrc``) or delete the ``rclone.conf`` file.
+    Most likely you ran ``rclone config`` on a machine deployed with the Dashboard, so you have both the ``env`` and ``rclone.conf`` configurations.
+
+    To fix this, either remove the ``env`` variables (echo ``unset`` command into the ``.bashrc``) or delete the ``rclone.conf`` file.
 
 You can start copying files from your remote to your local:
 
@@ -146,12 +146,10 @@ You can start copying files from your remote to your local:
 
     $ rclone copy rshare:/some/remote/path /some/local/path
 
-.. tip::
+Uploading to Nextcloud can be particularly slow if your dataset is composed of lots of small files.
+Considering zipping your folder before uploading.
 
-    Uploading to Nextcloud can be particularly slow if your dataset is composed of lots of small files.
-    Considering zipping your folder before uploading.
+.. code-block:: console
 
-    .. code-block:: console
-
-        $ zip -r <foldername>.zip <foldername>
-        $ unzip <foldername>.zip
+    $ zip -r <foldername>.zip <foldername>
+    $ unzip <foldername>.zip

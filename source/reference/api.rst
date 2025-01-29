@@ -47,7 +47,8 @@ There, you will be able to see examples on:
   If you choose to return a JSON, please define a ``schema`` to validate the output predictions.
 * how to define a training function that logs metrics into Tensorboard monitoring.
 
-.. tip::
+.. dropdown:: ㅤ 🧠 Decoupling code and API
+
     Try to keep you module's code as decoupled as possible from DEEPaaS code, so that
     any future changes in the API are easy to integrate.
     This means that the ``predict()`` in ``api.py`` should mostly be an interface to

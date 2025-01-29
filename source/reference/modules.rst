@@ -30,6 +30,6 @@ for implementing CI/CD (Continuous Integration / Continuous Development) pipelin
 series of actions for you each time you commit a change in your code. This ensures that all the information and builds
 across the project are always up-to-date with your code.
 
-This is an example of actions tha are performed by the pipeline:
+This is an example of actions that are performed by the pipeline:
 
 .. image:: /_static/images/ai4eosc/jenkins.png

@@ -73,7 +73,7 @@ Install your project as a Python module in **editable** mode (so that the change
 
 Now you can start writing your code.
 
-.. tip::
+.. dropdown:: ㅤ 🛠️ Troubleshooting DEEPaaS installation
 
     Some users have reported issues in some systems when installing ``deepaas`` (which is always present in the ``requirements.txt`` of your project).
     Those issues have been resolved as following:
@@ -124,7 +124,7 @@ There you should see a detailed report of the offending lines (if any).
 You can always `turn off flake8 testing <https://stackoverflow.com/a/64431741>`__
 in some parts of the code if long lines are really needed.
 
-.. tip::
+.. dropdown:: ㅤ 🧠 Using code formatters
 
     If your project has many offending lines, it's recommended using a code formatter tool like
     `Black <https://black.readthedocs.io>`__. It also helps for having a consistent code style
