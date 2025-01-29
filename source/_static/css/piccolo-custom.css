@@ -123,6 +123,12 @@ div.info.admonition a {
   font-weight: bold;
 }
 
+/* Improve cards and dropdowns */
+div.sd-card,
+details.sd-dropdown {
+  border: 1px solid rgba(147, 147, 147, 1) !important;
+}
+
 /* Improve tables (captions, headers) */
 caption {
   padding-bottom: 10px;
