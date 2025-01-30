@@ -34,6 +34,12 @@ provides several guides in how to deploy your model in different environments.
 
         Deploy your model in your cloud using the provided Docker image.
 
+    .. grid-item-card:: :material-outlined:`exit_to_app;1.5em`  Deploy external models
+        :link: external
+        :link-type: doc
+
+        Deploy models from external marketplaces (BioImage Model Zoo).
+
     .. grid-item-card:: :material-outlined:`handyman;1.5em`  Manual serverless deployment
         :link: oscar-manual
         :link-type: doc
@@ -51,4 +57,5 @@ provides several guides in how to deploy your model in different environments.
    Deploy in AI4OS (serverless) <oscar>
    Deploy in AI4OS (dedicated) <nomad>
    Deploy in your cloud <cloud>
+   Deploy external models <external>
    Manual serverless deployment <oscar-manual>

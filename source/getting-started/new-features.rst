@@ -10,6 +10,7 @@ notified here.
 .. Template
 .. * 📘 new :doc:`... <...>` page (``2024-04-03``)
 
+* 📈 we started support deploying :doc:`external models from AI4Life </howtos/deploy/external>` (``2024-01-30``)
 * 📈 deployed in beta the :doc:`LLM service </reference/llm>` (``2024-01-15``)
 * 📈 added support for async calls to :doc:`OSCAR services </howtos/deploy/oscar>` (``2024-12-12``)
 * 📈 support the ability of :ref:`making snapshots of deployments <dashboard_snapshots>` (``2024-11-26``)
@@ -29,7 +30,7 @@ notified here.
 * 📘 new guides to perform :doc:`Incremental Learning </howtos/develop/incremental-learning>` (``2024-06-20``)
 * 📈 new :ref:`stats section <dashboard_statistics>` in the Dashboard (``2024-05-14``)
 * 📘 support for token authentication in :doc:`Federated Learning trainings </howtos/train/federated-server>` (``2024-04-16``)
-* 📘 new :doc:`New features  <new-features>` page (meta!) (``2024-04-03``)
+* 📘 new :doc:`New features <new-features>` page (meta!) (``2024-04-03``)
 * 📘 new tutorials for creating AI Inference pipelines  (:doc:`Elyra </howtos/pipelines/elyra>`, :doc:`Flowfuse </howtos/pipelines/flowfuse>`) (``2024-03-18``)
 * 📘 new :doc:`MLflow </howtos/develop/mlflow>` tutorials (``2024-02-09``)
 * 📘 new :doc:`Frequently Asked Questions (FAQ) </help/faq>` page (``2024-02-05``)
@@ -49,7 +50,6 @@ First, the are a number of mature features that are in the process of being inte
 in the stack:
 
 * 📈 try model endpoints with OSCAR
-* 📈 new tool for image annotation (CVAT)
 * 📈 new tool for efficient video streaming (Kafka)
 * 📈 support for federated learning with NVflare
 
@@ -58,7 +58,6 @@ in an experimental status and might not finally get integrated in the stack.
 
 * 📈 carbon footprint estimator for your deployments
 * 📈 graph visualizations of your module/deployment metadata
-* 📈 ability to snapshot deployments
 * 📈 ability to launch trainings in batch
 * 📈 new popularity metrics
 
