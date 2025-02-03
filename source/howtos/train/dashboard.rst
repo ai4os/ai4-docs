@@ -1,6 +1,11 @@
 Train a model
 =============
 
+.. admonition:: Requirements
+   :class: info
+
+   🔒 This tutorial requires :ref:`full authentication <getting-started/register:Full authentication>`.
+
 This is a step by step guide on how to train a model with your own dataset.
 
 If you are new to Machine Learning, you might want to check some :doc:`useful Machine Learning resources </others/useful-ml-resources>` we compiled to help you getting started.

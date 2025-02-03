@@ -1,6 +1,11 @@
 Deploy a model on AI4OS dedicated resources using the Dashboard
 ===============================================================
 
+.. admonition:: Requirements
+   :class: info
+
+   🔒 This tutorial requires :ref:`full authentication <getting-started/register:Full authentication>`.
+
 The Dashboard offers the possibility to deploy a model on dedicated AI4OS resources.
 
 .. list-table::

@@ -1,6 +1,11 @@
 Experiment Tracking and Model versioning in MLflow
 ==================================================
 
+.. admonition:: Requirements
+   :class: info
+
+   🔒 This tutorial requires :ref:`full authentication <getting-started/register:Full authentication>`.
+
 We currently have two instances of MLflow running:
 
 * `MLflow AI4EOSC <https://mlflow.cloud.ai4eosc.eu>`__

@@ -1,6 +1,11 @@
 Deploy an external model
 ========================
 
+.. admonition:: Requirements
+   :class: info
+
+   🔒 This tutorial requires :ref:`full authentication <getting-started/register:Full authentication>`.
+
 You can deploy models from external marketplaces in :doc:`AI4OS dedicated resources </howtos/deploy/nomad>` to perform inference.
 Currently we support the following marketplaces:
 

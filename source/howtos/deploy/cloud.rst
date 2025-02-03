@@ -1,6 +1,11 @@
 Deploy a model on your own cloud resources
 ==========================================
 
+.. admonition:: Requirements
+   :class: info
+
+   🔓 This tutorial requires :ref:`basic authentication <getting-started/register:Basic authentication>`.
+
 As every module available in the Marketplace is open-source, we offer the possibility
 to automatically deploy it in your custom cloud resources using the
 `EGI Infrastructure Manager <https://im.egi.eu>`__.

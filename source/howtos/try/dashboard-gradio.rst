@@ -7,7 +7,10 @@ Try a model from the Dashboard (Gradio)
         <iframe src="https://www.youtube.com/embed/1wDsPj_QtGo" frameborder="0" allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
     </div>
 
-This feature is available to any registered user (:doc:`/reference/user-access-levels`.
+.. admonition:: Requirements
+   :class: info
+
+   🔓 This tutorial requires :ref:`basic authentication <getting-started/register:Basic authentication>`.
 
 To create a deployment, :ref:`select a module in the Marketplace <dashboard_marketplace>` and click on ``Try ▼ Nomad (Gradio)``.
 

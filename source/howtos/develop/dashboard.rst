@@ -1,6 +1,11 @@
 Develop a model from scratch
 ============================
 
+.. admonition:: Requirements
+   :class: info
+
+   🔒 This tutorial requires :ref:`full authentication <getting-started/register:Full authentication>`.
+
 This tutorial explains how to develop a AI4OS module from scratch.
 
 If you are new to Machine Learning, you might want to check some :doc:`useful Machine Learning resources </others/useful-ml-resources>` we compiled to help you getting started.
