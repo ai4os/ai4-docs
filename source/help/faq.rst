@@ -209,6 +209,43 @@ If the issue persists, please contact support.
 
 .. _new-features-request:
 
+
+ℹ️ I received a notification of cluster downtime, what should I do?
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+If a downtime is expected, you should backup your work in order to avoid losing data.
+Sometimes, when the downtime is performed only in some nodes of the cluster, you might recover your original work after the downtime.
+But you should backup it anyway, just to be on the safe side.
+
+How to backup modules?
+""""""""""""""""""""""
+
+There are two options. To be extra-safe, you can run both of them:
+
+1. :ref:`Create a snapshot from your deployment<dashboard_snapshots>`.
+   After the downtime you should be able to redeploy it and restart your work where you left it.
+   This is the most comprehensive option, as it saves both your *data* and the *software/configuration* you installed in your deployment.
+
+2. Save your data somewhere.
+
+  * If your deployment is :ref:`connected with the AI4OS Storage <dashboard_storage>`, you can move your work under ``/storage``. It will automatically write the data into Nextcloud.
+
+    Anyway, it's always good practice to develop under the ``/storage`` path because, in that way, your work is automatically synced with Nextcloud, thus preventing data loss in case of an unforeseen data failure.
+  * If you are using git, you can commit your work to Github.
+  * If you are accessing your deployment via an IDE, you can the available options to directly download your files.
+
+How to backup tools?
+""""""""""""""""""""
+
+Snapshot creation is not supported for tools.
+Therefore you will need to manually backup the data (different options are available for each tool).
+
+In the case of :doc:`CVAT deployments </howtos/train/cvat>`, you can perform both these actions:
+
+* `manually export the data <https://docs.cvat.ai/docs/manual/advanced/formats/>`__,
+* deleting your CVAT deployment will automatically create a snapshot in the platform from which you will be able to restore later on,
+
+
 🚀 I would like to suggest a new feature
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
