@@ -210,8 +210,8 @@ If the issue persists, please contact support.
 .. _new-features-request:
 
 
-ℹ️ I received a notification of cluster downtime, what should I do?
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ℹ️ I received a cluster downtime notification, what should I do?
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 If a downtime is expected, you should backup your work in order to avoid losing data.
 Sometimes, when the downtime is performed only in some nodes of the cluster, you might recover your original work after the downtime.
