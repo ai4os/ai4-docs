@@ -97,6 +97,4 @@ To configure it:
 
 4. Voilá, you are done! Check the `Continue short tutorial <https://www.youtube.com/watch?v=V3Yq6w9QaxI>`__ for a quick overview on how to use it.
 
-⚠️ **Due to a temporal bug, the assistant is only working in main chat, not in the inline Edit Mode** (triggered by ``CTRL+I``).
-
 .. image:: /_static/images/llm/continue.png
