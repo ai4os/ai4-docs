@@ -209,8 +209,18 @@ If you didn't selected token authentication, feel free to remove the
 Server side differential privacy
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-DP states that an algorithm is differentially private if by viewing its result an adversary cannot know whether a particular individual's data is included in the database used to achieve such result. This can be achieved by adding controled noise using different mechanisms, such us Laplace, Exponential, Gaussian, etc. We can use the privacy budget for controlnig the amount of noise, i.e. the level of privacy and the utility of the data.
+DP states that an algorithm is differentially private if by viewing its result an adversary cannot know whether a particular individual's data is included in the database used to achieve such result. This can be achieved by adding controled noise using different mechanisms, such us Laplace, Exponential, Gaussian, etc. We can use the privacy budget for controling the amount of noise, i.e. the level of privacy and the utility of the data.
 
 In case that you want to start a FL server and include more privacy restrictions when building the global aggregated model, you can add differential privacy (DP) from the server side.
 Specifically, you can perform this step from the FL configuration when creating the server. You will need to include the **noise multiplier** for the Gaussian Mechanism, the **clipping norm** and the **number of clients sampled**. Note that this functionality is compatible with each of the aggregation strategies available in the platform. It's important to note that in this case the noise multiplier is not the privacy budget, but here a greater value of the noise multiplier implies more privacy restrictions (more noise) and less utility.
 This allows to ensure central DP from the server-side when building the global model with fixed clipping.
+
+Server side metric privacy
+^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Metric privacy (also known as metric differential privacy or d-privacy) is a variant (relaxation) of differential privacy that can be used in domains in which there is a notion of distance. Unlike standard DP, this concept takes into account the distance between the datasets involved. This can be usefull in order to adapt the privacy level and noise added to offer better privacy when the distance is small.
+
+Following the work done in `this preprint <https://arxiv.org/abs/2502.01352>`__, the distance metric considered depends on the distance between the model updates of the clients involved. In order to do so, the server calculates the maximum distance for each pair of clients by analyzing the local weights received from each of them. With the proposed approach given for including metric privacy in the server side in a FL training, we can guarantee metric-privacy for each round of the architecture. According to the aforementioned work, users can choose to rely on metric privacy instead of standard DP to achieve a better balance between added noise (calibrated using the distance), and protection against client inference attacks in cases where the server is trusted, but not all participants, or they simply want to prevent such attacks from the final model if published.
+
+Note that the same parameters as for the case of server side differential privacy are used (**noise multiplier** for the Gaussian Mechanism, the **clipping norm** and the **number of clients sampled**).
+More infomration in this approach can be founf in `this preprint <https://arxiv.org/abs/2502.01352>`__.
