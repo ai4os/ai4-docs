@@ -65,3 +65,34 @@ Integrate it with your own services
 Under :material-outlined:`account_circle;1.5em` → :material-outlined:`settings;1.5em` ``Settings`` → :material-outlined:`account_circle;1.5em` ``Account`` you will be able to generate your own API keys to access the service. `Learn more <https://docs.openwebui.com/getting-started/advanced-topics/api-endpoints/>`__ on how to use API keys to integrate the AI4OS LLM into your own services (endpoints are compatible with the OpenAI API spec).
 
 .. image:: /_static/images/llm/api-keys.png
+
+
+Use it as a code assistant with VScode
+--------------------------------------
+
+It's very to use the AI4OS LLM as a code assistant, both locally and in :doc:`the AI4OS Development Environment </howtos/develop/dashboard>`.
+To configure it:
+
+1. In VScode, install the `Continue.dev <https://www.continue.dev/>`__ extension.
+2. On the left handside bar, click the Continue icon. Then, in the panel, click the ⚙️ ``Open Continue Config``.
+3. Modify the ``config.json`` to add the AI4OS LLM model, :ref:`using your API key <reference/llm:Integrate it with your own services>`:
+
+   .. code-block:: json
+
+     {
+        "models": [
+            {
+            "title": "AI4OS LLM",
+            "provider": "openai",
+            "model": "AI4EOSC/DeepSeek-R1-Distill-Llama-8B",
+            "apiKey": "sk-********************************",
+            "apiBase": "https://llm.dev.ai4eosc.eu/api"
+            }
+        ]
+     }
+
+4. Voilá, you are done! Check the `Continue short tutorial <https://www.youtube.com/watch?v=V3Yq6w9QaxI>`__ for a quick overview on how to use it.
+
+⚠️ **Due to a temporal bug, the assistant is only working in main chat, not in the inline Edit Mode** (triggered by ``CTRL+I``).
+
+.. image:: /_static/images/llm/continue.png

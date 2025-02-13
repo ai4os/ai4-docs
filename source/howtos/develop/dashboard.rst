@@ -80,10 +80,15 @@ Now you can start writing your code.
 
 .. dropdown:: ㅤ 💡 Optimal VScode setup
 
-    VScode by default is initialized in ``/srv``.
-    For a better coding experience we suggest opening VScode with your folder project *only*.
-    This will allow you to ignore other non-related folders under ``/srv`` when doing global searches for example.
-    For this, go to ``File > Open Folder > /srv/<project-name>``.
+   **Tip nº1**:
+   VScode by default is initialized in ``/srv``.
+   For a better coding experience we suggest opening VScode with your folder project *only*.
+   This will allow you to ignore other non-related folders under ``/srv`` when doing global searches for example.
+   For this, go to ``File > Open Folder > /srv/<project-name>``.
+
+   **Tip nº2**:
+   :ref:`Use the AI4OS LLM as coding assistant <reference/llm:Use it as a code assistant with VScode>`.
+   We recommend doing this along tip nº1 in order to avoid Continue from freezing when trying to index the whole workspace contents.
 
 .. dropdown:: ㅤ 🛠️ Troubleshooting DEEPaaS installation
 
