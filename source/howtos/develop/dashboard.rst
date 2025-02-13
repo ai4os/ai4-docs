@@ -78,6 +78,13 @@ Install your project as a Python module in **editable** mode (so that the change
 
 Now you can start writing your code.
 
+.. dropdown:: ㅤ 💡 Optimal VScode setup
+
+    VScode by default is initialized in ``/srv``.
+    For a better coding experience we suggest opening VScode with your folder project *only*.
+    This will allow you to ignore other non-related folders under ``/srv`` when doing global searches for example.
+    For this, go to ``File > Open Folder > /srv/<project-name>``.
+
 .. dropdown:: ㅤ 🛠️ Troubleshooting DEEPaaS installation
 
     Some users have reported issues in some systems when installing ``deepaas`` (which is always present in the ``requirements.txt`` of your project).
