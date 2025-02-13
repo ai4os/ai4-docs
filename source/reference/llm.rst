@@ -86,10 +86,14 @@ To configure it:
             "provider": "openai",
             "model": "AI4EOSC/DeepSeek-R1-Distill-Llama-8B",
             "apiKey": "sk-********************************",
-            "apiBase": "https://llm.dev.ai4eosc.eu/api"
+            "apiBase": "https://llm.dev.ai4eosc.eu/api",
+            "useLegacyCompletionsEndpoint": false
             }
         ]
      }
+
+.. We use '"useLegacyCompletionsEndpoint": false' to force the usage of chat/completions instead of completions endpoint
+.. ref: https://docs.continue.dev/customize/model-providers/openai
 
 4. Voilá, you are done! Check the `Continue short tutorial <https://www.youtube.com/watch?v=V3Yq6w9QaxI>`__ for a quick overview on how to use it.
 
