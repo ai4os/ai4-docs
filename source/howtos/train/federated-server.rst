@@ -41,8 +41,10 @@ In this particular case, you will need to pay attention to:
   - how many rounds you will train,
   - the minimum number of clients,
   - the federated aggregation methods and the metric(s) analyzed,
+  - :ref:`the parameters for using differential privacy <howtos/train/federated-server:Server side differential privacy>`
   - etc.
 
+  .. image:: /_static/images/dashboard/configure_fedserver.png
 
 Federated learning training in AI4EOSC
 --------------------------------------
@@ -114,7 +116,7 @@ In order to connect the clients to the FL server deployed within the platform, t
    This is the most classic approach as in general in a FL training the data should not be leave the server where they are stored for training.
    Note that in most cases privacy restrictions are applied on them that prevent their centralization.
    Thus, in order to connect each client to the server, the clients must know the UUID of the deployment where the FL server is deployed as well as the datacenter on which it is running (IFCA or IISAS).
-   Then, you can add the *call_credentials* parameter if the server has been created using tokens, as will be explained in the following section.
+   Then, you can add the ``call_credentials`` parameter if the server has been created using tokens, as will be explained in the following section.
 
    In this line, each client can connect to the server as follows:
 
@@ -133,7 +135,7 @@ In order to connect the clients to the FL server deployed within the platform, t
 
 
 - **Clients running on different deployments of the platform.**
-   If you are running your clients from different deployments created in the platform, in orde to connect to the server you have to first find the IP of the server form the server side.
+   If you are running your clients from different deployments created in the platform, in order to connect to the server you have to first find the IP of the server form the server side.
    In this line, you first go to the deployment in which you have started the server, open a terminal an run:
 
    .. code-block:: bash
@@ -142,7 +144,7 @@ In order to connect the clients to the FL server deployed within the platform, t
 
    This will provide the IP and the port in which the FL server is running.
 
-   Then, from the client side, you can start the client as follows (again, you can add the *call_credentials* parameter if needed), introducing the IP and port from the server side as *server_address*:
+   Then, from the client side, you can start the client as follows (again, you can add the ``call_credentials`` parameter if needed), introducing the IP and port from the server side as ``server_address``:
 
    .. code-block:: python
 
@@ -209,18 +211,18 @@ If you didn't selected token authentication, feel free to remove the
 Server side differential privacy
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-DP states that an algorithm is differentially private if by viewing its result an adversary cannot know whether a particular individual's data is included in the database used to achieve such result. This can be achieved by adding controled noise using different mechanisms, such us Laplace, Exponential, Gaussian, etc. We can use the privacy budget for controling the amount of noise, i.e. the level of privacy and the utility of the data.
+DP states that an algorithm is differentially private if by viewing its result an adversary cannot know whether a particular individual's data is included in the database used to achieve such result. This can be achieved by adding controlled noise using different mechanisms, such us Laplace, Exponential, Gaussian, etc. We can use the privacy budget for controlling the amount of noise, i.e. the level of privacy and the utility of the data.
 
 In case that you want to start a FL server and include more privacy restrictions when building the global aggregated model, you can add differential privacy (DP) from the server side.
-Specifically, you can perform this step from the FL configuration when creating the server. You will need to include the **noise multiplier** for the Gaussian Mechanism, the **clipping norm** and the **number of clients sampled**. Note that this functionality is compatible with each of the aggregation strategies available in the platform. It's important to note that in this case the noise multiplier is not the privacy budget, but here a greater value of the noise multiplier implies more privacy restrictions (more noise) and less utility.
+Specifically, you can perform this step from the FL configuration when creating the server. You will need to include the ``noise multiplier`` for the Gaussian Mechanism, the ``clipping norm`` and the ``number of clients sampled`` parameters. Note that this functionality is compatible with each of the aggregation strategies available in the platform. It's important to note that in this case the noise multiplier is not the privacy budget, but here a greater value of the noise multiplier implies more privacy restrictions (more noise) and less utility.
 This allows to ensure central DP from the server-side when building the global model with fixed clipping.
 
 Server side metric privacy
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Metric privacy (also known as metric differential privacy or d-privacy) is a variant (relaxation) of differential privacy that can be used in domains in which there is a notion of distance. Unlike standard DP, this concept takes into account the distance between the datasets involved. This can be usefull in order to adapt the privacy level and noise added to offer better privacy when the distance is small.
+Metric privacy (also known as **metric differential privacy** or d-privacy) is a variant (relaxation) of differential privacy that can be used in domains in which there is a notion of distance. Unlike standard DP, this concept takes into account the distance between the datasets involved. This can be useful in order to adapt the privacy level and noise added to offer better privacy when the distance is small.
 
-Following the work done in `this preprint <https://arxiv.org/abs/2502.01352>`__, the distance metric considered depends on the distance between the model updates of the clients involved. In order to do so, the server calculates the maximum distance for each pair of clients by analyzing the local weights received from each of them. With the proposed approach given for including metric privacy in the server side in a FL training, we can guarantee metric-privacy for each round of the architecture. According to the aforementioned work, users can choose to rely on metric privacy instead of standard DP to achieve a better balance between added noise (calibrated using the distance), and protection against client inference attacks in cases where the server is trusted, but not all participants, or they simply want to prevent such attacks from the final model if published.
+Following the work done in `this preprint <https://arxiv.org/abs/2502.01352>`__, the distance metric considered depends on the distance between the model updates of the clients involved. In order to do so, the server calculates the maximum distance for each pair of clients by analyzing the local weights received from each of them. With the proposed approach given for including metric privacy in the server side in a FL training, we can guarantee metric-privacy for each round of the architecture. According to the aforementioned work, users can choose to rely on metric privacy instead of standard DP to achieve a **better balance between added noise** (calibrated using the distance), **and protection against client inference attacks** in cases where the server is trusted, but not all participants, or they simply want to prevent such attacks from the final model if published.
 
-Note that the same parameters as for the case of server side differential privacy are used (**noise multiplier** for the Gaussian Mechanism, the **clipping norm** and the **number of clients sampled**).
-More infomration in this approach can be founf in `this preprint <https://arxiv.org/abs/2502.01352>`__.
+Note that the same parameters as for the case of :ref:`server side differential privacy <howtos/train/federated-server:Server side differential privacy>`  are used (``noise multiplier`` for the Gaussian Mechanism, the ``clipping norm`` and the ``number of clients sampled``).
+More information in this approach can be found in `this preprint <https://arxiv.org/abs/2502.01352>`__.
