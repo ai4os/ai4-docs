@@ -40,6 +40,13 @@ provides several guides in how to deploy your model in different environments.
 
         Deploy models from external marketplaces (BioImage Model Zoo).
 
+    .. grid-item-card:: :fas:`brain;fa-lg sd-mr-2`  Deploy your own LLM
+        :link: external
+        :link-type: doc
+
+        Deploy your own LLM from a selection of open-source models (DeepSeek, Qwen, LLama, etc),
+        using vLLM and Open-WebUI.
+
     .. grid-item-card:: :material-outlined:`handyman;1.5em`  Manual serverless deployment
         :link: oscar-manual
         :link-type: doc
@@ -58,4 +65,5 @@ provides several guides in how to deploy your model in different environments.
    Deploy in AI4OS (dedicated) <nomad>
    Deploy in your cloud <cloud>
    Deploy external models <external>
+   Deploy your own LLM <llm>
    Manual serverless deployment <oscar-manual>
