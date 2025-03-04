@@ -41,7 +41,7 @@ provides several guides in how to deploy your model in different environments.
         Deploy models from external marketplaces (BioImage Model Zoo).
 
     .. grid-item-card:: :fas:`brain;fa-lg sd-mr-2`  Deploy your own LLM
-        :link: external
+        :link: llm
         :link-type: doc
 
         Deploy your own LLM from a selection of open-source models (DeepSeek, Qwen, LLama, etc),
