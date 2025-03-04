@@ -226,3 +226,41 @@ Following the work done in `this preprint <https://arxiv.org/abs/2502.01352>`__,
 
 Note that the same parameters as for the case of :ref:`server side differential privacy <howtos/train/federated-server:Server side differential privacy>`  are used (``noise multiplier`` for the Gaussian Mechanism, the ``clipping norm`` and the ``number of clients sampled``).
 More information in this approach can be found in `this preprint <https://arxiv.org/abs/2502.01352>`__.
+
+Monitoring of training CO² emissions
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+To provide users with the ability to monitor carbon emissions derived from their training, the FL server includes an integrated emissions monitoring feature. This functionality is implemented using the ``codecarbon`` Python library.
+
+Users can enable emissions tracking when deploying the FL server. To do so, they must activate this option when deploying the server from the dashboard, and then introduce some modifications on the client side to report local training emissions. The server then aggregates the emissions reported by the participating clients in each round, along with its own emissions, primarily from the aggregation process.
+
+Note that clients must voluntarily enable emissions tracking, the platform cannot enforce this functionality on them. The goal is to allow each client to track its own local emissions and send this data to the server, which then aggregates it with its own emissions to determine the overall training footprint. To facilitate this, only few changes are needed from the client side once the emissions tracking is allowed from the server, using codecarbon and including it the Client class (which inherits from the Flower fl.client.NumPyClient class). Note that the clients must install ``codecarbon`` locally:
+
+.. code-block:: python
+
+    import flwr as fl
+    from codecarbon import EmissionsTracker
+
+    # Read the data, create the model
+    # (...)
+
+    # Create the class Client(), example of Flower client including tracking the emissions:
+    class Client(fl.client.NumPyClient):
+        def get_parameters(self, config):
+            return model.get_weights()
+   
+        def fit(self, parameters, config):
+            model.set_weights(parameters)
+            tracker = EmissionsTracker()
+            tracker.start()
+            model.fit(x_train, y_train, epochs=3, batch_size=16)
+            emissions = tracker.stop()  
+            print(f"Client Carbon Emissions: {emissions} kg CO2")
+            return model.get_weights(), len(x_train), {"emissions": emissions}
+   
+       def evaluate(self, parameters, config):
+           model.set_weights(parameters)
+           loss, accuracy = model.evaluate(x_test, y_test)
+           return loss, len(x_test), {"accuracy": accuracy}
+
+The rest of the process, in which the server receives emissions from each client and aggregates them with its own, is handled on the server side once this option has been enabled. This allows the server to compute the total training emissions per round alongside the results for the aggregated metric(s) selected.
