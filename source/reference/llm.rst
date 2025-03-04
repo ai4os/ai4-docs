@@ -62,7 +62,25 @@ In the upper left corner, you can select the ``AI4EOSC/Assistant`` model to ask 
 Integrate it with your own services
 -----------------------------------
 
-Under :material-outlined:`account_circle;1.5em` → :material-outlined:`settings;1.5em` ``Settings`` → :material-outlined:`account_circle;1.5em` ``Account`` you will be able to generate your own API keys to access the service. `Learn more <https://docs.openwebui.com/getting-started/advanced-topics/api-endpoints/>`__ on how to use API keys to integrate the AI4OS LLM into your own services (endpoints are compatible with the OpenAI API spec).
+To integrate LLM completions into your workflow you need an API endpoint and an API key.
+There are two API options:
+
+* **vLLM API**: faster (load balanced), supports chat completions
+* **OpenWebUI API**: supports chat completions, supports Retrieval Augmented Generation (RAG)
+
+Using vLLM API (recommended)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+* **API endpoint**: https://llm.dev.ai4eosc.eu:8000.
+* **API key**: :doc:`ask support </help/index>`
+
+Using OpenWebUI API
+^^^^^^^^^^^^^^^^^^^
+
+* **API endpoint**: https://llm.dev.ai4eosc.eu/api
+* **API key**: :material-outlined:`account_circle;1.5em` → :material-outlined:`settings;1.5em` ``Settings`` → :material-outlined:`account_circle;1.5em` ``Account``
+
+`Learn more <https://docs.openwebui.com/getting-started/advanced-topics/api-endpoints/>`__ on how to use API keys to integrate the AI4OS LLM into your own services (endpoints are compatible with the OpenAI API spec).
 
 .. image:: /_static/images/llm/api-keys.png
 
