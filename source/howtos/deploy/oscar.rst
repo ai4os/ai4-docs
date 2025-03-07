@@ -415,6 +415,52 @@ Once you have retrieved your endpoint and token, you can run the following Pytho
 
         print(out)
 
+4. How to use OSCAR UI
+------------
+
+Accessing the Service via the UI
+--------------------------------
+
+To access the OSCAR service through the UI, follow these steps:
+
+1. From the **Deployments** section, locate your deployed model.
+2. Click on :material-outlined:`info;1.5em` **More Info** to view the service details.
+3. Copy the **Inference URL** and paste it into your browser to open the OSCAR UI.
+4. Once the UI is open, you need to convert your input file into JSON format before making a request.
+
+Preparing the Input JSON File
+-----------------------------
+
+Use the following Python script to convert your file into a compatible JSON format:
+
+.. code-block:: python
+
+    import base64
+    import json
+
+    def get_base64(fpath):
+        """Encodes a file in Base64 format."""
+        with open(fpath, "rb") as f:
+            encoded_str = base64.b64encode(f.read()).decode("utf-8")
+        return encoded_str
+
+    # Prepare the JSON payload
+    data = {
+        "oscar-files": [
+            {
+                "key": "files",
+                "file_format": "png",
+                "data": get_base64("./inputs_Cat.png"),
+            },
+        ]
+    }
+
+    # Save the JSON data to a file
+    with open("input2.json", "w") as f:
+        json.dump(data, f, indent=4)
+
+Once your file is ready, you can use it to invoke the service using either **synchronous** or **asynchronous** requests.
+
 
 Additional customizations
 ^^^^^^^^^^^^^^^^^^^^^^^^^
