@@ -59,4 +59,8 @@ The enter you ``UI email``  and ``UI password`` and voilá, you're in!
 You are the admin of the instance, so you can create new users for other people in your team.
 
 Go to the `Open-WebUI documentation <https://openwebui.com/>`__ to further configure your instance.
-For example, current models do not have vision capabilities, so you can disable image upload for users going to :material-outlined:`account_circle;1.5em` ``Admin Panel`` → ``Settings`` → ``Models`` → ``<model-name>`` → ``Capabilities`` → :material-outlined:`check_box;1.5em` ``Vision``
+For example, you can:
+
+* customize the UI appearance: since current models do not have vision capabilities, so you can disable image upload for users going to :material-outlined:`account_circle;1.5em` ``Admin Panel`` → ``Settings`` → ``Models`` → ``<model-name>`` → ``Capabilities`` → :material-outlined:`check_box;1.5em` ``Vision``
+* create your own `Knowledge Bases <https://docs.openwebui.com/features/workspace/knowledge/>`__ as persistent memory banks,
+* use `Functions <https://docs.openwebui.com/features/plugin/functions/>`__ to create your own agents that use custom prompts, custom Knowledge Bases, and custom input/output filtering,
