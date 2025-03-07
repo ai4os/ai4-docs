@@ -5,6 +5,32 @@ As part of the tool repertoire that the AI4OS stack is offering to increase our 
 
 We care about user privacy, so it's important to notice that your chat history will be erased whenever you delete it, and no data will be retained by the platform (`privacy policy <https://ai4eosc.eu/platform/privacy-policy/>`__).
 
+
+AI4OS LLM vs self-deployed LLM
+------------------------------
+
+We also offer a  :doc:`self-deployed LLM option </howtos/deploy/llm>`, so which one should you choose?
+
+**Self-deployed LLM**
+
+* let's you deploy a wide variety of models from a catalog,
+* you are the admin, so you can configure model and UI parameters,
+* you are the admin, so you can create your own `Knowledge Bases <https://docs.openwebui.com/features/workspace/knowledge/>`__ as persistent memory banks,
+* you are the admin, so you can use `Functions <https://docs.openwebui.com/features/plugin/functions/>`__ to create your own agents that use custom prompts, custom Knowledge Bases, and custom input/output filtering,
+
+**AI4OS LLM (platform wide)**
+
+* uses more powerful GPUs, so it offers bigger and more accurate LLMs,
+* the backend (VLLM) is load balanced so it can offer lower latency,
+* has a dedicated RAG instance for faster queries,
+* comes with some pre-configured helpful agents, like the :ref:`AI4EOSC Assistant <reference/llm:Ask questions about the documentation>` that helps you navigate the project's documentation,
+
+By default, we recommend using the AI4OS LLM, which will offer a better experience for most users. Users with more custom needs should try nevertheless the self-deployment options.
+
+Anyway, remember that both options are compatible: you can deploy your own LLM and still access the platform-wide one.
+The best of both worlds! 🚀
+
+
 Login
 -----
 
