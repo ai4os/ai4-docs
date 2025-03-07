@@ -49,7 +49,7 @@ In the ``Inference`` tab, go to the ``Serverless (OSCAR)`` table and find your n
 
 .. image:: /_static/images/dashboard/oscar-table.png
 
-Click on :material-outlined:`info;1.5em` ``Info`` fo your service and you will find all the variables you need for making a prediction:
+Click on :material-outlined:`info;1.5em` ``Info`` for your service and you will find all the variables you need for making a prediction:
 
 * **for synchronous calls**: the ``endpoint`` you will query and the secret ``token`` you need for authentication.
 * **for asynchronous calls**: all the variables related to the `MINIO storage <https://min.io/>`__ that handles your predictions.
@@ -179,7 +179,7 @@ The script will print the logs, along with the JSON output of the model (in this
 Asynchronous predictions
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
-Finally, it is also possible to make asynchronous calls to the same service.
+It is also possible to make asynchronous calls to the same service. This kind of execution relies on the event-driven approach, where the OSCAR service reacts automatically to events that occur in the object-storage system so that the interaction is directly done uploading files to the buckets in the MinIO storage system.
 
 This approach is especially beneficial when:
 
@@ -289,6 +289,44 @@ To use the script, you have to replace the Minio-related variables with the valu
 
 
 This script will produce a ``.log`` file with the OSCAR logs and a ``.json`` file with the prediction of the YOLO model.
+
+
+Using the OSCAR Web UI interface
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Another option to interact with the OSCAR service is through the `graphical web interface (UI) <https://inference.cloud.ai4eosc.eu/>`__. To access the OSCAR service through the UI, follow these steps:
+
+1. In the ``Inference`` tab, go to the ``Serverless (OSCAR)`` table and find your newly created service.
+2. Click on :material-outlined:`info;1.5em` ``Info`` button on the right to show the service details and check the ``Deployment ID``.
+3. Go to the `OSCAR UI <https://inference.cloud.ai4eosc.eu/>`__  in your browser, log in with your credentials and search for the service with the same name as the ``Deployment ID``.
+4. Click on the ``More options`` button of your service and select ``Invoke`` to open a new screen where you can provide the input to the service invocation. At this point, as you have seen in the asynchronous and synchronous calls, you have to take into account that most of the AI4EOSC models whose input is an image need to convert the input into a compatible JSON format. This implies converting the image to base64 and expressing the input in a JSON file. To help with this input preparation, we provide you a short Python script to convert your file into a compatible JSON format:
+
+.. code-block:: python
+
+    import base64
+    import json
+
+    def get_base64(fpath):
+        """Encodes a file in Base64 format."""
+        with open(fpath, "rb") as f:
+            encoded_str = base64.b64encode(f.read()).decode("utf-8")
+        return encoded_str
+
+    # Prepare the JSON payload
+    data = {
+        "oscar-files": [
+            {
+                "key": "files",
+                "file_format": "png",
+                "data": get_base64("./inputs_Cat.png"),
+            },
+        ]
+    }
+
+    # Save the JSON data to a file
+    with open("input2.json", "w") as f:
+        json.dump(data, f, indent=4)
+
+5. Once your file is ready, you can use it to invoke the service using the ``Run`` button.
 
 
 3. More info
@@ -415,51 +453,6 @@ Once you have retrieved your endpoint and token, you can run the following Pytho
 
         print(out)
 
-4. How to use OSCAR UI
-------------
-
-Accessing the Service via the UI
---------------------------------
-
-To access the OSCAR service through the UI, follow these steps:
-
-1. From the **Deployments** section, locate your deployed model.
-2. Click on :material-outlined:`info;1.5em` **More Info** to view the service details.
-3. Copy the **Inference URL** and paste it into your browser to open the OSCAR UI.
-4. Once the UI is open, you need to convert your input file into JSON format before making a request.
-
-Preparing the Input JSON File
------------------------------
-
-Use the following Python script to convert your file into a compatible JSON format:
-
-.. code-block:: python
-
-    import base64
-    import json
-
-    def get_base64(fpath):
-        """Encodes a file in Base64 format."""
-        with open(fpath, "rb") as f:
-            encoded_str = base64.b64encode(f.read()).decode("utf-8")
-        return encoded_str
-
-    # Prepare the JSON payload
-    data = {
-        "oscar-files": [
-            {
-                "key": "files",
-                "file_format": "png",
-                "data": get_base64("./inputs_Cat.png"),
-            },
-        ]
-    }
-
-    # Save the JSON data to a file
-    with open("input2.json", "w") as f:
-        json.dump(data, f, indent=4)
-
-Once your file is ready, you can use it to invoke the service using either **synchronous** or **asynchronous** requests.
 
 
 Additional customizations
