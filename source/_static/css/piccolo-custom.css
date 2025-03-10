@@ -130,16 +130,19 @@ details.sd-dropdown {
 }
 
 /* Improve tables (captions, headers) */
-caption {
+span.caption-text {
   padding-bottom: 10px;
   font-weight: bold;
   font-size: 90%;
+  display: block;
+  text-align: center;
+  font-style: italic;
 }
 
-html[data-mode="light"] caption {
-  color: #2e2e2e !important;
+html[data-mode="light"] span.caption-text {
+  color: #808080 !important;
 }
-html[data-mode^="dark"] caption {
+html[data-mode^="dark"] span.caption-text {
   color: #b4b4b4 !important;
 }
 
