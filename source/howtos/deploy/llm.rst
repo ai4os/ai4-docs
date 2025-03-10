@@ -11,6 +11,7 @@ In this tutorial, we will guide you on how to deploy your own LLM instance in th
 
 For the moment, due to resource constraints, this tool allows to deploy only small LLMs that can fit in NVIDIA T4s.
 If you want to use bigger LLMs on faster resources, please :doc:`use the AI4OS LLM </reference/llm>`!
+We have a :ref:`detailed comparison <reference/llm:AI4OS LLM vs self-deployed LLM>` of the two options.
 
 Deploying the LLM
 -----------------
