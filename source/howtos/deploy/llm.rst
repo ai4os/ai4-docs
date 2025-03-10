@@ -65,3 +65,4 @@ For example, you can:
 * customize the UI appearance: since current models do not have vision capabilities, so you can disable image upload for users going to :material-outlined:`account_circle;1.5em` ``Admin Panel`` → ``Settings`` → ``Models`` → ``<model-name>`` → ``Capabilities`` → :material-outlined:`check_box;1.5em` ``Vision``
 * create your own `Knowledge Bases <https://docs.openwebui.com/features/workspace/knowledge/>`__ as persistent memory banks,
 * use `Functions <https://docs.openwebui.com/features/plugin/functions/>`__ to create your own agents that use custom prompts, custom Knowledge Bases, and custom input/output filtering,
+* :ref:`integrate the model with your own services <reference/llm:Integrate it with your own services>` (use as code assistant in VSCode, use from Python scripts, etc).
