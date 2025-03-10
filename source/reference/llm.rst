@@ -58,8 +58,11 @@ The current available models are:
 Now, let's explore some common usages of the tool. Keep in mind that the AI4OS LLM is built with `OpenWebUI <https://openwebui.com/>`__ so you always find further information in `their documentation <https://docs.openwebui.com/>`__.
 
 
+Using the AI4OS LLM
+-------------------
+
 Chat with the LLM
------------------
+^^^^^^^^^^^^^^^^^
 
 We can ask generic questions to the model.
 
@@ -69,7 +72,7 @@ Remember that if you answer relies on up-to-date information, you can always ena
 
 
 Summarize a document
---------------------
+^^^^^^^^^^^^^^^^^^^^
 
 Under the :material-outlined:`add_circle;1.5em` button, you can select :material-outlined:`upload_file;1.5em` ``Upload files``.
 This will allow you to query a document with questions.
@@ -78,7 +81,7 @@ This will allow you to query a document with questions.
 
 
 Ask questions about the documentation
--------------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. important::
 
@@ -92,38 +95,38 @@ In the upper left corner, you can select the ``AI4EOSC/Assistant`` model to ask 
 Integrate it with your own services
 -----------------------------------
 
+Retrieve the API endpoint/key
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
 To integrate LLM completions into your workflow you need an API endpoint and an API key.
 There are two API options:
 
-* **vLLM API**: faster (load balanced), supports chat completions
-* **OpenWebUI API**: supports chat completions, supports Retrieval Augmented Generation (RAG)
+* **vLLM API** (:material-outlined:`verified;1.5em` *recommended*): faster (load balanced), supports chat completions
 
-Using vLLM API (recommended)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  - **API endpoint**: https://llm.dev.ai4eosc.eu:8000.
+  - **API key**: :doc:`ask support </help/index>`
 
-* **API endpoint**: https://llm.dev.ai4eosc.eu:8000.
-* **API key**: :doc:`ask support </help/index>`
+* **OpenWebUI API**: supports chat completions, supports Retrieval Augmented Generation
 
-Using OpenWebUI API
-^^^^^^^^^^^^^^^^^^^
+  - **API endpoint**: https://llm.dev.ai4eosc.eu/api
+  - **API key**: :material-outlined:`account_circle;1.5em` → :material-outlined:`settings;1.5em` ``Settings`` → :material-outlined:`account_circle;1.5em` ``Account``
 
-* **API endpoint**: https://llm.dev.ai4eosc.eu/api
-* **API key**: :material-outlined:`account_circle;1.5em` → :material-outlined:`settings;1.5em` ``Settings`` → :material-outlined:`account_circle;1.5em` ``Account``
+  `Learn more <https://docs.openwebui.com/getting-started/advanced-topics/api-endpoints/>`__ on how to use API keys to integrate the AI4OS LLM into your own services (endpoints are compatible with the OpenAI API spec).
 
-`Learn more <https://docs.openwebui.com/getting-started/advanced-topics/api-endpoints/>`__ on how to use API keys to integrate the AI4OS LLM into your own services (endpoints are compatible with the OpenAI API spec).
+  .. figure:: /_static/images/llm/api-keys.png
 
-.. image:: /_static/images/llm/api-keys.png
+      API keys section in OpenWebUI
 
 
 Use it as a code assistant with VScode
---------------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 It's very to use the AI4OS LLM as a code assistant, both locally and in :doc:`the AI4OS Development Environment </howtos/develop/dashboard>`.
 To configure it:
 
 1. In VScode, install the `Continue.dev <https://www.continue.dev/>`__ extension.
 2. On the left handside bar, click the Continue icon. Then, in the panel, click the ⚙️ ``Open Continue Config``.
-3. Modify the ``config.json`` to add the AI4OS LLM model, :ref:`using your API key <reference/llm:Integrate it with your own services>`:
+3. Modify the ``config.json`` to add the AI4OS LLM model, :ref:`using your API key <reference/llm:Retrieve the API endpoint/key>`:
 
    .. code-block:: json
 
@@ -146,3 +149,27 @@ To configure it:
 4. Voilá, you are done! Check the `Continue short tutorial <https://www.youtube.com/watch?v=V3Yq6w9QaxI>`__ for a quick overview on how to use it.
 
 .. image:: /_static/images/llm/continue.png
+
+
+Use it from within your Python code
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+To use the LLM from your Python scripts you need to install the `openai <https://github.com/openai/openai-python>`__ Python package.
+Then you can use the LLM as following:
+
+.. code-block:: python
+
+    from openai import OpenAI
+
+
+    client = OpenAI(
+        base_url="https://llm.dev.ai4eosc.eu/api",
+        api_key="******************",
+    )
+
+    completion = client.chat.completions.create(
+        model="AI4EOSC/Small",
+        messages=[{"role": "user", "content": "What is the capital of France?"}]
+    )
+
+    print(completion.choices[0].message.content)
