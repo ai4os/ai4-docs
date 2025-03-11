@@ -58,70 +58,57 @@ Grayify, and Plants-Theano.
 
 .. image:: /_static/images/elyra/cloning_repo_elyra.png
 
-
 2. Prerequisites for all the examples
 -------------------------------------
 
-2.1 Types of recipes
-^^^^^^^^^^^^^^^^^^^^
+2.1 Using OSCAR in Your Workflow
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-To use the nodes that employ OSCAR, it is necessary to invoke a service.
-This service has two recipes:
+To use nodes that rely on OSCAR, you need to invoke a service through an OSCAR client.  
+First, create your own OSCAR client, configuring it with the necessary credentials and parameters to interact with an OSCAR cluster.
 
-1. The first recipe solely uses an EGI Check-in token.
-   This is the best option if you use the `AI4EOSC OSCAR cluster <https://inference.cloud.ai4eosc.eu>`__
-   authenticating :doc:`with your EGI account </reference/user-access-levels>`.
+2.2 Setting Up an OSCAR Client
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-2. The second recipe uses our own credentials: node ID, endpoint, username, and password.
-   This is an alternative for when you want to use your own OSCAR clusters.
+.. image:: /_static/images/elyra/creating_client.png
 
-2.2 How to use the EGI Token
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-If you wish to use the EGI token, there's no need to use or create a script that saves
-credentials. To access your token:
+To set up an OSCAR client, obtain the OSCAR endpoint. For AI4EOSC, the endpoint is:
 
-1. Open the notebook node named ``oscar_cowsay.ipynb``.
-2. Add a new cell immediately after the library import cell.
+`https://inference.cloud.ai4eosc.eu <https://inference.cloud.ai4eosc.eu>`__
 
-.. image:: /_static/images/elyra/get_egi_token.png
+The ID parameter is optional.
 
-3. Enter the following code into the new cell:
+By default, the EGI notebook assigns a token automatically. However, if you cannot retrieve a token from an EGI notebook, you need to generate a refresh token from the EGI token page:
 
-.. code:: python
+`EGI Check-in Token Portal <https://aai.egi.eu/token>`__
 
-    with open("/var/run/secrets/egi.eu/access_token") as f:
-        access_token = f.read()
+Follow these steps to generate a refresh token:
 
-2.3 How to create our own credentials
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+1. Authenticate on the EGI portal.
+   
+   .. image:: /_static/images/elyra/egi_token_1.png
 
-Before running any example, we need to create a credentials node in Elyra,
-required to invoke a service in an OSCAR cluster.
-For this example, we already have a node that assists in generating credentials,
-named ``generate_credentials.py``. This node will handle the environment variables
-necessary to interact with your OSCAR cluster.
+2. Click the button to create a refresh token.
+   
+   .. image:: /_static/images/elyra/egi_token_2.png
 
-Here's how to use it:
+3. Copy the generated refresh token.
+   
+   .. image:: /_static/images/elyra/egi_token_3.png
+      
+Once the client is set up, you can seamlessly integrate OSCAR nodes into your workflow.
 
-1. Open the cowsay example, searching it in the left panel, inside the ``ai4-compose``
-   folder that we have previously cloned.
+2.3 Configuring the OSCAR Client
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-   The path is: ``ai4-compose/elyra/examples/cowsay/cowsay.pipeline``
+Before running any example, ensure your OSCAR client is properly configured. You may need to set environment variables such as:
 
-2. Right click on the node ``Generate Credentials``, and select the ``Open Properties``
-   option. This opens a right side panel.
+- **Endpoint**: The URL of the OSCAR inference service.
+- **ID (optional)**: The identifier for the OSCAR service.
+- **Token file path**: The location of the refresh token, if applicable.
 
-3. In this panel, you need to set up the environment variables:
-   ``ID``, ``ENDPOINT``, ``USERNAME``, and ``PASSWORD``.
+Once configured, you can execute workflows and use OSCAR nodes within your pipeline.
 
-.. image:: /_static/images/elyra/creating_credentials_1.png
-
-4. Save these as a JSON file and name it ``credentials.json``.
-
-.. image:: /_static/images/elyra/creating_credentials_2.png
-
-This JSON file will be sent as an environment variable to the subsequent nodes in your
-workflow.
 
 
 3. Deploying a pipeline
