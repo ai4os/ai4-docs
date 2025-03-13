@@ -33,7 +33,7 @@ that encloses all the different domains that must be able to make requests.
   <Directory "/var/www/nextcloud/">
     Options +FollowSymlinks
     AllowOverride All
-    SetEnvIf Origin "^http(s)?://(.+\.)?(dev.ai4eosc\.eu|cloud.ai4eosc\.eu|dev.imagine-ai\.eu|cloud.imagine-ai\.eu))$" origin_is=$0
+    SetEnvIf Origin "^http(s)?://(.+\.)?(dev.ai4eosc\.eu|cloud.ai4eosc\.eu|dev.imagine-ai\.eu|cloud.imagine-ai\.eu)$" origin_is=$0
     <IfModule mod_headers.c>
       Header always set Strict-Transport-Security "max-age=15552000; includeSubdomains"
       Header always set Access-Control-Allow-Origin %{origin_is}e env=origin_is
