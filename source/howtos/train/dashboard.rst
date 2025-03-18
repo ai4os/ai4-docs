@@ -138,6 +138,12 @@ If some kind of monitorization tool is available for the module, you will be abl
 
 .. image:: /_static/images/endpoints/tensorboard.png
 
+You can kill everything using:
+
+.. code-block:: console
+
+    $ pid=$(pgrep -f deepaas-run) && child_pids=$(pgrep -P $pid) && kill -9 $pid $child_pids
+
 
 5. Test and export the newly trained model
 ------------------------------------------

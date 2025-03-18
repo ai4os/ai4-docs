@@ -157,6 +157,8 @@ If latency is still slow in the new deployment, please contact support.
 🔥 I cannot find my dataset under ``/storage/ai4-storage``
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+**Option 1: Refresh the index**
+
 This can happen if you are accessing the dataset from several deployments at the same
 time, and the ``ls`` command hasn't properly refreshed its index.
 
@@ -164,6 +166,22 @@ To fix this you will need to `cd` to the folder and run `cd .` for the `ls` comm
 refresh its index (`ref <https://stackoverflow.com/questions/38336329/ls-not-updating-to-reflect-new-files>`__).
 Now you should be able to see your dataset.
 
+**Option 2: Download error**
+
+It can also happen that your dataset failed to download for some reasons.
+In the file ``ai4os.log`` you will find the reason of the failure (eg. timeout).
+
+You have several options:
+
+* *Option 1*: redeploy and see if the timeout error is no longer happening,
+* *Option 2*: try to download the dataset with the CLI using `datahugger <https://github.com/J535D165/datahugger>`__:
+
+  .. code-block:: console
+
+    pip install datahugger
+    datahugger "<doi>" "<data_dir>"
+
+* *Option 3*: download your dataset manually and paste it to Nextcloud
 
 🔥 rclone fails to connect
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
