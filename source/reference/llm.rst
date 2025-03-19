@@ -51,9 +51,12 @@ Once you login, you will arrive to a landing page where you will be able to sele
 
 The current available models are:
 
-* ``Nemo-2407``: a small-size model from the `Mistral family <https://mistral.ai/>`__ (12B parameter) with a large context window (128K tokens), released on July 2024,
-* ``Small-2409``: a medium-size model from the `Mistral family <https://mistral.ai/>`__ (22B parameters) with a smaller context window (32K tokens), released on September 2024,
+* ``Small-2409``: a medium-size model from the `Mistral family <https://mistral.ai/>`__ (22B parameters) with a smaller context window (32K tokens), released on September 2024.
+  This is the **default** model.
+* ``DeepSeek-R1-Distill-Llama-8B``: a small distillation (8B parameters) of the `original DeepSeek R1 model <https://huggingface.co/deepseek-ai/DeepSeek-R1>`__, released on January 2025.
+  The distillation is nowhere as performant as the original model, but it serves a nice demo of a thinking model.
 * ``Assistant``: our custom model designed to :ref:`help you navigate our documentation <reference/llm:Ask questions about the documentation>`,
+* ``Qwen2.5-VL-7B-Instruct``: a small model for vision related tasks, released in August 2024.
 
 Now, let's explore some common usages of the tool. Keep in mind that the AI4OS LLM is built with `OpenWebUI <https://openwebui.com/>`__ so you always find further information in `their documentation <https://docs.openwebui.com/>`__.
 
@@ -90,6 +93,30 @@ Ask questions about the documentation
 In the upper left corner, you can select the ``AI4EOSC/Assistant`` model to ask questions about the platform. The LLM with use our documentation as knowledge base to provide truthful answers to your questions.
 
 .. image:: /_static/images/llm/assistant.png
+
+
+Use Vision models
+^^^^^^^^^^^^^^^^^
+
+If you select the ``Qwen2.5-VL-7B-Instruct``, you can upload images to the model and ask questions about them.
+To upload an image click the :material-outlined:`add_circle;1.5em` and you will be offered the possibility of either :material-outlined:`add_a_photo;1.5em` ``Capture`` an image or :material-outlined:`upload_file;1.5em` ``Upload`` an image.
+
+Here are some ideas on how to incorporate this into a scientific workflow:
+
+.. dropdown:: :material-outlined:`lightbulb;1.5em` Detexify a LaTeX equation
+
+   ``Generate latex code for the above picture and render it below.``
+
+   .. figure:: /_static/images/llm/vision-detexify.png
+
+.. dropdown:: :material-outlined:`lightbulb;1.5em` Digitize your handwritten notes
+
+   ``Can you generate a Mermaid graph from this sketch? To ensure valid code, make sure that text inside boxes follows the format `letter{…}`. For example `B{Some text}`.``
+
+   .. figure:: /_static/images/llm/vision-mermaid.png
+
+Do you use it in other ways? `We are happy to hear! <https://github.com/ai4os/ai4-docs/issues/new>`__
+
 
 
 Integrate it with your own services

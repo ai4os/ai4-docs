@@ -10,10 +10,11 @@ notified here.
 .. Template
 .. * 📘 new :doc:`... <...>` page (``2024-04-03``)
 
-* 📈 we started support deploying :doc:`your own LLM instance </howtos/deploy/llm>` (``2024-02-28``)
-* 📘 Added documentation on how to integrate :ref:`the AI4OS LLM as coding assistant in VScode <reference/llm:Use it as a code assistant with VScode>` (``2024-02-13``)
-* 📈 we started support deploying :doc:`external models from AI4Life </howtos/deploy/external>` (``2024-01-30``)
-* 📈 deployed in beta the :doc:`LLM service </reference/llm>` (``2024-01-15``)
+* 📈 we added support for :ref:`Vision-enabled LLMs <reference/llm:Use Vision models>` (``2025-03-19``)
+* 📈 we started support deploying :doc:`your own LLM instance </howtos/deploy/llm>` (``2025-02-28``)
+* 📘 Added documentation on how to integrate :ref:`the AI4OS LLM as coding assistant in VScode <reference/llm:Use it as a code assistant with VScode>` (``2025-02-13``)
+* 📈 we started support deploying :doc:`external models from AI4Life </howtos/deploy/external>` (``2025-01-30``)
+* 📈 deployed in beta the :doc:`LLM service </reference/llm>` (``2025-01-15``)
 * 📈 added support for async calls to :doc:`OSCAR services </howtos/deploy/oscar>` (``2024-12-12``)
 * 📈 support the ability of :ref:`making snapshots of deployments <dashboard_snapshots>` (``2024-11-26``)
 * 📈 enable Gradio UI for inference on :ref:`AI4OS dedicated resources <nomad-gradio>` (``2024-11-26``)
