@@ -227,7 +227,7 @@ Following the work done in `this preprint <https://arxiv.org/abs/2502.01352>`__,
 Note that the same parameters as for the case of :ref:`server side differential privacy <howtos/train/federated-server:Server side differential privacy>`  are used (``noise multiplier`` for the Gaussian Mechanism, the ``clipping norm`` and the ``number of clients sampled``).
 More information in this approach can be found in `this preprint <https://arxiv.org/abs/2502.01352>`__.
 
-Monitoring of training $CO_2$ emissions
+Monitoring of training CO2 emissions
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 To provide users with the ability to monitor carbon emissions derived from their training, the FL server includes an integrated emissions monitoring feature. This functionality is implemented using the ``codecarbon`` Python library.
