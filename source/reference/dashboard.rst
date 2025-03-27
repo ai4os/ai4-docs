@@ -194,6 +194,8 @@ You have two sections:
    With any dataset, you can select a ``force_pull`` option, so that if your dataset
    already exists in your storage it will overwrite the existing files.
 
+   If the module you are deploying has an reference dataset listed by the module's creator, this will appear as a suggested dataset.
+
 .. dropdown:: :fab:`youtube;youtube-icon` ㅤDownload a dataset from Zenodo
 
   .. raw:: html
