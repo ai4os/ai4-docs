@@ -27,27 +27,24 @@ Create your project based on the template
 Based on the version of the template you choose you will be asked to answer a number of
 questions, which might include:
 
-* ``git_base_url``: Remote URL to host your new git repositories (e.g. https://github.com/deephdc ).
-* ``project_name``: Project name, to be added after \"git_base_url\" (see above)", (aka <your_project> in the following).
+* ``project_name``: Short name of your project (max 4 words). The GitHub repository name and Python module name are derived from the project_name.
 * ``author_name``: Author name(s) (and/or your organization/company/team). If many, separate by comma.
-* ``author_email``: E-Mail(s) of main author(s) (or contact person). If many, separate by comma.
-* ``description``: Short description of the project.
-* ``app_version``: Application version (expects X.Y.Z (Major.Minor.Patch)).
-* ``open_source_license``: Choose open source license, default is MIT. `More info <https://opensource.org/licenses>`__.
-* ``docker_baseimage``: Docker image your Dockerfile starts from (``FROM <docker_baseimage>``) (don't provide the tag here), (e.g. tensorflow/tensorflow ).
-* ``baseimage_cpu_tag``: CPU tag for the baseimage, e.g. 2.9.1. Has to match python3!
-* ``baseimage_gpu_tag``: GPU tag for the baseimage, e.g. 2.9.1-gpu. Has to match python3!
-  Sometimes ``baseimage_cpu_tag`` and ``baseimage_gpu_tag`` are the same (for example in `Pytorch <https://hub.docker.com/r/pytorch/pytorch/tags>`__).
-  In `Tensorflow <https://hub.docker.com/r/tensorflow/tensorflow/tags>`__ they are different.
-* ``failure_notify``: whether you want to receive updates if your model fails to build.
+* ``author_email``: E-Mail(s) of main author(s). If many, separate by comma.
+* ``description``: A short description of the project.
+* ``app_version``: Application version (expects X.Y.Z (Major.Minor.Patch), in accordance with `https://semver.org/`).
+* ``open_source_license``: Choose one of the licenses (default is MIT). `More info <https://opensource.org/licenses>`__.
+* ``docker_baseimage``: Docker image your Dockerfile starts from (``FROM <docker_baseimage>``). Do not provide the tag here.
+* ``baseimage_tag``: Default tag for docker_baseimage (for Tensorflow: CPU version, e.g. 2.9.1).
+* ``baseimage_gpu_tag``: GPU tag for the baseimage, e.g. 2.9.1-gpu. Should match and use Python 3.
 
 Based on your answers, we will fill the template and create your project repository
-(linked to your ``git_base_url``)
+(linked to `AI4OS Hub <https://github.com/ai4os-hub>`).
 
-Each repository has two branches: ``master`` (to commit stable changes) and ``test``
-(to test features without disrupting your users).
+Each repository has three branches: ``main`` (to commit stable changes),
+``test`` (to test features without disrupting your users) and
+``dev`` (to develop new features).
 
-You have to ways to create your project from the Template.
+You have two ways to create your project from the Template.
 
 Via User Interface
 ~~~~~~~~~~~~~~~~~~
@@ -95,6 +92,8 @@ For demonstration purposes, here follows what a typical project created with the
   │
   ├── README.md              <- The top-level README for developers using this project.
   │
+  ├── VERSION                <- <project-name> version file
+  │
   ├── .sqa/                  <- CI/CD configuration files
   │
   ├── <project-name>         <- Source code for use in this project.
@@ -102,20 +101,25 @@ For demonstration purposes, here follows what a typical project created with the
   │   ├── __init__.py        <- Makes <project-name> a Python module
   │   │
   │   ├── api.py             <- Main script for the integration with DEEPaaS API
+  │   |
+  │   ├── config.py          <- Configuration file to define Constants used across <project-name>
   │   │
   │   └── misc.py            <- Misc functions that were helpful across projects
   │
   ├── data/                  <- Folder to store the data
   │
   ├── models/                <- Folder to store models
-  │
+  │   
   ├── tests/                 <- Scripts to perform code testing
   |
-  ├── metadata.json          <- Defines information propagated to the AI4OS Hub
+  ├── metadata.json          <- Metadata information propagated to the AI4OS Hub
   │
-  ├── requirements.txt       <- The requirements file for reproducing the analysis environment, e.g.
-  │                             generated with `pip freeze > requirements.txt`
+  ├── pyproject.toml         <- a configuration file used by packaging tools, so <project-name>
+  │                             can be imported and installed using `pip install -e .`                             
+  │
+  ├── requirements.txt       <- The requirements file for reproducing the analysis environment, i.e.
+  │                             contains a list of packages needed to make <project-name> work
+  │
   ├── requirements-test.txt  <- The requirements file for running code tests (see tests/ directory)
   │
-  └── setup.py, setup.cfg    <- makes project pip installable (pip install -e .) so
-                                <project-name> can be imported
+  └── tox.ini                <- Configuration file for the tox tool used for testing (see .sqa/)
