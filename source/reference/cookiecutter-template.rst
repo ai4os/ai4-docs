@@ -38,7 +38,7 @@ questions, which might include:
 * ``baseimage_gpu_tag``: GPU tag for the baseimage, e.g. 2.9.1-gpu. Should match and use Python 3.
 
 Based on your answers, we will fill the template and create your project repository
-(linked to `AI4OS Hub <https://github.com/ai4os-hub>`).
+(linked to `AI4OS Hub <https://github.com/ai4os-hub>`__).
 
 Each repository has three branches: ``main`` (to commit stable changes),
 ``test`` (to test features without disrupting your users) and
