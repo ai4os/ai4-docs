@@ -10,6 +10,7 @@ notified here.
 .. Template
 .. * 📘 new :doc:`... <...>` page (``2024-04-03``)
 
+* 📈 we changed the Dashboard layout and added an LLM catalog section (``2025-04-04``)
 * 📈 we added support for :ref:`Vision-enabled LLMs <reference/llm:Use Vision models>` (``2025-03-19``)
 * 📈 we started support deploying :doc:`your own LLM instance </howtos/deploy/llm>` (``2025-02-28``)
 * 📘 Added documentation on how to integrate :ref:`the AI4OS LLM as coding assistant in VScode <reference/llm:Use it as a code assistant with VScode>` (``2025-02-13``)
