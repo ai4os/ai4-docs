@@ -257,4 +257,4 @@ Your module should be visible in http://0.0.0.0:5000/ui
 
     If to go further, check our tutorials on how to:
 
-    * :doc:`run a federated learning training </howtos/train/federated-server>`
+    * :doc:`run a federated learning training </howtos/train/federated-flower>`

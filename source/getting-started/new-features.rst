@@ -10,6 +10,7 @@ notified here.
 .. Template
 .. * 📘 new :doc:`... <...>` page (``2024-04-03``)
 
+* 📈 we started supporting :ref:`Federated Learning trainings with NVFLARE </howtos/deploy/federated-nvflare>` (``2025-04-07``)
 * 📈 we changed the Dashboard layout and added an LLM catalog section (``2025-04-04``)
 * 📈 we added support for :ref:`Vision-enabled LLMs <reference/llm:Use Vision models>` (``2025-03-19``)
 * 📈 we started support deploying :doc:`your own LLM instance </howtos/deploy/llm>` (``2025-02-28``)
@@ -33,7 +34,7 @@ notified here.
 * 📈 new :ref:`external datasets download <dashboard_storage>` feature (``2024-06-30``)
 * 📘 new guides to perform :doc:`Incremental Learning </howtos/develop/incremental-learning>` (``2024-06-20``)
 * 📈 new :ref:`stats section <dashboard_statistics>` in the Dashboard (``2024-05-14``)
-* 📘 support for token authentication in :doc:`Federated Learning trainings </howtos/train/federated-server>` (``2024-04-16``)
+* 📘 support for token authentication in :doc:`Federated Learning trainings with Flower </howtos/train/federated-flower>` (``2024-04-16``)
 * 📘 new :doc:`New features <new-features>` page (meta!) (``2024-04-03``)
 * 📘 new tutorials for creating AI Inference pipelines  (:doc:`Elyra </howtos/pipelines/elyra>`, :doc:`Flowfuse </howtos/pipelines/flowfuse>`) (``2024-03-18``)
 * 📘 new :doc:`MLflow </howtos/develop/mlflow>` tutorials (``2024-02-09``)

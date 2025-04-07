@@ -19,7 +19,7 @@ For creating modules, we provide the :doc:`AI4OS Modules Template </reference/co
 as a starting point.
 
 In addition to AI modules, the Dashboard also allows to deploy tools
-(eg. a :doc:`Federated Server </howtos/train/federated-server>`).
+(eg. a :doc:`Federated Server </howtos/train/federated-flower>`).
 
 
 The DEEPaaS API

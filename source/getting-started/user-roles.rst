@@ -50,7 +50,7 @@ model and retrains it to perform `plant classification <https://dashboard.cloud.
 * the ability to train out-of-the-box a module of the :doc:`Dashboard </reference/dashboard>`,
 * the ability to easily connect your training to your dataset hosted on our :doc:`data storage resources </reference/storage>`,
 * a private instance of :doc:`Computer Vision Annotation Tool (CVAT) </howtos/train/cvat>` to annotate your dataset,
-* a private server to create :doc:`Federated Learning trainings with Flower </howtos/train/federated-server>`,
+* a private server to create :doc:`Federated Learning trainings with Flower </howtos/train/federated-flower>`,
 * the ability to :doc:`use GPUs </howtos/train/dashboard>` to accelerate your training,
 * an :doc:`API </reference/api>` to easily interact with the model,
 * solutions to deploy your developed model in :doc:`the Cloud </howtos/deploy/cloud>` or in your :doc:`local resources </howtos/try/locally>`,

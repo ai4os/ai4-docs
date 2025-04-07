@@ -66,10 +66,10 @@ Those are basically:
 
 * :material-outlined:`build;1.5em` ``Tools``: set of AI tools that come handy in the Machine Learning workflow.
 
-  We currently offer:
+  We currently offer for example:
 
   - The **AI4OS Development Environment** to develop new modules (:doc:`tutorial </howtos/develop/dashboard>`)
-  - The **Flower Federated Learning Server** to make federated privacy-friendly trainings (:doc:`tutorial </howtos/train/federated-server>`)
+  - Several **Federated Learning Server** to make federated privacy-friendly trainings (:doc:`Flower </howtos/train/federated-flower>`, :doc:`NVFLARE </howtos/train/federated-nvflare>`)
   - The **Computer Vision Annotation Tool** (CVAT) to label images (:doc:`tutorial </howtos/train/cvat>`)
 
 * :material-outlined:`model_training;1.5em` ``Modules``: set of AI models designed to perform given tasks (eg. image classification)

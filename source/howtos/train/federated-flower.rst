@@ -1,5 +1,5 @@
-Federated server
-================
+Federated Learning with Flower
+==============================
 
 .. admonition:: Requirements
    :class: info
@@ -7,12 +7,7 @@ Federated server
    🔒 This tutorial requires :ref:`full authentication <getting-started/register:Full authentication>`.
 
 In this tutorial, we will guide you on how to use the Federated Learning (FL) server in the
-AI4OS platform to perform a FL training.
-
-For more information, see the *Getting Started* step by step guide available in the
-`federated server repository <https://github.com/deephdc/federated-server>`__, as well
-as the tutorial on `using Federated Learning within the AI4OS Platform <https://youtu.be/FrgVummLNbU>`__.
-
+AI4OS platform to perform a FL training using `Flower <https://flower.ai/>`__.
 
 Deploying a Federated server
 ----------------------------
@@ -41,10 +36,10 @@ In this particular case, you will need to pay attention to:
   - how many rounds you will train,
   - the minimum number of clients,
   - the federated aggregation methods and the metric(s) analyzed,
-  - :ref:`the parameters for using differential privacy <howtos/train/federated-server:Server side differential privacy>`
+  - :ref:`the parameters for using differential privacy <howtos/train/federated-flower:Server side differential privacy>`
   - etc.
 
-  .. image:: /_static/images/dashboard/configure_fedserver.png
+  .. image:: /_static/images/dashboard/configure_flower.png
 
 Federated learning training in AI4EOSC
 --------------------------------------
@@ -164,7 +159,7 @@ to perform FL trainings.
 
 In the code below, we provide an example on how to integrate the previously obtained
 token and endpoint into the client code.
-More examples are `available here <https://github.com/deephdc/federated-server/tree/main/fedserver/examples>`__.
+More examples are `available here <https://github.com/ai4os/ai4os-federated-server/tree/main/fedserver/examples>`__.
 
 .. code-block:: python
 
@@ -224,7 +219,7 @@ Metric privacy (also known as **metric differential privacy** or d-privacy) is a
 
 Following the work done in `this preprint <https://arxiv.org/abs/2502.01352>`__, the distance metric considered depends on the distance between the model updates of the clients involved. In order to do so, the server calculates the maximum distance for each pair of clients by analyzing the local weights received from each of them. With the proposed approach given for including metric privacy in the server side in a FL training, we can guarantee metric-privacy for each round of the architecture. According to the aforementioned work, users can choose to rely on metric privacy instead of standard DP to achieve a **better balance between added noise** (calibrated using the distance), **and protection against client inference attacks** in cases where the server is trusted, but not all participants, or they simply want to prevent such attacks from the final model if published.
 
-Note that the same parameters as for the case of :ref:`server side differential privacy <howtos/train/federated-server:Server side differential privacy>`  are used (``noise multiplier`` for the Gaussian Mechanism, the ``clipping norm`` and the ``number of clients sampled``).
+Note that the same parameters as for the case of :ref:`server side differential privacy <howtos/train/federated-flower:Server side differential privacy>`  are used (``noise multiplier`` for the Gaussian Mechanism, the ``clipping norm`` and the ``number of clients sampled``).
 More information in this approach can be found in `this preprint <https://arxiv.org/abs/2502.01352>`__.
 
 Monitoring of training CO2 emissions
@@ -248,16 +243,16 @@ Note that clients must voluntarily enable emissions tracking, the platform canno
     class Client(fl.client.NumPyClient):
         def get_parameters(self, config):
             return model.get_weights()
-   
+
         def fit(self, parameters, config):
             model.set_weights(parameters)
             tracker = EmissionsTracker()
             tracker.start()
             model.fit(x_train, y_train, epochs=3, batch_size=16)
-            emissions = tracker.stop()  
+            emissions = tracker.stop()
             print(f"Client Carbon Emissions: {emissions} kg CO2")
             return model.get_weights(), len(x_train), {"emissions": emissions}
-   
+
        def evaluate(self, parameters, config):
            model.set_weights(parameters)
            loss, accuracy = model.evaluate(x_test, y_test)
