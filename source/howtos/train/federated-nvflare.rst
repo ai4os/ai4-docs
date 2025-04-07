@@ -35,4 +35,12 @@ In this particular case, you will need to pay attention to:
 Federated learning training in AI4EOSC
 --------------------------------------
 
-Coming soon! 🚀
+In the :ref:`deployments list <dashboard-manage-deployments>` you will be able to see your newly created NVFLARE instance.
+Clicking the ``Quick access`` button, you will directly enter the NVFLARE Dashboard.
+Enter your credentials from the configuration and voilá, you're in!
+
+.. image:: /_static/images/endpoints/nvflare-dashboard.png
+
+For more information on running a training, please follow the official `NVFLARE documentation <https://nvflare.readthedocs.io/en/main/index.html>`__.
+
+We will soon add a simple example for reference! 🚀
