@@ -36,11 +36,17 @@ techniques in their modules:
 
         Learn how to use distributed learning in your modules.
 
-    .. grid-item-card:: :material-outlined:`analytics;1.5em`  Use MLFlow for tracking your trainings
+    .. grid-item-card:: :material-outlined:`analytics;1.5em`  Support MLFlow for tracking your trainings
         :link: mlflow
         :link-type: doc
 
         Learn how to use MLFlow for tracking your trainings.
+
+    .. grid-item-card:: :material-outlined:`area_chart;1.5em`  Support Drift detection at inference
+        :link: drift-watch
+        :link-type: doc
+
+        Learn how to use DirftWatch to monitor data drift during production.
 
 .. toctree::
    :maxdepth: 1
@@ -51,3 +57,4 @@ techniques in their modules:
    Use Incremental learning <incremental-learning>
    Use Distributed learning <distributed-learning>
    Use MLFlow for tracking your trainings <mlflow>
+   Use Driftwatch to monitor at inference <drift-watch>
