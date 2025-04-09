@@ -222,11 +222,107 @@ Ensure that correctly identifies drift and triggers appropriate alerts.
 Integrate the drift detector in the DEEPaaS API
 -----------------------------------------------
 
-.. TODO: (borja) explain
-  - How to integrate the drift detector in the DEEPaaS API
-  - how to define the warm function
-  - how to define the predict function
-  - how to save data in /storage/ai4os-drift-watch/<uuid> for later visualization
+To integrate your drift detector in the DEEPaaS API, you need to follow these steps:
+
+1. **Setting the framework and prepare the environment**:
+
+Follow the steps in the `dashboard <source/howtos/develop/dashboard.rst>`_ to create a new module based on your preferences.
+You should have a nice base project with the basic `get_metadata`, `warm`, and `predict` functions.
+
+Try to run the dummy module locally to check that everything is working before starting to add the drift detector.
+
+
+2. **Update the warm function to initialize the drift detector**:
+
+In the `warm` function, you need to initialize the drift detector and load the clean embeddings and autoencoder model weights from the module storage.
+
+   .. code-block:: python
+
+    def warm():
+        try:  # Warm up the detector with clean data
+            logger.info("Warming up the detector with local data")
+            clean = load_encodings("/storage/clean_embeddings.pth")
+            utils.detector.fit(clean.cpu().numpy())  # Warm up with clean data
+            for sample in clean[: utils.detector.window_size]:
+                utils.detector.update(sample.cpu().numpy())
+        except Exception as err:
+            logger.error("Error when warming up: %s", err, exc_info=True)
+            raise  # re-raise the exception after logging
+
+This process implements the steps to train and warm up the drift detector.
+The function is called when the module is started and will be used to initialize the drift detector with the clean embeddings.
+Note that the state of the detector is restarted every time the module is restarted.
+
+3. **Update the predict function to monitor incoming data**:
+
+In the `predict` function, you need to define the logic to monitor incoming data and check for drift.
+To do so, first we need to define an schema that will be used to define and validate the incoming data.
+
+
+   .. code-block:: python
+
+    import marshmallow
+    from marshmallow import fields, validate
+
+    class PredArgsSchema(marshmallow.Schema):
+        """Prediction arguments schema for api.predict function."""
+
+        class Meta:  # Keep order of the parameters as they are defined.
+            ordered = True
+
+        input_file = fields.Field(
+            metadata={
+                "description": "Image use to evaluate the data drift.",
+                "type": "file",
+                "location": "form",
+            },
+            required=True,
+        )
+        drift_distance = fields.Float(
+            metadata={
+                "description": "Minimum distance to consider data drift.",
+            },
+            load_default=0.125,
+            validate=validate.Range(min=0.0),
+        )
+
+    def get_predict_args():
+        return PredArgsSchema().fields()
+
+As the arguments for inference are defined, we can proceed to implement the logic to monitor the incoming data.
+
+   .. code-block:: python
+
+    def predict(input_file, drift_distance):
+        try:  # Load the image and encode it
+            logger.debug("Loading image from input_file: %s", input_file.filename)
+            image = load_image(input_file.filename)
+            normalized = transform(image).to(config.device)
+            encoded = autoencoder.encoder(normalized.unsqueeze(0))[0]
+        except Exception as err:
+            logger.error("Error loading image: %s", err, exc_info=True)
+            raise  # re- raise the exception after log
+        image_id = str(uuid.uuid4())
+        save_image(input_file.filename, f"/storage/ai4os-drift-watch/{image_id}")
+        try:  # Check if the image is clean
+            logger.debug("Detecting drift with options: %s", options)
+            result, _ = utils.detector.update(encoded.detach().cpu().numpy())
+        except Exception as err:
+            logger.error("Error detecting drift: %s", err, exc_info=True)
+            raise  # re-raise the exception after log
+        logger.debug("Return results as format: %s", accept)
+        return {
+            "distance": result.distance, 
+            "drift": result.distance > drift_distance
+            "link": f"{server_url}/ai4os-drift-watch/{image_id}",
+        }
+
+The `predict` function is called when the module is used to make predictions about the data drift status.
+The function will load the image, encode it using the autoencoder, and then use the drift detector to check if the image is clean or dirty.
+The function will return the drift score and a link to the image that was used for the prediction.
+
+Once the module is running, you can use the `POST` method to send an image to the module and check if it is clean or dirty.
+Follow the steps in the `dashboard <source/howtos/develop/dashboard.rst>`_ example to see how to deploy the module and test it.
 
 
 Add monitoring to your module with Driftwatch
