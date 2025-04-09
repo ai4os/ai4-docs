@@ -366,15 +366,128 @@ steps:
 Add monitoring to your module with Driftwatch
 ---------------------------------------------
 
+After deploying the module, you can use `DriftWatch`_ to monitor the drift
+distance and visualize the drift over time. DriftWatch is a tool that allows
+you to monitor the drift distance and visualize the drift over time. It
+provides a web interface to visualize the drift distance and the images that
+were used for the predictions.
+
+To add monitoring to your module with DriftWatch, follow these steps:
+
+
+1. **Obtain a MyToken to authenticate to the service**:
+
+   To store data into DriftWatch server, users need to authenticate. To do so,
+   the service offers compatibility with federated authentication via 
+   `mytoken`_, an service which allows the use of OIDC based tokens with
+   enhanced security and long life extensions.
+
+   Follow the following `drift-watch example`_ or the `MyToken docs`_ for
+   details on how to use this service.
+
+   The important details are that you obtain a long term MyToken which only
+   allowed audiences are the DriftWatch server.
+
+   .. image:: /_static/images/driftwatch/mytoken-audiences.png
+
+   Once you obtain the token, create an environment variable **DRIFT_MONITOR_MYTOKEN**
+   and assign your token to it.
+
+
+2. **Install and register to DriftWatch**:
+
+   To add the DriftWatch library to your module, you need to add the
+   `drift-monitor`_ package to the requirements file. This package is used to
+   connect your modules with DriftWatch and send the drift distance and data
+   to be monitored.
+
+   .. code-block:: console
+
+      $ pip install -U drift-monitor
+
+   Once the package is installed, you need to accept the license agreement and
+   register to use the package. You can do this by running the code:
+
+   .. code-block:: python
+
+    import drift-monitor as dw
+    dw.register(accept_terms=True)
+
+   This will register the owner of the previously obtained token and assigned
+   to **DRIFT_MONITOR_MYTOKEN**. You can run this code at the start of the
+   `api.py` or separately if the owner of the tokens is going to be the same.
+
+   Once registered, you will be authorized to create experiments in the `DriftWatch`_
+   service with the following code:
+
+   .. code-block:: python
+
+    description = "This is an experiment to track camera status on OBSEA project."
+    try:
+        dw.new_experiment("obsea-camera", description, public=True)
+    except ValueError:
+        print("Experiment already exists. Skipping creation.")
+
+   Similar to the registration process this code needs to be executed only once
+   so feel free to integrate it into the code. Simply make sure you catch the
+   exception if you include it into your `warm` function.
+
+
+3. **Integrate the DriftWatch client to your module**
+
+   Final step is to extend the `predict` function with the functionality to
+   upload your drift jobs to the `DriftWatch`_ server. To do so, you simply
+   need to open a python context with `DriftMonitor` defining a model id and
+   the tags you want to use to identify your results on the experiment.
+
+   .. code-block:: python
+
+    def predict(input_file, drift_distance):
+        try:  # Load the image and encode it
+            logger.debug("Loading image from input_file: %s", input_file.filename)
+            image = load_image(input_file.filename)
+            normalized = transform(image).to(config.device)
+            encoded = autoencoder.encoder(normalized.unsqueeze(0))[0]
+        except Exception as err:
+            logger.error("Error loading image: %s", err, exc_info=True)
+            raise  # re-raise the exception after logging
+        image_id = str(uuid.uuid4())
+        save_image(input_file.filename, f"/storage/ai4os-drift-watch/{image_id}")
+        link = f"{server_url}/ai4os-drift-watch/{image_id}"  # Link is needed as metadata
+        try:  # Check if the image is clean
+           logger.debug("Detecting drift with options: %s", options)
+            result, _ = utils.detector.update(encoded.detach().cpu().numpy())
+            model_id, tags = config.data_version, config.tags
+            with dw.DriftMonitor("obsea-camera", model_id, tags) as monitor:
+                result, _ = utils.detector.update(encoded.detach().cpu().numpy())
+                detected = result.distance > drift_distance
+                monitor(detected, {"distance": result.distance, "link": link})  # Append the link to the info
+       except Exception as err:
+            logger.error("Error detecting drift: %s", err, exc_info=True)
+            raise  # re-raise the exception after logging
+        logger.debug("Return results as format: %s", accept)
+        return {
+            "distance": result.distance,
+            "drift": result.distance > drift_distance,
+            "link": link,
+        }
+
+   Every time the inference calls the predict function, a new job is opened at
+   `DriftWatch`_. If an exception is raised during the execution of the code
+   under the `DriftMonitor` context, the job will be closed with `Failed`
+   status. Otherwise, normal exit of the context will close the job as
+   `Completed`.
+
+.. _MyToken: https://mytok.eu/
+.. _MyToken docs: https://mytoken-docs.data.kit.edu/
+.. _DriftWatch: https://drift-watch.dev.ai4eosc.eu/
+.. _drift-monitor: https://pypi.org/project/drift-monitor/
+.. _drift-watch example: https://github.com/ai4os-hub/obsea-fish-detection/blob/drift-camera/notebooks/drift-watch.ipynb
+
 .. TODO: (borja) explain
-  - add drift-monitoring to requirements.txt
-  - edit config.py and utils.py module to add tags and ensure mytoken is set
-  - how to get token with mytoken
-  - how to save token as env
-  - how to register driftwatch instance
-  - how to update the warm function
-  - how to send (p-values, data_url, ...) to Driftwatch during the predict step
   - how to make /storage/ai4os-drift-watch/ public to allow for visualization inside Driftwatch
+  - Note the link to DriftWatch points to dev server
+
 
 Deploy your module in production
 --------------------------------
