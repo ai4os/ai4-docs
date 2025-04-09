@@ -223,13 +223,25 @@ Integrate the drift detector in the DEEPaaS API
 -----------------------------------------------
 
 .. TODO: (borja) explain
+  - How to integrate the drift detector in the DEEPaaS API
+  - how to define the warm function
+  - how to define the predict function
+  - how to save data in /storage/ai4os-drift-watch/<uuid> for later visualization
+
+
+Add monitoring to your module with Driftwatch
+------------------------------------------------
+
+.. TODO: (borja) explain
+  - add drift-monitoring to requirements.txt
+  - edit config.py and utils.py module to add tags and ensure mytoken is set
   - how to get token with mytoken
   - how to save token as env
   - how to register driftwatch instance
-  - how to prepare the warm function
+  - how to update the warm function
   - how to send (p-values, data_url, ...) to Driftwatch during the predict step
-  - how to save data in /storage/ai4os-drift-watch/<uuid> for later visualization
   - how to make /storage/ai4os-drift-watch/ public to allow for visualization inside Driftwach
+
 
 Deploy your module in production
 --------------------------------
