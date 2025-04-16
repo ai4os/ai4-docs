@@ -42,7 +42,8 @@ In the :ref:`deployments list <dashboard-manage-deployments>` you will be able t
 Clicking the ``Quick access`` button, you can see two endpoints:
 
 * **DASHBOARD**: 
-  you will directly enter the NVFLARE Dashboard. Enter your credentials from the configuration and voilá, you’re in as the project admin! 
+  
+  You will directly enter the NVFLARE Dashboard. Enter your credentials from the configuration and voilá, you’re in as the project admin! 
    This dashboard is used to generate the startup kits for the server, admins and clients. The **startup kits** include the configurations and certificates required to establish secure connections between the FL servers, FL clients, and admin clients. These files are essential for verifying identity and enforcing authorization policies between the server and clients.
    To allow organization admins to register their sites, share the dashboard link with them. Organization  Admins can access the dashboard through this link and click 'Sign Up' to register themself and their sites.
 
@@ -62,8 +63,11 @@ Clicking the ``Quick access`` button, you can see two endpoints:
       Once approved, the organization admins can log into the dashboard, download the startup kits for their sites, and obtain the Docker image shared by the project admin for the project code. Using these startup kits, they can then launch their sites.
 
    .. image:: /_static/images/dashboard/nvflare_dashboard_console.png
+      
 
-* **SERVER-JUPYTER:** Provides access to a JupyterLab environment for the server. The password to access this JupyterLab environment is the one provided by the admin during deployment. The server's startup kit is automatically downloaded to the workspace directory within JupyterLab, and the server is already running.
+* **SERVER-JUPYTER:** 
+  
+  Provides access to a JupyterLab environment for the server. The password to access this JupyterLab environment is the one provided by the admin during deployment. The server's startup kit is automatically downloaded to the workspace directory within JupyterLab, and the server is already running.
 
    .. note::
    
