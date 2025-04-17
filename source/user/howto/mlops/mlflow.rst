@@ -69,20 +69,20 @@ For this you have to do the following steps in your deployment.
 2. Edit your code to insert MLflow constants (env vars) and statements so that your
    experiments will be logged to the tracking server we deployed.
 
+   Now, the environment variables to log experiments in our MLFlow instances are already injected from the Vault secrets.
+   So, there is no need to enter them manually.
+   You can check these vars from your command line in your deployment:
+
+   .. code-block:: console
+      
+      echo $MLFLOW_TRACKING_USERNAME
+      echo $MLFLOW_TRACKING_PASSWORD
+      echo $MLFLOW_TRACKING_URI
+
    .. code-block:: python
 
       import mlflow
-      # IMPORTANT CONSTANTS TO DEFINE
-      # MLflow User Credentials
-      MLFLOW_TRACKING_USERNAME = input('Enter your username: ')
-      MLFLOW_TRACKING_PASSWORD =  getpass.getpass()  # inject password by typing manually
-      # for MLFLow-way we have to set the following environment variables
-      os.environ['MLFLOW_TRACKING_USERNAME'] = MLFLOW_TRACKING_USERNAME
-      os.environ['MLFLOW_TRACKING_PASSWORD'] = MLFLOW_TRACKING_PASSWORD
-      # Remote MLflow server
-      MLFLOW_REMOTE_SERVER="https://mlflow.cloud.ai4eosc.eu"
-      #Set the MLflow server and backend and artifact stores
-      mlflow.set_tracking_uri(MLFLOW_REMOTE_SERVER)
+     
       # Name of the experiment (e.g. name of the code repository)
       MLFLOW_EXPERIMENT_NAME="your_experiment_name"
       # Name of the model to train. HAS TO BE UNIQUE, Please, DEFINE ONE!
@@ -129,6 +129,9 @@ to serve as reference, as well a `specific integration of mlflow <https://codeba
 
 For more information, see the `Getting Started <https://mlflow.org/docs/latest/getting-started/index.html>`__
 guide in the official MLflow docs.
+Additionally, you can go to AI4EOSC YouTube channel and check these videos on MLFlow: 
+1) `How to create an account in MLFlow: <https://www.youtube.com/watch?v=LmjZgNprr00>`__
+2) `How to Log an experiment in MLFlow: <https://www.youtube.com/watch?v=U1ttrdcd4VU&t=3s>`__
 
 Finally, to save the models in the registry, you have to add the following code in your
 deployment:
@@ -140,7 +143,7 @@ deployment:
       f"runs:/{run_id}/artifacts/", MLFLOW_MODEL_NAME
    )
 
-3. MLflow AutoLogging and CustomLogging
+1. MLflow AutoLogging and CustomLogging
 ---------------------------------------
 
 There exists two Logging options as illustrated in the following Figures.
@@ -159,7 +162,7 @@ There exists two Logging options as illustrated in the following Figures.
    # Log Param (Log a parameter under the current run): 
    mlflow.log_param(“batch_size”, 64)
    # Log Params (Log multiple parameter under the current run):    
-   mlflow.log_param({"hidden_units": 100,
+   mlflow.log_params({"hidden_units": 100,
 		               "activation": "relu",
 		               "batch_size”:64,
 		                "validation_split": 0.2})
