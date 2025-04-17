@@ -23,6 +23,7 @@ project = 'AI4OS/AI4EOSC'
 copyright = '2025, AI4EOSC consortium'
 author = 'AI4EOSC consortium'
 
+
 # The short X.Y version
 version = ''
 # The full version, including alpha/beta/rc tags
