@@ -82,9 +82,12 @@ For this you have to do the following steps in your deployment.
    .. code-block:: python
 
       import mlflow
+      
+      mlflow.set_experiment(experiment_name='your_experiment_name')
      
-      # Name of the experiment (e.g. name of the code repository)
+      # or Name of the experiment (e.g. name of the code repository)
       MLFLOW_EXPERIMENT_NAME="your_experiment_name"
+
       # Name of the model to train. HAS TO BE UNIQUE, Please, DEFINE ONE!
       MLFLOW_MODEL_NAME="your_model_name"
 
@@ -96,7 +99,7 @@ For this you have to do the following steps in your deployment.
          history = model.fit(X_train, y_train, epochs=100, batch_size=64,
                      validation_data=(X_val, y_val), callbacks=[early_stopping])
 
-         with mlflow.start_run(): # mlflow starting command
+         with mlflow.start_run(run_name="run-demo") as run: # mlflow starting command
 
             # Log metrics to MLflow for each epoch
              batch_size = 10  # Log metrics every 10 epochs (adjust as needed)
