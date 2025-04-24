@@ -112,5 +112,12 @@ We will soon add a simple example for reference!
 
 
 For more information on running a training, please follow the official `NVFLARE documentation <https://nvflare.readthedocs.io/en/main/index.html>`__.
+How to Convert Your Code to a Federated Learning (FL) Version
+=============================================================
 
-We will soon add a simple example for reference! 🚀
+Please take a look at the following examples:
+
+- To get started with NVFLARE, check out the examples in the `getting_started <https://github.com/NVIDIA/NVFlare/tree/fd3b74ff4e561447e6769259dd4903174e466a3e/examples/getting_started>`_ directory of the NVFLARE repository.
+- For examples demonstrating how to transition simple ML/DL projects to FL with NVFLARE, refer to `ml-to-fl <https://github.com/NVIDIA/NVFlare/tree/fd3b74ff4e561447e6769259dd4903174e466a3e/examples/hello-world/ml-to-fl>`_.
+- A simple example can be found `here <https://github.com/ai4os/ai4os-nvflare-test>`_.
+- - You can explore the `phyto-plankton-classification <https://dashboard.cloud.ai4eosc.eu/catalog/modules/phyto-plankton-classification>`_ module on the AI4EOSC Dashboard, and see how we adapted it for NVFLARE `here <https://github.com/ai4os-hub/phyto-plankton-classification/tree/tf2.19_nvflare/nvflare>`_.
