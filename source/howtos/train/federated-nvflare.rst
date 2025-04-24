@@ -112,6 +112,7 @@ We will soon add a simple example for reference!
 
 
 For more information on running a training, please follow the official `NVFLARE documentation <https://nvflare.readthedocs.io/en/main/index.html>`__.
+
 How to Convert Your Code to a Federated Learning (FL) Version
 =============================================================
 
