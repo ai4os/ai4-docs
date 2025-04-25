@@ -1,3 +1,5 @@
+:orphan:
+
 Federated Learning with NVFLARE
 ===============================
 
@@ -7,9 +9,6 @@ In this tutorial, we will guide you on how to use the Federated Learning (FL) se
    :class: info
 
    🔒 This tutorial requires :ref:`full authentication <getting-started/register:Full authentication>`.
-
-
-
 
 
 Deploying a Federated server
@@ -30,95 +29,99 @@ In this particular case, you will need to pay attention to:
   
 .. note::
 
-    If you want to give another user access to sign in to the **NVFlare Dashboard** and register sites to the project, please make sure that during the deployment creation, you set **'Make project public'** to true. Otherwise, you can only register the clients from the command line.
+    If you want to give another user access to sign in to the **NVFlare Dashboard** and register sites to the project, please make sure that during the deployment creation, you set **'Make project public'** to ``True``. Otherwise, you can only register the clients from the command line.
 
 
 .. image:: /_static/images/dashboard/configure_nvflare_1.png
 
-Federated learning Dashboard in AI4EOSC
----------------------------------------
+
+Preparing the training environment
+----------------------------------
 
 In the :ref:`deployments list <dashboard-manage-deployments>` you will be able to see your newly created NVFLARE instance.
+
+The NVFLARE endpoints
+^^^^^^^^^^^^^^^^^^^^^
+
 Clicking the ``Quick access`` button, you can see two endpoints:
 
 * **DASHBOARD**: 
   
-   You will directly enter the NVFLARE Dashboard. Enter your credentials from the configuration and voilá, you’re in as the project admin! 
-   This dashboard is used to generate the startup kits for the server, admins and clients. The **startup kits** include the configurations and certificates required to establish secure connections between the FL servers, FL clients, and admin clients. These files are essential for verifying identity and enforcing authorization policies between the server and clients.
-   To allow organization admins to register their sites, share the dashboard link with them. Organization  Admins can access the dashboard through this link and click 'Sign Up' to register themself and their sites.
+  This allows you to access the NVFLARE Dashboard. 
+  
+  .. image:: /_static/images/endpoints/nvflare_dashboard_login.png
+  
+  Enter your credentials from the configuration step and voilá, you're in as the project admin! 
 
-   .. note::
-   
-      A project can have multiple admins. The **Project Admin** is the person who initially created the deployment within the AI4EOSC project. This admin has the authority to approve additional admins as well as their associated sites.
-      Each organization participating in the federated training should also designate an **Organization Admin (Org Admin)**. Org Admins are responsible for registering their own organization's sites within the project. There are other rolls that you can check `here <https://nvflare.readthedocs.io/en/2.4/user_guide/dashboard_ui.html#nvflare-dashboard-ui>`__. 
-
-   .. image:: /_static/images/dashboard/nvflare_dashboard_login.png
-
-   Follow the instructions in `NVFlare documentation <https://nvflare.readthedocs.io/en/2.4/user_guide/dashboard_ui.html#nvflare-dashboard-ui>`__ to sign up and register the sites.
-
-   .. note::
-
-      To register sites, ensure the Role is set to '**Org Admin**'. On the next page, the Org Admin can register their sites, specifying the number of GPUs and the memory capacity for each GPU.
-      After completing registration, users must wait for the project's main admin to approve their roles and associated sites.
-      Once approved, the organization admins can log into the dashboard, download the startup kits for their sites, and obtain the Docker image shared by the project admin for the project code. Using these startup kits, they can then launch their sites.
-
-   .. image:: /_static/images/dashboard/nvflare_dashboard_console.png
-      
+  This dashboard is used to generate **the startup kits** for the server, admins and clients.
+  The startup kits include the configurations and certificates required to establish secure connections between the FL servers, FL clients, and admin clients.
+  These files are essential for verifying identity and enforcing authorization policies between the server and clients.
 
 * **SERVER-JUPYTER:** 
   
-   Provides access to a JupyterLab environment for the server. The password to access this JupyterLab environment is the one provided by the admin during deployment. The server's startup kit is automatically downloaded to the workspace directory within JupyterLab, and the server is already running.
+  This provides access to a JupyterLab environment for the server, also protected by your admin credentials.
+  The server's startup kit is automatically downloaded to the workspace directory within JupyterLab, and the server is already running.
 
-   .. note::
-   
-      If the server is stopped for any reason during the project, you can restart it by executing the script
+  If the server is stopped for any reason during the project, you can restart it by executing the following script:
 
-   .. code-block:: python
+  .. code-block:: console
 
-      workspace/server_address_folder/startup/start.sh 
+      $ sh workspace/server_address_folder/startup/start.sh 
 
+Adding new clients to the training
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Connecting the clients and login to Admin console
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+A project can have multiple admins (among `other roles <https://nvflare.readthedocs.io/en/2.4/user_guide/dashboard_ui.html#nvflare-dashboard-ui>`__). 
+The **Project Admin** is the person who initially created the deployment within the AI4EOSC project.
+Each organization participating in the federated training should also designate an **Organization Admin** (Org Admin). Org Admins are responsible for registering their own organization's sites within the project. 
+The Project Admin has the authority to approve Organization Admins as well as their associated sites.
 
-After downloading and unzipping the startup package, the Admin can run the following command to start the sites from anywhere in the world and connect to the server hosted on the AI4EOSC Dashboard.
+To allow organization admins to register their sites, share the dashboard link with them.
+Organization Admins can access the dashboard through this link and click ``Sign Up`` to register themselves and their sites (`detailed instructions <https://nvflare.readthedocs.io/en/2.4/user_guide/dashboard_ui.html#nvflare-dashboard-ui>`__).
+To register sites, ensure the Role is set to **'Org Admin'**. On the next page, the Org Admin can register their sites, specifying the number of GPUs and the memory capacity for each GPU.
 
-.. code-block:: python
+After completing registration, users must wait for the project's main admin to approve their roles and associated sites.
+Once approved, the organization admins can log into the dashboard, download the startup kits for their sites, and obtain the Docker image shared by the project admin for the project code.
+Using these startup kits, they can then launch their sites.
 
-   ./site_name_folder/startup/start.sh 
+.. image:: /_static/images/endpoints/nvflare_dashboard_console.png
 
-The Admin can also start the Flare Console by running the following command from the downloaded Flare Console startup kit from anywhere in the world—including via the AI4EOSC Dashboard where the server is running.
+After downloading and unzipping the startup package, the Admin can run the following command to start the sites from anywhere in the world and connect to the server hosted in the AI4OS Platform.
 
-.. code-block:: python
+.. code-block:: console
 
-   ./admin_email/startup/fl_admin.sh 
+    $ sh ./site_name_folder/startup/start.sh 
+
+The Admin can also start the Flare Console by running the following command from the downloaded Flare Console startup kit from anywhere in the world.
+
+.. code-block:: console
+
+    $ sh ./admin_email/startup/fl_admin.sh 
 
 You will be prompted to enter a username. Use the email address provided by the admin during registration.
 
-From the admin console, the admin can orchestrate the FL study—this includes starting and stopping the server and clients, checking their status, deploying applications, and managing FL experiments. You can check the list of available admin console commands `here <https://nvflare.readthedocs.io/en/main/real_world_fl/operation.html>`__. 
+From the admin console, the admin can orchestrate the FL study—this includes starting and stopping the server and clients, checking their status, deploying applications, and managing FL experiments (`available commands <https://nvflare.readthedocs.io/en/main/real_world_fl/operation.html>`__). 
 
 .. note::
 
-   To maintain a consistent environment, it is advised that the project Admin create a Docker image containing all the necessary dependencies and configurations, and provide it during the deployment of the server on the AI4EOSC Dashboard. This approach ensures reproducibility and simplifies deployment across different sites.
+  To maintain a consistent environment, it is advised that the project Admin create a Docker image containing all the necessary dependencies and configurations, and provide it during the deployment of the server on the AI4EOSC Dashboard. This approach ensures reproducibility and simplifies deployment across different sites.
 
-.. image:: /_static/images/dashboard/configure_nvflare_2.png
+  By default we provide such an image during the configuration step:
+
+  .. image:: /_static/images/dashboard/configure_nvflare_2.png
 
 
-Federated learning training in AI4EOSC
+Start your Federated Learning training
 --------------------------------------
-Once a sufficient number of sites are connected to the server, any Admin can log in to the console and submit an FL job. Before doing so, they need to prepare the FL job by converting their existing ML/DL code into an FL-compatible version using NVFLARE. 
-We will soon add a simple example for reference! 
 
-
-
-For more information on running a training, please follow the official `NVFLARE documentation <https://nvflare.readthedocs.io/en/main/index.html>`__.
-
-How to Convert Your Code to a Federated Learning (FL) Version
-=============================================================
+Once a sufficient number of sites are connected to the server, any Admin can log in to the console and submit an FL job.
+Before doing so, they need to prepare the FL job by converting their existing ML/DL code into an FL-compatible version using NVFLARE. 
 
 Please take a look at the following examples:
 
-- To get started with NVFLARE, check out the examples in the `getting_started <https://github.com/NVIDIA/NVFlare/tree/fd3b74ff4e561447e6769259dd4903174e466a3e/examples/getting_started>`_ directory of the NVFLARE repository.
-- For examples demonstrating how to transition simple ML/DL projects to FL with NVFLARE, refer to `ml-to-fl <https://github.com/NVIDIA/NVFlare/tree/fd3b74ff4e561447e6769259dd4903174e466a3e/examples/hello-world/ml-to-fl>`_.
-- A simple example can be found `here <https://github.com/ai4os/ai4os-nvflare-test?tab=readme-ov-file#running-a-sample-fl-job>`_.
-- You can explore the `phyto-plankton-classification <https://dashboard.cloud.ai4eosc.eu/catalog/modules/phyto-plankton-classification>`_ module on the AI4EOSC Dashboard, and see how we adapted it for NVFLARE `here <https://github.com/ai4os-hub/phyto-plankton-classification/tree/tf2.19_nvflare/nvflare>`_.
+- Check the `getting_started <https://github.com/NVIDIA/NVFlare/tree/fd3b74ff4e561447e6769259dd4903174e466a3e/examples/getting_started>`__ examples in the NVFLARE repository.
+- Check the `ml-to-fl <https://github.com/NVIDIA/NVFlare/tree/fd3b74ff4e561447e6769259dd4903174e466a3e/examples/hello-world/ml-to-fl>`__ examples demonstrating how to transition simple ML/DL projects to NVFLARE.
+- We provide a **simple** `hello numpy example  <https://github.com/ai4os/ai4os-nvflare-test?tab=readme-ov-file#running-a-sample-fl-job>`__.
+- We provide a **advanced** example, where an existing `phyto-plankton-classification <https://dashboard.cloud.ai4eosc.eu/catalog/modules/phyto-plankton-classification>`_ AI4OS module is `adapted to NVFLARE <https://github.com/ai4os-hub/phyto-plankton-classification/tree/tf2.19_nvflare/nvflare>`__.
+
+For more information, please refer to the official `NVFLARE documentation <https://nvflare.readthedocs.io/en/main/index.html>`__.

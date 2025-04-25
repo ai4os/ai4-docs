@@ -1,3 +1,5 @@
+:orphan:
+
 Federated Learning with Flower
 ==============================
 
@@ -108,14 +110,14 @@ Connecting the clients
 In order to connect the clients to the FL server deployed within the platform, two approaches can be followed depending on where the clients are running:
 
 - **Clients running locally on the user's resources or on servers external to the platform.**
-   This is the most classic approach as in general in a FL training the data should not be leave the server where they are stored for training.
-   Note that in most cases privacy restrictions are applied on them that prevent their centralization.
-   Thus, in order to connect each client to the server, the clients must know the UUID of the deployment where the FL server is deployed as well as the datacenter on which it is running (IFCA or IISAS).
-   Then, you can add the ``call_credentials`` parameter if the server has been created using tokens, as will be explained in the following section.
+  This is the most classic approach as in general in a FL training the data should not be leave the server where they are stored for training.
+  Note that in most cases privacy restrictions are applied on them that prevent their centralization.
+  Thus, in order to connect each client to the server, the clients must know the UUID of the deployment where the FL server is deployed as well as the datacenter on which it is running (IFCA or IISAS).
+  Then, you can add the ``call_credentials`` parameter if the server has been created using tokens, as will be explained in the following section.
 
-   In this line, each client can connect to the server as follows:
+  In this line, each client can connect to the server as follows:
 
-   .. code-block:: python
+  .. code-block:: python
 
       import certifi
       # Start -> connecting with the server
@@ -123,32 +125,32 @@ In order to connect the clients to the FL server deployed within the platform, t
       data_center = "****" # The value for the data center can be ifca or iisas (lowercase)
       end_point = f"ide-{uuid}.{data_center}-deployments.cloud.ai4eosc.eu"
       fl.client.start_client(
-         server_address=f"{endpoint}:443",
-         client=Client(),
-         root_certificates=Path(certifi.where()).read_bytes(),
+          server_address=f"{endpoint}:443",
+          client=Client(),
+          root_certificates=Path(certifi.where()).read_bytes(),
       )
 
 
 - **Clients running on different deployments of the platform.**
-   If you are running your clients from different deployments created in the platform, in order to connect to the server you have to first find the IP of the server form the server side.
-   In this line, you first go to the deployment in which you have started the server, open a terminal an run:
+  If you are running your clients from different deployments created in the platform, in order to connect to the server you have to first find the IP of the server form the server side.
+  In this line, you first go to the deployment in which you have started the server, open a terminal an run:
 
-   .. code-block:: bash
+  .. code-block:: bash
 
-       env | grep NOMAD_HOST_ADDR_fedserver
+      env | grep NOMAD_HOST_ADDR_fedserver
 
-   This will provide the IP and the port in which the FL server is running.
+  This will provide the IP and the port in which the FL server is running.
 
-   Then, from the client side, you can start the client as follows (again, you can add the ``call_credentials`` parameter if needed), introducing the IP and port from the server side as ``server_address``:
+  Then, from the client side, you can start the client as follows (again, you can add the ``call_credentials`` parameter if needed), introducing the IP and port from the server side as ``server_address``:
 
-   .. code-block:: python
+  .. code-block:: python
 
-      # Start -> connecting with the server
-      server_host = "*********************"  # FILL IN WITH THE SERVER IP AND PORT FOR FL (server side)
-      fl.client.start_client(
-         server_address=server_ip,
-         client=Client()
-      )
+    # Start -> connecting with the server
+    server_host = "*********************"  # FILL IN WITH THE SERVER IP AND PORT FOR FL (server side)
+    fl.client.start_client(
+        server_address=server_ip,
+        client=Client()
+    )
 
 
 Client-server authentication
