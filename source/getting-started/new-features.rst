@@ -10,7 +10,7 @@ notified here.
 .. Template
 .. * 📘 new :doc:`... <...>` page (``2024-04-03``)
 
-* 📈 we started supporting :ref:`Federated Learning trainings with NVFLARE </howtos/train/federated-nvflare>` (``2025-04-07``)
+* 📈 we started supporting :doc:`Federated Learning trainings with NVFLARE </howtos/train/federated-nvflare>` (``2025-04-07``)
 * 📈 we changed the Dashboard layout and added an LLM catalog section (``2025-04-04``)
 * 📈 we added support for :ref:`Vision-enabled LLMs <reference/llm:Use Vision models>` (``2025-03-19``)
 * 📈 we started support deploying :doc:`your own LLM instance </howtos/deploy/llm>` (``2025-02-28``)

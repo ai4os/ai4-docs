@@ -15,17 +15,11 @@ federated learning training.
 
         Learn how to train a model with the Dashboard.
 
-    .. grid-item-card:: :material-outlined:`hub;1.5em`  Run a federated learning training using Flower
-        :link: federated-flower
+    .. grid-item-card:: :material-outlined:`hub;1.5em`  Run a federated learning training
+        :link: federated
         :link-type: doc
 
-        Learn how to make a federated learning training using the Flower framework.
-
-    .. grid-item-card:: :material-outlined:`hub;1.5em`  Run a federated learning training using NVFLARE
-        :link: federated-nvflare
-        :link-type: doc
-
-        Learn how to make a federated learning training using the NVFLARE framework.
+        Learn how to make a federated learning training, both with the Flower and NVFLARE frameworks
 
     .. grid-item-card:: :material-outlined:`sell;1.5em`  Label your images with CVAT
         :link: cvat
@@ -46,7 +40,6 @@ federated learning training.
    :hidden:
 
    Train a model with the Dashboard <dashboard>
-   Run a federated learning training (Flower) <federated-flower>
-   Run a federated learning training (NVFLARE) <federated-nvflare>
+   Run a federated learning training <federated>
    Label your images with CVAT <cvat>
    Use rclone to sync your dataset (advanced) <rclone>
