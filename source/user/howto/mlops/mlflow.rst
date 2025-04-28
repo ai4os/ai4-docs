@@ -168,7 +168,7 @@ There exists two Logging options as illustrated in the following Figures.
    mlflow.log_params({"hidden_units": 100,
 		               "activation": "relu",
 		               "batch_size”:64,
-		                "validation_split": 0.2})
+		               "validation_split": 0.2})
    # Log Metric  (Log a metric under the current run): 
    mlflow.log_metric(“mse”, 90.00)
    # Log Metric  (Log multiple metrics under the current run): 
