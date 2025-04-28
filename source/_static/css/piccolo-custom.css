@@ -1,0 +1,163 @@
+/* Define accent color for light and dark mode */
+:root {
+  --ai4eosc-light: #68c5ce;
+  --ai4eosc-dark: #008792;
+}
+
+html[data-mode="light"] {
+  --mainNavColor: var(--ai4eosc-dark);
+  --ai4Color: var(--ai4eosc-dark);
+}
+
+html[data-mode^="dark"] {
+  --mainNavColor: var(--ai4eosc-dark);
+  --ai4Color: var(--ai4eosc-light);
+}
+
+a {
+  color: var(--ai4Color);
+}
+
+h1, h2, h3, h4, h5, h6 { /* headers */
+  color: var(--ai4Color);
+}
+
+/* Improve inline code display */
+code.literal {
+  color: rgba(57, 56, 56, 1) !important;
+  background-color: rgba(223, 218, 218, 1) !important;
+  border-radius: 3px;
+  border: 1px solid rgba(147, 147, 147, 1);
+  padding-left: 3px;
+  padding-right: 3px;
+  padding-top: 0.8px !important;
+  padding-bottom: 0.8px !important;
+}
+
+html[data-mode^="dark"] code.literal {
+  color: rgba(255, 255, 255, 1) !important;
+  background-color: rgba(57, 56, 56, 1) !important;
+  border: 1px solid rgb(187, 187, 187) !important;
+}
+
+/* Improve code blocks display */
+div.highlight {
+  background-color: rgba(223, 218, 218, 1);
+  border: 1px solid rgba(147, 147, 147, 1);
+}
+
+/* Round image corners */
+img {
+  border-radius: 10px;
+}
+
+/* Smaller dropdown */
+details.sd-dropdown * {
+  font-size: 95% !important;
+}
+
+/* Prettier scroll bar */
+::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #ababab;
+  border-radius: 10px;
+  border: 2px solid transparent;
+  background-clip: padding-box;
+}
+
+::-webkit-scrollbar-thumb:hover{
+  border: 0;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* Improve left sidebar */
+@media (min-width: 1500px) {
+  div.sphinxsidebar {
+    width: 300px;
+  }
+}
+
+div.sphinxsidebar p.caption {
+  font-weight: bold;
+  color: var(--ai4Color) ;
+}
+
+a.toggle_right_sidebar span {
+  color: var(--ai4Color) !important;
+}
+
+/* Improve right sidebar */
+@media (min-width: 1500px) {
+  div#right_sidebar {
+    width: 350px;
+  }
+}
+
+a.toggle_right_sidebar span {
+  color: var(--ai4Color);
+}
+
+/* Improve info admonitions (box, links) */
+div.info.admonition {
+  color: #014e55 !important;
+  background-color: #d4e7e8 !important;
+  border: 1px solid #014e55;
+}
+
+html[data-mode^="dark"] div.info.admonition {
+  color: #c1e2e6 !important;
+  background-color: #044447 !important;
+  border: 1px solid #c1e2e6;
+}
+
+div.info.admonition a {
+  color: inherit !important;
+  text-decoration: underline !important;
+  font-weight: bold;
+}
+
+/* Improve cards and dropdowns */
+div.sd-card,
+details.sd-dropdown {
+  border: 1px solid rgba(147, 147, 147, 1) !important;
+}
+
+/* Improve tables (captions, headers) */
+caption, figcaption * {
+  text-align: center;
+  padding-bottom: 10px;
+  font-weight: bold;
+  font-style: italic;
+  font-size: 90%;
+}
+
+html[data-mode="light"] caption,
+html[data-mode="light"] figcaption {
+  color: #585858 !important;
+}
+
+html[data-mode^="dark"] caption,
+html[data-mode^="dark"] figcaption {
+  color: #b4b4b4 !important;
+}
+
+html[data-mode="light"] thead {
+  background-color: #dfdfdf !important;
+}
+html[data-mode^="dark"] thead {
+  background-color: #696969 !important;
+}
+
+/* Add customizations for FontsAwesome "youtube" icon */
+.youtube-icon {
+  color: #fe0135 !important;
+  animation: fa-bounce 1s infinite;
+  /* font-size: 2em !important; */ /* Does not work inside dropdows */
+}

@@ -25,9 +25,9 @@ author = 'AI4EOSC consortium'
 
 
 # The short X.Y version
-version = '1'
+version = ''
 # The full version, including alpha/beta/rc tags
-release = '1'
+release = ''
 
 
 # -- General configuration ---------------------------------------------------
@@ -44,7 +44,14 @@ extensions = [
     'sphinx_markdown_tables',
     'sphinx.ext.autosectionlabel',
     'sphinx_design',  # for fonts-awesome icons
+    'sphinx_copybutton',  # copy button for code blocks
 ]
+
+# In code blocks, the copy button will exclude:
+#   .lineos: line numbers
+#   .gp: prompts
+#   .go: console outputs
+copybutton_exclude = '.linenos, .gp, .go'
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
@@ -52,7 +59,6 @@ templates_path = ['_templates']
 source_parsers = {
     '.md': 'recommonmark.parser.CommonMarkParser',
 }
-
 
 # The suffix(es) of source filenames.
 # You can specify multiple suffix as a list of string:
@@ -93,16 +99,22 @@ pygments_style = 'sphinx'
 #     'collapse_navigation': False,
 # }
 
-html_theme = 'sphinx_material'
+html_theme = 'piccolo_theme'
+# html_theme_options = {
+#     # 'color_primary': 'teal',
+#     'globaltoc_depth': 4,
+#     'globaltoc_collapse': True,
+#     'html_minify': True,
+#     'css_minify': True,
+# }
+
 html_theme_options = {
-    # 'color_primary': 'teal',
-    'globaltoc_depth': 3,
-    'globaltoc_collapse': True,
-    'html_minify': True,
-    'css_minify': True,
+    "globaltoc_collapse": False,
+    "show_theme_credit": False,
 }
 
-html_logo = "_static/images/logo.png"
+
+html_logo = "_static/images/ai4eosc/logo.png"
 html_show_sourcelink = False
 
 # Add any paths that contain custom static files (such as style sheets) here,
@@ -111,8 +123,8 @@ html_show_sourcelink = False
 html_static_path = ['_static']
 
 html_css_files = [
-    'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css',
-    'css/custom.css',
+    'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css',
+    'css/piccolo-custom.css',
     ]
 
 # Custom sidebar templates, must be a dictionary that maps document names
@@ -124,9 +136,9 @@ html_css_files = [
 # 'searchbox.html']``.
 #
 # html_sidebars = {}
-html_sidebars = {
-    "**": ["logo-text.html", "globaltoc.html", "localtoc.html", "searchbox.html"]
-}
+# html_sidebars = {
+#     "**": ["logo-text.html", "globaltoc.html", "localtoc.html", "searchbox.html"]
+# }
 
 html_show_sphinx = False
 
@@ -198,3 +210,13 @@ todo_emit_warnings = True
 # -- Options for autosectionlabel extension ----------------------------------------------
 
 autosectionlabel_prefix_document = True
+
+
+# Enable reloading custom.css even if no changes where made to the RST
+# ref: https://github.com/sphinx-doc/sphinx/issues/2090#issuecomment-572902572
+
+def env_get_outdated(app, env, added, changed, removed):
+    return ['index']
+
+def setup(app):
+    app.connect('env-get-outdated', env_get_outdated)

@@ -1,11 +1,18 @@
 # Documentation repository
 
+[![Documentation Status](https://readthedocs.org/projects/ai4-docs/badge/?version=latest)](https://docs.ai4os.eu/en/latest/?badge=latest)
+
+
 This repository contains software documentations, guides, tutorials, logbooks
 and similar documents produced to interact with the AI4OS stack.
 
 This documentation is deployed at:  http://docs.ai4eosc.eu/
 
 If you want to build the documentation locally for development, run:
-```console
+```bash
 make html
 ```
+
+This will create a `build/html` folder with the built documentation.
+
+It's recommended to periodically run `check_links.py` to make sure all the URL referenced in the documentation are indeed up and running.

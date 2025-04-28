@@ -1,0 +1,90 @@
+/* Improve the default contrast of links in the sphinx-material theme */
+a.reference.internal,
+a.reference.external {
+  color: rgb(50, 156, 175);
+}
+
+a.reference.internal:hover,
+a.reference.external:hover {
+  color: rgb(73, 218, 247);
+}
+
+/* Improve inline code display */
+code.literal {
+  color: rgba(57, 56, 56, 1);
+  background-color: rgba(223, 218, 218, 1);
+  border-radius: 3px;
+  border: 1px solid rgba(147, 147, 147, 1);
+  padding-left: 3px;
+  padding-right: 3px;
+}
+
+/* Improve code blocks display */
+div.highlight {
+  background-color: rgba(223, 218, 218, 1);
+  border: 1px solid rgba(147, 147, 147, 1);
+}
+
+/* Round image corners */
+img {
+  border-radius: 10px;
+}
+
+/* Smaller admonitions */
+div.admonition {
+  font-size: 80% !important;
+}
+
+p.admonition-title {
+    line-height: 1.2;
+    margin:-10px 0 -10px 0;
+}
+
+details.sd-dropdown {
+  font-size: 80% !important;
+}
+
+/* Make nicer global TOC */
+/* For smaller screens, default to standard layout which is mobile friendly */
+@media screen and (min-width: 1800px) {
+
+  /* Lighter color in global TOC */
+  nav.md-nav--primary {
+    color: rgba(38,38,66,0.7)
+  }
+
+  /* Smaller fonts in both TOCs (global and contents) */
+  nav.md-nav {
+    font-size: 15px;
+  }
+
+  /* Properly align everything */
+  div.md-main__inner {
+    display: inline-flex;
+    max-width: none;
+  }
+  div.md-sidebar--primary {
+    width: 20rem;
+  }
+  div.md-sidebar--secondary {
+    margin-left: 99%;
+    width: 15rem;
+  }
+  div.md-content {
+    margin-left: 22rem;
+    margin-right: 22rem;
+    max-width: 1000px;
+  }
+
+}
+
+/* Make ai4-metadata options table slightly wider  */
+table {
+  width: 600px !important;
+}
+
+
+/* Allow to remove default admonition icon (pencil) */
+.remove-default-icon::before {
+  content: none !important;
+}
