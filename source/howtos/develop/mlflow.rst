@@ -205,7 +205,7 @@ There exists two Logging options as illustrated in the following Figures.
   # Add tags to a specific model version
   client.set_model_version_tag(
       name=MLFLOW_MODEL_NAME,
-      version=model_version,
+      version=latest_version,
       key="deployment_status",
       value="active"
   )
@@ -221,7 +221,7 @@ There exists two Logging options as illustrated in the following Figures.
   for key, value in tags.items():
       client.set_model_version_tag(
           name=MLFLOW_MODEL_NAME,
-          version=model_version,
+          version=latest_version,
           key=key,
           value=value
       )
@@ -237,14 +237,14 @@ There exists two Logging options as illustrated in the following Figures.
   client.set_registered_model_alias(
       name=MLFLOW_MODEL_NAME,
       alias="champion",
-      version=model_version
+      version=latest_version
   )
 
 * Loading the Production (Champion) Model
   You can add tags to model versions to include additional metadata:
 
 .. code-block:: python
-   
+
    # Load the champion model for inference
    champion_model = mlflow.pyfunc.load_model(
       model_uri=f"models:/{MLFLOW_MODEL_NAME}@champion"
