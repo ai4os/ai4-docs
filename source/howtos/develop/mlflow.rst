@@ -40,13 +40,13 @@ Finally you will be shown your user settings:
 Once you are ready, proceed to the new step by clicking in ``Go to mlflow``.
 
 
-1. Login the MLflow UI
+2. Login the MLflow UI
 ----------------------
 
 In the `MLflow login page <https://mlflow.cloud.ai4eosc.eu/signup>`__ you will be asked
 to input your credentials:
 
-* ``Username``: the email associated with your :doc:`authentication </user/overview/auth>`
+* ``Username``: the email associated with your authentication account
   account
 * ``Password``: the password you choose in step 1.
 
@@ -56,7 +56,7 @@ Once you login, you will see the default MLflow UI as follows:
    :width: 1000 px
 
 
-1. Log your Experiments
+3. Log your Experiments
 -----------------------
 
 Now you are ready to start logging in your experiments and saving the (best)
@@ -189,8 +189,8 @@ There exists two Logging options as illustrated in the following Figures.
    Ax.plot ([1,2],[4,5])
    mlflow.log_figure(fig, “fig_plot.png”)
 
-1. MLflow Model Versioning and Production Deployment
----------------------------------------
+4. MLflow Model Versioning and Production Deployment
+----------------------------------------------------
 
 * Adding Tags to Model Versions
 You can add tags to model versions to include additional metadata:
