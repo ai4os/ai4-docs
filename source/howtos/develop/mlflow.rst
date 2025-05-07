@@ -22,7 +22,7 @@ In case you already have a MLflow account, you can proceed to step 2.
 
 Go to the `Sign Up page <https://mlflow.cloud.ai4eosc.eu/signup>`__ for self registration.
 
-.. image:: /_static/images/mlflow/mlflow_self_registration.png
+.. image:: /_static/images/mlflow/self-registration.png
    :width: 500 px
 
 Then, in the next window:
@@ -52,7 +52,7 @@ to input your credentials:
 
 Once you login, you will see the default MLflow UI as follows:
 
-.. image:: /_static/images/mlflow/mlflow_ui.png 
+.. image:: /_static/images/mlflow/ui.png 
    :width: 1000 px
 
 
@@ -156,10 +156,10 @@ deployment:
 
 There exists two Logging options as illustrated in the following Figures.
 
-.. image:: /_static/images/mlflow/mlflow_autolog_quickview.png
+.. image:: /_static/images/mlflow/autolog-quickview.png
    :width: 1000 px
 
-.. image:: /_static/images/mlflow/mlflow_custom_log_quickview.png
+.. image:: /_static/images/mlflow/custom-log-quickview.png
    :width: 1000 px
 
 * Important commands to know
