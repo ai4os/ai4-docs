@@ -1,18 +1,13 @@
 Experiment Tracking and Model versioning in MLflow
 ==================================================
 
-.. admonition:: Requirements
-   :class: info
-
-   🔒 This tutorial requires :ref:`full authentication <getting-started/register:Full authentication>`.
-
 We currently have two instances of MLflow running:
 
 * `MLflow AI4EOSC <https://mlflow.cloud.ai4eosc.eu>`__
-* `MLflow iMagine <https://mlflow.cloud.imagine-ai.eu>`__
+* `MLflow iMagine <https://mlflow.dev.imagine.eu>`__
 
 When following this tutorial, adapt the MLflow links depending on which
-:doc:`Project or Virtual Organization you belong to </reference/user-access-levels>`.
+:doc:`Virtual Organization you belong to </user/overview/auth>`.
 
 In case you already have a MLflow account, you can proceed to step 2.
 
@@ -20,12 +15,9 @@ In case you already have a MLflow account, you can proceed to step 2.
 1. Register for an account in MLflow
 -------------------------------------
 
-Go to the Sign Up page for self registration in MLflow:
+Go to the `Sign Up page <https://mlflow.cloud.ai4eosc.eu/signup>`__ for self registration.
 
-* AI4EOSC: `Sign Up page <https://mlflow.cloud.ai4eosc.eu/signup>`__
-* iMagine: `Sign Up page <https://mlflow.cloud.imagine-ai.eu/signup>`__
-
-.. image:: /_static/images/mlflow/self-registration.png
+.. image:: /_static/images/mlflow_self_registration.png
    :width: 500 px
 
 Then, in the next window:
@@ -49,14 +41,13 @@ Once you are ready, proceed to the new step by clicking in ``Go to mlflow``.
 In the `MLflow login page <https://mlflow.cloud.ai4eosc.eu/signup>`__ you will be asked
 to input your credentials:
 
-* ``Username``: the email associated with your :doc:`authentication
-  </getting-started/register>`
+* ``Username``: the email associated with your :doc:`authentication </user/overview/auth>`
   account
 * ``Password``: the password you choose in step 1.
 
 Once you login, you will see the default MLflow UI as follows:
 
-.. image:: /_static/images/mlflow/ui.png
+.. image:: /_static/images/mlflow_ui.png
    :width: 1000 px
 
 
@@ -71,29 +62,32 @@ For this you have to do the following steps in your deployment.
 1. First install mlflow client from the IDE that you are using to build your AI model,
    by executing:
 
-   .. code-block:: console
+  .. code-block:: console
 
-       $ pip install mlflow[extras]
+      pip install mlflow[extras]
 
 2. Edit your code to insert MLflow constants (env vars) and statements so that your
    experiments will be logged to the tracking server we deployed.
 
+   Now, the environment variables to log experiments in our MLFlow instances are already injected from the Vault secrets.
+   So, there is no need to enter them manually.
+   You can check these vars from your command line in your deployment:
+
+   .. code-block:: console
+      
+      echo $MLFLOW_TRACKING_USERNAME
+      echo $MLFLOW_TRACKING_PASSWORD
+      echo $MLFLOW_TRACKING_URI
+
    .. code-block:: python
 
       import mlflow
-      # IMPORTANT CONSTANTS TO DEFINE
-      # MLflow User Credentials
-      MLFLOW_TRACKING_USERNAME = input('Enter your username: ')
-      MLFLOW_TRACKING_PASSWORD =  getpass.getpass()  # inject password by typing manually
-      # for MLFLow-way we have to set the following environment variables
-      os.environ['MLFLOW_TRACKING_USERNAME'] = MLFLOW_TRACKING_USERNAME
-      os.environ['MLFLOW_TRACKING_PASSWORD'] = MLFLOW_TRACKING_PASSWORD
-      # Remote MLflow server
-      MLFLOW_REMOTE_SERVER="https://mlflow.cloud.ai4eosc.eu"
-      #Set the MLflow server and backend and artifact stores
-      mlflow.set_tracking_uri(MLFLOW_REMOTE_SERVER)
-      # Name of the experiment (e.g. name of the code repository)
+      
+      mlflow.set_experiment(experiment_name='your_experiment_name')
+     
+      # or Name of the experiment (e.g. name of the code repository)
       MLFLOW_EXPERIMENT_NAME="your_experiment_name"
+
       # Name of the model to train. HAS TO BE UNIQUE, Please, DEFINE ONE!
       MLFLOW_MODEL_NAME="your_model_name"
 
@@ -105,7 +99,7 @@ For this you have to do the following steps in your deployment.
          history = model.fit(X_train, y_train, epochs=100, batch_size=64,
                      validation_data=(X_val, y_val), callbacks=[early_stopping])
 
-         with mlflow.start_run(): # mlflow starting command
+         with mlflow.start_run(run_name="run-demo") as run: # mlflow starting command
 
             # Log metrics to MLflow for each epoch
              batch_size = 10  # Log metrics every 10 epochs (adjust as needed)
@@ -138,6 +132,9 @@ to serve as reference, as well a `specific integration of mlflow <https://codeba
 
 For more information, see the `Getting Started <https://mlflow.org/docs/latest/getting-started/index.html>`__
 guide in the official MLflow docs.
+Additionally, you can go to AI4EOSC YouTube channel and check these videos on MLFlow: 
+1) `How to create an account in MLFlow: <https://www.youtube.com/watch?v=LmjZgNprr00>`__
+2) `How to Log an experiment in MLFlow: <https://www.youtube.com/watch?v=U1ttrdcd4VU&t=3s>`__
 
 Finally, to save the models in the registry, you have to add the following code in your
 deployment:
@@ -149,45 +146,42 @@ deployment:
       f"runs:/{run_id}/artifacts/", MLFLOW_MODEL_NAME
    )
 
-
-4. MLflow AutoLogging and CustomLogging
+1. MLflow AutoLogging and CustomLogging
 ---------------------------------------
 
 There exists two Logging options as illustrated in the following Figures.
 
-.. image:: /_static/images/mlflow/autolog-quickview.png
+.. image:: /_static/images/mlflow_autolog_quickview.png
    :width: 1000 px
 
-.. image:: /_static/images/mlflow/custom-log-quickview.png
+.. image:: /_static/images/mlflow_custom_log_quickview.png
    :width: 1000 px
 
-**Important commands to know**
-
+* Important commands to know
 * Log Experiment-Run
 
 .. code-block:: python
 
-   # Log Param (Log a parameter under the current run):
-   mlflow.log_param("batch_size", 64)
-   # Log Params (Log multiple parameter under the current run):
+   # Log Param (Log a parameter under the current run): 
+   mlflow.log_param(“batch_size”, 64)
+   # Log Params (Log multiple parameter under the current run):    
    mlflow.log_params({"hidden_units": 100,
-                     "activation": "relu",
-                     "batch_size”:64,
-                     "validation_split": 0.2})
-   # Log Metric  (Log a metric under the current run):
-   mlflow.log_metric("mse", 90.00)
-   # Log Metric  (Log multiple metrics under the current run):
+		               "activation": "relu",
+		               "batch_size”:64,
+		               "validation_split": 0.2})
+   # Log Metric  (Log a metric under the current run): 
+   mlflow.log_metric(“mse”, 90.00)
+   # Log Metric  (Log multiple metrics under the current run): 
    mlflow.log_metrics({"mse": 90.00,
-                     "rmse": 75.00})
+		                 "rmse": 75.00})
 
 * Log Artifact(s)
 
 .. code-block:: python
 
    # Log Figure (Log a figure as an artifact)
-   import matplotlib.pyplot as plt
-   fig, ax  = plt.subplots()
-   ax.plot ([1,2],[4,5])
-   mlflow.log_figure(fig, "fig_plot.png")
-   # Log a dataset (CSV format) as an artifact in MLflow
-   mlflow.log_artifact(data_csv, artifact_path="artifacts")
+   Import matplotlib.pyplot as plt
+   Fig, ax  = plt.subplots()
+   Ax.plot ([1,2],[4,5])
+   mlflow.log_figure(fig, “fig_plot.png”)
+   
