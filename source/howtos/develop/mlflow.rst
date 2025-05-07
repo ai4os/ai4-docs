@@ -47,7 +47,7 @@ to input your credentials:
 
 Once you login, you will see the default MLflow UI as follows:
 
-.. image:: /_static/images/mlflow_ui.png
+.. image:: /_static/images/mlflow/mlflow_ui.png
    :width: 1000 px
 
 
@@ -151,10 +151,10 @@ deployment:
 
 There exists two Logging options as illustrated in the following Figures.
 
-.. image:: /_static/images/mlflow_autolog_quickview.png
+.. image:: /_static/images/mlflow/mlflow_autolog_quickview.png
    :width: 1000 px
 
-.. image:: /_static/images/mlflow_custom_log_quickview.png
+.. image:: /_static/images/mlflow/mlflow_custom_log_quickview.png
    :width: 1000 px
 
 * Important commands to know
