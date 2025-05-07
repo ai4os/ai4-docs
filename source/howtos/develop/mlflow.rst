@@ -197,13 +197,17 @@ There exists two Logging options as illustrated in the following Figures.
 
 .. code-block:: python
 
-  # Add tags to a specific model version
+  # Get the latest model version
   client = mlflow.tracking.MlflowClient()
+  latest_versions = client.get_latest_versions(MLFLOW_MODEL_NAME)
+  latest_version = latest_versions[0].version
+
+  # Add tags to a specific model version
   client.set_model_version_tag(
       name=MLFLOW_MODEL_NAME,
       version=model_version,
-      key="training_dataset",
-      value="dataset_v2.0"
+      key="deployment_status",
+      value="active"
   )
 
   # Add multiple tags
@@ -240,20 +244,21 @@ There exists two Logging options as illustrated in the following Figures.
   You can add tags to model versions to include additional metadata:
 
 .. code-block:: python
+   
    # Load the champion model for inference
-  champion_model = mlflow.pyfunc.load_model(
+   champion_model = mlflow.pyfunc.load_model(
       model_uri=f"models:/{MLFLOW_MODEL_NAME}@champion"
-  )
-
-  # Make predictions
-  predictions = champion_model.predict(data)
+   )
+   
+   # Make predictions
+   predictions = champion_model.predict(data)
 
   
 * Search model versions
   Search for a specific model name and list its version details using ``search_model_versions()`` method and provide a filter string such as ``"name='sk-learn-random-forest-reg-model'"``
   
 .. code-block:: python
-   
+      
    client = MlflowClient()
    for mv in client.search_model_versions("name='sk-learn-random-forest-reg-model'"):
       pprint(dict(mv), indent=4)
