@@ -40,7 +40,7 @@ Finally you will be shown your user settings:
 Once you are ready, proceed to the new step by clicking in ``Go to mlflow``.
 
 
-2. Login the MLflow UI
+1. Login the MLflow UI
 ----------------------
 
 In the `MLflow login page <https://mlflow.cloud.ai4eosc.eu/signup>`__ you will be asked
@@ -52,7 +52,7 @@ to input your credentials:
 
 Once you login, you will see the default MLflow UI as follows:
 
-.. image:: /_static/images/mlflow/ui.png 
+.. image:: /_static/images/mlflow/mlflow/ui.png
    :width: 1000 px
 
 
@@ -71,11 +71,10 @@ For this you have to do the following steps in your deployment.
 
       pip install mlflow[extras]
 
-2. Edit your code to insert MLflow constants (env vars) and statements so that your
+2. There is no need to insert manually MLflow constants (env vars) and/or statements so that your
    experiments will be logged to the tracking server we deployed.
 
-   Now, the environment variables to log experiments in our MLFlow instances are already injected from the Vault secrets.
-   So, there is no need to enter them manually.
+   They are already injected from the Vault secrets.
    You can check these vars from your command line in your deployment:
 
    .. code-block:: console
@@ -189,4 +188,47 @@ There exists two Logging options as illustrated in the following Figures.
    Fig, ax  = plt.subplots()
    Ax.plot ([1,2],[4,5])
    mlflow.log_figure(fig, “fig_plot.png”)
-   
+
+* Adding Tags to Model Versions
+You can add tags to model versions to include additional metadata:
+
+.. code-block:: python
+
+  # Add tags to a specific model version
+  client = mlflow.tracking.MlflowClient()
+  client.set_model_version_tag(
+      name=MLFLOW_MODEL_NAME,
+      version=model_version,
+      key="training_dataset",
+      value="dataset_v2.0"
+  )
+
+  # Add multiple tags
+  tags = {
+      "data_version": "v2.0",
+      "algorithm": "random_forest",
+      "responsible_team": "data_science",
+      "accuracy": "0.92"
+  }
+
+  for key, value in tags.items():
+      client.set_model_version_tag(
+          name=MLFLOW_MODEL_NAME,
+          version=model_version,
+          key=key,
+          value=value
+      )
+
+* Setting Model Version Aliases for Production
+MLflow now uses aliases instead of stages (which are deprecated). Aliases provide a more flexible way to manage model deployment status.
+Using Aliases (Champion/Challenger Model Pattern)
+
+.. code-block:: python
+     
+  # Set the 'champion' alias for your production model
+  client = mlflow.tracking.MlflowClient()
+  client.set_registered_model_alias(
+      name=MLFLOW_MODEL_NAME,
+      alias="champion",
+      version=model_version
+  )
