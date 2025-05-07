@@ -52,7 +52,7 @@ to input your credentials:
 
 Once you login, you will see the default MLflow UI as follows:
 
-.. image:: /_static/images/mlflow/mlflow/ui.png
+.. image:: /_static/images/mlflow/ui.png
    :width: 1000 px
 
 
@@ -150,7 +150,7 @@ deployment:
       f"runs:/{run_id}/artifacts/", MLFLOW_MODEL_NAME
    )
 
-1. MLflow AutoLogging and CustomLogging
+4. MLflow AutoLogging and CustomLogging
 ---------------------------------------
 
 There exists two Logging options as illustrated in the following Figures.
@@ -189,11 +189,11 @@ There exists two Logging options as illustrated in the following Figures.
    Ax.plot ([1,2],[4,5])
    mlflow.log_figure(fig, “fig_plot.png”)
 
-4. MLflow Model Versioning and Production Deployment
+5. MLflow Model Versioning and Production Deployment
 ----------------------------------------------------
 
 * Adding Tags to Model Versions
-You can add tags to model versions to include additional metadata:
+  You can add tags to model versions to include additional metadata:
 
 .. code-block:: python
 
@@ -223,8 +223,8 @@ You can add tags to model versions to include additional metadata:
       )
 
 * Setting Model Version Aliases for Production
-MLflow now uses aliases instead of stages (which are deprecated). Aliases provide a more flexible way to manage model deployment status.
-Using Aliases (Champion/Challenger Model Pattern)
+  MLflow now uses aliases instead of stages (which are deprecated). Aliases provide a more flexible way to manage model deployment status.
+  Using Aliases (Champion/Challenger Model Pattern)
 
 .. code-block:: python
      
@@ -235,3 +235,25 @@ Using Aliases (Champion/Challenger Model Pattern)
       alias="champion",
       version=model_version
   )
+
+* Loading the Production (Champion) Model
+  You can add tags to model versions to include additional metadata:
+
+.. code-block:: python
+   # Load the champion model for inference
+  champion_model = mlflow.pyfunc.load_model(
+      model_uri=f"models:/{MLFLOW_MODEL_NAME}@champion"
+  )
+
+  # Make predictions
+  predictions = champion_model.predict(data)
+
+  
+* Search model versions
+  Search for a specific model name and list its version details using ``search_model_versions()`` method and provide a filter string such as ``"name='sk-learn-random-forest-reg-model'"``
+  
+.. code-block:: python
+   
+   client = MlflowClient()
+   for mv in client.search_model_versions("name='sk-learn-random-forest-reg-model'"):
+      pprint(dict(mv), indent=4)
