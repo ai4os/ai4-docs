@@ -189,6 +189,9 @@ There exists two Logging options as illustrated in the following Figures.
    Ax.plot ([1,2],[4,5])
    mlflow.log_figure(fig, “fig_plot.png”)
 
+1. MLflow Model Versioning and Production Deployment
+---------------------------------------
+
 * Adding Tags to Model Versions
 You can add tags to model versions to include additional metadata:
 
