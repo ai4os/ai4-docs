@@ -201,8 +201,10 @@ There exists two Logging options as illustrated in the following Figures.
 
 .. code-block:: python
 
+   from mlflow import MlflowClient
+
   # Get the latest model version
-  client = mlflow.tracking.MlflowClient()
+  client = MlflowClient()
   latest_versions = client.get_latest_versions(MLFLOW_MODEL_NAME)
   latest_version = latest_versions[0].version
 
@@ -235,9 +237,11 @@ There exists two Logging options as illustrated in the following Figures.
   Using Aliases (Champion/Challenger Model Pattern)
 
 .. code-block:: python
+
+   from mlflow import MlflowClient
      
   # Set the 'champion' alias for your production model
-  client = mlflow.tracking.MlflowClient()
+  client = MlflowClient()
   client.set_registered_model_alias(
       name=MLFLOW_MODEL_NAME,
       alias="champion",
@@ -262,6 +266,8 @@ There exists two Logging options as illustrated in the following Figures.
   Search for a specific model name and list its version details using ``search_model_versions()`` method and provide a filter string such as ``name='sk-learn-random-forest-reg-model'``
   
 .. code-block:: python
+
+   from mlflow import MlflowClient
       
    client = MlflowClient()
    for mv in client.search_model_versions("name='sk-learn-random-forest-reg-model'"):
