@@ -166,14 +166,14 @@ There exists two Logging options as illustrated in the following Figures.
 .. code-block:: python
 
    # Log Param (Log a parameter under the current run): 
-   mlflow.log_param(“batch_size”, 64)
+   mlflow.log_param("batch_size", 64)
    # Log Params (Log multiple parameter under the current run):    
    mlflow.log_params({"hidden_units": 100,
 		               "activation": "relu",
 		               "batch_size”:64,
 		               "validation_split": 0.2})
    # Log Metric  (Log a metric under the current run): 
-   mlflow.log_metric(“mse”, 90.00)
+   mlflow.log_metric("mse", 90.00)
    # Log Metric  (Log multiple metrics under the current run): 
    mlflow.log_metrics({"mse": 90.00,
 		                 "rmse": 75.00})
@@ -183,10 +183,10 @@ There exists two Logging options as illustrated in the following Figures.
 .. code-block:: python
 
    # Log Figure (Log a figure as an artifact)
-   Import matplotlib.pyplot as plt
-   Fig, ax  = plt.subplots()
-   Ax.plot ([1,2],[4,5])
-   mlflow.log_figure(fig, “fig_plot.png”)
+   import matplotlib.pyplot as plt
+   fig, ax  = plt.subplots()
+   ax.plot ([1,2],[4,5])
+   mlflow.log_figure(fig, "fig_plot.png")
 
 * Relevant information extracted from an Experiment-Run (see figure below) defined as a single execution of a machine learning code
   
@@ -259,7 +259,7 @@ There exists two Logging options as illustrated in the following Figures.
 
   
 * Search model versions
-  Search for a specific model name and list its version details using ``search_model_versions()`` method and provide a filter string such as ``"name='sk-learn-random-forest-reg-model'"``
+  Search for a specific model name and list its version details using ``search_model_versions()`` method and provide a filter string such as ``name='sk-learn-random-forest-reg-model'``
   
 .. code-block:: python
       
