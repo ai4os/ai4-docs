@@ -162,7 +162,6 @@ There exists two Logging options as illustrated in the following Figures.
    :width: 1000 px
 
 * Important commands to know
-* Log Experiment-Run
 
 .. code-block:: python
 
@@ -189,7 +188,12 @@ There exists two Logging options as illustrated in the following Figures.
    Ax.plot ([1,2],[4,5])
    mlflow.log_figure(fig, “fig_plot.png”)
 
-5. MLflow Model Versioning and Production Deployment
+* Relevant information extracted from an Experiment-Run (see figure below) defined as a single execution of a machine learning code
+  
+.. image:: /_static/images/mlflow/run-info.png
+  :width: 1000 px
+
+1. MLflow Model Versioning and Production Deployment
 ----------------------------------------------------
 
 * Adding Tags to Model Versions
