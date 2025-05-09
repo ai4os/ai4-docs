@@ -21,6 +21,18 @@ whether they use ``cpu`` or ``gpu``. Tags are usually:
 * ``cpu-test``: test + cpu
 * ``gpu-test``: test + gpu
 
+AI4OS metadata
+--------------
+
+All modules have comprehensive metadata to make them `FAIR <https://www.nature.com/articles/sdata201618>`__ friendly.
+The metadata can later be downloaded in several formats in the
+:ref:`Dashboard module detail page <dashboard_deployment>`.
+
+Editing a module's metadata
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. include:: /snippets/edit-metadata.rst
+
 
 CI /CD pipeline
 ---------------
