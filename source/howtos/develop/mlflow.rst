@@ -64,71 +64,87 @@ trained model with a version in Model Registry.
 
 For this you have to do the following steps in your deployment.
 
-1. First install mlflow client from the IDE that you are using to build your AI model,
-   by executing:
+Install MLflow
+^^^^^^^^^^^^^^
 
-  .. code-block:: console
+First install mlflow client from the IDE that you are using to build your AI model,
+by executing:
 
-      pip install mlflow[extras]
+.. code-block:: console
 
-2. There is no need to insert manually MLflow constants (env vars) and/or statements so that your
-   experiments will be logged to the tracking server we deployed.
+   pip install mlflow[extras]
 
-   They are already injected from the Vault secrets.
-   You can check these vars from your command line in your deployment:
+You can also use `mlflow-skinny <https://pypi.org/project/mlflow-skinny/>`__ for a
+minimal setup, therefore reducing potential dependency conflicts with your other module packages.
 
-   .. code-block:: console
-      
-      echo $MLFLOW_TRACKING_USERNAME
-      echo $MLFLOW_TRACKING_PASSWORD
-      echo $MLFLOW_TRACKING_URI
+Define MLflow credentials
+^^^^^^^^^^^^^^^^^^^^^^^^^
 
-   .. code-block:: python
+MLflow reads the credentials as envvars. When creating a deployment in the platform,
+those credentials are automatically injected in the environment by the platform (no need to create them!).
 
-      import mlflow
-      
-      mlflow.set_experiment(experiment_name='your_experiment_name')
-     
-      # or Name of the experiment (e.g. name of the code repository)
-      MLFLOW_EXPERIMENT_NAME="your_experiment_name"
+You can check these vars from your command line in your deployment:
 
-      # Name of the model to train. HAS TO BE UNIQUE, Please, DEFINE ONE!
-      MLFLOW_MODEL_NAME="your_model_name"
+.. code-block:: console
 
-      #MLflow specific statements to log your experiment
-      #Insert the following statements in your code where you are training your model,e.g.
-      def train_model():
-         # your existing code here
+   echo $MLFLOW_TRACKING_USERNAME
+   echo $MLFLOW_TRACKING_PASSWORD
+   echo $MLFLOW_TRACKING_URI
 
-         history = model.fit(X_train, y_train, epochs=100, batch_size=64,
-                     validation_data=(X_val, y_val), callbacks=[early_stopping])
+If you find that your credentials are not correctly injected by the platform,
+try :ref:`updating your password <howtos/develop/mlflow:1. Register for an account in MLflow>`.
 
-         with mlflow.start_run(run_name="run-demo") as run: # mlflow starting command
+Modify your Python code
+^^^^^^^^^^^^^^^^^^^^^^^
 
-            # Log metrics to MLflow for each epoch
-             batch_size = 10  # Log metrics every 10 epochs (adjust as needed)
-             for epoch, (loss, val_loss) in enumerate(zip(history.history["loss"],
-                                                      history.history["val_loss"])):
-               if epoch % batch_size == 0:
-                 mlflow.log_metric("train_loss", loss, step=epoch)
-                 mlflow.log_metric("val_loss", val_loss, step=epoch)
+Here is an example on how to start tracking in your training loop:
 
-            # Log params
-            mlflow.log_params({
-              "hidden_units": 100,
-              "activation": "relu",
-              "epochs": 100,
-              "batch_size": 64,
-              "validation_split": 0.2
-            })
+.. code-block:: python
 
-            # Log model using: mlflow.<flavor>.log_model()
-            # Log the TensorFlow using mlflow.tensorflow.log_model
-            mlflow.tensorflow.log_model(model, artifact_path='artifacts')
+   import mlflow
 
-            # Log additional artifacts
-            # Log the CSV file as an artifact in MLflow
-            mlflow.log_artifact(data_csv, artifact_path='artifacts/dataset')
+   mlflow.set_experiment(experiment_name='your_experiment_name')
+
+   # or Name of the experiment (e.g. name of the code repository)
+   MLFLOW_EXPERIMENT_NAME="your_experiment_name"
+
+   # Name of the model to train. HAS TO BE UNIQUE, Please, DEFINE ONE!
+   MLFLOW_MODEL_NAME="your_model_name"
+
+   #MLflow specific statements to log your experiment
+   #Insert the following statements in your code where you are training your model,e.g.
+   def train_model():
+      # your existing code here
+
+      history = model.fit(X_train, y_train, epochs=100, batch_size=64,
+                  validation_data=(X_val, y_val), callbacks=[early_stopping])
+
+      with mlflow.start_run(run_name="run-demo") as run: # mlflow starting command
+
+         # Log metrics to MLflow for each epoch
+            batch_size = 10  # Log metrics every 10 epochs (adjust as needed)
+            for epoch, (loss, val_loss) in enumerate(zip(history.history["loss"],
+                                                   history.history["val_loss"])):
+            if epoch % batch_size == 0:
+               mlflow.log_metric("train_loss", loss, step=epoch)
+               mlflow.log_metric("val_loss", val_loss, step=epoch)
+
+         # Log params
+         mlflow.log_params({
+            "hidden_units": 100,
+            "activation": "relu",
+            "epochs": 100,
+            "batch_size": 64,
+            "validation_split": 0.2
+         })
+
+         # Log model using: mlflow.<flavor>.log_model()
+         # Log the TensorFlow using mlflow.tensorflow.log_model
+         mlflow.tensorflow.log_model(model, artifact_path='artifacts')
+
+         # Log additional artifacts
+         # Log the CSV file as an artifact in MLflow
+         mlflow.log_artifact(data_csv, artifact_path='artifacts/dataset')
 
 
 We provide some `examples of mlflow implementations <https://codebase.helmholtz.cloud/m-team/ai/mlflow-tutorial/>`__
@@ -136,7 +152,7 @@ to serve as reference, as well a `specific integration of mlflow <https://codeba
 
 For more information, see the `Getting Started <https://mlflow.org/docs/latest/getting-started/index.html>`__
 guide in the official MLflow docs.
-Additionally, you can go to AI4EOSC YouTube channel and check these videos on MLFlow: 
+Additionally, you can go to AI4EOSC YouTube channel and check these videos on MLFlow:
 1) `How to create an account in MLFlow: <https://www.youtube.com/watch?v=LmjZgNprr00>`__
 2) `How to Log an experiment in MLFlow: <https://www.youtube.com/watch?v=U1ttrdcd4VU&t=3s>`__
 
@@ -165,16 +181,16 @@ There exists two Logging options as illustrated in the following Figures.
 
 .. code-block:: python
 
-   # Log Param (Log a parameter under the current run): 
+   # Log Param (Log a parameter under the current run):
    mlflow.log_param("batch_size", 64)
-   # Log Params (Log multiple parameter under the current run):    
+   # Log Params (Log multiple parameter under the current run):
    mlflow.log_params({"hidden_units": 100,
 		               "activation": "relu",
 		               "batch_size”:64,
 		               "validation_split": 0.2})
-   # Log Metric  (Log a metric under the current run): 
+   # Log Metric  (Log a metric under the current run):
    mlflow.log_metric("mse", 90.00)
-   # Log Metric  (Log multiple metrics under the current run): 
+   # Log Metric  (Log multiple metrics under the current run):
    mlflow.log_metrics({"mse": 90.00,
 		                 "rmse": 75.00})
 
@@ -189,11 +205,11 @@ There exists two Logging options as illustrated in the following Figures.
    mlflow.log_figure(fig, "fig_plot.png")
 
 * Relevant information extracted from an Experiment-Run (see figure below) defined as a single execution of a machine learning code
-  
+
 .. image:: /_static/images/mlflow/run-info.png
   :width: 1000 px
 
-1. MLflow Model Versioning and Production Deployment
+5. MLflow Model Versioning and Production Deployment
 ----------------------------------------------------
 
 * Adding Tags to Model Versions
@@ -239,7 +255,7 @@ There exists two Logging options as illustrated in the following Figures.
 .. code-block:: python
 
    from mlflow import MlflowClient
-     
+
   # Set the 'champion' alias for your production model
   client = MlflowClient()
   client.set_registered_model_alias(
@@ -257,18 +273,18 @@ There exists two Logging options as illustrated in the following Figures.
    champion_model = mlflow.pyfunc.load_model(
       model_uri=f"models:/{MLFLOW_MODEL_NAME}@champion"
    )
-   
+
    # Make predictions
    predictions = champion_model.predict(data)
 
-  
+
 * Search model versions
   Search for a specific model name and list its version details using ``search_model_versions()`` method and provide a filter string such as ``name='sk-learn-random-forest-reg-model'``
-  
+
 .. code-block:: python
 
    from mlflow import MlflowClient
-      
+
    client = MlflowClient()
    for mv in client.search_model_versions("name='sk-learn-random-forest-reg-model'"):
       pprint(dict(mv), indent=4)
