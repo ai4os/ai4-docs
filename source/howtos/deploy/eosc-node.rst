@@ -41,7 +41,7 @@ There has to be a TOSCA Template for each AI4EOSC Model to be deployed. The TOSC
 Step 1. Register the TOSCA template in the Tools Hub:
 Create a new Tool inside the “Tools Hub” section of the EOSC EU Node portal.
 
-.. image:: /_static/images/eoscnode/register-tool.jpg
+.. image:: /_static/images/eoscnode/register-tool.png
 
 Fill the form and register the tool. Once registered, you can make it public and share it among the community. Notice the TOSCA Template needs to undergo a security assessment before it appears in the public catalog of Tools. This security assessment is periodically reassessed.
 
