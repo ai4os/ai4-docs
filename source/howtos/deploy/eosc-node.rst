@@ -35,7 +35,9 @@ This page describes the procedures to support both approaches. It also includes 
 ------------------------------------------------------------------------
 Step 0. Create the TOSCA template
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
 There has to be a TOSCA Template for each AI4EOSC Model to be deployed. The TOSCA template depends on the kind of resources you want to deploy the model (VM or container). You can find two examples here:
+
  * `TOSCA VM example <https://github.com/grycap/tosca/blob/eosc_lot1/templates/ai4eoscvm.yaml>`__. 
  * `TOSCA Container example <https://github.com/grycap/tosca/blob/eosc_lot1/templates/ai4eosc_app.yaml>`__.  
 
