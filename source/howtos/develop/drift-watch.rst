@@ -336,8 +336,6 @@ steps:
           except Exception as err:
               logger.error("Error loading image: %s", err, exc_info=True)
               raise  # re-raise the exception after logging
-          image_id = str(uuid.uuid4())
-          save_image(input_file.filename, f"/storage/ai4os-drift-watch/{image_id}")
           try:  # Check if the image is clean
               logger.debug("Detecting drift with options: %s", options)
               result, _ = utils.detector.update(encoded.detach().cpu().numpy())
@@ -346,9 +344,8 @@ steps:
               raise  # re-raise the exception after logging
           logger.debug("Return results as format: %s", accept)
           return {
-              "distance": result.distance,
-              "drift": result.distance > drift_distance,
-              "link": f"{server_url}/ai4os-drift-watch/{image_id}",
+              "distance": float(result.distance),
+              "drift": bool(result.distance > drift_distance),
           }
 
    The `predict` function is called when the module is used to make predictions
@@ -443,34 +440,22 @@ To add monitoring to your module with DriftWatch, follow these steps:
    .. code-block:: python
 
     def predict(input_file, drift_distance):
-        try:  # Load the image and encode it
-            logger.debug("Loading image from input_file: %s", input_file.filename)
-            image = load_image(input_file.filename)
-            normalized = transform(image).to(config.device)
-            encoded = autoencoder.encoder(normalized.unsqueeze(0))[0]
-        except Exception as err:
-            logger.error("Error loading image: %s", err, exc_info=True)
-            raise  # re-raise the exception after logging
-        image_id = str(uuid.uuid4())
-        save_image(input_file.filename, f"/storage/ai4os-drift-watch/{image_id}")
-        link = f"{server_url}/ai4os-drift-watch/{image_id}"  # Link is needed as metadata
-        try:  # Check if the image is clean
-           logger.debug("Detecting drift with options: %s", options)
+        model_id, tags = config.data_version, config.tags # Define model id and tags
+        parameters = {"some_parameter": "value"} # Define your parameters
+        ...
+        try:  # Check if the image usign drift detection
+            logger.debug("Detecting drift with options: %s", options)
             result, _ = utils.detector.update(encoded.detach().cpu().numpy())
-            model_id, tags = config.data_version, config.tags
             with dw.DriftMonitor("obsea-camera", model_id, tags) as monitor:
                 result, _ = utils.detector.update(encoded.detach().cpu().numpy())
-                detected = result.distance > drift_distance
-                monitor(detected, {"distance": result.distance, "link": link})  # Append the link to the info
+                parameters["distance"] = result.distance
+                monitor(result.distance > drift_distance, parameters)
        except Exception as err:
             logger.error("Error detecting drift: %s", err, exc_info=True)
             raise  # re-raise the exception after logging
         logger.debug("Return results as format: %s", accept)
-        return {
-            "distance": result.distance,
-            "drift": result.distance > drift_distance,
-            "link": link,
-        }
+        ...
+        return ... # format and return the results as before
 
    Every time the inference calls the predict function, a new job is opened at
    `DriftWatch`_. If an exception is raised during the execution of the code
@@ -484,10 +469,57 @@ To add monitoring to your module with DriftWatch, follow these steps:
 .. _drift-monitor: https://pypi.org/project/drift-monitor/
 .. _drift-watch example: https://github.com/ai4os-hub/obsea-fish-detection/blob/drift-camera/notebooks/drift-watch.ipynb
 
-.. TODO: (borja) explain
-  - how to make /storage/ai4os-drift-watch/ public to allow for visualization inside Driftwatch
-  - Note the link to DriftWatch points to dev server
 
+4. **Add links and additional context data to your drift**
+
+   As you might have notice, the second parameter of the `monitor` function
+   is a dictionary with the parameters you want to add to your drift job. You
+   can add any additional information you want to include in the job. For
+   example, you can add a link to the image that was used for the prediction, the
+   drift distance, and any other information that you want to include in the
+   job.
+
+   To create the link to the image, you can use the `/storage` folder of the server
+   where the module is running. This folder can be configured to mount your storage
+   service from next cloud, see :ref:`Accessing storage from inside your deployment <storage_access>`.
+   First you need to define the environment variables that will be used to
+   configure the sorage location and the url. 
+
+   .. code-block:: python
+
+    # in ./api/config.py or similar
+    # e.g. /storage/ai4os-your-application-folder/
+    store_dir = os.getenv("DRIFT_MONITOR_STORE_DIR", None) 
+    # e.g. https://share.services.ai4os.eu/remote.php/webdav/
+    store_url = os.getenv("DRIFT_MONITOR_STORE_URL", None) 
+
+   Next use the `store_dir` and `store_url` to store and create the link to the
+   image. You can use the `os.makedirs` function to create the directory where the
+   image will be stored. The `shutil.copy` function can be used to copy the image
+   to the directory. We create one directory per image to simplify the url generation
+   in `nextcloud`. The link to the image will be added to the parameters dictionary
+   that will be passed to the `monitor` function.
+
+   .. code-block:: python
+
+    def predict(input_file, drift_distance):
+        ...
+        time = dt.datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
+        if config.store_dir:  # Copy to permanent storage
+            logger.debug("Saving image to store: %s", config.store_url)
+            image_dir = f"{config.store_dir}/{time}"
+            os.makedirs(image_dir, exist_ok=True)
+            shutil.copy(input_file.filename, f"{image_dir}/image.jpg")
+        ...
+        if config.store_url:  # Add link to parameters
+            logger.debug("Adding link to parameters: %s", link)
+            parameters["link"] = f"{config.store_url}?path={time}"
+        ...
+        return ... # format and return the results as before
+
+   Additionally, you can return the link to the image in the response of the
+   `predict` function.
+    
 
 Deploy your module in production
 --------------------------------
@@ -501,19 +533,52 @@ In the ``Deployments`` tab, go to the ``Modules`` table and find your created
 deployment. Click the :material-outlined:`terminal;1.5em` ``Quick access`` to
 access the JupyterLab terminal.
 
-.. TODO: (borja) explain
-  - how to copy env variables using terminal
+Now we need to deploy the DEEPaaS API to start monitoring, but make sure you
+have configured the environment variables that your application requires. You can
+use the terminal to set the environment variables. For example, you can set
+the `DRIFT_MONITOR_MYTOKEN` variable to the token you obtained in the previous
+step. You can also set the `DRIFT_MONITOR_STORE_DIR` and `DRIFT_MONITOR_STORE_URL`
+variables to the directory where you want to store the images and the URL of
+the storage service.
+You can set the environment variables using the following command:
 
-Now we need to deploy the DEEPaaS API to start monitoring:
+.. code-block:: console
+
+    $ export DRIFT_MONITOR_MYTOKEN=<your_token>
+    $ export DRIFT_MONITOR_STORE_DIR=/storage/ai4os-obsea-fish-detection
+    $ export DRIFT_MONITOR_STORE_URL=https://share.services.ai4os.eu/remote.php/webdav/
+
+and then run the following command to deploy the module:
 
 .. code-block:: console
 
     $ deepaas-run --listen-ip 0.0.0.0
 
-.. TODO: (borja) explain
-  - mention that you made 50 prediction calls (just to generate a nice time series), no need to show code for this
-  - explain how to visualize drift in Driftwatch (time series, image preview)
-  - show nice pictures showing the drift
+
+Once the module is running, you can use the `POST` method to send an image
+to the module and check if it is clean or dirty. Follow the steps in
+:ref:`Develop Code <develop_code>` to see how to deploy the module and test
+it.
+
+Access to `DriftWatch`_ in order to visualize the uploaded drift in
+the dashboard. 
+
+   .. image:: /_static/images/driftwatch/experiments_page.png
+
+Click on your experiment and you will be shown a list of the
+drift jobs that have been uploaded. You can select the desired jobs and
+configure the visualization options. To see the drift distance over time.
+
+   .. image:: /_static/images/driftwatch/drifts_page.png
+
+.. _DriftWatch: https://drift-watch.dev.ai4eosc.eu/
+
+
+If links are correctly configured, you will be able to see then in the row
+`View` button of the drift job together with the rest of the saved parameters.
+
+   .. image:: /_static/images/driftwatch/parameters_popup.png
+
 
 .. TODO: (ignacio)
    In the future we should allow users to input env variables in the Dashboard configuration, to avoid using terminal
