@@ -465,7 +465,7 @@ To add monitoring to your module with DriftWatch, follow these steps:
 
 .. _MyToken: https://mytok.eu/
 .. _MyToken docs: https://mytoken-docs.data.kit.edu/
-.. _DriftWatch: https://drift-watch.dev.ai4eosc.eu/
+.. _DriftWatch: https://drift-watch.cloud.ai4eosc.eu/
 .. _drift-monitor: https://pypi.org/project/drift-monitor/
 .. _drift-watch example: https://github.com/ai4os-hub/obsea-fish-detection/blob/drift-camera/notebooks/drift-watch.ipynb
 
@@ -571,7 +571,7 @@ configure the visualization options. To see the drift distance over time.
 
    .. image:: /_static/images/driftwatch/drifts_page.png
 
-.. _DriftWatch: https://drift-watch.dev.ai4eosc.eu/
+.. _DriftWatch: https://drift-watch.cloud.ai4eosc.eu/
 
 
 If links are correctly configured, you will be able to see then in the row
