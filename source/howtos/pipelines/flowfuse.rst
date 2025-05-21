@@ -15,6 +15,8 @@ services with Node-RED & FlowFuse, specifically:
 * how to create our first application and Node-RED instance,
 * how to deploy a workflow to utilize inference services using OSCAR.
 
+For a complete overview of the Node-RED and FlowFuse examples, please refer to the `GitHub README <https://github.com/ai4os/ai4-compose/blob/main/node-red/README.md>`__.
+
 First of all, let's understand what FlowFuse, Node-RED, OSCAR, and AI4EOSC are:
 
 * `Node-RED <https://nodered.org/>`__ is an open-source visual programming tool.
