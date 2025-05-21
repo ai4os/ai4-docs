@@ -45,3 +45,30 @@ For more information on using CVAT, please follow the `official CVAT documentati
 
 .. image:: /_static/images/endpoints/cvat-ai-screencast.gif
     :width: 1000px
+
+
+CVAT automated backups
+----------------------
+
+Annotating a dataset is a very time consuming task, so having automated backups is a must.
+
+In AI4OS, we support multiple ways to backup your annotations.
+All those backup are saved in :doc:`your storage </reference/storage>` under ``ai4os-storage/tools/cvat``.
+
+To avoid collapsing your storage quota, we adapt the backup schedule to the backup size (ie. lighter backups are made more frequently).
+The performed backups are:
+
+* **when a deployment is deleted by the user**, we save a full backup of the deployment. This not only includes project annotations, but also meta configurations (like user groups).
+  Those are the snapshots that you will later be able to :ref:`select in the configuration form <howtos/train/cvat:Deploying CVAT>`.
+
+  Location:  ``ai4os-storage/tools/cvat/backups``
+
+* **every day**, we save a full project backup with images and annotations.
+  To restore from that backup, you will need to import it manually in the CVAT UI.
+
+  Location:  ``ai4os-storage/tools/cvat/backups-periodic``
+
+* **every hour**, we save a project backup just with annotations.
+  To restore from that backup, you will need to import it manually in the CVAT UI.
+
+  Location:  ``ai4os-storage/tools/cvat/backups-periodic``
