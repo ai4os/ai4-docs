@@ -139,7 +139,7 @@ There are two API options:
 * **OpenWebUI API**: supports chat completions, supports Retrieval Augmented Generation
 
   - **API endpoint**: https://llm.dev.ai4eosc.eu/api
-  - **API key**: :material-outlined:`account_circle;1.5em` → :material-outlined:`settings;1.5em` ``Settings`` → :material-outlined:`account_circle;1.5em` ``Account``
+  - **API key**: `AI4OS LLM <https://llm.dev.ai4eosc.eu>`__ → :material-outlined:`account_circle;1.5em` → :material-outlined:`settings;1.5em` ``Settings`` → :material-outlined:`account_circle;1.5em` ``Account``
 
   .. figure:: /_static/images/llm/api-keys-openwebui.png
      :width: 500 px
