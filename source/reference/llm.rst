@@ -131,19 +131,20 @@ There are two API options:
 * **vLLM API** (:material-outlined:`verified;1.5em` *recommended*): faster (load balanced), supports chat completions
 
   - **API endpoint**: https://llm.dev.ai4eosc.eu:8000.
-  - **API key**: :doc:`ask support </help/index>`
+  - **API key**: `AI4EOSC Keycloak <https://login.cloud.ai4eosc.eu/realms/ai4eosc/account>`__ → ``Personal Info`` → ``User metadata`` → ``LLM API key``
+
+  .. figure:: /_static/images/llm/api-keys-keycloak.png
+     :width: 500 px
 
 * **OpenWebUI API**: supports chat completions, supports Retrieval Augmented Generation
 
   - **API endpoint**: https://llm.dev.ai4eosc.eu/api
   - **API key**: :material-outlined:`account_circle;1.5em` → :material-outlined:`settings;1.5em` ``Settings`` → :material-outlined:`account_circle;1.5em` ``Account``
 
-  `Learn more <https://docs.openwebui.com/getting-started/advanced-topics/api-endpoints/>`__ on how to use API keys to integrate the AI4OS LLM into your own services (endpoints are compatible with the OpenAI API spec).
+  .. figure:: /_static/images/llm/api-keys-openwebui.png
+     :width: 500 px
 
-  .. figure:: /_static/images/llm/api-keys.png
-
-      API keys section in OpenWebUI
-
+`Learn more <https://docs.openwebui.com/getting-started/advanced-topics/api-endpoints/>`__ on how to use API keys to integrate the AI4OS LLM into your own services (endpoints are compatible with the OpenAI API spec).
 
 Use it as a code assistant with VScode
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
