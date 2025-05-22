@@ -298,7 +298,7 @@ Another option to interact with the OSCAR service is through the `graphical web 
 1. In the ``Inference`` tab, go to the ``Serverless (OSCAR)`` table and find your newly created service.
 2. Click on :material-outlined:`info;1.5em` ``Info`` button on the right to show the service details and check the ``Deployment ID``.
 3. Go to the `OSCAR UI <https://inference.cloud.ai4eosc.eu/>`__  in your browser, log in with your credentials and search for the service with the same name as the ``Deployment ID``.
-4. Click on the ``More options`` button of your service and select ``Invoke`` to open a new screen where you can provide the input to the service invocation. At this point, as you have seen in the asynchronous and synchronous calls, you have to take into account that most of the AI4EOSC models whose input is an image need to convert the input into a compatible JSON format. This implies converting the image to base64 and expressing the input in a JSON file. To help with this input preparation, we provide you a short Python script to convert your file into a compatible JSON format:
+4. Click on the ``More options`` button of your service and select ``Invoke`` to open a new screen where you can provide the input to the service invocation. At this point, as you have seen in the asynchronous and synchronous calls, you have to take into account that most of the AI4OS models whose input is an image need to convert the input into a compatible JSON format. This implies converting the image to base64 and expressing the input in a JSON file. To help with this input preparation, we provide you a short Python script to convert your file into a compatible JSON format:
 
 .. code-block:: python
 
@@ -384,7 +384,7 @@ Learn how to feed different input types
 
 We are going to demonstrate how to send a more complete set of input parameters to OSCAR.
 
-For educational purposes, we are going to use the `official AI4EOSC demo module <https://dashboard.cloud.ai4eosc.eu/marketplace/modules/deep-oc-demo_app>`__.
+For educational purposes, we are going to use the `official AI4OS demo module <https://dashboard.cloud.ai4eosc.eu/marketplace/modules/deep-oc-demo_app>`__.
 While this model does not perform an AI task, it is very helpful as it shows the wide variety of inputs that can be sent to OSCAR inference endpoints.
 
 So go back to the previous steps and deploy the

@@ -97,7 +97,7 @@ Accounts are mapped by email. So, for EGI Check-In users, we recommend authentic
 Register a new account
 ^^^^^^^^^^^^^^^^^^^^^^
 
-In order to register to the AI4EOSC platform you need to get an account on our `AI4EOSC SSO <https://login.cloud.ai4eosc.eu/realms/ai4eosc/account>`_. You can do this by
+In order to register to the AI4OS platform you need to get an account on our `AI4OS SSO <https://login.cloud.ai4eosc.eu/realms/ai4eosc/account>`_. You can do this by
 clicking on the ``Register`` link on the login page.
 
 Please provide all the details that are listed in the registration form and preferably
@@ -109,7 +109,7 @@ receive an email with a link to confirm your registration. Click on the link to 
 your registration and then you will be approved by an administrator.
 
 Please remember that the approval process can take some time, so please be patient.
-Also, be aware that just registering does not grant you access to the whole AI4EOSC platform, just some access to basic services.
+Also, be aware that just registering does not grant you access to the whole AI4OS platform, just some access to basic services.
 
 Please request an upgrade if you need access to the full platform.
 

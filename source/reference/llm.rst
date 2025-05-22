@@ -131,7 +131,7 @@ There are two API options:
 * **vLLM API** (:material-outlined:`verified;1.5em` *recommended*): faster (load balanced), supports chat completions
 
   - **API endpoint**: https://llm.dev.ai4eosc.eu:8000.
-  - **API key**: `AI4EOSC Keycloak <https://login.cloud.ai4eosc.eu/realms/ai4eosc/account>`__ → ``Personal Info`` → ``User metadata`` → ``LLM API key``
+  - **API key**: `AI4OS Keycloak <https://login.cloud.ai4eosc.eu/realms/ai4eosc/account>`__ → ``Personal Info`` → ``User metadata`` → ``LLM API key``
 
   .. figure:: /_static/images/llm/api-keys-keycloak.png
      :width: 500 px
@@ -149,7 +149,7 @@ There are two API options:
 Use it as a code assistant with VScode
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-It's very to use the AI4OS LLM as a code assistant, both locally and in :doc:`the AI4OS Development Environment </howtos/develop/dashboard>`.
+It's very easy to use the AI4OS LLM as a code assistant, both locally and in :doc:`the AI4OS Development Environment </howtos/develop/dashboard>`.
 To configure it:
 
 1. In VScode, install the `Continue.dev <https://www.continue.dev/>`__ extension.
