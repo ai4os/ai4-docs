@@ -2,15 +2,6 @@ Develop a model from scratch
 ============================
 
 .. admonition:: Requirements
-   :class: info
-
-   🔒 This tutorial requires :ref:`full authentication <getting-started/register:Full authentication>`.
-
-This tutorial explains how to develop a AI4OS module from scratch.
-
-If you are new to Machine Learning, you might want to check some :doc:`useful Machine Learning resources </others/useful-ml-resources>` we compiled to help you getting started.
-
-.. admonition:: Requirements
     :class: info
 
     * For **Step 1**, to use the Module's template webpage, you need at least :doc:`basic authentication </reference/user-access-levels>`.
@@ -18,6 +9,9 @@ If you are new to Machine Learning, you might want to check some :doc:`useful Ma
       Otherwise you can develop locally.
     * For **Step 4** we recommend having `docker <https://docs.docker.com/install/#supported-platforms>`__ installed (though it's not strictly mandatory).
 
+This tutorial explains how to develop a AI4OS module from scratch.
+
+If you are new to Machine Learning, you might want to check some :doc:`useful Machine Learning resources </others/useful-ml-resources>` we compiled to help you getting started.
 
 1. Setting the framework
 ------------------------
@@ -26,7 +20,7 @@ This first step relies on the :doc:`the AI4OS Modules Template </reference/cooki
 
 * Access and authenticate in the `Template creation webpage <https://templates.cloud.ai4eosc.eu/>`__.
 * Then select the ``minimal`` branch of the template and answer the questions.
-* Click on ``Generate`` and you will be able to download a ``.zip`` file with with your project directory. Extract it locally.
+* Click on ``Generate`` and you will be able to download a ``.zip`` file with with your project directory.
 
 2. Prepare your development environment
 ---------------------------------------
@@ -36,12 +30,12 @@ Although it is possible to develop your code locally, we also offer the possibil
 This offers the benefits of:
 
 * developing on dedicated resources (including GPUs),
-* have direct access to your Nextcloud storage,
-* develop on Docker image that is already packaged with your favorite Deep Learning framework (eg. Pytorch, Tensorflow),
+* have direct access to your data hosted in the :doc:`AI4OS Storage </reference/storage>`,
+* develop on a Docker image that is already packaged with your favorite Deep Learning framework (eg. Pytorch, Tensorflow),
 * develop on your favorite IDE (Jupyterlab or VScode),
 
-Check :ref:`how to configure <dashboard_deployment>` the AI4OS Development Environment.
-For example, this is what an AI4OS Development Environment with VScode would look out-of-the-box:
+Check :ref:`how to create and configure <dashboard_deployment>` the AI4OS Development Environment.
+This is what an AI4OS Development Environment with VScode would look out-of-the-box:
 
 .. dropdown:: :fab:`youtube;youtube-icon` ㅤLaunching a development environment
 
@@ -54,13 +48,13 @@ For example, this is what an AI4OS Development Environment with VScode would loo
 .. image:: /_static/images/endpoints/vscode.png
 
 
-.. admonition:: Use storage-synced folder to develop
+.. admonition:: 💡 Use storage-synced folder to develop
    :class: info
 
-   We recommend you make a :ref:`deployment synced with storage <dashboard_storage>`.
+   We recommend to create a :ref:`deployment attached to storage <dashboard_storage>`.
 
-   By doing so, you can develop your code inside the ``/storage`` folder and any changes you make will automatically be synced with the :doc:`project's Cloud storage </reference/storage>`.
-   This will prevent you from losing your work in the case that a deployment crash occurs.
+   By doing so, you can develop your code inside the ``/storage`` folder and any changes you make will automatically be synced with the :doc:`AI4OS Storage </reference/storage>`.
+   This will prevent any work loss in case of an unexpected deployment crash.
 
 
 .. _develop_code:
@@ -68,29 +62,30 @@ For example, this is what an AI4OS Development Environment with VScode would loo
 3. Editing the module's code
 ----------------------------
 
-Unpack, the zip file created in Step 1.
-Install your project as a Python module in **editable** mode (so that the changes you make to the codebase are picked by Python).
-
-.. code-block:: console
-
-    $ cd <project-name>
-    $ pip install -e .
-
-Now you can start writing your code.
+Drag and drop in the VScode editor the zip file created in Step 1. Then unpack it.
 
 .. dropdown:: ㅤ 💡 Optimal VScode setup
 
    **Tip nº1**:
    VScode by default is initialized in ``/srv``.
    For a better coding experience we suggest opening VScode with your folder project *only*.
-   This will allow you to ignore other non-related folders under ``/srv`` when doing global searches for example.
+   This will allow you to ignore other non-related folders under ``/srv`` when doing global searches or tracking changes, for example.
    For this, go to ``File > Open Folder > /srv/<project-name>``.
+
+   As explained earlier, having your project under ``/storage`` will allow it to be automatically synced with the :doc:`AI4OS Storage </reference/storage>`.
 
    **Tip nº2**:
    :ref:`Use the AI4OS LLM as coding assistant <reference/llm:Use it as a code assistant with VScode>`.
-   We recommend doing this along tip nº1 in order to avoid Continue from freezing when trying to index the whole workspace contents.
+   We recommend implementing first tip nº1, in order to avoid the Continue assistant from freezing when trying to index the whole workspace contents.
 
-.. dropdown:: ㅤ 🛠️ Troubleshooting DEEPaaS installation
+Install your project as a Python module in **editable** mode, so that the changes you make to the codebase are picked by Python.
+
+.. code-block:: console
+
+   cd <project-name>
+   pip install -e .
+
+.. dropdown:: ㅤ 🛠️ Troubleshooting pip installation
 
     Some users have reported issues in some systems when installing ``deepaas`` (which is always present in the ``requirements.txt`` of your project).
     Those issues have been resolved as following:
@@ -98,9 +93,13 @@ Now you can start writing your code.
     * In `Pytorch Docker images <https://hub.docker.com/r/pytorch/pytorch>`__, making sure ``gcc`` is installed (``apt install gcc``)
     * In other systems, sometimes ``python3-dev`` is needed (``apt install python3-dev``).
 
+Now you can start adding your AI model code inside ``<project-name>/<project-name>``.
 
-To be able to interface with DEEPaaS :ref:`you have to define <deepaas-integrate>`
-in ``api.py`` the functions you want to make accessible to the user.
+Integrating with the DEEPaaS API
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Once your code is included, you need your module to be able to interface with the :doc:`DEEPaaS API </reference/api>`, which allows any module in the Marketplace to be accessed using the same API.
+For this, :ref:`you have to define <deepaas-integrate>` in ``api.py`` the functions you want to make accessible to the user.
 For this tutorial we are going to head to our `official demo module <https://github.com/ai4os-hub/ai4os-demo-app/blob/main/ai4os_demo_app/api.py>`__
 and copy-paste its ``api.py`` file.
 
@@ -108,7 +107,7 @@ Once this is done, check that DEEPaaS is interfacing correctly by running:
 
 .. code-block:: console
 
-    $ deepaas-run --listen-ip 0.0.0.0
+   deepaas-run --listen-ip 0.0.0.0
 
 Your module should be visible in http://0.0.0.0:5000/ui .
 If you don't see your module, you probably messed the ``api.py`` file.
@@ -116,7 +115,7 @@ Try running it with python so you get a more detailed debug message.
 
 .. code-block:: console
 
-    $ python api.py
+   python api.py
 
 Remember to leave untouched the ``get_metadata()`` function that comes predefined with your module,
 as all modules should have proper metadata.
@@ -128,14 +127,17 @@ In general, you will have the following ports available when making a deployment
 * ``8888``: default port used for exposing the IDE (eg. JupyterLab, VScode)
 * ``80``: port available to let developers expose their custom endpoint
 
+Model Quality Assurance
+^^^^^^^^^^^^^^^^^^^^^^^
+
 In order to improve the readability of the code and the overall maintainability of your module,
-we enforce some quality standards in tox (including style, security, etc).
+we :ref:`enforce some quality standards <reference/modules:CI /CD pipeline>` in tox (including style, security, etc).
 Modules that fail to pass style tests won't be able to build docker images.
 You can check locally if your module passes the tests:
 
 .. code-block:: console
 
-    $ tox -e .
+   tox -e .
 
 There you should see a detailed report of the offending lines (if any).
 You can always `turn off flake8 testing <https://stackoverflow.com/a/64431741>`__
@@ -152,7 +154,7 @@ in some parts of the code if long lines are really needed.
 
     .. code-block:: console
 
-        $ black <code-folder> --diff
+        black <code-folder> --diff
 
     You can always `turn off Black formatting <https://black.readthedocs.io/en/stable/the_black_code_style/current_style.html?highlight=fmt#code-style>`__
     if you want to keep some sections of your code untouched.
@@ -161,7 +163,7 @@ in some parts of the code if long lines are really needed.
 
     .. code-block:: console
 
-        $ black <code-folder>
+        black <code-folder>
 
     Remember to have a backup before reformatting, just in case!
 
@@ -181,8 +183,8 @@ Check your Dockerfile works correctly by building it **locally** (outside the AI
 
 .. code-block:: console
 
-    $ docker build --no-cache -t your_project .
-    $ docker run -ti -p 5000:5000 -p 6006:6006 -p 8888:8888 your_project
+   docker build --no-cache -t your_project .
+   docker run -ti -p 5000:5000 -p 6006:6006 -p 8888:8888 your_project
 
 Your module should be visible in http://0.0.0.0:5000/ui .
 You can make a POST request to the ``predict`` method to check everything is working as intended.
