@@ -15,6 +15,11 @@ From the point of view of the development and training of a model in a distribut
 
 * **The user wants to train a model on a large dataset. The model is complex enough to require the use of multiple GPUs.** You would create a multi-GPU deployment in AI4OS, upload the data to it and train the model in a distributed way using `horovod <https://horovod.ai/>`__. Below is an example that can be followed, specifically applied to the `CIFAR100 <https://www.cs.toronto.edu/~kriz/cifar.html>`__ dataset using `Tensorflow <https://www.tensorflow.org/>`__ (it would be enough to replace the configuration related to this use case to extrapolate it to the user case).
 
+.. admonition:: Note
+   :class: info
+
+   Due to the restricted number of GPUs, for optimal usage, we currently do not support creating multi-GPU deployments.
+
   .. code-block:: python
 
     import tensorflow as tf
