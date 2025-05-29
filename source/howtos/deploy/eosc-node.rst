@@ -53,6 +53,9 @@ Fill the form and register the tool. Once registered, you can make it public and
 2. Procedure to Deploy the Model in a Virtual Machine in the EOSC EU Node
 -------------------------------------------------------------------------
 
+The next subsections are a tutorial to learn how to deploy an AI model of the AI4EOSC Marketplace in the EOSC EU Node. You can see a video demo `here <https://drive.google.com/file/d/1232s6kfq2jcDnTv_kMv7rC1Zx1Axb7GX/view?resourcekey>`__.
+
+
 Step 0. Log into the EOSC EU Node and allocate the computing resources
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -61,28 +64,54 @@ Then, you need to allocate your Virtual Machine. Go to the **Virtual Machines** 
 What happens underneeth is that OpenStack creates the corresponding project with the selected quota for your user. This is called your “Default Personal Project”.
 Allocate the environment by clicking the ``Run`` button.
 
+.. image:: /_static/images/eoscnode/allocate-vms.png
+
 Notice that in this step what you do is to allocate the resources (quota), but you are not actually deploying them. 
 
 Step 1. Choose the tool to deploy
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Choose the tool. You can see the details with the button.
+Now, go to the Tools Hub and select the Tool from the “All Tools” section. You can use the searcher to find the AI4EOSC tools already created. If you want, you can flag them as favourite. 
+
+.. image:: /_static/images/eoscnode/tools-hub.png
+
+Choose the desired tool. You can see the details with the "Show details" button.
+
+.. image:: /_static/images/eoscnode/tools-details.png
 
 Step 2. Deploy the tool
 ^^^^^^^^^^^^^^^^^^^^^^^
 
 Deploy the desired tool by using the :material-outlined:`play;1.5em` ``Play`` button. 
-You need to select the Default Personal Project created in Step 0.
-Once deployed, in the “Deployments” tab, it will appear a new entry.
+You can set custom input values by clicking on the “customize input values and save to new tool” checkbox. This enables the modification of the AI4EOSC model to deploy and the amount of computational resources to assing to the VM. So this is the way to easily deploy any of the AI models available in the marketplace.
+If selected, the next fields appear:
+
+.. image:: /_static/images/eoscnode/tool-custom.png
+
+Modify them as desired and then click on the "Save and Select Project" button. It will create a new tool in your private “My Tools” list, that you can use for new deployments.
+Next, you need to select the Default Personal Project created in Step 0, which is linked to the allocated OpenStack project.
+
+.. image:: /_static/images/eoscnode/tools-deploy.png
+
+Press the “Proceed” blue button and you will get a confirmation message about the deployment.
+Once deployed, in the “Deployments” tab (inside the Tools Hub), it will appear a new entry corresponding with your new Deployment.
 
 
 Step 3. Access the tool
 ^^^^^^^^^^^^^^^^^^^^^^^
 
-You will see the endpoint of the deployed tool in additional information.
-For the AI4EOSC AI models, you will get a Swagger interface to use the model.
+You will see the endpoint of the deployed tool in the additional information option.
 
-You can see a demo `here <https://drive.google.com/file/d/1232s6kfq2jcDnTv_kMv7rC1Zx1Axb7GX/view?resourcekey>`__.
+.. image:: /_static/images/eoscnode/tool-output.png
+
+For the AI4EOSC AI models, if you access the endpoint provided, you will get a Swagger interface to use the model.
+Please note that, in the case of Virtual Machines, it will take up to 10 minutes to deploy and configure the VM for the endpoint to be ready.  You can periodically try to connect until you’ll eventually have access to the Swagger DEEPaaS UI.
+
+.. image:: /_static/images/eoscnode/example-deepaasui.png
+
+Step 4. Using the tool
+^^^^^^^^^^^^^^^^^^^^^^
+
 
 
 3. Procedure to Deploy the Model in a Container in the EOSC EU Node
@@ -93,5 +122,8 @@ Step 0. Log into the EOSC EU Node and allocate the computing resources
 
 In the case of **Containers**, OKD reserves the corresponding quota for your user. In the **Cloud Container Platform** section, chose the *Small* environment and click ``Run``. You will have to choose the time period and press *Submit*.
 
+.. image:: /_static/images/eoscnode/allocate-container.png
+
 Step 1. Choose the tool to deploy
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
