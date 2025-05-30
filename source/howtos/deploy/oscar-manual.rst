@@ -72,9 +72,9 @@ OSCAR services can be invoked (see `Invoking services <https://docs.oscar.grycap
   including:
 
   - The deployment of the `Body pose detection <https://dashboard.cloud.ai4eosc.eu/marketplace/modules/DEEP-OC-posenet-tf>`__
-    AI model from the AI4EOSC Marketplace is documented in the `body-pose-detection <https://github.com/grycap/oscar/tree/master/examples/body-pose-detection>`__
+    AI model from the AI4OS Marketplace is documented in the `body-pose-detection <https://github.com/grycap/oscar/tree/master/examples/body-pose-detection>`__
     folder, used to perform asynchronous invocations via MinIO.
   - The deployment of the `Plants Species Classifier <https://dashboard.cloud.ai4eosc.eu/marketplace/modules/plants-classification>`__
-    AI model from the AI4EOSC Marketplace is documented in the
+    AI model from the AI4OS Marketplace is documented in the
     `plant-classification-sync <https://github.com/grycap/oscar/tree/master/examples/plant-classification-sync>`__
     folder, used to perform synchronous invocations.

@@ -1,20 +1,14 @@
-Train a model
-=============
+Train in standard mode
+======================
 
 .. admonition:: Requirements
    :class: info
 
-   🔒 This tutorial requires :ref:`full authentication <getting-started/register:Full authentication>`.
+   * 🔒 This tutorial requires :ref:`full authentication <getting-started/register:Full authentication>` to be able to access both the Dashboard and Nextcloud storage.
+   * For **Step 8** we recommend having `docker <https://docs.docker.com/install/#supported-platforms>`__ installed (though it's not strictly mandatory).
 
-This is a step by step guide on how to train a model with your own dataset.
-
-If you are new to Machine Learning, you might want to check some :doc:`useful Machine Learning resources </others/useful-ml-resources>` we compiled to help you getting started.
-
-.. admonition:: Requirements
-    :class: info
-
-    * You need :doc:`full authentication </reference/user-access-levels>` to be able to access both the Dashboard and Nextcloud storage.
-    * For **Step 8** we recommend having `docker <https://docs.docker.com/install/#supported-platforms>`__ installed (though it's not strictly mandatory).
+This is a step by step guide on how to train a model with your own dataset in standard mode.
+In standard mode, you will get a persistent deployment that you will be able to interact with via an IDE.
 
 
 1. Upload your dataset to Nextcloud

@@ -43,8 +43,8 @@ In this particular case, you will need to pay attention to:
 
   .. image:: /_static/images/dashboard/configure_flower.png
 
-Federated learning training in AI4EOSC
---------------------------------------
+Federated learning training in AI4OS
+------------------------------------
 
 Starting the Federated Learning server
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^

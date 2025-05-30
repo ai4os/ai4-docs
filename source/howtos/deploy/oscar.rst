@@ -58,9 +58,6 @@ Click on :material-outlined:`info;1.5em` ``Info`` for your service and you will 
     :width: 400px
 
 
-.. TODO: update this image when the dashboard is updated
-
-
 Finding the model inputs
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -69,29 +66,31 @@ Before making a prediction with that service, you first need to know what are th
 The following Python script demonstrates how to make a *synchronous call* asking for help.
 To use the script, you have to replace the ``endpoint`` and ``token`` variables with the values :ref:`retrieved above <howtos/deploy/oscar:Retrieve the service information>`.
 
-.. code-block:: python
+.. dropdown:: ㅤ 📄 Help Python script
 
-    import base64
+    .. code-block:: python
 
-    import requests
+        import base64
+
+        import requests
 
 
-    endpoint = "https://inference.cloud.ai4eosc.eu/run/ai4papi-***********************"
-    token = "*************************************************************************"
+        endpoint = "https://inference.cloud.ai4eosc.eu/run/ai4papi-***********************"
+        token = "*************************************************************************"
 
-    data = {"help": ""}
-    headers = {
-        "Content-Type": "application/json",
-        "Authorization": f"Bearer {token}",
-    }
-    r = requests.post(url=endpoint, headers=headers, json=data)
+        data = {"help": ""}
+        headers = {
+            "Content-Type": "application/json",
+            "Authorization": f"Bearer {token}",
+        }
+        r = requests.post(url=endpoint, headers=headers, json=data)
 
-    if r.status_code == 401:
-        raise Exception("Invalid token.")
-    if not r.ok:
-        raise Exception(f"Some error has occurred: {r}")
+        if r.status_code == 401:
+            raise Exception("Invalid token.")
+        if not r.ok:
+            raise Exception(f"Some error has occurred: {r}")
 
-    print(r.text)
+        print(r.text)
 
 In this case, we receive what are the inputs needed by the YOLO model.
 
@@ -130,42 +129,45 @@ The following Python script demonstrates how to make a *synchronous call* with s
 
 As before, to use the script, you have to replace the ``endpoint`` and ``token`` variables with the values :ref:`retrieved above <howtos/deploy/oscar:Retrieve the service information>`.
 
-.. code-block:: python
 
-    import base64
+.. dropdown:: ㅤ 📄 Synchronous prediction Python script
 
-    import requests
+    .. code-block:: python
+
+        import base64
+
+        import requests
 
 
-    endpoint = "https://inference.cloud.ai4eosc.eu/run/ai4papi-***********************"
-    token = "*************************************************************************"
+        endpoint = "https://inference.cloud.ai4eosc.eu/run/ai4papi-***********************"
+        token = "*************************************************************************"
 
-    def get_base64(fpath):
-        with open(fpath, "rb") as f:
-            encoded_str = base64.b64encode(f.read()).decode("utf-8")
-        return encoded_str
+        def get_base64(fpath):
+            with open(fpath, "rb") as f:
+                encoded_str = base64.b64encode(f.read()).decode("utf-8")
+            return encoded_str
 
-    data = {
-        "oscar-files": [
-            {
-                "key": "files",
-                "file_format": "jpg",
-                "data": get_base64("./bear.jpg"),
-            },
-        ]
-    }
-    headers = {
-        "Content-Type": "application/json",
-        "Authorization": f"Bearer {token}",
-    }
-    r = requests.post(url=endpoint, headers=headers, json=data)
+        data = {
+            "oscar-files": [
+                {
+                    "key": "files",
+                    "file_format": "jpg",
+                    "data": get_base64("./bear.jpg"),
+                },
+            ]
+        }
+        headers = {
+            "Content-Type": "application/json",
+            "Authorization": f"Bearer {token}",
+        }
+        r = requests.post(url=endpoint, headers=headers, json=data)
 
-    if r.status_code == 401:
-        raise Exception("Invalid token.")
-    if not r.ok:
-        raise Exception(f"Some error has occurred: {r}")
+        if r.status_code == 401:
+            raise Exception("Invalid token.")
+        if not r.ok:
+            raise Exception(f"Some error has occurred: {r}")
 
-    print(r.text)
+        print(r.text)
 
 The script will print the logs, along with the JSON output of the model (in this case, the prediction made by YOLO).
 
@@ -191,101 +193,114 @@ The following Python script demonstrates how to upload some inputs to the bucket
 
 To use the script, you have to replace the Minio-related variables with the values :ref:`retrieved above <howtos/deploy/oscar:Retrieve the service information>`.
 
-.. code-block:: python
+.. dropdown:: ㅤ 📄 Asynchronous prediction Python script
 
-    import base64
-    import json
-    import time
+    .. code-block:: python
 
-    import boto3
+        import base64
+        import json
+        import time
+
+        import boto3
 
 
-    # This information is retrieved from your deployment information window
-    MINIO_BUCKET = "ai4papi-*************************************************"
-    MINIO_URL = "https://****************************************************"
-    MINIO_ACCESS_KEY = "**********************************************@egi.eu"
-    MINIO_SECRET_KEY = "*****************************************************"
+        # This information is retrieved from your deployment information window
+        MINIO_BUCKET = "ai4papi-*************************************************"
+        MINIO_URL = "https://****************************************************"
+        MINIO_ACCESS_KEY = "**********************************************@egi.eu"
+        MINIO_SECRET_KEY = "*****************************************************"
 
-    # This is how you decide to name your new prediction
-    prediction_ID = "test-prediction"
+        # This is how you decide to name your new prediction
+        prediction_ID = "test-prediction"
 
-    # Local paths (in current folder)
-    pth_local_input = f"input-{prediction_ID}.json"
-    pth_local_output = f"output-{prediction_ID}.json"
-    pth_local_logs = f"output-{prediction_ID}.log"
+        # Local paths (in current folder)
+        pth_local_input = f"input-{prediction_ID}.json"
+        pth_local_output = f"output-{prediction_ID}.json"
+        pth_local_logs = f"output-{prediction_ID}.log"
 
-    # Remote paths (in the bucket)
-    # Two files will be produced in the output folder of the bucket
-    # * <input_filename>.json: this file has the output of the prediction, in JSON format.
-    #   --> this will only be created if the prediction is successful
-    # * <input_filename>.log: this file has the logs of the prediction.
-    #   --> this will always be created
-    pth_remote_input = f"inputs/{prediction_ID}.json"
-    pth_remote_output = f"outputs/{prediction_ID}.json"
-    pth_remote_logs = f"outputs/{prediction_ID}.log"
+        # Remote paths (in the bucket)
+        # Two files will be produced in the output folder of the bucket
+        # * <input_filename>.json: this file has the output of the prediction, in JSON format.
+        #   --> this will only be created if the prediction is successful
+        # * <input_filename>.log: this file has the logs of the prediction.
+        #   --> this will always be created
+        pth_remote_input = f"inputs/{prediction_ID}.json"
+        pth_remote_output = f"outputs/{prediction_ID}.json"
+        pth_remote_logs = f"outputs/{prediction_ID}.log"
 
-    # Prepare the data you want to predict
-    def get_base64(fpath):
-        """
-        Encode files as base64. We need to do this to pass files as prediction inputs in
-        the JSON file.
-        """
-        with open(fpath, "rb") as f:
-            encoded_str = base64.b64encode(f.read()).decode("utf-8")
-        return encoded_str
+        # Prepare the data you want to predict
+        def get_base64(fpath):
+            """
+            Encode files as base64. We need to do this to pass files as prediction inputs in
+            the JSON file.
+            """
+            with open(fpath, "rb") as f:
+                encoded_str = base64.b64encode(f.read()).decode("utf-8")
+            return encoded_str
 
-    data = {
-        "oscar-files": [
-            {
-                "key": "files",
-                "file_format": "jpg",
-                "data": get_base64("./bear.jpg"),
-            },
-        ]
-    }
+        data = {
+            "oscar-files": [
+                {
+                    "key": "files",
+                    "file_format": "jpg",
+                    "data": get_base64("./bear.jpg"),
+                },
+            ]
+        }
 
-    # Create the JSON file
-    with open(pth_local_input, "w") as f:
-        json.dump(data, f)
+        # Create the JSON file
+        with open(pth_local_input, "w") as f:
+            json.dump(data, f)
 
-    # Init the Minio Object Store
-    client = boto3.client(
-        "s3",
-        endpoint_url=MINIO_URL,
-        region_name="",
-        verify=True,
-        aws_access_key_id=MINIO_ACCESS_KEY,
-        aws_secret_access_key=MINIO_SECRET_KEY,
-    )
+        # Init the Minio Object Store
+        client = boto3.client(
+            "s3",
+            endpoint_url=MINIO_URL,
+            region_name="",
+            verify=True,
+            aws_access_key_id=MINIO_ACCESS_KEY,
+            aws_secret_access_key=MINIO_SECRET_KEY,
+        )
 
-    # Upload the inputs to the bucket
-    with open(pth_local_input, "rb") as data:
-        client.upload_fileobj(data, MINIO_BUCKET, pth_remote_input)
-    print(f"Uploaded data to {pth_remote_input} in bucket {MINIO_BUCKET}")
+        # Check if input file already exists in bucket, if so delete it to make the prediction again
+        try:
+            client.head_object(Bucket=MINIO_BUCKET, Key=pth_remote_input)
+            client.delete_object(Bucket=MINIO_BUCKET, Key=pth_remote_input)
+            print(f"Deleted existing file {pth_remote_input} from bucket {MINIO_BUCKET}")
+        except client.exceptions.ClientError as e:
+            if e.response["Error"]["Code"] == "404":
+                print(f"No existing file {pth_remote_input} found in bucket {MINIO_BUCKET}")
+            else:
+                raise
 
-    # Now we wait until the prediction is made
-    while True:
-        # List objects in the bucket
-        r = client.list_objects_v2(Bucket=MINIO_BUCKET)
-        contents = [i["Key"] for i in r["Contents"]]
+        # Upload the inputs to the bucket
+        with open(pth_local_input, "rb") as data:
+            client.upload_fileobj(data, MINIO_BUCKET, pth_remote_input)
+        print(f"Uploaded data to {pth_remote_input} in bucket {MINIO_BUCKET}")
 
-        # If the output is available, download it
-        if pth_remote_logs in contents:
-            with open(pth_local_logs, "wb") as data:
-                client.download_fileobj(MINIO_BUCKET, pth_remote_logs, data)
-            print(f"Downloaded logs from {pth_remote_logs} in bucket {MINIO_BUCKET}")
+        # Now we wait until the prediction is made
+        while True:
+            # List objects in the bucket
+            r = client.list_objects_v2(Bucket=MINIO_BUCKET)
+            contents = [i["Key"] for i in r["Contents"]]
 
-            # Prediction JSON will only be available if the prediction was successful
-            if pth_remote_output in contents:
-                with open(pth_local_output, "wb") as data:
-                    client.download_fileobj(MINIO_BUCKET, pth_remote_output, data)
-                print(f"Downloaded data from {pth_remote_output} in bucket {MINIO_BUCKET}")
+            # If the output is available, download it
+            if pth_remote_logs in contents:
+                with open(pth_local_logs, "wb") as data:
+                    client.download_fileobj(MINIO_BUCKET, pth_remote_logs, data)
+                print(f"Downloaded logs from {pth_remote_logs} in bucket {MINIO_BUCKET}")
 
-            break
+                # Prediction JSON will only be available if the prediction was successful
+                if pth_remote_output in contents:
+                    with open(pth_local_output, "wb") as data:
+                        client.download_fileobj(MINIO_BUCKET, pth_remote_output, data)
+                    print(f"Downloaded data from {pth_remote_output} in bucket {MINIO_BUCKET}")
 
-        else:
-            print("Waiting for the prediction to complete ...")
-            time.sleep(5)
+                break
+
+            else:
+                print("Waiting for the prediction to complete ...")
+                time.sleep(5)
 
 
 This script will produce a ``.log`` file with the OSCAR logs and a ``.json`` file with the prediction of the YOLO model.
@@ -293,38 +308,46 @@ This script will produce a ``.log`` file with the OSCAR logs and a ``.json`` fil
 
 Using the OSCAR Web UI interface
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Another option to interact with the OSCAR service is through the `graphical web interface (UI) <https://inference.cloud.ai4eosc.eu/>`__. To access the OSCAR service through the UI, follow these steps:
+Another option to interact with the OSCAR service is through the graphical web interface (UI):
+
+* `AI4EOSC OSCAR UI <https://inference.cloud.ai4eosc.eu/>`__
+* `iMagine OSCAR UI <https://inference-walton.cloud.imagine-ai.eu/>`__
+
+
+To access the OSCAR service through the UI, follow these steps:
 
 1. In the ``Inference`` tab, go to the ``Serverless (OSCAR)`` table and find your newly created service.
 2. Click on :material-outlined:`info;1.5em` ``Info`` button on the right to show the service details and check the ``Deployment ID``.
-3. Go to the `OSCAR UI <https://inference.cloud.ai4eosc.eu/>`__  in your browser, log in with your credentials and search for the service with the same name as the ``Deployment ID``.
-4. Click on the ``More options`` button of your service and select ``Invoke`` to open a new screen where you can provide the input to the service invocation. At this point, as you have seen in the asynchronous and synchronous calls, you have to take into account that most of the AI4EOSC models whose input is an image need to convert the input into a compatible JSON format. This implies converting the image to base64 and expressing the input in a JSON file. To help with this input preparation, we provide you a short Python script to convert your file into a compatible JSON format:
+3. Go to the **OSCAR UI**  in your browser, log in with your credentials and search for the service with the same name as the ``Deployment ID``.
+4. Click on the  :material-outlined:`more_vert;1.5em` ``More Actions`` button of your service and select  :material-outlined:`play_arrow;1.5em` ``Invoke`` to open a new screen where you can provide the input to the service invocation. At this point, as you have seen in the asynchronous and synchronous calls, you have to take into account that most of the AI4OS models whose input is an image need to convert the input into a compatible JSON format. This implies converting the image to base64 and expressing the input in a JSON file. To help with this input preparation, we provide you a short Python script to convert your file into a compatible JSON format:
 
-.. code-block:: python
+   .. dropdown:: ㅤ 📄 Data preparation Python script
 
-    import base64
-    import json
+        .. code-block:: python
 
-    def get_base64(fpath):
-        """Encodes a file in Base64 format."""
-        with open(fpath, "rb") as f:
-            encoded_str = base64.b64encode(f.read()).decode("utf-8")
-        return encoded_str
+            import base64
+            import json
 
-    # Prepare the JSON payload
-    data = {
-        "oscar-files": [
-            {
-                "key": "files",
-                "file_format": "png",
-                "data": get_base64("./inputs_Cat.png"),
-            },
-        ]
-    }
+            def get_base64(fpath):
+                """Encodes a file in Base64 format."""
+                with open(fpath, "rb") as f:
+                    encoded_str = base64.b64encode(f.read()).decode("utf-8")
+                return encoded_str
 
-    # Save the JSON data to a file
-    with open("input2.json", "w") as f:
-        json.dump(data, f, indent=4)
+            # Prepare the JSON payload
+            data = {
+                "oscar-files": [
+                    {
+                        "key": "files",
+                        "file_format": "png",
+                        "data": get_base64("./inputs_Cat.png"),
+                    },
+                ]
+            }
+
+            # Save the JSON data to a file
+            with open("input2.json", "w") as f:
+                json.dump(data, f, indent=4)
 
 5. Once your file is ready, you can use it to invoke the service using the ``Run`` button.
 
@@ -336,7 +359,7 @@ Make a prediction using Bash
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 For completeness sake, we provide the equivalent commands to perform the above operations in Bash, instead of Python.
 
-.. dropdown:: ㅤㅤ Synchronous call with YOLO (Bash)
+.. dropdown:: ㅤㅤ 📄 Synchronous call with YOLO (Bash)
 
     Find the input parameters needed by the model:
 
@@ -384,7 +407,7 @@ Learn how to feed different input types
 
 We are going to demonstrate how to send a more complete set of input parameters to OSCAR.
 
-For educational purposes, we are going to use the `official AI4EOSC demo module <https://dashboard.cloud.ai4eosc.eu/marketplace/modules/deep-oc-demo_app>`__.
+For educational purposes, we are going to use the `official AI4OS demo module <https://dashboard.cloud.ai4eosc.eu/marketplace/modules/deep-oc-demo_app>`__.
 While this model does not perform an AI task, it is very helpful as it shows the wide variety of inputs that can be sent to OSCAR inference endpoints.
 
 So go back to the previous steps and deploy the
@@ -392,7 +415,7 @@ So go back to the previous steps and deploy the
 Once you have retrieved your endpoint and token, you can run the following Python script to make the prediction from your local computer:
 
 
-.. dropdown:: ㅤㅤ Synchronous call with the demo app (Python)
+.. dropdown:: ㅤㅤ 📄 Synchronous call with the demo app (Python)
 
 
     .. code-block:: python

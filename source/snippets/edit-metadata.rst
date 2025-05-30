@@ -91,5 +91,5 @@ Check you didn't mess up the YAML definition by running our `metadata validator 
 
 .. code-block:: console
 
-    $ pip install ai4-metadata
-    $ ai4-metadata validate ai4-metadata.yml
+   pip install ai4-metadata
+   ai4-metadata validate ai4-metadata.yml

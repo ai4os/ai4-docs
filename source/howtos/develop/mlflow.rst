@@ -8,8 +8,8 @@ Experiment Tracking and Model versioning in MLflow
 
 We currently have two instances of MLflow running:
 
-* `MLflow AI4EOSC <https://mlflow.cloud.ai4eosc.eu>`__
-* `MLflow iMagine <https://mlflow.cloud.imagine-ai.eu>`__
+* `MLflow (AI4EOSC) <https://mlflow.cloud.ai4eosc.eu>`__
+* `MLflow (iMagine) <https://mlflow.cloud.imagine-ai.eu>`__
 
 When following this tutorial, adapt the MLflow links depending on which
 :doc:`Project or Virtual Organization you belong to </reference/user-access-levels>`.
