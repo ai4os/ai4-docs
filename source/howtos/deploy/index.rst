@@ -55,6 +55,12 @@ provides several guides in how to deploy your model in different environments.
         configuring the deployment. This is an advanced option.
 
 
+    .. grid-item-card:: :material-outlined:`handyman;1.5em`  Deploy in the EOSC EU Node
+        :link: eosc-node
+        :link-type: doc
+
+        Deploy your model in the resources provided by the EOSC EU Node.
+
 .. toctree::
    :maxdepth: 1
    :titlesonly:
@@ -67,3 +73,4 @@ provides several guides in how to deploy your model in different environments.
    Deploy external models <external>
    Deploy your own LLM <llm>
    Manual serverless deployment <oscar-manual>
+   Deploy in the EOSC EU Node <eosc-node>
