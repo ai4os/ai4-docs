@@ -10,6 +10,7 @@ notified here.
 .. Template
 .. * 📘 new :doc:`... <...>` page (``2024-04-03``)
 
+* 📈 we started supporting :doc:`drift monitoring detection </howtos/develop/drift-watch>` (``2025-06-10``)
 * 📈 we started supporting :doc:`batch mode trainings </howtos/train/batch>` (``2025-05-25``)
 * 📈 we added support for developers to provide :ref:`minimum inference resources  <howtos/develop/dashboard:5. Update your project's metadata>` (``2025-05-06``)
 * 📈 we started supporting :doc:`Federated Learning trainings with NVFLARE </howtos/train/federated-nvflare>` (``2025-04-07``)
