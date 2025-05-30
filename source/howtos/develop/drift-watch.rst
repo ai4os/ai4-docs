@@ -23,222 +23,248 @@ demonstrations at `Notebooks`_.
 .. _Repository example: https://github.com/ai4os-hub/obsea-fish-detection/tree/drift-camera
 .. _Notebooks: https://github.com/ai4os-hub/obsea-fish-detection/tree/drift-camera/notebooks
 
+What is drift detection?
+------------------------
+
+In drift detection, we monitor a model at inference time to detect when the input data
+starts to deviate from the training data distribution: we call this *data drift*.
+This could be due for example because:
+
+* the sensor taking the images is dirty, so we need to clean it,
+* the distribution of data has really changed, so the model needs to be retrained,
+
+In any case, the predictions are no longer reliable and an action has to be taken by the user.
+
+To achieve drift monitoring, we take the inference data vector and compare it with a reference
+training dataset. We compute a *p-value* that summarizes what is the likelihood that the inference vector
+could come from the training data. If the p-value is below a threshold, we can confidently assert
+that the data has indeed drifted.
+
+In the case of images, the pure pixels values are not a good summarizer of the image statistics.
+So we typically train an *autoencoder model* that is able to summarize the pixel values into a smaller
+vector that more accurately describes the image. We then use this vector to compute the p-values, as before.
+
 Prepare the tools for drift detection in your module
 ----------------------------------------------------
 
 To prepare the tools for drift detection in your module, follow these steps:
 
-1. **Define a configuration file to handle reference/test data**:
+1. Define your reference/test data
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-   Use torchvision (or your preferred library) to load the images and convert
-   them to tensors. It is recommended to resize the images to a smaller size
-   (e.g., 216x384) to reduce computational cost and complexity. This can be
-   done using the `torchvision.transforms` module.
+Use `torchvision <https://docs.pytorch.org/vision>`__ (or your preferred library) to load the images and convert
+them to tensors. It is recommended to resize the images to a smaller size
+(e.g., 216x384) to reduce computational cost and complexity. This can be
+done using the ``torchvision.transforms`` module.
 
-   .. code-block:: python
+.. dropdown:: ㅤㅤ 📄 Preprocess your images (Python)
 
-      from PIL import Image
-      from torch.utils.data import Dataset
-      from torchvision import transforms
+    .. code-block:: python
 
-      from obsea import config
+        from PIL import Image
+        from torch.utils.data import Dataset
+        from torchvision import transforms
 
-      class ImageDataset(Dataset):
-          def __init__(self, image_paths, transform=None):
-              self.image_paths = image_paths
-              self.transform = transform
+        from obsea import config
 
-          def __len__(self):
-              return len(self.image_paths)
+        class ImageDataset(Dataset):
+            def __init__(self, image_paths, transform=None):
+                self.image_paths = image_paths
+                self.transform = transform
 
-          def __getitem__(self, idx):
-              image = Image.open(self.image_paths[idx]).convert("RGB")
-              if self.transform:
-                  image = self.transform(image)
-              return image.to(config.device)
+            def __len__(self):
+                return len(self.image_paths)
 
-      transform = transforms.Compose(
-          [
-              transforms.Resize(settings["resize"]),
-              transforms.ToTensor(),
-              transforms.Normalize(
-                mean=settings["mean"], 
-                std=settings["std"]
-            ),
-          ]
-      )
+            def __getitem__(self, idx):
+                image = Image.open(self.image_paths[idx]).convert("RGB")
+                if self.transform:
+                    image = self.transform(image)
+                return image.to(config.device)
 
-   Additionally, you need to define which images from your dataset will be
-   used for reference and ideally, which ones will be used for testing. In our
-   case, we will use the images from the OBSEA dataset and define the clean
-   (for clean camera state) and dirty (for bad camera state). The clean images
-   will be used as reference to train the detector and determine the
-   statistical properties of the data under normal conditions.
+        transform = transforms.Compose(
+            [
+                transforms.Resize(settings["resize"]),
+                transforms.ToTensor(),
+                transforms.Normalize(
+                    mean=settings["mean"],
+                    std=settings["std"]
+                ),
+            ]
+        )
 
-   .. code-block:: python
+Additionally, you need to define which images from your dataset will be
+used for reference and ideally, which ones will be used for testing. In our
+case, we will use the images from the OBSEA dataset and define the clean
+(for clean camera state) and dirty (for bad camera state). The clean images
+will be used as reference to train the detector and determine the
+statistical properties of the data under normal conditions.
 
-      image_names = settings["camera_state"]["clean"]
-      image_paths = [images_parent / name for name in image_names]
-      dataset = ImageDataset(image_paths, transform=transform)
+Ideally, you might want to use a configuration file to define the images
+that will be used for reference and test. In our example, we use the ``toml``
+format to define the configuration file.
 
-   Ideally, you might want to use a configuration file to define the images
-   that will be used for reference and test. In our example, we use the `toml`
-   format to define the configuration file.
+.. dropdown:: ㅤㅤ 📄 Configuration file (TOML)
 
-   .. code-block:: toml
+    .. code-block:: toml
 
-      [transform]
-      resize = [216, 384]
-      mean = [0.00, 0.00, 0.00]
-      std = [1.00, 1.00, 1.00]
+        [transform]
+        resize = [216, 384]
+        mean = [0.00, 0.00, 0.00]
+        std = [1.00, 1.00, 1.00]
 
-      [camera_state]
-      clean = [
-          "20230728-083036-IPC608_8B64_165.jpg",
-          # ...
-      ]
-      dirty = [
-          "20230720-073036-IPC608_8B64_165.jpg",
-          # ...
-      ]
+        [camera_state]
+        clean = [
+            "20230728-083036-IPC608_8B64_165.jpg",
+            # ...
+        ]
+        dirty = [
+            "20230720-073036-IPC608_8B64_165.jpg",
+            # ...
+        ]
 
-   .. code-block:: python
+.. dropdown:: ㅤㅤ 📄 Load the configuration file (Python)
 
-      import tomllib
+    .. code-block:: python
 
-      with open("config.toml", "rb") as f:
-          settings = tomllib.load(f)
+        import tomllib
 
-   Once the pipeline to load the images and convert them to tensors is defined,
-   we can proceed to the next step.
+        with open("config.toml", "rb") as f:
+            settings = tomllib.load(f)
 
-2. **Choose the appropriate detection method**:
+        image_names = settings["camera_state"]["clean"]
+        image_paths = [images_parent / name for name in image_names]
+        dataset = ImageDataset(image_paths, transform=transform)
 
-   In our task, we want to analyze changes in data properties, not to evaluate
-   a model's performance, so we need to select a "Data drift" detection method.
-   Since our service processes one image per call (e.g., one image per day), we
-   need a Streaming method. For image data with multiple features, a
-   Multivariate method is required. As the input data is numerical, the method
-   must support numerical data. Based on this analysis, the best method is
-   `Maximum Mean Discrepancy` (MMDStreaming) as implemented in the `frouros`
-   library (see `Gretton et al. 2012`_).
+Once the pipeline to load the images and convert them to tensors is defined,
+we can proceed to the next step.
 
-   You can check this `Frouros table`_ to see and select between the available
-   methods in `Frouros`_.
+2. Choose the detection method
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-3. **Train an autoencoder**:
+In our task, we want to analyze changes in data properties, not to evaluate
+a model's performance, so we need to select a "Data drift" detection method.
+Since our service processes one image per call (e.g., one image per day), we
+need a Streaming method. For image data with multiple features, a
+Multivariate method is required. As the input data is numerical, the method
+must support numerical data. Based on this analysis, the best method is
+``Maximum Mean Discrepancy`` (MMDStreaming) as implemented in the `Frouros`_
+library (see `Gretton et al. 2012`_).
 
-   Machine learning and drift detection problems with images have a high
-   dimensionality (e.g., 224x224x3). To reduce computational cost and
-   complexity, we can train an autoencoder to lower the dimensionality of
-   the data.
+You can check this `Frouros table`_ to see and select between the available
+methods in `Frouros`_.
 
-   .. image:: /_static/images/driftwatch/drift-autoencoder.png
+3. Train an autoencoder
+^^^^^^^^^^^^^^^^^^^^^^^
 
-   This tutorial will not cover the details of training an autoencoder, but you
-   can find many online tutorials on how to do it using `TensorFlow autoencoder`_
-   or `PyTorch autoencoder`_. What is important is to train the autoencoder
-   with images, so that it learns to encode the clean (and ideally dirty)
-   states of the camera.
+Machine learning and drift detection problems with images have a high
+dimensionality (e.g., 224x224x3). To reduce computational cost and
+complexity, we can train an autoencoder to lower the dimensionality of
+the data.
 
-   .. image:: /_static/images/driftwatch/clean_decoded.png
-   
-   .. image:: /_static/images/driftwatch/dirty_decoded.png
+.. image:: /_static/images/driftwatch/drift-autoencoder.png
 
-4. **Save clean embeddings and model weights**:
+This tutorial will not cover the details of training an autoencoder, but you
+can find many online tutorials on how to do it using `TensorFlow autoencoder`_
+or `PyTorch autoencoder`_. What is important is to train the autoencoder
+with images, so that it learns to encode the clean (and ideally dirty)
+states of the camera.
 
-   The autoencoder will be used to generate embeddings for the images. These
-   embeddings will be used as reference data for the drift detection and as
-   input to the MMDStreaming method. Therefore, we need to save it in the
-   module storage so that it can be used later in the inference process
-   (to encode the uploaded images).
+.. image:: /_static/images/driftwatch/clean_decoded.png
 
-   Additionally, we need to use the autoencoder to generate the embeddings for
-   the clean camera images used for the training of our drift detector.
+.. image:: /_static/images/driftwatch/dirty_decoded.png
 
-   .. code-block:: python
+4. Save clean embeddings and model weights
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-      # Load the autoencoder model
-      autoencoder = Autoencoder()  # Define your autoencoder architecture
-      train(autoencoder, dataset)  # Train the autoencoder on the dataset
-      autoencoder.eval()
+The autoencoder will be used to generate embeddings for the images. These
+embeddings will be used as reference data for the drift detection and as
+input to the ``MMDStreaming`` method. Therefore, we need to save it in the
+module storage so that it can be used later in the inference process
+(to encode the uploaded images).
 
-      # Generate embeddings for clean images
-      clean_embeddings = []
-      for image in dataset:
-          with torch.no_grad():
-              embedding = autoencoder.encoder(image.unsqueeze(0))
-              clean_embeddings.append(embedding)
+Additionally, we need to use the autoencoder to generate the embeddings for
+the clean camera images used for the training of our drift detector.
 
-      # Save the model weights and clean embeddings
-      torch.save(autoencoder.state_dict(), "/storage/autoencoder.pth")
-      torch.save(clean_embeddings, "/storage/clean_embeddings.pth")
 
-   > Save the trained autoencoder model weights and the clean embeddings in the
-   module storage at `/storage`. These embeddings will serve as the baseline
-   for drift detection.
+.. dropdown:: ㅤㅤ 📄 Generating embeddings (Python)
 
-5. **Create and train the data drift detector**:
+    .. code-block:: python
 
-   Using the library `frouros`, we can create a drift detector that will
-   monitor the incoming data and compare it with the reference data
-   (clean embeddings). As defined in the previous step, we will use the
-   MMDStreaming method to detect drift in the data.
+        # Load the autoencoder model
+        autoencoder = Autoencoder()  # Define your autoencoder architecture
+        train(autoencoder, dataset)  # Train the autoencoder on the dataset
+        autoencoder.eval()
 
-   .. code-block:: python
+        # Generate embeddings for clean images
+        clean_embeddings = []
+        for image in dataset:
+            with torch.no_grad():
+                embedding = autoencoder.encoder(image.unsqueeze(0))
+                clean_embeddings.append(embedding)
 
-      from functools import partial
-      from frouros.detectors.data_drift import MMDStreaming
-      from frouros.utils.kernels import rbf_kernel
+        # Save the model weights and clean embeddings
+        torch.save(autoencoder.state_dict(), "/storage/autoencoder.pth")
+        torch.save(clean_embeddings, "/storage/clean_embeddings.pth")
 
-      detector = MMDStreaming(window_size=12, kernel=partial(rbf_kernel, sigma=0.3))
-      clean_embeddings = load_encodings(...)
-      detector.fit(clean_embeddings.cpu().numpy())  # Frouros expects numpy arrays
+Save the trained autoencoder model weights and the clean embeddings in the
+module storage at ``/storage``. These embeddings will serve as the baseline
+for drift detection.
 
-   This method compares the distribution of incoming data with the reference
-   data in real-time by using a sliding window approach. The first calls to
-   `update` will be used to fill the sliding window, and then the detector will
-   start to compare the incoming data with the reference data. Due to this
-   process, the first 12 calls to `update` will not be used to detect drift and
-   will return `None`. We can warm up the detector by calling `update` with the
-   clean embeddings.
+5. Create and train the data drift detector
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-   .. code-block:: python
+Using the `Frouros`_ library, we can create a drift detector that will
+monitor the incoming data and compare it with the reference data
+(clean embeddings). As defined in the previous step, we will use the
+``MMDStreaming()`` method to detect drift in the data.
 
-      # Warm up the detector with clean embeddings
-      for embedding in clean_embeddings:
-          detector.update(embedding.cpu().numpy())
+This method compares the distribution of incoming data with the reference
+data in real-time by using a sliding window approach. The first calls to
+``update()`` will be used to fill the sliding window, and then the detector will
+start to compare the incoming data with the reference data. Due to this
+process, the first 12 calls to ``update()`` will not be used to detect drift and
+will return ``None``. Optionally, we can warm up the detector by calling ``update()`` with the
+clean embeddings defined in the previous section.
 
-      # Now you can start monitoring incoming data
-      for image in incoming_images:
-          with torch.no_grad():
-              embedding = autoencoder.encoder(image.unsqueeze(0))
-          drift_score, _ = detector.update(embedding.cpu().numpy())
-          print(f"Drift score: {drift_score.distance}")
+Finally we define a threshold for the drift detection metric. If the metric exceeds the
+threshold, it indicates potential drift.
 
-   Configure the drift detector to monitor the embeddings generated by the
-   autoencoder. This ensures that the drift detection focuses on the most
-   relevant features of the data.
+.. dropdown:: ㅤㅤ 📄 Implementing the detection (Python)
 
-   The last step, due to the properties of the MMD method, is to define a
-   threshold for the drift detection metric. If the metric exceeds the
-   threshold, it indicates potential drift.
+    .. code-block:: python
 
-   .. code-block:: python
+        from functools import partial
+        from frouros.detectors.data_drift import MMDStreaming
+        from frouros.utils.kernels import rbf_kernel
 
-      # Define a threshold for drift detection
-      warning_threshold = 0.05  # Adjust this value based on your requirements
-      drift_threshold = 0.10  # Adjust this value based on your requirements
+        detector = MMDStreaming(window_size=12, kernel=partial(rbf_kernel, sigma=0.3))
+        clean_embeddings = load_encodings(...)
+        detector.fit(clean_embeddings.cpu().numpy())  # Frouros expects numpy arrays
 
-      # Check for drift
-      if drift_score.distance > drift_threshold:
-          print("Drift detected!")
-      elif drift_score.distance > warning_threshold:
-          print("Warning: Drift score is approaching the threshold.")
+        # Warm up the detector with clean embeddings
+        for embedding in clean_embeddings:
+            detector.update(embedding.cpu().numpy())
 
-   Simulate different scenarios (e.g., clean vs. dirty camera images) to
-   validate the drift detection. Ensure that it correctly identifies drift
-   and triggers appropriate alerts.
+        # Now you can start monitoring incoming data
+        for image in incoming_images:
+            with torch.no_grad():
+                embedding = autoencoder.encoder(image.unsqueeze(0))
+            drift_score, _ = detector.update(embedding.cpu().numpy())
+            print(f"Drift score: {drift_score.distance}")
+
+        # Define a threshold for drift detection
+        warning_threshold = 0.05  # Adjust this value based on your requirements
+        drift_threshold = 0.10  # Adjust this value based on your requirements
+
+        # Check for drift
+        if drift_score.distance > drift_threshold:
+            print("Drift detected!")
+        elif drift_score.distance > warning_threshold:
+            print("Warning: Drift score is approaching the threshold.")
+
+We recommend simulating different scenarios (e.g., clean vs. dirty camera images) to
+validate the drift detection. Ensure that it correctly identifies drift
+and triggers appropriate alerts.
 
 .. _config_files: https://github.com/ai4os-hub/obsea-fish-detection/tree/drift-camera/obsea/config-files
 .. _Frouros: https://frouros.readthedocs.io/en/latest
@@ -375,7 +401,7 @@ To add monitoring to your module with DriftWatch, follow these steps:
 1. **Obtain a MyToken to authenticate to the service**:
 
    To store data into DriftWatch server, users need to authenticate. To do so,
-   the service offers compatibility with federated authentication via 
+   the service offers compatibility with federated authentication via
    `mytoken`_, an service which allows the use of OIDC based tokens with
    enhanced security and long life extensions.
 
@@ -483,15 +509,15 @@ To add monitoring to your module with DriftWatch, follow these steps:
    where the module is running. This folder can be configured to mount your storage
    service from next cloud, see :ref:`Accessing storage from inside your deployment <storage_access>`.
    First you need to define the environment variables that will be used to
-   configure the sorage location and the url. 
+   configure the sorage location and the url.
 
    .. code-block:: python
 
     # in ./api/config.py or similar
     # e.g. /storage/ai4os-your-application-folder/
-    store_dir = os.getenv("DRIFT_MONITOR_STORE_DIR", None) 
+    store_dir = os.getenv("DRIFT_MONITOR_STORE_DIR", None)
     # e.g. https://share.services.ai4os.eu/remote.php/webdav/
-    store_url = os.getenv("DRIFT_MONITOR_STORE_URL", None) 
+    store_url = os.getenv("DRIFT_MONITOR_STORE_URL", None)
 
    Next use the `store_dir` and `store_url` to store and create the link to the
    image. You can use the `os.makedirs` function to create the directory where the
@@ -519,12 +545,12 @@ To add monitoring to your module with DriftWatch, follow these steps:
 
    Additionally, you can return the link to the image in the response of the
    `predict` function.
-    
+
 
 Deploy your module in production
 --------------------------------
 
-In the module page, click on the option ``Codespaces > Jupyter``. You will be 
+In the module page, click on the option ``Codespaces > Jupyter``. You will be
 shown a :ref:`configuration page <dashboard_deployment>` where the option
 ``Jupyter`` is selected. You can directly click on ``Quick submit`` as you
 don't need to configure anything else.
@@ -561,7 +587,7 @@ to the module and check if it is clean or dirty. Follow the steps in
 it.
 
 Access to `DriftWatch`_ in order to visualize the uploaded drift in
-the dashboard. 
+the dashboard.
 
    .. image:: /_static/images/driftwatch/experiments_page.png
 
