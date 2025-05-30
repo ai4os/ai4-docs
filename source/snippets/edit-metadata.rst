@@ -1,4 +1,4 @@
-The module's metadata is located in the ``ai4-metadata.yml`` file.
+The module's metadata is located in the ``ai4-metadata.yml`` file (`example <https://github.com/ai4os-hub/ai4os-demo-app/blob/main/ai4-metadata.yml>`__).
 This is the information that will be displayed in the Marketplace.
 The fields you need to edit to comply with our `schemata <https://github.com/ai4os/ai4-metadata/blob/master/src/ai4_metadata/schemata/ai4-apps-v2.0.0.json>`__ are:
 
@@ -9,84 +9,87 @@ The fields you need to edit to comply with our `schemata <https://github.com/ai4
 * ``tags`` (`mandatory`): relevant user-defined keywords (can be empty),
 * ``categories``, ``tasks``, ``libraries``, ``data-type`` (`mandatory`): one or several keywords, to be chosen from a closed list (can be empty).
 
-.. list-table::
-   :header-rows: 1
-   :widths: 15 40 25 20
+  .. dropdown:: ㅤ 📋 Supported values
 
-   * - Libraries
-     - Tasks
-     - Categories
-     - Data Type
-   * - TensorFlow
-     - Computer Vision
-     - AI4 pre trained
-     - Image
-   * - PyTorch
-     - Natural Language Processing
-     - AI4 trainable
-     - Text
-   * - Keras
-     - Time Series
-     - AI4 inference
-     - Time Series
-   * - Scikit-learn
-     - Recommender Systems
-     - AI4 tools
-     - Tabular
-   * - XGBoost
-     - Anomaly Detection
-     -
-     - Graph
-   * - LightGBM
-     - Regression
-     -
-     - Audio
-   * - CatBoost
-     - Classification
-     -
-     - Video
-   * - Other
-     - Clustering
-     -
-     - Other
-   * -
-     - Dimensionality Reduction
-     -
-     -
-   * -
-     - Generative Models
-     -
-     -
-   * -
-     - Graph Neural Networks
-     -
-     -
-   * -
-     - Optimization
-     -
-     -
-   * -
-     - Reinforcement Learning
-     -
-     -
-   * -
-     - Transfer Learning
-     -
-     -
-   * -
-     - Uncertainty Estimation
-     -
-     -
-   * -
-     - Other
-     -
-     -
+      .. list-table::
+        :header-rows: 1
+        :widths: 15 40 25 20
 
+        * - Libraries
+          - Tasks
+          - Categories
+          - Data Type
+        * - TensorFlow
+          - Computer Vision
+          - AI4 pre trained
+          - Image
+        * - PyTorch
+          - Natural Language Processing
+          - AI4 trainable
+          - Text
+        * - Keras
+          - Time Series
+          - AI4 inference
+          - Time Series
+        * - Scikit-learn
+          - Recommender Systems
+          - AI4 tools
+          - Tabular
+        * - XGBoost
+          - Anomaly Detection
+          -
+          - Graph
+        * - LightGBM
+          - Regression
+          -
+          - Audio
+        * - CatBoost
+          - Classification
+          -
+          - Video
+        * - Other
+          - Clustering
+          -
+          - Other
+        * -
+          - Dimensionality Reduction
+          -
+          -
+        * -
+          - Generative Models
+          -
+          -
+        * -
+          - Graph Neural Networks
+          -
+          -
+        * -
+          - Optimization
+          -
+          -
+        * -
+          - Reinforcement Learning
+          -
+          -
+        * -
+          - Transfer Learning
+          -
+          -
+        * -
+          - Uncertainty Estimation
+          -
+          -
+        * -
+          - Other
+          -
+          -
+
+* ``inference`` (`optional`): this is is the minimum resources your module needs to run an inference correctly (eg. CPU cores, RAM, GPUs, etc). If not specified, the Dashboard will prefill with some defaults, that can later be adapted by the user during the :ref:`configuration step <reference/dashboard:Hardware configuration>`.
 
 Some fields are pre-filled via the AI4OS Modules Template and usually do not need to be modified.
 Check you didn't mess up the YAML definition by running our `metadata validator <https://github.com/ai4os/ai4-metadata>`__:
 
 .. code-block:: console
 
-    $ pip install ai4-metadata
-    $ ai4-metadata validate ai4-metadata.yml
+   pip install ai4-metadata
+   ai4-metadata validate ai4-metadata.yml

@@ -28,6 +28,7 @@ This tutorial will focus on:
 We will walk through the entire process, from setting up the initial environment to
 running specific OSCAR services like the Cowsay and others.
 
+For a complete view of the repository containing these examples, please refer to the `GitHub README <https://github.com/ai4os/ai4-compose/blob/main/elyra/README.md>`__.
 
 1. Setting up the environment
 -----------------------------

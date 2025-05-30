@@ -221,7 +221,7 @@ For the endpoints of the services you have:
 
 * ``API``: :doc:`Module's API </reference/api>`, only accessible if you launched with the DEEPaaS command or launched JupyterLab then ran DEEPaaS.
 * ``IDE``: :ref:`Development environment <howtos/develop/dashboard:2. Prepare your development environment>`, only accessible if you launched with the JupyterLab or VScode command.
-* ``Monitor``: :ref:`Training monitoring <howtos/train/dashboard:4. Start training the model>`, only accessible if the module has been coded to explicitly display monitoring (check the module's README or training arguments) and if a training is currently running.
+* ``Monitor``: :ref:`Training monitoring <howtos/train/standard:4. Start training the model>`, only accessible if the module has been coded to explicitly display monitoring (check the module's README or training arguments) and if a training is currently running.
 * ``UI``: :ref:`Gradio User Interface <howtos/deploy/nomad:2.1 UI prediction>`, only accessible if you launched with the DEEPaaS command.
 * ``Custom``: a custom UI created by the module's developer (if any)
 
@@ -245,7 +245,7 @@ In the ``Modules`` table, you will see a :material-outlined:`add_a_photo;1.5em` 
 This will allow to create a snapshot of any module you have deployed. This come especially handy for example when a downtime of the cluster is expected and you do not want to lose your work, or when you don't plan to keep working on something for a period of time but you don't want to keep consuming the resources.
 
 Once you click in the button, the snapshot will appear below, in the ``Snapshots`` table.
-You can redeploy snapshots at any time by clicking in the :material-outlined:`view_in_ar;1.5em` ``Redeploy snapshot`` button.
+You can redeploy snapshots at any time by clicking in the :material-outlined:`view_in_ar;1.5em` ``Redeploy snapshot`` button, where you will be asked whether to redeploy in :doc:`standard mode </howtos/train/standard>` or :doc:`batch mode </howtos/train/batch>`.
 
 .. image:: /_static/images/dashboard/deployments_snapshots.png
 

@@ -15,7 +15,9 @@ services with Node-RED & FlowFuse, specifically:
 * how to create our first application and Node-RED instance,
 * how to deploy a workflow to utilize inference services using OSCAR.
 
-First of all, let's understand what FlowFuse, Node-RED, OSCAR, and AI4EOSC are:
+For a complete overview of the Node-RED and FlowFuse examples, please refer to the `GitHub README <https://github.com/ai4os/ai4-compose/blob/main/node-red/README.md>`__.
+
+First of all, let's understand what FlowFuse, Node-RED and OSCAR are:
 
 * `Node-RED <https://nodered.org/>`__ is an open-source visual programming tool.
   Built on Node.js, it allows users to create event-driven systems by connecting nodes
@@ -30,7 +32,7 @@ First of all, let's understand what FlowFuse, Node-RED, OSCAR, and AI4EOSC are:
   See the our documentation on :doc:`how to make an inference in OSCAR </howtos/deploy/oscar>`
   for more information.
 
-In AI4EOSC, we use Node-Red to visually compose AI model inference pipelines.
+In AI4OS, we use Node-Red to visually compose AI model inference pipelines.
 A managed instance of FlowFuse is also available for users to self-provision
 their Node-Red instances on which they can compose these pipelines.
 Specific custom nodes have been created to perform AI model inference on remote
@@ -46,7 +48,7 @@ Let's understand the most relevant concepts in FlowFuse:
   There is an application already created in the FlowFuse instance named ``AI4EOSC-Dev``.
 * **Instances:** Creating an instance out of the ``OSCAR Node-Red template`` will
   ensure the  dependencies required to interact with OSCAR clusters and the custom
-  defined nodes for certain AI models from the AI4EOSC dashboard.
+  defined nodes for certain AI models from the AI4OS dashboard.
   Each instance is derived from a Template, providing default settings, and runs on a
   Stack that defines the Node-RED version, memory, and CPU usage.
 * **Devices:** The FlowFuse platform can be used to manage Node-RED instances running

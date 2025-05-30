@@ -21,6 +21,18 @@ whether they use ``cpu`` or ``gpu``. Tags are usually:
 * ``cpu-test``: test + cpu
 * ``gpu-test``: test + gpu
 
+AI4OS metadata
+--------------
+
+All modules have comprehensive metadata to make them `FAIR <https://www.nature.com/articles/sdata201618>`__ friendly.
+The metadata can later be downloaded in several formats in the
+:ref:`Dashboard module detail page <dashboard_deployment>`.
+
+Editing a module's metadata
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. include:: /snippets/edit-metadata.rst
+
 
 CI /CD pipeline
 ---------------
@@ -30,6 +42,19 @@ for implementing CI/CD (Continuous Integration / Continuous Development) pipelin
 series of actions for you each time you commit a change in your code. This ensures that all the information and builds
 across the project are always up-to-date with your code.
 
-This is an example of actions that are performed by the pipeline:
+A typical pipeline is divided in two parts:
+
+* a model quality assurance section, using `tox <https://tox.wiki/>`__, where we do:
+
+  * code style analysis using `flake8 <https://flake8.pycqa.org/>`__,
+  * unit testing using `pytest <https://docs.pytest.org/>`__,
+  * security scanners using `Bandit <https://bandit.readthedocs.io/>`__,
+  * `metadata validation <https://github.com/ai4os/ai4-metadata>`__,
+
+* a platform components update, where we:
+
+  * build the Docker image to the AI4OS Registry and mirror to DockerHub,
+  * update the Marketplace and additional AI4OS services,
+  * regenerate the provenance chain of that module,
 
 .. image:: /_static/images/ai4eosc/jenkins.png

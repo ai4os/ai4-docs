@@ -51,7 +51,7 @@ model and retrains it to perform `plant classification <https://dashboard.cloud.
 * the ability to easily connect your training to your dataset hosted on our :doc:`data storage resources </reference/storage>`,
 * a private instance of :doc:`Computer Vision Annotation Tool (CVAT) </howtos/train/cvat>` to annotate your dataset,
 * a private server to create :doc:`Federated Learning trainings with Flower </howtos/train/federated-flower>`,
-* the ability to :doc:`use GPUs </howtos/train/dashboard>` to accelerate your training,
+* the ability to :doc:`use GPUs </howtos/train/standard>` to accelerate your training,
 * an :doc:`API </reference/api>` to easily interact with the model,
 * solutions to deploy your developed model in :doc:`the Cloud </howtos/deploy/cloud>` or in your :doc:`local resources </howtos/try/locally>`,
 * the ability to share your module with other users in the :ref:`Dashboard Marketplace <dashboard_marketplace>`.
@@ -78,7 +78,7 @@ models.
 * the ability to easily connect your environment to your dataset hosted on our :doc:`data storage resources </reference/storage>`,
 * the ability to integrate :doc:`experiment tracking with MLflow </howtos/develop/mlflow>` in your trainings,
 * tutorials on performing different types of trainings (:doc:`incremental learning </howtos/develop/incremental-learning>`, :doc:`distributed learning </howtos/develop/distributed-learning>`)
-* the ability to :doc:`use GPUs </howtos/train/dashboard>` to accelerate your development,
+* the ability to :doc:`use GPUs </howtos/train/standard>` to accelerate your development,
 * the possibility to :ref:`integrate your module with the API <deepaas-integrate>` to enable easier user interaction,
 * solutions to deploy your developed model in :doc:`the Cloud </howtos/deploy/cloud>` or in your :doc:`local resources </howtos/try/locally>`,
 * the ability to share your module with other users in the :ref:`Dashboard Marketplace <dashboard_marketplace>`.

@@ -9,23 +9,23 @@ federated learning training.
 .. grid:: 1
     :gutter: 3
 
-    .. grid-item-card:: :fas:`brain;fa-lg sd-mr-2`  Train a model
-        :link: dashboard
+    .. grid-item-card:: :fas:`brain;fa-lg sd-mr-2`  Train a model in standard mode
+        :link: standard
         :link-type: doc
 
-        Learn how to train a model with the Dashboard.
+        Learn how to train a model in standard mode.
 
-    .. grid-item-card:: :material-outlined:`hub;1.5em`  Run a federated learning training using Flower
-        :link: federated-flower
+    .. grid-item-card:: :fas:`brain;fa-lg sd-mr-2`  Train a model in batch mode
+        :link: batch
         :link-type: doc
 
-        Learn how to make a federated learning training using the Flower framework.
+        Learn how to train a model in batch mode.
 
-    .. grid-item-card:: :material-outlined:`hub;1.5em`  Run a federated learning training using NVFLARE
-        :link: federated-nvflare
+    .. grid-item-card:: :material-outlined:`hub;1.5em`  Run a federated learning training
+        :link: federated
         :link-type: doc
 
-        Learn how to make a federated learning training using the NVFLARE framework.
+        Learn how to make a federated learning training, both with the Flower and NVFLARE frameworks
 
     .. grid-item-card:: :material-outlined:`sell;1.5em`  Label your images with CVAT
         :link: cvat
@@ -45,8 +45,9 @@ federated learning training.
    :titlesonly:
    :hidden:
 
-   Train a model with the Dashboard <dashboard>
-   Run a federated learning training (Flower) <federated-flower>
-   Run a federated learning training (NVFLARE) <federated-nvflare>
+   Overview <overview>
+   Train a model (standard mode) <standard>
+   Train a model (batch mode) <batch>
+   Run a federated learning training <federated>
    Label your images with CVAT <cvat>
    Use rclone to sync your dataset (advanced) <rclone>
