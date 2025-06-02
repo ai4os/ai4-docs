@@ -1,176 +1,209 @@
-Deploy a model on the ESOC EU Node
+Deploy a model on the EOSC EU Node
 ==================================
 
 .. admonition:: Requirements
    :class: info
 
-   🔒 This tutorial requires access to the EOSC EU Node and the usage of available credits in your account. `More information <https://open-science-cloud.ec.europa.eu/>`__.
+   * This tutorial requires access to the EOSC EU Node and the usage of available credits in your account.
 
-This tutorial summarizes how to deploy a pre-trained AI model from the AI4EOSC Marketplace in the EOSC EU Node to be used for inference via the DEEPaaS API. For this, we will use the Tools Hub functionality of the EOSC EU Node, which allows us to deploy customized virtual infrastructures via TOSCA Templates on the available Cloud resources.
 
-The Tools Hub provides a catalog of TOSCA templates for the Application Workflow Manager (based on the `Infrastructure Manager <https://im.egi.eu/>`__ technology) to deploy customized virtual infrastructures on the available Cloud resources. Two kind of deployments are supported in the EOSC EU Node: *Virtual Machines* (VMs), which run on OpenStack-based Clouds and *containers*, which run on managed OKD-based platforms. Let's analyze both options in the next tables.
+This tutorial summarizes how to deploy a pre-trained AI model from the AI4EOSC Marketplace in the `EOSC EU Node <https://open-science-cloud.ec.europa.eu/>`__, to be used for inference via the :doc:`DEEPaaS API </reference/api>`.
+
+For this, we will use the **Tools Hub** functionality of the EOSC EU Node, which allows us to deploy customized virtual infrastructures via TOSCA Templates on the available Cloud resources.
+The Tools Hub currently supports two deployment options:
 
 .. list-table::
     :header-rows: 1
 
-    * - ✅ VMs Pros
-      - ❌ VMs Cons
-    * - - You can login via SSH to the VM and, therefore, have full access to the execution environment.
+    * - Option
+      - ✅ Pros
+      - ❌ Cons
+    * - :ref:`Container <howtos/deploy/eosc-node:Option 1: Deploy in a Container>` (OKD-based)
+      - - Fast deployment times,
+        - Endpoint exposed in a DNS name.
+      - - No access to the execution environment (managed platform).
+    * - :ref:`Virtual Machine <howtos/deploy/eosc-node:Option 2: Deploy in a Virtual Machine>` (Openstack-based)
+      - - Full access to the execution environment (via SSH login).
       - - Longer deployment time,
         - Endpoint exposed in an IP, without a DNS name.
 
+.. TODO; add container cannot be deployed with GPU?
 
-.. list-table::
-    :header-rows: 1
+Based on your requirements, you can select the one who best fits your usecase.
 
-    * - ✅ Containers Pros
-      - ❌ Containers Cons
-    * - - Fast deployment times,
-        - Endpoint exposed in a DNS name.
-      - - Managed platform, no access to the execution environment.
+.. TODO: when all changes are applied, rerecord and upload to youtube
+.. https://drive.google.com/file/d/1232s6kfq2jcDnTv_kMv7rC1Zx1Axb7GX/view?resourcekey
+.. https://drive.google.com/file/d/1DU4sHYtFvscr5dp1V6NYZ3mBwhzRXvnR/view?resourcekey__
 
-This page describes the procedures to support both approaches. It also includes the instructions to register an AI4EOSC Model as a tool in the EOSC EU Node and the instructions on how to deploy those previously registered tools to be used for AI inference in the resources of the EOSC EU Node. 
+.. check names of static images
 
-1. Procedure to Register the AI4EOSC Model as a Tool in the EOSC EU Node
-------------------------------------------------------------------------
-Step 0. Create the TOSCA template
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Option 1: Deploy in a Container
+-------------------------------
 
-There has to be a TOSCA Template for each AI4EOSC Model to be deployed. The TOSCA template depends on the kind of resources you want to deploy the model (VM or container). You can find two examples here:
+1.1. Allocate the computing resources
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
- * `TOSCA VM example <https://github.com/grycap/tosca/blob/eosc_lot1/templates/ai4eoscvm.yaml>`__. 
- * `TOSCA Container example <https://github.com/grycap/tosca/blob/eosc_lot1/templates/ai4eosc_app.yaml>`__.  
+You need to create your *“Default Personal Project”*. For this:
 
-Step 1. Register the TOSCA template in the Tools Hub
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Create a new Tool inside the ``Tools Hub`` section of the EOSC EU Node portal.
+* Login into the `EOSC EU Node <https://open-science-cloud.ec.europa.eu/>`__,
+* In the ``Cloud Container Platform`` section, chose the **Small** environment. OKD reserves the corresponding quota for your user,
+* Click ``Run``, choose the time period and press ``Submit``.
 
-.. image:: /_static/images/eoscnode/register-tool.png
+Notice that in this step what you do is to allocate the resources (quota), but you are not actually deploying them.
 
-Fill the form and register the tool. Once registered, you can make it public and share it among the community. Notice the TOSCA Template needs to undergo a security assessment before it appears in the public catalog of Tools. This security assessment is periodically reassessed.
+.. image:: /_static/images/eosc-node/container-allocate.png
+
+1.2. Deploy your tool
+^^^^^^^^^^^^^^^^^^^^^
+
+In the ``Tools Hub`` section, search for ``AI4EOSC`` and select the **AI4EOSC model** for *containers*.
+
+.. image:: /_static/images/eosc-node/tools-hub.png
+
+.. todo: resnapshot this image when miguel renames its
+
+.. TODO: remove this image for simplicity? (also in static folder)
+.. Choose the desired tool. You can see the details with the ``Show details`` button.
+.. .. image:: /_static/images/eosc-node/tools-details.png
+
+Deploy it using the :material-outlined:`play_circle;1.5em` ``Play`` button.
+
+You can set custom input values by selecting :material-outlined:`check_box;1.5em` ``customize input values and save to new tool`` checkbox. This allows to configure the deployment parameters, in particular:
+
+* the docker **model image** (available in the :fab:`docker` **Docker** value in the :ref:`Marketplace module details <reference/dashboard:Making a deployment>`)
+* the amount of **resources** (CPU and RAM)
+* the **endpoint** where the model will be exposed
+
+.. image:: /_static/images/eosc-node/container-config.png
+   :width: 400px
+
+Then click on ``Save and Select Project``. This will create a new tool in your private **My Tools** list, that you can use for new deployments.
+Next, you need to select the *“Default Personal Project”* created in Step 1, which is linked to the allocated OKD project.
+
+.. TODO: are we missing image here? Proceed, etc
+
+1.3. Access the tool
+^^^^^^^^^^^^^^^^^^^^
+
+The new deployment is available in the ``Deployments`` tab of the ``Tools Hub`` section.
+
+You can access the outputs of this deployment to get the endpoint (for example ``https://yolo-ai4eosc-9ina.eu-1.open-science-cloud-user-apps.eu/ui``). In the endpoint, you will find the :doc:`DEEPaaS API </reference/api>` UI, which you can use to run inference calls on the model.
+
+.. image:: /_static/images/endpoints/deepaas.png
+   :width: 400px
+
+1.5. Managing the resources
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Optionally, you can get additional information about your container. For that, go to the ``Cloud Container Platform`` section in the EOSC EU Node dashboard, select your allocated environment and click on ``View externally``.
+
+.. todo: missing image here
+
+By clicking on this option, you will have access to your allocated environment in the EOSC EU Node Container provider, based in OKD.
+
+.. image:: /_static/images/eosc-node/container-details.png
+
+Finally, once you have finished using the AI model, you can delete the deployment and release the resources. For that, go to the ``Deployments`` section in the Tools Hub and remove it by clicking on the :material-outlined:`delete;1.5em` ``Trash`` button.
+
+If you no longer want to deploy additional containers, you should release the allocated project, to avoid using credits. For that, go back again to the ``Cloud Container Platform`` section and release your allocated environment by clicking on the ``Release`` button. A notification will be sent by the system once the resources have been released.
 
 
-2. Procedure to Deploy the Model in a Virtual Machine in the EOSC EU Node
--------------------------------------------------------------------------
+Option 2: Deploy in a Virtual Machine
+-------------------------------------
 
-The next subsections are a tutorial to learn how to deploy an AI model of the AI4EOSC Marketplace in the EOSC EU Node. 
+2.1. Allocate the computing resources
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Step 0. Log into the EOSC EU Node and allocate the computing resources
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+You need to create your *“Default Personal Project”*. For this:
 
-Start by logging in to the EOSC EU Node `here <https://open-science-cloud.ec.europa.eu/>`__.
-Then, you need to allocate your Virtual Machine. Go to the **Virtual Machines** section for that. We reccomend you to choose a *Small* VM.
-What happens underneeth is that OpenStack creates the corresponding project with the selected quota for your user. This is called your “Default Personal Project”.
-Allocate the environment by clicking the ``Run`` button.
+* Login into the `EOSC EU Node <https://open-science-cloud.ec.europa.eu/>`__,
+* In the ``Virtual Machines`` section, chose the **Small** environment. OpenStack creates the corresponding project with the selected quota,
+* Click ``Run``, choose the time period and press ``Submit``.
 
-.. image:: /_static/images/eoscnode/allocate-vms.png
+Notice that in this step what you do is to allocate the resources (quota), but you are not actually deploying them.
 
-Notice that in this step what you do is to allocate the resources (quota), but you are not actually deploying them. 
+.. image:: /_static/images/eosc-node/vm-allocate.png
 
-Step 1. Choose the tool to deploy
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2.2. Deploy your tool
+^^^^^^^^^^^^^^^^^^^^^
 
-Now, go to the Tools Hub and select the Tool from the ``All Tools`` section. You can use the searcher to find the AI4EOSC tools already created. If you want, you can flag them as favourite. 
+In the ``Tools Hub`` section, search for ``AI4EOSC`` and select the **AI4EOSC model** for *virtual machines*.
 
-.. image:: /_static/images/eoscnode/tools-hub.png
+.. image:: /_static/images/eosc-node/tools-hub.png
 
-Choose the desired tool. You can see the details with the ``Show details`` button.
+.. todo: resnapshot this image when miguel renames its
 
-.. image:: /_static/images/eoscnode/tools-details.png
 
-Step 2. Deploy the tool
-^^^^^^^^^^^^^^^^^^^^^^^
+.. TODO: remove this image for simplicity? (also in static folder)
+.. Choose the desired tool. You can see the details with the ``Show details`` button.
+.. .. image:: /_static/images/eosc-node/tools-details.png
 
-Deploy the desired tool by using the :material-outlined:`play;1.5em` ``Play`` button. 
-You can set custom input values by clicking on the “customize input values and save to new tool” checkbox. This enables the modification of the AI4EOSC model to deploy and the amount of computational resources to assing to the VM. So this is the way to **easily deploy any of the AI models available in the marketplace**.
-If selected, the next fields appear:
+Deploy it using the :material-outlined:`play_circle;1.5em` ``Play`` button.
 
-.. image:: /_static/images/eoscnode/tool-vmcustom.png
+You can set custom input values by selecting :material-outlined:`check_box;1.5em` ``customize input values and save to new tool`` checkbox. This allows to configure the deployment parameters, in particular:
 
-Modify them as desired and then click on the ``Save and Select Project`` button. It will create a new tool in your private **My Tools** list, that you can use for new deployments.
-Next, you need to select the Default Personal Project created in Step 0, which is linked to the allocated OpenStack project.
+* the docker **model image** (available in the :fab:`docker` **Docker** value in the :ref:`Marketplace module details <reference/dashboard:Making a deployment>`)
+* the amount of **resources** (CPU and RAM)
+* the **GPU** support, if needed
 
-.. image:: /_static/images/eoscnode/tools-deploy.png
+.. image:: /_static/images/eosc-node/vm-config.png
+
+Then click on ``Save and Select Project``. This will create a new tool in your private **My Tools** list, that you can use for new deployments.
+Next, you need to select the *“Default Personal Project”* created in Step 1, which is linked to the allocated OpenStack project.
+
+.. image:: /_static/images/eosc-node/tools-deploy.png
+   :width: 500px
 
 Press the ``Proceed`` blue button and you will get a confirmation message about the deployment.
 Once deployed, in the ``Deployments`` tab (inside the Tools Hub), it will appear a new entry corresponding with your new Deployment.
 
-Step 3. Access the tool
-^^^^^^^^^^^^^^^^^^^^^^^
+2.3. Access the tool
+^^^^^^^^^^^^^^^^^^^^
+
+The new deployment is available in the ``Deployments`` tab of the ``Tools Hub`` section.
 
 You will see the endpoint of the deployed tool in the ``additional information`` option.
 
-.. image:: /_static/images/eoscnode/tool-output.png
+.. image:: /_static/images/eosc-node/tool-output.png
 
 For the AI4EOSC AI models, if you access the endpoint provided, you will get a Swagger interface to use the model.
-Please note that, in the case of Virtual Machines, it will take up to 10 minutes to deploy and configure the VM for the endpoint to be ready. You can periodically try to connect until you’ll eventually have access to the Swagger DEEPaaS UI.
+Please note that, in the case of Virtual Machines, it will take up to 10 minutes to deploy and configure the VM for the endpoint to be ready. You can periodically try to connect until you'll eventually have access to the Swagger DEEPaaS UI.
 
-.. image:: /_static/images/eoscnode/example-deepaasui.png
+.. image:: /_static/images/endpoints/deepaas.png
+   :width: 400px
 
 Once you can access the Swagger interface in your browser, you can trigger the inference of the model by uploading the proper input (for example, for the YOLO model, you have to upload the image where you want to detect objects).
 
-Step 4. Managing the resources
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2.4. Managing the resources
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
 Optionally, you might want to get additional information about your VM. For that, go to the ``Virtual Machines`` section in the EOSC EU Node dashboard, select your allocated environment and click on ``View externally``.
 
-.. image:: /_static/images/eoscnode/resource-details.png
+.. image:: /_static/images/eosc-node/vm-allocated.png
 
 By clicking on this option, you will have access to your allocated environment in the OpenStack cloud. Go to the ``Instances`` section to see your VM up and running:
 
-.. image:: /_static/images/eoscnode/vm-details.png
+.. image:: /_static/images/eosc-node/vm-details.png
 
 You can obtain further information of your VM by clicking on the ``Instance Name`` of your resource.
+.. todo: check why this section is slightly different than the container one
 
-Finally, to **terminate** the resources, you can go to the ``Deployments`` section in the Tools Hub and remove it by clicking on the :material-outlined:`trash;1.5em` ``Trash`` button. Eventually, the entry will disappear.
-If you no longer want to deploy additional VMs, you should release the allocated project. For that, go back again to the ``Virtual Machines`` section and release your allocated environment by clicking on the ``Release`` button. A notification will be sent by the system once the resources have been released.
+Finally, once you have finished using the AI model, you can delete the deployment and release the resources. For that, go to the ``Deployments`` section in the Tools Hub and remove it by clicking on the :material-outlined:`delete;1.5em` ``Trash`` button.
 
-3. Procedure to Deploy the Model in a Container in the EOSC EU Node
--------------------------------------------------------------------
+If you no longer want to deploy additional VMs, you should release the allocated project, to avoid using credits. For that, go back again to the ``Virtual Machines`` section and release your allocated environment by clicking on the ``Release`` button. A notification will be sent by the system once the resources have been released.
 
-Now let's have a look on the steps to deploy an AI model from the AI4EOSC Marketplace in **Cloud Container Platform** offered by the EOSC EU Node.
-You can see a video demo `here <https://drive.google.com/file/d/1232s6kfq2jcDnTv_kMv7rC1Zx1Axb7GX/view?resourcekey>`__. You will that the process is very similar to the previous one, let's detail the steps!
+More
+----
 
-Step 0. Log into the EOSC EU Node and allocate the computing resources
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.. dropdown:: ㅤ 💡 Further customize the Tool deployment
 
-In the case of **Containers**, OKD reserves the corresponding quota for your user. In the ``Cloud Container Platform`` section, chose the *Small* environment and click ``Run``. You will have to choose the time period and press *Submit*.
+  If you need to further customize the AI4EOSC model deployments, you can modify the reference TOSCA templates that were used to create the Tools in the Tool Hub:
 
-.. image:: /_static/images/eoscnode/allocate-container.png
+  * `TOSCA VM example <https://github.com/grycap/tosca/blob/eosc_lot1/templates/ai4eoscvm.yaml>`__.
+  * `TOSCA Container example <https://github.com/grycap/tosca/blob/eosc_lot1/templates/ai4eosc_app.yaml>`__.
 
-This creates your “Default Personal Project”.
+  To register this new tool, create a new Tool inside the ``Tools Hub`` section of the EOSC EU Node portal.
 
-Step 1. Choose the tool to deploy
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  .. image:: /_static/images/eosc-node/register-tool.png
 
-In the ``Tools Hub`` section, a publicly available tool has been created named *AI4EOSC Plants specifies classifier* to deploy the AI model in OKD. This tool corresponds with the `Plants Species Classifier AI model <https://dashboard.cloud.ai4eosc.eu/catalog/modules/plants-classification>`__.
-Remember that you can see the details of the tool with the ``Show details`` button.
-
-Step 2. Deploy the tool
-^^^^^^^^^^^^^^^^^^^^^^^
-
-As with the VMs, you can deploy the tool by using the :material-outlined:`play;1.5em` ``Play`` button. 
-Again, you can set custom input values by clicking on the “customize input values and save to new tool” checkbox. This enables the modification of the AI4EOSC model to deploy and the amount of computational resources to assing to the container. So this is the way to **easily deploy any of the AI models available in the marketplace**.
-You can see a video demo on how to modify the tool with other AI model `here <https://drive.google.com/file/d/1DU4sHYtFvscr5dp1V6NYZ3mBwhzRXvnR/view?resourcekey>`__.
-
-.. image:: /_static/images/eoscnode/tool-containercustom.png
-
-Modify them as desired and then click on the ``Save and Select Project`` button. It will create a new tool in your private **My Tools** list, that you can use for new deployments.
-Next, you need to select the Default Personal Project created in Step 0, which is linked to the allocated OKD project.
-
-Step 3. Access the tool
-^^^^^^^^^^^^^^^^^^^^^^^
-The new deployment is available in the ``Deployments`` tab of the **Tools Hub** section. You can access the outputs of this deployment to get the endpoint (for example ``https://plants-ai4eosc-9ina.eu-1.open-science-cloud-user-apps.eu/ui``).
-In containers, the deployment should be very fast compared with VMs. Indeed, if a user recently deployed the same model (same Docker image) the deployment will be even faster. 
-
-If you paste the endpoint of the deployment in your browser, you will get the Swagger interface of the AI model's DEEPaaS API, so you can easily trigger the inference of the model. 
-
-Step 4. Managing the resources
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Optionally, you can get additional information about your container. For that, go to the ``Cloud Container Platform`` section in the EOSC EU Node dashboard, select your allocated environment and click on ``View externally``.
-By clicking on this option, you will have access to your allocated environment in the EOSC EU Node Container provider, based in OKD.
-
-.. image:: /_static/images/eoscnode/container-details.png
-
-Finally, once you have finished using the AI model, you can delete the deployment and release the resources. For that, go to the ``Deployments`` section in the Tools Hub and remove it by clicking on the :material-outlined:`trash;1.5em` ``Trash`` button. Eventually, the entry will disappear (and so the container from the OKD platform).
-If you no longer want to deploy additional containers, you should release the allocated project, to avoid using credits. For that, go back again to the ``Cloud Container Platform`` section and release your allocated environment by clicking on the ``Release`` button. A notification will be sent by the system once the resources have been released.
-
+  Fill the form and register the tool. Once registered, you can make it public and share it among the community. Notice the TOSCA Template needs to undergo a security assessment before it appears in the public catalog of Tools. This security assessment is periodically reassessed.
