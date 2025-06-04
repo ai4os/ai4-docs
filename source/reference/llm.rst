@@ -153,23 +153,42 @@ It's very easy to use the AI4OS LLM as a code assistant, both locally and in :do
 To configure it:
 
 1. In VScode, install the `Continue.dev <https://www.continue.dev/>`__ extension.
-2. On the left handside bar, click the Continue icon. Then, in the panel, click the ⚙️ ``Open Continue Config``.
-3. Modify the ``config.json`` to add the AI4OS LLM model, :ref:`using your API key <reference/llm:Retrieve the API endpoint/key>`:
+2. Open the Continue config file: ``/home/<user>/.continue/config.yaml``
+3. Modify it to add the AI4OS LLM model, :ref:`using your API key <reference/llm:Retrieve the API endpoint/key>`:
 
-   .. code-block:: json
+.. tab-set::
 
-     {
-        "models": [
-            {
-            "title": "AI4OS LLM",
-            "provider": "openai",
-            "model": "AI4EOSC/DeepSeek-R1-Distill-Llama-8B",
-            "apiKey": "sk-********************************",
-            "apiBase": "https://llm.dev.ai4eosc.eu/api",
-            "useLegacyCompletionsEndpoint": false
-            }
-        ]
-     }
+  .. tab-item:: vLLM API
+
+    .. code-block:: yaml
+
+        models:
+          - name: AI4OS LLM
+            provider: openai
+            model: AI4EOSC/Small
+            apiKey: "************************************"
+            apiBase: https://llm.dev.ai4eosc.eu:8000/v1
+            roles:
+              - chat
+              - edit
+              - apply
+
+  .. tab-item:: OpenWebUI API
+
+    .. code-block:: yaml
+
+        models:
+          - name: AI4OS LLM
+            provider: openai
+            model: AI4EOSC/Small
+            apiKey: "sk-*********************************"
+            apiBase: https://llm.dev.ai4eosc.eu/api
+            useLegacyCompletionsEndpoint: false
+            roles:
+              - chat
+              - edit
+              - apply
+
 
 .. We use '"useLegacyCompletionsEndpoint": false' to force the usage of chat/completions instead of completions endpoint
 .. ref: https://docs.continue.dev/customize/model-providers/openai
@@ -185,19 +204,42 @@ Use it from within your Python code
 To use the LLM from your Python scripts you need to install the `openai <https://github.com/openai/openai-python>`__ Python package.
 Then you can use the LLM as following:
 
-.. code-block:: python
+.. tab-set::
 
-    from openai import OpenAI
+  .. tab-item:: vLLM API
+
+    .. code-block:: python
+
+        from openai import OpenAI
 
 
-    client = OpenAI(
-        base_url="https://llm.dev.ai4eosc.eu/api",
-        api_key="******************",
-    )
+        client = OpenAI(
+            base_url="https://llm.dev.ai4eosc.eu/api",
+            api_key="************************************",
+        )
 
-    completion = client.chat.completions.create(
-        model="AI4EOSC/Small",
-        messages=[{"role": "user", "content": "What is the capital of France?"}]
-    )
+        completion = client.chat.completions.create(
+            model="AI4EOSC/Small",
+            messages=[{"role": "user", "content": "What is the capital of France?"}]
+        )
 
-    print(completion.choices[0].message.content)
+        print(completion.choices[0].message.content)
+
+  .. tab-item:: OpenWebUI API
+
+    .. code-block:: python
+
+        from openai import OpenAI
+
+
+        client = OpenAI(
+            base_url="https://llm.dev.ai4eosc.eu:8000/v1",
+            api_key="sk-*********************************",
+        )
+
+        completion = client.chat.completions.create(
+            model="AI4EOSC/Small",
+            messages=[{"role": "user", "content": "What is the capital of France?"}]
+        )
+
+        print(completion.choices[0].message.content)
