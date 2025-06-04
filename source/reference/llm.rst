@@ -130,7 +130,7 @@ There are two API options:
 
 * **vLLM API** (:material-outlined:`verified;1.5em` *recommended*): faster (load balanced), supports chat completions
 
-  - **API endpoint**: https://llm.dev.ai4eosc.eu:8000.
+  - **API endpoint**: https://llm.dev.ai4eosc.eu:8000/v1
   - **API key**: `AI4OS Keycloak <https://login.cloud.ai4eosc.eu/realms/ai4eosc/account>`__ → ``Personal Info`` → ``User metadata`` → ``LLM API key``
 
   .. figure:: /_static/images/llm/api-keys-keycloak.png
@@ -214,7 +214,7 @@ Then you can use the LLM as following:
 
 
         client = OpenAI(
-            base_url="https://llm.dev.ai4eosc.eu/api",
+            base_url="https://llm.dev.ai4eosc.eu:8000/v1",
             api_key="************************************",
         )
 
@@ -233,7 +233,7 @@ Then you can use the LLM as following:
 
 
         client = OpenAI(
-            base_url="https://llm.dev.ai4eosc.eu:8000/v1",
+            base_url="https://llm.dev.ai4eosc.eu/api",
             api_key="sk-*********************************",
         )
 
