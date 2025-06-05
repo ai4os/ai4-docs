@@ -21,6 +21,8 @@ deployments to the following hosting platforms:
 Accessing storage from inside your deployment
 ---------------------------------------------
 
+.. _storage_access:
+
 To be able to access the Nextcloud storage from inside your deployment, you need to properly :ref:`configure your Storage <dashboard_storage>` when creating your deployment.
 
 You have currently two ways of accessing your Nextcloud files from your deployment:
