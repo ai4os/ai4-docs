@@ -93,7 +93,7 @@ the available resources.
 For example, check how to limit CPU usage in `Tensorflow <https://stackoverflow.com/questions/57925061/how-can-i-reduce-the-number-of-cpus-used-by-tensorlfow-keras>`__
 or `Pytorch <https://pytorch.org/docs/stable/generated/torch.set_num_threads.html#torch.set_num_threads>`__.
 
-.. dropdown:: ㅤㅤ More info
+.. dropdown:: ㅤ 💡 More info
 
     For example trying to allocate 8GB in a 4GB RAM machine will lead to failure.
 
@@ -178,8 +178,8 @@ You have several options:
 
   .. code-block:: console
 
-    pip install datahugger
-    datahugger "<doi>" "<data_dir>"
+    $ pip install datahugger
+    $ datahugger "<doi>" "<data_dir>"
 
 * *Option 3*: download your dataset manually and paste it to Nextcloud
 

@@ -77,3 +77,6 @@ Clicking on the job details you will see the resources as well as the training c
 
 .. image:: /_static/images/dashboard/batch-details.png
    :width: 400 px
+
+Once you batch job is completed, you should be able to retrieved the modelweights from Nextcloud if you had a saving step in your training script.
+Additionally, if your model is :doc:`integrated with MLflow </howtos/develop/mlflow>` you should be able to view your training stats in the MLflow UI.
