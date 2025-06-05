@@ -95,6 +95,13 @@ Install your project as a Python module in **editable** mode, so that the change
 
 Now you can start adding your AI model code inside ``<project-name>/<project-name>``.
 
+.. admonition:: 💡 Do you need help to code?
+   :class: info
+
+   Use our :ref:`AI4OS LLM assistant <reference/llm:Use it as a code assistant with VScode>` to help you develop faster.
+   It's directly integrated in VScode through the `Continue.dev <https://www.continue.dev/>`__ extension.
+
+
 Integrating with the DEEPaaS API
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
