@@ -48,12 +48,12 @@ This is what an AI4OS Development Environment with VScode would look out-of-the-
 .. image:: /_static/images/endpoints/vscode.png
 
 
-.. admonition:: 💡 Use storage-synced folder to develop
+.. admonition:: ⚠️ Use storage-synced folder to develop
    :class: info
 
-   We recommend to create a :ref:`deployment attached to storage <dashboard_storage>`.
+   We *strongly* recommend to create a :ref:`deployment attached to storage <dashboard_storage>`.
 
-   By doing so, you can develop your code inside the ``/storage`` folder and any changes you make will automatically be synced with the :doc:`AI4OS Storage </reference/storage>`.
+   By doing so, you can develop your code inside the ``/storage`` folder and any changes you make will *automatically* be synced with the :doc:`AI4OS Storage </reference/storage>`.
    This will prevent any work loss in case of an unexpected deployment crash.
 
 
