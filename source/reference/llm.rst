@@ -86,10 +86,6 @@ This will allow you to query a document with questions.
 Ask questions about the documentation
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-.. important::
-
-    This service is currently under development, so it might not be accessible to you.
-
 In the upper left corner, you can select the ``AI4EOSC/Assistant`` model to ask questions about the platform. The LLM with use our documentation as knowledge base to provide truthful answers to your questions.
 
 .. image:: /_static/images/llm/assistant.png
