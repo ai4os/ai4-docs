@@ -35,27 +35,26 @@ This offers the benefits of:
 * develop on your favorite IDE (Jupyterlab or VScode),
 
 Check :ref:`how to create and configure <dashboard_deployment>` the AI4OS Development Environment.
-This is what an AI4OS Development Environment with VScode would look out-of-the-box:
-
-.. dropdown:: :fab:`youtube;youtube-icon` ㅤLaunching a development environment
-
-  .. raw:: html
-
-    <div style="position: relative; padding-bottom: 56.25%; margin-bottom: 2em; height: 0; overflow: hidden; max-width: 100%; height: auto;">
-        <iframe src="https://www.youtube.com/embed/mod3fwN8wCI" frameborder="0" allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
-    </div>
-
-.. image:: /_static/images/endpoints/vscode.png
-
 
 .. admonition:: ⚠️ Use storage-synced folder to develop
    :class: info
 
    We *strongly* recommend to create a :ref:`deployment attached to storage <dashboard_storage>`.
 
-   By doing so, you can develop your code inside the ``/storage`` folder and any changes you make will *automatically* be synced with the :doc:`AI4OS Storage </reference/storage>`.
-   This will prevent any work loss in case of an unexpected deployment crash.
+   By doing so, you can develop your code inside the ``/storage`` folder and any changes you make will *instantly* be synced with the :doc:`AI4OS Storage </reference/storage>`.
+   This will prevent any work loss in case of an unexpected deployment crash (which do happen from time to time).
 
+This is what an AI4OS Development Environment with VScode would look out-of-the-box:
+
+.. image:: /_static/images/endpoints/vscode.png
+
+.. dropdown:: :fab:`youtube;youtube-icon` ㅤLaunching a development environment
+
+    .. raw:: html
+
+        <div style="position: relative; padding-bottom: 56.25%; margin-bottom: 2em; height: 0; overflow: hidden; max-width: 100%; height: auto;">
+            <iframe src="https://www.youtube.com/embed/mod3fwN8wCI" frameborder="0" allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
+        </div>
 
 .. _develop_code:
 

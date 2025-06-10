@@ -7,8 +7,8 @@ If your issue does not appear here, please contact support.
 .. TODO: check if the FAQ issues still apply
 
 
-Hardware issues
----------------
+Deployment issues
+-----------------
 
 🔥 The Dashboard shows my deployment but it immediately disappears
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -24,6 +24,19 @@ If you are experiencing this issue in a deployment that was not linked with Next
 
 We are debugging why the Nextcloud expiration happens in the first place.
 
+
+🔥 I suddenly lost the contents of my deployment, can I recover them?
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Nodes sometimes crash unexpectedly. It's not common but it can happen.
+Since your deployment is running as a Docker container, after a node restart, your deployment contents are gone and not recoverable.
+
+To protect yourself against unexpected data losses we recommend locating any important files (like the code you are developing) inside the ``/storage`` to have instant file syncing with the :doc:`AI4OS Storage </reference/storage>`.
+
+Learn how to create a :ref:`Development Environment linked with storage <howtos/develop/dashboard:2. Prepare your development environment>`.
+
+Hardware issues
+---------------
 
 🔥 The Dashboard shows there are free GPUs but my deployment is still queued
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
