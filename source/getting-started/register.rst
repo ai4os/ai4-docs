@@ -74,45 +74,56 @@ services.
 AI4OS account
 -------------
 
+The `AI4OS SSO <https://login.cloud.ai4eosc.eu/realms/ai4eosc/account>`__ uses Keycloak to federate different Identity providers, allowing to easily onboard new external communities with their own authentication systems.
+
+.. image:: /_static/images/ai4eosc/keycloak.png
+   :width: 300 px
+   :align: center
+
+
 For the time being, this account is used to access the following services:
 
 * :doc:`AI4OS LLM service </reference/dashboard>`
 
 There are two options to create AI4OS accounts.
 
+
 Use a federated identity
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
-This is the **preferred option**, especially for users coming from EGI Check-In authentication.
-This is because Keycloak will automatically detect your EGI VO memberships (eg. ``vo.ai4eosc.eu``, ``vo.imagine-ai.eu``) and will grant your the proper platform full rights by default.
+This is the :material-outlined:`verified;1.5em` **recommended option** for:
 
-We currently offer several federated authentication options including:
-`EGI-CheckIn <https://aai.egi.eu>`__,
+* users coming from `EGI-CheckIn <https://aai.egi.eu>`__ authentication.
+  This is because Keycloak will automatically detect your EGI VO memberships
+  (eg. ``vo.ai4eosc.eu``, ``vo.imagine-ai.eu``) and will grant your the proper platform full rights by default.
+* researchers with `EduGain <https://edugain.org/>`__ credentials, as you will be granted increased privileges due to your trusted researcher status
+
+Additionally, we offer several federated authentication options including:
 `Github <https://github.com/>`__,
 `Google <https://accounts.google.com/>`__,
-and `IFCA SSO <https://sso.ifca.es>`__.
+`IFCA SSO <https://sso.ifca.es>`__ and
+`EOSC SIESTA <https://aai.cloud.eosc-siesta.eu/realms/siesta/account>`__.
 
-Accounts are mapped by email. So, for EGI Check-In users, we recommend authenticating the first time with EGI Check-In. Then, they can subsequently authenticate with any other option (eg. Github) as long as they share the same email.
+Accounts are mapped by email. So you can authenticate the first time with EGI Check-In, then can subsequently authenticate with any other option (eg. Github), as long as they share the same email.
 
 Register a new account
 ^^^^^^^^^^^^^^^^^^^^^^
 
-In order to register to the AI4OS platform you need to get an account on our `AI4OS SSO <https://login.cloud.ai4eosc.eu/realms/ai4eosc/account>`_. You can do this by
-clicking on the ``Register`` link on the login page.
+To register a new account from scratch:
 
-Please provide all the details that are listed in the registration form and preferably
-use your **institutional account** (university, research center). This will speed up the
-approval process.
-
-After you have filled in all the details, click on the ``Register`` button. You will
-receive an email with a link to confirm your registration. Click on the link to confirm
-your registration and then you will be approved by an administrator.
+* Go to the `AI4OS SSO <https://login.cloud.ai4eosc.eu/realms/ai4eosc/account>`__,
+* Click on the ``Register`` link on the login page,
+* Please provide all the details that are listed in the registration form and preferably
+  use your **institutional account** (university, research center). This will speed up the
+  approval process.
+* After you have filled in all the details, click on the ``Register`` button. You will
+  receive an email with a link to confirm your registration. Click on the link to confirm
+  your registration and then you will be approved by an administrator.
 
 Please remember that the approval process can take some time, so please be patient.
-Also, be aware that just registering does not grant you access to the whole AI4OS platform, just some access to basic services.
 
-Please request an upgrade if you need access to the full platform.
-
+Be aware that just registering does not grant you access to the whole AI4OS platform, just some access to basic services.
+If you need access to the full platform, please :doc:`contact support </help/index>`.
 
 Login to the platform
 =====================

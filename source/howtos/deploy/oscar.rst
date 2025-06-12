@@ -114,7 +114,7 @@ In this case, we receive what are the inputs needed by the YOLO model.
 
    If the call returns a ``502`` error, you should wait a bit more, your docker image is probably getting pulled!
 
-   If the error persists, please contact support.
+   If the error persists, please :doc:`contact support </help/index>`.
 
 
 Synchronous predictions

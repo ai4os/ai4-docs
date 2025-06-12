@@ -34,7 +34,7 @@ Given the above specifications, we recommend the following typical workflows:
 If you need to generate one-off predictions on a given dataset but not maintain a running service, you have two options:
 
 * :doc:`Deploy in AI4OS (dedicated resources) </howtos/deploy/nomad>` with a GPU, make your predictions and delete the deployment.
-* :doc:`Deploy in AI4OS (serverless) </howtos/deploy/oscar>` and upload your dataset files to a bucket to perform :ref:`async predictions <howtos/deploy/oscar:Asynchronous predictions>`. If your dataset is really big, you can contact support to create a custom batch processing pipeline tailored to your usecase.
+* :doc:`Deploy in AI4OS (serverless) </howtos/deploy/oscar>` and upload your dataset files to a bucket to perform :ref:`async predictions <howtos/deploy/oscar:Asynchronous predictions>`. If your dataset is really big, you can :doc:`contact support </help/index>` to create a custom batch processing pipeline tailored to your usecase.
 
 In addition to the above deployment options from the AI4OS Dashboard, there are several additional deployment methods:
 
