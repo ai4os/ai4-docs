@@ -58,3 +58,21 @@ A typical pipeline is divided in two parts:
   * regenerate the provenance chain of that module,
 
 .. image:: /_static/images/ai4eosc/jenkins.png
+
+
+Module popularity
+-----------------
+
+In order to efficiently explore the catalog of modules, it is useful to know what are the most popular modules.
+
+Assessing the popularity of module is a difficult task because there are many proxy metrics of popularity, each one with it's own shortcomings:
+
+* **Github Stars**: while useful, many users do not take the time to star the modules they use.
+* **DockerHub downloads**: downloads sometimes do not reflect real usage because they can be inflated by CI/CD automated builds.
+* **Number of created persistent deployments**: they can be misleading sometimes, as someone can deploy a module a single time but use it a lot, while another person might download it and immediately remove it.
+* **Number of created tryme deployments**: this metric is very informative but it privileges trained modules (eg. YOLO trained to detect fishes) over untrained ones (eg. YOLO with no trained weights). This is unfair because the trained module used the untrained module as a base reference, so the base module is indeed popular.
+* **Number of Dashboard views**: this metric could prioritize fancy shinny modules over modules that are really used by users,
+
+To be able to easily compare across modules and mitigate the individual shortcomings, we weight these individual metrics into an overall **aggregated popularity score**. This aggragated score allows to sort the catalog modules by popularity.
+
+.. todo: add image
