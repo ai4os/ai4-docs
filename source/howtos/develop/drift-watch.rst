@@ -8,7 +8,7 @@ Data drift detection with Frouros
 
 The AI4OS Platform allows to detect **data drift** in your data at inference time.
 This is a useful warning that the inference results might not be reliable anymore and
-that some action should be taken.
+that some action should be taken (eg. cleaning the sensor, retraining the model, etc).
 
 In this tutorial, we are going to demonstrate how to implement drift detection
 in an image object detection pipeline. Specifically, we are going to use the
@@ -16,12 +16,14 @@ in an image object detection pipeline. Specifically, we are going to use the
 where the drift detector will signal that the underwater camera is dirty and
 needs cleaning.
 
-You can find a the full code of this tutorial `here <https://github.com/ai4os-hub/obsea-fish-detection/tree/drift-camera>`_, as well as `reference notebooks <https://github.com/ai4os-hub/obsea-fish-detection/tree/drift-camera/notebooks>`__.
+You can find the `full code <https://github.com/ai4os-hub/obsea-fish-detection/tree/drift-camera>`_ of this tutorial, as well as `reference notebooks <https://github.com/ai4os-hub/obsea-fish-detection/tree/drift-camera/notebooks>`__.
 
 In this tutorial, we use `Frouros`_ as the main drift detection library, but the tutorial still applies to other
 popular drift detection libraries like `Alibi-detect <https://github.com/SeldonIO/alibi-detect>`__, `Evidently <https://github.com/evidentlyai/evidently>`__, `Eurybia <https://github.com/MAIF/eurybia>`__, etc.
 
 .. _Frouros: https://frouros.readthedocs.io/en/latest
+.. _DriftWatch: https://drift-watch.cloud.ai4eosc.eu/
+.. _MyToken: https://mytok.eu/
 
 What is drift detection?
 ------------------------
@@ -35,14 +37,14 @@ There could be many reasons causing data drift:
 
 In any case, the predictions are no longer reliable and an action has to be taken by the user.
 
-To achieve drift monitoring, we take the inference data vector and compare it with a reference
-training dataset. We compute a **p-value** that summarizes what is the likelihood that the inference vector
-could come from the training data. If the p-value is below a threshold, we can confidently assert
+To detect drift, we take the inference data vector and compare it with a reference
+training dataset. We compute a distance that summarizes what is the likelihood that the inference vector
+could come from the training data. If the distance is above a threshold, we can confidently assert
 that the data has indeed drifted.
 
 In the case of images, the pure pixels values are not a good summarizer of the image statistics.
 So we typically train an **autoencoder model** that is able to summarize the pixel values into a smaller
-vector that more accurately describes the image. We then use this vector to compute the p-values, as before.
+vector that more accurately describes the image. We then use this vector to compute the distance, as before.
 
 Find more information on the `fundamentals of drift detection <https://frouros.readthedocs.io/en/latest/concepts.html>`__.
 
@@ -53,16 +55,42 @@ Create your drift detector
 1. Define your reference data
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-.. todo: reread again this section
+The first step is to define a "normal" reference dataset (ie. clean camera).
+The clean images will be used as reference to train the detector and determine the
+statistical properties of the data under normal conditions.
+You can also define anomalous images (ie. dirty camera) for testing the detector.
+
+The images can be defined in a configuration file:
+
+.. dropdown:: ㅤㅤ 📄 Configuration file (TOML)
+
+    .. code-block:: toml
+
+        [transform]
+        resize = [216, 384]
+        mean = [0.00, 0.00, 0.00]
+        std = [1.00, 1.00, 1.00]
+
+        [camera_state]
+        clean = [
+            "20230728-083036-IPC608_8B64_165.jpg",
+            # ...
+        ]
+        dirty = [
+            "20230720-073036-IPC608_8B64_165.jpg",
+            # ...
+        ]
 
 Use `torchvision <https://docs.pytorch.org/vision>`__ (or your preferred library) to load the images and convert
 them to tensors. It is recommended to resize the images to a smaller size
 (e.g., 216x384) to reduce computational cost and complexity. This can be
 done using the ``torchvision.transforms`` module.
 
-.. dropdown:: ㅤㅤ 📄 Preprocess your images (Python)
+.. dropdown:: ㅤㅤ 📄 Load your images (Python)
 
     .. code-block:: python
+
+        import tomllib
 
         from PIL import Image
         from torch.utils.data import Dataset
@@ -95,41 +123,6 @@ done using the ``torchvision.transforms`` module.
             ]
         )
 
-Additionally, you need to define which images from your dataset will be
-used for reference and ideally, which ones will be used for testing. In our
-case, we will use the images from the OBSEA dataset and define the clean
-(for clean camera state) and dirty (for bad camera state). The clean images
-will be used as reference to train the detector and determine the
-statistical properties of the data under normal conditions.
-
-Ideally, you might want to use a configuration file to define the images
-that will be used for reference and test. In our example, we use the ``toml``
-format to define the configuration file.
-
-.. dropdown:: ㅤㅤ 📄 Configuration file (TOML)
-
-    .. code-block:: toml
-
-        [transform]
-        resize = [216, 384]
-        mean = [0.00, 0.00, 0.00]
-        std = [1.00, 1.00, 1.00]
-
-        [camera_state]
-        clean = [
-            "20230728-083036-IPC608_8B64_165.jpg",
-            # ...
-        ]
-        dirty = [
-            "20230720-073036-IPC608_8B64_165.jpg",
-            # ...
-        ]
-
-.. dropdown:: ㅤㅤ 📄 Load the configuration file (Python)
-
-    .. code-block:: python
-
-        import tomllib
 
         with open("config.toml", "rb") as f:
             settings = tomllib.load(f)
@@ -187,7 +180,7 @@ At inference time, you will need to to create the embeddings of the incoming ima
 So you need to save the autoencoder weights in the
 :doc:`AI4OS Storage </reference/storage>` to be able to load them at inference time.
 
-Optionally, you can also save the embeddings of clean camera images to warm the the drift detector at inference time.
+Additionally, you can also save the embeddings of clean camera images to warm the the drift detector at inference time, so it starts to detect drift from the first inference call.
 
 .. dropdown:: ㅤㅤ 📄 Saving autoencoder and clean embeddings (Python)
 
@@ -229,7 +222,7 @@ clean embeddings defined in the previous section.
 Finally we define a threshold for the drift detection metric. If the metric exceeds the
 threshold, it indicates potential drift.
 
-.. dropdown:: ㅤㅤ 📄 Implementing the detection (Python)
+.. dropdown:: ㅤㅤ 📄 Implementing the detector (Python)
 
     .. code-block:: python
 
@@ -263,7 +256,7 @@ threshold, it indicates potential drift.
             print("Warning: Drift score is approaching the threshold.")
 
 We recommend simulating different scenarios (e.g., clean vs. dirty camera images) to
-validate the drift detection. Ensure that it correctly identifies drift
+set the appropriate threshold value. Ensure that it correctly identifies drift
 and triggers appropriate alerts.
 
 
@@ -279,21 +272,21 @@ Once this is done, you need to perform the following updates:
 1. Update the warm function
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-In the ``warm()`` function, you need to initialize the drift detector and load
-the clean embeddings and autoencoder model weights from the module storage.
-
-The function is called when the module is started and will be used to
-initialize the drift detector with the clean embeddings. Note that the
-state of the detector is restarted every time the module is restarted.
+In the ``warm()`` function, you need to initialize the drift detector with the clean embeddings,
+saved in the :doc:`AI4OS Storage </reference/storage>`.
+Note that the state of the detector is restarted every time the module is restarted.
 
 .. code-block:: python
 
     def warm():
+        # Load detector
+        detector = MMDStreaming(window_size=12, kernel=partial(rbf_kernel, sigma=0.30))
+
         # Warm up the detector with clean data
         clean = load_encodings("/storage/clean_embeddings.pth")
-        utils.detector.fit(clean.cpu().numpy())
+        detector.fit(clean.cpu().numpy())
         for sample in clean[:utils.detector.window_size]:
-            utils.detector.update(sample.cpu().numpy())
+            detector.update(sample.cpu().numpy())
 
 
 2. Update the predict function
@@ -352,7 +345,7 @@ is clean or dirty. The function returns whether drift exists or not.
       encoded = autoencoder.encoder(normalized.unsqueeze(0))[0]
 
       # Check if the image is clean
-      result, _ = utils.detector.update(encoded.detach().cpu().numpy())
+      result, _ = detector.update(encoded.cpu().numpy())
       return {
           "drift": bool(result.distance > drift_distance),
       }
@@ -363,9 +356,8 @@ Monitor drift with Driftwatch
 
 The previous section has showed how we could compute drift inside our predict function.
 
-But for a better user experience, we have developed `DriftWatch`_ to visualize the drift over time.
-It allows to save the drift metrics for each inference call and visualize them over time. It also
-provides a web interface to visualize the data (eg. images) that was were used for the predictions.
+But for a better user experience, we have developed `DriftWatch`_ to visualize the drift over time in an interactive way.
+It allows to save the drift metrics for each inference call and plot them over time.
 
 To connect your module with DriftWatch, follow these steps:
 
@@ -387,59 +379,47 @@ To obtain your token:
    - Set ``Audiences`` to https://drift-watch.cloud.ai4eosc.eu/
    - Click on ``Create new Mytoken``
 
-.. TODO: where to retrieve the token value ?
+3. This will open a new tab to approve the token. Once approved, switch back to the previous tab to see the token value.
 
-.. image:: /_static/images/driftwatch/mytoken-audiences.png
+.. image:: /_static/images/driftwatch/mytoken.png
 
 
-2. Install DriftWatch in your module
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2. Initialize DriftWatch in your module
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Create an environment variable ``DRIFT_MONITOR_MYTOKEN`` and assign your mytoken to it.
 
 To add the DriftWatch library to your module, you need to add the
-`drift-monitor`_ package to the requirements file. This package is used to
-connect your modules with DriftWatch and send the drift distance and data
-to be monitored.
+`drift-monitor <https://pypi.org/project/drift-monitor/>`__ package to the requirements file. This package is used to
+connect your modules with DriftWatch and send the drift metrics to be monitored.
 
 .. code-block:: console
 
   $ pip install -U drift-monitor
 
 Once the package is installed, you need to accept the license agreement and
-register to use the package. You can do this by running the code:
+register to be able to create experiments in the `DriftWatch`_
+service.
+You do it at the start of the ``api.py`` file:
 
 .. code-block:: python
 
   import drift-monitor as dw
+
   dw.register(accept_terms=True)
-
-This will register the owner of the previously obtained token and assigned
-to **DRIFT_MONITOR_MYTOKEN**. You can run this code at the start of the
-`api.py` or separately if the owner of the tokens is going to be the same.
-
-Once registered, you will be authorized to create experiments in the `DriftWatch`_
-service with the following code:
-
-.. code-block:: python
-
   description = "This is an experiment to track camera status on OBSEA project."
   try:
       dw.new_experiment("obsea-camera", description, public=True)
   except ValueError:
       print("Experiment already exists. Skipping creation.")
 
-Similar to the registration process this code needs to be executed only once
-so feel free to integrate it into the code. Simply make sure you catch the
-exception if you include it into your `warm` function.
 
+3. Update the predict function
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-3. Integrate the DriftWatch client to your module
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-Final step is to extend the `predict` function with the functionality to
+Final step is to extend the ``predict()`` function with the functionality to
 upload your drift jobs to the `DriftWatch`_ server. To do so, you simply
-need to open a python context with `DriftMonitor` defining a model id and
+need to open a python context with ``DriftMonitor()`` defining a model id and
 the tags you want to use to identify your results on the experiment.
 
 .. code-block:: python
@@ -449,77 +429,51 @@ the tags you want to use to identify your results on the experiment.
       parameters = {"some_parameter": "value"}
       ...
       # Check if the image using drift detection
-      result, _ = utils.detector.update(encoded.detach().cpu().numpy())
+      result, _ = detector.update(encoded.cpu().numpy())
       with dw.DriftMonitor("obsea-camera", model_id, tags) as monitor:
-          result, _ = utils.detector.update(encoded.detach().cpu().numpy())
+          result, _ = detector.update(encoded.cpu().numpy())
           parameters["distance"] = result.distance
           monitor(result.distance > drift_distance, parameters)
       ...
       return ... # format and return the results as before
 
-Every time the inference calls the predict function, a new job is opened at
+Every time the inference calls the ``predict()`` function, a new job is opened at
 `DriftWatch`_. If an exception is raised during the execution of the code
-under the `DriftMonitor` context, the job will be closed with `Failed`
+under the ``DriftMonitor()`` context, the job will be closed with **Failed**
 status. Otherwise, normal exit of the context will close the job as
-`Completed`.
-
-.. _MyToken: https://mytok.eu/
-.. _MyToken docs: https://mytoken-docs.data.kit.edu/
-.. _DriftWatch: https://drift-watch.cloud.ai4eosc.eu/
-.. _drift-monitor: https://pypi.org/project/drift-monitor/
-.. _drift-watch example: https://github.com/ai4os-hub/obsea-fish-detection/blob/drift-camera/notebooks/drift-watch.ipynb
+**Completed**.
 
 
-4. Add links and additional context data to your drift
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+4. Add additional context data to your drift
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-As you might have notice, the second parameter of the `monitor` function
+As you might have notice, the second parameter of the ``monitor()`` function
 is a dictionary with the parameters you want to add to your drift job. You
 can add any additional information you want to include in the job. For
-example, you can add a link to the image that was used for the prediction, the
+example, you can add the name of image that was used for the prediction, the
 drift distance, and any other information that you want to include in the
 job.
 
-To create the link to the image, you can use the `/storage` folder of the server
-where the module is running. This folder can be configured to mount your storage
-service from next cloud, see :ref:`Accessing storage from inside your deployment <storage_access>`.
-First you need to define the environment variables that will be used to
-configure the sorage location and the url.
+If your :ref:`deployment is mounted with storage <reference/dashboard:Storage configuration>`, you can save the images in the :ref:`storage <storage_access>` (accessible in the ``/storage`` folder).
+If you then include the image name in the drift parameters, you will be able to locate what was the image that caused the drift.
+The resulting ``predict()`` function would look as following:
 
 .. code-block:: python
 
-  # in ./api/config.py or similar
-  # e.g. /storage/ai4os-your-application-folder/
-  store_dir = os.getenv("DRIFT_MONITOR_STORE_DIR", None)
-  # e.g. https://share.services.ai4os.eu/remote.php/webdav/
-  store_url = os.getenv("DRIFT_MONITOR_STORE_URL", None)
+    # Init the image dir
+    image_dir = "/storage/test-driftwatch"
+    os.makedirs(image_dir, exist_ok=True)
 
-Next use the `store_dir` and `store_url` to store and create the link to the
-image. You can use the `os.makedirs` function to create the directory where the
-image will be stored. The `shutil.copy` function can be used to copy the image
-to the directory. We create one directory per image to simplify the url generation
-in `nextcloud`. The link to the image will be added to the parameters dictionary
-that will be passed to the `monitor` function.
-
-.. code-block:: python
-
-  def predict(input_file, drift_distance):
-      ...
-      time = dt.datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
-      if config.store_dir:  # Copy to permanent storage
-          logger.debug("Saving image to store: %s", config.store_url)
-          image_dir = f"{config.store_dir}/{time}"
-          os.makedirs(image_dir, exist_ok=True)
-          shutil.copy(input_file.filename, f"{image_dir}/image.jpg")
-      ...
-      if config.store_url:  # Add link to parameters
-          logger.debug("Adding link to parameters: %s", link)
-          parameters["link"] = f"{config.store_url}?path={time}"
-      ...
-      return ... # format and return the results as before
-
-Additionally, you can return the link to the image in the response of the
-`predict` function.
+    def predict(input_file, drift_distance):
+        ...
+        # Save image to permanent storage
+        timestamp = dt.datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
+        shutil.copy(input_file.filename, f"{image_dir}/{timestamp}.jpg")
+        ...
+        # Add image name to parameters
+        parameters["image_name"] = f"{timestamp}.jpg"
+        ...
+        return ... # format and return the results as before
 
 
 Deploy your module in production
@@ -527,61 +481,40 @@ Deploy your module in production
 
 In the module page, click on the option ``Codespaces > Jupyter``. You will be
 shown a :ref:`configuration page <dashboard_deployment>` where the option
-``Jupyter`` is selected. You can directly click on ``Quick submit`` as you
-don't need to configure anything else.
-
-.. todo: needs to be connected to storage to retrieve modelweights
+``Jupyter`` is selected.
+Make sure to :ref:`connect you storage <dashboard_storage>` to be able to retrieve the weights of the drift detector.
+Then submit the deployment.
 
 In the ``Deployments`` tab, go to the ``Modules`` table and find your created
 deployment. Click the :material-outlined:`terminal;1.5em` ``Quick access`` to
 access the JupyterLab terminal.
 
-Now we need to deploy the DEEPaaS API to start monitoring, but make sure you
-have configured the environment variables that your application requires. You can
-use the terminal to set the environment variables. For example, you can set
-the `DRIFT_MONITOR_MYTOKEN` variable to the token you obtained in the previous
-step. You can also set the `DRIFT_MONITOR_STORE_DIR` and `DRIFT_MONITOR_STORE_URL`
-variables to the directory where you want to store the images and the URL of
-the storage service.
-You can set the environment variables using the following command:
+Now we need to define the mytoken variable as envar:
 
 .. code-block:: console
 
     $ export DRIFT_MONITOR_MYTOKEN=<your_token>
-    $ export DRIFT_MONITOR_STORE_DIR=/storage/ai4os-obsea-fish-detection
-    $ export DRIFT_MONITOR_STORE_URL=https://share.services.ai4os.eu/remote.php/webdav/
 
-and then run the following command to deploy the module:
+Now we can :ref:`start the DEEPaaS API <howtos/deploy/nomad:2.1 API prediction>`:
 
 .. code-block:: console
 
-    $ deepaas-run --listen-ip 0.0.0.0
+    $ deep-start --deepaas
 
-
-Once the module is running, you can use the `POST` method to send an image
-to the module and check if it is clean or dirty. Follow the steps in
-:ref:`Develop Code <develop_code>` to see how to deploy the module and test
-it.
+Once the module is running, you can use the ``POST .../predict`` method to send an image
+to the module and check if it is clean or dirty.
 
 Access to `DriftWatch`_ in order to visualize the uploaded drift in
 the dashboard.
 
-   .. image:: /_static/images/driftwatch/experiments_page.png
+.. image:: /_static/images/driftwatch/experiments_page.png
 
 Click on your experiment and you will be shown a list of the
 drift jobs that have been uploaded. You can select the desired jobs and
-configure the visualization options. To see the drift distance over time.
+configure the visualization options to see the drift distance over time.
 
-   .. image:: /_static/images/driftwatch/drifts_page.png
+.. image:: /_static/images/driftwatch/drifts_page.png
 
-.. _DriftWatch: https://drift-watch.cloud.ai4eosc.eu/
+Use the ``View`` button to see the saved parameters of a particular inference call.
 
-
-If links are correctly configured, you will be able to see then in the row
-`View` button of the drift job together with the rest of the saved parameters.
-
-   .. image:: /_static/images/driftwatch/parameters_popup.png
-
-
-.. TODO: (ignacio)
-   In the future we should allow users to input env variables in the Dashboard configuration, to avoid using terminal
+.. image:: /_static/images/driftwatch/parameters_popup.png
