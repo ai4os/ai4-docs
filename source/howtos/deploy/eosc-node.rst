@@ -56,13 +56,11 @@ Notice that in this step what you do is to allocate the resources (quota), but y
 1.2. Deploy your tool
 ^^^^^^^^^^^^^^^^^^^^^
 
-In the ``Tools Hub`` section, search for ``AI4EOSC`` and select the **AI4EOSC model** for *containers*.
+In the ``Tools Hub`` section, search for ``AI4EOSC`` and select the **AI4EOSC model** for *containers* (AI4EOSC Module Container).
 
 .. image:: /_static/images/eosc-node/tools-hub.png
 
-.. todo: resnapshot this image when miguel renames its
-
-.. TODO: remove this image for simplicity? (also in static folder)
+.. TODO: remove this image for simplicity? (also in static folder): Amanda has updated the image, we can maintain it here and omit it in the VM section
 .. Choose the desired tool. You can see the details with the ``Show details`` button.
 .. .. image:: /_static/images/eosc-node/tools-details.png
 
@@ -78,14 +76,17 @@ You can set custom input values by selecting :material-outlined:`check_box;1.5em
    :width: 400px
 
 Then click on ``Save and Select Project``. This will create a new tool in your private **My Tools** list, that you can use for new deployments.
-Next, you need to select the *“Default Personal Project”* created in Step 1, which is linked to the allocated OKD project.
+Next, you need to select the *“Default Personal Project”* created in Step 1, which is linked to the allocated OKD project, and click on the ``Proceed`` button.
 
-.. TODO: are we missing image here? Proceed, etc
+.. TODO: are we missing image here? Proceed, etc -> added
+.. image:: /_static/images/eosc-node/container-deploy.png
 
 1.3. Access the tool
 ^^^^^^^^^^^^^^^^^^^^
 
 The new deployment is available in the ``Deployments`` tab of the ``Tools Hub`` section.
+
+.. image:: /_static/images/eosc-node/new-container-toolshub.png
 
 You can access the outputs of this deployment to get the endpoint (for example ``https://yolo-ai4eosc-9ina.eu-1.open-science-cloud-user-apps.eu/ui``). In the endpoint, you will find the :doc:`DEEPaaS API </reference/api>` UI, which you can use to run inference calls on the model.
 
@@ -97,7 +98,8 @@ You can access the outputs of this deployment to get the endpoint (for example `
 
 Optionally, you can get additional information about your container. For that, go to the ``Cloud Container Platform`` section in the EOSC EU Node dashboard, select your allocated environment and click on ``View externally``.
 
-.. todo: missing image here
+.. todo: missing image here --> added
+.. image:: /_static/images/eosc-node/container-external.png
 
 By clicking on this option, you will have access to your allocated environment in the EOSC EU Node Container provider, based in OKD.
 
@@ -131,11 +133,9 @@ In the ``Tools Hub`` section, search for ``AI4EOSC`` and select the **AI4EOSC mo
 
 .. image:: /_static/images/eosc-node/tools-hub.png
 
-.. todo: resnapshot this image when miguel renames its
 
-
-.. TODO: remove this image for simplicity? (also in static folder)
-.. Choose the desired tool. You can see the details with the ``Show details`` button.
+.. TODO: remove this image for simplicity? (also in static folder) 
+.. Choose the **AI4EOSC module VM** tool. You can see the details with the ``Show details`` button.
 .. .. image:: /_static/images/eosc-node/tools-details.png
 
 Deploy it using the :material-outlined:`play_circle;1.5em` ``Play`` button.
@@ -186,9 +186,11 @@ By clicking on this option, you will have access to your allocated environment i
 .. image:: /_static/images/eosc-node/vm-details.png
 
 You can obtain further information of your VM by clicking on the ``Instance Name`` of your resource.
-.. todo: check why this section is slightly different than the container one
+.. todo: check why this section is slightly different than the container one: VMs redirect you to openstack and containers to OKD
 
 Finally, once you have finished using the AI model, you can delete the deployment and release the resources. For that, go to the ``Deployments`` section in the Tools Hub and remove it by clicking on the :material-outlined:`delete;1.5em` ``Trash`` button.
+
+.. image:: /_static/images/eosc-node/tools-delete.png
 
 If you no longer want to deploy additional VMs, you should release the allocated project, to avoid using credits. For that, go back again to the ``Virtual Machines`` section and release your allocated environment by clicking on the ``Release`` button. A notification will be sent by the system once the resources have been released.
 
