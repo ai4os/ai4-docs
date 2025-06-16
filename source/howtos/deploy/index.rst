@@ -47,13 +47,6 @@ provides several guides in how to deploy your model in different environments.
         Deploy your own LLM from a selection of open-source models (DeepSeek, Qwen, LLama, etc),
         using vLLM and Open-WebUI.
 
-    .. grid-item-card:: :material-outlined:`handyman;1.5em`  Manual serverless deployment
-        :link: oscar-manual
-        :link-type: doc
-
-        Deploy your model in the platform using the serverless option, but manually
-        configuring the deployment. This is an advanced option.
-
 
 .. toctree::
    :maxdepth: 1
@@ -66,4 +59,3 @@ provides several guides in how to deploy your model in different environments.
    Deploy in your cloud <cloud>
    Deploy external models <external>
    Deploy your own LLM <llm>
-   Manual serverless deployment <oscar-manual>

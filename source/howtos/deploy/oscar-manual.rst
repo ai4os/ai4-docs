@@ -1,3 +1,5 @@
+:orphan:
+
 Manually deploy a serverless inference endpoint
 ===============================================
 
