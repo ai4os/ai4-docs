@@ -41,12 +41,16 @@ In this section you can see your profile details.
 
 * ``Virtual organizations``: the VOs you are a member of and which roles you have in them.
 
-* ``Linked services``: list of the :doc:`compatible storage providers </technical/howto-developers/storage-providers>`
-  that can be linked to your account.
+* ``Linked services``: many of the ecosystem services can be linked to the Dashboard, for a tighter integration that delivers a smoother experience:
 
-  In order to link a storage provider, you have to click on the ``Link`` button, log
-  in the popup window and grant access to the Dashboard.
-  If you have previously linked a storage provider, you also have to option to ``Re-link`` it.
+  You can link for example:
+
+  * the :doc:`AI4OS storage </reference/storage>` as well as :doc:`external storage providers </technical/howto-developers/storage-providers>`,
+  * the :doc:`MLflow Experiment Tracking </howtos/develop/mlflow>`,
+  * your `Huggingface <https://huggingface.co/>`__ account,
+
+  In order to link a service, you have to click on the ``Link`` button, log in the popup window and grant access to the Dashboard.
+  If you have previously linked the service, you also have to to delete old credentials and generate new ones using ``Re-link``.
 
 .. dropdown:: :fab:`youtube;youtube-icon` ㅤLink with any NextCloud storage service
 
@@ -138,7 +142,7 @@ The parameters to configure are:
 
   If you select either ``JupyterLab`` or ``VScode`` you must set a password at least 9 characters long.
 
-  .. dropdown:: ㅤㅤ What if I want both ``DEEPaaS`` and ``VSCode`` ?
+  .. dropdown:: ㅤ 💡 What if I want both ``DEEPaaS`` and ``VSCode`` ?
 
     We do not provide the option to run both JupyterLab and DEEPaaS at the same time,  as code changes performed subsequently via JupyterLab wouldn't be
     reflected in DEEPaaS (which is launched with the initial codebase), thus potentially leading to confusion.

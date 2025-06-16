@@ -14,14 +14,14 @@ provides several guides in how to deploy your model in different environments.
 
         Start here to get an overview of the different deployment options.
 
-    .. grid-item-card:: :material-outlined:`dns;1.5em`  Deploy in the platform (serverless)
+    .. grid-item-card:: :material-outlined:`dns;1.5em`  Deploy in the AI4OS platform (serverless)
         :link: oscar
         :link-type: doc
 
         Deploy your model in the platform using the serverless option, using a shared
         serverless environment.
 
-    .. grid-item-card:: :fas:`server;fa-lg sd-mr-2`  Deploy in the platform (dedicated)
+    .. grid-item-card:: :fas:`server;fa-lg sd-mr-2`  Deploy in the AI4OS platform (dedicated)
         :link: nomad
         :link-type: doc
 
@@ -33,6 +33,12 @@ provides several guides in how to deploy your model in different environments.
         :link-type: doc
 
         Deploy your model in your cloud using the provided Docker image.
+
+    .. grid-item-card:: :material-outlined:`hub;1.5em`  Deploy in the EOSC EU Node
+        :link: eosc-node
+        :link-type: doc
+
+        Deploy your model in the resources provided by the EOSC EU Node.
 
     .. grid-item-card:: :material-outlined:`exit_to_app;1.5em`  Deploy external models
         :link: external
@@ -47,20 +53,6 @@ provides several guides in how to deploy your model in different environments.
         Deploy your own LLM from a selection of open-source models (DeepSeek, Qwen, LLama, etc),
         using vLLM and Open-WebUI.
 
-    .. grid-item-card:: :material-outlined:`handyman;1.5em`  Manual serverless deployment
-        :link: oscar-manual
-        :link-type: doc
-
-        Deploy your model in the platform using the serverless option, but manually
-        configuring the deployment. This is an advanced option.
-
-
-    .. grid-item-card:: :material-outlined:`handyman;1.5em`  Deploy in the EOSC EU Node
-        :link: eosc-node
-        :link-type: doc
-
-        Deploy your model in the resources provided by the EOSC EU Node.
-
 .. toctree::
    :maxdepth: 1
    :titlesonly:
@@ -70,7 +62,6 @@ provides several guides in how to deploy your model in different environments.
    Deploy in AI4OS (serverless) <oscar>
    Deploy in AI4OS (dedicated) <nomad>
    Deploy in your cloud <cloud>
+   Deploy in the EOSC EU Node <eosc-node>
    Deploy external models <external>
    Deploy your own LLM <llm>
-   Manual serverless deployment <oscar-manual>
-   Deploy in the EOSC EU Node <eosc-node>

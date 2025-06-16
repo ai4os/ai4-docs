@@ -35,27 +35,26 @@ This offers the benefits of:
 * develop on your favorite IDE (Jupyterlab or VScode),
 
 Check :ref:`how to create and configure <dashboard_deployment>` the AI4OS Development Environment.
+
+.. admonition:: ⚠️ Use storage-synced folder to develop
+   :class: info
+
+   We *strongly* recommend to create a :ref:`deployment attached to storage <dashboard_storage>`.
+
+   By doing so, you can develop your code inside the ``/storage`` folder and any changes you make will *instantly* be synced with the :doc:`AI4OS Storage </reference/storage>`.
+   This will prevent any work loss in case of an unexpected deployment crash (which do happen from time to time).
+
 This is what an AI4OS Development Environment with VScode would look out-of-the-box:
-
-.. dropdown:: :fab:`youtube;youtube-icon` ㅤLaunching a development environment
-
-  .. raw:: html
-
-    <div style="position: relative; padding-bottom: 56.25%; margin-bottom: 2em; height: 0; overflow: hidden; max-width: 100%; height: auto;">
-        <iframe src="https://www.youtube.com/embed/mod3fwN8wCI" frameborder="0" allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
-    </div>
 
 .. image:: /_static/images/endpoints/vscode.png
 
+.. dropdown:: :fab:`youtube;youtube-icon` ㅤLaunching a development environment
 
-.. admonition:: 💡 Use storage-synced folder to develop
-   :class: info
+    .. raw:: html
 
-   We recommend to create a :ref:`deployment attached to storage <dashboard_storage>`.
-
-   By doing so, you can develop your code inside the ``/storage`` folder and any changes you make will automatically be synced with the :doc:`AI4OS Storage </reference/storage>`.
-   This will prevent any work loss in case of an unexpected deployment crash.
-
+        <div style="position: relative; padding-bottom: 56.25%; margin-bottom: 2em; height: 0; overflow: hidden; max-width: 100%; height: auto;">
+            <iframe src="https://www.youtube.com/embed/mod3fwN8wCI" frameborder="0" allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
+        </div>
 
 .. _develop_code:
 
@@ -64,7 +63,7 @@ This is what an AI4OS Development Environment with VScode would look out-of-the-
 
 Drag and drop in the VScode editor the zip file created in Step 1. Then unpack it.
 
-.. dropdown:: ㅤ 💡 Optimal VScode setup
+.. dropdown:: ㅤ 💡 Optimal VScode setup: using LLMs and more
 
    **Tip nº1**:
    VScode by default is initialized in ``/srv``.
@@ -75,7 +74,9 @@ Drag and drop in the VScode editor the zip file created in Step 1. Then unpack i
    As explained earlier, having your project under ``/storage`` will allow it to be automatically synced with the :doc:`AI4OS Storage </reference/storage>`.
 
    **Tip nº2**:
-   :ref:`Use the AI4OS LLM as coding assistant <reference/llm:Use it as a code assistant with VScode>`.
+   :ref:`Use the AI4OS LLM as coding assistant <reference/llm:Use it as a code assistant with VScode>` to help you develop faster.
+   It is integrated directly in VScode trough the use of the `Continue.dev <https://www.continue.dev/>`__ extension.
+
    We recommend implementing first tip nº1, in order to avoid the Continue assistant from freezing when trying to index the whole workspace contents.
 
 Install your project as a Python module in **editable** mode, so that the changes you make to the codebase are picked by Python.
@@ -94,6 +95,7 @@ Install your project as a Python module in **editable** mode, so that the change
     * In other systems, sometimes ``python3-dev`` is needed (``apt install python3-dev``).
 
 Now you can start adding your AI model code inside ``<project-name>/<project-name>``.
+
 
 Integrating with the DEEPaaS API
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^

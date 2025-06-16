@@ -10,7 +10,8 @@ notified here.
 .. Template
 .. * 📘 new :doc:`... <...>` page (``2024-04-03``)
 
-* 📈 we started supporting :doc:`deploying models to the EOSC node </howtos/deploy/eosc-node>` (``2025-06-10``)
+* 📈 we started supporting :doc:`deploying models to the EOSC node </howtos/deploy/eosc-node>` (``2025-06-20``)
+* 📈 we started supporting :doc:`drift monitoring detection </howtos/develop/drift-watch>` (``2025-06-10``)
 * 📈 we started supporting :doc:`batch mode trainings </howtos/train/batch>` (``2025-05-25``)
 * 📈 we added support for developers to provide :ref:`minimum inference resources  <howtos/develop/dashboard:5. Update your project's metadata>` (``2025-05-06``)
 * 📈 we started supporting :doc:`Federated Learning trainings with NVFLARE </howtos/train/federated-nvflare>` (``2025-04-07``)
@@ -53,21 +54,12 @@ notified here.
 --------------------
 
 In this section, we will offer some insight on to where the AI4OS stack is heading.
-
-First, the are a number of mature features that are in the process of being integrated
-in the stack:
+Some of these features are experimental and might not end up being integrated in the stack:
 
 * 📈 try model endpoints with OSCAR
 * 📈 new tool for efficient video streaming (Kafka)
-* 📈 support for federated learning with NVflare
-
-Along with these upcoming features, we are exploring more improvements. These are
-in an experimental status and might not finally get integrated in the stack.
-
-* 📈 carbon footprint estimator for your deployments
-* 📈 graph visualizations of your module/deployment metadata
-* 📈 ability to launch trainings in batch
-* 📈 new popularity metrics
+* 📈 graph visualizations of your module/deployment provenance information
+* 📈 migration to Keycloak authentication
 
 Do you find something missing? Please check
 :ref:`how to suggest a new feature <new-features-request>`.

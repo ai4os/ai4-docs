@@ -2,13 +2,13 @@ Frequently Asked Questions (FAQ)
 ================================
 
 This page gathers know issues of the platform, along with possible solutions.
-If your issue does not appear here, please contact support.
+If your issue does not appear here, please :doc:`contact support </help/index>`.
 
 .. TODO: check if the FAQ issues still apply
 
 
-Hardware issues
----------------
+Deployment issues
+-----------------
 
 🔥 The Dashboard shows my deployment but it immediately disappears
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -19,11 +19,24 @@ This usually happens in deployments that where :ref:`launched using Nextcloud <r
 
 To fix this issue, please :ref:`re-link your Nextcloud account <reference/dashboard:Profile>` and try deploying again.
 
-If you are still experiencing this error after relinking, please contact support.
-If you are experiencing this issue in a deployment that was not linked with Nextcloud, please contact support.
+If you are still experiencing this error after relinking, please :doc:`contact support </help/index>`.
+If you are experiencing this issue in a deployment that was not linked with Nextcloud, please :doc:`contact support </help/index>`.
 
 We are debugging why the Nextcloud expiration happens in the first place.
 
+
+🔥 I suddenly lost the contents of my deployment, can I recover them?
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Nodes sometimes crash unexpectedly. It's not common but it can happen.
+Since your deployment is running as a Docker container, after a node restart, your deployment contents are gone and not recoverable.
+
+To protect yourself against unexpected data losses we recommend locating any important files (like the code you are developing) inside the ``/storage`` to have instant file syncing with the :doc:`AI4OS Storage </reference/storage>`.
+
+Learn how to create a :ref:`Development Environment linked with storage <howtos/develop/dashboard:2. Prepare your development environment>`.
+
+Hardware issues
+---------------
 
 🔥 The Dashboard shows there are free GPUs but my deployment is still queued
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -31,7 +44,7 @@ We are debugging why the Nextcloud expiration happens in the first place.
 This can happen sometimes when a GPU gets stuck in the system and is not correctly
 freed.
 
-Please contact support if this happens to you!
+Please :doc:`contact support </help/index>` if this happens to you!
 
 
 🔥 I ran out of disk in my deployment
@@ -93,7 +106,7 @@ the available resources.
 For example, check how to limit CPU usage in `Tensorflow <https://stackoverflow.com/questions/57925061/how-can-i-reduce-the-number-of-cpus-used-by-tensorlfow-keras>`__
 or `Pytorch <https://pytorch.org/docs/stable/generated/torch.set_num_threads.html#torch.set_num_threads>`__.
 
-.. dropdown:: ㅤㅤ More info
+.. dropdown:: ㅤ 💡 More info
 
     For example trying to allocate 8GB in a 4GB RAM machine will lead to failure.
 
@@ -117,7 +130,7 @@ You try to list to GPU and it doesn't appear:
     Failed to initialize NVML: Unknown Error"
 
 This is due to `this issue <https://github.com/NVIDIA/nvidia-docker/issues/1730>`__.
-We are working on fixing this issue. If this is happening to you, please contact support.
+We are working on fixing this issue. If this is happening to you, please :doc:`contact support </help/index>`.
 
 In the meantime, your best option is to backup your data, delete your deployment and create a new one.
 
@@ -151,7 +164,7 @@ to fill the deployment configuration form.
 This happens from time to time due to connectivity issues. If this behavior persists
 for more than a few days, try creating a new deployment.
 
-If latency is still slow in the new deployment, please contact support.
+If latency is still slow in the new deployment, please :doc:`contact support </help/index>`.
 
 
 🔥 I cannot find my dataset under ``/storage/ai4-storage``
@@ -178,8 +191,8 @@ You have several options:
 
   .. code-block:: console
 
-    pip install datahugger
-    datahugger "<doi>" "<data_dir>"
+    $ pip install datahugger
+    $ datahugger "<doi>" "<data_dir>"
 
 * *Option 3*: download your dataset manually and paste it to Nextcloud
 
@@ -222,7 +235,7 @@ maintenance action going on.
 If you don't see anything, wait a couple of hours to make sure it is not a
 temporary issue.
 
-If the issue persists, please contact support.
+If the issue persists, please :doc:`contact support </help/index>`.
 
 
 .. _new-features-request:

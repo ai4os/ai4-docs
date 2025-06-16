@@ -114,7 +114,7 @@ In this case, we receive what are the inputs needed by the YOLO model.
 
    If the call returns a ``502`` error, you should wait a bit more, your docker image is probably getting pulled!
 
-   If the error persists, please contact support.
+   If the error persists, please :doc:`contact support </help/index>`.
 
 
 Synchronous predictions
@@ -478,8 +478,8 @@ Once you have retrieved your endpoint and token, you can run the following Pytho
 
 
 
-Additional customizations
-^^^^^^^^^^^^^^^^^^^^^^^^^
+Manually deploying in OSCAR UI
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Do you want to manually deploy your OSCAR services for greater customization?
-Check how to :doc:`Manually deploy a serverless inference endpoint  </howtos/deploy/oscar-manual>`
+Check how to :doc:`Manually deploy a serverless inference endpoint  </howtos/deploy/oscar-manual>`.

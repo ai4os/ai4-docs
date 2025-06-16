@@ -132,6 +132,8 @@ If some kind of monitorization tool is available for the module, you will be abl
 
 .. image:: /_static/images/endpoints/tensorboard.png
 
+Additionally, if your model is :doc:`integrated with MLflow </howtos/develop/mlflow>` you should be able to view your training stats in the MLflow UI.
+
 You can kill everything using:
 
 .. code-block:: console
