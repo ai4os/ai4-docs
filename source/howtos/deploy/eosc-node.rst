@@ -22,12 +22,12 @@ The Tools Hub currently supports two deployment options:
       - - Fast deployment times,
         - Endpoint exposed in a DNS name.
       - - No access to the execution environment (managed platform).
+        - Does not support deployments with GPUs
     * - :ref:`Virtual Machine <howtos/deploy/eosc-node:Option 2: Deploy in a Virtual Machine>` (Openstack-based)
       - - Full access to the execution environment (via SSH login).
+        - Supports deployments with GPUs
       - - Longer deployment time,
         - Endpoint exposed in an IP, without a DNS name.
-
-.. TODO; add container cannot be deployed with GPU?
 
 Based on your requirements, you can select the one who best fits your usecase.
 
@@ -56,13 +56,13 @@ Notice that in this step what you do is to allocate the resources (quota), but y
 1.2. Deploy your tool
 ^^^^^^^^^^^^^^^^^^^^^
 
-In the ``Tools Hub`` section, search for ``AI4EOSC`` and select the **AI4EOSC model** for *containers* (AI4EOSC Module Container).
+In the ``Tools Hub`` section, search for ``AI4EOSC`` and select the **AI4EOSC Module Containers** (uploaded by platform developer *Miguel Caballer*).
 
 .. image:: /_static/images/eosc-node/tools-hub.png
 
-.. TODO: remove this image for simplicity? (also in static folder): Amanda has updated the image, we can maintain it here and omit it in the VM section
-.. Choose the desired tool. You can see the details with the ``Show details`` button.
-.. .. image:: /_static/images/eosc-node/tools-details.png
+Clicking the :material-outlined:`map;1.5em` ``Show details`` button, you will be able to see additional information about the tool.
+
+.. image:: /_static/images/eosc-node/tools-details.png
 
 Deploy it using the :material-outlined:`play_circle;1.5em` ``Play`` button.
 
@@ -76,9 +76,8 @@ You can set custom input values by selecting :material-outlined:`check_box;1.5em
    :width: 400px
 
 Then click on ``Save and Select Project``. This will create a new tool in your private **My Tools** list, that you can use for new deployments.
-Next, you need to select the *“Default Personal Project”* created in Step 1, which is linked to the allocated OKD project, and click on the ``Proceed`` button.
+Next, you need to select the *“Default Personal Project”* :ref:`created in Step 1 <howtos/deploy/eosc-node:1.1. Allocate the computing resources>`, which is linked to the allocated OKD project, and click on the ``Proceed`` button.
 
-.. TODO: are we missing image here? Proceed, etc -> added
 .. image:: /_static/images/eosc-node/container-deploy.png
 
 1.3. Access the tool
@@ -93,12 +92,11 @@ You can access the outputs of this deployment to get the endpoint (for example `
 .. image:: /_static/images/endpoints/deepaas.png
    :width: 400px
 
-1.5. Managing the resources
+1.4. Managing the resources
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Optionally, you can get additional information about your container. For that, go to the ``Cloud Container Platform`` section in the EOSC EU Node dashboard, select your allocated environment and click on ``View externally``.
 
-.. todo: missing image here --> added
 .. image:: /_static/images/eosc-node/container-external.png
 
 By clicking on this option, you will have access to your allocated environment in the EOSC EU Node Container provider, based in OKD.
@@ -129,14 +127,9 @@ Notice that in this step what you do is to allocate the resources (quota), but y
 2.2. Deploy your tool
 ^^^^^^^^^^^^^^^^^^^^^
 
-In the ``Tools Hub`` section, search for ``AI4EOSC`` and select the **AI4EOSC model** for *virtual machines*.
+In the ``Tools Hub`` section, search for ``AI4EOSC`` and select the **AI4EOSC Module VM** (uploaded by platform developer *Miguel Caballer*).
 
 .. image:: /_static/images/eosc-node/tools-hub.png
-
-
-.. TODO: remove this image for simplicity? (also in static folder) 
-.. Choose the **AI4EOSC module VM** tool. You can see the details with the ``Show details`` button.
-.. .. image:: /_static/images/eosc-node/tools-details.png
 
 Deploy it using the :material-outlined:`play_circle;1.5em` ``Play`` button.
 
@@ -149,7 +142,7 @@ You can set custom input values by selecting :material-outlined:`check_box;1.5em
 .. image:: /_static/images/eosc-node/vm-config.png
 
 Then click on ``Save and Select Project``. This will create a new tool in your private **My Tools** list, that you can use for new deployments.
-Next, you need to select the *“Default Personal Project”* created in Step 1, which is linked to the allocated OpenStack project.
+Next, you need to select the *“Default Personal Project”* :ref:`created in Step 1 <howtos/deploy/eosc-node:2.1. Allocate the computing resources>`, which is linked to the allocated OpenStack project.
 
 .. image:: /_static/images/eosc-node/tools-deploy.png
    :width: 500px
@@ -166,18 +159,17 @@ You will see the endpoint of the deployed tool in the ``additional information``
 
 .. image:: /_static/images/eosc-node/tool-output.png
 
-For the AI4EOSC AI models, if you access the endpoint provided, you will get a Swagger interface to use the model.
-Please note that, in the case of Virtual Machines, it will take up to 10 minutes to deploy and configure the VM for the endpoint to be ready. You can periodically try to connect until you'll eventually have access to the Swagger DEEPaaS UI.
+For the AI4EOSC AI models, if you access the endpoint provided, you will get a Swagger interface to use the model.  In the endpoint, you will find the :doc:`DEEPaaS API </reference/api>` UI, which you can use to run inference calls on the model.
 
 .. image:: /_static/images/endpoints/deepaas.png
    :width: 400px
 
-Once you can access the Swagger interface in your browser, you can trigger the inference of the model by uploading the proper input (for example, for the YOLO model, you have to upload the image where you want to detect objects).
+Please note that, in the case of Virtual Machines, it will take up to 10 minutes to deploy and configure the VM for the endpoint to be ready. You can periodically try to connect until you'll eventually have access to the Swagger DEEPaaS UI.
 
 2.4. Managing the resources
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Optionally, you might want to get additional information about your VM. For that, go to the ``Virtual Machines`` section in the EOSC EU Node dashboard, select your allocated environment and click on ``View externally``.
+Optionally, you might want to get additional information about your VM. For that, go to the ``Virtual Machines`` section in the EOSC EU Node dashboard, select your allocated environment and click on :material-outlined:`open_in_new;1.5em` ``View externally``.
 
 .. image:: /_static/images/eosc-node/vm-allocated.png
 
@@ -186,7 +178,6 @@ By clicking on this option, you will have access to your allocated environment i
 .. image:: /_static/images/eosc-node/vm-details.png
 
 You can obtain further information of your VM by clicking on the ``Instance Name`` of your resource.
-.. todo: check why this section is slightly different than the container one: VMs redirect you to openstack and containers to OKD
 
 Finally, once you have finished using the AI model, you can delete the deployment and release the resources. For that, go to the ``Deployments`` section in the Tools Hub and remove it by clicking on the :material-outlined:`delete;1.5em` ``Trash`` button.
 
