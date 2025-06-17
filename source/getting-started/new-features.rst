@@ -10,6 +10,7 @@ notified here.
 .. Template
 .. * 📘 new :doc:`... <...>` page (``2024-04-03``)
 
+* 📈 we started supporting :doc:`deploying models to the EOSC node </howtos/deploy/eosc-node>` (``2025-06-20``)
 * 📈 we started supporting :doc:`drift monitoring detection </howtos/develop/drift-watch>` (``2025-06-10``)
 * 📈 we started supporting :doc:`batch mode trainings </howtos/train/batch>` (``2025-05-25``)
 * 📈 we added support for developers to provide :ref:`minimum inference resources  <howtos/develop/dashboard:5. Update your project's metadata>` (``2025-05-06``)

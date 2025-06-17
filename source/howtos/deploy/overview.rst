@@ -23,13 +23,18 @@ With this information in mind, users can make the best decision on where to depl
       - - You control where you deploy (no need to be an AI4OS member).
       - - More work to configure the deployment,
         - You are consuming resources even when not actively making predictions (if not deployed as serverless).
+    * - :doc:`Deploy in the EOSC node </howtos/deploy/eosc-node>`
+      - - You control where you deploy (no need to be an AI4OS member). Free limited resources for any European researcher.
+      - - More work to configure the deployment,
+        - You are consuming resources even when not actively making predictions (if not deployed as serverless).
 
 Given the above specifications, we recommend the following typical workflows:
 
 * :doc:`Deploy in AI4OS (serverless) </howtos/deploy/oscar>` if your service does not need low latency and expects to either (1) receive lots of concurrent user queries or (2) receive user queries that are spaced-out in time.
   This is the *recommended option* by default for all users.
 * :doc:`Deploy in AI4OS (dedicated resources) </howtos/deploy/nomad>` if your service needs to handle, with low latency, few concurrent user queries that are close in time.
-* :doc:`Deploy in your own cloud resources </howtos/deploy/cloud>` if you do not belong to the project.
+* :doc:`Deploy in your own cloud resources </howtos/deploy/cloud>` if you do not belong to the project and have access to private cloud resources.
+* :doc:`Deploy in the EOSC node </howtos/deploy/eosc-node>` if you are a European researcher who does not belong to the project and don't have access to private cloud resources.
 
 If you need to generate one-off predictions on a given dataset but not maintain a running service, you have two options:
 
