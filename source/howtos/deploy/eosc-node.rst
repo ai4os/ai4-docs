@@ -46,8 +46,8 @@ Option 1: Deploy in a Container
 You need to create your *“Default Personal Project”*. For this:
 
 * Login into the `EOSC EU Node <https://open-science-cloud.ec.europa.eu/>`__,
-* In the ``Cloud Container Platform`` section, chose the **Small** environment. OKD reserves the corresponding quota for your user,
-* Click ``Run``, choose the time period and press ``Submit``.
+* In the :material-outlined:`cloud;1.5em` ``Cloud Container Platform`` section (left panel), chose the **Small** environment by clicking ``Run``. OKD reserves the corresponding quota for your user,
+* Choose the time period and press ``Submit``.
 
 Notice that in this step what you do is to allocate the resources (quota), but you are not actually deploying them.
 
@@ -56,7 +56,7 @@ Notice that in this step what you do is to allocate the resources (quota), but y
 1.2. Deploy your tool
 ^^^^^^^^^^^^^^^^^^^^^
 
-In the ``Tools Hub`` section, search for ``AI4EOSC`` and select the **AI4EOSC Module Containers** (uploaded by platform developer *Miguel Caballer*).
+In the :material-outlined:`account_tree;1.5em` ``Tools Hub`` section (left panel), search for ``AI4EOSC`` and select the **AI4EOSC Module Containers** (uploaded by platform developer *Miguel Caballer*).
 
 .. image:: /_static/images/eosc-node/tools-hub.png
 
@@ -75,19 +75,21 @@ You can set custom input values by selecting :material-outlined:`check_box;1.5em
 .. image:: /_static/images/eosc-node/container-config.png
    :width: 400px
 
-Then click on ``Save and Select Project``. This will create a new tool in your private **My Tools** list, that you can use for new deployments.
+Then click on ``Save and Select Project``. This will create a new tool in your private ``My Tools`` tab, that you can use for new deployments.
 Next, you need to select the *“Default Personal Project”* :ref:`created in Step 1 <howtos/deploy/eosc-node:1.1. Allocate the computing resources>`, which is linked to the allocated OKD project, and click on the ``Proceed`` button.
 
 .. image:: /_static/images/eosc-node/container-deploy.png
+   :width: 400px
+
 
 1.3. Access the tool
 ^^^^^^^^^^^^^^^^^^^^
 
-The new deployment is available in the ``Deployments`` tab of the ``Tools Hub`` section.
+Once ready, the new deployment will available in the ``Deployments`` tab of the :material-outlined:`account_tree;1.5em` ``Tools Hub`` section.
 
 .. image:: /_static/images/eosc-node/new-container-toolshub.png
 
-You can access the outputs of this deployment to get the endpoint (for example ``https://yolo-ai4eosc-9ina.eu-1.open-science-cloud-user-apps.eu/ui``). In the endpoint, you will find the :doc:`DEEPaaS API </reference/api>` UI, which you can use to run inference calls on the model.
+Clicking the :material-outlined:`map;1.5em` ``Show details`` button, you will find the deployment endpoint (similar to ``https://yolo-ai4eosc-9ina.eu-1.open-science-cloud-user-apps.eu/ui``). In the endpoint, you will find the :doc:`DEEPaaS API </reference/api>` UI, which you can use to run inference calls on the model.
 
 .. image:: /_static/images/endpoints/deepaas.png
    :width: 400px
@@ -95,7 +97,7 @@ You can access the outputs of this deployment to get the endpoint (for example `
 1.4. Managing the resources
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Optionally, you can get additional information about your container. For that, go to the ``Cloud Container Platform`` section in the EOSC EU Node dashboard, select your allocated environment and click on ``View externally``.
+Optionally, you can get additional information about your container. For that, go to the :material-outlined:`cloud;1.5em` ``Cloud Container Platform`` section in the EOSC EU Node dashboard, select your allocated environment and click on :material-outlined:`open_in_new;1.5em` ``View externally``.
 
 .. image:: /_static/images/eosc-node/container-external.png
 
@@ -103,9 +105,9 @@ By clicking on this option, you will have access to your allocated environment i
 
 .. image:: /_static/images/eosc-node/container-details.png
 
-Finally, once you have finished using the AI model, you can delete the deployment and release the resources. For that, go to the ``Deployments`` section in the Tools Hub and remove it by clicking on the :material-outlined:`delete;1.5em` ``Trash`` button.
+Finally, once you have finished using the AI model, you can delete the deployment and release the resources. For that, go to the ``Deployments`` section in the :material-outlined:`account_tree;1.5em` ``Tools Hub`` section and remove it by clicking on the :material-outlined:`delete;1.5em` ``Trash`` button.
 
-If you no longer want to deploy additional containers, you should release the allocated project, to avoid using credits. For that, go back again to the ``Cloud Container Platform`` section and release your allocated environment by clicking on the ``Release`` button. A notification will be sent by the system once the resources have been released.
+If you no longer want to deploy additional containers, you should release the allocated project, to avoid using credits. For that, go back again to the :material-outlined:`cloud;1.5em` ``Cloud Container Platform`` section and release your allocated environment by clicking on the ``Release`` button. A notification will be sent by the system once the resources have been released.
 
 
 Option 2: Deploy in a Virtual Machine
@@ -117,7 +119,7 @@ Option 2: Deploy in a Virtual Machine
 You need to create your *“Default Personal Project”*. For this:
 
 * Login into the `EOSC EU Node <https://open-science-cloud.ec.europa.eu/>`__,
-* In the ``Virtual Machines`` section, chose the **Small** environment. OpenStack creates the corresponding project with the selected quota,
+* In the :material-outlined:`token;1.5em` ``Virtual Machines`` section (left panel), chose the **Small** environment. OpenStack creates the corresponding project with the selected quota,
 * Click ``Run``, choose the time period and press ``Submit``.
 
 Notice that in this step what you do is to allocate the resources (quota), but you are not actually deploying them.
@@ -127,7 +129,7 @@ Notice that in this step what you do is to allocate the resources (quota), but y
 2.2. Deploy your tool
 ^^^^^^^^^^^^^^^^^^^^^
 
-In the ``Tools Hub`` section, search for ``AI4EOSC`` and select the **AI4EOSC Module VM** (uploaded by platform developer *Miguel Caballer*).
+In the :material-outlined:`account_tree;1.5em` ``Tools Hub`` section (left panel), search for ``AI4EOSC`` and select the **AI4EOSC Module VM** (uploaded by platform developer *Miguel Caballer*).
 
 .. image:: /_static/images/eosc-node/tools-hub.png
 
@@ -148,28 +150,30 @@ Next, you need to select the *“Default Personal Project”* :ref:`created in S
    :width: 500px
 
 Press the ``Proceed`` blue button and you will get a confirmation message about the deployment.
-Once deployed, in the ``Deployments`` tab (inside the Tools Hub), it will appear a new entry corresponding with your new Deployment.
 
 2.3. Access the tool
 ^^^^^^^^^^^^^^^^^^^^
 
-The new deployment is available in the ``Deployments`` tab of the ``Tools Hub`` section.
+The new deployment is available in the ``Deployments`` tab of the  :material-outlined:`account_tree;1.5em` ``Tools Hub`` section.
 
-You will see the endpoint of the deployed tool in the ``additional information`` option.
+Clicking the :material-outlined:`map;1.5em` ``Show details`` button, you will find the deployment endpoint (similar to ``https://62.3.174.94/ui``)
 
 .. image:: /_static/images/eosc-node/tool-output.png
+   :width: 400px
 
-For the AI4EOSC AI models, if you access the endpoint provided, you will get a Swagger interface to use the model.  In the endpoint, you will find the :doc:`DEEPaaS API </reference/api>` UI, which you can use to run inference calls on the model.
+.. warning::
+
+  Please note that, in the case of Virtual Machines, it will take up to 10 minutes to deploy and configure the VM for the endpoint to be ready. You can periodically try to connect until you'll eventually have access to the Swagger DEEPaaS UI.
+
+In the endpoint, you will find the :doc:`DEEPaaS API </reference/api>` UI, which you can use to run inference calls on the model.
 
 .. image:: /_static/images/endpoints/deepaas.png
    :width: 400px
 
-Please note that, in the case of Virtual Machines, it will take up to 10 minutes to deploy and configure the VM for the endpoint to be ready. You can periodically try to connect until you'll eventually have access to the Swagger DEEPaaS UI.
-
 2.4. Managing the resources
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Optionally, you might want to get additional information about your VM. For that, go to the ``Virtual Machines`` section in the EOSC EU Node dashboard, select your allocated environment and click on :material-outlined:`open_in_new;1.5em` ``View externally``.
+Optionally, you might want to get additional information about your VM. For that, go to the :material-outlined:`token;1.5em` ``Virtual Machines`` section in the EOSC EU Node dashboard, select your allocated environment and click on :material-outlined:`open_in_new;1.5em` ``View externally``.
 
 .. image:: /_static/images/eosc-node/vm-allocated.png
 
@@ -179,11 +183,11 @@ By clicking on this option, you will have access to your allocated environment i
 
 You can obtain further information of your VM by clicking on the ``Instance Name`` of your resource.
 
-Finally, once you have finished using the AI model, you can delete the deployment and release the resources. For that, go to the ``Deployments`` section in the Tools Hub and remove it by clicking on the :material-outlined:`delete;1.5em` ``Trash`` button.
+Finally, once you have finished using the AI model, you can delete the deployment and release the resources. For that, go to the ``Deployments`` tab in the :material-outlined:`account_tree;1.5em` ``Tools Hub`` section and remove it by clicking on the :material-outlined:`delete;1.5em` ``Trash`` button.
 
 .. image:: /_static/images/eosc-node/tools-delete.png
 
-If you no longer want to deploy additional VMs, you should release the allocated project, to avoid using credits. For that, go back again to the ``Virtual Machines`` section and release your allocated environment by clicking on the ``Release`` button. A notification will be sent by the system once the resources have been released.
+If you no longer want to deploy additional VMs, you should release the allocated project, to avoid using credits. For that, go back again to the :material-outlined:`token;1.5em` ``Virtual Machines`` section and release your allocated environment by clicking on the ``Release`` button. A notification will be sent by the system once the resources have been released.
 
 More
 ----
