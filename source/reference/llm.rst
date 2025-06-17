@@ -126,6 +126,8 @@ There are two API options:
 
 * **vLLM API** (:material-outlined:`verified;1.5em` *recommended*): faster (load balanced), supports chat completions
 
+  To access this API you need to :doc:`contact support </help/index>` first, explaining your usecase. They will then generate your personal API key.
+
   - **API endpoint**: https://llm.dev.ai4eosc.eu:8000/v1
   - **API key**: `AI4OS Keycloak <https://login.cloud.ai4eosc.eu/realms/ai4eosc/account>`__ → ``Personal Info`` → ``User metadata`` → ``LLM API key``
 
