@@ -54,11 +54,14 @@ In this section you can see your profile details.
 
 .. dropdown:: :fab:`youtube;youtube-icon` ㅤLink with any NextCloud storage service
 
-  .. raw:: html
+   .. raw:: html
 
-    <div style="position: relative; padding-bottom: 56.25%; margin-bottom: 2em; height: 0; overflow: hidden; max-width: 100%; height: auto;">
-      <iframe src="https://www.youtube.com/embed/PHbHq4KbmwE" frameborder="0" allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
-    </div>
+      <div style="position: relative; padding-bottom: 56.25%; margin-bottom: 2em; height: 0; overflow: hidden; max-width: 100%; height: auto;">
+        <iframe src="https://www.youtube.com/embed/PHbHq4KbmwE" frameborder="0" allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
+      </div>
+
+   :material-outlined:`error;1.5em` Please, be aware that video demos can become quickly outdated. In case of doubt, always refer to the written documentation.
+
 
 .. _dashboard_marketplace:
 
@@ -202,11 +205,14 @@ You have two sections:
 
 .. dropdown:: :fab:`youtube;youtube-icon` ㅤDownload a dataset from Zenodo
 
-  .. raw:: html
+   .. raw:: html
 
-    <div style="position: relative; padding-bottom: 56.25%; margin-bottom: 2em; height: 0; overflow: hidden; max-width: 100%; height: auto;">
+      <div style="position: relative; padding-bottom: 56.25%; margin-bottom: 2em; height: 0; overflow: hidden; max-width: 100%; height: auto;">
         <iframe src="https://www.youtube.com/embed/QXp85utCr4A" frameborder="0" allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
-    </div>
+      </div>
+
+   :material-outlined:`error;1.5em` Please, be aware that video demos can become quickly outdated. In case of doubt, always refer to the written documentation.
+
 
 .. image:: /_static/images/dashboard/storage-datasets.png
 

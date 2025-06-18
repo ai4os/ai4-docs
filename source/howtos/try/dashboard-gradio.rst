@@ -1,11 +1,15 @@
 Try a model from the Dashboard (Gradio)
 =======================================
 
-.. raw:: html
+.. dropdown:: :fab:`youtube;youtube-icon` ㅤTry a model from the Dashboard
 
-    <div style="position: relative; padding-bottom: 56.25%; margin-bottom: 2em; height: 0; overflow: hidden; max-width: 100%; height: auto;">
+   .. raw:: html
+
+      <div style="position: relative; padding-bottom: 56.25%; margin-bottom: 2em; height: 0; overflow: hidden; max-width: 100%; height: auto;">
         <iframe src="https://www.youtube.com/embed/1wDsPj_QtGo" frameborder="0" allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
-    </div>
+      </div>
+
+   :material-outlined:`error;1.5em` Please, be aware that video demos can become quickly outdated. In case of doubt, always refer to the written documentation.
 
 .. admonition:: Requirements
    :class: info

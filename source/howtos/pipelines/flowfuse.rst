@@ -1,11 +1,15 @@
 Composing AI Inference pipelines with Node-RED & Flowfuse
 =========================================================
 
-.. raw:: html
+.. dropdown:: :fab:`youtube;youtube-icon` ㅤCreate a pipeline with Flowfuse
 
-    <div style="position: relative; padding-bottom: 56.25%; margin-bottom: 2em; height: 0; overflow: hidden; max-width: 100%; height: auto;">
+   .. raw:: html
+
+      <div style="position: relative; padding-bottom: 56.25%; margin-bottom: 2em; height: 0; overflow: hidden; max-width: 100%; height: auto;">
         <iframe src="https://www.youtube.com/embed/9a019SA5GW4" frameborder="0" allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
-    </div>
+      </div>
+
+   :material-outlined:`error;1.5em` Please, be aware that video demos can become quickly outdated. In case of doubt, always refer to the written documentation.
 
 In this document, we will learn about Composing AI Inference pipelines based on OSCAR
 services with Node-RED & FlowFuse, specifically:

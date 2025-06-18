@@ -12,6 +12,9 @@ The AI4EOSC project has organized a series of webinars on the use of the platfor
 * `Introduction to the platform <https://www.youtube.com/watch?v=op70toJFBrk>`__
 * `Image processing with AI4EOSC <https://www.youtube.com/watch?v=JQOWmsEQANs>`__
 
+.. warning::
+
+   Please, be aware that video demos can become quickly outdated. In case of doubt, always refer to the written documentation.
 
 Tutorials
 ---------

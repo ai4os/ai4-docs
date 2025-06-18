@@ -40,6 +40,16 @@ Based on your requirements, you can select the one who best fits your usecase.
 Option 1: Deploy in a Container
 -------------------------------
 
+.. dropdown:: :fab:`youtube;youtube-icon` ㅤDeploy in AI module in the EOSC EU Node (containers)
+
+   .. raw:: html
+
+      <div style="position: relative; padding-bottom: 56.25%; margin-bottom: 2em; height: 0; overflow: hidden; max-width: 100%; height: auto;">
+        <iframe src="https://www.youtube.com/embed/NtYPSoYXIww" frameborder="0" allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
+      </div>
+
+   :material-outlined:`error;1.5em` Please, be aware that video demos can become quickly outdated. In case of doubt, always refer to the written documentation.
+
 1.1. Allocate the computing resources
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 

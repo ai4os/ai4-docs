@@ -1,11 +1,15 @@
 Composing AI Inference pipelines based on OSCAR services with Elyra in EGI Notebooks
 ====================================================================================
 
-.. raw:: html
+.. dropdown:: :fab:`youtube;youtube-icon` ㅤCreate a pipeline with Elyra
 
-    <div style="position: relative; padding-bottom: 56.25%; margin-bottom: 2em; height: 0; overflow: hidden; max-width: 100%; height: auto;">
+   .. raw:: html
+
+      <div style="position: relative; padding-bottom: 56.25%; margin-bottom: 2em; height: 0; overflow: hidden; max-width: 100%; height: auto;">
         <iframe src="https://www.youtube.com/embed/AP396k5t8WA" frameborder="0" allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
-    </div>
+      </div>
+
+   :material-outlined:`error;1.5em` Please, be aware that video demos can become quickly outdated. In case of doubt, always refer to the written documentation.
 
 .. image:: /_static/images/elyra/elyra_icon.png
     :width: 500
@@ -65,7 +69,7 @@ Grayify, and Plants-Theano.
 2.1 Using OSCAR in Your Workflow
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-To use nodes that rely on OSCAR, you need to invoke a service through an OSCAR client.  
+To use nodes that rely on OSCAR, you need to invoke a service through an OSCAR client.
 First, create your own OSCAR client, configuring it with the necessary credentials and parameters to interact with an OSCAR cluster.
 
 2.2 Setting Up an OSCAR Client
@@ -86,17 +90,17 @@ By default, the EGI notebook assigns a token automatically. However, if you cann
 Follow these steps to generate a refresh token:
 
 1. Authenticate on the EGI portal.
-   
+
    .. image:: /_static/images/elyra/egi_token_1.png
 
 2. Click the button to create a refresh token.
-   
+
    .. image:: /_static/images/elyra/egi_token_2.png
 
 3. Copy the generated refresh token.
-   
+
    .. image:: /_static/images/elyra/egi_token_3.png
-      
+
 Once the client is set up, you can seamlessly integrate OSCAR nodes into your workflow.
 
 2.3 Configuring the OSCAR Client
