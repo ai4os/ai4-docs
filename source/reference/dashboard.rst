@@ -116,6 +116,8 @@ Once you choose the module, you will be presented with the module's information:
 
 .. image:: /_static/images/dashboard/module.png
 
+.. todo: update image
+
 To deploy click in ``Deploy > Inference API (dedicated)`` and you will be redirected to a configuration page.
 
 .. image:: /_static/images/dashboard/configure.png
