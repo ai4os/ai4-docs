@@ -13,15 +13,41 @@ There are two options to create AI4OS accounts.
 Option 1. Use a federated identity
 ----------------------------------
 
+.. |egicheckin| image:: /_static/images/favicons/egicheckin.png
+   :height: 1em
+   :alt: Button icon
+   :class: no-scaled-link
+
+.. |myaccessid| image:: /_static/images/favicons/myaccessid.png
+   :height: 1em
+   :alt: Button icon
+   :class: no-scaled-link
+
+.. |ifca| image:: /_static/images/favicons/ifca.png
+   :height: 1em
+   :alt: Button icon
+   :class: no-scaled-link
+
+.. |siesta| image:: /_static/images/favicons/siesta.png
+   :height: 1em
+   :alt: Button icon
+   :class: no-scaled-link
+
+.. |ai4eosc| image:: /_static/images/favicons/ai4eosc.png
+   :height: 1em
+   :alt: Button icon
+   :class: no-scaled-link
+
+
 .. todo add favicons before naming the different identities
 
 This is the :material-outlined:`verified;1.5em` **recommended option** for:
 
-* users coming from `EGI-CheckIn <https://aai.egi.eu>`__ authentication (like AI4EOSC, iMagine and AI4life users).
+* users coming from |egicheckin| `EGI-CheckIn <https://aai.egi.eu>`__ authentication (like AI4EOSC, iMagine and AI4life users).
   This is because Keycloak will automatically detect your EGI VO memberships
   (eg. ``vo.ai4eosc.eu``, ``vo.imagine-ai.eu``) and will grant your the proper platform full rights by default.
 
-  .. dropdown:: ㅤ 💡 Open an EGI account
+  .. dropdown:: ㅤ 💡 Open an |egicheckin| EGI Check-In account
 
     This mini tutorial is dedicated to users of the following projects:
 
@@ -47,13 +73,13 @@ This is the :material-outlined:`verified;1.5em` **recommended option** for:
     You will need to wait until you are **approved** before being a full member of the VO.
 
 
-* researchers with `EduGain <https://edugain.org/>`__ credentials, as you will be granted increased privileges due to your trusted researcher status
+* researchers with |myaccessid| `EduGain <https://edugain.org/>`__ credentials, as you will be granted increased privileges due to your trusted researcher status
 
 Additionally, we offer several federated authentication options including:
-`Github <https://github.com/>`__,
-`Google <https://accounts.google.com/>`__,
-`IFCA SSO <https://sso.ifca.es>`__ and
-`EOSC SIESTA <https://aai.cloud.eosc-siesta.eu/realms/siesta/account>`__.
+:fab:`github` `Github <https://github.com/>`__,
+:fab:`google` `Google <https://accounts.google.com/>`__,
+|ifca| `IFCA SSO <https://sso.ifca.es>`__ and
+|siesta| `EOSC SIESTA <https://aai.cloud.eosc-siesta.eu/realms/siesta/account>`__.
 
 .. tip::
 
@@ -67,7 +93,6 @@ Option 2. Register a new account
 
 To register a new account from scratch:
 
-* Go to the `AI4OS SSO <https://login.cloud.ai4eosc.eu/realms/ai4eosc/account>`__,
 * Click on the ``Register`` link on the login page,
 * Please provide all the details that are listed in the registration form and preferably
   use your **institutional account** (university, research center). This will speed up the
@@ -77,6 +102,8 @@ To register a new account from scratch:
   your registration and then you will be approved by an administrator.
 
 Accounts created this way will have **basic access** level by default (see :doc:`user access levels </reference/user-access-levels>`).
+
+Once created, you can input your credentials using the |ai4eosc| `AI4EOSC Single Sign-On <https://login.cloud.ai4eosc.eu/realms/ai4eosc/account>`__ option.
 
 
 Login to the platform
