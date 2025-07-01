@@ -6,7 +6,7 @@ Labeling images with CVAT
 .. admonition:: Requirements
    :class: info
 
-   🔒 This tutorial requires :ref:`full authentication <getting-started/register:Full authentication>`.
+   🔒 You need a :doc:`platform account </getting-started/register>` with :ref:`full access level <reference/user-access-levels:Full access level>`.
 
 In this tutorial, we will guide you on how to use the `Computer Vision Annotation Tool (CVAT) <https://www.cvat.ai/>`__ in the AI4OS platform to annotate images.
 

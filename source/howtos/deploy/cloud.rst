@@ -4,7 +4,7 @@ Deploy a model on your own cloud resources
 .. admonition:: Requirements
    :class: info
 
-   🔓 This tutorial requires :ref:`basic authentication <getting-started/register:Basic authentication>`.
+   🔓 You need a :doc:`platform account </getting-started/register>` with :ref:`basic access level <reference/user-access-levels:Basic access level>`.
 
 As every module available in the Marketplace is open-source, we offer the possibility
 to automatically deploy it in your custom cloud resources using the

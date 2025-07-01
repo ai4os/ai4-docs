@@ -4,7 +4,7 @@ Deploy a model on the AI4OS Inference platform using the Dashboard
 .. admonition:: Requirements
    :class: info
 
-   🔒 This tutorial requires :ref:`full authentication <getting-started/register:Full authentication>`.
+   🔒 You need a :doc:`platform account </getting-started/register>` with :ref:`full access level <reference/user-access-levels:Full access level>`.
 
 The Dashboard offers the possibility to deploy a model as serverless using the AI4OS Inference Platform (based on OSCAR).
 

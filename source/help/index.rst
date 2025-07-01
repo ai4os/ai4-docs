@@ -8,7 +8,7 @@ information?
 
 There are several ways to contact us:
 
-* `Open a ticket in our HelpDesk <https://helpdesk.services.ai4os.eu/>`__: this is the :material-outlined:`verified;1.5em` **recommended option** as it ensures that the relevant group of people can quickly address you requests,
+* `Open a ticket in our HelpDesk <https://helpdesk.services.ai4os.eu/>`__: this is the :material-outlined:`verified;1.5em` **recommended option** as it ensures that the relevant group of people can quickly address you requests. We handle both issues with the platform as well as new user requests to use the platform,
 * `Write to a mailing list <mailto:ai4eosc-support@listas.csic.es>`__, although due to the the general purpose nature of the requests, replies might take longer
 
 Remember that some problems can be solved even without contacting us:

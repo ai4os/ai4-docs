@@ -1,101 +1,52 @@
 Register an account
 ===================
 
-We current are current transitioning from :ref:`EGI accounts (current) <getting-started/register:EGI account>` to our own :ref:`AI4OS accounts (beta) <getting-started/register:AI4OS account>`.
-
-We recommend that you register for both accounts, so that you will be able to access
-both migrated and non-migrated services at all times.
-If you already have an :ref:`EGI account <getting-started/register:EGI account>`, it is straightforward to use it as a :ref:`federated identity <getting-started/register:Use a federated identity>` for AI4OS accounts.
-
-.. TODO: basic/full authentication info is duplicated with info in user-access-levels.
-.. But we leave i
-
-EGI account
------------
-
-We offer two levels of authentication, depending on the services you want to access.
-Find more about the services you can access with each authentication level.
-
-Basic authentication
-^^^^^^^^^^^^^^^^^^^^
-
-This authentication level will let use some basic features like:
-
-* :doc:`Try a model in the Dashboard </howtos/try/index>`
-* :doc:`Deploy a model in your own cloud </howtos/deploy/cloud>`
-
-To access this authentication level, go to the `EGI Check-In (prod) <https://aai.egi.eu/>`__
-and login preferably with your **institutional account** (university, research center).
-If this is not possible, please, use one of **Github** or **ORCID** but with the email
-domain which identifies your organisation.
-This will automatically create your new account at EGI Check-In.
-
-Full authentication
-^^^^^^^^^^^^^^^^^^^
-
-This authentication level will let use all the features the AI4OS stack has to offer, including:
-
-* :doc:`Developing a model in the Dashboard </howtos/develop/index>`
-* :doc:`Training a model in the Dashboard </howtos/train/index>`
-* :doc:`Deploying a model in production </howtos/deploy/index>`
-* :doc:`Accessing the AI4OS storage </reference/storage>`
-
-To access this authentication level, you need to be a `member` of either one of the following
-projects:
-
-* `AI4EOSC <https://ai4eosc.eu/>`__: AI for the European Open Science Cloud
-* `iMagine <https://imagine-ai.eu/>`__: Imaging data and services for aquatic science
-* `AI4Life <https://ai4life.eurobioimaging.eu/>`__: AI models and methods for the life sciences
-
-.. admonition:: External users
-   :class: info
-
-   If you are not a member of the above projects, consider joining either one of them
-   by applying to the *Open calls for external usecases*.
-   More information about the Calls can be found in their respective project's homepages.
-
-   If you were not able to apply in time to an Open Call, you can always try to `reach us <https://ai4eosc.eu/contact/>`__
-   explaining why and how you would like to use the platform.
-
-To achieve full authentication, first create an account following the :ref:`Basic authentication <getting-started/register:Basic authentication>` steps.
-Then you have to enroll in one of the Virtual Organizations (VO) supported by the project.
-Please :doc:`ask support </help/index>` for the request link of your Virtual Organization.
-
-When enrolling, you have to provide the following information in ``Comments``:
-
-* Reason to use the platform (e.g. use case)
-* Your institution or organization
-* How did you learn about the platform
-
-You will need to wait until you are **approved** before being able to start using the
-services.
-
-
-AI4OS account
--------------
-
-The `AI4OS SSO <https://login.cloud.ai4eosc.eu/realms/ai4eosc/account>`__ uses Keycloak to federate different Identity providers, allowing to easily onboard new external communities with their own authentication systems.
+The `AI4OS Login <https://login.cloud.ai4eosc.eu/realms/ai4eosc/account>`__ uses Keycloak to federate different Identity providers, allowing to easily onboard new external communities with their own authentication systems.
 
 .. image:: /_static/images/ai4eosc/keycloak.png
    :width: 300 px
    :align: center
 
-
-For the time being, this account is used to access the following services:
-
-* :doc:`AI4OS LLM service </reference/dashboard>`
-
 There are two options to create AI4OS accounts.
 
 
-Use a federated identity
-^^^^^^^^^^^^^^^^^^^^^^^^
+Option 1. Use a federated identity
+----------------------------------
+
+.. todo add favicons before naming the different identities
 
 This is the :material-outlined:`verified;1.5em` **recommended option** for:
 
-* users coming from `EGI-CheckIn <https://aai.egi.eu>`__ authentication.
+* users coming from `EGI-CheckIn <https://aai.egi.eu>`__ authentication (like AI4EOSC, iMagine and AI4life users).
   This is because Keycloak will automatically detect your EGI VO memberships
   (eg. ``vo.ai4eosc.eu``, ``vo.imagine-ai.eu``) and will grant your the proper platform full rights by default.
+
+  .. dropdown:: ㅤ 💡 Open an EGI account
+
+    This mini tutorial is dedicated to users of the following projects:
+
+    * `AI4EOSC <https://ai4eosc.eu/>`__: AI for the European Open Science Cloud
+    * `iMagine <https://imagine-ai.eu/>`__: Imaging data and services for aquatic science
+    * `AI4Life <https://ai4life.eurobioimaging.eu/>`__: AI models and methods for the life sciences
+
+    To access this authentication level, go to the `EGI Check-In (prod) <https://aai.egi.eu/>`__
+    and login preferably with your **institutional account** (university, research center).
+    If this is not possible, please, use one of **Github** or **ORCID** but with the email
+    domain which identifies your organisation.
+    This will automatically create your new account at EGI Check-In.
+
+    Then you have to enroll in one of the Virtual Organizations (VO) supported by the project.
+    Please :doc:`ask support </help/index>` for the request link of your Virtual Organization.
+
+    When enrolling, you have to provide the following information in ``Comments``:
+
+    * Reason to use the platform (e.g. use case)
+    * Your institution or organization
+    * How did you learn about the platform
+
+    You will need to wait until you are **approved** before being a full member of the VO.
+
+
 * researchers with `EduGain <https://edugain.org/>`__ credentials, as you will be granted increased privileges due to your trusted researcher status
 
 Additionally, we offer several federated authentication options including:
@@ -104,10 +55,15 @@ Additionally, we offer several federated authentication options including:
 `IFCA SSO <https://sso.ifca.es>`__ and
 `EOSC SIESTA <https://aai.cloud.eosc-siesta.eu/realms/siesta/account>`__.
 
-Accounts are mapped by email. So you can authenticate the first time with EGI Check-In, then can subsequently authenticate with any other option (eg. Github), as long as they share the same email.
+.. tip::
 
-Register a new account
-^^^^^^^^^^^^^^^^^^^^^^
+  Accounts are mapped by email. So you can authenticate the first time with EGI Check-In, then can subsequently authenticate with any other option (eg. Github), as long as they share the same email.
+
+Each authentication system will grant different :doc:`user access levels </reference/user-access-levels>`. In general, users coming from the (`AI4EOSC <https://ai4eosc.eu/>`__, `iMagine <https://imagine-ai.eu/>`__, `AI4Life <https://ai4life.eurobioimaging.eu/>`__) projects will have **full access** level. Other users (eg. Gmail users) will only have **basic access** level.
+
+
+Option 2. Register a new account
+--------------------------------
 
 To register a new account from scratch:
 
@@ -120,13 +76,10 @@ To register a new account from scratch:
   receive an email with a link to confirm your registration. Click on the link to confirm
   your registration and then you will be approved by an administrator.
 
-Please remember that the approval process can take some time, so please be patient.
+Accounts created this way will have **basic access** level by default (see :doc:`user access levels </reference/user-access-levels>`).
 
-Be aware that just registering does not grant you access to the whole AI4OS platform, just some access to basic services.
-If you need access to the full platform, please :doc:`contact support </help/index>`.
 
 Login to the platform
 =====================
 
-Once registered and approved, you can directly head to the :doc:`/reference/dashboard`
-page and login to the platform.
+Once registered, you can directly head to the :doc:`/reference/dashboard` page and login to the platform.
