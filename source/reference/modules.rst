@@ -58,3 +58,31 @@ A typical pipeline is divided in two parts:
   * regenerate the provenance chain of that module,
 
 .. image:: /_static/images/ai4eosc/jenkins.png
+
+Provenance
+----------
+
+Being able to trace an AI module provenance is key to the `FAIR principles <https://www.nature.com/articles/sdata201618>`__, ensuring reproducibility and building trust in the module's predictions.
+
+For this, every time a module's CI/CD pipeline is executed, we build a provenance chain of that module.
+In the provenance metadata, we centralize the information parsed from the different platform components into a single RDF file (`example <https://provenance.services.ai4os.eu/rdf?applicationId=ai4os-demo-app>`__).
+These sources include:
+
+* **Jenkins**: for build information, like code quality tests or docker image,
+* **Nomad**: for training information, like what were the computing resources used to train a given module,
+* **MLflow**: for experiment information, like the hyper-parameters used in the different training runs,
+* **Module's metadata**: for module information like relevant keywords, external links or creation/modification dates,
+
+In addition, this RDF file explains the connection between the different components, like how Nomad uses a given dataset for training, or how a Jenkins build generates a new Harbor docker image.
+
+For an improved user experience, we show users the final provenance chain in a simplified graph form (`example <https://provenance.services.ai4os.eu/?applicationId=ai4os-demo-app>`__):
+
+.. image:: /_static/images/provenance/simple-graph.png
+
+that can be expanded for further details:
+
+.. image:: /_static/images/provenance/expanded-graph.png
+
+.. todo: this image is missing the mlflow run and nomad job connection
+
+For each module, both the RDF and the graph links are available in the :ref:`Dashboard's module details <dashboard_deployment>`.
