@@ -10,6 +10,7 @@ notified here.
 .. Template
 .. * 📘 new :doc:`... <...>` page (``2024-04-03``)
 
+* 📈 we released our :ref:`provenance tracking workflow <reference/modules:Provenance>` (``2025-07-10``)
 * 📈 we migrated to our :doc:`new authentication system </getting-started/register>` (``2025-07-01``)
 * 📈 we started supporting :doc:`deploying models to the EOSC node </howtos/deploy/eosc-node>` (``2025-06-20``)
 * 📈 we started supporting :doc:`drift monitoring detection </howtos/develop/drift-watch>` (``2025-06-10``)
