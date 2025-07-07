@@ -54,6 +54,11 @@ For additional information on using EGI Notebooks, refer to the
 To get started, you will need to clone the repository that contains the example files
 for Elyra and OSCAR services: https://github.com/ai4os/ai4-compose
 
+As a good practice to keep your workspace organized, you may first create a dedicated folder 
+(for example, called ``tutorial``) inside your home directory in the EGI Notebooks environment.
+You can then clone the repository inside this folder.  
+This is optional but recommended to avoid clutter in your main workspace.
+
 You can use the Elyra git tool on the left side panel to clone the repository in the
 EGI Notebooks environment.
 This repository contains various examples, including those for Elyra, such as Cowsay,
@@ -83,7 +88,7 @@ To set up an OSCAR client, obtain the OSCAR endpoint. For AI4EOSC, the endpoint 
 
 The ID parameter is optional.
 
-By default, the EGI notebook assigns a token automatically. However, if you cannot retrieve a token from an EGI notebook, you need to generate a refresh token from the EGI token page:
+By default, the EGI notebook assigns a token automatically. However, if you cannot retrieve a token from the EGI notebook environment, you need to generate a refresh token from the EGI token page:
 
 `EGI Check-in Token Portal <https://aai.egi.eu/token>`__
 
@@ -99,7 +104,7 @@ Follow these steps to generate a refresh token:
 
 3. Copy the generated refresh token.
 
-   .. image:: /_static/images/elyra/egi_token_3.png
+Note: providing a token file path is optional, as the setup client node (also called EGI Token node) can extract the token automatically from the Jupyter notebook environment. Use the token file path only if you explicitly generated and want to provide a refresh token.
 
 Once the client is set up, you can seamlessly integrate OSCAR nodes into your workflow.
 
@@ -110,7 +115,7 @@ Before running any example, ensure your OSCAR client is properly configured. You
 
 - **Endpoint**: The URL of the OSCAR inference service.
 - **ID (optional)**: The identifier for the OSCAR service.
-- **Token file path**: The location of the refresh token, if applicable.
+- **Token file path (optional)**: The location of the refresh token, if applicable.
 
 Once configured, you can execute workflows and use OSCAR nodes within your pipeline.
 
