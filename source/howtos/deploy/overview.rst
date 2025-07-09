@@ -13,7 +13,8 @@ With this information in mind, users can make the best decision on where to depl
     * - :doc:`Deploy in AI4OS (serverless) </howtos/deploy/oscar>` (model is loaded on demand)
       - - You are not consuming resources when you are not using the model,
         - Deployments can auto-scale to fit peaks in user queries,
-        - Zero configuration needed as the model is deployed in the AI4OS stack.
+        - Zero configuration needed as the model is deployed in the AI4OS stack,
+        - Can be manually customized for specific needs (like historical data batch prediction).
       - - Predictions can have some latency, due to the AI model being loaded at each prediction.
     * - :doc:`Deploy in AI4OS (dedicated resources) </howtos/deploy/nomad>` (model is always loaded)
       - - Low latency in predictions,

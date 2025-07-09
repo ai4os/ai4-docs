@@ -483,3 +483,6 @@ Manually deploying in OSCAR UI
 
 Do you want to manually deploy your OSCAR services for greater customization?
 Check how to :doc:`Manually deploy a serverless inference endpoint  </howtos/deploy/oscar-manual>`.
+
+For example, you can use manual serverless deployments for example a large number of files (eg. historical data) all at once (**OSCAR batch mode**).
+If you need help setting this usecase, please :doc:`contact support </help/index>`.
