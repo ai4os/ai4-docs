@@ -4,7 +4,7 @@ Deploy a model on the AI4OS Inference platform using the Dashboard
 .. admonition:: Requirements
    :class: info
 
-   🔒 This tutorial requires :ref:`full authentication <getting-started/register:Full authentication>`.
+   🔒 You need a :doc:`platform account </getting-started/register>` with :ref:`full access level <reference/user-access-levels:Full access level>`.
 
 The Dashboard offers the possibility to deploy a model as serverless using the AI4OS Inference Platform (based on OSCAR).
 
@@ -483,3 +483,6 @@ Manually deploying in OSCAR UI
 
 Do you want to manually deploy your OSCAR services for greater customization?
 Check how to :doc:`Manually deploy a serverless inference endpoint  </howtos/deploy/oscar-manual>`.
+
+For example, you can use manual serverless deployments for example a large number of files (eg. historical data) all at once (**OSCAR batch mode**).
+If you need help setting this usecase, please :doc:`contact support </help/index>`.

@@ -109,7 +109,7 @@ To configure the ``setup_client`` node, follow these steps:
 
 .. image:: /_static/images/elyra/creating_client_alternative.png
 
-By default, if you are running in the EGI notebook environment, the token is automatically read from::
+By default, if you are running in the EGI notebook environment, the token is automatically read from the EGI notebook environment, you need to generate a refresh token from the EGI token page:
 
    /var/run/secrets/egi.eu/access_token
 

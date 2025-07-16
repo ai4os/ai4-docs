@@ -50,10 +50,10 @@ The :doc:`Inference platform (OSCAR) </howtos/deploy/oscar>` is a fully managed 
 User can also compose those models in :doc:`complex AI workflow </howtos/pipelines/flowfuse>`
 
 
-More info
----------
+Architecture overview
+---------------------
 
-If you are curious this is a very high level overview of how the platform is structured:
+If you are curious this is a very high level architecture overview of the platform:
 
 .. image:: /_static/images/ai4eosc/architecture.png
 

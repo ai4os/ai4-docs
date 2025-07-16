@@ -39,6 +39,9 @@ This is a compendium of all the production services that are currently deployed 
 :fa:`chart-line` **MLflow server** (`AI4EOSC <https://mlflow.cloud.ai4eosc.eu/>`__, `iMagine <https://mlflow.cloud.imagine-ai.eu/>`__)
   Log your trainings parameters and models with our MLflow server.
 
+:fa:`magnifying-glass-chart` `DriftWatch <https://drift-watch.cloud.ai4eosc.eu/>`__
+  Monitor you inference models to detect drift.
+
 :fa:`rocket` **Inference platform (OSCAR)** (`AI4EOSC <https://inference.cloud.ai4eosc.eu/>`__, `iMagine <https://inference-walton.cloud.imagine-ai.eu>`__)
   Scalable serverless inference of AI models.
 
