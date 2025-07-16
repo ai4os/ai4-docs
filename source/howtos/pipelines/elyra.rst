@@ -80,17 +80,40 @@ First, create your own OSCAR client, configuring it with the necessary credentia
 2.2 Setting Up an OSCAR Client
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+In this example, we will navigate to the ``examples`` folder, then into the ``cowsay`` folder, and open the ``cowsay.pipeline`` file. This pipeline is already set up with the nodes ``setup_client.py`` and ``invoke_service_cowsay.ipynb``.
+
+To configure the ``setup_client`` node, follow these steps:
+
+0. When creating a new node, or if a node has no configuration, it is necessary to assign a **runtime image**. You can choose from several options, but we recommend selecting:
+
+   ``Anaconda (2021.11) with Python 3.x``
+
+   This will eliminate the ``"is a required property"`` error, which causes the node to be marked in red and display an exclamation icon.
+
+.. image:: /_static/images/elyra/preconfiguring_nodes.png
+
+1. Right-click on the ``setup_client`` node and select the **Open properties** option.
+2. Go to the side menu to access the configuration fields.
+3. Set up the OSCAR client by obtaining the OSCAR endpoint. For AI4EOSC, the endpoint is::
+
+      https://inference.cloud.ai4eosc.eu
+
 .. image:: /_static/images/elyra/creating_client.png
 
-To set up an OSCAR client, obtain the OSCAR endpoint. For AI4EOSC, the endpoint is:
+4. In the *Environment Variables* section, click the **Refresh** button. This will populate the variables:
+   
+   - ``OSCAR_CLUSTER_ID`` (optional)
+   - ``TOKEN_FILE_PATH``
 
-`https://inference.cloud.ai4eosc.eu <https://inference.cloud.ai4eosc.eu>`__
+   These variables are required to configure the client properly.
 
-The ID parameter is optional.
+.. image:: /_static/images/elyra/creating_client_alternative.png
 
-By default, the EGI notebook assigns a token automatically. However, if you cannot retrieve a token from the EGI notebook environment, you need to generate a refresh token from the EGI token page:
+By default, if you are running in the EGI notebook environment, the token is automatically read from the EGI notebook environment, you need to generate a refresh token from the EGI token page:
 
-`EGI Check-in Token Portal <https://aai.egi.eu/token>`__
+   /var/run/secrets/egi.eu/access_token
+
+and no further configuration of the token is required. The ``TOKEN_FILE_PATH`` variable is only relevant if you are running Elyra in your own environment. In that case, you will need to generate a refresh token manually from the `EGI token page <https://aai.egi.eu/fedlab/proxy/oidc/token>`_ and use it to configure the client, which will allow you to interact with OSCAR services.
 
 Follow these steps to generate a refresh token:
 
@@ -119,24 +142,47 @@ Before running any example, ensure your OSCAR client is properly configured. You
 
 Once configured, you can execute workflows and use OSCAR nodes within your pipeline.
 
+2.4 Creating Your Own Pipeline
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Before deploying or configuring a provided pipeline, you may want to create your own from scratch. Elyra makes this process simple through its visual pipeline editor.
 
-3. Deploying a pipeline
------------------------
+Follow these steps to create a pipeline and add nodes:
+
+1. From the JupyterLab Launcher, click on the **Generic Pipeline Editor** icon under the Elyra section. This will open an empty canvas where you can build your workflow.
+
+.. image:: /_static/images/elyra/creating_pipeline_1.png
+
+2. In the side panel, navigate to the **File Browser** and locate the notebooks (``.ipynb``) or scripts (``.py``) you want to include as nodes in your pipeline. The provided example nodes can be found in the repository under the folder::
+
+      /elyra/nodes/
+
+.. image:: /_static/images/elyra/creating_pipeline_2.png
+
+3. Drag and drop each file onto the canvas. Each file becomes a node in the pipeline.
+
+.. image:: /_static/images/elyra/creating_pipeline_3.png
+
+4. Connect the nodes by dragging a line from the output of one node to the input of the next, defining the execution order.
+
+.. image:: /_static/images/elyra/creating_pipeline_4.png
+
+To remove the error shown in the nodes (`"is a required property"`, marked in red with an exclamation icon), simply follow **Step 0** described in section 2.2 and assign a runtime image to each node.
+
+Once your pipeline is built, you can save it (e.g., in the ``examples`` folder) and proceed to the next section, where we explain in detail how to run and configure the provided `cowsay.pipeline` example.
 
 3.1 Running the Cowsay Example
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Now let's get our cow to talk! Follow these steps to set up the workflow in Elyra:
 
-1. Use the cowsay service node and connect it to the previous node (if the node is
-   not already connected).
-2. Pass the ``credentials.json`` and the text for the cow (eg. ``moo``) as environment
-   variables.
+1. In the *Environment Variables* of the cowsay service node, set the name of the service assigned to the OSCAR cluster.
+
+2. Specify the text you want the cow to say (e.g., ``Hello world!``) as an environment variable.
 
 .. image:: /_static/images/elyra/cowsay_variables.png
 
-3. Use the start button to execute the pipeline
+3. Use the start button to execute the pipeline.
 
 .. image:: /_static/images/elyra/how_to_start_elyra_pipeline.png
 
@@ -152,10 +198,4 @@ Now let's get our cow to talk! Follow these steps to set up the workflow in Elyr
 
 .. image:: /_static/images/elyra/others_examples.png
 
-You have more examples available in the Github repo to test the composing of functions
-for inference with OSCAR.
-
-For all the examples, you'll again need the credentials node to send the necessary
-variables.
-Additionally, other nodes will be involved to perform tasks like converting images to
-and from Base64 format.
+There are many more examples and nodes available in the ``examples`` folder that you can explore. These demonstrate different ways to compose functions for inference with OSCAR, as well as additional nodes that perform tasks such as image encoding/decoding and other preprocessing steps.
