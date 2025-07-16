@@ -14,7 +14,7 @@ Try a model from the Dashboard (Gradio)
 .. admonition:: Requirements
    :class: info
 
-   🔓 This tutorial requires :ref:`basic authentication <getting-started/register:Basic authentication>`.
+   🔓 You need a :doc:`platform account </getting-started/register>` with :ref:`basic access level <reference/user-access-levels:Basic access level>`.
 
 To create a deployment, :ref:`select a module in the Marketplace <dashboard_marketplace>` and click on ``Try ▼ Nomad (Gradio)``.
 

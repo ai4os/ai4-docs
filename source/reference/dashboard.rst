@@ -9,7 +9,7 @@ users do not need to worry about.
 Currently, the following platforms have deployed a version of the AI4OS Dashboard.
 You should access one of those Dashboards depending on the project you are a member of:
 
-* `AI4EOSC Dashboard <https://dashboard.cloud.ai4eosc.eu>`__
+* `AI4EOSC Dashboard <https://dashboard.cloud.ai4eosc.eu>`__ *(use this one if you are unsure which one to use)*
 * `iMagine Dashboard <https://dashboard.cloud.imagine-ai.eu>`__
 * `AI4Life Dashboard <https://ai4life.cloud.ai4eosc.eu>`__
 * `Tutorials Dashboard <https://tutorials.cloud.ai4eosc.eu>`__
@@ -33,9 +33,14 @@ a module but the workflow is similar for tools.
 Profile
 -------
 
-In this section you can see your profile details.
+In the top-right corner, you will be able to find:
+
+* :material-outlined:`notifications;1.5em`: notifications about the platforms, like expected downtimes and issues,
+* :material-outlined:`account_circle;1.5em`: your profile details.
 
 .. image:: /_static/images/dashboard/profile.png
+
+In your profile details you will find:
 
 * ``Personal information``: your full name and your email.
 
@@ -52,15 +57,15 @@ In this section you can see your profile details.
   In order to link a service, you have to click on the ``Link`` button, log in the popup window and grant access to the Dashboard.
   If you have previously linked the service, you also have to to delete old credentials and generate new ones using ``Re-link``.
 
-.. dropdown:: :fab:`youtube;youtube-icon` ㅤLink with any NextCloud storage service
+  .. dropdown:: :fab:`youtube;youtube-icon` ㅤLink with any NextCloud storage service
 
-   .. raw:: html
+    .. raw:: html
 
-      <div style="position: relative; padding-bottom: 56.25%; margin-bottom: 2em; height: 0; overflow: hidden; max-width: 100%; height: auto;">
-        <iframe src="https://www.youtube.com/embed/PHbHq4KbmwE" frameborder="0" allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
-      </div>
+        <div style="position: relative; padding-bottom: 56.25%; margin-bottom: 2em; height: 0; overflow: hidden; max-width: 100%; height: auto;">
+          <iframe src="https://www.youtube.com/embed/PHbHq4KbmwE" frameborder="0" allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
+        </div>
 
-   :material-outlined:`error;1.5em` Please, be aware that video demos can become quickly outdated. In case of doubt, always refer to the written documentation.
+    :material-outlined:`error;1.5em` Please, be aware that video demos can become quickly outdated. In case of doubt, always refer to the written documentation.
 
 
 .. _dashboard_marketplace:

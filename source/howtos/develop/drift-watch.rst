@@ -4,7 +4,7 @@ Data drift detection with Frouros
 .. admonition:: Requirements
    :class: info
 
-   🔒 This tutorial requires :ref:`full authentication <getting-started/register:Full authentication>`.
+   🔒 You need a :doc:`platform account </getting-started/register>` with :ref:`full access level <reference/user-access-levels:Full access level>`.
 
 The AI4OS Platform allows to detect **data drift** in your data at inference time.
 This is a useful warning that the inference results might not be reliable anymore and

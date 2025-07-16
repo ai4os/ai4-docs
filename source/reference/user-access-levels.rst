@@ -1,54 +1,60 @@
 User access levels
 ==================
 
-Currently we offer two user access levels, depending how you enrol with the platform yoy
-can have access to different services.
+Currently we offer two user access levels. Depending how you :doc:`register </getting-started/register>`, you
+will have access to different services.
 
-In either case you will need to wait until you are **approved** before being able to
-start using the services.
 
 .. _authentication_basic:
 
 Basic access level
 ------------------
 
-This level will let use some basic features like:
+This access level will allow you to use some basic features like:
 
 * :doc:`Try a model in the Dashboard </howtos/try/index>`
 * :doc:`Deploy a model in your own cloud </howtos/deploy/cloud>`
+* :doc:`Chat with the AI4OS LLM </reference/llm>`
 
-To access this authentication level, you need to create an account in the platform.
-Please follow the steps in the :doc:`/getting-started/register` page.
-
-.. _authentication_full:
+This access level is granted to any :doc:`registered user </getting-started/register>`.
 
 Full access level
 ------------------
 
-This access level will let use all the features the AI4OS stack has to offer, including:
+This access level will allow you to use all the features the AI4OS stack has to offer, including:
 
 * :doc:`Developing a model in the Dashboard </howtos/develop/index>`
 * :doc:`Training a model in the Dashboard </howtos/train/index>`
 * :doc:`Deploying a model in production </howtos/deploy/index>`
 * :doc:`Accessing the AI4OS storage </reference/storage>`
 
-To access this authentication level, you need to be a `member` of either one of the following
-projects:
+This access level is usually reserved to members of one of the following projects:
 
 * `AI4EOSC <https://ai4eosc.eu/>`__: AI for the European Open Science Cloud
 * `iMagine <https://imagine-ai.eu/>`__: Imaging data and services for aquatic science
 * `AI4Life <https://ai4life.eurobioimaging.eu/>`__: AI models and methods for the life sciences
 
-.. admonition:: External users
-   :class: info
+Upgrading your access level
+---------------------------
 
-   If you are not a member of the above projects, consider joining either one of them
-   by applying to the *Open calls for external usecases*.
-   More information about the Calls can be found in their respective project's homepages.
+Any user with basic access level is, in principle, candidate to upgrade to full access.
+There are two main entrypoints to full access:
 
-   If you were not able to apply in time to an Open Call, you can always try to `reach us <https://ai4eosc.eu/contact/>`__
-   explaining why and how you would like to use the platform.
+Option 1. Join a supported project
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-To achieve full authentication, you need to create an account in the platform. Please
-follow the steps in the :doc:`/getting-started/register` page and indicate the project
-you are involved with, with a detailed motivation so that it can be approved.
+Members of the following projects get full access level:
+
+* `AI4EOSC <https://ai4eosc.eu/>`__: AI for the European Open Science Cloud
+* `iMagine <https://imagine-ai.eu/>`__: Imaging data and services for aquatic science
+* `AI4Life <https://ai4life.eurobioimaging.eu/>`__: AI models and methods for the life sciences
+
+Consider joining these projects via their *Open calls for external usecases*.
+More information about the calls can be found in their respective project's homepages.
+
+Option 2. Make a special requests
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Sometimes joining a project is a lengthy process.
+We are also able to upgrade user access level case by case. Feel free to :doc:`contact support </help/index>` explaining why would you need full access and what do you plan to do with it.
+Due to the limited amount of resources, the team will carefully study your request before granting you full access.

@@ -34,13 +34,16 @@ The best of both worlds! 🚀
 
 Both options offer a **privacy-first** design: once your delete your chats or knowledge bases, the data is immediately wiped out from the platform.
 
+.. admonition:: Requirements
+   :class: info
+
+   🔓 You need a :doc:`platform account </getting-started/register>` with :ref:`basic access level <reference/user-access-levels:Basic access level>`.
+
 
 Login
 -----
 
-The service is available at: https://llm.dev.ai4eosc.eu
-
-To access the LLM service, you first need to :ref:`register in the platform <getting-started/register:AI4OS account>`.
+Login into: https://llm.dev.ai4eosc.eu
 
 .. image:: /_static/images/llm/login.png
 

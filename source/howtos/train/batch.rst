@@ -4,7 +4,7 @@ Train in batch mode
 .. admonition:: Requirements
    :class: info
 
-   🔒 This tutorial requires :ref:`full authentication <getting-started/register:Full authentication>`.
+   🔒 You need a :doc:`platform account </getting-started/register>` with :ref:`full access level <reference/user-access-levels:Full access level>`.
 
 This is a step by step guide on how to train a model with your own dataset in batch mode.
 In batch mode, you will create a create a temporary job that is killed after the training is completed.

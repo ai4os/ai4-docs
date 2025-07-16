@@ -7,6 +7,19 @@ If your issue does not appear here, please :doc:`contact support </help/index>`.
 .. TODO: check if the FAQ issues still apply
 
 
+Accessing the platform
+----------------------
+
+I want to start using the platform, where can I start?
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Great, welcome aboard! 🥳
+
+Start by registering an :doc:`register in the platform </getting-started/register>`.
+Depending on your account you will get access to some services and not others, according to the different :doc:`user access levels </reference/user-access-levels>`.
+
+We have a :doc:`quickstart guide </getting-started/quickstart>` with some ideas on how to start using the platform.
+
 Deployment issues
 -----------------
 

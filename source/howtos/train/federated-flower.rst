@@ -6,7 +6,7 @@ Federated Learning with Flower
 .. admonition:: Requirements
    :class: info
 
-   🔒 This tutorial requires :ref:`full authentication <getting-started/register:Full authentication>`.
+   🔒 You need a :doc:`platform account </getting-started/register>` with :ref:`full access level <reference/user-access-levels:Full access level>`.
 
 In this tutorial, we will guide you on how to use the Federated Learning (FL) server in the
 AI4OS platform to perform a FL training using `Flower <https://flower.ai/>`__.

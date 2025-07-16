@@ -4,7 +4,7 @@ Experiment Tracking and Model versioning in MLflow
 .. admonition:: Requirements
    :class: info
 
-   🔒 This tutorial requires :ref:`full authentication <getting-started/register:Full authentication>`.
+   🔒 You need a :doc:`platform account </getting-started/register>` with :ref:`full access level <reference/user-access-levels:Full access level>`.
 
 We currently have two instances of MLflow running:
 
