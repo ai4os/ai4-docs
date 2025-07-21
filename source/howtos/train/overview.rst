@@ -47,6 +47,12 @@ Given the above specifications, we recommend the following typical workflows:
 * :doc:`Use federated mode </howtos/train/federated>` if you have sensitive data and/or need to distribute you training across many machines.
 
 
+.. note::
+
+   Bear in mind that all the modules of the platform are fully open-source, as they are packaged as Docker containers.
+   So if you have access to your own HPC resources, you can always take the container and train it there using `udocker <https://github.com/indigo-dc/udocker>`__.
+
+
 Additional training-related tasks
 ---------------------------------
 
