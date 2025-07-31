@@ -13,19 +13,25 @@ With this information in mind, users can make the best decision on where to depl
     * - :doc:`Deploy in AI4OS (serverless) </howtos/deploy/oscar>` (model is loaded on demand)
       - - You are not consuming resources when you are not using the model,
         - Deployments can auto-scale to fit peaks in user queries,
+        - Supports both sync and async calls
+        - Supports predictions via default UI (Oscar)
         - Zero configuration needed as the model is deployed in the AI4OS stack,
         - Can be manually customized for specific needs (like historical data batch prediction).
       - - Predictions can have some latency, due to the AI model being loaded at each prediction.
     * - :doc:`Deploy in AI4OS (dedicated resources) </howtos/deploy/nomad>` (model is always loaded)
       - - Low latency in predictions,
+        - Supports sync calls
+        - Supports predictions via dedicated UI (Gradio)
         - Zero configuration needed as the model is deployed in the AI4OS stack.
       - - You are consuming resources even when not actively making predictions.
     * - :doc:`Deploy in your own cloud resources </howtos/deploy/cloud>`
       - - You control where you deploy (no need to be an AI4OS member).
+        - Supports sync calls
       - - More work to configure the deployment,
         - You are consuming resources even when not actively making predictions (if not deployed as serverless).
     * - :doc:`Deploy in the EOSC node </howtos/deploy/eosc-node>`
       - - You control where you deploy (no need to be an AI4OS member). Free limited resources for any European researcher.
+        - Supports sync calls
       - - More work to configure the deployment,
         - You are consuming resources even when not actively making predictions (if not deployed as serverless).
 
