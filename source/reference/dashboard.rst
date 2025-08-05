@@ -74,19 +74,15 @@ Navigating the Marketplace
 --------------------------
 
 Once you log into the Dashboard, you will be shown all the items the ``Marketplace`` has to offer.
-Those are basically:
-
-* :material-outlined:`build;1.5em` ``Tools``: set of AI tools that come handy in the Machine Learning workflow.
-
-  We currently offer for example:
-
-  - The **AI4OS Development Environment** to develop new modules (:doc:`tutorial </howtos/develop/dashboard>`)
-  - Several **Federated Learning Server** to make federated privacy-friendly trainings (:doc:`Flower </howtos/train/federated-flower>`, :doc:`NVFLARE </howtos/train/federated-nvflare>`)
-  - The **Computer Vision Annotation Tool** (CVAT) to label images (:doc:`tutorial </howtos/train/cvat>`)
-
-* :material-outlined:`model_training;1.5em` ``Modules``: set of AI models designed to perform given tasks (eg. image classification)
+They are organized around the following catalogs:
 
 .. image:: /_static/images/dashboard/marketplace.png
+
+Modules catalog
+^^^^^^^^^^^^^^^
+
+The Modules catalog is a set of AI models designed to perform given AI tasks (eg. image classification).
+The catalog shows both models developed specifically for AI4OS, as well as :doc:`external model catalogs </howtos/deploy/external>` that have been integrated to make them deployable in the AI4OS.
 
 You can use filters to quickly find the module you want.
 We provide filtering by:
@@ -106,12 +102,30 @@ We provide filtering by:
 * ``Data type``: type of data the module processes (eg. Image, Audio)
 * ``Tags``: any module-specific tag
 
+Tools catalog
+^^^^^^^^^^^^^
+
+The Tools catalog is a collection of tools that come handy in assisting users during the whole Machine Learning workflow cycle.
+
+We currently offer for example:
+
+- The **AI4OS Development Environment** to develop new modules (:doc:`Develop a model from scratch </howtos/develop/dashboard>`)
+- Several **Federated Learning Servers** to make federated privacy-friendly trainings (:doc:`Flower </howtos/train/federated-flower>`, :doc:`NVFLARE </howtos/train/federated-nvflare>`)
+- The **Computer Vision Annotation Tool** (CVAT) to label images (:doc:`Labeling images with CVAT </howtos/train/cvat>`)
+
+LLM catalog
+^^^^^^^^^^^
+
+The LLM catalog is a collection of LLM models that users can self-deploy.
+The catalog has multiple open-source models from a wide range of AI-relevant actors (Qwen, DeepSeek, Meta).
+For more information on how to use them, please refer to the AI4OS tutorial: :doc:`Deploy your own LLM chatbot </howtos/deploy/llm>`.
 
 .. _dashboard_deployment:
 
 Making a deployment
 -------------------
 
+Let's focus for the time being in the module catalog.
 Once you choose the module, you will be presented with the module's information:
 
 .. image:: /_static/images/dashboard/module.png

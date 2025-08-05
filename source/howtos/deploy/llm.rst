@@ -16,9 +16,10 @@ We have a :ref:`detailed comparison <reference/llm:AI4OS LLM vs self-deployed LL
 Deploying the LLM
 -----------------
 
-The LLM Chatbot is located at the top of the :ref:`Marketplace <dashboard_marketplace>`, in the ``Tools`` section.
+In the :ref:`Dashboard Marketplace <dashboard_marketplace>`, go to the **LLM catalog** and click on the model card you want to deploy.
+Alternatively, you can go to:  **Tools catalog** → **Deploy your LLM** → **Deploy**.
 
-The workflow for deploying the LLM is similar to the one for :doc:`deploying a module </reference/dashboard>`.
+Once  in the configuration page, the workflow for deploying the LLM is similar to the one for :doc:`deploying a module </reference/dashboard>`.
 In this particular case, during the LLM configuration phase you will need to pay attention to:
 
 * ``type``: choose what to you want to deploy. Options are:
@@ -29,24 +30,24 @@ In this particular case, during the LLM configuration phase you will need to pay
 
 * ``LLM model`` this is the particular model you want to deploy.
 
-  For the time being, due to limitations in resources (deployments are made in NVIDIA T4s) we only support small models (eg. `DeepSeek-R1-Distill-Qwen-1.5B <https://huggingface.co/deepseek-ai/DeepSeek-R1-Distill-Qwen-1.5B>`__) or medium models that have been quantized (eg. `Qwen2.5-7B-Instruct-AWQ <https://huggingface.co/Qwen/Qwen2.5-7B-Instruct-AWQ>`__).
+  .. dropdown:: ㅤ 💡 What is the best model for my needs?
 
-  Medium-size quantized models are usually more accurate although they can have slightly slower inference speeds (due to the de-quantization process). We recommend using those.
+    For the time being, due to limitations in resources (deployments are made in NVIDIA T4s) we only support small models (eg. `DeepSeek-R1-Distill-Qwen-1.5B <https://huggingface.co/deepseek-ai/DeepSeek-R1-Distill-Qwen-1.5B>`__) or medium models that have been quantized (eg. `Qwen2.5-7B-Instruct-AWQ <https://huggingface.co/Qwen/Qwen2.5-7B-Instruct-AWQ>`__).
 
-  Among the catalog of models we provide, there are models specialized in solving coding tasks or maths problems.
+    Medium-size quantized models are usually more accurate although they can have slightly slower inference speeds (due to the de-quantization process). We recommend using those.
+
+    Among the catalog of models we provide, there are models specialized in solving coding tasks or maths problems, so depending on your usecase you might want to select those.
 
 * ``UI email``, ``UI password``: these are the credentials to log to the UI.
   By default, we use your user email from the platform.
 
-* (Optional) ``HF token``: Using some models might require that you provide a valid HuggingFace token to deploy.
+* *(Optional)* ``HF token``: Using some models might require that you provide a valid HuggingFace token to deploy.
+  For example, to use `LLama models <https://huggingface.co/meta-llama>`__ you must login to HuggingFace and accept their terms and conditions. Once this is done, you can automatically `generate a Huggingface token <https://huggingface.co/docs/hub/security-tokens>`__ to use Llama models in our platform.
 
-  For example, to use `LLama models <https://huggingface.co/meta-llama>`__ you must login to HuggingFace and accept their terms and conditions. Once this is done, you can `generate a token in Huggingface <https://huggingface.co/docs/hub/security-tokens>`__ to use it in our platform.
-
-* (Optional) ``API key/url``: if you choose to deploy only the UI, you must provide the endpoint and key of an OpenAI compatible endpoint, that the UI can connect to.
+* *(Optional)* ``API key/url``: if you choose to deploy only the UI, you must provide the endpoint and key of an OpenAI compatible endpoint, that the UI can connect to.
 
 Using the LLM
 -------------
-
 
 In the :ref:`deployments list <dashboard-manage-deployments>` you will be able to see your newly created LLM instance.
 Clicking the ``Quick access`` button, you will directly enter the Open-WebUI login screen.
