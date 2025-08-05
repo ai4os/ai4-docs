@@ -24,9 +24,39 @@ For this, :ref:`select a module in the Marketplace <dashboard_marketplace>` and 
 
 .. image:: /_static/images/dashboard/module.png
 
-This will forward you to the Infrastructure Manager, where you will be able to
-select your own cloud resources to deploy.
+This will forward you to the Infrastructure Manager, with the module already selected.
 
 .. image:: /_static/images/im/configure.png
 
+If you are not logged in, you will be prompted to log in with your EGI Check-in account.
+
+If you do not have any cloud provider configured, you will be prompted to configure them.
+You can do so by clicking on the ``Add`` button.
+
+.. image:: /_static/images/im/configure_no_cloud.png
+
+You can then select any of the cloud providers supported by the IM,
+and fill in the required information (e.g. Access and Secret Key in case of AWS).
+
 .. image:: /_static/images/im/providers.png
+
+Finally, you can select the cloud provider you want to use,
+and the base image you want to use for the deployment.
+
+.. image:: /_static/images/im/configure_cloud.png
+
+After clicking on ``Submit``, the deployment will start.
+Then afther a few minutes, the VM will be deployed and the AI4EOSC module
+configured and you will be able to use it.
+
+.. image:: /_static/images/im/inf_list.png
+
+When the status changes to ``Configured``, you can click on ``Outputs`` button
+to see the endpoint of DEEPaaS API UI of the module.
+
+.. image:: /_static/images/im/outputs.png
+
+Click on the link and you will see the API documentation, where you can test the module's
+functionality, as well as perform other actions.
+
+.. image:: /_static/images/im/deepaas_api.png
