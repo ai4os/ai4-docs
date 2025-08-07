@@ -83,6 +83,8 @@ that can be expanded for further details:
 
 .. image:: /_static/images/provenance/expanded-graph.png
 
-.. todo: this image is missing the mlflow run and nomad job connection
-
 For each module, both the RDF and the graph links are available in the :ref:`Dashboard's module details <dashboard_deployment>`, under the ``Provenance`` section in the right panel.
+
+Finally, you can ask a chat bot assistant questions about the graph and it will use the underlying RDF file to offer grounded answers.
+
+.. image:: /_static/images/provenance/chat.png

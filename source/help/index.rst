@@ -14,6 +14,6 @@ There are several ways to contact us:
 Remember that some problems can be solved even without contacting us:
 
 * We have a dedicated page for :doc:`Frequently Asked Questions </help/faq>`.
-* You can also ask our :ref:`AI4OS Assistant <reference/llm:Ask questions about the documentation>`, which is a LLM that uses this documentation as a Knowledge Base to offer grounded responses to user questions.
+* You can also ask our :ref:`AI4OS Assistant <reference/llm:Ask questions about the documentation>`, which is a LLM that uses this documentation as a Knowledge Base to offer grounded responses to user questions (also :ref:`available from the Dashboard <reference/dashboard:Ask AI>`).
 * We have a `status page <https://status.ai4eosc.eu/>`__ where you can see whether a particular service might be down.
 * We have a :ref:`notifications section <reference/dashboard:profile>` in the Dashboard where we notify users of expected downtimes and issues.

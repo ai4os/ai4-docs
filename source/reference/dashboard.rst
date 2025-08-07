@@ -326,3 +326,11 @@ In this section you can see the historical usage metrics of the platform.
   measuring *real* usage, but *allocated* usage. So if you create a 1-CPU deployment for
   10 days, the aggregate usage will show 10 CPU days, even if you did not actually use
   the CPU at all.
+
+
+Ask AI
+------
+
+Finally, we have our :ref:`AI4OS Assistant <reference/llm:Ask questions about the documentation>` directly available from the Dashboard. You can ask it questions and it will use this documentation as a Knowledge Base to offer grounded responses.
+
+.. image:: /_static/images/dashboard/ai-assistant.png
