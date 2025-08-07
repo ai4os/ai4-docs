@@ -338,7 +338,7 @@ importing them from the GitHub repository.
 In this case we will look up for the cowsay example.
 
 First install the dependencies `described here <https://github.com/ai4os/ai4-compose/tree/main/node-red>`__.
-Then, access to the `subflows repo <https://github.com/ai4os/ai4-compose/tree/main/node-red/subflows>`__ and,
+Then, access to the `node-red repo <https://github.com/ai4os/ai4-compose/tree/main/node-red/modules>`__ and,
 in this example, look for the ``grayify.json``.
 
 .. image:: /_static/images/flows/30.png

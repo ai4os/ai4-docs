@@ -206,7 +206,7 @@ More
 
   If you need to further customize the AI4EOSC model deployments, you can modify the reference TOSCA templates that were used to create the Tools in the Tool Hub:
 
-  * `TOSCA VM example <https://github.com/grycap/tosca/blob/eosc_lot1/templates/ai4eoscvm.yaml>`__.
+  * `TOSCA VM example <https://github.com/grycap/tosca/blob/eosc_lot1/templates/ai4eosc_vm.yaml>`__.
   * `TOSCA Container example <https://github.com/grycap/tosca/blob/eosc_lot1/templates/ai4eosc_app.yaml>`__.
 
   To register this new tool, create a new Tool inside the ``Tools Hub`` section of the EOSC EU Node portal.

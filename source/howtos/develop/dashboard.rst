@@ -154,7 +154,7 @@ in some parts of the code if long lines are really needed.
     `Black <https://black.readthedocs.io>`__. It also helps for having a consistent code style
     and minimizing git diffs. Black formatted code will always be compliant with flake8.
 
-    Once `installed <https://black.readthedocs.io/en/stable/getting-started.html#installation>`__,
+    Once `installed <https://black.readthedocs.io/en/stable/getting_started.html#installation>`__,
     you can check how Black would have reformatted your code:
 
     .. code-block:: console

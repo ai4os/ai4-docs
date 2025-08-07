@@ -1,6 +1,6 @@
 The module's metadata is located in the ``ai4-metadata.yml`` file (`example <https://github.com/ai4os-hub/ai4os-demo-app/blob/main/ai4-metadata.yml>`__).
 This is the information that will be displayed in the Marketplace.
-The fields you need to edit to comply with our `schemata <https://github.com/ai4os/ai4-metadata/blob/master/src/ai4_metadata/schemata/ai4-apps-v2.0.0.json>`__ are:
+The fields you need to edit to comply with our `schemata <https://github.com/ai4os/ai4-metadata/tree/master/src/ai4_metadata/assets/schemata>`__ are:
 
 * ``title`` (*mandatory*): short title,
 * ``summary`` (*mandatory*): one liner summary of your module,

@@ -63,7 +63,7 @@ Find a dataset
 If you don't have any data, try find an open dataset that suits you.
 
 * `Google Dataset search <https://datasetsearch.research.google.com/>`__
-* `Graviti Open Datassets <https://gas.graviti.com/open-datasets>`__
+* `Graviti Open Datassets <https://docs.graviti.com/guide/opendataset>`__
 * `DataHub <https://datahub.io/collections>`__
 * `Kaggle <https://www.kaggle.com/>`__
 * `Paperwithcode Datasets <https://paperswithcode.com/datasets>`__

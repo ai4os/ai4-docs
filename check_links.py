@@ -15,7 +15,7 @@ urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 
 session = requests.Session()
 
-source_folder = 'source/user'
+source_folder = 'source'
 
 links = []
 for root, _, files in os.walk(source_folder):

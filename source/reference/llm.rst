@@ -145,7 +145,7 @@ There are two API options:
   .. figure:: /_static/images/llm/api-keys-openwebui.png
      :width: 500 px
 
-`Learn more <https://docs.openwebui.com/getting-started/advanced-topics/api-endpoints/>`__ on how to use API keys to integrate the AI4OS LLM into your own services (endpoints are compatible with the OpenAI API spec).
+`Learn more <https://docs.openwebui.com/getting-started/api-endpoints>`__ on how to use API keys to integrate the AI4OS LLM into your own services (endpoints are compatible with the OpenAI API spec).
 
 Use it as a code assistant with VScode
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^

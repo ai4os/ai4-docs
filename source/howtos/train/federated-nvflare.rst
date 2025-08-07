@@ -122,6 +122,6 @@ Please take a look at the following examples:
 - Check the `getting_started <https://github.com/NVIDIA/NVFlare/tree/fd3b74ff4e561447e6769259dd4903174e466a3e/examples/getting_started>`__ examples in the NVFLARE repository.
 - Check the `ml-to-fl <https://github.com/NVIDIA/NVFlare/tree/fd3b74ff4e561447e6769259dd4903174e466a3e/examples/hello-world/ml-to-fl>`__ examples demonstrating how to transition simple ML/DL projects to NVFLARE.
 - We provide a **simple** `hello numpy example  <https://github.com/ai4os/ai4os-nvflare-test?tab=readme-ov-file#running-a-sample-fl-job>`__.
-- We provide a **advanced** example, where an existing `phyto-plankton-classification <https://dashboard.cloud.ai4eosc.eu/catalog/modules/phyto-plankton-classification>`_ AI4OS module is `adapted to NVFLARE <https://github.com/ai4os-hub/phyto-plankton-classification/tree/tf2.19_nvflare/nvflare>`__.
+- For an **advanced** example, you can check the `phyto-plankton-classification <https://dashboard.cloud.ai4eosc.eu/catalog/modules/phyto-plankton-classification>`__ module that has been adapted to NVFLARE.
 
 For more information, please refer to the official `NVFLARE documentation <https://nvflare.readthedocs.io/en/main/index.html>`__.
