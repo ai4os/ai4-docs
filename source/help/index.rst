@@ -17,3 +17,5 @@ Remember that some problems can be solved even without contacting us:
 * You can also ask our :ref:`AI4OS Assistant <reference/llm:Ask questions about the documentation>`, which is a LLM that uses this documentation as a Knowledge Base to offer grounded responses to user questions (also :ref:`available from the Dashboard <reference/dashboard:Ask AI>`).
 * We have a `status page <https://status.ai4eosc.eu/>`__ where you can see whether a particular service might be down.
 * We have a :ref:`notifications section <reference/dashboard:profile>` in the Dashboard where we notify users of expected downtimes and issues.
+
+Finally we have an `AI4EOSC community <https://community.cloud.ai4eosc.eu/>`__. In contrast to the Helpdesk (more focused on specific technical problems), the AI4EOSC community allows users to share their experiences, ask questions to other members, requests new features, interact with developers, etc. Give it a try!
