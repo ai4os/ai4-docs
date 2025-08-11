@@ -5,6 +5,10 @@ As part of the tool repertoire that the AI4OS stack is offering to increase our 
 
 We care about user privacy, so it's important to notice that your chat history will be erased whenever you delete it, and no data will be retained by the platform (`privacy policy <https://ai4eosc.eu/platform/privacy-policy/>`__).
 
+.. admonition:: Requirements
+   :class: info
+
+   🔓 You need a :doc:`platform account </getting-started/register>` with :ref:`basic access level <reference/user-access-levels:Basic access level>`.
 
 AI4OS LLM vs self-deployed LLM
 ------------------------------
@@ -34,12 +38,6 @@ The best of both worlds! 🚀
 
 Both options offer a **privacy-first** design: once your delete your chats or knowledge bases, the data is immediately wiped out from the platform.
 
-.. admonition:: Requirements
-   :class: info
-
-   🔓 You need a :doc:`platform account </getting-started/register>` with :ref:`basic access level <reference/user-access-levels:Basic access level>`.
-
-
 Login
 -----
 
@@ -54,12 +52,10 @@ Once you login, you will arrive to a landing page where you will be able to sele
 
 The current available models are:
 
-* ``Small-2409``: a medium-size model from the `Mistral family <https://mistral.ai/>`__ (22B parameters) with a smaller context window (32K tokens), released on September 2024.
-  This is the **default** model.
-* ``DeepSeek-R1-Distill-Llama-8B``: a small distillation (8B parameters) of the `original DeepSeek R1 model <https://huggingface.co/deepseek-ai/DeepSeek-R1>`__, released on January 2025.
-  The distillation is nowhere as performant as the original model, but it serves a nice demo of a thinking model.
-* ``Assistant``: our custom model designed to :ref:`help you navigate our documentation <reference/llm:Ask questions about the documentation>`,
-* ``Qwen2.5-VL-7B-Instruct``: a small model for vision related tasks, released in August 2024.
+* **Small**: a medium-size model from the `Mistral family <https://mistral.ai/>`__ (Mistral 3.1, 24B parameters).
+  This is the default model.
+* **Qwen 3**: a smaller model from the `Qwen family <https://huggingface.co/collections/Qwen/qwen3-67dd247413f0e2e4f653967f>`__ (14B parameters).
+* **Assistant**: our custom model designed to :ref:`help you navigate our documentation <reference/llm:Ask questions about the documentation>`,
 
 Now, let's explore some common usages of the tool. Keep in mind that the AI4OS LLM is built with `OpenWebUI <https://openwebui.com/>`__ so you always find further information in `their documentation <https://docs.openwebui.com/>`__.
 
@@ -97,7 +93,7 @@ In the upper left corner, you can select the ``AI4EOSC/Assistant`` model to ask 
 Use Vision models
 ^^^^^^^^^^^^^^^^^
 
-If you select the ``Qwen2.5-VL-7B-Instruct``, you can upload images to the model and ask questions about them.
+In the model menu, select any model with the ``VISION`` tag. Then you will be able to upload images to the model and ask questions about them.
 To upload an image click the :material-outlined:`add_circle;1.5em` and you will be offered the possibility of either :material-outlined:`add_a_photo;1.5em` ``Capture`` an image or :material-outlined:`upload_file;1.5em` ``Upload`` an image.
 
 Here are some ideas on how to incorporate this into a scientific workflow:
@@ -114,7 +110,7 @@ Here are some ideas on how to incorporate this into a scientific workflow:
 
    .. figure:: /_static/images/llm/vision-mermaid.png
 
-Do you use it in other ways? `We are happy to hear! <https://github.com/ai4os/ai4-docs/issues/new>`__
+Do you use it in other ways? `We are happy to hear! <https://community.cloud.ai4eosc.eu/>`__
 
 
 
