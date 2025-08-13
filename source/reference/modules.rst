@@ -48,14 +48,14 @@ A typical pipeline is divided in two parts:
 
   * code style analysis using `flake8 <https://flake8.pycqa.org/>`__,
   * unit testing using `pytest <https://docs.pytest.org/>`__,
-  * security scanners using `Bandit <https://bandit.readthedocs.io/>`__,
+  * security scanners using `bandit <https://bandit.readthedocs.io/>`__,
   * `metadata validation <https://github.com/ai4os/ai4-metadata>`__,
 
 * a platform components update, where we:
 
   * build the Docker image to the AI4OS Registry and mirror to DockerHub,
-  * update the Marketplace and additional AI4OS services,
-  * regenerate the provenance chain of that module,
+  * update the :ref:`Marketplace <dashboard_marketplace>` and additional AI4OS services,
+  * regenerate the :ref:`provenance <reference/modules:Provenance>` chain of that module,
 
 .. image:: /_static/images/ai4eosc/jenkins.png
 
