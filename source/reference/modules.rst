@@ -54,8 +54,8 @@ A typical pipeline is divided in two parts:
 * a platform components update, where we:
 
   * build the Docker image to the AI4OS Registry and mirror to DockerHub,
-  * archive the code to `Zenodo <https://zenodo.org/communities/ai4eosc>`__ if a code release is made,
   * update the :ref:`Marketplace <dashboard_marketplace>` and additional AI4OS services,
+  * archive the code to `Zenodo <https://zenodo.org/communities/ai4eosc>`__ if a code release is made,
   * regenerate the :ref:`provenance <reference/modules:Provenance>` chain of that module,
 
 .. image:: /_static/images/ai4eosc/jenkins.png
