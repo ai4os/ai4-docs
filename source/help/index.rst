@@ -19,3 +19,5 @@ Remember that some problems can be solved even without contacting us:
 * We have a :ref:`notifications section <reference/dashboard:profile>` in the Dashboard where we notify users of expected downtimes and issues.
 
 Finally we have an `AI4EOSC community <https://community.cloud.ai4eosc.eu/>`__. In contrast to the Helpdesk (more focused on specific technical problems), the AI4EOSC community allows users to share their experiences, ask questions to other members, requests new features, interact with developers, etc. Give it a try!
+
+Puzzled on some acronyms? Please, have a look in our :doc:`Glossary </help/glossary>`.
