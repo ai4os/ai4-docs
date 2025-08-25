@@ -112,6 +112,7 @@ Current supported platforms:
 
    help/index
    help/faq
+   help/glossary
 
 .. toctree::
    :titlesonly:
