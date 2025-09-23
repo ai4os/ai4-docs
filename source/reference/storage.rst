@@ -17,9 +17,13 @@ deployments to the following hosting platforms:
   .. admonition:: Account validation
      :class: important
 
-     The first time you access this storage, you will need to contact the admins to validate your account.
+     The first time you access this storage, you will need to contact the admins to enable your account.
 
   .. image:: /_static/images/nextcloud/folders.png
+
+  Take into account that you can :material-outlined:`share;1.5em` **share** specific folders with other users (searching them by email),
+  so if there are several members working on the same project, then only one of them needs to upload
+  the dataset and then share the folder with its coworkers.
 
 
 Accessing storage from inside your deployment
