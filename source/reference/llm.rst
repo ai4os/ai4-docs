@@ -240,3 +240,52 @@ Then you can use the LLM as following:
         )
 
         print(completion.choices[0].message.content)
+
+
+We also have a dedicated **embeddings model** that let's you perform Retrieval Augmented Generation.
+This allows the model to ground its answers on the specific documents you pass to it.
+To use this functionality you can use the `llama-index <https://www.llamaindex.ai/>`__ Python package, for example.
+
+.. code-block:: bash
+
+  pip install llama-index
+  pip install llama-index-llms-openai-like
+  pip install llama-index-embeddings-openai-like
+
+.. code-block:: python
+
+  from llama_index.core import Settings, VectorStoreIndex, Document, SimpleDirectoryReader
+  from llama_index.llms.openai_like import OpenAILike
+  from llama_index.embeddings.openai_like import OpenAILikeEmbedding
+
+
+  Settings.embed_model = OpenAILikeEmbedding(
+      api_base="https://llm.dev.ai4eosc.eu:8000/v1",
+      api_key="************************************",
+      model_name="AI4EOSC/Qwen3-Embedding",
+  )
+  Settings.llm = OpenAILike(
+      api_base="https://llm.dev.ai4eosc.eu:8000/v1",
+      api_key="************************************",
+      model="AI4EOSC/Small",
+      context_window=25000,
+      is_chat_model=True,
+      is_function_calling_model=False,
+  )
+
+  # Simple document example 📄️
+  text_to_embed = "My favorite fruit are apples."
+  documents = [Document(text=text_to_embed)]
+
+  # But you can also load entire document folders 📂️
+  # documents = SimpleDirectoryReader(input_dir="/path/to/your/document/folder").load_data()
+
+  # Build index and query engine
+  index = VectorStoreIndex.from_documents(documents)
+  query_engine = index.as_query_engine()
+
+  # Ask the LLM a question
+  response = query_engine.query("What is my favorite fruit?")
+  print(response)
+
+  # > Apples are your favorite fruit.
