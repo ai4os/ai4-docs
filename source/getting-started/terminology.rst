@@ -42,12 +42,24 @@ In the future we will try to integrate as well with popular cloud storage option
 `Dropbox <https://www.dropbox.com/>`__, `Amazon S3 <https://aws.amazon.com/s3/>`__ and `many more <https://rclone.org/>`__.
 
 
-The Inference Platform (OSCAR)
-------------------------------
+The federated training infrastructure
+-------------------------------------
 
-The :doc:`Inference platform (OSCAR) </howtos/deploy/oscar>` is a fully managed service to facilitate users to deploy pre-trained AI models with horizontal scalability thanks to a serverless approach.
+The AI4OS platform allows to train AI models in a federated computing infrastructure, based on `Nomad <https://developer.hashicorp.com/nomad>`__.
+Each supported project can bring their own computing resources that can either be used exclusively by project members or shared with other projects.
 
-User can also compose those models in :doc:`complex AI workflow </howtos/pipelines/flowfuse>`
+Those are the datacenters that are currently part of the federation:
+
+.. raw:: html
+
+    <iframe style="width: 100%; height: 500px; border: 0;" allowfullscreen allow="geolocation" src="https://umap.openstreetmap.fr/en/map/ai4os-datacenters_1307858?scaleControl=false&miniMap=false&scrollWheelZoom=true&zoomControl=false&editMode=disabled&moreControl=false&searchControl=false&tilelayersControl=false&embedControl=false&datalayersControl=false&onLoadPanel=none&captionBar=false&captionMenus=true&captionControl=false&locateControl=false&measureControl=false&editinosmControl=false&printControl=false#4/44.72/6.15"></iframe>
+
+The inference platform
+----------------------
+
+The :doc:`Inference platform (OSCAR) </howtos/deploy/oscar>`, based on `OSCAR <https://oscar.grycap.net/>`__, allows users to deploy pre-trained AI models. It supports horizontal scalability thanks to a serverless approach.
+
+Users can also compose those models in :doc:`complex AI workflow </howtos/pipelines/flowfuse>`
 
 
 Architecture overview
