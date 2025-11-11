@@ -24,7 +24,7 @@ This is a compendium of all the production services that are currently deployed 
 :fab:`docker` `DockerHub <https://hub.docker.com/u/ai4oshub/>`__
   Where the Docker images of the modules are stored.
 
-:fab:`docker` `Harbor <https://registry.services.ai4os.eu/>`__
+:fab:`docker` `Harbor <https://registry.cloud.ai4eosc.eu/>`__
   Custom Docker image registry we deployed to overcome DockerHub limitations.
 
 :fa:`timeline` `CI/CD pipeline <https://jenkins.services.ai4os.eu/job/AI4OS-hub>`__
