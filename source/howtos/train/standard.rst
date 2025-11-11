@@ -14,7 +14,7 @@ In standard mode, you will get a persistent deployment that you will be able to 
 1. Upload your dataset to Nextcloud
 -----------------------------------
 
-For this example we are going to use the `AI4OS Nextcloud <https://share.services.ai4os.eu/>`__ for storing
+For this example we are going to use the `AI4OS Nextcloud <https://share.cloud.ai4eosc.eu/>`__ for storing
 the dataset you want to retrain the model with. So login to Nextcloud with your credentials and you should access to an overview of your files.
 
 .. image:: /_static/images/nextcloud/folders.png
@@ -222,7 +222,7 @@ In our case, this could look something like this:
 
 .. code-block:: docker
 
-    ENV SWIFT_CONTAINER https://share.services.ai4os.eu/index.php/s/r8y3WMK9jwEJ3Ei/download
+    ENV SWIFT_CONTAINER https://share.cloud.ai4eosc.eu/index.php/s/r8y3WMK9jwEJ3Ei/download
     ENV MODEL_TAR phytoplankton.tar.xz
 
     RUN rm -rf ai4os-image-classification-tf/models/*

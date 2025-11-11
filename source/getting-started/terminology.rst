@@ -36,7 +36,7 @@ The data storage resources
 --------------------------
 
 :doc:`Storage </reference/storage>` is essential for users that want to create new services by training modules on their custom data. For the moment
-we support hosting data in `AI4OS Nextcloud <https://share.services.ai4os.eu/>`__  instance.
+we support hosting data in `AI4OS Nextcloud <https://share.cloud.ai4eosc.eu/>`__  instance.
 
 In the future we will try to integrate as well with popular cloud storage options like  `Google Drive <https://www.google.com/drive/>`__,
 `Dropbox <https://www.dropbox.com/>`__, `Amazon S3 <https://aws.amazon.com/s3/>`__ and `many more <https://rclone.org/>`__.

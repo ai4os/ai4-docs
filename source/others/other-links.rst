@@ -12,7 +12,7 @@ This is a compendium of all the production services that are currently deployed 
 :material-outlined:`dashboard;1.5em` **Dashboard** (`AI4EOSC <https://dashboard.cloud.ai4eosc.eu/>`__, `iMagine <https://dashboard.cloud.imagine-ai.eu>`__, `AI4Life <https://ai4life.cloud.ai4eosc.eu>`__, `Tutorials <https://tutorials.cloud.ai4eosc.eu>`__)
   View the catalog of AI modules and make deployments.
 
-:fa:`database` `NextCloud <https://share.services.ai4os.eu/>`__
+:fa:`database` `NextCloud <https://share.cloud.ai4eosc.eu/>`__
   The service that allows to store your data remotely and access them from inside your deployment.
 
 :fab:`github` `Github (software) <https://github.com/ai4os>`__

@@ -7,7 +7,7 @@ with the AI4OS stack.
 AI4OS Storage
 -------------
 
-The `AI4OS storage <https://share.services.ai4os.eu/>`__ is a custom Nextcloud instance
+The `AI4OS storage <https://share.cloud.ai4eosc.eu/>`__ is a custom Nextcloud instance
 deployed for the project users. Each user gets a free 500 GB of storage there.
 
 As expected, this storage is compatible by default with the AI4OS stack.

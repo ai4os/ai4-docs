@@ -46,7 +46,7 @@ When the deployment is created, you should have your env variables available to 
     $ printenv | grep RCLONE_CONFIG_RSHARE_
     RCLONE_CONFIG_RSHARE_VENDOR=nextcloud
     RCLONE_CONFIG_RSHARE_PASS=<YOUR-PASSWORD>
-    RCLONE_CONFIG_RSHARE_URL=https://share.services.ai4os.eu/remote.php/dav/files/<YOUR-USER>
+    RCLONE_CONFIG_RSHARE_URL=https://share.cloud.ai4eosc.eu/remote.php/dav/files/<YOUR-USER>
     RCLONE_CONFIG_RSHARE_TYPE=webdav
     RCLONE_CONFIG_RSHARE_USER=<YOUR-USER>
 
@@ -58,7 +58,7 @@ When the deployment is created, you should have your env variables available to 
 
         RCLONE_CONFIG_RSHARE_VENDOR=nextcloud
         RCLONE_CONFIG_RSHARE_PASS=<YOUR-PASSWORD>
-        RCLONE_CONFIG_RSHARE_URL=https://share.services.ai4os.eu/remote.php/webdav/
+        RCLONE_CONFIG_RSHARE_URL=https://share.cloud.ai4eosc.eu/remote.php/webdav/
         RCLONE_CONFIG_RSHARE_TYPE=webdav
         RCLONE_CONFIG_RSHARE_USER=<YOUR-USER>
 
@@ -71,7 +71,7 @@ When the deployment is created, you should have your env variables available to 
 ... in your local machine
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
-First, you need to generate your RCLONE credentials. For this, log into the `AI4OS Nextcloud <https://share.services.ai4os.eu/>`__,  go to (1) **Settings** (top right corner) ➜ (2) **Security** ➜ (3) **Devices & sessions**. Set a name for your application (typically in the docs we will use ``rshare``) and click on **Create new app password**. This will generate your ``<user>`` and ``<password>`` credentials. Your username should start with ``EGI_Checkin-...``.
+First, you need to generate your RCLONE credentials. For this, log into the `AI4OS Nextcloud <https://share.cloud.ai4eosc.eu/>`__,  go to (1) **Settings** (top right corner) ➜ (2) **Security** ➜ (3) **Devices & sessions**. Set a name for your application (typically in the docs we will use ``rshare``) and click on **Create new app password**. This will generate your ``<user>`` and ``<password>`` credentials. Your username should start with ``EGI_Checkin-...``.
 
 .. image:: /_static/images/nextcloud/access.png
 
@@ -83,7 +83,7 @@ Then run ``rclone config`` command, these are the answers you should provide:
     # choose "n"  for "New remote"
     # choose name for AI4OS Nextcloud --> rshare
     # choose "Type of Storage" --> Webdav
-    # provide AI4OS Nextcloud URL for webdav access --> ttps://share.services.ai4os.eu/remote.php/dav/files/<YOUR-USER>
+    # provide AI4OS Nextcloud URL for webdav access --> ttps://share.cloud.ai4eosc.eu/remote.php/dav/files/<YOUR-USER>
     # choose Vendor --> Nextcloud
     # specify "user" --> (see `<user>` in "Configuring rclone" above).
     # password --> y (Yes type in my own password)
@@ -99,7 +99,7 @@ This will create an configuration file in ``$HOME/.config/rclone/rclone.conf``.:
 
     [rshare]
     type = webdav
-    url = https://share.services.ai4os.eu/remote.php/dav/files/<YOUR-USER>
+    url = https://share.cloud.ai4eosc.eu/remote.php/dav/files/<YOUR-USER>
     vendor = nextcloud
     user = <YOUR-USER>
     pass = <YOUR-PASSWORD>  --> this is equivalent to `rclone obscure <password>`

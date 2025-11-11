@@ -11,7 +11,7 @@ Our storage provider
 For hosting the data necessary for your trainings, we provide access form inside your
 deployments to the following hosting platforms:
 
-* `AI4OS Nextcloud <https://share.services.ai4os.eu/>`__: this is a Nextcloud instance
+* `AI4OS Nextcloud <https://share.cloud.ai4eosc.eu/>`__: this is a Nextcloud instance
   deployed for the project users. Each user gets a free 500 GB of storage there.
 
   .. admonition:: Account validation
