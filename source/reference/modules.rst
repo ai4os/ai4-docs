@@ -37,7 +37,7 @@ Editing a module's metadata
 CI /CD pipeline
 ---------------
 
-In the project we use `Jenkins <https://jenkins.services.ai4os.eu/job/AI4OS-hub>`__
+In the project we use `Jenkins <https://jenkins.cloud.ai4eosc.eu/job/AI4OS-hub>`__
 for implementing CI/CD (Continuous Integration / Continuous Development) pipeline. This pipeline automatically performs a
 series of actions for you each time you commit a change in your code. This ensures that all the information and builds
 across the project are always up-to-date with your code.

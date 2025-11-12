@@ -27,7 +27,7 @@ This is a compendium of all the production services that are currently deployed 
 :fab:`docker` `Harbor <https://registry.cloud.ai4eosc.eu/>`__
   Custom Docker image registry we deployed to overcome DockerHub limitations.
 
-:fa:`timeline` `CI/CD pipeline <https://jenkins.services.ai4os.eu/job/AI4OS-hub>`__
+:fa:`timeline` `CI/CD pipeline <https://jenkins.cloud.ai4eosc.eu/job/AI4OS-hub>`__
   Continuous Integration and Continuous Development Jenkins instance to keep everything up-to-date with latest code changes.
 
 :fa:`temperature-half` `Status of services <https://status.ai4eosc.eu/>`__
