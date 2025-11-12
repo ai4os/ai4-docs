@@ -242,6 +242,16 @@ Then you can use the LLM as following:
         print(completion.choices[0].message.content)
 
 
+.. dropdown:: ㅤ ⚠️ Query token limit
+
+  The models served have a typical token limit per call. If your query exceeds this token
+  limit, you will get an error message similar to:
+
+  .. code-block:: console
+
+    BadRequestError: Error code: 400 - {'object': 'error', 'message': 'max_tokens must be at least 1, got -30979.', 'type': 'BadRequestError', 'param': None, 'code': 400}
+
+
 We also have a dedicated **embeddings model** that let's you perform Retrieval Augmented Generation.
 This allows the model to ground its answers on the specific documents you pass to it.
 To use this functionality you can use the `llama-index <https://www.llamaindex.ai/>`__ Python package, for example.
