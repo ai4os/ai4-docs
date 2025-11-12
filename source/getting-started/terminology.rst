@@ -4,6 +4,28 @@ Concepts and Terminology
 There are several different components in the AI4OS stack that are relevant for the users.
 Later on you will see how each :doc:`different type of user <user-roles>` can take advantage of the different components.
 
+.. admonition:: What is the difference between AI4OS and AI4EOSC?
+   :class: info
+
+   `AI4OS <https://ai4os.eu/>`__ is the name of the software stack described in this documentation.
+
+   `AI4EOSC <https://ai4eosc.eu/>`__ is the project that initially developed that stack and is currently maintaining it.
+   AI4EOSC also host a particular deployment of the AI4OS stack components (under `cloud.ai4eosc.eu`).
+   For example:
+
+   * The :doc:`AI4OS dashboard </reference/dashboard>` deployed as the `AI4EOSC Dashboard <https://dashboard.cloud.ai4eosc.eu/>`__,
+   * The :doc:`AI4OS Storage </reference/storage>` deployed as the `AI4EOSC Storage <https://share.cloud.ai4eosc.eu/>`__,
+   * etc.
+
+   In this regard, it is similar to other projects who have adopted the AI4OS Stack,
+   like `iMagine <https://www.imagine-ai.eu/>`__ who deployed it's own version of the
+   AI4OS Dashboard as the `iMagine Dashboard <https://dashboard.cloud.imagine-ai.eu/>`__.
+
+   To reduce duplicities and lower the entry barrier for external projects, many
+   AI4OS components deployed by AI4EOSC (e.g. the `CI/CD pipeline <https://jenkins.cloud.ai4eosc.eu/>`__)
+   also serve others projects, like iMagine.
+
+
 The Dashboard
 -------------
 
