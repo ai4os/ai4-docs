@@ -161,3 +161,14 @@ html[data-mode^="dark"] thead {
   animation: fa-bounce 1s infinite;
   /* font-size: 2em !important; */ /* Does not work inside dropdows */
 }
+
+
+/* Nicer lists in admonitions */
+div.admonition ul {
+  margin-top: -0.5em !important;
+  margin-bottom: 0 !important;
+}
+div.admonition li {
+  margin-top: -0.4em !important;
+  margin-bottom: 0 !important;
+}
