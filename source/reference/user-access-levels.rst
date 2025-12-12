@@ -83,7 +83,7 @@ Full access level
     * :doc:`Deploying AI models in production </howtos/deploy/index>`
     * :doc:`Accessing the AI4OS storage </reference/storage>`
 
-    **Granted to**: This access level is usually reserved to members of one of the supported projects:
+    **Granted to**: This access level is usually reserved to developers (``ap-d``) or members of one of the supported projects (``ap-u``):
 
     * `AI4EOSC <https://ai4eosc.eu/>`__: AI for the European Open Science Cloud
     * `iMagine <https://imagine-ai.eu/>`__: Imaging data and services for aquatic science
