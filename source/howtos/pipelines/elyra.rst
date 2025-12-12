@@ -15,6 +15,12 @@ Composing AI Inference pipelines based on OSCAR services with Elyra in EGI Noteb
     :width: 500
     :align: center
 
+
+.. admonition:: Tutorial update
+    :class: info
+
+    *  **OSCAR v3.6.5** now provides support for deploying a Jupyter Notebook instance with Elyra. Although the tutorial uses the EGI Notebooks service, you can also deploy your own Jupyter Notebook in OSCAR and try the examples of the tutorial. More info regarding this new OSCAR feature can be found `here <https://docs.oscar.grycap.net/latest/integration-jupyter/>`__ .
+
 In this documentation, we provide a hands-on guide to using
 `Elyra <https://elyra.readthedocs.io/en/latest/>`__ ,
 an AI-centric extension for `Jupyter Notebooks <https://jupyter.org/>`__ ,
