@@ -11,6 +11,14 @@ Composing AI Inference pipelines with Node-RED & Flowfuse
 
    :material-outlined:`error;1.5em` Please, be aware that video demos can become quickly outdated. In case of doubt, always refer to the written documentation.
 
+.. admonition:: Deprecation notice
+    :class: info
+
+    *  **OSCAR v3.6.5** now provides support for deploying a Node-RED instance. More info regarding this new OSCAR feature can be found `here <https://docs.oscar.grycap.net/latest/integration-node-red/>`__ .
+    * The Flowfuse instance of the project is **no longer available**. You can test the examples directly in OSCAR, deploying your own Node-RED instance with OSCAR nodes already integrated.
+    * The current version of the tutorial will be updated soon. Stay tuned!
+
+
 In this document, we will learn about Composing AI Inference pipelines based on OSCAR
 services with Node-RED & FlowFuse, specifically:
 
