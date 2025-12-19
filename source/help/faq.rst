@@ -253,6 +253,28 @@ If the issue persists, please :doc:`contact support </help/index>`.
 
 .. _new-features-request:
 
+ℹ️ How can I cite the AI4EOSC project?
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+If you need to cite he AI4EOSC project or the AI4OS stack, please consider citing
+the following paper:
+
+    Heredia, I., García, Á. L., Moltó, G., Calatrava, A., Kozlov, V., Costantini, A., … Díez, J. (2025). `AI4EOSC: a Federated Cloud Platform for Artificial Intelligence in Scientific Research <http://arxiv.org/abs/2512.16455>`__. *arXiv* [Cs.DC].
+
+.. dropdown:: 📄 ㅤBixTeX citation
+
+    .. code-block:: bib
+
+        @misc{heredia2025ai4eoscfederatedcloudplatform,
+            title={AI4EOSC: a Federated Cloud Platform for Artificial Intelligence in Scientific Research},
+            author={Ignacio Heredia and Álvaro López García and Germán Moltó and Amanda Calatrava and Valentin Kozlov and Alessandro Costantini and Viet Tran and Mario David and Daniel San Martín and Marcin Płóciennik and Marta Obregón Ruiz and Saúl Fernandez and Judith Sáinz-Pardo Díaz and Miguel Caballer and Caterina Alarcón Marín and Stefan Dlugolinsky and Martin Šeleng and Lisana Berberi and Khadijeh Alibabaei and Borja Esteban Sanchis and Pedro Castro and Giacinto Donvito and Diego Aguirre and Sergio Langarita and Vicente Rodriguez and Leonhard Duda and Andrés Heredia Canales and Susana Rebolledo Ruiz and João Machado and Giang Nguyen and Fernando Aguilar Gómez and Jaime Díez},
+            year={2025},
+            eprint={2512.16455},
+            archivePrefix={arXiv},
+            primaryClass={cs.DC},
+            url={https://arxiv.org/abs/2512.16455},
+        }
+
 
 ℹ️ I received a cluster downtime notification, what should I do?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
