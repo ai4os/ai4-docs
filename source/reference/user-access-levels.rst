@@ -44,7 +44,7 @@ Basic access level
 ^^^^^^^^^^^^^^^^^^
 .. card::
 
-    Registered users with basic access level can:
+    Registered users with basic access level (``ap-0``) can:
 
     * :doc:`Deploy an AI model in their own cloud </howtos/deploy/cloud>`
 
