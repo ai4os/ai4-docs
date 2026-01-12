@@ -48,7 +48,7 @@ This is a compendium of all the production services that are currently deployed 
 :fa:`network-wired` `Inference pipelines platform (Flowfuse) <https://forge.flows.dev.ai4eosc.eu/>`__
   Compose custom AI inference pipelines.
 
-:material-outlined:`chat;1.5em` `LLM Chatbot <https://llm.dev.ai4eosc.eu/>`__ (beta!)
+:material-outlined:`chat;1.5em` `LLM Chatbot <https://chat.cloud.ai4eosc.eu/>`__
   Chat with our LLM bot and interact live with our documentation.
 
 :material-outlined:`video_library;1.5em` `Youtube channel <https://www.youtube.com/@ai4eosc>`__

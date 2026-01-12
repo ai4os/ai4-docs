@@ -41,7 +41,7 @@ Both options offer a **privacy-first** design: once your delete your chats or kn
 Login
 -----
 
-Login into: https://llm.dev.ai4eosc.eu
+Login into: https://chat.cloud.ai4eosc.eu
 
 .. image:: /_static/images/llm/login.png
 
@@ -127,7 +127,7 @@ There are two API options:
 
   To access this API you need to :doc:`contact support </help/index>` first, explaining your usecase. They will then generate your personal API key.
 
-  - **API endpoint**: https://llm.dev.ai4eosc.eu:8000/v1
+  - **API endpoint**: https://vllm.cloud.ai4eosc.eu/v1
   - **API key**: `AI4OS Keycloak <https://login.cloud.ai4eosc.eu/realms/ai4eosc/account>`__ → ``Personal Info`` → ``User metadata`` → ``LLM API key``
 
   .. figure:: /_static/images/llm/api-keys-keycloak.png
@@ -135,8 +135,8 @@ There are two API options:
 
 * **OpenWebUI API**: supports chat completions, supports Retrieval Augmented Generation
 
-  - **API endpoint**: https://llm.dev.ai4eosc.eu/api
-  - **API key**: `AI4OS LLM <https://llm.dev.ai4eosc.eu>`__ → :material-outlined:`account_circle;1.5em` → :material-outlined:`settings;1.5em` ``Settings`` → :material-outlined:`account_circle;1.5em` ``Account``
+  - **API endpoint**: https://chat.cloud.ai4eosc.eu/api
+  - **API key**: `AI4OS LLM <https://chat.cloud.ai4eosc.eu>`__ → :material-outlined:`account_circle;1.5em` → :material-outlined:`settings;1.5em` ``Settings`` → :material-outlined:`account_circle;1.5em` ``Account``
 
   .. figure:: /_static/images/llm/api-keys-openwebui.png
      :width: 500 px
@@ -164,7 +164,7 @@ To configure it:
             provider: openai
             model: AI4EOSC/Small
             apiKey: "************************************"
-            apiBase: https://llm.dev.ai4eosc.eu:8000/v1
+            apiBase: https://vllm.cloud.ai4eosc.eu/v1
             roles:
               - chat
               - edit
@@ -179,7 +179,7 @@ To configure it:
             provider: openai
             model: AI4EOSC/Small
             apiKey: "sk-*********************************"
-            apiBase: https://llm.dev.ai4eosc.eu/api
+            apiBase: https://chat.cloud.ai4eosc.eu/api
             useLegacyCompletionsEndpoint: false
             roles:
               - chat
@@ -211,7 +211,7 @@ Then you can use the LLM as following:
 
 
         client = OpenAI(
-            base_url="https://llm.dev.ai4eosc.eu:8000/v1",
+            base_url="https://vllm.cloud.ai4eosc.eu/v1",
             api_key="************************************",
         )
 
@@ -230,7 +230,7 @@ Then you can use the LLM as following:
 
 
         client = OpenAI(
-            base_url="https://llm.dev.ai4eosc.eu/api",
+            base_url="https://chat.cloud.ai4eosc.eu/api",
             api_key="sk-*********************************",
         )
 
@@ -270,12 +270,12 @@ To use this functionality you can use the `llama-index <https://www.llamaindex.a
 
 
   Settings.embed_model = OpenAILikeEmbedding(
-      api_base="https://llm.dev.ai4eosc.eu:8000/v1",
+      api_base="https://vllm.cloud.ai4eosc.eu/v1",
       api_key="************************************",
       model_name="AI4EOSC/Qwen3-Embedding",
   )
   Settings.llm = OpenAILike(
-      api_base="https://llm.dev.ai4eosc.eu:8000/v1",
+      api_base="https://vllm.cloud.ai4eosc.eu/v1",
       api_key="************************************",
       model="AI4EOSC/Small",
       context_window=25000,
