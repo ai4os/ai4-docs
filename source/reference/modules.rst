@@ -66,7 +66,7 @@ Provenance
 Being able to trace an AI module provenance is key to the `FAIR principles <https://www.nature.com/articles/sdata201618>`__, ensuring reproducibility and building trust in the module's predictions.
 
 That's why every time a module's :ref:`CI/CD pipeline <reference/modules:CI /CD pipeline>` is executed, we build a provenance chain of that module.
-Based on the module's :ref:`metadata <reference/modules:AI4OS metadata>`, we parse the different :ref:`platform components <getting-started/terminology:Architecture overview>`, gathering all the provenance information into a single RDF file (`example <https://provenance.services.ai4os.eu/rdf?applicationId=ai4os-demo-app>`__).
+Based on the module's :ref:`metadata <reference/modules:AI4OS metadata>`, we parse the different :ref:`platform components <getting-started/terminology:Architecture overview>`, gathering all the provenance information into a single RDF file (`example <https://provenance.cloud.ai4eosc.eu/rdf?applicationId=ai4os-demo-app>`__).
 These sources include:
 
 * **Jenkins**: we extract build information, like code quality tests or docker image hashes,
@@ -76,7 +76,7 @@ These sources include:
 
 In addition, this RDF file explains the connection between the different components, like how the Nomad deployment used a given dataset for training the module, or how Jenkins generated a new Harbor docker image.
 
-For an improved user experience, we show users the final provenance chain in a simplified interactive graph (`example <https://provenance.services.ai4os.eu/?applicationId=ai4os-demo-app>`__):
+For an improved user experience, we show users the final provenance chain in a simplified interactive graph (`example <https://provenance.cloud.ai4eosc.eu/?applicationId=ai4os-demo-app>`__):
 
 .. image:: /_static/images/provenance/simple-graph.png
 
