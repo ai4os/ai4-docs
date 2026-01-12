@@ -1,7 +1,7 @@
 AI4OS LLM
 =========
 
-As part of the tool repertoire that the AI4OS stack is offering to increase our user's productivity, we are current offering an LLM Chatbot service (*in beta!*) that allows users to summarize information, get code recommendations, ask questions about the documentation, etc.
+As part of the tool repertoire that the AI4OS stack is offering to increase our user's productivity, we are current offering an LLM Chatbot service that allows users to summarize information, get code recommendations, ask questions about the documentation, etc.
 
 We care about user privacy, so it's important to notice that your chat history will be erased whenever you delete it, and no data will be retained by the platform (`privacy policy <https://ai4eosc.eu/platform/privacy-policy/>`__).
 
