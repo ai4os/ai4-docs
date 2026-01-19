@@ -17,6 +17,7 @@ We also offer a :doc:`self-deployed LLM option </howtos/deploy/llm>`, so which o
 
 **Self-deployed LLM**
 
+* available to :ref:`full access level <reference/user-access-levels:Full access level>` users
 * let's you deploy a wide variety of models from a catalog,
 * resources are exclusively dedicated to you and your selected coworkers,
 * you are the admin, so you can configure model and UI parameters,
@@ -25,10 +26,10 @@ We also offer a :doc:`self-deployed LLM option </howtos/deploy/llm>`, so which o
 
 **AI4OS LLM (platform wide)**
 
+* available to all users (:ref:`basic access level <reference/user-access-levels:Basic access level>` and above)
 * uses more powerful GPUs, so it offers bigger and more accurate LLMs,
 * zero configuration needed, access directly with your :doc:`AI4OS credentials </getting-started/register>`,
 * the backend (VLLM) is load balanced so it can offer lower latency,
-* has a dedicated RAG instance for faster queries,
 * comes with some pre-configured helpful agents, like the :ref:`AI4EOSC Assistant <reference/llm:Ask questions about the documentation>` that helps you navigate the project's documentation,
 
 By default, we recommend using the AI4OS LLM, which will offer a better experience for most users. Users with more custom needs should try nevertheless the self-deployment options.
@@ -117,31 +118,79 @@ Do you use it in other ways? `We are happy to hear! <https://community.cloud.ai4
 Integrate it with your own services
 -----------------------------------
 
+You can access the LLM models via an OpenAI-compatible API for an easier integration with your own services.
+
+.. admonition:: Requirements
+   :class: info
+
+   🔓 You need a :doc:`platform account </getting-started/register>` with :ref:`intermediate access level <reference/user-access-levels:Intermediate access level>` or above.
+
 Retrieve the API endpoint/key
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-To integrate LLM completions into your workflow you need an API endpoint and an API key.
-There are two API options:
+The API endpoint to query the models is:
 
-* **vLLM API** (:material-outlined:`verified;1.5em` *recommended*): faster (load balanced), supports chat completions
+  https://vllm.cloud.ai4eosc.eu
 
-  To access this API you need to :doc:`contact support </help/index>` first, explaining your usecase. They will then generate your personal API key.
+To generate the API keys go to the Dashboard profile, to the ``Secrets and API keys`` section.
+There you will be able to create a new API key selecting the name, the assigned team and the key expiration date.
 
-  - **API endpoint**: https://vllm.cloud.ai4eosc.eu/v1
-  - **API key**: `AI4OS Keycloak <https://login.cloud.ai4eosc.eu/realms/ai4eosc/account>`__ → ``Personal Info`` → ``User metadata`` → ``LLM API key``
+.. image:: /_static/images/llm/api-keys-dashboard.png
 
-  .. figure:: /_static/images/llm/api-keys-keycloak.png
-     :width: 500 px
+.. dropdown:: ㅤ ℹ️ Team budgets and rate limits
 
-* **OpenWebUI API**: supports chat completions, supports Retrieval Augmented Generation
+  API keys are assigned to particular teams, which map the :doc:`user access levels </reference/user-access-levels>`.
 
-  - **API endpoint**: https://chat.cloud.ai4eosc.eu/api
-  - **API key**: `AI4OS LLM <https://chat.cloud.ai4eosc.eu>`__ → :material-outlined:`account_circle;1.5em` → :material-outlined:`settings;1.5em` ``Settings`` → :material-outlined:`account_circle;1.5em` ``Account``
+  Each time you use that API key you will be consuming your **daily** budget assigned to that team.
+  When you consume your budget you will no longer be able to make further requests.
+  After each day, your budget will be reset and you will be able to make calls again.
 
-  .. figure:: /_static/images/llm/api-keys-openwebui.png
-     :width: 500 px
+  If you create different keys assigned to the same team, both keys will consume the same budget.
 
-`Learn more <https://docs.openwebui.com/getting-started/api-endpoints>`__ on how to use API keys to integrate the AI4OS LLM into your own services (endpoints are compatible with the OpenAI API spec).
+  If you belong to several teams, you can create different keys assigned to the different teams and rotate between them in your code.
+  This will allow you to use the cumulated budget across all your teams.
+
+  .. container:: table-title
+
+    **Team daily budgets**
+
+    *(TPM = Tokens Per Minute, RPM = Requests Per Minute)*
+
+  .. list-table::
+    :header-rows: 1
+    :align: center
+
+    * - Group
+      - Budget (USD) / user
+      - TPM Limit / user
+      - RPM Limit / user
+    * - ap-a
+      - 0.1
+      - 2000
+      - 2
+    * - ap-a1
+      - 0.1
+      - 2000
+      - 2
+    * - ap-b
+      - 0.1
+      - 2000
+      - 2
+    * - ap-u
+      - 1
+      - 20000
+      - 20
+    * - ap-d
+      - 5
+      - 50000
+      - 50
+
+  Each model will consume a different amount of resources.
+  As a general rule of thumb:
+
+  * small models (like Smol or OLMo) consume around ``1e-8`` per input token and ``2e-8`` per output token.
+  * large models (like Mistral Small or Qwen 3) consume around ``1e-7`` per input token and ``3e-7`` per output token.
+  * embedding models (like Qwen3 Embeddings) consume around ``2e-8`` per input token.
 
 Use it as a code assistant with VScode
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -153,39 +202,18 @@ To configure it:
 2. Open the Continue config file: ``/home/<user>/.continue/config.yaml``
 3. Modify it to add the AI4OS LLM model, :ref:`using your API key <reference/llm:Retrieve the API endpoint/key>`:
 
-.. tab-set::
+  .. code-block:: yaml
 
-  .. tab-item:: vLLM API
-
-    .. code-block:: yaml
-
-        models:
-          - name: AI4OS LLM
-            provider: openai
-            model: AI4EOSC/Small
-            apiKey: "************************************"
-            apiBase: https://vllm.cloud.ai4eosc.eu/v1
-            roles:
-              - chat
-              - edit
-              - apply
-
-  .. tab-item:: OpenWebUI API
-
-    .. code-block:: yaml
-
-        models:
-          - name: AI4OS LLM
-            provider: openai
-            model: AI4EOSC/Small
-            apiKey: "sk-*********************************"
-            apiBase: https://chat.cloud.ai4eosc.eu/api
-            useLegacyCompletionsEndpoint: false
-            roles:
-              - chat
-              - edit
-              - apply
-
+      models:
+        - name: AI4OS LLM
+          provider: openai
+          model: AI4EOSC/Small
+          apiKey: "************************************"
+          apiBase: https://vllm.cloud.ai4eosc.eu/
+          roles:
+            - chat
+            - edit
+            - apply
 
 .. We use '"useLegacyCompletionsEndpoint": false' to force the usage of chat/completions instead of completions endpoint
 .. ref: https://docs.continue.dev/customize/model-providers/openai
@@ -201,45 +229,23 @@ Use it from within your Python code
 To use the LLM from your Python scripts you need to install the `openai <https://github.com/openai/openai-python>`__ Python package.
 Then you can use the LLM as following:
 
-.. tab-set::
 
-  .. tab-item:: vLLM API
+.. code-block:: python
 
-    .. code-block:: python
-
-        from openai import OpenAI
+    from openai import OpenAI
 
 
-        client = OpenAI(
-            base_url="https://vllm.cloud.ai4eosc.eu/v1",
-            api_key="************************************",
-        )
+    client = OpenAI(
+        base_url="https://vllm.cloud.ai4eosc.eu",
+        api_key="************************************",
+    )
 
-        completion = client.chat.completions.create(
-            model="AI4EOSC/Small",
-            messages=[{"role": "user", "content": "What is the capital of France?"}]
-        )
+    completion = client.chat.completions.create(
+        model="AI4EOSC/Small",
+        messages=[{"role": "user", "content": "What is the capital of France?"}]
+    )
 
-        print(completion.choices[0].message.content)
-
-  .. tab-item:: OpenWebUI API
-
-    .. code-block:: python
-
-        from openai import OpenAI
-
-
-        client = OpenAI(
-            base_url="https://chat.cloud.ai4eosc.eu/api",
-            api_key="sk-*********************************",
-        )
-
-        completion = client.chat.completions.create(
-            model="AI4EOSC/Small",
-            messages=[{"role": "user", "content": "What is the capital of France?"}]
-        )
-
-        print(completion.choices[0].message.content)
+    print(completion.choices[0].message.content)
 
 
 .. dropdown:: ㅤ ⚠️ Query token limit
@@ -252,15 +258,22 @@ Then you can use the LLM as following:
     BadRequestError: Error code: 400 - {'object': 'error', 'message': 'max_tokens must be at least 1, got -30979.', 'type': 'BadRequestError', 'param': None, 'code': 400}
 
 
-We also have a dedicated **embeddings model** that let's you perform Retrieval Augmented Generation.
+Implement a RAG pipeline
+^^^^^^^^^^^^^^^^^^^^^^^^
+
+We also have a dedicated **embeddings model** that let's you perform Retrieval Augmented Generation (RAG).
 This allows the model to ground its answers on the specific documents you pass to it.
-To use this functionality you can use the `llama-index <https://www.llamaindex.ai/>`__ Python package, for example.
+You can implement a RAG pipeline using the `llama-index <https://www.llamaindex.ai/>`__ Python package, for example.
+
+After installing the required packages,
 
 .. code-block:: bash
 
   pip install llama-index
   pip install llama-index-llms-openai-like
   pip install llama-index-embeddings-openai-like
+
+define your demo pipeline:
 
 .. code-block:: python
 
@@ -270,12 +283,12 @@ To use this functionality you can use the `llama-index <https://www.llamaindex.a
 
 
   Settings.embed_model = OpenAILikeEmbedding(
-      api_base="https://vllm.cloud.ai4eosc.eu/v1",
+      api_base="https://vllm.cloud.ai4eosc.eu",
       api_key="************************************",
       model_name="AI4EOSC/Qwen3-Embedding",
   )
   Settings.llm = OpenAILike(
-      api_base="https://vllm.cloud.ai4eosc.eu/v1",
+      api_base="https://vllm.cloud.ai4eosc.eu",
       api_key="************************************",
       model="AI4EOSC/Small",
       context_window=25000,
