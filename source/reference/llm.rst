@@ -143,7 +143,7 @@ There you will be able to create a new API key selecting the name and the expira
   When you consume all your budget you will no longer be able to make further requests.
   After each day, your budget will be reset and you will be able to make calls again.
 
-  If you create different keys assigned to the same team, both keys will consume the same budget.
+  If you create different keys, both keys will consume the same budget.
 
   Your budget depends on your current :doc:`user access level </reference/user-access-levels>`.
 
