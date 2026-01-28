@@ -132,27 +132,22 @@ The API endpoint to query the models is:
 
   https://vllm.cloud.ai4eosc.eu
 
-To generate the API keys go to the Dashboard profile, to the ``Secrets and API keys`` section.
-There you will be able to create a new API key selecting the name, the assigned team and the key expiration date.
+To generate the API keys go to the :ref:`Dashboard profile <dashboard_profile>`, to the ``Secrets and API keys`` section.
+There you will be able to create a new API key selecting the name and the expiration date.
 
 .. image:: /_static/images/llm/api-keys-dashboard.png
 
-.. dropdown:: ㅤ ℹ️ Team budgets and rate limits
+.. dropdown:: ㅤ ℹ️ Budgets and rate limits
 
-  API keys are assigned to particular teams, which map the :doc:`user access levels </reference/user-access-levels>`.
-
-  Each time you use that API key you will be consuming your **daily** budget assigned to that team.
-  When you consume your budget you will no longer be able to make further requests.
+  Each time you use an API key you will be consuming your **daily** budget.
+  When you consume all your budget you will no longer be able to make further requests.
   After each day, your budget will be reset and you will be able to make calls again.
 
   If you create different keys assigned to the same team, both keys will consume the same budget.
 
-  If you belong to several teams, you can create different keys assigned to the different teams and rotate between them in your code.
-  This will allow you to use the cumulated budget across all your teams.
+  Your budget depends on your current :doc:`user access level </reference/user-access-levels>`.
 
   .. container:: table-title
-
-    **Team daily budgets**
 
     *(TPM = Tokens Per Minute, RPM = Requests Per Minute)*
 
@@ -161,16 +156,16 @@ There you will be able to create a new API key selecting the name, the assigned 
     :align: center
 
     * - Group
-      - Budget (USD) / user
+      - Budget (credits) / day / user
       - TPM Limit / user
       - RPM Limit / user
     * - ap-a
-      - 0.1
-      - 2000
+      - 0.05
+      - 1000
       - 2
     * - ap-a1
-      - 0.1
-      - 2000
+      - 0.75
+      - 1500
       - 2
     * - ap-b
       - 0.1
@@ -181,9 +176,13 @@ There you will be able to create a new API key selecting the name, the assigned 
       - 20000
       - 20
     * - ap-d
-      - 5
-      - 50000
-      - 50
+      - 1.5
+      - 30000
+      - 30
+
+  .. raw:: html
+
+    <br/>
 
   Each model will consume a different amount of resources.
   As a general rule of thumb:
