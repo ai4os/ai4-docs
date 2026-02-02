@@ -191,6 +191,8 @@ There you will be able to create a new API key selecting the name and the expira
   * large models (like Mistral Small or Qwen 3) consume around ``1e-7`` per input token and ``3e-7`` per output token.
   * embedding models (like Qwen3 Embeddings) consume around ``2e-8`` per input token.
 
+  You can use `OpenAI tokenizer <https://platform.openai.com/tokenizer>`__ to get a rough estimate of how a given text maps into tokens.
+
 Use it as a code assistant with VScode
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
