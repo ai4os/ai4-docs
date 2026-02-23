@@ -1,5 +1,5 @@
-AI4OS Access Policies
-=====================
+Access Policies
+===============
 
 .. |myaccessid| image:: /_static/images/favicons/myaccessid.png
    :height: 1em
@@ -24,11 +24,11 @@ AI4OS Access Policies
 Our access levels are aligned with the `EOSC EU Node Access Levels <https://open-science-cloud.ec.europa.eu/about/access-policy>`__ (Observer, Explorer, Collaborator and Investigator).
 
 Depending how your :doc:`registration credentials </getting-started/register>`, you will be granted a particular access level.
-Each level gives access to a set of AI4OS services.
+Each level gives access to a set of the platform services.
 Each level includes access to the services of the previous levels.
 
-AI4OS access levels
--------------------
+Access levels
+-------------
 
 Non-registered users
 ^^^^^^^^^^^^^^^^^^^^
@@ -61,7 +61,7 @@ Intermediate access level
     Registered users with intermediate access level can:
 
     * :doc:`Try an AI model in the Dashboard </howtos/try/index>`
-    * :doc:`Chat with the AI4OS LLM </reference/llm>`
+    * :doc:`Chat with the platform LLM </reference/llm>`
 
     **Granted to**: researchers with |myaccessid| `EduGain <https://edugain.org/>`__ credentials.
     More finegrained permissions are granted based on membership:
@@ -75,13 +75,13 @@ Full access level
 
 .. card::
 
-    Registered users with full access level can use all the features the AI4OS stack
+    Registered users with full access level can use all the features the platform
     has to offer, including:
 
     * :doc:`Developing AI models in the Dashboard </howtos/develop/index>`
     * :doc:`Training AI models in the Dashboard </howtos/train/index>`
     * :doc:`Deploying AI models in production </howtos/deploy/index>`
-    * :doc:`Accessing the AI4OS storage </reference/storage>`
+    * :doc:`Accessing the Storage </reference/storage>`
 
     **Granted to**: This access level is usually reserved to developers (``ap-d``) or members of one of the supported projects (``ap-u``):
 

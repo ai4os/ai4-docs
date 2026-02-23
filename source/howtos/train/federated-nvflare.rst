@@ -3,7 +3,7 @@
 Federated Learning with NVFLARE
 ===============================
 
-In this tutorial, we will guide you on how to use the Federated Learning (FL) server in the AI4OS platform to perform FL training with `NVFlare <https://developer.nvidia.com/flare>`__.
+In this tutorial, we will guide you on how to use the Federated Learning (FL) server in the platform to perform FL training with `NVFlare <https://developer.nvidia.com/flare>`__.
 
 .. admonition:: Requirements
    :class: info
@@ -72,7 +72,7 @@ Adding new clients to the training
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 A project can have multiple admins (among `other roles <https://nvflare.readthedocs.io/en/2.4/user_guide/dashboard_ui.html#nvflare-dashboard-ui>`__).
-The **Project Admin** is the person who initially created the deployment within the AI4OS Dashboard.
+The **Project Admin** is the person who initially created the deployment within the Dashboard.
 Each organization participating in the federated training should also designate an **Organization Admin** (Org Admin). Org Admins are responsible for registering their own organization's sites within the project.
 The Project Admin has the authority to approve Organization Admins as well as their associated sites.
 
@@ -86,7 +86,7 @@ Using these startup kits, they can then launch their sites.
 
 .. image:: /_static/images/endpoints/nvflare_dashboard_console.png
 
-After downloading and unzipping the startup package, the Admin can run the following command to start the sites from anywhere in the world and connect to the server hosted in the AI4OS Platform.
+After downloading and unzipping the startup package, the Admin can run the following command to start the sites from anywhere in the world and connect to the server hosted in the platform.
 
 .. code-block:: console
 
@@ -104,7 +104,7 @@ From the admin console, the admin can orchestrate the FL study—this includes s
 
 .. note::
 
-  To maintain a consistent environment, it is advised that the project Admin create a Docker image containing all the necessary dependencies and configurations, and provide it during the deployment of the server on the AI4OS Dashboard. This approach ensures reproducibility and simplifies deployment across different sites.
+  To maintain a consistent environment, it is advised that the project Admin create a Docker image containing all the necessary dependencies and configurations, and provide it during the deployment of the server on the Dashboard. This approach ensures reproducibility and simplifies deployment across different sites.
 
   By default we provide such an image during the configuration step:
 

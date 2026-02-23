@@ -1,7 +1,7 @@
 Storage
 =======
 
-This section describes how to manage your storage in AI4OS.
+This section describes how to manage your storage in the platform.
 If you have any issues with your storage, make sure to check the :ref:`FAQ (storage) questions <faq_storage>`.
 
 
@@ -9,10 +9,11 @@ Our storage provider
 --------------------
 
 For hosting the data necessary for your trainings, we provide access form inside your
-deployments to the following hosting platforms:
+deployments to the following hosting instances:
 
-* `AI4OS Nextcloud <https://share.cloud.ai4eosc.eu/>`__: this is a Nextcloud instance
-  deployed for the project users. Each user gets a free 500 GB of storage there.
+* `AI4EOSC Nextcloud <https://share.cloud.ai4eosc.eu/>`__: this is a Nextcloud instance
+  deployed for the AI4EOSC users. It also supports users of partner projects.
+  Each user gets a free 500 GB of storage there.
 
   .. admonition:: Account validation
      :class: important

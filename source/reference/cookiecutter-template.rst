@@ -1,16 +1,15 @@
-AI4OS Modules Template
-======================
-
+AI Modules Template
+===================
 
 To simplify the development of new modules, and make the integration of your model with the
-:doc:`DEEPaaS API <api>` easier, we provide a `standard template <https://github.com/deephdc/cookiecutter-deep>`__
+:doc:`DEEPaaS API </advanced/api>` easier, we provide a `standard template <https://github.com/deephdc/cookiecutter-deep>`__
 for modules.
 
 There are different versions of this template:
 
 * `minimal <https://github.com/ai4os/ai4-template>`__:
   this is what 99% of users are probably looking for. Simple, minimal template,
-  with the minimum requirements to integrate your code in the AI4OS catalog.
+  with the minimum requirements to integrate your code in the AI Module catalog.
 * `child-module <https://github.com/ai4os/ai4-template-child>`__:
   this is a fork of the ``minimal`` branch specifically tailored to users performing a
   retraining of an existing module. It only creates a Docker repo whose container is
@@ -109,13 +108,13 @@ For demonstration purposes, here follows what a typical project created with the
   ├── data/                  <- Folder to store the data
   │
   ├── models/                <- Folder to store models
-  │   
+  │
   ├── tests/                 <- Scripts to perform code testing
   |
   ├── metadata.json          <- Metadata information propagated to the AI4OS Hub
   │
   ├── pyproject.toml         <- a configuration file used by packaging tools, so <project-name>
-  │                             can be imported and installed using `pip install -e .`                             
+  │                             can be imported and installed using `pip install -e .`
   │
   ├── requirements.txt       <- The requirements file for reproducing the analysis environment, i.e.
   │                             contains a list of packages needed to make <project-name> work

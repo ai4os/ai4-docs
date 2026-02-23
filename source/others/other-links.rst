@@ -1,7 +1,7 @@
 External links and resources
 ============================
 
-This is a compendium of all the production services that are currently deployed to serve AI4OS users.
+This is a compendium of all the platform production services.
 
 :fa:`home` `Homepage <https://ai4eosc.eu/>`__
   A high level overview of the project.
@@ -31,7 +31,7 @@ This is a compendium of all the production services that are currently deployed 
   Continuous Integration and Continuous Development Jenkins instance to keep everything up-to-date with latest code changes.
 
 :fa:`temperature-half` `Status of services <https://status.ai4eosc.eu/>`__
-  Check if a specific AI4OS service might be down for some reason.
+  Check if a specific platform service might be down for some reason.
 
 :fa:`folder-plus` `Module template <https://templates.cloud.ai4eosc.eu/>`__
   Create new modules based on our project's template.

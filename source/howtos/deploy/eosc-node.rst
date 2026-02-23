@@ -7,7 +7,7 @@ Deploy a model on the EOSC EU Node
    * This tutorial requires access to the EOSC EU Node and the usage of available credits in your account.
 
 
-This tutorial summarizes how to deploy a pre-trained AI model from the AI4EOSC Marketplace in the `EOSC EU Node <https://open-science-cloud.ec.europa.eu/>`__, to be used for inference via the :doc:`DEEPaaS API </reference/api>`.
+This tutorial summarizes how to deploy a pre-trained AI model from the AI4EOSC Marketplace in the `EOSC EU Node <https://open-science-cloud.ec.europa.eu/>`__, to be used for inference via the :doc:`DEEPaaS API </advanced/api>`.
 
 For this, we will use the **Tools Hub** functionality of the EOSC EU Node, which allows us to deploy customized virtual infrastructures via TOSCA Templates on the available Cloud resources.
 The Tools Hub currently supports two deployment options:
@@ -99,7 +99,7 @@ Once ready, the new deployment will available in the ``Deployments`` tab of the 
 
 .. image:: /_static/images/eosc-node/new-container-toolshub.png
 
-Clicking the :material-outlined:`map;1.5em` ``Show details`` button, you will find the deployment endpoint (similar to ``https://yolo-ai4eosc-9ina.eu-1.open-science-cloud-user-apps.eu/ui``). In the endpoint, you will find the :doc:`DEEPaaS API </reference/api>` UI, which you can use to run inference calls on the model.
+Clicking the :material-outlined:`map;1.5em` ``Show details`` button, you will find the deployment endpoint (similar to ``https://yolo-ai4eosc-9ina.eu-1.open-science-cloud-user-apps.eu/ui``). In the endpoint, you will find the :doc:`DEEPaaS API </advanced/api>` UI, which you can use to run inference calls on the model.
 
 .. image:: /_static/images/endpoints/deepaas.png
    :width: 400px
@@ -175,7 +175,7 @@ Clicking the :material-outlined:`map;1.5em` ``Show details`` button, you will fi
 
   Please note that, in the case of Virtual Machines, it will take up to 10 minutes to deploy and configure the VM for the endpoint to be ready. You can periodically try to connect until you'll eventually have access to the Swagger DEEPaaS UI.
 
-In the endpoint, you will find the :doc:`DEEPaaS API </reference/api>` UI, which you can use to run inference calls on the model.
+In the endpoint, you will find the :doc:`DEEPaaS API </advanced/api>` UI, which you can use to run inference calls on the model.
 
 .. image:: /_static/images/endpoints/deepaas.png
    :width: 400px

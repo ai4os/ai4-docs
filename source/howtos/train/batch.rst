@@ -17,7 +17,7 @@ Batch mode can be used very similarly to :doc:`standard mode </howtos/train/stan
 
 1. You start by preparing your data,
 2. You create a batch job with the commands you want to run,
-3. Your model weights are saved in the AI4OS storage when the job is completed,
+3. Your model weights are saved in the Storage when the job is completed,
 4. You finally follow the same steps to add your model to the Marketplace,
 
 What can I deploy in batch mode?

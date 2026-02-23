@@ -1,7 +1,7 @@
-AI4OS LLM
-=========
+AI4EOSC LLM
+===========
 
-As part of the tool repertoire that the AI4OS stack is offering to increase our user's productivity, we are current offering an LLM Chatbot service that allows users to summarize information, get code recommendations, ask questions about the documentation, etc.
+As part of the tool repertoire that the platform is offering to increase our user's productivity, we are current offering an LLM Chatbot service that allows users to summarize information, get code recommendations, ask questions about the documentation, etc.
 
 We care about user privacy, so it's important to notice that your chat history will be erased whenever you delete it, and no data will be retained by the platform (`privacy policy <https://ai4eosc.eu/platform/privacy-policy/>`__).
 
@@ -10,8 +10,8 @@ We care about user privacy, so it's important to notice that your chat history w
 
    🔓 You need a :doc:`platform account </getting-started/register>` with :ref:`basic access level <reference/user-access-levels:Basic access level>`.
 
-AI4OS LLM vs self-deployed LLM
-------------------------------
+Platform LLM vs self-deployed LLM
+---------------------------------
 
 We also offer a :doc:`self-deployed LLM option </howtos/deploy/llm>`, so which one should you choose?
 
@@ -24,15 +24,15 @@ We also offer a :doc:`self-deployed LLM option </howtos/deploy/llm>`, so which o
 * you are the admin, so you can create your own `Knowledge Bases <https://docs.openwebui.com/features/workspace/knowledge/>`__ as persistent memory banks,
 * you are the admin, so you can use `Functions <https://docs.openwebui.com/features/plugin/functions/>`__ to create your own agents that use custom prompts, custom Knowledge Bases, and custom input/output filtering,
 
-**AI4OS LLM (platform wide)**
+**Platform LLM**
 
 * available to all users (:ref:`basic access level <reference/user-access-levels:Basic access level>` and above)
 * uses more powerful GPUs, so it offers bigger and more accurate LLMs,
-* zero configuration needed, access directly with your :doc:`AI4OS credentials </getting-started/register>`,
+* zero configuration needed, access directly with your :doc:`credentials </getting-started/register>`,
 * the backend (VLLM) is load balanced so it can offer lower latency,
-* comes with some pre-configured helpful agents, like the :ref:`AI4EOSC Assistant <reference/llm:Ask questions about the documentation>` that helps you navigate the project's documentation,
+* comes with some pre-configured helpful agents, like the :ref:`Assistant <reference/llm:Ask questions about the documentation>` that helps you navigate the project's documentation,
 
-By default, we recommend using the AI4OS LLM, which will offer a better experience for most users. Users with more custom needs should try nevertheless the self-deployment options.
+By default, we recommend using the platform LLM, which will offer a better experience for most users. Users with more custom needs should try nevertheless the self-deployment options.
 
 Anyway, remember that both options are compatible: you can deploy your own LLM and still access the platform-wide one.
 The best of both worlds! 🚀
@@ -58,11 +58,11 @@ The current available models are:
 * **Qwen 3**: a smaller model from the `Qwen family <https://huggingface.co/collections/Qwen/qwen3-67dd247413f0e2e4f653967f>`__ (14B parameters).
 * **Assistant**: our custom model designed to :ref:`help you navigate our documentation <reference/llm:Ask questions about the documentation>`,
 
-Now, let's explore some common usages of the tool. Keep in mind that the AI4OS LLM is built with `OpenWebUI <https://openwebui.com/>`__ so you always find further information in `their documentation <https://docs.openwebui.com/>`__.
+Now, let's explore some common usages of the tool. Keep in mind that the platform LLM is built with `OpenWebUI <https://openwebui.com/>`__ so you always find further information in `their documentation <https://docs.openwebui.com/>`__.
 
 
-Using the AI4OS LLM
--------------------
+Using the LLM
+-------------
 
 Chat with the LLM
 ^^^^^^^^^^^^^^^^^
@@ -196,17 +196,17 @@ There you will be able to create a new API key selecting the name and the expira
 Use it as a code assistant with VScode
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-It's very easy to use the AI4OS LLM as a code assistant, both locally and in :doc:`the AI4OS Development Environment </howtos/develop/dashboard>`.
+It's very easy to use the LLM as a code assistant, both locally and in :doc:`the Development Environment </howtos/develop/dashboard>`.
 To configure it:
 
 1. In VScode, install the `Continue.dev <https://www.continue.dev/>`__ extension.
 2. Open the Continue config file: ``/home/<user>/.continue/config.yaml``
-3. Modify it to add the AI4OS LLM model, :ref:`using your API key <reference/llm:Retrieve the API endpoint/key>`:
+3. Modify it to add the LLM model, :ref:`using your API key <reference/llm:Retrieve the API endpoint/key>`:
 
   .. code-block:: yaml
 
       models:
-        - name: AI4OS LLM
+        - name: AI4EOSC LLM
           provider: openai
           model: AI4EOSC/Small
           apiKey: "sk-************************************"

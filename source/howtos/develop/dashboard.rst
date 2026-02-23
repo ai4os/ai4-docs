@@ -5,18 +5,18 @@ Develop a model from scratch
     :class: info
 
     * For **Step 1**, to use the Module's template webpage, you need at least :doc:`basic authentication </reference/user-access-levels>`.
-    * For **Step 2**, if you plan to use the AI4OS Development environment, you need :doc:`full authentication </reference/user-access-levels>` to be able to access the Dashboard.
+    * For **Step 2**, if you plan to use the Development Environment, you need :doc:`full authentication </reference/user-access-levels>` to be able to access the Dashboard.
       Otherwise you can develop locally.
     * For **Step 4** we recommend having `docker <https://docs.docker.com/install/#supported-platforms>`__ installed (though it's not strictly mandatory).
 
-This tutorial explains how to develop a AI4OS module from scratch.
+This tutorial explains how to develop an AI module from scratch.
 
 If you are new to Machine Learning, you might want to check some :doc:`useful Machine Learning resources </others/useful-ml-resources>` we compiled to help you getting started.
 
 1. Setting the framework
 ------------------------
 
-This first step relies on the :doc:`the AI4OS Modules Template </reference/cookiecutter-template>` for creating a template for your new module:
+This first step relies on the :doc:`the AI Modules Template </reference/cookiecutter-template>` for creating a template for your new module:
 
 * Access and authenticate in the `Template creation webpage <https://templates.cloud.ai4eosc.eu/>`__.
 * Then select the ``minimal`` branch of the template and answer the questions.
@@ -25,26 +25,26 @@ This first step relies on the :doc:`the AI4OS Modules Template </reference/cooki
 2. Prepare your development environment
 ---------------------------------------
 
-Although it is possible to develop your code locally, we also offer the possibility to develop from our `AI4OS Development Environment <https://dashboard.cloud.ai4eosc.eu/marketplace/modules/ai4os-dev-env>`__.
+Although it is possible to develop your code locally, we also offer the possibility to develop from our `Development Environment <https://dashboard.cloud.ai4eosc.eu/marketplace/modules/ai4os-dev-env>`__.
 
 This offers the benefits of:
 
 * developing on dedicated resources (including GPUs),
-* have direct access to your data hosted in the :doc:`AI4OS Storage </reference/storage>`,
+* have direct access to your data hosted in the :doc:`Storage </reference/storage>`,
 * develop on a Docker image that is already packaged with your favorite Deep Learning framework (eg. Pytorch, Tensorflow),
 * develop on your favorite IDE (Jupyterlab or VScode),
 
-Check :ref:`how to create and configure <dashboard_deployment>` the AI4OS Development Environment.
+Check :ref:`how to create and configure <dashboard_deployment>` the Development Environment.
 
 .. admonition:: ⚠️ Use storage-synced folder to develop
    :class: info
 
    We *strongly* recommend to create a :ref:`deployment attached to storage <dashboard_storage>`.
 
-   By doing so, you can develop your code inside the ``/storage`` folder and any changes you make will *instantly* be synced with the :doc:`AI4OS Storage </reference/storage>`.
+   By doing so, you can develop your code inside the ``/storage`` folder and any changes you make will *instantly* be synced with the :doc:`Storage </reference/storage>`.
    This will prevent any work loss in case of an unexpected deployment crash (which do happen from time to time).
 
-This is what an AI4OS Development Environment with VScode would look out-of-the-box:
+This is what an Development Environment with VScode would look out-of-the-box:
 
 .. image:: /_static/images/endpoints/vscode.png
 
@@ -74,10 +74,10 @@ Drag and drop in the VScode editor the zip file created in Step 1. Then unpack i
    This will allow you to ignore other non-related folders under ``/srv`` when doing global searches or tracking changes, for example.
    For this, go to ``File > Open Folder > /srv/<project-name>``.
 
-   As explained earlier, having your project under ``/storage`` will allow it to be automatically synced with the :doc:`AI4OS Storage </reference/storage>`.
+   As explained earlier, having your project under ``/storage`` will allow it to be automatically synced with the :doc:`Storage </reference/storage>`.
 
    **Tip nº2**:
-   :ref:`Use the AI4OS LLM as coding assistant <reference/llm:Use it as a code assistant with VScode>` to help you develop faster.
+   :ref:`Use the platform LLM as coding assistant <reference/llm:Use it as a code assistant with VScode>` to help you develop faster.
    It is integrated directly in VScode trough the use of the `Continue.dev <https://www.continue.dev/>`__ extension.
 
    We recommend implementing first tip nº1, in order to avoid the Continue assistant from freezing when trying to index the whole workspace contents.
@@ -103,7 +103,7 @@ Now you can start adding your AI model code inside ``<project-name>/<project-nam
 Integrating with the DEEPaaS API
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Once your code is included, you need your module to be able to interface with the :doc:`DEEPaaS API </reference/api>`, which allows any module in the Marketplace to be accessed using the same API.
+Once your code is included, you need your module to be able to interface with the :doc:`DEEPaaS API </advanced/api>`, which allows any module in the Marketplace to be accessed using the same API.
 For this, :ref:`you have to define <deepaas-integrate>` in ``api.py`` the functions you want to make accessible to the user.
 For this tutorial we are going to head to our `official demo module <https://github.com/ai4os-hub/ai4os-demo-app/blob/main/ai4os_demo_app/api.py>`__
 and copy-paste its ``api.py`` file.
@@ -184,7 +184,7 @@ If you need to add instructions based on the runtime (eg. perform certain action
 
 We recommend checking the installation steps are fine.
 If your module needs additional Linux packages add them to the Dockerfile.
-Check your Dockerfile works correctly by building it **locally** (outside the AI4OS Development Environment) and running it:
+Check your Dockerfile works correctly by building it **locally** (outside the Development Environment) and running it:
 
 .. code-block:: console
 

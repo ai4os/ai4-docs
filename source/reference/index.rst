@@ -49,13 +49,13 @@ Advanced topics
     :gutter: 3
 
     .. grid-item-card:: :material-outlined:`download;1.5em`  RClone
-        :link: /reference/rclone-code-examples
+        :link: /advanced/rclone-examples
         :link-type: doc
 
         Learn how to use RClone to manage your data.
 
     .. grid-item-card:: :material-outlined:`api;1.5em`  DEEPaaS API
-        :link: /reference/api
+        :link: /advanced/api
         :link-type: doc
 
         Learn how to use DEEPaaS to deploy your models as a service.

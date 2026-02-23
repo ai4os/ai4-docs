@@ -33,11 +33,6 @@ federated learning training.
 
         Learn how to label your images with CVAT.
 
-    .. grid-item-card:: :material-outlined:`sync;1.5em`  Use rclone to sync your dataset (advanced)
-        :link: rclone
-        :link-type: doc
-
-        Learn how to use rclone to sync your dataset.
 
 .. toctree::
    :caption: Train a model
@@ -48,6 +43,5 @@ federated learning training.
    Overview <overview>
    Train a model (standard mode) <standard>
    Train a model (batch mode) <batch>
-   Run a federated learning training <federated>
-   Label your images with CVAT <cvat>
-   Use rclone to sync your dataset (advanced) <rclone>
+   Train with Federated Learning <federated>
+   Annotate your image dataset <cvat>

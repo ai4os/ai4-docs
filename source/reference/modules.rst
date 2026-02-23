@@ -1,10 +1,10 @@
-Modules
-=======
+AI Modules
+==========
 
 Every component in the platform is open-source, including the modules!
 This means that everything you develop in the platform can be :doc:`deployed anywhere else </howtos/deploy/cloud>`.
 
-All  modules are found at the :doc:`AI4OS Dashboard <dashboard>`, the source code is
+All  modules are found at the :doc:`Dashboard <dashboard>`, the source code is
 hosted under `Github's ai4os-hub <https://github.com/ai4os-hub>`__ organization and the corresponding Docker images are
 hosted under `DockerHub's ai4oshub <https://hub.docker.com/u/ai4oshub/>`__ organization.
 
@@ -37,7 +37,7 @@ Editing a module's metadata
 CI /CD pipeline
 ---------------
 
-In the project we use `Jenkins <https://jenkins.cloud.ai4eosc.eu/job/AI4OS-hub>`__
+In the platform, we use `Jenkins <https://jenkins.cloud.ai4eosc.eu/job/AI4OS-hub>`__
 for implementing CI/CD (Continuous Integration / Continuous Development) pipeline. This pipeline automatically performs a
 series of actions for you each time you commit a change in your code. This ensures that all the information and builds
 across the project are always up-to-date with your code.
@@ -53,8 +53,8 @@ A typical pipeline is divided in two parts:
 
 * a platform components update, where we:
 
-  * build the Docker image to the AI4OS Registry and mirror to DockerHub,
-  * update the :ref:`Marketplace <dashboard_marketplace>` and additional AI4OS services,
+  * build the Docker image to the platform Registry and mirror to DockerHub,
+  * update the :ref:`Marketplace <dashboard_marketplace>` and additional platform services,
   * archive the code to `Zenodo <https://zenodo.org/communities/ai4eosc>`__ if a code release is made,
   * regenerate the :ref:`provenance <reference/modules:Provenance>` chain of that module,
 

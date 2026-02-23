@@ -1,12 +1,12 @@
-Deploy a model on AI4OS dedicated resources using the Dashboard
-===============================================================
+Deploy a model on dedicated resources using the Dashboard
+=========================================================
 
 .. admonition:: Requirements
    :class: info
 
    🔒 You need a :doc:`platform account </getting-started/register>` with :ref:`full access level <reference/user-access-levels:Full access level>`.
 
-The Dashboard offers the possibility to deploy a model on dedicated AI4OS resources.
+The Dashboard offers the possibility to deploy an AI module persistently on the platform resources.
 
 .. list-table::
     :header-rows: 1
@@ -14,7 +14,7 @@ The Dashboard offers the possibility to deploy a model on dedicated AI4OS resour
     * - ✅ Pros
       - ❌ Cons
     * - - Low latency in predictions,
-        - Zero configuration needed as the model is deployed in the AI4OS stack.
+        - Zero configuration needed as the model is deployed internally.
       - - You are consuming resources even when not actively making predictions.
 
 1. Choose your module and deploy

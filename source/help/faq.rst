@@ -44,7 +44,7 @@ We are debugging why the Nextcloud expiration happens in the first place.
 Nodes sometimes crash unexpectedly. It's not common but it can happen.
 Since your deployment is running as a Docker container, after a node restart, your deployment contents are gone and not recoverable.
 
-To protect yourself against unexpected data losses we recommend locating any important files (like the code you are developing) inside the ``/storage`` to have instant file syncing with the :doc:`AI4OS Storage </reference/storage>`.
+To protect yourself against unexpected data losses we recommend locating any important files (like the code you are developing) inside the ``/storage`` to have instant file syncing with the :doc:`Storage </reference/storage>`.
 
 Learn how to create a :ref:`Development Environment linked with storage <howtos/develop/dashboard:2. Prepare your development environment>`.
 
@@ -256,7 +256,7 @@ If the issue persists, please :doc:`contact support </help/index>`.
 ℹ️ How can I cite the AI4EOSC project?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-If you need to cite he AI4EOSC project or the AI4OS stack, please consider citing
+If you need to cite the AI4EOSC project or the AI4OS stack, please consider citing
 the following paper:
 
     Heredia, I., García, Á. L., Moltó, G., Calatrava, A., Kozlov, V., Costantini, A., … Díez, J. (2025). `AI4EOSC: a Federated Cloud Platform for Artificial Intelligence in Scientific Research <http://arxiv.org/abs/2512.16455>`__. *arXiv* [Cs.DC].
@@ -294,7 +294,7 @@ There are two options. To be extra-safe, you can run both of them:
 
 2. Save your data somewhere.
 
-  * If your deployment is :ref:`connected with the AI4OS Storage <dashboard_storage>`, you can move your work under ``/storage``. It will automatically write the data into Nextcloud.
+  * If your deployment is :ref:`connected with the Storage <dashboard_storage>`, you can move your work under ``/storage``. It will automatically write the data into Nextcloud.
 
     Anyway, it's always good practice to develop under the ``/storage`` path because, in that way, your work is automatically synced with Nextcloud, thus preventing data loss in case of an unforeseen data failure.
   * If you are using git, you can commit your work to Github.
@@ -327,7 +327,7 @@ Please open an issue in the Github repo of the component you are interested in:
 If you think the documentation itself can be improved, don't hesitate to open
 an issue or submit a Pull Request.
 
-* `AI4OS documentation <https://github.com/ai4os/ai4-docs>`__
+* `AI4OS/AI4EOSC documentation <https://github.com/ai4os/ai4-docs>`__
 
 You can always check that your suggested feature is not on the
 :doc:`Upcoming features </getting-started/new-features>` list.

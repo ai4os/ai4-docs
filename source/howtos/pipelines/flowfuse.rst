@@ -35,7 +35,7 @@ First of all, let's understand the key technologies involved in this tutorial:
   scalable event-driven computations. From **OSCAR v3.6.5**, it provides support for deploying
   a Node-RED instance. More info regarding this new OSCAR feature can be found `here <https://docs.oscar.grycap.net/latest/integration-node-red/>`__ .
 
-In AI4OS, we use Node-Red to visually compose AI model inference pipelines.
+In the platform, we use Node-Red to visually compose AI model inference pipelines.
 Specific custom nodes have been created to perform AI model inference on remote
 OSCAR clusters.
 

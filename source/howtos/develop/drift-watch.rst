@@ -6,7 +6,7 @@ Data drift detection with Frouros
 
    🔒 You need a :doc:`platform account </getting-started/register>` with :ref:`full access level <reference/user-access-levels:Full access level>`.
 
-The AI4OS Platform allows to detect **data drift** in your data at inference time.
+The platform allows to detect **data drift** in your data at inference time.
 This is a useful warning that the inference results might not be reliable anymore and
 that some action should be taken (eg. cleaning the sensor, retraining the model, etc).
 
@@ -178,7 +178,7 @@ states of the camera.
 
 At inference time, you will need to to create the embeddings of the incoming images to pass them to the drift detector model.
 So you need to save the autoencoder weights in the
-:doc:`AI4OS Storage </reference/storage>` to be able to load them at inference time.
+:doc:`Storage </reference/storage>` to be able to load them at inference time.
 
 Additionally, you can also save the embeddings of clean camera images to warm the the drift detector at inference time, so it starts to detect drift from the first inference call.
 
@@ -263,7 +263,7 @@ and triggers appropriate alerts.
 Integrate the drift detector with the DEEPaaS API
 -------------------------------------------------
 
-Now that you have your detector ready you need to integrate it with the :doc:`DEEPaaS API </reference/api>` so that it will be used at inference time.
+Now that you have your detector ready you need to integrate it with the :doc:`DEEPaaS API </advanced/api>` so that it will be used at inference time.
 
 If you followed the steps in :ref:`Develop a model (tutorial) <develop_code>`, you should have a model the basic DEEPaaS functions, including: ``warm()``, ``get_predict_args()`` and ``predict()``.
 
@@ -273,7 +273,7 @@ Once this is done, you need to perform the following updates:
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 In the ``warm()`` function, you need to initialize the drift detector with the clean embeddings,
-saved in the :doc:`AI4OS Storage </reference/storage>`.
+saved in the :doc:`Storage </reference/storage>`.
 Note that the state of the detector is restarted every time the module is restarted.
 
 .. code-block:: python

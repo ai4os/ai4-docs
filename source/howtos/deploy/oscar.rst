@@ -1,12 +1,12 @@
-Deploy a model on the AI4OS Inference platform using the Dashboard
-==================================================================
+Deploy a model on the Inference platform using the Dashboard
+============================================================
 
 .. admonition:: Requirements
    :class: info
 
    🔒 You need a :doc:`platform account </getting-started/register>` with :ref:`full access level <reference/user-access-levels:Full access level>`.
 
-The Dashboard offers the possibility to deploy a model as serverless using the AI4OS Inference Platform (based on OSCAR).
+The Dashboard offers the possibility to deploy an AI module as serverless on the platform resources.
 
 .. list-table::
     :header-rows: 1
@@ -15,7 +15,7 @@ The Dashboard offers the possibility to deploy a model as serverless using the A
       - ❌ Cons
     * - - You are not consuming resources when you are not using the model,
         - Deployments can auto-scale to fit peaks in user queries,
-        - Zero configuration needed as the model is deployed in the AI4OS stack.
+        - Zero configuration needed as the model is deployed internally.
       - - Predictions can have some latency, due to the AI model being loaded at each prediction.
 
 1. Choose your module and deploy
@@ -319,7 +319,7 @@ To access the OSCAR service through the UI, follow these steps:
 1. In the ``Inference`` tab, go to the ``Serverless (OSCAR)`` table and find your newly created service.
 2. Click on :material-outlined:`info;1.5em` ``Info`` button on the right to show the service details and check the ``Deployment ID``.
 3. Go to the **OSCAR UI**  in your browser, log in with your credentials and search for the service with the same name as the ``Deployment ID``.
-4. Click on the  :material-outlined:`more_vert;1.5em` ``More Actions`` button of your service and select  :material-outlined:`play_arrow;1.5em` ``Invoke`` to open a new screen where you can provide the input to the service invocation. At this point, as you have seen in the asynchronous and synchronous calls, you have to take into account that most of the AI4OS models whose input is an image need to convert the input into a compatible JSON format. This implies converting the image to base64 and expressing the input in a JSON file. To help with this input preparation, we provide you a short Python script to convert your file into a compatible JSON format:
+4. Click on the  :material-outlined:`more_vert;1.5em` ``More Actions`` button of your service and select  :material-outlined:`play_arrow;1.5em` ``Invoke`` to open a new screen where you can provide the input to the service invocation. At this point, as you have seen in the asynchronous and synchronous calls, you have to take into account that most of the AI Module whose input is an image need to convert the input into a compatible JSON format. This implies converting the image to base64 and expressing the input in a JSON file. To help with this input preparation, we provide you a short Python script to convert your file into a compatible JSON format:
 
    .. dropdown:: ㅤ 📄 Data preparation Python script
 
@@ -407,7 +407,7 @@ Learn how to feed different input types
 
 We are going to demonstrate how to send a more complete set of input parameters to OSCAR.
 
-For educational purposes, we are going to use the `official AI4OS demo module <https://dashboard.cloud.ai4eosc.eu/marketplace/modules/deep-oc-demo_app>`__.
+For educational purposes, we are going to use the `official demo module <https://dashboard.cloud.ai4eosc.eu/marketplace/modules/deep-oc-demo_app>`__.
 While this model does not perform an AI task, it is very helpful as it shows the wide variety of inputs that can be sent to OSCAR inference endpoints.
 
 So go back to the previous steps and deploy the

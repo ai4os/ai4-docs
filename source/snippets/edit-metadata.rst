@@ -91,7 +91,7 @@ The fields you need to edit to comply with our `schemata <https://github.com/ai4
   - ``nomad_job``: the Dashboard deployment UUID you used to train the final model,
   - ``mlflow_run``: the MLflow run UUID you used to train the final model,
 
-Some fields are pre-filled via the AI4OS Modules Template and usually do not need to be modified.
+Some fields are pre-filled via the AI Modules Template and usually do not need to be modified.
 Check you didn't mess up the YAML definition by running our `metadata validator <https://github.com/ai4os/ai4-metadata>`__:
 
 .. code-block:: console

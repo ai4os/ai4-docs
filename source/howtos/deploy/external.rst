@@ -6,7 +6,7 @@ Deploy an external model
 
    🔒 You need a :doc:`platform account </getting-started/register>` with :ref:`full access level <reference/user-access-levels:Full access level>`.
 
-You can deploy models from external marketplaces in :doc:`AI4OS dedicated resources </howtos/deploy/nomad>` to perform inference.
+You can deploy models from external marketplaces in the :doc:`platform's dedicated resources </howtos/deploy/nomad>` to perform inference.
 Currently we support the following marketplaces:
 
 AI4Life

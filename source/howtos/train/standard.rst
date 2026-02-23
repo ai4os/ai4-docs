@@ -14,7 +14,7 @@ In standard mode, you will get a persistent deployment that you will be able to 
 1. Upload your dataset to Nextcloud
 -----------------------------------
 
-For this example we are going to use the `AI4OS Nextcloud <https://share.cloud.ai4eosc.eu/>`__ for storing
+For this example we are going to use the `AI4EOSC Nextcloud <https://share.cloud.ai4eosc.eu/>`__ for storing
 the dataset you want to retrain the model with. So login to Nextcloud with your credentials and you should access to an overview of your files.
 
 .. image:: /_static/images/nextcloud/folders.png
@@ -62,9 +62,9 @@ In this tutorial we will see how to retrain a `generic image classifier <https:/
 on a custom dataset to create a `phytoplankton classifier <https://dashboard.cloud.ai4eosc.eu/marketplace/modules/phyto-plankton-classification>`__.
 If you want to follow along, you can download the toy phytoplankton dataset :fa:`download` `here <https://api.cloud.ifca.es:8080/swift/v1/public-datasets/phytoplankton-mini.zip>`__.
 
-The first step is to choose a model from the :doc:`AI4OS Dashboard</reference/dashboard>`. Make sure to select a module with the ``AI4 trainable`` tag.
+The first step is to choose a model from the :doc:`Dashboard</reference/dashboard>`. Make sure to select a module with the ``AI4 trainable`` tag.
 For educational purposes we are going to retrain a `generic image classifier <https://dashboard.cloud.ai4eosc.eu/marketplace/modules/ai4os-image-classification-tf>`__.
-Some of the model dependent details can change if using another model, but this tutorial will provide a general overview of the workflow to follow when using any of the modules in the AI4OS Dashboard.
+Some of the model dependent details can change if using another model, but this tutorial will provide a general overview of the workflow to follow when using any of the modules in the Dashboard.
 
 Check :ref:`how to configure <dashboard_deployment>` the  image classifier.
 During the configuration, you should make sure:
@@ -193,7 +193,7 @@ as your code is the same as the original application, only your model weights
 are different.
 
 To account for this simpler process, we have prepared a version of the
-:doc:`the AI4OS Modules Template </reference/cookiecutter-template>`
+:doc:`the AI Modules Template </reference/cookiecutter-template>`
 specially tailored to this task:
 
 * Go to the `Template creation webpage <https://templates.cloud.ai4eosc.eu/>`__.

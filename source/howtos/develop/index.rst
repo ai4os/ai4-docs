@@ -54,7 +54,7 @@ techniques in their modules:
    :hidden:
 
    Develop a model <dashboard>
-   Use Incremental learning <incremental-learning>
-   Use Distributed learning <distributed-learning>
-   Use MLFlow for tracking your trainings <mlflow>
-   Use Driftwatch to monitor at inference <drift-watch>
+   Support tracking your trainings <mlflow>
+   Support monitoring inference drift <drift-watch>
+   Support incremental learning <incremental-learning>
+   Support distributed learning <distributed-learning>

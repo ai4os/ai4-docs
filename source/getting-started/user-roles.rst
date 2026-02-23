@@ -2,7 +2,7 @@ Our different user roles
 ========================
 
 
-The AI4OS stack is focused on three different types of users.
+The platform is focused on three different types of users.
 Depending on what you want to achieve you should belong into one or more of the following categories:
 
 
@@ -17,11 +17,11 @@ Therefore, they don't need to have any particular machine learning knowledge. Fo
 for `plant classification <https://dashboard.cloud.ai4eosc.eu/marketplace/modules/plants-classification>`__
 that has been containerized, and use it to classify their own plant images.
 
-**What AI4OS can offer to you:**
+**What the platform can offer to you:**
 
 * a :doc:`Dashboard </reference/dashboard>` full of ready-to-use modules to perform inference with your data,
 * a :doc:`GUI </howtos/deploy/nomad>` to easily interact with the services,
-* an :doc:`API </reference/api>` to integrate the AI modules with your own  services,
+* an :doc:`API </advanced/api>` to integrate the AI modules with your own  services,
 * solutions to run the inference in :doc:`the Cloud </howtos/deploy/cloud>` or in your :doc:`local resources </howtos/try/locally>`,
 * the ability to :doc:`create pipelines </howtos/pipelines/index>` by composing different modules.
 
@@ -45,14 +45,14 @@ at hand by re-training the network on their own dataset.
 An example could be a user who takes the generic `image classifier <https://dashboard.cloud.ai4eosc.eu/marketplace/modules/ai4os-image-classification-tf>`__
 model and retrains it to perform `plant classification <https://dashboard.cloud.ai4eosc.eu/marketplace/modules/plant-classification>`__.
 
-**What AI4OS can offer to you:**
+**What the platform can offer to you:**
 
 * the ability to train out-of-the-box a module of the :doc:`Dashboard </reference/dashboard>`,
 * the ability to easily connect your training to your dataset hosted on our :doc:`data storage resources </reference/storage>`,
 * a private instance of :doc:`Computer Vision Annotation Tool (CVAT) </howtos/train/cvat>` to annotate your dataset,
 * a private server to create :doc:`Federated Learning trainings with Flower </howtos/train/federated-flower>`,
 * the ability to :doc:`use GPUs </howtos/train/standard>` to accelerate your training,
-* an :doc:`API </reference/api>` to easily interact with the model,
+* an :doc:`API </advanced/api>` to easily interact with the model,
 * solutions to deploy your developed model in :doc:`the Cloud </howtos/deploy/cloud>` or in your :doc:`local resources </howtos/try/locally>`,
 * the ability to share your module with other users in the :ref:`Dashboard Marketplace <dashboard_marketplace>`.
 
@@ -72,7 +72,7 @@ but the users wanted to perform object localization, which is a fundamentally di
 Therefore they will design their own neural network architecture, potentially re-using parts of the code from other
 models.
 
-**What AI4OS can offer to you:**
+**What the platform can offer to you:**
 
 * a :doc:`ready-to-use IDE </howtos/develop/dashboard>` (VScode, Jupyterlab) with the main DL frameworks (Pytorch, Tensorflow) running on different types of hardware (CPUs, GPUs),
 * the ability to easily connect your environment to your dataset hosted on our :doc:`data storage resources </reference/storage>`,

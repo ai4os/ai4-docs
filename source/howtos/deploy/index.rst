@@ -8,20 +8,20 @@ provides several guides in how to deploy your model in different environments.
 .. grid:: 1
     :gutter: 3
 
-    .. grid-item-card:: :material-outlined:`list;1.5em`    Overview
+    .. grid-item-card:: :material-outlined:`list;1.5em`  Overview
         :link: overview
         :link-type: doc
 
         Start here to get an overview of the different deployment options.
 
-    .. grid-item-card:: :material-outlined:`dns;1.5em`  Deploy in the AI4OS platform (serverless)
+    .. grid-item-card:: :material-outlined:`dns;1.5em`  Deploy as serverless
         :link: oscar
         :link-type: doc
 
         Deploy your model in the platform using the serverless option, using a shared
         serverless environment.
 
-    .. grid-item-card:: :fas:`server;fa-lg sd-mr-2`  Deploy in the AI4OS platform (dedicated)
+    .. grid-item-card:: :fas:`server;fa-lg sd-mr-2`  Deploy persistently
         :link: nomad
         :link-type: doc
 
@@ -59,9 +59,9 @@ provides several guides in how to deploy your model in different environments.
    :hidden:
 
    Overview <overview>
-   Deploy in AI4OS (serverless) <oscar>
-   Deploy in AI4OS (dedicated) <nomad>
+   Deploy as serverless <oscar>
+   Deploy persistently <nomad>
    Deploy in your cloud <cloud>
    Deploy in the EOSC EU Node <eosc-node>
-   Deploy external models <external>
-   Deploy your own LLM <llm>
+   Deploy external AI modules <external>
+   Deploy your dedicated LLM <llm>

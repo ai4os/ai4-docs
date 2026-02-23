@@ -8,7 +8,7 @@ Labeling images with CVAT
 
    🔒 You need a :doc:`platform account </getting-started/register>` with :ref:`full access level <reference/user-access-levels:Full access level>`.
 
-In this tutorial, we will guide you on how to use the `Computer Vision Annotation Tool (CVAT) <https://www.cvat.ai/>`__ in the AI4OS platform to annotate images.
+In this tutorial, we will guide you on how to use the `Computer Vision Annotation Tool (CVAT) <https://www.cvat.ai/>`__ in the platform to annotate images.
 
 Deploying CVAT
 --------------
@@ -60,13 +60,13 @@ When creating a new task you have to provide some data to annotate.
 You have the following options:
 
 1. **My computer**: Upload data from your local computer
-2. **Connected file share**: Use datasets you already have in the :doc:`AI4OS Storage </reference/storage>`.
+2. **Connected file share**: Use datasets you already have in the :doc:`Storage </reference/storage>`.
 
    In this case, anything you save under ``ai4os-storage/tools/cvat/share`` will be available for annotation in CVAT.
 
 3. **Remote sources**: Use publicly available images, by providing URLs.
 
-   For example, you can make public any folder in the :doc:`AI4OS Storage </reference/storage>` by clicking :material-outlined:`more_horiz;1.5em` → :material-outlined:`info;1.5em` ``Open details`` → :material-outlined:`link;1.5em` ``Share link``
+   For example, you can make public any folder in the :doc:`Storage </reference/storage>` by clicking :material-outlined:`more_horiz;1.5em` → :material-outlined:`info;1.5em` ``Open details`` → :material-outlined:`link;1.5em` ``Share link``
 
 4. **Cloud storage**: In case you have your dataset hosted on ASW S3, Azure or Google Cloud.
 
@@ -81,8 +81,8 @@ CVAT automated backups
 
 Annotating a dataset is a very time consuming task, so having automated backups is a must.
 
-In AI4OS, we support multiple ways to backup your annotations.
-All those backup are saved in the :doc:`AI4OS storage </reference/storage>` under ``ai4os-storage/tools/cvat``.
+In the platform, we support multiple ways to backup your annotations.
+All those backup are saved in the :doc:`Storage </reference/storage>` under ``ai4os-storage/tools/cvat``.
 
 To avoid collapsing your storage quota, we adapt the backup schedule to the backup size (ie. lighter backups are made more frequently).
 The performed backups are:

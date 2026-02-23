@@ -1,12 +1,12 @@
-Training in AI4OS
-=================
+Training
+========
 
-This page serves a guide on the different options to train a model in the AI4OS platform.
+This page serves a guide on the different options to train a model in the platform.
 
 Training options
 ----------------
 
-There are currently three main options to train a model in the AI4OS platform:
+There are currently three main options to train a model in the platform:
 
 * :doc:`standard mode </howtos/train/standard>`:
   you are given access to a persistent deployment that you can interact with via an IDE (ie. VScode).
@@ -20,7 +20,7 @@ There are currently three main options to train a model in the AI4OS platform:
 
 All these options have the respective pros and cons.
 
-.. list-table:: Training options from the AI4OS Dashboard
+.. list-table:: Training options from the Dashboard
     :header-rows: 1
 
     * - Option
@@ -35,7 +35,7 @@ All these options have the respective pros and cons.
           :material-outlined:`stars;1.5em` *To promote the usage of batch mode between users, we have dedicated Tesla V100 GPU nodes exclusively devoted to batch mode.*
       - - Less convenient because you cannot debug from IDE.
     * - :doc:`Federated mode </howtos/train/federated>`
-      - - You can scale your training across many deployments, mixing both GPU and CPU deployments, both inside and outside the AI4OS platform.
+      - - You can scale your training across many deployments, mixing both GPU and CPU deployments, both inside and outside the platform.
         - Your training data remain local, so it's a perfect match for privacy respecting usecases (eg. healthcare).
       - - Not all modules can be used for default in federated mode, you need to adapt their code first.
         - It might require a bit more work to setup.

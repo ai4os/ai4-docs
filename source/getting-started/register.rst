@@ -1,13 +1,13 @@
 Register an account
 ===================
 
-The `AI4OS Login <https://login.cloud.ai4eosc.eu/realms/ai4eosc/account>`__ uses Keycloak to federate different Identity providers, allowing to easily onboard new external communities with their own authentication systems.
+The `Login <https://login.cloud.ai4eosc.eu/realms/ai4eosc/account>`__ uses Keycloak to federate different Identity providers, allowing to easily onboard new external communities with their own authentication systems.
 
 .. image:: /_static/images/ai4eosc/keycloak.png
    :width: 300 px
    :align: center
 
-There are two options to create AI4OS accounts.
+There are two options to create accounts.
 
 
 Option 1. Use a federated identity

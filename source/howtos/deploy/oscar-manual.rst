@@ -3,7 +3,7 @@
 Manually deploy a serverless inference endpoint
 ===============================================
 
-Scalable AI model inference is handled by the `AI4OS Inference <https://inference.cloud.ai4eosc.eu/>`__ platform, powered by the `OSCAR <https://oscar.grycap.net>`__ open-source serverless platform.
+Scalable AI model inference is handled by the `AI4EOSC Inference <https://inference.cloud.ai4eosc.eu/>`__ platform, powered by the `OSCAR <https://oscar.grycap.net>`__ open-source serverless platform.
 
 An OSCAR cluster consists of, among other components:
 
@@ -16,7 +16,7 @@ An OSCAR cluster consists of, among other components:
   requests to an OSCAR service are handled via dynamically provisioned pods (containers)
   in the Kubenetes cluster.
 
-The AI4OS Inference platform consists of a pre-deployed OSCAR cluster exclusively accessible for :doc:`fully authenticated users </reference/user-access-levels>`.
+The Inference platform consists of a pre-deployed OSCAR cluster exclusively accessible for :doc:`fully authenticated users </reference/user-access-levels>`.
 
 We have different OSCAR clusters depending on the project you belong to:
 
@@ -38,7 +38,7 @@ The cluster is used to deploy OSCAR services, which are described by a
 file which specifies (among other features):
 
 * The Docker image, which includes the AI model that supports the
-  :doc:`DEEPaaS API </reference/api>` and all the required libraries and data to
+  :doc:`DEEPaaS API </advanced/api>` and all the required libraries and data to
   perform the inference.
 * The computing requirements (CPUs, RAM, GPUs, etc.).
 * The shell-script to be executed inside the container created out of the Docker image
@@ -74,9 +74,9 @@ OSCAR services can be invoked (see `Invoking services <https://docs.oscar.grycap
   including:
 
   - The deployment of the `Body pose detection <https://dashboard.cloud.ai4eosc.eu/marketplace/modules/DEEP-OC-posenet-tf>`__
-    AI model from the AI4OS Marketplace is documented in the `body-pose-detection <https://github.com/grycap/oscar/tree/master/examples/body-pose-detection>`__
+    AI model from the platform Marketplace is documented in the `body-pose-detection <https://github.com/grycap/oscar/tree/master/examples/body-pose-detection>`__
     folder, used to perform asynchronous invocations via MinIO.
   - The deployment of the `Plants Species Classifier <https://dashboard.cloud.ai4eosc.eu/marketplace/modules/plants-classification>`__
-    AI model from the AI4OS Marketplace is documented in the
+    AI model from the platform Marketplace is documented in the
     `plant-classification-sync <https://github.com/grycap/oscar/tree/master/examples/plant-classification-sync>`__
     folder, used to perform synchronous invocations.

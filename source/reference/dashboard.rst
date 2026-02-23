@@ -1,12 +1,12 @@
-AI4OS Dashboard
-===============
+Dashboard
+=========
 
-The AI4OS dashboard allows users to access computing resources to deploy, perform inference,
+The Dashboard allows users to access computing resources to deploy, perform inference,
 and train modules hosted at the Marketplace.
 The Dashboard simplifies the deployment and hides some of the technical parts that most
 users do not need to worry about.
 
-Currently, the following platforms have deployed a version of the AI4OS Dashboard.
+Currently, the following platforms have deployed a version of the Dashboard.
 You should access one of those Dashboards depending on the project you are a member of:
 
 * `AI4EOSC Dashboard <https://dashboard.cloud.ai4eosc.eu>`__ *(use this one if you are unsure which one to use)*
@@ -51,7 +51,7 @@ In your profile details you will find:
 
   You can link for example:
 
-  * the :doc:`AI4OS storage </reference/storage>` as well as :doc:`external storage providers </technical/howto-developers/storage-providers>`,
+  * the :doc:`Storage </reference/storage>` as well as :doc:`external storage providers </technical/storage-providers>`,
   * the :doc:`MLflow Experiment Tracking </howtos/develop/mlflow>`,
   * your `Huggingface <https://huggingface.co/>`__ account,
 
@@ -83,7 +83,7 @@ Modules catalog
 ^^^^^^^^^^^^^^^
 
 The Modules catalog is a set of AI models designed to perform given AI tasks (eg. image classification).
-The catalog shows both models developed specifically for AI4OS, as well as :doc:`external model catalogs </howtos/deploy/external>` that have been integrated to make them deployable in the AI4OS.
+The catalog shows both models developed specifically for the platform, as well as :doc:`external model catalogs </howtos/deploy/external>` that have been integrated to make them deployable in the platform.
 
 You can use filters to quickly find the module you want.
 We provide filtering by:
@@ -110,7 +110,7 @@ The Tools catalog is a collection of tools that come handy in assisting users du
 
 We currently offer for example:
 
-- The **AI4OS Development Environment** to develop new modules (:doc:`Develop a model from scratch </howtos/develop/dashboard>`)
+- The **Development Environment** to develop new modules (:doc:`Develop a model from scratch </howtos/develop/dashboard>`)
 - Several **Federated Learning Servers** to make federated privacy-friendly trainings (:doc:`Flower </howtos/train/federated-flower>`, :doc:`NVFLARE </howtos/train/federated-nvflare>`)
 - The **Computer Vision Annotation Tool** (CVAT) to label images (:doc:`Labeling images with CVAT </howtos/train/cvat>`)
 
@@ -119,7 +119,7 @@ LLM catalog
 
 The LLM catalog is a collection of LLM models that users can self-deploy.
 The catalog has multiple open-source models from a wide range of AI-relevant actors (Qwen, DeepSeek, Meta).
-For more information on how to use them, please refer to the AI4OS tutorial: :doc:`Deploy your own LLM chatbot </howtos/deploy/llm>`.
+For more information on how to use them, please refer to the tutorial: :doc:`Deploy your own LLM chatbot </howtos/deploy/llm>`.
 
 .. _dashboard_deployment:
 
@@ -249,7 +249,7 @@ In the ``Deployments`` tab (in the Navigation panel on the left) you have a tabl
 Under :material-outlined:`info;1.5em` ``Info`` you will find details about your deployment such as UUID, resources assigned/requested, error messages, endpoints of all services, etc.
 For the endpoints of the services you have:
 
-* ``API``: :doc:`Module's API </reference/api>`, only accessible if you launched with the DEEPaaS command or launched JupyterLab then ran DEEPaaS.
+* ``API``: :doc:`Module's API </advanced/api>`, only accessible if you launched with the DEEPaaS command or launched JupyterLab then ran DEEPaaS.
 * ``IDE``: :ref:`Development environment <howtos/develop/dashboard:2. Prepare your development environment>`, only accessible if you launched with the JupyterLab or VScode command.
 * ``Monitor``: :ref:`Training monitoring <howtos/train/standard:4. Start training the model>`, only accessible if the module has been coded to explicitly display monitoring (check the module's README or training arguments) and if a training is currently running.
 * ``UI``: :ref:`Gradio User Interface <howtos/deploy/nomad:2.1 UI prediction>`, only accessible if you launched with the DEEPaaS command.
@@ -332,6 +332,6 @@ In this section you can see the historical usage metrics of the platform.
 Ask AI
 ------
 
-Finally, we have our :ref:`AI4OS Assistant <reference/llm:Ask questions about the documentation>` directly available from the Dashboard. You can ask it questions and it will use this documentation as a Knowledge Base to offer grounded responses.
+Finally, we have our :ref:`LLM Assistant <reference/llm:Ask questions about the documentation>` directly available from the Dashboard. You can ask it questions and it will use this documentation as a Knowledge Base to offer grounded responses.
 
 .. image:: /_static/images/dashboard/ai-assistant.png

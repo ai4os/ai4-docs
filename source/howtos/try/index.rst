@@ -27,5 +27,5 @@ the model locally on your own resources.
    :titlesonly:
    :hidden:
 
-   Try with the Dashboard (Gradio) <dashboard-gradio>
+   Try with the Dashboard <dashboard-gradio>
    Try locally <locally>

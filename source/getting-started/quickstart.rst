@@ -3,7 +3,7 @@ Quickstart Guide
 
 First of all, welcome onboard! 🎉
 
-Now, here are some guiding steps for your first contact with the AI4OS platform:
+Now, here are some guiding steps for your first contact with the AI4OS/AI4EOSC platform:
 
 1. If you do not have an account, please :doc:`register <register>` first!
 

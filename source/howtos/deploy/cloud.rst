@@ -16,7 +16,7 @@ This feature is available to any registered user (:doc:`/reference/user-access-l
 
     * - ✅ Pros
       - ❌ Cons
-    * - - You control where you deploy (no need to be an AI4OS member).
+    * - - You control where you deploy (no need to be a project member).
       - - More work to configure the deployment,
         - You are consuming resources even when not actively making predictions (if not deployed as serverless).
 

@@ -9,7 +9,7 @@ Federated Learning with Flower
    🔒 You need a :doc:`platform account </getting-started/register>` with :ref:`full access level <reference/user-access-levels:Full access level>`.
 
 In this tutorial, we will guide you on how to use the Federated Learning (FL) server in the
-AI4OS platform to perform a FL training using `Flower <https://flower.ai/>`__.
+platform to perform a FL training using `Flower <https://flower.ai/>`__.
 
 Deploying a Federated server
 ----------------------------
@@ -43,8 +43,8 @@ In this particular case, you will need to pay attention to:
 
   .. image:: /_static/images/dashboard/configure_flower.png
 
-Federated learning training in AI4OS
-------------------------------------
+Training with Federated learning
+--------------------------------
 
 Starting the Federated Learning server
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -81,7 +81,7 @@ Now that your fedserver is running, you need to do the following steps:
       This step is only needed if you selected the ``tokens`` Docker tag during
       configuration.
 
-   AI4OS provides users with a token-based system that can be used for authenticating
+   The platform provides users with a token-based system that can be used for authenticating
    the clients prior to their incorporation into the federated training.
 
    To access the secret token, find your deployments and click the :material-outlined:`key;1.5em` icon.
@@ -156,7 +156,7 @@ In order to connect the clients to the FL server deployed within the platform, t
 Client-server authentication
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-In the AI4OS project, we use a `custom fork of the flower library <https://github.com/AI4EOSC/flower>`__
+In the platform, we use a `custom fork of the flower library <https://github.com/AI4EOSC/flower>`__
 to perform FL trainings.
 
 In the code below, we provide an example on how to integrate the previously obtained

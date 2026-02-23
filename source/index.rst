@@ -16,7 +16,7 @@ The platform is currently used by the following projects:
    * `AI4EOSC <https://ai4eosc.eu/>`__: AI for the European Open Science Cloud
    * `iMagine <https://imagine-ai.eu/>`__: Imaging data and services for aquatic science
    * `AI4Life <https://ai4life.eurobioimaging.eu/>`__: AI models and methods for the life sciences
-   * `KMD4EOSC <https://kmd4eosc.pl/>`: Universal infrastructure for efficient data processing in HPC
+   * `KMD4EOSC <https://kmd4eosc.pl/>`__: Universal infrastructure for efficient data processing in HPC
 
 
 .. grid:: 2
@@ -88,21 +88,11 @@ The platform is currently used by the following projects:
    :hidden:
 
    User access levels <reference/user-access-levels>
-   AI4OS Dashboard <reference/dashboard>
-   AI4OS Storage <reference/storage>
-   AI4OS Modules <reference/modules>
-   AI4OS Modules Template <reference/cookiecutter-template>
-   AI4OS LLM chatbot <reference/llm>
-
-
-.. toctree::
-   :titlesonly:
-   :maxdepth: 2
-   :caption: Advanced topics
-   :hidden:
-
-   RClone code examples <reference/rclone-code-examples>
-   DEEPaaS API <reference/api>
+   Dashboard <reference/dashboard>
+   Storage <reference/storage>
+   AI Modules <reference/modules>
+   AI Modules Template <reference/cookiecutter-template>
+   LLM chatbot <reference/llm>
 
 .. toctree::
    :titlesonly:
@@ -125,12 +115,25 @@ The platform is currently used by the following projects:
    Video demos <others/video-demos>
 
 .. toctree::
+   :titlesonly:
+   :maxdepth: 2
+   :caption: Advanced topics
+   :hidden:
+
+   DEEPaaS API <advanced/api>
+   Use RCLONE to sync your dataset <advanced/rclone>
+   RCLONE code examples <advanced/rclone-examples>
+
+.. toctree::
    :maxdepth: 2
    :titlesonly:
    :hidden:
-   :caption: Resource provider documentation
+   :caption: Technical documentation
 
-   technical/index
+   Support a new project <technical/support-new-project>
+   Organize a tutorial <technical/organize-tutorial>
+   Compatible storage providers <technical/storage-providers>
+
 
 .. Indices and tables
 .. ==================
