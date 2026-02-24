@@ -1,3 +1,5 @@
+import datetime
+
 # -*- coding: utf-8 -*-
 #
 # Configuration file for the Sphinx documentation builder.
@@ -20,7 +22,7 @@
 # -- Project information -----------------------------------------------------
 
 project = 'AI4OS/AI4EOSC'
-copyright = '2025, AI4EOSC consortium'
+copyright = f'{datetime.datetime.now().year}, AI4EOSC consortium'
 author = 'AI4EOSC consortium'
 
 # The short X.Y version
