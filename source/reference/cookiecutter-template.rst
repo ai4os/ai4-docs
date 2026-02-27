@@ -30,7 +30,7 @@ questions, which might include:
 * ``author_name``: Author name(s) (and/or your organization/company/team). If many, separate by comma.
 * ``author_email``: E-Mail(s) of main author(s). If many, separate by comma.
 * ``description``: A short description of the project.
-* ``app_version``: Application version (expects X.Y.Z (Major.Minor.Patch), in accordance with `https://semver.org/`).
+* ``app_version``: Application version (expects X.Y.Z (Major.Minor.Patch), in accordance with `SemVer <https://semver.org/>`__).
 * ``open_source_license``: Choose one of the licenses (default is MIT). `More info <https://opensource.org/licenses>`__.
 * ``docker_baseimage``: Docker image your Dockerfile starts from (``FROM <docker_baseimage>``). Do not provide the tag here.
 * ``baseimage_tag``: Default tag for docker_baseimage (for Tensorflow: CPU version, e.g. 2.9.1).
