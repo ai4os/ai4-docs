@@ -88,7 +88,7 @@ Full access level
     * `AI4EOSC <https://ai4eosc.eu/>`__: AI for the European Open Science Cloud
     * `iMagine <https://imagine-ai.eu/>`__: Imaging data and services for aquatic science
     * `AI4Life <https://ai4life.eurobioimaging.eu/>`__: AI models and methods for the life sciences
-    * `KMD4EOSC <https://kmd4eosc.pl/>`: Universal infrastructure for efficient data processing in HPC
+    * `KMD4EOSC <https://kmd4eosc.pl/>__`: Universal infrastructure for efficient data processing in HPC
 
 
 Upgrading your access level
@@ -105,7 +105,7 @@ Members of the following projects get full access level:
 * `AI4EOSC <https://ai4eosc.eu/>`__: AI for the European Open Science Cloud
 * `iMagine <https://imagine-ai.eu/>`__: Imaging data and services for aquatic science
 * `AI4Life <https://ai4life.eurobioimaging.eu/>`__: AI models and methods for the life sciences
-* `KMD4EOSC <https://kmd4eosc.pl/>`: Universal infrastructure for efficient data processing in HPC
+* `KMD4EOSC <https://kmd4eosc.pl/>__`: Universal infrastructure for efficient data processing in HPC
 
 Consider joining these projects via their *Open calls for external usecases*.
 More information about the calls can be found in their respective project's homepages.
