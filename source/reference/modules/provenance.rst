@@ -6,7 +6,7 @@ AI module provenance
 Being able to trace an AI module provenance is key to the `FAIR principles <https://www.nature.com/articles/sdata201618>`__, ensuring reproducibility and building trust in the module's predictions.
 
 That's why every time a module's :doc:`CI/CD pipeline </reference/modules/cicd>` is executed, we build a provenance chain of that module.
-Based on the module's :doc:`metadata </reference/modules/metadata>`, we parse the different :ref:`platform components <getting-started/terminology:Architecture overview>`, gathering all the provenance information into a single RDF file (`example <https://provenance.cloud.ai4eosc.eu/rdf?applicationId=ai4os-demo-app>`__).
+Based on the module's :doc:`metadata </reference/modules/metadata>`, we parse the different :ref:`platform components <getting-started/overview:Architecture overview>`, gathering all the provenance information into a single RDF file (`example <https://provenance.cloud.ai4eosc.eu/rdf?applicationId=ai4os-demo-app>`__).
 These sources include:
 
 * **Jenkins**: we extract build information, like code quality tests or docker image hashes,

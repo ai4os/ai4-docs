@@ -1,5 +1,8 @@
-Register an account
+Access the platform
 ===================
+
+Register an account
+-------------------
 
 The `Login <https://login.cloud.ai4eosc.eu/realms/ai4eosc/account>`__ uses Keycloak to federate different Identity providers, allowing to easily onboard new external communities with their own authentication systems.
 
@@ -11,7 +14,7 @@ There are two options to create accounts.
 
 
 Option 1. Use a federated identity
-----------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. |egicheckin| image:: /_static/images/favicons/egicheckin.png
    :height: 1em
@@ -96,7 +99,7 @@ Find how to :ref:`upgrade you access level <reference/user-access-levels:Upgradi
 
 
 Option 2. Register a new account
---------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 It is also possible to manually registering new account, although *this is not
 recommended* as the process is slower, since requests need to be manually approved by
@@ -118,6 +121,6 @@ Once created, you can input your credentials using the ``Sign In`` option, at th
 
 
 Login to the platform
-=====================
+---------------------
 
 Once registered, you can directly head to the :doc:`/reference/dashboard` page and login to the platform.

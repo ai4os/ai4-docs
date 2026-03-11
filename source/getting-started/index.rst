@@ -8,12 +8,6 @@ New to the project? How about a quick dive?
 .. grid:: 1
     :gutter: 3
 
-    .. grid-item-card:: :fas:`book;fa-lg sd-mr-2` Terminology
-        :link: /getting-started/terminology
-        :link-type: doc
-
-        Get familiar with the terminology used in the platform.
-
     .. grid-item-card:: :fas:`forward-fast;fa-lg sd-mr-2` Quickstart
         :link: /getting-started/quickstart
         :link-type: doc
@@ -26,11 +20,11 @@ New to the project? How about a quick dive?
 
         Register to the platform.
 
-    .. grid-item-card:: :fas:`users;fa-lg sd-mr-2` User roles
-        :link: /getting-started/user-roles
+    .. grid-item-card:: :fas:`book;fa-lg sd-mr-2` Overview
+        :link: /getting-started/overview
         :link-type: doc
 
-        Get information about the different user roles in the platform.
+        Get a quick overview of the platform components.
 
     .. grid-item-card:: :fas:`rocket;fa-lg sd-mr-2` New features
         :link: /getting-started/new-features
