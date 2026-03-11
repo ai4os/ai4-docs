@@ -91,7 +91,6 @@ The platform is currently used by the following projects:
    Dashboard <reference/dashboard>
    Storage <reference/storage>
    AI Modules <reference/modules>
-   AI Modules Template <reference/cookiecutter-template>
    LLM chatbot <reference/llm>
 
 .. toctree::

@@ -37,7 +37,7 @@ AI modules
 ----------
 
 The :doc:`AI modules </reference/modules>` are developed both by the platform and by users.
-For creating modules, we provide the :doc:`AI Modules Template </reference/cookiecutter-template>`
+For creating modules, we provide the :doc:`AI Modules Template </reference/modules/template>`
 as a starting point.
 Every AI module of the platform exposes it's functionality under a :doc:`common API </advanced/api>`, so that models can be accessed in a consistent way.
 

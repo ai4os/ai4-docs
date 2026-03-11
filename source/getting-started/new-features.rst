@@ -12,7 +12,7 @@ notified here.
 
 * 📌 we started supporting the `KMD4EOSC project <https://kmd4eosc.pl/>`__ (``2025-02-09``)
 * 📌 we release a new :doc:`Helpdesk and Community to improve interaction with users </help/index>` (``2025-08-01``)
-* 📈 we released our :ref:`provenance tracking workflow <reference/modules:Provenance>` (``2025-07-10``)
+* 📈 we released our :doc:`provenance tracking workflow </reference/modules/provenance>` (``2025-07-10``)
 * 📈 we migrated to our :doc:`new authentication system </getting-started/register>` (``2025-07-01``)
 * 📈 we started supporting :doc:`deploying models to the EOSC node </howtos/deploy/eosc-node>` (``2025-06-20``)
 * 📈 we started supporting :doc:`drift monitoring detection </howtos/develop/drift-watch>` (``2025-06-10``)

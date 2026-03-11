@@ -16,7 +16,7 @@ If you are new to Machine Learning, you might want to check some :doc:`useful Ma
 1. Setting the framework
 ------------------------
 
-This first step relies on the :doc:`the AI Modules Template </reference/cookiecutter-template>` for creating a template for your new module:
+This first step relies on the :doc:`the AI Modules Template </reference/modules/template>` for creating a template for your new module:
 
 * Access and authenticate in the `Template creation webpage <https://templates.cloud.ai4eosc.eu/>`__.
 * Then select the ``minimal`` branch of the template and answer the questions.
@@ -136,7 +136,7 @@ Model Quality Assurance
 ^^^^^^^^^^^^^^^^^^^^^^^
 
 In order to improve the readability of the code and the overall maintainability of your module,
-we :ref:`enforce some quality standards <reference/modules:CI /CD pipeline>` in tox (including style, security, etc).
+we :doc:`enforce some quality standards </reference/modules/cicd>` in tox (including style, security, etc).
 Modules that fail to pass style tests won't be able to build docker images.
 You can check locally if your module passes the tests:
 

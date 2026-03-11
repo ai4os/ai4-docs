@@ -86,7 +86,7 @@ The fields you need to edit to comply with our `schemata <https://github.com/ai4
 
 * ``inference`` (*optional*): this is is the minimum resources your module needs to run an inference correctly (eg. CPU cores, RAM, GPUs, etc). If not specified, the Dashboard will prefill with some defaults, that can later be adapted by the user during the :ref:`configuration step <reference/dashboard:Hardware configuration>`.
 
-* ``provenance`` (*optional*): this will allow your model to have a more rich :ref:`provenance <reference/modules:Provenance>` information, as your model provenance graph will show the resources and the hyper-parameters you used to train. The are two subfields you can specify:
+* ``provenance`` (*optional*): this will allow your model to have a more rich :doc:`provenance </reference/modules/provenance>` information, as your model provenance graph will show the resources and the hyper-parameters you used to train. The are two subfields you can specify:
 
   - ``nomad_job``: the Dashboard deployment UUID you used to train the final model,
   - ``mlflow_run``: the MLflow run UUID you used to train the final model,

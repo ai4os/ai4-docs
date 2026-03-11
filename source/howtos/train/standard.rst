@@ -193,7 +193,7 @@ as your code is the same as the original application, only your model weights
 are different.
 
 To account for this simpler process, we have prepared a version of the
-:doc:`the AI Modules Template </reference/cookiecutter-template>`
+:doc:`the AI Modules Template </reference/modules/template>`
 specially tailored to this task:
 
 * Go to the `Template creation webpage <https://templates.cloud.ai4eosc.eu/>`__.
