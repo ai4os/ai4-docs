@@ -42,6 +42,12 @@ User reference
 
         Chat with our LLM bot and interact live with our documentation.
 
+    .. grid-item-card:: :material-outlined:`eco;1.5em`  Environmental footprint
+        :link: /reference/footprint
+        :link-type: doc
+
+        Check what AI4EOSC is doing to minimize the environmental footprint of our AI workflows.
+
 Advanced topics
 ===============
 

@@ -93,6 +93,7 @@ The platform is currently used by the following projects:
    AI Modules <reference/modules>
    AI Modules Template <reference/cookiecutter-template>
    LLM chatbot <reference/llm>
+   Environmental footprint <reference/footprint>
 
 .. toctree::
    :titlesonly:
