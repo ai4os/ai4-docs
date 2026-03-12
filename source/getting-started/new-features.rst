@@ -10,6 +10,7 @@ notified here.
 .. Template
 .. * 📘 new :doc:`... <...>` page (``2024-04-03``)
 
+* 📈 we started supporting :ref:`smart scheduling <reference/footprint:Smart job scheduling>` to greener datacenter (``2026-03-12``)
 * 📌 we started supporting the `KMD4EOSC project <https://kmd4eosc.pl/>`__ (``2026-02-09``)
 * 📌 we release a new :doc:`Helpdesk and Community to improve interaction with users </help/index>` (``2025-08-01``)
 * 📈 we released our :doc:`provenance tracking workflow </reference/modules/provenance>` (``2025-07-10``)
