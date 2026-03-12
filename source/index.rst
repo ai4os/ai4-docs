@@ -90,6 +90,7 @@ The platform is currently used by the following projects:
    Storage <reference/storage>
    AI Modules <reference/modules>
    LLM chatbot <reference/llm>
+   Environmental footprint <reference/footprint>
    User access levels <reference/user-access-levels>
 
 .. toctree::
