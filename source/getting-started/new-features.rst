@@ -10,9 +10,9 @@ notified here.
 .. Template
 .. * 📘 new :doc:`... <...>` page (``2024-04-03``)
 
-* 📌 we started supporting the `KMD4EOSC project <https://kmd4eosc.pl/>`__ (``2025-02-09``)
+* 📌 we started supporting the `KMD4EOSC project <https://kmd4eosc.pl/>`__ (``2026-02-09``)
 * 📌 we release a new :doc:`Helpdesk and Community to improve interaction with users </help/index>` (``2025-08-01``)
-* 📈 we released our :ref:`provenance tracking workflow <reference/modules:Provenance>` (``2025-07-10``)
+* 📈 we released our :doc:`provenance tracking workflow </reference/modules/provenance>` (``2025-07-10``)
 * 📈 we migrated to our :doc:`new authentication system </getting-started/register>` (``2025-07-01``)
 * 📈 we started supporting :doc:`deploying models to the EOSC node </howtos/deploy/eosc-node>` (``2025-06-20``)
 * 📈 we started supporting :doc:`drift monitoring detection </howtos/develop/drift-watch>` (``2025-06-10``)
@@ -60,10 +60,7 @@ notified here.
 In this section, we will offer some insight on to where the AI4OS stack is heading.
 Some of these features are experimental and might not end up being integrated in the stack:
 
-* 📈 try model endpoints with OSCAR
-* 📈 new tool for efficient video streaming (Kafka)
-* 📈 graph visualizations of your module/deployment provenance information
-* 📈 migration to Keycloak authentication
+* integration of carbon mnonitoring
 
 Do you find something missing? Please check
 :ref:`how to suggest a new feature <new-features-request>`.

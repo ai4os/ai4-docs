@@ -1,3 +1,5 @@
+:orphan:
+
 AI Modules Template
 ===================
 

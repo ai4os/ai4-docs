@@ -7,8 +7,7 @@ Now, here are some guiding steps for your first contact with the AI4OS/AI4EOSC p
 
 1. If you do not have an account, please :doc:`register <register>` first!
 
-2. Get familiar with the :doc:`terminology` that we use in this documentation, and
-   through the platform pages.
+2. Get familiar with the basic :doc:`platform components and user workflows <overview>`.
 
 3. Head into our :doc:`/reference/dashboard`.
 

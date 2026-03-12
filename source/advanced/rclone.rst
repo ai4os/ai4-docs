@@ -11,7 +11,7 @@ Although we will demonstrate here how to use it with Nextcloud, it can be used w
 1. Installing rclone
 --------------------
 
-All applications in the :doc:`Dashboard</reference/dashboard>` are packed in a Docker image and have `rclone <https://rclone.org/>`__ installed by default. If you want to create a Docker containing your own application, you should install rclone in the container to be able to access the data stored remotely. When developing an application with the :doc:`AI Modules Template </reference/cookiecutter-template>`, the Dockerfile already includes installation of rclone.
+All applications in the :doc:`Dashboard</reference/dashboard>` are packed in a Docker image and have `rclone <https://rclone.org/>`__ installed by default. If you want to create a Docker containing your own application, you should install rclone in the container to be able to access the data stored remotely. When developing an application with the :doc:`AI Modules Template </reference/modules/template>`, the Dockerfile already includes installation of rclone.
 
 To install rclone on a Docker container you should add the following code to your Dockerfile:
 

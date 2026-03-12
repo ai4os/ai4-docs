@@ -62,10 +62,9 @@ The platform is currently used by the following projects:
    :glob:
    :caption: Start here
 
-   getting-started/terminology
    getting-started/quickstart
    getting-started/register
-   getting-started/user-roles
+   getting-started/overview
    getting-started/new-features
 
 
@@ -87,13 +86,12 @@ The platform is currently used by the following projects:
    :caption: User reference
    :hidden:
 
-   User access levels <reference/user-access-levels>
    Dashboard <reference/dashboard>
    Storage <reference/storage>
    AI Modules <reference/modules>
-   AI Modules Template <reference/cookiecutter-template>
    LLM chatbot <reference/llm>
    Environmental footprint <reference/footprint>
+   User access levels <reference/user-access-levels>
 
 .. toctree::
    :titlesonly:
