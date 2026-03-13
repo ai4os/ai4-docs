@@ -17,14 +17,12 @@ This is summarized in an *Energy Quality* metric, which measures (in CO2/kWH) ho
 
 .. image:: /_static/images/dashboard/stats-datacenters.png
 
-
 Smart job scheduling
 --------------------
 
 Power Usage Effectiveness (PUE) is a metric that measures the energy efficiency of a datacenter by comparing the total energy consumed by the facility to the energy delivered to the computing equipment. A PUE of 1.0 would mean all energy goes to computing, while higher values indicate more energy is spent on cooling, lighting, and other overhead.
 
-Based on the datacenter mean energy quality (averaged over the previous days) and the datacenter PUE, the platform routes new deployments to greener datacenters. Future iterations will go even further, leveraging Wattnet forecasting capabilities to schedule jobs during the particular hours of the day where energy is greener.
-
+At the WMS level, we have implemented the **AI4EOSC GreenDirector**, a green-aware extension that ranks candidate sites based on environmental metrics (e.g. PUE, carbon intensity, and water usage) obtained through the GreenDIGIT metrics publication system (EIMPS). This allows us to introduce energy-aware scheduling, where the platform favors routing new deployments to greener datacenters. Future iterations will go even further, leveraging Wattnet forecasting capabilities to schedule jobs during the particular hours of the day where energy is greener.
 
 Detailed per-job monitoring
 ---------------------------
