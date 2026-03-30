@@ -164,7 +164,7 @@ There you will be able to create a new API key selecting the name and the expira
       - 1000
       - 2
     * - ap-a1
-      - 0.75
+      - 0.075
       - 1500
       - 2
     * - ap-b

@@ -11,9 +11,10 @@ This is why AI4EOSC has teamed with `Wattnet <https://wattnet.eu/>`__ and the `G
 Real-time footprint visualization
 ---------------------------------
 
-The Dashboard integrates a map with all the datacenters that are part of the AI4EOSC federation.
-Wattnet is able to offer real-time time estimations of the carbon impact of each datacenter (based on the mean values of the country where the datacenter is located).
-This is summarized in an *Energy Quality* metric, which measures (in CO2/kWH) how carbon intensive is the grid that datacenter is plugged to. Lower metrics will mean mean that the datacenters energy is cleaner.
+The :ref:`Dashboard statistics <reference/dashboard:View your statistics>` integrates a map with all the datacenters that are part of the AI4EOSC federation.
+Wattnet is able to offer real-time time estimations of the impact of each datacenter, based on the mean values of the country where the datacenter is located.
+It offer both a *carbon footprint* (measured in gCO2/kWH) and a *water footprint* (measured in l/kWH).
+Lower values for both metrics will mean that the datacenter energy is cleaner.
 
 .. image:: /_static/images/dashboard/stats-datacenters.png
 
@@ -22,7 +23,13 @@ Smart job scheduling
 
 Power Usage Effectiveness (PUE) is a metric that measures the energy efficiency of a datacenter by comparing the total energy consumed by the facility to the energy delivered to the computing equipment. A PUE of 1.0 would mean all energy goes to computing, while higher values indicate more energy is spent on cooling, lighting, and other overhead.
 
-At the WMS level, we have implemented the **AI4EOSC GreenDirector**, a green-aware extension that ranks candidate sites based on environmental metrics (e.g. PUE, carbon intensity, and water usage) obtained through the GreenDIGIT metrics publication system (EIMPS). This allows us to introduce energy-aware scheduling, where the platform favors routing new deployments to greener datacenters. Future iterations will go even further, leveraging Wattnet forecasting capabilities to schedule jobs during the particular hours of the day where energy is greener.
+At the WMS level, we have implemented the :material-outlined:`eco;1.5em` **AI4EOSC GreenDirector**, a green-aware extension that ranks candidate sites based on environmental metrics (e.g. PUE, carbon intensity, and water usage) obtained through the GreenDIGIT metrics publication system (EIMPS). This allows us to introduce energy-aware scheduling, where the platform favors routing new deployments to greener datacenters via Nomad affinities.
+
+.. image:: /_static/images/dashboard/stats-footprint.png
+
+Future iterations will go even further, leveraging Wattnet forecasting capabilities to schedule jobs during the particular hours of the day where energy is greener.
+
+
 
 Detailed per-job monitoring
 ---------------------------

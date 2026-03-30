@@ -6,14 +6,18 @@ and train modules hosted at the Marketplace.
 The Dashboard simplifies the deployment and hides some of the technical parts that most
 users do not need to worry about.
 
-Currently, the following platforms have deployed a version of the Dashboard.
-You should access one of those Dashboards depending on the project you are a member of:
 
-* `AI4EOSC Dashboard <https://dashboard.cloud.ai4eosc.eu>`__ *(use this one if you are unsure which one to use)*
-* `iMagine Dashboard <https://dashboard.cloud.imagine-ai.eu>`__
-* `AI4Life Dashboard <https://ai4life.cloud.ai4eosc.eu>`__
-* `KMD4EOSC Dashboard <https://kmd4eosc.cloud.ai4eosc.eu/>`__
-* `Tutorials Dashboard <https://tutorials.cloud.ai4eosc.eu>`__
+.. admonition:: Where can I access the Dashboard?
+   :class: info
+
+   Currently, the following platforms have deployed a version of the Dashboard.
+   You should access one of those Dashboards depending on the project you are a member of:
+
+   * `AI4EOSC Dashboard <https://dashboard.cloud.ai4eosc.eu>`__ 👈 *(use this one if you are unsure which one to use)*
+   * `iMagine Dashboard <https://dashboard.cloud.imagine-ai.eu>`__
+   * `AI4Life Dashboard <https://ai4life.cloud.ai4eosc.eu>`__
+   * `KMD4EOSC Dashboard <https://kmd4eosc.cloud.ai4eosc.eu/>`__
+   * `Tutorials Dashboard <https://tutorials.cloud.ai4eosc.eu>`__
 
 The Dashboard has a two views:
 
@@ -284,10 +288,10 @@ You can redeploy snapshots at any time by clicking in the :material-outlined:`vi
 View your statistics
 --------------------
 
-In the ``Dashboard`` tab (in the Navigation panel on the left) you can access different types of statistics from the platform.
+In the ``Statistics`` tab (in the Navigation panel on the left) you can access different types of statistics from the platform.
 
-Current usage
-^^^^^^^^^^^^^
+Overview
+^^^^^^^^
 
 In this section, you can see how the resources are currently being used:
 
@@ -305,8 +309,15 @@ the platform, along with their metrics:
 
 .. image:: /_static/images/dashboard/stats-datacenters.png
 
-Graphs
-^^^^^^
+Footprint
+^^^^^^^^^
+
+In this section, you will see all the relevant metrics regarding the carbon and water footprint of the AI4EOSC datacenters, including the dynamic datacenter ranking :ref:`created by our GreenDirector <reference/footprint:Smart job scheduling>`  that favour routing jobs to greener datacenters:
+
+.. image:: /_static/images/dashboard/stats-footprint.png
+
+Usage
+^^^^^
 
 In this section you can see the historical usage metrics of the platform.
 
