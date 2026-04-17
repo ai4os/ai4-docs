@@ -51,14 +51,7 @@ Once you login, you will arrive to a landing page where you will be able to sele
 
 .. image:: /_static/images/llm/landing.png
 
-The current available models are:
-
-* **Small**: a medium-size model from the `Mistral family <https://mistral.ai/>`__ (Mistral 3.1, 24B parameters).
-  This is the default model.
-* **Qwen 3**: a smaller model from the `Qwen family <https://huggingface.co/collections/Qwen/qwen3-67dd247413f0e2e4f653967f>`__ (14B parameters).
-* **Assistant**: our custom model designed to :ref:`help you navigate our documentation <reference/llm:Ask questions about the documentation>`,
-
-Now, let's explore some common usages of the tool. Keep in mind that the platform LLM is built with `OpenWebUI <https://openwebui.com/>`__ so you always find further information in `their documentation <https://docs.openwebui.com/>`__.
+Available models might evolve, as we are constantly deploying newer, better and more efficient models. We typically server open-source/open-weights models from the `Mistral family <https://mistral.ai/>`__ and the `Qwen family <https://huggingface.co/collections/Qwen/qwen3-67dd247413f0e2e4f653967f>`__. We also create custom agents, like the **AI4EOSC Assistant** that allows you :ref:`to ask questions to our documentation <reference/llm:Ask questions about the documentation>`.
 
 
 Using the LLM
@@ -66,7 +59,7 @@ Using the LLM
 
 The AI4EOSC LLM interface is based on `OpenWebUI <https://openwebui.com/>`__, so please refer to the `OpenWebUI documentation <https://docs.openwebui.com/>`__ on how to use the different interface features (like the chat, the notes, the settings, etc).
 
-In the following sections, we will briefly explain some common usage pattern.
+In the following sections, we will briefly explain some common usage patterns.
 
 Chat with the LLM
 ^^^^^^^^^^^^^^^^^
@@ -212,7 +205,7 @@ To configure it:
       models:
         - name: AI4EOSC LLM
           provider: openai
-          model: AI4EOSC/Small
+          model: AI4EOSC/mistralai/Mistral-Small-3.1-24B-Instruct-2503
           apiKey: "sk-************************************"
           apiBase: https://vllm.cloud.ai4eosc.eu/
           roles:
@@ -246,7 +239,7 @@ Then you can use the LLM as following:
     )
 
     completion = client.chat.completions.create(
-        model="AI4EOSC/Small",
+        model="AI4EOSC/mistralai/Mistral-Small-3.1-24B-Instruct-2503",
         messages=[{"role": "user", "content": "What is the capital of France?"}]
     )
 
@@ -290,12 +283,12 @@ define your demo pipeline:
   Settings.embed_model = OpenAILikeEmbedding(
       api_base="https://vllm.cloud.ai4eosc.eu",
       api_key="sk-************************************",
-      model_name="AI4EOSC/Qwen3-Embedding",
+      model_name="AI4EOSC/Qwen/Qwen3-Embedding-4B",
   )
   Settings.llm = OpenAILike(
       api_base="https://vllm.cloud.ai4eosc.eu",
       api_key="sk-************************************",
-      model="AI4EOSC/Small",
+      model="AI4EOSC/mistralai/Mistral-Small-3.1-24B-Instruct-2503",
       context_window=25000,
       is_chat_model=True,
       is_function_calling_model=False,
