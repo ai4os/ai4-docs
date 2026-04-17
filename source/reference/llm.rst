@@ -10,34 +10,34 @@ We care about user privacy, so it's important to notice that your chat history w
 
    🔓 You need a :doc:`platform account </getting-started/register>` with :ref:`basic access level <reference/user-access-levels:Basic access level>`.
 
-Platform LLM vs self-deployed LLM
----------------------------------
 
-We also offer a :doc:`self-deployed LLM option </howtos/deploy/llm>`, so which one should you choose?
+.. dropdown:: 🤔 Platform LLM *vs* self-deployed LLM
 
-**Self-deployed LLM**
+  We also offer a :doc:`self-deployed LLM option </howtos/deploy/llm>`, so which one should you choose?
 
-* available to :ref:`full access level <reference/user-access-levels:Full access level>` users
-* let's you deploy a wide variety of models from a catalog,
-* resources are exclusively dedicated to you and your selected coworkers,
-* you are the admin, so you can configure model and UI parameters,
-* you are the admin, so you can create your own `Knowledge Bases <https://docs.openwebui.com/features/workspace/knowledge/>`__ as persistent memory banks,
-* you are the admin, so you can use `Functions <https://docs.openwebui.com/features/plugin/functions/>`__ to create your own agents that use custom prompts, custom Knowledge Bases, and custom input/output filtering,
+  **Self-deployed LLM**
 
-**Platform LLM**
+  * available to :ref:`full access level <reference/user-access-levels:Full access level>` users
+  * let's you deploy a wide variety of models from a catalog,
+  * resources are exclusively dedicated to you and your selected coworkers,
+  * you are the admin, so you can configure model and UI parameters,
+  * you are the admin, so you can create your own `Knowledge Bases <https://docs.openwebui.com/features/workspace/knowledge/>`__ as persistent memory banks,
+  * you are the admin, so you can use `Functions <https://docs.openwebui.com/features/plugin/functions/>`__ to create your own agents that use custom prompts, custom Knowledge Bases, and custom input/output filtering,
 
-* available to all users (:ref:`basic access level <reference/user-access-levels:Basic access level>` and above)
-* uses more powerful GPUs, so it offers bigger and more accurate LLMs,
-* zero configuration needed, access directly with your :doc:`credentials </getting-started/register>`,
-* the backend (VLLM) is load balanced so it can offer lower latency,
-* comes with some pre-configured helpful agents, like the :ref:`Assistant <reference/llm:Ask questions about the documentation>` that helps you navigate the project's documentation,
+  **Platform LLM**
 
-By default, we recommend using the platform LLM, which will offer a better experience for most users. Users with more custom needs should try nevertheless the self-deployment options.
+  * available to all users (:ref:`basic access level <reference/user-access-levels:Basic access level>` and above)
+  * uses more powerful GPUs, so it offers bigger and more accurate LLMs,
+  * zero configuration needed, access directly with your :doc:`credentials </getting-started/register>`,
+  * the backend (VLLM) is load balanced so it can offer lower latency,
+  * comes with some pre-configured helpful agents, like the :ref:`Assistant <reference/llm:Ask questions about the documentation>` that helps you navigate the project's documentation,
 
-Anyway, remember that both options are compatible: you can deploy your own LLM and still access the platform-wide one.
-The best of both worlds! 🚀
+  By default, we recommend using the platform LLM, which will offer a better experience for most users. Users with more custom needs should try nevertheless the self-deployment options.
 
-Both options offer a **privacy-first** design: once your delete your chats or knowledge bases, the data is immediately wiped out from the platform.
+  Anyway, remember that both options are compatible: you can deploy your own LLM and still access the platform-wide one.
+  The best of both worlds! 🚀
+
+  Both options offer a **privacy-first** design: once your delete your chats or knowledge bases, the data is immediately wiped out from the platform.
 
 Login
 -----
@@ -63,6 +63,10 @@ Now, let's explore some common usages of the tool. Keep in mind that the platfor
 
 Using the LLM
 -------------
+
+The AI4EOSC LLM interface is based on `OpenWebUI <https://openwebui.com/>`__, so please refer to the `OpenWebUI documentation <https://docs.openwebui.com/>`__ on how to use the different interface features (like the chat, the notes, the settings, etc).
+
+In the following sections, we will briefly explain some common usage pattern.
 
 Chat with the LLM
 ^^^^^^^^^^^^^^^^^
