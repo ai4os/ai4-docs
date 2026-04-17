@@ -75,7 +75,7 @@ We can ask generic questions to the model.
 
 .. image:: /_static/images/llm/chat.png
 
-Remember that if you answer relies on up-to-date information, you can always enable :material-outlined:`language;1.5em` ``Web search`` under the :material-outlined:`add_circle;1.5em` button.
+Remember that if you answer relies on up-to-date information, you can always enable :material-outlined:`language;1.5em` ``Web search`` under the :material-outlined:`api;1.5em` button.
 
 
 Summarize a document
