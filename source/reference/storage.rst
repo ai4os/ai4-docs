@@ -39,7 +39,6 @@ You have currently two ways of accessing your Nextcloud files from your deployme
 Option 1: Virtual filesystem
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-This is the :material-outlined:`verified;1.5em` **recommended option**.
 When you start a deployment, your data will be automatically available under the ``/storage`` path.
 
 This is done by mounting your storage as a `virtual filesystem <https://rclone.org/commands/rclone_mount/>`__ that lets you access the Nextcloud storage via the network.
@@ -55,16 +54,17 @@ If you configured the :ref:`Download of an external dataset <dashboard_storage>`
 .. admonition:: Cons
    :class: error
 
-   * **Slower access**: Data access is slower, since data is transmitted over the network.
+   * **Slower access**: Data access is slower, since data is transmitted over the network. This is especially true if your data consists on lots of small files.
 
 Option 2: Copy to local disk
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 When you deployment starts, you can copy the storage files to your deployment's local disk.
-This can be done in two ways:
+This can be done in several ways:
 
 a. You can copy them from the ``/storage`` path to your desired local path.
 b. You can copy them directly from Nextcloud :ref:`using rclone <rclone_usage>`.
+c. You can use VScode or JupyterLab functionalities to upload files from your local computer
 
 
 .. admonition:: Pros
@@ -79,4 +79,18 @@ b. You can copy them directly from Nextcloud :ref:`using rclone <rclone_usage>`.
    * **Smaller capacity**: Since the data is physically saved in your machine, you are bounded by the disk of your deployment (usually a couple tens of GBs). So you cannot saved very huge datasets.
 
 
-You can also combine the best of both approaches: copy data to your local disk for fast access but develop code under ``storage`` to avoid loosing any progress.
+
+Storage best practices
+----------------------
+
+After seeing the two ways of accessing you data, the question now is: *which one should I choose?* 🤔
+We recommend:
+
+* Using ``/storage`` (**option 1**) to:
+
+   * develop your code, thus making sure you won't lose any progress if the deployment unexpectedly fails.
+   * store your raw data, especially when this data is sometimes to big to fit your local disk.
+
+* Using local disk (**option 2**) to:
+
+   * store your processed data. This data is typically smaller in size and storing in the local disk will allow for faster access during training where the same data has to be revisited multiple times.
