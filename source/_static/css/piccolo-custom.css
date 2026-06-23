@@ -7,11 +7,13 @@
 html[data-mode="light"] {
   --mainNavColor: var(--ai4eosc-dark);
   --ai4Color: var(--ai4eosc-dark);
+  --ai4Color_inv: var(--ai4eosc-light);
 }
 
 html[data-mode^="dark"] {
   --mainNavColor: var(--ai4eosc-dark);
   --ai4Color: var(--ai4eosc-light);
+  --ai4Color_inv: var(--ai4eosc-dark);
 }
 
 a {
