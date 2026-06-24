@@ -28,6 +28,12 @@ The platform is currently used by the following projects:
 
         Start here to get an overview of the platform and how to use it.
 
+    .. grid-item-card:: :material-outlined:`dashboard;1.5em`  Dashboard
+        :link: /dashboard/index
+        :link-type: doc
+
+        Learn how to navigate the dashboard and make deployments.
+
     .. grid-item-card:: :fas:`circle-info;fa-lg sd-mr-2`  How-Tos
         :link: /howtos/index
         :link-type: doc
@@ -69,6 +75,19 @@ The platform is currently used by the following projects:
 
 
 .. toctree::
+   :titlesonly:
+   :maxdepth: 2
+   :caption: AI4EOSC Dashboard
+   :hidden:
+
+   dashboard/catalog
+   dashboard/deployments
+   dashboard/statistics
+   dashboard/profile
+
+
+
+.. toctree::
    :maxdepth: 3
    :caption: Howto guides
    :hidden:
@@ -79,19 +98,17 @@ The platform is currently used by the following projects:
    howtos/deploy/index
    howtos/pipelines/index
 
-
 .. toctree::
    :titlesonly:
    :maxdepth: 2
    :caption: User reference
    :hidden:
 
-   Dashboard <reference/dashboard>
+   AI4EOSC LLM <reference/llm>
    Storage <reference/storage>
    AI Modules <reference/modules>
-   LLM chatbot <reference/llm>
-   Environmental footprint <reference/footprint>
    User access levels <reference/user-access-levels>
+   Environmental footprint <reference/footprint>
 
 .. toctree::
    :titlesonly:

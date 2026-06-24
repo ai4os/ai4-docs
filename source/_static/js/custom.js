@@ -26,6 +26,7 @@ document.addEventListener("DOMContentLoaded", function() {
     // Map your sidebar captions exactly as they appear, to their target files
     const captionLinks = {
         "Start here": "getting-started/index.html",
+        "AI4EOSC Dashboard": "dashboard/index.html",
         "Howto guides": "howtos/index.html",
         "User reference": "reference/index.html",
         "Help and support": "help/index.html",

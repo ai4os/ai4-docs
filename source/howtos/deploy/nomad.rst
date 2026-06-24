@@ -20,7 +20,7 @@ The Dashboard offers the possibility to deploy an AI module persistently on the 
 1. Choose your module and deploy
 --------------------------------
 
-The first step is to choose a module from the :doc:`Dashboard</reference/dashboard>`.
+The first step is to choose a module from the :ref:`Dashboard<dashboard>`.
 There you will be able to find all the modules ready to be used under the tag ``Inference``.
 
 We will first start doing a simple prediction using the popular `YOLO module <https://dashboard.cloud.ai4eosc.eu/marketplace/modules/ai4os-yolov8-torch>`__.

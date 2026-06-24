@@ -26,11 +26,11 @@ Deployment issues
 🔥 The Dashboard shows my deployment but it immediately disappears
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Sometimes it can happen that when you :ref:`create a new deployment <reference/dashboard:Making a deployment>`, it initially appears in the :ref:`deployments table <reference/dashboard:Managing the deployments>` but disappears immediately, or is marked as ``failed/error``.
+Sometimes it can happen that when you :ref:`create a new deployment <dashboard/deployments:Making a deployment>`, it initially appears in the :ref:`deployments table <dashboard/deployments:Managing the deployments>` but disappears immediately, or is marked as ``failed/error``.
 
-This usually happens in deployments that where :ref:`launched using Nextcloud <reference/dashboard:Storage configuration>`. It can happen that your Nextcloud credentials become invalid thus leading to failure when trying to launched your deployment with Nextcloud connected.
+This usually happens in deployments that where :ref:`launched using Nextcloud <dashboard/deployments:Storage configuration>`. It can happen that your Nextcloud credentials become invalid thus leading to failure when trying to launched your deployment with Nextcloud connected.
 
-To fix this issue, please :ref:`re-link your Nextcloud account <reference/dashboard:Profile>` and try deploying again.
+To fix this issue, please :ref:`re-link your Nextcloud account <dashboard/profile:Profile>` and try deploying again.
 
 If you are still experiencing this error after relinking, please :doc:`contact support </help/index>`.
 If you are experiencing this issue in a deployment that was not linked with Nextcloud, please :doc:`contact support </help/index>`.
@@ -164,7 +164,7 @@ You try to :doc:`access "/storage" </reference/storage>` and you get the message
     ls: reading directory '/storage': Input/output error
 
 This probably means that you have entered the wrong credentials when configuring your
-deployment in the :doc:`Dashboard </reference/dashboard>`.
+deployment in the :ref:`Dashboard <dashboard>`.
 
 You will need to delete the current deployment and make a new one.
 Follow our guidelines on how to :ref:`get an RCLONE user and password <rclone_configuration>`

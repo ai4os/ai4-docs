@@ -6,11 +6,7 @@ User reference
 .. grid:: 1
     :gutter: 3
 
-    .. grid-item-card:: :material-outlined:`dashboard;1.5em`  Dashboard
-        :link: /reference/dashboard
-        :link-type: doc
 
-        Learn how to navigate the dashboard and get an overview of the different sections.
 
     .. grid-item-card:: :fas:`database;fa-lg sd-mr-2`  Storage
         :link: /reference/storage

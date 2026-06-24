@@ -12,7 +12,7 @@ AI4EOSC provides a comprehensive platform for artificial intelligence and machin
    AI4EOSC also host a particular deployment of the AI4OS stack components (under `cloud.ai4eosc.eu`).
    For example:
 
-   * The :doc:`Dashboard </reference/dashboard>` deployed as the `AI4EOSC Dashboard <https://dashboard.cloud.ai4eosc.eu/>`__,
+   * The :ref:`Dashboard <dashboard>` deployed as the `AI4EOSC Dashboard <https://dashboard.cloud.ai4eosc.eu/>`__,
    * The :doc:`Storage </reference/storage>` deployed as the `AI4EOSC Storage <https://share.cloud.ai4eosc.eu/>`__,
    * etc.
 
@@ -34,7 +34,7 @@ Later on you will see how each different type of user can take advantage of the 
 Dashboard
 ^^^^^^^^^
 
-The :doc:`Dashboard </reference/dashboard>` allows users to access computing resources to deploy, perform inference and train AI modules.
+The :ref:`Dashboard <dashboard>` allows users to access computing resources to deploy, perform inference and train AI modules.
 The Dashboard simplifies the deployment and hides some of the technical parts that most users do not need to worry about.
 
 
@@ -108,7 +108,7 @@ that has been containerized, and use it to classify their own plant images.
 
 **What the platform can offer to you:**
 
-* a :doc:`Dashboard </reference/dashboard>` full of ready-to-use modules to perform inference with your data,
+* a :ref:`Dashboard <dashboard>` full of ready-to-use modules to perform inference with your data,
 * a :doc:`GUI </howtos/deploy/nomad>` to easily interact with the services,
 * an :doc:`API </advanced/api>` to integrate the AI modules with your own  services,
 * solutions to run the inference in :doc:`the Cloud </howtos/deploy/cloud>` or in your :doc:`local resources </howtos/try/locally>`,
@@ -136,7 +136,7 @@ model and retrains it to perform `plant classification <https://dashboard.cloud.
 
 **What the platform can offer to you:**
 
-* the ability to train out-of-the-box a module of the :doc:`Dashboard </reference/dashboard>`,
+* the ability to train out-of-the-box a module of the :ref:`Dashboard <dashboard>`,
 * the ability to easily connect your training to your dataset hosted on our :doc:`data storage resources </reference/storage>`,
 * a private instance of :doc:`Computer Vision Annotation Tool (CVAT) </howtos/train/cvat>` to annotate your dataset,
 * a private server to create :doc:`Federated Learning trainings with Flower </howtos/train/federated-flower>`,

@@ -454,7 +454,7 @@ example, you can add the name of image that was used for the prediction, the
 drift distance, and any other information that you want to include in the
 job.
 
-If your :ref:`deployment is mounted with storage <reference/dashboard:Storage configuration>`, you can save the images in the :ref:`storage <storage_access>` (accessible in the ``/storage`` folder).
+If your :ref:`deployment is mounted with storage <dashboard/deployments:Storage configuration>`, you can save the images in the :ref:`storage <storage_access>` (accessible in the ``/storage`` folder).
 If you then include the image name in the drift parameters, you will be able to locate what was the image that caused the drift.
 The resulting ``predict()`` function would look as following:
 

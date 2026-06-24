@@ -21,7 +21,7 @@ When clicking on a given model you will be show the model information along with
 
 .. image:: /_static/images/dashboard/module-ai4life.png
 
-Click ``Deploy`` and :ref:`configure the resources <reference/dashboard:Hardware configuration>`.
+Click ``Deploy`` and :ref:`configure the resources <dashboard/deployments:Hardware configuration>`.
 Once it is deployed you can find it on the Tools deployment table (similar to the :ref:`Modules deployments table <dashboard-manage-deployments>`).
 
 .. image:: /_static/images/dashboard/deployments_modules_tools.png

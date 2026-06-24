@@ -15,7 +15,7 @@ Try a service locally
 1. Choose your module
 ---------------------
 
-The first step is to choose a module from the :doc:`Dashboard</reference/dashboard>`.
+The first step is to choose a module from the :ref:`Dashboard <dashboard>`.
 For educational purposes we are going to use a `general model to identify images <https://dashboard.cloud.ai4eosc.eu/marketplace/modules/ai4os-image-classification-tf>`__. This will allow us to see the general workflow.
 
 Once we have chosen the Module page we will find that it has an associated docker container in `DockerHub <https://hub.docker.com/u/ai4oshub/>`__. For example, in the example we are running here, the container would be ``ai4oshub/ai4os-image-classification-tf``. This means that to pull the docker image and run it you should:

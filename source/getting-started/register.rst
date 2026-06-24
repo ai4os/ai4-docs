@@ -123,4 +123,4 @@ Once created, you can input your credentials using the ``Sign In`` option, at th
 Login to the platform
 ---------------------
 
-Once registered, you can directly head to the :doc:`/reference/dashboard` page and login to the platform.
+Once registered, you can directly head to the :ref:`Dashboard <dashboard>` page and login to the platform.

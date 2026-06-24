@@ -9,7 +9,7 @@ Now, here are some guiding steps for your first contact with the AI4OS/AI4EOSC p
 
 2. Get familiar with the basic :doc:`platform components and user workflows <overview>`.
 
-3. Head into our :doc:`/reference/dashboard`.
+3. Head into our :ref:`Dashboard <dashboard>`.
 
 4. Try one of the modules, in order to :doc:`perform a simple inference </howtos/try/dashboard-gradio>`.
 

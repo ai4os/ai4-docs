@@ -10,8 +10,7 @@ Deploy your own LLM chatbot
 In this tutorial, we will guide you on how to deploy your own LLM instance in the platform.
 
 For the moment, due to resource constraints, this tool allows to deploy only small LLMs that can fit in NVIDIA T4s.
-If you want to use bigger LLMs on faster resources, please :doc:`use the platform LLM </reference/llm>`!
-We have a :ref:`detailed comparison <reference/llm:Platform LLM vs self-deployed LLM>` of the two options.
+If you want to use bigger LLMs on faster resources, please :doc:`use the platform LLM </reference/llm>` where you can find a detailed comparison between the two options!
 
 Deploying the LLM
 -----------------
@@ -19,7 +18,7 @@ Deploying the LLM
 In the :ref:`Dashboard Marketplace <dashboard_marketplace>`, go to the **LLM catalog** and click on the model card you want to deploy.
 Alternatively, you can go to:  **Tools catalog** → **Deploy your LLM** → **Deploy**.
 
-Once  in the configuration page, the workflow for deploying the LLM is similar to the one for :doc:`deploying a module </reference/dashboard>`.
+Once  in the configuration page, the workflow for deploying the LLM is similar to the one for :doc:`deploying a module </dashboard/deployments>`.
 In this particular case, during the LLM configuration phase you will need to pay attention to:
 
 * ``type``: choose what to you want to deploy. Options are:

@@ -21,7 +21,7 @@ The Dashboard offers the possibility to deploy an AI module as serverless on the
 1. Choose your module and deploy
 --------------------------------
 
-The first step is to choose a module from the :doc:`Dashboard</reference/dashboard>`.
+The first step is to choose a module from the :ref:`Dashboard <dashboard>`.
 Under the ``Platform Categories`` tag section, select any module that has the tag ``AI4 Inference``.
 
 In this tutorial, we will demonstrate a simple prediction using the popular `YOLO module <https://dashboard.cloud.ai4eosc.eu/marketplace/modules/ai4os-yolov8-torch>`__.

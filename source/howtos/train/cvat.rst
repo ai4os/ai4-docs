@@ -15,7 +15,7 @@ Deploying CVAT
 
 The CVAT tool is located at the top of the :ref:`Marketplace <dashboard_marketplace>`, in the ``Tools`` section.
 
-The workflow for deploying CVAT is similar to the one for :doc:`deploying a module </reference/dashboard>`.
+The workflow for deploying CVAT is similar to the one for :doc:`deploying a module </dashboard/deployments>`.
 In this particular case, you will need to pay attention to:
 
 * **CVAT credentials**:

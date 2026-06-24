@@ -15,7 +15,7 @@ Deploying a Federated server
 ----------------------------
 
 The workflow for deploying a FL server is similar to the one for
-:doc:`deploying a module </reference/dashboard>`.
+:doc:`deploying a module </dashboard/deployments>`.
 
 In this particular case, you will need to pay attention to:
 

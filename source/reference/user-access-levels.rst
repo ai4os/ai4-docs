@@ -36,7 +36,7 @@ Non-registered users
 
     Non-registered anonymous users are able to:
 
-    * :ref:`Browse our public catalog of services <reference/dashboard:Navigating the Marketplace>`
+    * :doc:`Browse our public catalog of services </dashboard/catalog>`
     * `Browse our educational materials <https://www.youtube.com/@ai4eosc>`__
     * `Browse our open-source software <https://github.com/ai4os>`__
 

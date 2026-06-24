@@ -11,7 +11,7 @@ This is why AI4EOSC has teamed with `Wattnet <https://wattnet.eu/>`__ and the `G
 Real-time footprint visualization
 ---------------------------------
 
-The :ref:`Dashboard statistics <reference/dashboard:View your statistics>` integrates a map with all the datacenters that are part of the AI4EOSC federation.
+The :doc:`Dashboard statistics </dashboard/statistics>` integrates a map with all the datacenters that are part of the AI4EOSC federation.
 Wattnet is able to offer real-time time estimations of the impact of each datacenter, based on the mean values of the country where the datacenter is located.
 It offer both a *carbon footprint* (measured in gCO2/kWH) and a *water footprint* (measured in l/kWH).
 Lower values for both metrics will mean that the datacenter energy is cleaner.
@@ -39,7 +39,7 @@ Detailed per-job monitoring
 
     This feature is still in development and may be subject to changes.
 
-Finally, AI4EOSC leverages the Greendigit stack (based on `Scaphandre <https://github.com/hubblo-org/scaphandre>`__) to offer realtime energy consumption metrics of any particular deployment in the AI4EOSC platform. Then Wattnet is used to transform this measurement into a relatable carbon footprint, that :ref:`is shown <reference/dashboard:Managing the deployments>` to the deployment owner in the Dashboard.
+Finally, AI4EOSC leverages the Greendigit stack (based on `Scaphandre <https://github.com/hubblo-org/scaphandre>`__) to offer realtime energy consumption metrics of any particular deployment in the AI4EOSC platform. Then Wattnet is used to transform this measurement into a relatable carbon footprint, that :ref:`is shown <dashboard/deployments:Managing the deployments>` to the deployment owner in the Dashboard.
 
 .. todo: add image
 

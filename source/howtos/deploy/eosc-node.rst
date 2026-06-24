@@ -78,7 +78,7 @@ Deploy it using the :material-outlined:`play_circle;1.5em` ``Play`` button.
 
 You can set custom input values by selecting :material-outlined:`check_box;1.5em` ``customize input values and save to new tool`` checkbox. This allows to configure the deployment parameters, in particular:
 
-* the docker **model image** (available in the :fab:`docker` **Docker** value in the :ref:`Marketplace module details <reference/dashboard:Making a deployment>`)
+* the docker **model image** (available in the :fab:`docker` **Docker** value in the :ref:`Marketplace module details <dashboard/deployments:Making a deployment>`)
 * the amount of **resources** (CPU and RAM)
 * the **endpoint** where the model will be exposed
 
@@ -147,7 +147,7 @@ Deploy it using the :material-outlined:`play_circle;1.5em` ``Play`` button.
 
 You can set custom input values by selecting :material-outlined:`check_box;1.5em` ``customize input values and save to new tool`` checkbox. This allows to configure the deployment parameters, in particular:
 
-* the docker **model image** (available in the :fab:`docker` **Docker** value in the :ref:`Marketplace module details <reference/dashboard:Making a deployment>`)
+* the docker **model image** (available in the :fab:`docker` **Docker** value in the :ref:`Marketplace module details <dashboard/deployments:Making a deployment>`)
 * the amount of **resources** (CPU and RAM)
 * the **GPU** support, if needed
 
