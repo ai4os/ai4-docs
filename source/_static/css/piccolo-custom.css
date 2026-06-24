@@ -91,6 +91,25 @@ div.sphinxsidebar p.caption {
   color: var(--ai4Color) ;
 }
 
+/* Highlight the active sidebar entry with a box */
+div.sphinxsidebarwrapper a.current.reference.internal {
+  display: block;
+  background-color: #d4e7e8;
+  border: 1.5px solid #014e55;
+  border-radius: 4px;
+  padding: 1px 5px;
+  margin-top: -3px;
+  margin-bottom: 4px;
+  font-weight: bold;
+  color: #014e55 !important;
+}
+
+html[data-mode^="dark"] div.sphinxsidebarwrapper a.current.reference.internal {
+  background-color: #044447;
+  border-color: #c1e2e6;
+  color: #c1e2e6 !important;
+}
+
 a.toggle_right_sidebar span {
   color: var(--ai4Color) !important;
 }
