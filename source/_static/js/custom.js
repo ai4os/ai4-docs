@@ -1,4 +1,28 @@
+// Some modifications to the base theme
+// * preserve sidebar positions when scrolling and clicking somewhere.
+//   --> TODO: not working well in Firefox (works fine in Brave)
+//   Nor Gemini 3.1 Pro or Sonnet 3.6 seem to be able to completely fix it, so leaving
+//   it for the future.
+// * make sidebar headers (captions) clickable. Target file is the index of the section.
+
+
 document.addEventListener("DOMContentLoaded", function() {
+    // Preserve sidebar scroll position
+    const sidebar = document.querySelector(".sphinxsidebarwrapper");
+    if (sidebar) {
+        const savedScrollTop = sessionStorage.getItem("sidebarScrollTop");
+        if (savedScrollTop) {
+            sidebar.scrollTop = parseInt(savedScrollTop, 10);
+        }
+        window.addEventListener("beforeunload", () => {
+            if (sidebar.scrollTop > 0) {
+                sessionStorage.setItem("sidebarScrollTop", sidebar.scrollTop);
+            } else {
+                sessionStorage.removeItem("sidebarScrollTop");
+            }
+        });
+    }
+
     // Map your sidebar captions exactly as they appear, to their target files
     const captionLinks = {
         "Start here": "getting-started/index.html",
