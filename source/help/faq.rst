@@ -259,20 +259,23 @@ If the issue persists, please :doc:`contact support </help/index>`.
 If you need to cite the AI4EOSC project or the AI4OS stack, please consider citing
 the following paper:
 
-    Heredia, I., García, Á. L., Moltó, G., Calatrava, A., Kozlov, V., Costantini, A., … Díez, J. (2025). `AI4EOSC: a Federated Cloud Platform for Artificial Intelligence in Scientific Research <http://arxiv.org/abs/2512.16455>`__. *arXiv* [Cs.DC].
+   I. Heredia, Á.L. García, F.A. Gómez et al., AI4EOSC: A federated cloud platform for Artificial Intelligence in scientific research, *Future Generation Computer Systems* (2026), doi: https://doi.org/10.1016/j.future.2026.108672.
 
 .. dropdown:: 📄 ㅤBixTeX citation
 
     .. code-block:: bib
 
-        @misc{heredia2025ai4eoscfederatedcloudplatform,
-            title={AI4EOSC: a Federated Cloud Platform for Artificial Intelligence in Scientific Research},
-            author={Ignacio Heredia and Álvaro López García and Germán Moltó and Amanda Calatrava and Valentin Kozlov and Alessandro Costantini and Viet Tran and Mario David and Daniel San Martín and Marcin Płóciennik and Marta Obregón Ruiz and Saúl Fernandez and Judith Sáinz-Pardo Díaz and Miguel Caballer and Caterina Alarcón Marín and Stefan Dlugolinsky and Martin Šeleng and Lisana Berberi and Khadijeh Alibabaei and Borja Esteban Sanchis and Pedro Castro and Giacinto Donvito and Diego Aguirre and Sergio Langarita and Vicente Rodriguez and Leonhard Duda and Andrés Heredia Canales and Susana Rebolledo Ruiz and João Machado and Giang Nguyen and Fernando Aguilar Gómez and Jaime Díez},
-            year={2025},
-            eprint={2512.16455},
-            archivePrefix={arXiv},
-            primaryClass={cs.DC},
-            url={https://arxiv.org/abs/2512.16455},
+        @article{HEREDIA2026108672,
+        title = {AI4EOSC: A federated cloud platform for Artificial Intelligence in scientific research},
+        journal = {Future Generation Computer Systems},
+        pages = {108672},
+        year = {2026},
+        issn = {0167-739X},
+        doi = {https://doi.org/10.1016/j.future.2026.108672},
+        url = {https://www.sciencedirect.com/science/article/pii/S0167739X26003067},
+        author = {Ignacio Heredia and Álvaro López García and Fernando Aguilar Gómez and Diego Aguirre and Caterina Alarcón Marín and Khadijeh Alibabaei and Lisana Berberi and Miguel Caballer and Amanda Calatrava and Pedro Castro and Alessandro Costantini and Mario David and Jaime Díez and Stefan Dlugolinsky and Giacinto Donvito and Leonhard Duda and Borja Esteban Sanchis and Saúl Fernandez Tobías and Andrés Heredia Canales and Valentin Kozlov and Sergio Langarita and João Machado and Daniel San Martín and Germán Moltó and Giang Nguyen and Marta Obregón Ruiz and Marcin Płóciennik and Susana Rebolledo Ruiz and Vicente Rodriguez and Judith Sáinz-Pardo Díaz and Martin Šeleng and Viet Tran},
+        keywords = {Cloud platform, Artificial Intelligence, Machine Learning, European Open Science Cloud, MLOps, Federated Learning, Provenance tracking, W3C PROV, Open science infrastructure},
+        abstract = {The rapid growth of Artificial Intelligence and Machine Learning in scientific research has highlighted a gap between industry-standard machine learning operations (MLOps) tools and platforms and the unique requirements of modern and Open Science, particularly regarding the FAIR (Findable, Accessible, Interoperable, and Reusable) principles. This paper presents AI4EOSC, a federated, open-source platform designed to operationalize the full AI/ML life-cycle within the European Open Science Cloud (EOSC) ecosystem. Our methodology tackles the fragmentation of distributed research infrastructures by integrating a modular and distributed architecture comprising an AI development platform, a serverless AI-as-a-Service layer, and a federated orchestration model that is able to integrate heterogeneous computing and storage resources from distributed e-infrastructures. AI4EOSC also introduces a “FAIR-by-design” approach that enforces metadata standardization (via MLDCAT-AP) and W3C PROV-compliant provenance tracking through a platform-integrated CI/CD pipeline. The added value of AI4EOSC is demonstrated through the delivery of a diverse set of community installations, which show consistent and seamless deployment across heterogeneous cloud providers. These installations are validated by a set of scientific cases, showing how our work reduces the manual burden on researchers while ensuring high levels of reproducibility and interoperability and providing a unified environment for the development, training, and production of AI/ML models in the EOSC.}
         }
 
 
