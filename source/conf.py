@@ -46,6 +46,7 @@ extensions = [
     'sphinx.ext.autosectionlabel',
     'sphinx_design',  # for fonts-awesome icons
     'sphinx_copybutton',  # copy button for code blocks
+    'sphinxcontrib.images',  # zoomable images
 ]
 
 # In code blocks, the copy button will exclude:
@@ -205,6 +206,11 @@ texinfo_documents = [
 
 
 # -- Extension configuration -------------------------------------------------
+
+# -- Options for sphinxcontrib.images extension ------------------------------
+images_config = {
+    'override_image_directive': True,  # to avoid replacing "image" --> "thumbnail"
+}
 
 # -- Options for todo extension ----------------------------------------------
 
