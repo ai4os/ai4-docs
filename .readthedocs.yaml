@@ -5,7 +5,11 @@
 # Required
 version: 2
 
-formats: all
+# "sphinxcontrib.images" interferes with how the "sphinx-design" extension handles
+#  translation node generation for EPUB builds. So we disable EPUB builds.
+formats:
+  - pdf
+  - htmlzip
 
 # Set the version of Python and other tools you might need
 build:
@@ -21,4 +25,3 @@ sphinx:
 python:
    install:
    - requirements: ./requirements.txt
-
