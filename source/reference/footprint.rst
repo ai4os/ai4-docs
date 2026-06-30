@@ -16,7 +16,7 @@ Wattnet is able to offer real-time time estimations of the impact of each datace
 It offer both a *carbon footprint* (measured in gCO2/kWH) and a *water footprint* (measured in l/kWH).
 Lower values for both metrics will mean that the datacenter energy is cleaner.
 
-.. image:: /_static/images/dashboard/stats-datacenters.png
+.. image:: /_static/images/dashboard/stats/datacenters.png
 
 Smart job scheduling
 --------------------
@@ -25,7 +25,7 @@ Power Usage Effectiveness (PUE) is a metric that measures the energy efficiency 
 
 At the WMS level, we have implemented the :material-outlined:`eco;1.5em` **AI4EOSC GreenDirector**, a green-aware extension that ranks candidate sites based on environmental metrics (e.g. PUE, carbon intensity, and water usage) obtained through the GreenDIGIT metrics publication system (EIMPS). This allows us to introduce energy-aware scheduling, where the platform favors routing new deployments to greener datacenters via Nomad affinities.
 
-.. image:: /_static/images/dashboard/stats-footprint.png
+.. image:: /_static/images/dashboard/stats/footprint.png
 
 Future iterations will go even further, leveraging Wattnet forecasting capabilities to schedule jobs during the particular hours of the day where energy is greener.
 

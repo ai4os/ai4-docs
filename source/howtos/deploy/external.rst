@@ -15,7 +15,7 @@ AI4Life
 We currently support all V5 models from the AI4Life `BioImage Model Zoo <https://bioimage.io/>`__.
 Those model are accessible in the :ref:`Dashboard Marketplace panel <dashboard_marketplace>`.
 
-.. image:: /_static/images/dashboard/marketplace-ai4life.png
+.. image:: /_static/images/dashboard/marketplace/ai4life.png
 
 When clicking on a given model you will be show the model information along with the metadata of that model.
 

@@ -11,7 +11,7 @@ AI Modules
 The AI Modules catalog is a set of AI models designed to perform given AI tasks (eg. image classification).
 The catalog shows both models developed specifically for the platform, as well as :doc:`external model catalogs </howtos/deploy/external>` that have been integrated to make them deployable in the platform.
 
-.. image:: /_static/images/dashboard/marketplace.png
+.. image:: /_static/images/dashboard/marketplace/modules.png
 
 You can use filters to quickly find the module you want.
 We provide filtering by:
@@ -35,7 +35,7 @@ Tools
 
 The Tools catalog is a collection of tools that come handy in assisting users during the whole Machine Learning workflow cycle.
 
-.. todo: add image
+.. image:: /_static/images/dashboard/marketplace/tools.png
 
 We currently offer for example:
 
@@ -48,7 +48,7 @@ LLMs
 
 The LLM catalog is a collection of LLM models that users can leverage for generative tasks.
 
-.. todo: add image
+.. image:: /_static/images/dashboard/marketplace/llms.png
 
 There are currently two kinds of LLMs:
 
