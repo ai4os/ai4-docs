@@ -1,4 +1,5 @@
 import datetime
+from docutils.parsers.rst.directives.images import Image
 
 # -*- coding: utf-8 -*-
 #
@@ -230,4 +231,9 @@ def env_get_outdated(app, env, added, changed, removed):
     return ['index']
 
 def setup(app):
+
+    # Make a copy of the original "image" directive before overwriting it with the
+    # sphinxcontrib.images extension. We use the image directive for small inline logos.
+    app.add_directive('image-ori', Image)
+
     app.connect('env-get-outdated', env_get_outdated)

@@ -16,33 +16,31 @@ There are two options to create accounts.
 Option 1. Use a federated identity
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-.. |egicheckin| image:: /_static/images/favicons/egicheckin.png
+.. |egicheckin| image-ori:: /_static/images/favicons/egicheckin.png
    :height: 1em
    :alt: Button icon
    :class: no-scaled-link
 
-.. |myaccessid| image:: /_static/images/favicons/myaccessid.png
+.. |myaccessid| image-ori:: /_static/images/favicons/myaccessid.png
    :height: 1em
    :alt: Button icon
    :class: no-scaled-link
 
-.. |ifca| image:: /_static/images/favicons/ifca.png
+.. |ifca| image-ori:: /_static/images/favicons/ifca.png
    :height: 1em
    :alt: Button icon
    :class: no-scaled-link
 
-.. |ai4eosc| image:: /_static/images/favicons/ai4eosc.png
+.. |ai4eosc| image-ori:: /_static/images/favicons/ai4eosc.png
    :height: 1em
    :alt: Button icon
    :class: no-scaled-link
 
-.. |orcid| image:: /_static/images/favicons/orcid.ico
+.. |orcid| image-ori:: /_static/images/favicons/orcid.ico
    :height: 1em
    :alt: Button icon
    :class: no-scaled-link
 
-
-.. todo add favicons before naming the different identities
 
 This is the :material-outlined:`verified;1.5em` **recommended option** for:
 
