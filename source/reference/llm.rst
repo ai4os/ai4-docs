@@ -51,7 +51,16 @@ Once you login, you will arrive to a landing page where you will be able to sele
 
 .. image:: /_static/images/llm/landing.png
 
-Available models might evolve, as we are constantly deploying newer, better and more efficient models. We typically server open-source/open-weights models from the `Mistral family <https://mistral.ai/>`__ and the `Qwen family <https://huggingface.co/collections/Qwen/qwen3-67dd247413f0e2e4f653967f>`__. We also create custom agents, like the **AI4EOSC Assistant** that allows you :ref:`to ask questions to our documentation <reference/llm:Ask questions about the documentation>`.
+Available models might evolve, as we are constantly deploying newer, better and more efficient models. We typically serve open-source/open-weights models from
+the `Mistral family <https://mistral.ai/>`__,
+the `Qwen family <https://huggingface.co/collections/Qwen/qwen3-67dd247413f0e2e4f653967f>`__,
+the `Gemma family <https://huggingface.co/google>`__,
+the `DeepSeek family <https://huggingface.co/deepseek-ai>`__,
+the `Minimax family <https://huggingface.co/MiniMaxAI>`__,
+etc.
+We also create custom agents, like the **AI4EOSC Assistant** that allows you :ref:`to ask questions to our documentation <reference/llm:Ask questions about the documentation>`.
+
+To prevent name changes from breaking user workflows, we serve some persistent model names, namely ``AI4EOSC/default`` (for chat completions) and ``AI4EOSC/default-embeddings`` (to generate embeddings). Those aliases will point always to the latest models.
 
 
 Using the LLM
@@ -205,7 +214,7 @@ To configure it:
       models:
         - name: AI4EOSC LLM
           provider: openai
-          model: AI4EOSC/mistralai/Mistral-Small-3.1-24B-Instruct-2503
+          model: AI4EOSC/default  # or manually select you model
           apiKey: "sk-************************************"
           apiBase: https://vllm.cloud.ai4eosc.eu/
           roles:
@@ -239,7 +248,7 @@ Then you can use the LLM as following:
     )
 
     completion = client.chat.completions.create(
-        model="AI4EOSC/mistralai/Mistral-Small-3.1-24B-Instruct-2503",
+        model="AI4EOSC/default",  # or manually select you model
         messages=[{"role": "user", "content": "What is the capital of France?"}]
     )
 
@@ -283,12 +292,12 @@ define your demo pipeline:
   Settings.embed_model = OpenAILikeEmbedding(
       api_base="https://vllm.cloud.ai4eosc.eu",
       api_key="sk-************************************",
-      model_name="AI4EOSC/Qwen/Qwen3-Embedding-4B",
+      model_name="AI4EOSC/default-embeddings",  # or manually select you model
   )
   Settings.llm = OpenAILike(
       api_base="https://vllm.cloud.ai4eosc.eu",
       api_key="sk-************************************",
-      model="AI4EOSC/mistralai/Mistral-Small-3.1-24B-Instruct-2503",
+      model="AI4EOSC/default",  # or manually select you model
       context_window=25000,
       is_chat_model=True,
       is_function_calling_model=False,
