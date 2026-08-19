@@ -1,22 +1,22 @@
 Access Policies
 ===============
 
-.. |myaccessid| image:: /_static/images/favicons/myaccessid.png
+.. |myaccessid| image-ori:: /_static/images/favicons/myaccessid.png
    :height: 1em
    :alt: Button icon
    :class: no-scaled-link
 
-.. |ifca| image:: /_static/images/favicons/ifca.png
+.. |ifca| image-ori:: /_static/images/favicons/ifca.png
    :height: 1em
    :alt: Button icon
    :class: no-scaled-link
 
-.. |ai4eosc| image:: /_static/images/favicons/ai4eosc.png
+.. |ai4eosc| image-ori:: /_static/images/favicons/ai4eosc.png
    :height: 1em
    :alt: Button icon
    :class: no-scaled-link
 
-.. |orcid| image:: /_static/images/favicons/orcid.ico
+.. |orcid| image-ori:: /_static/images/favicons/orcid.ico
    :height: 1em
    :alt: Button icon
    :class: no-scaled-link

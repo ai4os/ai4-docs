@@ -8,7 +8,7 @@ We care about user privacy, so it's important to notice that your chat history w
 .. admonition:: Requirements
    :class: info
 
-   🔓 You need a :doc:`platform account </getting-started/register>` with :ref:`basic access level <reference/user-access-levels:Basic access level>`.
+   🔓 You need a :doc:`platform account </getting-started/register>` with :ref:`intermediate access level <reference/user-access-levels:Intermediate access level>`.
 
 
 .. dropdown:: 🤔 Platform LLM *vs* self-deployed LLM
