@@ -29,6 +29,7 @@ document.addEventListener("DOMContentLoaded", function() {
         "AI4EOSC Dashboard": "dashboard/index.html",
         "Howto guides": "howtos/index.html",
         "User reference": "reference/index.html",
+        "Considerations": "considerations/index.html",
         "Help and support": "help/index.html",
         "Other resources": "others/index.html",
         "Advanced topics": "advanced/index.html",

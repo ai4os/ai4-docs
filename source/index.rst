@@ -108,7 +108,16 @@ The platform is currently used by the following projects:
    Storage <reference/storage>
    AI Modules <reference/modules>
    User access levels <reference/user-access-levels>
-   Environmental footprint <reference/footprint>
+
+.. toctree::
+   :titlesonly:
+   :maxdepth: 2
+   :caption: Considerations
+   :hidden:
+
+   Environmentally aware <considerations/footprint>
+   Privacy first <considerations/privacy>
+   FAIR by design <considerations/fair>
 
 .. toctree::
    :titlesonly:

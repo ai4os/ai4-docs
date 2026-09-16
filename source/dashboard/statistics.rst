@@ -25,7 +25,7 @@ the platform, along with their metrics:
 Footprint
 ---------
 
-In this section, you will see all the relevant metrics regarding the carbon and water footprint of the AI4EOSC datacenters, including the dynamic datacenter ranking :ref:`created by our GreenDirector <reference/footprint:Smart job scheduling>`  that favour routing jobs to greener datacenters:
+In this section, you will see all the relevant metrics regarding the carbon and water footprint of the AI4EOSC datacenters, including the dynamic datacenter ranking :ref:`created by our GreenDirector <considerations/footprint:Smart job scheduling>`  that favour routing jobs to greener datacenters:
 
 .. image:: /_static/images/dashboard/stats/footprint.png
 
