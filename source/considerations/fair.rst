@@ -10,7 +10,7 @@ In modern AI research, scientists frequently face reproducibility and transparen
 * **Vendor lock-in and closed platforms**: AI models are often tightly coupled to proprietary cloud ecosystems or proprietary APIs, hindering independent verification.
 * **Isolated data and compute**: Connecting scientific datasets from open repositories to distributed compute infrastructure remains cumbersome.
 
-The **AI4EOSC** platform and the **AI4OS** stack were architected from the ground up with a **FAIR-by-design** approach. By embedding standardized metadata schemas, non-intrusive end-to-end provenance tracking, open-source principles, and native scientific data integrations directly into the MLOps lifecycle, the platform ensures that every AI asset is transparent, traceable, and reusable across the European Open Science Cloud (EOSC) and the broader scientific community.
+The **AI4EOSC** platform was architected from the ground up with a **FAIR-by-design** approach. By embedding standardized metadata schemas, non-intrusive end-to-end provenance tracking, open-source principles, and native scientific data integrations directly into the MLOps lifecycle, the platform ensures that every AI asset is transparent, traceable, and reusable across the European Open Science Cloud (EOSC) and the broader scientific community.
 
 
 Standardized metadata and semantic discovery
@@ -56,7 +56,7 @@ Openness and avoiding vendor lock-in
 
 True accessibility in science requires open software, transparent artifacts, and independence from proprietary platforms.
 
-* **Open-source software stack**: All core AI4OS platform components, orchestration tools, and deployment templates are open source and publicly maintained under the `AI4OS GitHub organization <https://github.com/ai4os>`__.
+* **Open-source software**: All core AI4EOSC platform components, orchestration tools, and deployment templates are open source and publicly maintained under the `AI4OS GitHub organization <https://github.com/ai4os>`__.
 * **Open AI module catalog**: Every module developed on the platform has a public repository hosted under the `AI4OS Hub GitHub organization <https://github.com/ai4os-hub>`__. Code, model weights, training configurations, and documentation are publicly accessible and linkable.
 * **Public container images**: Workloads and modules are packaged into standard Docker container images built reproducibly via CI/CD pipelines and published to public registries (`DockerHub <https://hub.docker.com/u/ai4oshub/>`__ and `Harbor <https://registry.cloud.ai4eosc.eu/>`__).
 * **Infrastructure portability**: Workloads are not tied to a single infrastructure provider. Users can deploy modules to any external Docker-enabled environment (:doc:`try locally </howtos/try/locally>`), federated research clouds (:doc:`deploy on custom clouds via IM </howtos/deploy/cloud>`), on-premise servers, or the :doc:`EOSC EU Node </howtos/deploy/eosc-node>` using the Infrastructure Manager (IM) and TOSCA orchestration templates.

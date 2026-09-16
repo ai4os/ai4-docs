@@ -1,22 +1,29 @@
-Welcome to AI4OS/AI4EOSC documentation!
-=======================================
+Welcome to AI4EOSC documentation!
+=================================
 
-The ``AI4EOSC`` platform and the ``AI4OS`` stack empowers scientist by lowering the
-barrier to adopt the latest AI models and tools. The platform provides a user-friendly
-workbench to easily train, deploy, share and monitor AI models. The stack provides a set
-of tools and services to easily create and deploy AI models.
+The ``AI4EOSC`` platform empowers scientists by lowering the barrier to adopt the latest
+AI models and tools. The platform provides a user-friendly workbench to easily train,
+deploy, share and monitor AI models. It covers the full ML lifecycle: from model creation
+and training to deployment and monitoring in production, adhering strictly to FAIR
+principles for science (fully open-source and portable with no vendor lock-in). Furthermore,
+AI4EOSC is actively expanding to support Generative AI (GenAI) and agentic workflows for
+scientific research.
 
-It covers the full ML cycle: from model creation, to training, deployment and monitoring
-in production. Following the FAIR principles for science, both our software (platform
-and models) are fully open-source and easily portable to any other platform (no vendor
-lock-in!).
 
-The platform is currently used by the following projects:
+The AI4EOSC Ecosystem
+---------------------
 
-   * `AI4EOSC <https://ai4eosc.eu/>`__: AI for the European Open Science Cloud
-   * `iMagine <https://imagine-ai.eu/>`__: Imaging data and services for aquatic science
-   * `AI4Life <https://ai4life.eurobioimaging.eu/>`__: AI models and methods for the life sciences
-   * `KMD4EOSC <https://kmd4eosc.pl/>`__: Universal infrastructure for efficient data processing in HPC
+The platform is developed and expanded through a collaborative ecosystem of **projects**,
+**gateways**, and scientific **communities**:
+
+* **Projects** (`DEEP-HDC <https://deep-hybrid-datacloud.eu/>`__, `AI4EOSC <https://ai4eosc.eu/>`__, `AI4Life <https://ai4life.eurobioimaging.eu/>`__, `iMagine <https://imagine-ai.eu/>`__, `EOSC-ARENA <https://eosc-arena.eu/>`__, `FLUID-AI <https://fluid-ai.eu/>`__, `GenAI4Earth <https://genai4earth.eu/>`__):
+  EU-funded initiatives that develop and extend the AI4EOSC platform with new capabilities—from core MLOps, distributed training, and composite AI to Generative AI, agentic environments, and FAIR data/model interoperability.
+
+* **Gateways** (`AI4EOSC <https://dashboard.cloud.ai4eosc.eu/>`__, `iMagine <https://dashboard.cloud.imagine-ai.eu/>`__, `AI4Life <https://ai4life.cloud.ai4eosc.eu/>`__, `KMD4EOSC <https://kmd4eosc.pl/>`__, `Tutorials <https://tutorials.cloud.ai4eosc.eu/>`__):
+  Dedicated instances of the AI4EOSC platform built on top of the shared platform foundation (common API, authentication, and compute/storage infrastructure). Each gateway is customized with specific branding, tools, and domain-specific model catalogs to access dedicated resources for a given community.
+
+* **Communities & Scientific Domains**:
+  Scientific communities group researchers within specific domains (e.g., climate forecasting, genomics and life sciences, aquatic imaging and biodiversity, and interdisciplinary science). One gateway serves a given community, while a single community can leverage several gateways to access the AI models and computing tools relevant to their research.
 
 
 .. grid:: 2

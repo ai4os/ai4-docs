@@ -58,10 +58,8 @@ notified here.
 🚀 Upcoming features
 --------------------
 
-In this section, we will offer some insight on to where the AI4OS stack is heading.
-Some of these features are experimental and might not end up being integrated in the stack:
-
-* integration of carbon mnonitoring
+In this section, we will offer some insight on to where the AI4EOSC platform is heading.
+Some of these features are experimental and might not end up being integrated in the platform:
 
 Do you find something missing? Please check
 :ref:`how to suggest a new feature <new-features-request>`.

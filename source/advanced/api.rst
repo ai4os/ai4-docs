@@ -39,7 +39,7 @@ Every other method will return a ``NotImplementError`` when  queried from the AP
 The ``get_metadata()`` should be already defined for you.
 
 If you don't feel like reading the DEEPaaS docs (which you should), we recommend taking
-a look at the `AI4OS demo app <https://github.com/ai4os-hub/ai4os-demo-app/blob/master/ai4os_demo_app/api.py>`__.
+a look at the `AI4EOSC demo app <https://github.com/ai4os-hub/ai4os-demo-app/blob/master/ai4os_demo_app/api.py>`__.
 There, you will be able to see examples on:
 
 * how to define you predict function, with multiple types of inputs and outputs.

@@ -256,7 +256,7 @@ If the issue persists, please :doc:`contact support </help/index>`.
 ℹ️ How can I cite the AI4EOSC project?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-If you need to cite the AI4EOSC project or the AI4OS stack, please consider citing
+If you need to cite the AI4EOSC project or platform, please consider citing
 the following paper:
 
    I. Heredia, Á.L. García, F.A. Gómez et al., AI4EOSC: A federated cloud platform for Artificial Intelligence in scientific research, *Future Generation Computer Systems* (2026), doi: https://doi.org/10.1016/j.future.2026.108672.
@@ -330,7 +330,7 @@ Please open an issue in the Github repo of the component you are interested in:
 If you think the documentation itself can be improved, don't hesitate to open
 an issue or submit a Pull Request.
 
-* `AI4OS/AI4EOSC documentation <https://github.com/ai4os/ai4-docs>`__
+* `AI4EOSC documentation <https://github.com/ai4os/ai4-docs>`__
 
 You can always check that your suggested feature is not on the
 :doc:`Upcoming features </getting-started/new-features>` list.

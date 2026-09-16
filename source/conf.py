@@ -22,7 +22,7 @@ from docutils.parsers.rst.directives.images import Image
 
 # -- Project information -----------------------------------------------------
 
-project = 'AI4OS/AI4EOSC'
+project = 'AI4EOSC'
 copyright = f'{datetime.datetime.now().year}, AI4EOSC consortium'
 author = 'AI4EOSC consortium'
 

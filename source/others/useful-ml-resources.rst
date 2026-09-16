@@ -7,7 +7,7 @@ use to answer common problems (non ML expert) users might face.
 
 AI4EOSC webinars
 ----------------
-The AI4EOSC project has organized a series of webinars on the use of the platform (based on the AI4OS software stack), AI, machine learning, deep learning, image processing, image segmentation and other relevant topics. These can be accessed on YouTube at the following links:
+The AI4EOSC project has organized a series of webinars on the use of the platform, AI, machine learning, deep learning, image processing, image segmentation and other relevant topics. These can be accessed on YouTube at the following links:
 
 * `Introduction to the platform <https://www.youtube.com/watch?v=op70toJFBrk>`__
 * `Image processing with AI4EOSC <https://www.youtube.com/watch?v=JQOWmsEQANs>`__

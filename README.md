@@ -1,10 +1,10 @@
 # Documentation repository
 
-[![Documentation Status](https://readthedocs.org/projects/ai4-docs/badge/?version=latest)](https://docs.ai4os.eu/en/latest/?badge=latest)
+[![Documentation Status](https://readthedocs.org/projects/ai4-docs/badge/?version=latest)](https://docs.ai4eosc.eu/en/latest/?badge=latest)
 
 
 This repository contains software documentations, guides, tutorials, logbooks
-and similar documents produced to interact with the AI4OS stack.
+and similar documents produced to interact with the AI4EOSC platform.
 
 This documentation is deployed at:  http://docs.ai4eosc.eu/
 

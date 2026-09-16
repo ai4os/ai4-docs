@@ -3,32 +3,23 @@ Platform overview
 
 AI4EOSC provides a comprehensive platform for artificial intelligence and machine learning applications for scientific usecases. The project offers a federated computing infrastructure and shared services that enable researchers, developers, and organizations to collaborate on AI model development, training, and deployment at scale.
 
-.. admonition:: A note on terminology
+.. admonition:: Community gateways
    :class: info
 
-   `AI4OS <https://ai4os.eu/>`__ is the name of the software stack described in this documentation.
+   All gateways are connected to the AI4EOSC initiative and use the same open-source AI4EOSC platform as their foundation: same API, same authentication, and shared services (such as the `CI/CD pipeline <https://jenkins.cloud.ai4eosc.eu/>`__ or `Login <https://login.cloud.ai4eosc.eu/realms/ai4eosc/account>`__).
 
-   `AI4EOSC <https://ai4eosc.eu/>`__ is the project that initially developed that stack and is currently maintaining it.
-   AI4EOSC also host a particular deployment of the AI4OS stack components (under `cloud.ai4eosc.eu`).
-   For example:
+   Each gateway is tailored for a specific scientific community with dedicated model catalogs:
 
-   * The :ref:`Dashboard <dashboard>` deployed as the `AI4EOSC Dashboard <https://dashboard.cloud.ai4eosc.eu/>`__,
-   * The :doc:`Storage </reference/storage>` deployed as the `AI4EOSC Storage <https://share.cloud.ai4eosc.eu/>`__,
+   * The `AI4EOSC Dashboard <https://dashboard.cloud.ai4eosc.eu/>`__ for interdisciplinary science across Europe,
+   * The `iMagine Dashboard <https://dashboard.cloud.imagine-ai.eu/>`__ for aquatic imaging and marine biodiversity,
+   * The `AI4Life Dashboard <https://ai4life.cloud.ai4eosc.eu/>`__ for bioimaging, genomics and drug discovery,
    * etc.
-
-   In this regard, it is similar to other projects who have adopted the AI4OS Stack,
-   like `iMagine <https://www.imagine-ai.eu/>`__ who deployed it's own version of the
-   AI4OS Dashboard as the `iMagine Dashboard <https://dashboard.cloud.imagine-ai.eu/>`__.
-
-   To reduce duplicities and lower the entry barrier for external projects, many
-   AI4OS components deployed by AI4EOSC (e.g. the `CI/CD pipeline <https://jenkins.cloud.ai4eosc.eu/>`__ or the `Login <https://login.cloud.ai4eosc.eu/realms/ai4eosc/account>`__)
-   also serve others projects, like iMagine.
 
 
 Components
 ----------
 
-There are several different components in the AI4OS/AI4EOSC stack that are relevant for the users.
+There are several different components in the AI4EOSC platform that are relevant for the users.
 Later on you will see how each different type of user can take advantage of the different components.
 
 Dashboard

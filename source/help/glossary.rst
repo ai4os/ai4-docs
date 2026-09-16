@@ -3,13 +3,13 @@ Glossary
 List of frequently used acronyms and their meaning
 
 ================  =========================================================================================
- Term / Acronym   Definition                                                                                
+ Term / Acronym   Definition
 ================  =========================================================================================
  AAI              Authentication and Authorization Infrastructure
  AI               Artificial Intelligence
- AI4EOSC          (project) Artificial Intelligence for the European Open Science Cloud                     
- AI4EU            (project) AI on-demand platform to support research excellence in Europe                  
- AI4OS            Software stack powering AI4EOSC and iMagine AI platforms (see https://ai4os.eu/)          
+ AI4EOSC          (project) Artificial Intelligence for the European Open Science Cloud
+ AI4EU            (project) AI on-demand platform to support research excellence in Europe
+ AI4OS            Software stack powering AI4EOSC and iMagine AI platforms (see https://ai4os.eu/)
  API              Application Programming Interface
  AWS              Amazon Web Services
  CAPPI            Constant Altitude Plan Position Indicator
@@ -19,7 +19,7 @@ List of frequently used acronyms and their meaning
  CPU              Central Processing Unit
  CV               Computer Vision
  CVAT             Computer Vision Annotation Tool (see https://github.com/cvat-ai/cvat)
- DEEP HDC         (project) Designing and Enabling E-infrastructures for intensive Processing in a Hybrid DataCloud 
+ DEEP HDC         (project) Designing and Enabling E-infrastructures for intensive Processing in a Hybrid DataCloud
  DEEPaaS API      DEEP as a Service API
  DevOps           Development and Operations
  DL               Deep Learning
@@ -84,4 +84,3 @@ List of frequently used acronyms and their meaning
  XAI/xAI          eXplainable Artificial Intelligence
  YOLO             You Only Look at Once, algorithm for object detection
 ================  =========================================================================================
-

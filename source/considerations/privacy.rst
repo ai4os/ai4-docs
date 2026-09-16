@@ -1,7 +1,7 @@
 Privacy and data sovereignty
 ============================
 
-Data privacy, security, and digital sovereignty have been foundational principles in the design of the AI4EOSC / AI4OS platform. Modern research workflows often handle sensitive data—such as patient health records, personal identifiers, proprietary datasets, or confidential scientific findings—that cannot be shared publicly or transferred outside institutional boundaries.
+Data privacy, security, and digital sovereignty have been foundational principles in the design of the AI4EOSC platform. Modern research workflows often handle sensitive data—such as patient health records, personal identifiers, proprietary datasets, or confidential scientific findings—that cannot be shared publicly or transferred outside institutional boundaries.
 
 The platform provides a secure environment aligned with European data protection standards (GDPR), enabling researchers to run advanced machine learning, distributed training, and Generative AI workflows while maintaining strict control over their data.
 
