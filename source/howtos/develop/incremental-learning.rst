@@ -43,7 +43,7 @@ We recommend reviewing the `AirlinePassengers example <https://riverml.xyz/lates
 where online learning is applied to the widely known AirlinePassengers dataset
 (that contains the number of air-passengers per month), reproduced below.
 
-1. Install river and pytest (this dependency is needed):
+1. Install ``river`` and ``pytest`` (this dependency is needed):
 
 .. code-block:: console
 

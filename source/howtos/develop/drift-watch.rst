@@ -351,7 +351,7 @@ is clean or dirty. The function returns whether drift exists or not.
       }
 
 
-Monitor drift with Driftwatch
+Monitor drift with DriftWatch
 -----------------------------
 
 The previous section has showed how we could compute drift inside our predict function.
@@ -387,7 +387,7 @@ To obtain your token:
 2. Initialize DriftWatch in your module
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Create an environment variable ``DRIFT_MONITOR_MYTOKEN`` and assign your mytoken to it.
+Create an environment variable ``DRIFT_MONITOR_MYTOKEN`` and assign your `mytoken`` to it.
 
 To add the DriftWatch library to your module, you need to add the
 `drift-monitor <https://pypi.org/project/drift-monitor/>`__ package to the requirements file. This package is used to
@@ -489,7 +489,7 @@ In the ``Deployments`` tab, go to the ``Modules`` table and find your created
 deployment. Click the :material-outlined:`terminal;1.5em` ``Quick access`` to
 access the JupyterLab terminal.
 
-Now we need to define the mytoken variable as envar:
+Now we need to define the `mytoken` variable as envar:
 
 .. code-block:: console
 

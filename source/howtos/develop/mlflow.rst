@@ -37,7 +37,7 @@ Finally you will be shown your user settings:
 * You can check your user info (your ``username`` is your email!)
 * You have also the option of deleting your account as well as logging out.
 
-Once you are ready, proceed to the new step by clicking in ``Go to mlflow``.
+Once you are ready, proceed to the new step by clicking in ``Go to MLflow``.
 
 
 2. Login the MLflow UI
@@ -67,7 +67,7 @@ For this you have to do the following steps in your deployment.
 Install MLflow
 ^^^^^^^^^^^^^^
 
-First install mlflow client from the IDE that you are using to build your AI model,
+First install the MLflow client from the IDE that you are using to build your AI model,
 by executing:
 
 .. code-block:: console
@@ -147,8 +147,8 @@ Here is an example on how to start tracking in your training loop:
          mlflow.log_artifact(data_csv, artifact_path='artifacts/dataset')
 
 
-We provide some `examples of mlflow implementations <https://codebase.helmholtz.cloud/m-team/ai/mlflow-tutorial/>`__
-to serve as reference, as well a `specific integration of mlflow <https://codebase.helmholtz.cloud/m-team/ai/yolov8_api/-/tree/mlflow?ref_type=heads>`__ once you have created your api in the Marketplace.
+We provide some `examples of MLflow implementations <https://codebase.helmholtz.cloud/m-team/ai/mlflow-tutorial/>`__
+to serve as reference, as well a `specific integration of MLflow <https://codebase.helmholtz.cloud/m-team/ai/yolov8_api/-/tree/mlflow?ref_type=heads>`__ once you have created your api in the Marketplace.
 
 For more information, see the `Getting Started <https://mlflow.org/docs/latest/getting-started/index.html>`__
 guide in the official MLflow docs.

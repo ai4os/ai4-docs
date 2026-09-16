@@ -97,7 +97,7 @@ Therefore some resources might not be properly virtualized like in a traditional
 Virtual Machine.
 This means that standard commands for checking up resources might give you higher
 numbers than what is really available (ie. they give you the resources of the
-full Virtual Machine where Docker is running, not the resources avaible to your
+full Virtual Machine where Docker is running, not the resources available to your
 individual Docker container).
 
 Standard commands:

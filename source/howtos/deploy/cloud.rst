@@ -46,7 +46,7 @@ and the base image you want to use for the deployment.
 .. image:: /_static/images/im/configure_cloud.png
 
 After clicking on ``Submit``, the deployment will start.
-Then afther a few minutes, the VM will be deployed and the AI4EOSC module
+Then after a few minutes, the VM will be deployed and the AI4EOSC module
 configured and you will be able to use it.
 
 .. image:: /_static/images/im/inf_list.png

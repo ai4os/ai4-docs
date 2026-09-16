@@ -25,7 +25,7 @@ In your profile details you will find:
 
   * the :doc:`Storage </reference/storage>` as well as :doc:`external storage providers </technical/storage-providers>`,
   * the :doc:`MLflow Experiment Tracking </howtos/develop/mlflow>`,
-  * your `Huggingface <https://huggingface.co/>`__ account,
+  * your `Hugging Face <https://huggingface.co/>`__ account,
 
   In order to link a service, you have to click on the ``Link`` button, log in the popup window and grant access to the Dashboard.
   If you have previously linked the service, you also have to to delete old credentials and generate new ones using ``Re-link``.

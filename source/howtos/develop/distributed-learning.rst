@@ -3,7 +3,7 @@ Distributed Learning
 
 Essentially, carrying out the training of AI/ML/DL models in a distributed way can be done due to two fundamental reasons: the first one is that there are privacy issues that prevent to centralize the data in a single site, the second one is that due to the need of computational resources the training must be distributed in different workers (e.g. the model or the data do not fit in memory). Thus, we can consider two main paradigms to carry out distributed machine learning (DML):
 
-* **Data parallelism:** this is the most common case, and is used when the data avilable for training the model does not fit in memory in a single node or worker. Thus, the data is distributed among the different available workers or machines. Then, the model is trained on each data subset and the resulting model is aggregated using the parameters obtained in each case.
+* **Data parallelism:** this is the most common case, and is used when the data available for training the model does not fit in memory in a single node or worker. Thus, the data is distributed among the different available workers or machines. Then, the model is trained on each data subset and the resulting model is aggregated using the parameters obtained in each case.
 
 * **Model parallelism:** the model, usually a neural network, is split and distributed among different available computation nodes. An important aspect here is to ensure a correct synchronization and coordination between the different workers when performing gradient descent and backward propagation. This method is used in case of very large models that do not fit in memory.
 

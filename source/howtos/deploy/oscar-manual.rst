@@ -14,7 +14,7 @@ An OSCAR cluster consists of, among other components:
   to perform AI model inference.
 * configured with `Knative <http://knative.dev>`__, a FaaS platform, so that synchronous
   requests to an OSCAR service are handled via dynamically provisioned pods (containers)
-  in the Kubenetes cluster.
+  in the Kubernetes cluster.
 
 User can manage OSCAR services via an User Interface (UI) or via the `command-line interface (CLI) <https://docs.oscar.grycap.net/oscar-cli/>`__.
 

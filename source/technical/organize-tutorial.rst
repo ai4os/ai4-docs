@@ -7,5 +7,5 @@ How to organize a tutorial
 * Once your users are approved they will be able to access the
   :ref:`Tutorials Dashboard <dashboard>`.
   Bear in mind that the Tutorial Dashboard won't let them
-  use GPUs (scarce ressource!) and will have other small limitations in terms of RAM,
+  use GPUs (scarce resource!) and will have other small limitations in terms of RAM,
   CPUs and disk.

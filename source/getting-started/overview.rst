@@ -15,6 +15,7 @@ AI4EOSC provides a comprehensive platform for artificial intelligence and machin
    * The `AI4Life Dashboard <https://ai4life.cloud.ai4eosc.eu/>`__ for bioimaging, genomics and drug discovery,
    * etc.
 
+.. errorress
 
 Components
 ----------

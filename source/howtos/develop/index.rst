@@ -46,7 +46,7 @@ techniques in their modules:
         :link: drift-watch
         :link-type: doc
 
-        Learn how to use DirftWatch to monitor data drift during production.
+        Learn how to use DriftWatch to monitor data drift during production.
 
 .. toctree::
    :maxdepth: 1

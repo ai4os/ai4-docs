@@ -177,7 +177,7 @@ in some parts of the code if long lines are really needed.
 ----------------------------------
 
 Your ``./Dockerfile`` is in charge of creating a docker image that integrates
-your application, along with deepaas and any other dependency.
+your application, along with DEEPaaS and any other dependency.
 You can modify that file according to your needs.
 
 If you need to add instructions based on the runtime (eg. perform certain actions depending on whether you detected a GPU), please use the ``ENTRYPOINT`` statement, as ``CMD`` will be overwritten by the platform when you deploying a given service (eg. JupyterLab).

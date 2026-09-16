@@ -59,7 +59,7 @@ This is the :material-outlined:`verified;1.5em` **recommended option** for:
     To access this authentication level, go to the `EGI Check-In (prod) <https://aai.egi.eu/>`__
     and login preferably with your **institutional account** (university, research center).
     If this is not possible, please, use one of **Github** or **ORCID** but with the email
-    domain which identifies your organisation.
+    domain which identifies your organization.
     This will automatically create your new account at EGI Check-In.
 
     Then you have to enroll in one of the Virtual Organizations (VO) supported by the project.

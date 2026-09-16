@@ -41,7 +41,7 @@ In this particular case, during the LLM configuration phase you will need to pay
   By default, we use your user email from the platform.
 
 * *(Optional)* ``HF token``: Using some models might require that you provide a valid HuggingFace token to deploy.
-  For example, to use `LLama models <https://huggingface.co/meta-llama>`__ you must login to HuggingFace and accept their terms and conditions. Once this is done, you can automatically `generate a Huggingface token <https://huggingface.co/docs/hub/security-tokens>`__ to use Llama models in our platform.
+  For example, to use `LLama models <https://huggingface.co/meta-llama>`__ you must login to HuggingFace and accept their terms and conditions. Once this is done, you can automatically `generate a Hugging Face token <https://huggingface.co/docs/hub/security-tokens>`__ to use Llama models in our platform.
 
 * *(Optional)* ``API key/url``: if you choose to deploy only the UI, you must provide the endpoint and key of an OpenAI compatible endpoint, that the UI can connect to.
 

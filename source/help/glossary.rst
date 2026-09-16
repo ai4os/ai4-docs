@@ -12,7 +12,6 @@ List of frequently used acronyms and their meaning
  AI4OS            Software stack powering AI4EOSC and iMagine AI platforms (see https://ai4os.eu/)
  API              Application Programming Interface
  AWS              Amazon Web Services
- CAPPI            Constant Altitude Plan Position Indicator
  CI/CD            Continuous Integration and Continuous Delivery/Continuous Deployment
  CLI              Command Line Interface
  CNN              Convolutional Neural Network
@@ -50,7 +49,7 @@ List of frequently used acronyms and their meaning
  MLOps            Machine Learning Operations
  MSE              Mean Squared Error
  MVP              Minimum Viable Product
- NGO              Non-governmental organisation
+ NGO              Non-governmental organization
  NPS              Net Promoter Score
  NVFLARE          NVIDIA Federated Learning Application Runtime Environment
  OIDC             OpenID Connect (an authentication protocol)

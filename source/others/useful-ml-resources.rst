@@ -63,7 +63,7 @@ Find a dataset
 If you don't have any data, try find an open dataset that suits you.
 
 * `Google Dataset search <https://datasetsearch.research.google.com/>`__
-* `Graviti Open Datassets <https://docs.graviti.com/guide/opendataset>`__
+* `Graviti Open Datasets <https://docs.graviti.com/guide/opendataset>`__
 * `DataHub <https://datahub.io/collections>`__
 * `Kaggle <https://www.kaggle.com/>`__
 * `Paperwithcode Datasets <https://paperswithcode.com/datasets>`__
@@ -159,7 +159,7 @@ extensions <https://www.tensorflow.org/resources/libraries-extensions>`__:
    - build sparse models
 -  `Tensorflow
    Similarity <https://blog.tensorflow.org/2021/09/introducing-tensorflow-similarity.html>`__
-   - Entrenar modelos similares. Sirve también para Self Supervised
+   - tain similar models. It can also be used for Self Supervised
    Learning
    (`ref <https://blog.tensorflow.org/2022/02/boost-your-models-accuracy.html>`__).
 -  `TF-GAN <https://github.com/tensorflow/gan>`__ - reproducible GANs
@@ -182,7 +182,7 @@ Pytorch related
    train, eval, inference, export scripts, and pretrained weights.
    Integrates the ``timm`` library
 -  `Composer <https://github.com/mosaicml/composer>`__ - library with
-   raining methods and best practices for efficent training
+   raining methods and best practices for efficient training
 -  `Torchdim <https://github.com/facebookresearch/torchdim>`__
 -  `PyTorch Tabular <https://github.com/manujosephv/pytorch_tabular>`__
    - for tabular data
@@ -191,14 +191,13 @@ Pytorch related
 -  `VISSL <https://vissl.ai/>`__ - Self Supervised Learning
 -  `TorchSSL <https://github.com/torchssl/torchssl>`__ - Semi Supervised
    Learning
--  `Kornia <https://github.com/kornia/kornia>`__ - accelerar image
-   processing con GPUs. Lo puedo usar para depth estimation
+-  `Kornia <https://github.com/kornia/kornia>`__ - accelerate image processing with GPUs
 -  `Torch Geo <https://github.com/microsoft/torchgeo>`__ - Geospatial ML
 -  `TorchMetrics <https://torchmetrics.readthedocs.io/en/latest/>`__
 -  `torchtyping <https://github.com/patrick-kidger/torchtyping>`__ -
    enforce torck type checks
 -  `lovelytensors <https://github.com/xl0/lovely-tensors/>`__ - human
-   friendly debigging of torch tensors
+   friendly debugging of torch tensors
 -  `skorch <https://github.com/skorch-dev/skorch>`__ - A scikit-learn
    compatible neural network library that wraps PyTorch.
 -  `Additional

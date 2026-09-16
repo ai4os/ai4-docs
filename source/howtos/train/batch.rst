@@ -46,7 +46,7 @@ Storage
 In batch mode, it is mandatory to :ref:`connect a storage <dashboard_storage>` to your job. This is done because:
 
 * you need data to train, usually located in the storage (not in the Docker image itself)
-* since the job is killed when it concludes, you cannot directly access the job to retrieve any outputs. So you need to **save your modelweights in your storage** to be able to retrieve them afterwards.
+* since the job is killed when it concludes, you cannot directly access the job to retrieve any outputs. So you need to **save your model weights in your storage** to be able to retrieve them afterwards.
 
 Batch commands
 ^^^^^^^^^^^^^^
@@ -57,7 +57,7 @@ In the configuration form, they can be provided either via a file upload or by a
 .. image:: /_static/images/dashboard/batch-configuration.png
    :width: 400 px
 
-In the following dummy example, we can save the current date in our storage, mimicking the saving of the modelweights at the end of a real training.
+In the following dummy example, we can save the current date in our storage, mimicking the saving of the model weights at the end of a real training.
 
 .. code-block:: bash
 
@@ -78,5 +78,5 @@ Clicking on the job details you will see the resources as well as the training c
 .. image:: /_static/images/dashboard/batch-details.png
    :width: 400 px
 
-Once you batch job is completed, you should be able to retrieved the modelweights from Nextcloud if you had a saving step in your training script.
+Once you batch job is completed, you should be able to retrieved the model weights from Nextcloud if you had a saving step in your training script.
 Additionally, if your model is :doc:`integrated with MLflow </howtos/develop/mlflow>` you should be able to view your training stats in the MLflow UI.

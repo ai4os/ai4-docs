@@ -128,7 +128,7 @@ In your deployment go to ⓘ ``Info`` and click on the ``API`` active endpoint.
 
 Look for the ``train`` POST method. Modify the training parameters you wish to change and execute. In our case, you might need to correctly point to the training dataset location.
 
-If some kind of monitorization tool is available for the module, you will be able to follow the training progress at ``Monitor`` active endpoint. In the case of the image classification module, you can monitor training progress with Tensorboard.
+If some kind of monitoring tool is available for the module, you will be able to follow the training progress at ``Monitor`` active endpoint. In the case of the image classification module, you can monitor training progress with Tensorboard.
 
 .. image:: /_static/images/endpoints/tensorboard.png
 
@@ -144,7 +144,7 @@ You can kill everything using:
 5. Test and export the newly trained model
 ------------------------------------------
 
-Once the training has finished, you can directly test it by clicking on the ``predict`` POST method. For this you have to kill the process running deepaas, and launch it again.
+Once the training has finished, you can directly test it by clicking on the ``predict`` POST method. For this you have to kill the process running DEEPaaS, and launch it again.
 
 .. code-block:: console
 
@@ -155,9 +155,9 @@ Once the training has finished, you can directly test it by clicking on the ``pr
 .. admonition:: Note
     :class: info
 
-    We need to do this because the user inputs for deepaas are generated at the deepaas launching. Thus the original deepaas process is not aware of the newly trained model.
+    We need to do this because the user inputs for DEEPaaS are generated at the DEEPaaS launching. Thus the original DEEPaaS process is not aware of the newly trained model.
 
-Once deepaas is restarted, head to the ``predict`` POST method, select you new model weights and upload the image your want to classify.
+Once DEEPaaS is restarted, head to the ``predict`` POST method, select you new model weights and upload the image your want to classify.
 
 If you are satisfied with your model, then it's time to save it into your remote storage.
 Open a Terminal window and run:
@@ -213,7 +213,7 @@ specially tailored to this task:
 -----------------------------------
 
 Your ``./Dockerfile`` is in charge of creating a docker image that integrates
-your application, along with deepaas and any other dependency.
+your application, along with DEEPaaS and any other dependency.
 
 You will see that the base Docker image is the image of the original repo.
 Modify the appropriate lines to replace

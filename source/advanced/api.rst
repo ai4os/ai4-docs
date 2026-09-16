@@ -141,12 +141,12 @@ If running the API from inside a module's Docker container, you can use the comm
 
 .. dropdown:: ㅤ 🛠️ Troubleshooting: I only see a module called ``deepaas-test``
 
-    It can happen that when you launch deepaas, you cannot find your module in the UI and see something like the following instead:
+    It can happen that when you launch DEEPaaS, you cannot find your module in the UI and see something like the following instead:
 
     .. image:: /_static/images/endpoints/deepaas-error.png
        :width: 500 px
 
-    This mean that deepaas had problems to load your module and loaded instead the dummy module (``deepaas-test``).
+    This mean that DEEPaaS had problems to load your module and loaded instead the dummy module (``deepaas-test``).
     You can usually debug by running your module's API script and looking at the error it raised:
 
     .. code-block:: console
@@ -157,4 +157,4 @@ If running the API from inside a module's Docker container, you can use the comm
                ^
        SyntaxError: invalid syntax
 
-    Once fixed, launch deepaas again and your module should appear.
+    Once fixed, launch DEEPaaS again and your module should appear.

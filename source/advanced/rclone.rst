@@ -71,7 +71,7 @@ When the deployment is created, you should have your env variables available to 
 ... in your local machine
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
-First, you need to generate your RCLONE credentials. For this, log into the `AI4EOSC Nextcloud <https://share.cloud.ai4eosc.eu/>`__,  go to (1) **Settings** (top right corner) ➜ (2) **Security** ➜ (3) **Devices & sessions**. Set a name for your application (typically in the docs we will use ``rshare``) and click on **Create new app password**. This will generate your ``<user>`` and ``<password>`` credentials. Your username should start with ``EGI_Checkin-...``.
+First, you need to generate your RCLONE credentials. For this, log into the `AI4EOSC Nextcloud <https://share.cloud.ai4eosc.eu/>`__,  go to (1) **Settings** (top right corner) ➜ (2) **Security** ➜ (3) **Devices & sessions**. Set a name for your application (typically in the docs we will use ``rshare``) and click on **Create new app password**. This will generate your ``<user>`` and ``<password>`` credentials. Your username should start with ``EGI_CheckIn-...``.
 
 .. image:: /_static/images/nextcloud/access.png
 

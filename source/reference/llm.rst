@@ -193,7 +193,7 @@ There you will be able to create a new API key selecting the name and the expira
   Each model will consume a different amount of resources.
   As a general rule of thumb:
 
-  * small models (like Smol or OLMo) consume around ``1e-8`` per input token and ``2e-8`` per output token.
+  * small models (like `Smol` or `OLMo`) consume around ``1e-8`` per input token and ``2e-8`` per output token.
   * large models (like Mistral Small or Qwen 3) consume around ``1e-7`` per input token and ``3e-7`` per output token.
   * embedding models (like Qwen3 Embeddings) consume around ``2e-8`` per input token.
 
