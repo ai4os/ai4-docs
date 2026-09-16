@@ -14,7 +14,7 @@ There are several ways to contact us:
 Remember that some problems can be solved even without contacting us:
 
 * We have a dedicated page for :doc:`Frequently Asked Questions </help/faq>`.
-* You can also ask our :ref:`Assistant <reference/llm:Ask questions about the documentation>`, which is a LLM that uses this same documentation as a Knowledge Base to offer grounded responses to user questions (also :ref:`available from the Dashboard <dashboard/profile:Ask AI>`).
+* You can also ask our `Assistant <https://genai.dev.ai4eosc.eu/chat?agent=e6ba5ae7-fba7-480f-af62-c12d696aa6a2>`__, which is a LLM that uses this same documentation as a Knowledge Base to offer grounded responses to user questions.
 * We have a `status page <https://status.ai4eosc.eu/>`__ where you can see whether a particular service might be down.
 * We have a :ref:`notifications section <dashboard/profile:profile>` in the Dashboard where we notify users of expected downtimes and issues.
 
