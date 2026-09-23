@@ -225,7 +225,7 @@ Note that the same parameters as for the case of :ref:`server side differential 
 More information in this approach can be found in `this preprint <https://arxiv.org/abs/2502.01352>`__.
 
 Monitoring of training CO2 emissions
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 To provide users with the ability to monitor carbon emissions derived from their training, the FL server includes an integrated emissions monitoring feature. This functionality is implemented using the ``codecarbon`` Python library.
 

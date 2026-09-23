@@ -22,6 +22,8 @@ To overcome this, AI4EOSC provides first-class support for **Federated Learning 
 * **Differential privacy (DP)**: To defend against model inversion or membership inference attacks, server-side :ref:`differential privacy <howtos/train/federated-flower:Server side differential privacy>` introduces calibrated Gaussian noise and fixed clipping norms during the global aggregation step.
 * **Metric privacy (d-privacy)**: For domains with measurable distances between datasets, :ref:`metric privacy <howtos/train/federated-flower:Server side metric privacy>` calibrates perturbation dynamically based on the distance between client model updates, providing a superior trade-off between privacy guarantees and model utility.
 
+In addition, we also provide a `set of privacy-preserving tools <https://ifca-privacy-toolbox.github.io/>`__ for handling sensitive data, that can be used inside training workflows as Python packages. These include libraries for data anonymization, local differential privacy, and privacy risk assessment.
+
 
 Bring your own resources and data locality
 ------------------------------------------
