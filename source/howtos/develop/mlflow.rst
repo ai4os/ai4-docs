@@ -55,6 +55,7 @@ Once you login, you will see the default MLflow UI as follows:
 .. image:: /_static/images/mlflow/ui.png
    :width: 1000 px
 
+After having created the account, you should see the service appear in your :ref:`Dashboard profile <dashboard/profile:Linked services>`.
 
 3. Log your Experiments
 -----------------------

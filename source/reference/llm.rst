@@ -131,17 +131,15 @@ You can access the LLM models via an OpenAI-compatible API for an easier integra
 
    🔓 You need a :doc:`platform account </getting-started/register>` with :ref:`intermediate access level <reference/user-access-levels:Intermediate access level>` or above.
 
-Retrieve the API endpoint/key
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Retrieve the API credentials
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 The API endpoint to query the models is:
 
   https://vllm.cloud.ai4eosc.eu
 
-To generate the API keys go to the :ref:`Dashboard profile <dashboard_profile>`, to the ``Secrets and API keys`` section.
+To generate the API keys go to the :ref:`Dashboard profile <dashboard/profile:API keys>`.
 There you will be able to create a new API key selecting the name and the expiration date.
-
-.. image:: /_static/images/dashboard/profile-llm-keys.png
 
 .. dropdown:: ㅤ ℹ️ Budgets and rate limits
 
@@ -207,7 +205,7 @@ To configure it:
 
 1. In VScode, install the `Continue.dev <https://www.continue.dev/>`__ extension.
 2. Open the Continue config file: ``/home/<user>/.continue/config.yaml``
-3. Modify it to add the LLM model, :ref:`using your API key <reference/llm:Retrieve the API endpoint/key>`:
+3. Modify it to add the LLM model, :ref:`using your API key <reference/llm:Retrieve the API credentials>`:
 
   .. code-block:: yaml
 

@@ -5,26 +5,21 @@ This section describes how to manage your storage in the platform.
 If you have any issues with your storage, make sure to check the :ref:`FAQ (storage) questions <faq_storage>`.
 
 
-Our storage provider
---------------------
+AI4EOSC Storage
+---------------
 
-For hosting the data necessary for your trainings, we provide access form inside your
-deployments to the following hosting instances:
+For hosting the data necessary for your trainings, we provide :doc:`ap-u users </reference/user-access-levels>` access to the `AI4EOSC Storage <https://share.cloud.ai4eosc.eu/>`__. This is a Nextcloud instance where each user gets a free 500 GB storage quota.
 
-* `AI4EOSC Nextcloud <https://share.cloud.ai4eosc.eu/>`__: this is a Nextcloud instance
-  deployed for the AI4EOSC users. It also supports users of partner projects.
-  Each user gets a free 500 GB of storage there.
+.. admonition:: Account validation
+   :class: important
 
-  .. admonition:: Account validation
-     :class: important
+   The first time you access this storage, you will need to contact the admins to enable your account.
 
-     The first time you access this storage, you will need to contact the admins to enable your account.
+.. image:: /_static/images/nextcloud/folders.png
 
-  .. image:: /_static/images/nextcloud/folders.png
-
-  Take into account that you can :material-outlined:`share;1.5em` **share** specific folders with other users (searching them by email),
-  so if there are several members working on the same project, then only one of them needs to upload
-  the dataset and then share the folder with its coworkers.
+Take into account that you can :material-outlined:`share;1.5em` **share** specific folders with other users (searching them by email),
+so if there are several members working on the same project, then only one of them needs to upload
+the dataset and then share the folder with its coworkers.
 
 
 Accessing storage from inside your deployment
@@ -32,9 +27,12 @@ Accessing storage from inside your deployment
 
 .. _storage_access:
 
-To be able to access the Nextcloud storage from inside your deployment, you need to properly :ref:`configure your Storage <dashboard_storage>` when creating your deployment.
+To be able to access the Nextcloud storage from inside your deployment, you need to do do two steps:
 
-You have currently two ways of accessing your Nextcloud files from your deployment:
+* :ref:`link the storage in your profile <dashboard/deployments:Storage configuration>`, be it the AI4EOSC Storage or any other supported storage.
+* create a :ref:`deployment with storage enabled <dashboard_storage>`.
+
+Then, you have currently two ways of accessing your Nextcloud files from inside your deployment:
 
 Option 1: Virtual filesystem
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
