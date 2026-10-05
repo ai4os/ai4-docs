@@ -65,3 +65,23 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     });
 });
+
+// Add "Ask AI" button
+
+document.addEventListener("DOMContentLoaded", function () {
+    const agentId = window.AI_AGENT_ID;
+    const btn = document.createElement("a");
+    btn.href = `https://genai.dev.ai4eosc.eu/chat?agent=${agentId}`;
+    btn.className = "floating-btn";
+    btn.target = "_blank";
+    btn.title = "Ask AI";
+    btn.setAttribute("aria-label", "Ask AI");
+
+    // Path relative to where the HTML page renders
+    const rootPath = document.documentElement.dataset.content_root || "./";
+    const iconPath = rootPath + "_static/images/ai4eosc/genai.svg";
+
+    btn.innerHTML = `<img src="${iconPath}" class="floating-btn-icon" alt="Ask AI" />`;
+
+    document.body.appendChild(btn);
+});

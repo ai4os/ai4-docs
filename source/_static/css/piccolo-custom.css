@@ -193,3 +193,70 @@ div.admonition li {
   margin-top: -0.4em !important;
   margin-bottom: 0 !important;
 }
+
+
+/* Floating button for "Ask AI" */
+.floating-btn {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 56px;
+    height: 56px;
+    background-color: #458cba;
+    color: white !important;
+    padding: 0;
+    border-radius: 50%;
+    text-decoration: none !important;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25), 0 0 12px rgba(69, 140, 186, 0.5);
+    z-index: 1000;
+    transition: transform 0.2s, filter 0.2s, box-shadow 0.2s;
+}
+
+.floating-btn::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 50%;
+    box-shadow: 0 0 0 0 rgba(69, 140, 186, 0.65);
+    animation: pulse-glow 2.5s infinite;
+    z-index: -1;
+    pointer-events: none;
+}
+
+@keyframes pulse-glow {
+    0% {
+        box-shadow: 0 0 0 0 rgba(69, 140, 186, 0.65), 0 0 8px rgba(69, 140, 186, 0.4);
+    }
+    70% {
+        box-shadow: 0 0 0 14px rgba(69, 140, 186, 0), 0 0 14px rgba(69, 140, 186, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(69, 140, 186, 0), 0 0 8px rgba(69, 140, 186, 0);
+    }
+}
+
+.floating-btn:hover {
+    filter: brightness(1.15);
+    transform: scale(1.08);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3), 0 0 18px rgba(69, 140, 186, 0.8);
+}
+
+.floating-btn-icon {
+    width: 45px !important;
+    height: 45px !important;
+    border-radius: 0 !important;
+    background: transparent !important; /* Removes default image background */
+    border: none !important; /* Removes theme borders */
+    box-shadow: none !important; /* Removes box shadows */
+    padding: 0 !important;
+    margin: 0 !important;
+    display: block !important;
+    flex-shrink: 0;
+    object-fit: contain;
+}

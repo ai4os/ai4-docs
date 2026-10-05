@@ -1,0 +1,59 @@
+name: Check Documentation Agent
+
+on:
+  schedule:
+    # Run every day at 08:00 UTC
+    - cron: '0 8 * * *'
+  workflow_dispatch:
+
+jobs:
+  check-agent:
+    runs-on: ubuntu-latest
+    permissions:
+      issues: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: 'pip'
+
+      - name: Install dependencies
+        run: |
+          pip install -r requirements.txt
+
+      - name: Run agent check script
+        id: check_agent
+        continue-on-error: true
+        env:
+          LITELLM_API_KEY: ${{ secrets.LITELLM_API_KEY }}
+        run: |
+          python check_docs_agent.py
+
+      - name: Check for existing open issue and create if missing
+        if: steps.check_agent.outcome == 'failure'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          ISSUE_TITLE: "Documentation assistant agent needs to be updated"
+        run: |
+          # Search for existing open issues with the exact title
+          EXISTING_ISSUE=$(gh issue list --state open --search "$ISSUE_TITLE in:title" --json number --jq '.[0].number')
+
+          if [ -n "$EXISTING_ISSUE" ]; then
+            echo "An open issue (#$EXISTING_ISSUE) already exists. Skipping issue creation."
+          else
+            echo "No open issue found. Creating a new one..."
+            ISSUE_BODY="cc @IgnacioHeredia\n\nThe daily documentation agent check failed. The documentation assistant agent ID defined in \`source/conf.py\` could not be retrieved from the API or might have changed.\n\nPlease verify and update the agent ID in \`source/conf.py\`."
+            gh issue create \
+              --title "$ISSUE_TITLE" \
+              --assignee "IgnacioHeredia" \
+              --body "$(printf "$ISSUE_BODY")"
+          fi
+
+      - name: Fail workflow if check failed
+        if: steps.check_agent.outcome == 'failure'
+        run: exit 1
