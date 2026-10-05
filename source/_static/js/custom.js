@@ -68,8 +68,9 @@ document.addEventListener("DOMContentLoaded", function() {
 // Add "Ask AI" button
 
 document.addEventListener("DOMContentLoaded", function () {
+    const agentId = window.AI_AGENT_ID;
     const btn = document.createElement("a");
-    btn.href = "https://genai.dev.ai4eosc.eu/chat?agent=e6ba5ae7-fba7-480f-af62-c12d696aa6a2";
+    btn.href = `https://genai.dev.ai4eosc.eu/chat?agent=${agentId}`;
     btn.className = "floating-btn";
     btn.target = "_blank";
     btn.title = "Ask AI";

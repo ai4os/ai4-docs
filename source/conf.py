@@ -1,4 +1,5 @@
 import datetime
+
 from docutils.parsers.rst.directives.images import Image
 
 # -*- coding: utf-8 -*-
@@ -22,7 +23,7 @@ from docutils.parsers.rst.directives.images import Image
 
 # -- Project information -----------------------------------------------------
 
-project = 'AI4OS/AI4EOSC'
+project = 'AI4EOSC'
 copyright = f'{datetime.datetime.now().year}, AI4EOSC consortium'
 author = 'AI4EOSC consortium'
 
@@ -30,6 +31,15 @@ author = 'AI4EOSC consortium'
 version = ''
 # The full version, including alpha/beta/rc tags
 release = ''
+
+# -- AI Assistant Agent Configuration ----------------------------------------
+ai_agent_id = '2a437db7-0c6c-47e7-8580-06e3cc13a6a6'
+ai_agent_chat_url = f'https://genai.dev.ai4eosc.eu/chat?agent={ai_agent_id}'
+
+rst_epilog = f"""
+.. |ai_agent_id| replace:: {ai_agent_id}
+.. |ai_assistant_link| replace:: `Assistant <{ai_agent_chat_url}>`__
+"""
 
 
 # -- General configuration ---------------------------------------------------
@@ -237,3 +247,7 @@ def setup(app):
     app.add_directive('image-ori', Image)
 
     app.connect('env-get-outdated', env_get_outdated)
+
+    # Expose AI Agent ID to JavaScript
+    # Because priority=200 ensures it runs before custom.js (which is added with default priority 500)
+    app.add_js_file(None, body=f'window.AI_AGENT_ID = "{ai_agent_id}";', priority=200)
