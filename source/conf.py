@@ -33,7 +33,7 @@ version = ''
 release = ''
 
 # -- AI Assistant Agent Configuration ----------------------------------------
-ai_agent_id = '2a437db7-0c6c-47e7-8580-06e3cc13a6a6'
+ai_agent_id = '2a437db7-0c6c-47e7-8580-06e3cc13a6a'
 ai_agent_chat_url = f'https://genai.dev.ai4eosc.eu/chat?agent={ai_agent_id}'
 
 rst_epilog = f"""
