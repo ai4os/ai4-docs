@@ -28,7 +28,10 @@ response = requests.get(endpoint_url, headers=headers)
 
 if response.status_code in (200, 201):
     print("✅ Successfully retrieved documentation agent!")
-    print(response.json())
 else:
-    print(f"❌ Failed to retrieve documentation agent: {response.status_code} - {response.text}")
+    print(
+        f"❌ Failed to retrieve documentation agent: {response.status_code} - {response.text}\n"
+        "The documentation assistant agent ID defined in `source/conf.py` could not be retrieved from the API or might have changed.\n"
+        "Please verify and update the agent ID in `source/conf.py`."
+    )
     response.raise_for_status()
