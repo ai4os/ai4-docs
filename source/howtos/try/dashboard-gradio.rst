@@ -18,7 +18,7 @@ Try a model from the Dashboard (Gradio)
 
 To create a deployment, :ref:`select a module in the Marketplace <dashboard_marketplace>` and click on ``Try ▼ Nomad (Gradio)``.
 
-.. image:: /_static/images/dashboard/module.png
+.. image:: /_static/images/dashboard/catalog/details/default.png
 
 This will open a new tab where the new try-me environment will be deployed (this can take a few seconds).
 
@@ -35,4 +35,4 @@ Take into account that this try-me endpoints are offered to the general public, 
 
 In line with this, we also limit the number of try-me endpoints that the user can deploy at the same time. If you reach the limit, you can wait until one of your previous deployments is automatically deleted or you can delete it manually in the ``Try me`` section of the Dashboard.
 
-.. image:: /_static/images/dashboard/tryme.png
+.. image:: /_static/images/dashboard/deployments/tryme.png

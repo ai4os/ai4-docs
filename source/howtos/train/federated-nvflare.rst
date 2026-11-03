@@ -32,7 +32,7 @@ In this particular case, you will need to pay attention to:
     If you want to give another user access to sign in to the **NVFlare Dashboard** and register sites to the project, please make sure that during the deployment creation, you set **'Make project public'** to ``True``. Otherwise, you can only register the clients from the command line.
 
 
-.. image:: /_static/images/dashboard/configure_nvflare_1.png
+    .. image:: /_static/images/dashboard/configure/nvflare-specific.png
 
 
 Preparing the training environment
@@ -108,7 +108,7 @@ From the admin console, the admin can orchestrate the FL study—this includes s
 
   By default we provide such an image during the configuration step:
 
-  .. image:: /_static/images/dashboard/configure_nvflare_2.png
+  .. image:: /_static/images/dashboard/configure/nvflare-specific.png
 
 
 Start your Federated Learning training

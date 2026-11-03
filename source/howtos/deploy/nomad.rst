@@ -25,7 +25,7 @@ There you will be able to find all the modules ready to be used under the tag ``
 
 We will first start doing a simple prediction using the popular `YOLO module <https://dashboard.cloud.ai4eosc.eu/marketplace/modules/ai4os-yolov8-torch>`__.
 
-.. image:: /_static/images/dashboard/module-yolo.png
+.. image:: /_static/images/dashboard/catalog/details/yolo.png
 
 In the module page, click on the option ``Deploy > Inference API (dedicated)``.
 You will be show a :ref:`configuration page <dashboard_deployment>` where the option ``DEEPaaS`` is selected.

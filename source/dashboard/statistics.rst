@@ -3,51 +3,57 @@
 Statistics
 ==========
 
-Overview
---------
+This panel shows both your individual statistics, as well as the aggregated statistics of your :ref:`community gateway <getting-started/overview:Community gateways>`.
 
-In this section, you can see how the resources are currently being used:
 
-.. image:: /_static/images/dashboard/stats/overview.png
+User stats
+----------
 
-* In ``Cluster Usage Overview`` you will see how many resources are currently
-  consumed/available in the platform.
-* In ``Your Usage`` you will see how many resources you are currently consuming.
+.. image:: /_static/images/dashboard/stats/user/usage.png
 
-Datacenters
------------
+The **My Usage** section displays your individual metrics in the platform:
 
-In this section you will see a map of the datacenters that are providing resources for
-the platform, along with their metrics:
+* The number of jobs you have deployed,
+* The number of resources your are currently consuming (CPUs, GPUs, RAM, disk)
+* The aggregated resources consumed over time (compared to the total consumed by your gateway).
 
-.. image:: /_static/images/dashboard/stats/datacenters.png
+The metrics units are ``<resource> / day``. Therefore 2000 CPU consumed means that you have consumed the equivalent of 1 CPU for 2000 days (eg. same as 2 CPU for 1000 days).
 
-Footprint
----------
+As the resources in the project are assigned for exclusive usage, the metrics are not measuring *real* usage, but *allocated* usage. So if you create a 1-CPU deployment for 10 days, the aggregate usage will show 10 CPU days, even if you did not actually use   the CPU at all.
 
-In this section, you will see all the relevant metrics regarding the carbon and water footprint of the AI4EOSC datacenters, including the dynamic datacenter ranking :ref:`created by our GreenDirector <considerations/footprint:Smart job scheduling>`  that favour routing jobs to greener datacenters:
+.. image:: /_static/images/dashboard/stats/user/footprint.png
 
-.. image:: /_static/images/dashboard/stats/footprint.png
+The **My footprint** section shows:
 
-Usage
------
+* The aggregated power used by all your deployments
+* The aggregated energy consumed by all your deployments
+* The aggregated carbon emitted by all your deployments
+* The aggregated water emitted by all your deployments
 
-In this section you can see the historical usage metrics of the platform.
+These metrics are based on *realtime measurements* done in directly in your deployments, not on estimates. However not all datacenters currently support footprint monitoring, so your real aggregated footprint might be higher since the footprint of some jobs might not have been taken into account in the aggregation depending on the datacenter they landed in.
 
-.. image:: /_static/images/dashboard/stats/graphs.png
+Platform stats
+--------------
 
-* In ``Usage over time`` you can see the daily usage time-series over the last 3 months.
-  In addition to the standard resources, we show how many jobs where running and were
-  queued at each point in time.
+This section aggregates the metrics across all user of your community gateway.
 
-* In ``Aggregate Resource Usage`` you will be able to see to total use  of resources,
-  aggregated over the lifetime of the project. We show both the whole project aggregate
-  use, as well as your particular use.
+.. image:: /_static/images/dashboard/stats/platform/usage.png
 
-  The metrics units are ``<resource> / day``. Therefore 2000 CPU consumed means that you
-  have consumed the equivalent of 1 CPU for 2000 days (eg. same as 2 CPU for 1000 days).
+The **Usage** section shows:
 
-  As the resources in the project are assigned for exclusive usage, the metrics are not
-  measuring *real* usage, but *allocated* usage. So if you create a 1-CPU deployment for
-  10 days, the aggregate usage will show 10 CPU days, even if you did not actually use
-  the CPU at all.
+* the aggregated platform resources (used and total) available for your gateway
+* time series of relevant metrics like running/queued deployments, resources usage, etc.
+
+.. image:: /_static/images/dashboard/stats/platform/footprint.png
+
+The **Footprint** section shows:
+
+* the aggregated footprint of all the deployments of your gateway
+* the datacenter grid signals of the datacenters serving your gateway. This shows how clean your datacenters are. Based on this information, the platform tries to route jobs to greener datacenters :ref:`using our GreenDirector <considerations/footprint:Smart job scheduling>`.
+
+.. image:: /_static/images/dashboard/stats/platform/datacenters.png
+
+The **Footprint** section shows a maps with:
+
+* relevant per datacenter characteristics like PUE (Power Usage Effectiveness, which measures how efficiently the a datacenter uses energy: the closer to 1 the better) or grid signals (environmental score, zone carbon footprint, zone water footprint)
+* the aggregated resources consumed by that particular datacenter

@@ -3,19 +3,19 @@ Platform overview
 
 AI4EOSC provides a comprehensive platform for artificial intelligence and machine learning applications for scientific usecases. The project offers a federated computing infrastructure and shared services that enable researchers, developers, and organizations to collaborate on AI model development, training, and deployment at scale.
 
-.. admonition:: Community gateways
-   :class: info
+Community gateways
+^^^^^^^^^^^^^^^^^^
 
-   All gateways are connected to the AI4EOSC initiative and use the same open-source AI4EOSC platform as their foundation: same API, same authentication, and shared services (such as the `CI/CD pipeline <https://jenkins.cloud.ai4eosc.eu/>`__ or `Login <https://login.cloud.ai4eosc.eu/realms/ai4eosc/account>`__).
+All gateways are connected to the AI4EOSC initiative and use the same open-source AI4EOSC platform as their foundation: same API, same authentication, and shared services (such as the `CI/CD pipeline <https://jenkins.cloud.ai4eosc.eu/>`__ or `Login <https://login.cloud.ai4eosc.eu/realms/ai4eosc/account>`__).
 
-   Each gateway is tailored for a specific scientific community with dedicated model catalogs:
+Each gateway is tailored for a specific scientific community with dedicated model catalogs:
 
-   * The `AI4EOSC Dashboard <https://dashboard.cloud.ai4eosc.eu/>`__ for interdisciplinary science across Europe,
-   * The `iMagine Dashboard <https://dashboard.cloud.imagine-ai.eu/>`__ for aquatic imaging and marine biodiversity,
-   * The `AI4Life Dashboard <https://ai4life.cloud.ai4eosc.eu/>`__ for bioimaging, genomics and drug discovery,
-   * etc.
+* The `AI4EOSC Dashboard <https://dashboard.cloud.ai4eosc.eu/>`__ for interdisciplinary science across Europe,
+* The `iMagine Dashboard <https://dashboard.cloud.imagine-ai.eu/>`__ for aquatic imaging and marine biodiversity,
+* The `AI4Life Dashboard <https://ai4life.cloud.ai4eosc.eu/>`__ for bioimaging, genomics and drug discovery,
+* etc.
 
-.. errorress
+Community gateways can be referred in some parts as Virtual Organizations. Both terms are equivalent.
 
 Components
 ----------

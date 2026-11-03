@@ -26,7 +26,7 @@ What can I deploy in batch mode?
 You can deploy any existing module in the marketplace.
 To create a batch job, click on the ``Batch`` button in the :ref:`module detail <dashboard_deployment>`.
 
-.. image:: /_static/images/dashboard/module.png
+.. image:: /_static/images/dashboard/catalog/details/default.png
 
 
 It's also possible to :ref:`redeploy from a snapshot <dashboard_snapshots>`. In this case, a typical workflow would be for example:
@@ -54,8 +54,7 @@ Batch commands
 These are the commands your job will execute.
 In the configuration form, they can be provided either via a file upload or by adding the commands into an integrated editor.
 
-.. image:: /_static/images/dashboard/batch-configuration.png
-   :width: 400 px
+.. image:: /_static/images/dashboard/configure/batch.png
 
 In the following dummy example, we can save the current date in our storage, mimicking the saving of the model weights at the end of a real training.
 
@@ -71,12 +70,11 @@ Listing batch jobs
 
 In the ``Batch`` tab on the left of the Dashboard, you will be able to see what are your current batch jobs, as well as the batch jobs that completed in the last 24 hours.
 
-.. image:: /_static/images/dashboard/batch-table.png
+.. image:: /_static/images/dashboard/deployments/batch.png
 
 Clicking on the job details you will see the resources as well as the training commands that the job executed.
 
-.. image:: /_static/images/dashboard/batch-details.png
-   :width: 400 px
+.. image:: /_static/images/dashboard/deployments/details/batch-commands.png
 
 Once you batch job is completed, you should be able to retrieved the model weights from Nextcloud if you had a saving step in your training script.
 Additionally, if your model is :doc:`integrated with MLflow </howtos/develop/mlflow>` you should be able to view your training stats in the MLflow UI.

@@ -68,11 +68,13 @@ In order to link a service, you have to click on the ``Link`` button, log in the
 If you have previously linked the service, you also have to to delete old credentials and generate new ones using ``Re-link``.
 
 
-.. _dashboard_ask_ai:
+.. TODO: uncomment when ready back again
 
-Ask AI
-------
+.. .. _dashboard_ask_ai:
 
-Finally, we have our :ref:`LLM Assistant <reference/llm:Ask questions about the documentation>` directly available from the Dashboard. You can ask it questions and it will use this documentation as a Knowledge Base to offer grounded responses.
+.. Ask AI
+.. ------
 
-.. image:: /_static/images/dashboard/ai-assistant.png
+.. Finally, we have our :ref:`LLM Assistant <reference/llm:Ask questions about the documentation>` directly available from the Dashboard. You can ask it questions and it will use this documentation as a Knowledge Base to offer grounded responses.
+
+.. .. image:: /_static/images/dashboard/ai-assistant.png

@@ -228,7 +228,7 @@ Other issues
 🔥 The Quick access button is not working
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-This happens when you launched a module/tool from the Dashboard and try to immediately
+This happens when you launched a catalog/details/tool from the Dashboard and try to immediately
 click on ``Quick Access``. The new tab it opens is returning either
 *404 page not found* or *Bad Gateway*.
 

@@ -21,12 +21,15 @@ In this particular case, you will need to pay attention to:
 * **CVAT credentials**:
   When configuring the deployment of CVAT, you will need to enter your ``CVAT username``  and ``CVAT password`` to authenticate yourself in the CVAT instance.
 
+  .. image:: /_static/images/dashboard/configure/cvat-general.png
+
+
 * **Storage**:
   For using CVAT, it is *mandatory* to have a :ref:`storage provider linked <dashboard_profile>`.
   This is because, each time you delete a CVAT instance a snapshot will automatically be created in your storage.
   When you deploy a new CVAT instance, you can either start from an existing snapshot or from a blank state (no snapshot).
 
-  .. image:: /_static/images/dashboard/storage-cvat-snapshots.png
+  .. image:: /_static/images/dashboard/configure/cvat-data.png
 
 
 Using CVAT

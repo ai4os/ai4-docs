@@ -31,6 +31,12 @@ In this particular case, you will need to pay attention to:
   Note that the tag ``tokens`` will deploy the federated server with authentication
   enabled between the server and the clients (more info in the next sections).
 
+* **The footprint monitoring**:
+  You can enable CO2 emissions monitoring. This will monitor the emissions of both the
+  servers and the clients (when the clients opt into providing this information).
+
+  .. image:: /_static/images/dashboard/configure/flower-general.png
+
 * **The Federated configuration**:
   The last section (``Federated configuration``) will let you choose specific
   configuration for the FL training server like:
@@ -41,7 +47,7 @@ In this particular case, you will need to pay attention to:
   - :ref:`the parameters for using differential privacy <howtos/train/federated-flower:Server side differential privacy>`
   - etc.
 
-  .. image:: /_static/images/dashboard/configure_flower.png
+  .. image:: /_static/images/dashboard/configure/flower-specific.png
 
 Training with Federated learning
 --------------------------------
@@ -88,7 +94,7 @@ Now that your fedserver is running, you need to do the following steps:
    You can generate as many tokens as needed (eg. 1 token per client), as well as
    revoke them:
 
-   .. image:: /_static/images/dashboard/secrets.png
+   .. image:: /_static/images/dashboard/deployments/details/flower-secrets.png
      :width: 500 px
 
 3. **Share them with the clients**:

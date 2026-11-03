@@ -22,7 +22,7 @@ This feature is available to any registered user (:doc:`/reference/user-access-l
 
 For this, :ref:`select a module in the Marketplace <dashboard_marketplace>` and click on ``Deploy ▼ IM``.
 
-.. image:: /_static/images/dashboard/module.png
+.. image:: /_static/images/dashboard/catalog/details/default.png
 
 This will forward you to the Infrastructure Manager, with the module already selected.
 

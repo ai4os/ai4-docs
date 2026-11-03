@@ -26,7 +26,7 @@ Under the ``Platform Categories`` tag section, select any module that has the ta
 
 In this tutorial, we will demonstrate a simple prediction using the popular `YOLO module <https://dashboard.cloud.ai4eosc.eu/marketplace/modules/ai4os-yolov8-torch>`__.
 
-.. image:: /_static/images/dashboard/module-yolo.png
+.. image:: /_static/images/dashboard/catalog/details/yolo.png
 
 In the module page, click on the option ``Deploy > Inference API (serverless)``.
 This will automatically deploy your OSCAR service with some predefined configuration.
@@ -47,14 +47,14 @@ Retrieve the service information
 
 In the ``Inference`` tab, go to the ``Serverless (OSCAR)`` table and find your newly created service.
 
-.. image:: /_static/images/dashboard/oscar-table.png
+.. image:: /_static/images/dashboard/deployments/oscar.png
 
 Click on :material-outlined:`info;1.5em` ``Info`` for your service and you will find all the variables you need for making a prediction:
 
 * **for synchronous calls**: the ``endpoint`` you will query and the secret ``token`` you need for authentication.
 * **for asynchronous calls**: all the variables related to the `MINIO storage <https://min.io/>`__ that handles your predictions.
 
-.. image:: /_static/images/dashboard/oscar-info.png
+.. image:: /_static/images/dashboard/deployments/details/oscar.png
     :width: 400px
 
 
