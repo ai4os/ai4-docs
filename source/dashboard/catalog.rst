@@ -54,12 +54,12 @@ The LLM catalog is a collection of LLM models that users can leverage for genera
 There are currently two kinds of LLMs:
 
 * **Platform-wise LLMs**: those are LLMs that are permanently deployed for all platform users.
-  For more information on how to use them, please refer to :doc:`AI4EOSC LLM documentation </reference/llm>`.
+  For more information on how to use them, please refer to :doc:`GenAI usage documentation </howtos-genai/use/index>`.
 
   .. image:: /_static/images/dashboard/catalog/llms-platform.png
 
 * **Self-deployable LLM**: those are LLMs that are deployable per user.
   The catalog has multiple open-source models from a wide range of AI-relevant actors (Qwen, DeepSeek, Meta).
-  For more information on how to use them, please refer to the tutorial: :doc:`Deploy your own LLM chatbot </howtos/deploy/llm>`.
+  For more information on how to use them, please refer to the tutorial: :doc:`Deploy your own LLM chatbot </howtos-genai/deploy/llm>`.
 
   .. image:: /_static/images/dashboard/catalog/llms-self.png

@@ -61,7 +61,7 @@ Intermediate access level
     Registered users with intermediate access level can:
 
     * :doc:`Try an AI model in the Dashboard </howtos/try/index>`
-    * :doc:`Chat with the platform LLM </reference/llm>`
+    * :doc:`Use the platform public GenAI assets </howtos-genai/use/index>`
 
     **Granted to**: researchers with |myaccessid| `EduGain <https://edugain.org/>`__ credentials.
     More finegrained permissions are granted based on membership:
@@ -85,10 +85,7 @@ Full access level
 
     **Granted to**: This access level is usually reserved to developers (``ap-d``) or members of one of the supported projects (``ap-u``):
 
-    * `AI4EOSC <https://ai4eosc.eu/>`__: AI for the European Open Science Cloud
-    * `iMagine <https://imagine-ai.eu/>`__: Imaging data and services for aquatic science
-    * `AI4Life <https://ai4life.eurobioimaging.eu/>`__: AI models and methods for the life sciences
-    * `KMD4EOSC <https://kmd4eosc.pl/>`__: Universal infrastructure for efficient data processing in HPC
+    .. include:: /snippets/supported-projects.rst
 
 
 Upgrading your access level
@@ -97,23 +94,25 @@ Upgrading your access level
 Any user is, in principle, candidate to upgrade to full access.
 There are two main entrypoints to full access:
 
-Option 1. Join a supported project
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Option 1. Being part of a supported project
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Members of the following projects get full access level:
+Members of the following projects will get full access level:
 
-* `AI4EOSC <https://ai4eosc.eu/>`__: AI for the European Open Science Cloud
-* `iMagine <https://imagine-ai.eu/>`__: Imaging data and services for aquatic science
-* `AI4Life <https://ai4life.eurobioimaging.eu/>`__: AI models and methods for the life sciences
-* `KMD4EOSC <https://kmd4eosc.pl/>`__: Universal infrastructure for efficient data processing in HPC
+.. include:: /snippets/supported-projects.rst
 
-Consider joining these projects via their *Open calls for external usecases*.
-More information about the calls can be found in their respective project's homepages.
+For this, please contact the usecases WP leader of your project.
+They will send you the link of an enrollment form, where you will be able to upgrade to ``ap-u`` level.
 
-Option 2. Make a special requests
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.. image:: /_static/images/ai4eosc/keycloak-enrollment.png
 
-Sometimes joining a project is a lengthy process.
+If you are not a member of one of the above projects, consider joining these projects via their *Open calls for external usecases*.
+More information about the calls are usually found in their respective project's homepages.
+
+Option 2. Make a special request
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Sometimes joining a project as an external usecase is a lengthy process.
 We are also able to upgrade user access level case by case. Feel free to :doc:`contact support </help/index>` explaining why would you need full access and what do you plan to do with it.
 Due to the limited amount of resources, the team will carefully study your request before granting you full access.
 

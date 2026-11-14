@@ -77,8 +77,7 @@ Drag and drop in the VScode editor the zip file created in Step 1. Then unpack i
    As explained earlier, having your project under ``/storage`` will allow it to be automatically synced with the :doc:`Storage </reference/storage>`.
 
    **Tip nº2**:
-   :ref:`Use the platform LLM as coding assistant <reference/llm:Use it as a code assistant with VScode>` to help you develop faster.
-   It is integrated directly in VScode trough the use of the `Continue.dev <https://www.continue.dev/>`__ extension.
+   :doc:`Use the AI4EOSC LLM Coding Assistant </howtos-genai/use/devenv>` to help you develop faster.
 
    We recommend implementing first tip nº1, in order to avoid the Continue assistant from freezing when trying to index the whole workspace contents.
 

@@ -46,13 +46,6 @@ provides several guides in how to deploy your model in different environments.
 
         Deploy models from external marketplaces (BioImage Model Zoo).
 
-    .. grid-item-card:: :fas:`brain;fa-lg sd-mr-2`  Deploy your own LLM
-        :link: llm
-        :link-type: doc
-
-        Deploy your own LLM from a selection of open-source models (DeepSeek, Qwen, LLama, etc),
-        using vLLM and Open-WebUI.
-
 .. toctree::
    :maxdepth: 1
    :titlesonly:
@@ -64,4 +57,3 @@ provides several guides in how to deploy your model in different environments.
    Deploy in your cloud <cloud>
    Deploy in the EOSC EU Node <eosc-node>
    Deploy external AI modules <external>
-   Deploy your dedicated LLM <llm>

@@ -24,3 +24,12 @@ We recommend to periodically:
 * test the documentation spelling:
 
   `cspell-cli "**/*.rst"`
+
+We recommend installing the [Esbonio](https://marketplace.visualstudio.com/items?itemName=swyddfa.esbonio&ssr=false) extension in order to facilitate the maintenance.
+Modify VScode setting so that Esbonio correctly find the Sphinx extensions this project is using:
+
+```json
+    "esbonio.sphinx.pythonCommand": [
+        "/home/iheredia/software/anaconda3/envs/ai4eosc/bin/python"
+    ],
+```

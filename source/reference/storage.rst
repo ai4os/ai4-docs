@@ -13,7 +13,8 @@ For hosting the data necessary for your trainings, we provide :doc:`ap-u users <
 .. admonition:: Account validation
    :class: important
 
-   The first time you access this storage, you will need to contact the admins to enable your account.
+   The first time you access this storage, you will need to to be manually approved. When trying to access, you will be faced with a ``Error: Account disabled``.
+   Please, `open a ticket in our HelpDesk <https://helpdesk.cloud.ai4eosc.eu/>`__ explaining who you are and why do you need access.
 
 .. image:: /_static/images/nextcloud/folders.png
 

@@ -41,7 +41,7 @@ Provenance provides an immutable, transparent record of how an AI module was cre
   * **Environmental footprint**: Real-time :doc:`carbon and energy metrics </considerations/footprint>` captured during training runs.
 
 * **Semantic graph generation (W3C PROV-O)**: Heterogeneous JSON fragments from all sources are stored in a PostgreSQL database and transformed via declarative RDF Mapping Language (RML) rules (using CARML). The resulting linked graph complies with the **W3C PROV-O** ontology and aligns with emerging standards like **FAIR4ML**.
-* **Interactive visualization & AI assistant**: Users can inspect the full provenance lineage directly in the Dashboard via an interactive visual graph explorer, or query the graph in natural language using the platform's integrated :doc:`LLM assistant </reference/llm>`.
+* **Interactive visualization & AI assistant**: Users can inspect the full provenance lineage directly in the Dashboard via an interactive visual graph explorer, or query the graph in natural language using the platform's integrated :ref:`LLMs services <dashboard/catalog:llms>`.
 
 .. image:: /_static/images/provenance/simple-graph.png
     :alt: Simplified provenance graph

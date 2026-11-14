@@ -48,17 +48,19 @@ Each repository has three branches: ``main`` (to commit stable changes),
 You have two ways to create your project from the Template.
 
 Via User Interface
-~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^
 
 Go to the `Template creation webpage <https://templates.cloud.ai4eosc.eu/>`__.
 You will need an :doc:`authentication </reference/user-access-levels>` to access to this webpage.
+
+.. image:: /_static/images/ai4eosc/templates-hub.png
 
 Then select which version of the template you want and answer the questions.
 Click on ``Generate`` and you will be able to download a ``.zip`` file with both
 repositories.
 
 Via Terminal
-~~~~~~~~~~~~
+^^^^^^^^^^^^
 
 You will need to `install cookiecutter <https://cookiecutter.readthedocs.io/en/latest/installation.html>`__
 and then run it as follows:

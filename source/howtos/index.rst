@@ -6,7 +6,7 @@ How-Tos
 .. grid:: 1
     :gutter: 3
 
-    .. grid-item-card:: :fas:`browser;fa-lg sd-mr-2`  Try a Model
+    .. grid-item-card:: :fas:`play;fa-lg sd-mr-2`  Try a Model
         :link: /howtos/try/index
         :link-type: doc
 

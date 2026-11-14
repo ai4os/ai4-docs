@@ -41,19 +41,24 @@ The platform is developed and expanded through a collaborative ecosystem of **pr
 
         Learn how to navigate the dashboard and make deployments.
 
-    .. grid-item-card:: :fas:`circle-info;fa-lg sd-mr-2`  How-Tos
+    .. grid-item-card:: :fas:`circle-info;fa-lg sd-mr-2`  How-Tos (classical AI)
         :link: /howtos/index
         :link-type: doc
 
-        How to accomplish common tasks, such as trying a model, developing a new one,
-        training, deploying, etc.
+        How to accomplish common tasks, such as trying an classical AI model, developing a new one, training, deploying in production, etc.
+
+
+    .. grid-item-card:: :fas:`circle-info;fa-lg sd-mr-2`  How-Tos (GenAI)
+        :link: /howtos-genai/index
+        :link-type: doc
+
+        Learn how to train LLMs, deploy your own LLMs/MCPs/Agents in the platform and use them for support your research workflows.
 
     .. grid-item-card:: :fas:`book;fa-lg sd-mr-2`  Reference
         :link: /reference/index
         :link-type: doc
 
-        Detailed information about the platform, dashboard, storage, modules, etc. and
-        how to use them.
+        Detailed information about the platform, storage, modules, etc. and how to use them.
 
     .. grid-item-card:: :fas:`question;fa-lg sd-mr-2`  Help and support
         :link: /help/index
@@ -66,6 +71,12 @@ The platform is developed and expanded through a collaborative ecosystem of **pr
         :link-type: doc
 
         Useful Machine Learning resources, video demos, and other links.
+
+    .. grid-item-card:: :fas:`compass;fa-lg sd-mr-2`  Design considerations
+        :link: /considerations/index
+        :link-type: doc
+
+        Our guiding principles: from private, sovereign AI to footprint-aware deployments.
 
 
 .. toctree::
@@ -80,7 +91,6 @@ The platform is developed and expanded through a collaborative ecosystem of **pr
    getting-started/overview
    getting-started/new-features
 
-
 .. toctree::
    :titlesonly:
    :maxdepth: 2
@@ -92,11 +102,9 @@ The platform is developed and expanded through a collaborative ecosystem of **pr
    dashboard/statistics
    dashboard/profile
 
-
-
 .. toctree::
    :maxdepth: 3
-   :caption: Howto guides
+   :caption: Howto guides (classical AI)
    :hidden:
 
    howtos/try/index
@@ -106,12 +114,20 @@ The platform is developed and expanded through a collaborative ecosystem of **pr
    howtos/pipelines/index
 
 .. toctree::
+   :maxdepth: 3
+   :caption: Howto guides (GenAI)
+   :hidden:
+
+   Train your own LLM <howtos-genai/train-llm>
+   howtos-genai/deploy/index
+   howtos-genai/use/index
+
+.. toctree::
    :titlesonly:
    :maxdepth: 2
    :caption: User reference
    :hidden:
 
-   AI4EOSC LLM <reference/llm>
    Storage <reference/storage>
    AI Modules <reference/modules>
    User access levels <reference/user-access-levels>
@@ -119,7 +135,7 @@ The platform is developed and expanded through a collaborative ecosystem of **pr
 .. toctree::
    :titlesonly:
    :maxdepth: 2
-   :caption: Considerations
+   :caption: Design considerations
    :hidden:
 
    Environmentally aware <considerations/footprint>

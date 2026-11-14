@@ -27,7 +27,8 @@ document.addEventListener("DOMContentLoaded", function() {
     const captionLinks = {
         "Start here": "getting-started/index.html",
         "AI4EOSC Dashboard": "dashboard/index.html",
-        "Howto guides": "howtos/index.html",
+        "Howto guides (classical AI)": "howtos/index.html",
+        "Howto guides (GenAI)": "howtos-genai/index.html",
         "User reference": "reference/index.html",
         "Considerations": "considerations/index.html",
         "Help and support": "help/index.html",

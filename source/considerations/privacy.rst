@@ -42,7 +42,7 @@ Mainstream commercial GenAI providers frequently raise privacy and IP concerns, 
 
 AI4EOSC eliminates these risks by adopting a **privacy-first architecture** for Generative AI:
 
-* **Sovereign, self-hosted models**: All LLM services (accessible via the :doc:`AI4EOSC LLM chatbot </reference/llm>` or as :doc:`self-deployed LLM instances </howtos/deploy/llm>`) are hosted exclusively on European research infrastructure. Prompts and conversations are never transmitted to third-party commercial providers.
+* **Sovereign, self-hosted models**: All :doc:`GenAI services </howtos-genai/index>` are hosted exclusively on European research infrastructure. Prompts and conversations are never transmitted to third-party commercial providers.
 * **Zero model training on user data**: User prompts, uploaded documents, conversation histories, and knowledge bases are strictly never used to train or fine-tune models.
 * **User-controlled data retention**: Chat sessions and knowledge bases remain under complete user control. When you delete a chat or a knowledge base, all associated data is permanently wiped from the platform.
 

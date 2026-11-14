@@ -10,7 +10,36 @@ Deploy your own LLM chatbot
 In this tutorial, we will guide you on how to deploy your own LLM instance in the platform.
 
 For the moment, due to resource constraints, this tool allows to deploy only small LLMs that can fit in NVIDIA T4s.
-If you want to use bigger LLMs on faster resources, please :doc:`use the platform LLM </reference/llm>` where you can find a detailed comparison between the two options!
+
+.. dropdown:: 🤔 Platform LLM *vs* self-deployed LLM
+
+  We also offer a :ref:`platform-wide LLMs <dashboard/catalog:llms>` (accessible via its own :doc:`chat interface </howtos-genai/use/chat>`) in addition to this self-deployed option.
+  Sp which one should you use?
+
+  **Self-deployed LLM**
+
+  * available to :ref:`full access level <reference/user-access-levels:Full access level>` users
+  * let's you deploy a wide variety of models from a catalog,
+  * resources are exclusively dedicated to you and your selected coworkers,
+  * you are the admin, so you can configure model and UI parameters,
+  * you are the admin, so you can create your own `Knowledge Bases <https://docs.openwebui.com/features/workspace/knowledge/>`__ as persistent memory banks,
+  * you are the admin, so you can use `Functions <https://docs.openwebui.com/features/plugin/functions/>`__ to create your own agents that use custom prompts, custom Knowledge Bases, and custom input/output filtering,
+
+  **Platform LLM**
+
+  * available to all users (:ref:`basic access level <reference/user-access-levels:Basic access level>` and above)
+  * uses more powerful GPUs, so it offers bigger and more accurate LLMs,
+  * zero configuration needed, access directly with your :doc:`credentials </getting-started/register>`,
+  * the backend (VLLM+LiteLLM) is load balanced so it can offer lower latency,
+  * comes with some pre-configured helpful agents, like the :ref:`Documentation Assistant <howtos-genai/use/chat:documentation assistant>` that helps you navigate the project's documentation,
+
+  By default, we recommend using the platform LLM, which will offer a better experience for most users. Users with more custom needs should try nevertheless the self-deployment options.
+
+  Anyway, remember that both options are compatible: you can deploy your own LLM and still access the platform-wide one.
+  The best of both worlds! 🚀
+
+  Both options offer a **privacy-first** design: once your delete your chats or knowledge bases, the data is immediately wiped out from the platform.
+
 
 Deploying the LLM
 -----------------
@@ -65,4 +94,4 @@ For example, you can:
 * customize the UI appearance: since current models do not have vision capabilities, so you can disable image upload for users going to :material-outlined:`account_circle;1.5em` ``Admin Panel`` → ``Settings`` → ``Models`` → ``<model-name>`` → ``Capabilities`` → :material-outlined:`check_box;1.5em` ``Vision``
 * create your own `Knowledge Bases <https://docs.openwebui.com/features/workspace/knowledge/>`__ as persistent memory banks,
 * use `Functions <https://docs.openwebui.com/features/plugin/functions/>`__ to create your own agents that use custom prompts, custom Knowledge Bases, and custom input/output filtering,
-* :ref:`integrate the model with your own services <reference/llm:Integrate it with your own services>` (use as code assistant in VSCode, use from Python scripts, etc).
+* :doc:`integrate the model with your own services </howtos-genai/use/api>` (use as code assistant in VSCode, use from Python scripts, etc).

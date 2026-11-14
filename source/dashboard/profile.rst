@@ -27,7 +27,7 @@ This tab centralizes the API keys created for other services from the ecosystem.
 
 .. image:: /_static/images/dashboard/profile/api_keys.png
 
-Currently you can manage here the :ref:`AI4EOSC LLM API keys <reference/llm:Retrieve the API credentials>`. To generate a new key, just provide a key name and an expiration date.
+Currently you can manage here the :ref:`AI4EOSC LLM API keys <howtos-genai/use/api:retrieve the api credentials>`. To generate a new key, just provide a key name and an expiration date.
 
 Linked storages
 ^^^^^^^^^^^^^^^
@@ -62,19 +62,7 @@ This tabs groups the services you have linked with the platform, including both 
 This currently includes:
 
 * the :doc:`AI4EOSC MLflow </howtos/develop/mlflow>`, that allows you to track your ML training metrics.
-* your `Hugging Face <https://huggingface.co/>`__ account, that allows you to :doc:`deploy an LLM  </howtos/deploy/llm>` behind End-User-License-Agreements (EULA).
+* your `Hugging Face <https://huggingface.co/>`__ account, that allows you to :doc:`deploy an LLM  </howtos-genai/deploy/llm>` behind End-User-License-Agreements (EULA).
 
 In order to link a service, you have to click on the ``Link`` button, log in the popup window and grant access to the Dashboard.
 If you have previously linked the service, you also have to to delete old credentials and generate new ones using ``Re-link``.
-
-
-.. TODO: uncomment when ready back again
-
-.. .. _dashboard_ask_ai:
-
-.. Ask AI
-.. ------
-
-.. Finally, we have our :ref:`LLM Assistant <reference/llm:Ask questions about the documentation>` directly available from the Dashboard. You can ask it questions and it will use this documentation as a Knowledge Base to offer grounded responses.
-
-.. .. image:: /_static/images/dashboard/ai-assistant.png
