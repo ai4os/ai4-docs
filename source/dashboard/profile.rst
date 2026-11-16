@@ -3,6 +3,14 @@
 Profile & more
 ==============
 
+The document explains the profile information on the :doc:`AI4EOSC Dashboard </dashboard/index>`.
+
+.. admonition:: Requirements
+   :class: info
+
+   🔒 You need a :doc:`platform account </getting-started/register>` with :ref:`full access level <reference/user-access-levels:Full access level>`,
+   to access information about **API keys**, **Linked storages** and **Linked services**.
+
 Profile
 -------
 

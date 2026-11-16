@@ -3,7 +3,7 @@
 Statistics
 ==========
 
-This panel shows both your individual statistics, as well as the aggregated statistics of your :ref:`community gateway <getting-started/overview:Community gateways>`.
+In the :doc:`AI4EOSC Dashboard </dashboard/index>`, you have a panel that shows both your individual statistics, as well as the aggregated statistics of your :ref:`community gateway <getting-started/overview:Community gateways>`.
 
 
 User stats

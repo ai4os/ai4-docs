@@ -5,7 +5,9 @@ Deployments
 
 Deployments are instantiations of any platform asset (AI modules, tools and LLMs) from the :doc:`Catalog </dashboard/catalog>`. They are deployed in the platform infrastructure, under the personal user workspace.
 
-In this document, we will focus on how AI modules deployments work, but the same applies for other types of assets. The different workflows are described in the :doc:`HowTo guides </howtos/index>`.
+In this document, we will explain how to create and manage deployments in the :doc:`AI4EOSC Dashboard </dashboard/index>`.
+It will focus mainly focus on how **AI modules** deployments work, but the same applies for other types of assets.
+The different workflows are described in the :doc:`HowTo guides </howtos/index>`.
 
 Making a deployment
 -------------------

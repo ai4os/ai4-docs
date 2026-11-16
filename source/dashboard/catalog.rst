@@ -4,6 +4,7 @@ Catalog
 =======
 
 The AI4EOSC catalog gathers the different types of AI assets that the platform currently offers.
+All those catalogs are publicly accessible in the :doc:`AI4EOSC Dashboard </dashboard/index>`.
 
 AI Modules
 ----------

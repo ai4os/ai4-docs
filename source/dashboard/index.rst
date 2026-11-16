@@ -14,7 +14,7 @@ users do not need to worry about.
    :class: info
 
    Currently, the following platforms have deployed a version of the Dashboard.
-   You should access one of those Dashboards depending on the project you are a member of:
+   You should access one of those Dashboards depending on your :ref:`community gateway <getting-started/overview:Community gateways>`:
 
    * `AI4EOSC Dashboard <https://dashboard.cloud.ai4eosc.eu>`__ 👈 *(use this one if you are unsure which one to use)*
    * `iMagine Dashboard <https://dashboard.cloud.imagine-ai.eu>`__
