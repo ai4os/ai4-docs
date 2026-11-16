@@ -4,7 +4,7 @@ Access the platform
 Register an account
 -------------------
 
-The `Login <https://login.cloud.ai4eosc.eu/realms/ai4eosc/account>`__ uses Keycloak to federate different Identity providers, allowing to easily onboard new external communities with their own authentication systems.
+The `AI4EOSC Login <https://login.cloud.ai4eosc.eu/realms/ai4eosc/account>`__ uses Keycloak to federate different Identity providers, allowing to easily onboard new external communities with their own authentication systems.
 
 .. image:: /_static/images/ai4eosc/keycloak.png
    :width: 300 px
