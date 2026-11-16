@@ -134,19 +134,19 @@ Default
 ^^^^^^^
 The ``default`` agent is a central entry point for the AI4EOSC agent ecosystem. It understands user requests and brings together the most relevant specialized agents to find information, perform research, and solve complex tasks.
 
-.. TODO: missing image
+.. image:: /_static/images/genai-ui/agents-default.png
 
 Web search
 ^^^^^^^^^^
 The ``web-search`` research assistant helps with finding up-to-date and verifiable information. It searches across multiple sources and search engines to investigate complex questions, verify facts, and provide answers grounded in current online information.
 
-.. TODO: missing image
+.. image:: /_static/images/genai-ui/agents-web.png
 
 AI4EOSC Documentation Assistant
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 The ``documentation-assistant`` is an intelligent guide to the AI4EOSC ecosystem. It navigates the available documentation to help the AI4EOSC community understand how the platform works, providing answers grounded in official AI4EOSC resources.
 
-.. TODO: missing image
+.. image:: /_static/images/genai-ui/agents-docs.png
 
 Using scientific agents
 -----------------------
@@ -157,11 +157,10 @@ Literature review
 ^^^^^^^^^^^^^^^^^
 The ``literature-review`` agent acts as an agentic research fellow for the scientific community. It continuously explores papers from `arXiv <https://arxiv.org/>`__, `DIGITAL.CSIC <https://digital.csic.es/>`__ and `HAL <https://hal.science/>`__ to discover relevant literature with verified sources.
 
-.. TODO: missing image
-
+.. image:: /_static/images/genai-ui/agents-literature.png
 
 Dataset search
 ^^^^^^^^^^^^^^
 The ``dataset-search`` is a conversational gateway to public scientific datasets. It helps discover government datasets, retrieve relevant information, and explore data published by official French sources (`Data Gouv <https://www.data.gouv.fr/>`__), and scientific datasets published in `DIGITAL.CSIC <https://digital.csic.es/>`__.
 
-.. TODO: missing image
+.. image:: /_static/images/genai-ui/agents-datasets.png
