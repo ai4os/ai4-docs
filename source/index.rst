@@ -16,8 +16,11 @@ The AI4EOSC Ecosystem
 The platform is developed and expanded through a collaborative ecosystem of **projects**,
 **gateways**, and scientific **communities**:
 
-* **Projects** (`DEEP-HDC <https://deep-hybrid-datacloud.eu/>`__, `AI4EOSC <https://ai4eosc.eu/>`__, `AI4Life <https://ai4life.eurobioimaging.eu/>`__, `iMagine <https://imagine-ai.eu/>`__, `EOSC-ARENA <https://eosc-arena.eu/>`__, `FLUID-AI <https://fluid-ai.eu/>`__, `GenAI4Earth <https://genai4earth.eu/>`__):
+* **Projects**:
   EU-funded initiatives that develop and extend the AI4EOSC platform with new capabilities—from core MLOps, distributed training, and composite AI to Generative AI, agentic environments, and FAIR data/model interoperability.
+
+  .. include:: /snippets/supported-projects.rst
+
 
 * **Gateways** (`AI4EOSC <https://dashboard.cloud.ai4eosc.eu/>`__, `iMagine <https://dashboard.cloud.imagine-ai.eu/>`__, `AI4Life <https://ai4life.cloud.ai4eosc.eu/>`__, `KMD4EOSC <https://kmd4eosc.pl/>`__, `Tutorials <https://tutorials.cloud.ai4eosc.eu/>`__):
   Dedicated instances of the AI4EOSC platform built on top of the shared platform foundation (common API, authentication, and compute/storage infrastructure). Each gateway is customized with specific branding, tools, and domain-specific model catalogs to access dedicated resources for a given community.
