@@ -27,6 +27,15 @@ For first time users, we recommend login with either one of the following two pr
     .. image:: /_static/images/others/edugain-unican.png
        :width: 400 px
 
+    Sometimes you are shown the following error message:
+    ``Unable to submit the form. You are not authorized to server. Your session might have expired. Please refresh the browser window to re-login.``
+
+    To fix this, please try:
+
+    * **Hard Refresh & Clear State**: close the tab entirely, open a fresh Incognito / Private Browsing window (or clear your browser cache/cookies for myaccessid.org), and try the login flow again from scratch.
+    * **Disable Extensions Temporarily**: Disable strict ad-blockers (like Firefox's Enhanced Tracking Protection or Brave's Shields), or third-party cookie blockers frequently break SAML/OIDC federated redirects between eduGAIN and MyAccessID. Disable them for the duration of the login.
+
+
 * |egicheckin| `EGI-CheckIn <https://aai.egi.eu>`__: this is the path for users of specific projects (like iMagine).
   This is because Keycloak will automatically detect your EGI VO memberships
   (eg. ``vo.imagine-ai.eu``) and will grant your the proper platform full rights by default.
