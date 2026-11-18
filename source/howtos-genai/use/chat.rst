@@ -63,23 +63,21 @@ This will allow you to query a document with questions.
 If the model supports vision, you can also upload images.
 Under the :material-outlined:`add_circle;1.5em` button, you can select :material-outlined:`photo;1.5em` ``Add image``.
 
-.. TODO: add this back again, when the vision model properly hides it's thinking process
+Here are some ideas on how to incorporate this into a scientific workflow:
 
-.. Here are some ideas on how to incorporate this into a scientific workflow:
+.. dropdown:: :material-outlined:`lightbulb;1.5em` Detexify a LaTeX equation
 
-.. .. dropdown:: :material-outlined:`lightbulb;1.5em` Detexify a LaTeX equation
+   ``Generate latex code for the above equation and render it below.``
 
-..    ``Generate latex code for the above equation and render it below.``
+   .. image:: /_static/images/genai-ui/vision-detexify.png
 
-..    .. TODO: missing image
+.. dropdown:: :material-outlined:`lightbulb;1.5em` Digitize your handwritten notes
 
-.. .. dropdown:: :material-outlined:`lightbulb;1.5em` Digitize your handwritten notes
+   ``Can you generate a Mermaid graph from this sketch? To ensure valid code, make sure that text inside boxes follows the format `letter{…}`. For example `B{Some text}`.``
 
-..    ``Can you generate a Mermaid graph from this sketch? To ensure valid code, make sure that text inside boxes follows the format `letter{…}`. For example `B{Some text}`.``
+   .. image:: /_static/images/genai-ui/vision-mermaid.png
 
-..    .. TODO: missing image
-
-.. Do you use it in other ways? `We are happy to hear! <https://community.cloud.ai4eosc.eu/>`__
+Do you use vision capabilities in other ways? `We are happy to hear! <https://community.cloud.ai4eosc.eu/>`__
 
 Use AI4EOSC public knowledge bases
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
