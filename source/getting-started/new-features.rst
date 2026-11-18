@@ -10,6 +10,8 @@ notified here.
 .. Template
 .. * 📘 new :doc:`... <...>` page (``2024-04-03``)
 
+* 📈 we release our the first version of our :doc:`new GenAI services </howtos-genai/index>` (``2026-11-16``)
+* 📈 we release a brand-new version of the :doc:`AI4EOSC Dashboard </dashboard/index>` (``2026-11-16``)
 * 📈 we started supporting :ref:`smart scheduling <considerations/footprint:Smart job scheduling>` to greener datacenters (``2026-03-12``)
 * 📌 we started supporting the `KMD4EOSC project <https://kmd4eosc.pl/>`__ (``2026-02-09``)
 * 📌 we release a new :doc:`Helpdesk and Community to improve interaction with users </help/index>` (``2025-08-01``)
