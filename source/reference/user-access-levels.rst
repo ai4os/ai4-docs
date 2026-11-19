@@ -48,10 +48,11 @@ Basic access level
 
     * :doc:`Deploy an AI model in their own cloud </howtos/deploy/cloud>`
 
-    **Granted to**: any registered user (e.g. via :fab:`github` `Github <https://github.com/>`__,
+    **Granted to**: any registered user (e.g. via
+    :fab:`github` `Github <https://github.com/>`__,
     :fab:`google` `Google <https://accounts.google.com/>`__,
     |ifca| `IFCA SSO <https://sso.ifca.es>`__ and
-    |orcid| `ORCID <https://orcid.org/>`__.
+    manually registered.
     )
 
 Intermediate access level
