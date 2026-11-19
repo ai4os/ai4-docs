@@ -24,6 +24,7 @@ Go to the `Sign Up page <https://mlflow.cloud.ai4eosc.eu/signup>`__ for self reg
 
 .. image:: /_static/images/mlflow/self-registration.png
    :width: 500 px
+   :align: center
 
 Then, in the next window:
 
@@ -54,6 +55,7 @@ Once you login, you will see the default MLflow UI as follows:
 
 .. image:: /_static/images/mlflow/ui.png
    :width: 1000 px
+   :align: center
 
 After having created the account, you should see the service appear in your :ref:`Dashboard profile <dashboard/profile:Linked services>`.
 
@@ -174,9 +176,11 @@ There exists two Logging options as illustrated in the following Figures.
 
 .. image:: /_static/images/mlflow/autolog-quickview.png
    :width: 1000 px
+   :align: center
 
 .. image:: /_static/images/mlflow/custom-log-quickview.png
    :width: 1000 px
+   :align: center
 
 * Important commands to know
 
@@ -208,7 +212,8 @@ There exists two Logging options as illustrated in the following Figures.
 * Relevant information extracted from an Experiment-Run (see figure below) defined as a single execution of a machine learning code
 
 .. image:: /_static/images/mlflow/run-info.png
-  :width: 1000 px
+   :width: 1000 px
+   :align: center
 
 5. MLflow Model Versioning and Production Deployment
 ----------------------------------------------------

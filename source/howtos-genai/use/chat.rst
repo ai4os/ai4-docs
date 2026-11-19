@@ -43,6 +43,7 @@ Each model comes with its own model card.
 
 .. image:: /_static/images/genai-ui/llm-details.png
    :width: 600 px
+   :align: center
 
 The card provides information like:
 
@@ -92,6 +93,7 @@ Clicking on a particular collection will show you what are the documents that ar
 
 .. image:: /_static/images/genai-ui/knowledge-files.png
    :width: 500 px
+   :align: center
 
 Create your private knowledge base
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -100,11 +102,13 @@ In addition to public collections, you can create your private ones. For this, o
 
 .. image:: /_static/images/genai-ui/knowledge-creation.png
    :width: 500 px
+   :align: center
 
 Then you can clik again on the newly created collection, and a new window will pop up where you will be able to upload documents:
 
 .. image:: /_static/images/genai-ui/knowledge-upload.png
    :width: 500 px
+   :align: center
 
 Then, with the collection selected, you will be able to query your LLM grounding the responses on the documents contained in that selection:
 
@@ -121,6 +125,7 @@ Each agent comes with each own agent card.
 
 .. image:: /_static/images/genai-ui/agent-details.png
    :width: 600 px
+   :align: center
 
 The card provides information like:
 

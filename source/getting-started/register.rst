@@ -13,7 +13,7 @@ The `AI4EOSC Login <https://login.cloud.ai4eosc.eu/realms/ai4eosc/account>`__ us
 AI4EOSC federates a set of identity providers in order to grant access to the platform.
 For first time users, we recommend login with either one of the following two providers:
 
-* |myaccessid| `EduGain <https://edugain.org/>`__: this is the :material-outlined:`verified;1.5em` **recommended option for most users** as you will be granted increased privileges due to your trusted researcher status.
+* |myaccessid| `EduGain <https://edugain.org/>`__: this is the :material-outlined:`verified;1.5em` **recommended option for most users** as you will be granted increased privileges (:doc:`intermediate access level </reference/user-access-levels>`) due to your trusted researcher status.
 
   .. dropdown:: ㅤ 💡 Login with EduGain: University of Cantabria example
 
@@ -21,11 +21,13 @@ For first time users, we recommend login with either one of the following two pr
 
     .. image:: /_static/images/others/edugain-search.png
        :width: 400 px
+       :align: center
 
     Then, you should be redirected to your institution page to provide your credentials:
 
     .. image:: /_static/images/others/edugain-unican.png
        :width: 400 px
+       :align: center
 
     Sometimes you are shown the following error message:
     ``Unable to submit the form. You are not authorized to server. Your session might have expired. Please refresh the browser window to re-login.``
@@ -66,13 +68,25 @@ Additionally, we offer several federated authentication options including:
 :fab:`github` `Github <https://github.com/>`__,
 :fab:`google` `Google <https://accounts.google.com/>`__,
 |ifca| `IFCA SSO <https://sso.ifca.es>`__ and
-|orcid| `ORCID <https://orcid.org/>`__.
+manual registration.
+Accounts created with any of these methods will only be granted :doc:`basic access level </reference/user-access-levels>` by default.
+
+.. dropdown:: ㅤ 💡 Register an account manually
+
+   To register a new account manually:
+
+   * Click on the ``Register`` button on the login page,
+   * Please provide all the details that are listed in the registration form and preferably use your **institutional account** (university, research center).
+   * After you have filled in all the details, click on the ``Register`` button. You will receive an email with a link to confirm your registration. Click on the link to confirm your registration.
+
+   Once created, you can input your credentials using the ``Sign In`` option, at the top of the page.
 
 .. tip::
 
-  Accounts are mapped by email. So you can authenticate the first time with EGI Check-In, then can subsequently authenticate with any other option (eg. Github), as long as they share the same email.
+  Accounts are mapped by email. So you can authenticate the first time with EduGain, then can subsequently authenticate with any other option (eg. Github), as long as they share the same email.
+  If you prefer, you can also manually link your accounts in the `AI4EOSC Profile manager <https://login.cloud.ai4eosc.eu/realms/ai4eosc/account/#/account-security/linked-accounts>`__.
 
-Each authentication system will grant different :doc:`user access levels </reference/user-access-levels>`.
+In summary, each authentication system will grant different :doc:`user access levels </reference/user-access-levels>`.
 In short:
 
 * users coming from the of the supported projects will have **full access** level.
@@ -80,33 +94,10 @@ In short:
 
   .. include:: /snippets/supported-projects.rst
 
-* user coming from EduGain will have **intermediate access** level.
-* remaining users (eg. Github, Google) will only have **basic access** level (observers).
+* user coming from |myaccessid| `EduGain <https://edugain.org/>`__ will have **intermediate access** level.
+* remaining users (eg. :fab:`github` `Github <https://github.com/>`__, :fab:`google` `Google <https://accounts.google.com/>`__, |ifca| `IFCA SSO <https://sso.ifca.es>`__ and manual registration) will only have **basic access** level (observers).
 
 We are also able to :ref:`upgrade the access level of selected users <reference/user-access-levels:Option 2. Make a special request>` with interesting usecases, even if they are not members of a selected project.
-
-
-.. TODO: reenable when possible
-.. Option 2. Register a new account
-.. ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-.. It is also possible to manually registering new account, although *this is not
-.. recommended* as the process is slower, since requests need to be manually approved by
-.. an administrator.
-
-.. To register a new account manually:
-
-.. * Click on the ``Register`` button on the login page,
-.. * Please provide all the details that are listed in the registration form and preferably
-..   use your **institutional account** (university, research center). This will speed up the
-..   approval process.
-.. * After you have filled in all the details, click on the ``Register`` button. You will
-..   receive an email with a link to confirm your registration. Click on the link to confirm
-..   your registration and then you will be approved by an administrator.
-
-.. Accounts created this way will have **basic access** level by default (see :doc:`user access levels </reference/user-access-levels>`).
-
-.. Once created, you can input your credentials using the ``Sign In`` option, at the top of the page.
 
 
 Login to the platform

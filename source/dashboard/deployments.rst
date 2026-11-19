@@ -59,6 +59,8 @@ The parameters to configure are:
     Then run ``deep-start --deepaas`` to launch DEEPaaS.
     If you make subsequent code changes, you will have to kill the old DEEPaaS process and launch a new one.
 
+* :fa:`sliders` ``Advanced options``: Here you will be able to manually select the datacenter where your deployment will land on. Leave empty if you have no preference. Specifying the datacenter can be helpful for privacy sensitive usecases that are required to run models on their own computing resources.
+
 * ``Docker tag`` selects the appropriate Docker tags of your module (tags may vary across modules).
   You should choose Docker tag that match with the hardware you selected in the previous step.
   So if you selected a CPU, look for ``latest`` or ``cpu`` tags.

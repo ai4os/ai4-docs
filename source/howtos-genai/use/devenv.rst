@@ -47,7 +47,6 @@ In the login window, select the ``Use password`` option and input the password y
    :width: 300 px
    :align: center
 
-
 Then start chatting about your new project:
 
 .. image:: /_static/images/endpoints/opencode-session.png

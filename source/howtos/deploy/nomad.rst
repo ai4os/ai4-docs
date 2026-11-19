@@ -44,6 +44,7 @@ Click the :material-outlined:`terminal;1.5em` ``Quick access`` to access the DEE
 
 .. image:: /_static/images/endpoints/deepaas.png
    :width: 500 px
+   :align: center
 
 In the ``POST .../predict`` method:
 

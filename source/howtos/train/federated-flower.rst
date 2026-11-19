@@ -95,7 +95,8 @@ Now that your fedserver is running, you need to do the following steps:
    revoke them:
 
    .. image:: /_static/images/dashboard/deployments/details/flower-secrets.png
-     :width: 500 px
+      :width: 500 px
+      :align: center
 
 3. **Share them with the clients**:
 

@@ -132,6 +132,7 @@ and go to http://0.0.0.0:5000/ui. You will see the Swagger UI with all the metho
 
 .. image:: /_static/images/endpoints/deepaas.png
    :width: 500 px
+   :align: center
 
 If running the API from inside a module's Docker container, you can use the command:
 
@@ -145,6 +146,7 @@ If running the API from inside a module's Docker container, you can use the comm
 
     .. image:: /_static/images/endpoints/deepaas-error.png
        :width: 500 px
+       :align: center
 
     This mean that DEEPaaS had problems to load your module and loaded instead the dummy module (``deepaas-test``).
     You can usually debug by running your module's API script and looking at the error it raised:

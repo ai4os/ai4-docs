@@ -125,6 +125,7 @@ In your deployment go to ⓘ ``Info`` and click on the ``API`` active endpoint.
 
 .. image:: /_static/images/endpoints/deepaas.png
    :width: 500 px
+   :align: center
 
 Look for the ``train`` POST method. Modify the training parameters you wish to change and execute. In our case, you might need to correctly point to the training dataset location.
 
