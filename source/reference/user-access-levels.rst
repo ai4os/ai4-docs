@@ -39,6 +39,7 @@ Non-registered users
     * :doc:`Browse our public catalog of services </dashboard/catalog>`
     * `Browse our educational materials <https://www.youtube.com/@ai4eosc>`__
     * `Browse our open-source software <https://github.com/ai4os>`__
+    * :doc:`Deploy an AI model in their own cloud </howtos/deploy/cloud>`
 
 Basic access level
 ^^^^^^^^^^^^^^^^^^
@@ -46,14 +47,9 @@ Basic access level
 
     Registered users with basic access level (``ap-0``) can:
 
-    * :doc:`Deploy an AI model in their own cloud </howtos/deploy/cloud>`
+    * same permisions as non-registered users
 
-    **Granted to**: any registered user (e.g. via
-    :fab:`github` `Github <https://github.com/>`__,
-    :fab:`google` `Google <https://accounts.google.com/>`__,
-    |ifca| `IFCA SSO <https://sso.ifca.es>`__ and
-    manually registered.
-    )
+    **Granted to**: any registered user (e.g. via |ifca| `IFCA SSO <https://sso.ifca.es>`__)
 
 Intermediate access level
 ^^^^^^^^^^^^^^^^^^^^^^^^^
