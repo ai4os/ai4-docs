@@ -64,29 +64,26 @@ For first time users, we recommend login with either one of the following two pr
     You will need to wait until you are **approved** before being a full member of the VO.
 
 
-Additionally, we offer several federated authentication options including:
-:fab:`github` `Github <https://github.com/>`__,
-:fab:`google` `Google <https://accounts.google.com/>`__,
-|ifca| `IFCA SSO <https://sso.ifca.es>`__ and
-manual registration.
-Accounts created with any of these methods will only be granted :doc:`basic access level </reference/user-access-levels>` by default.
+Additionally, we offer other options for first-time registration including:
+|ifca| `IFCA SSO <https://sso.ifca.es>`__.
 
-.. dropdown:: ㅤ 💡 Register an account manually
+.. admonition:: Subsequent logins
+   :class: info
 
-   To register a new account manually:
+   Since the platform aims at people registering with their institutional accounts, the
+   :fab:`github` `Github <https://github.com/>`__ and
+   :fab:`google` `Google <https://accounts.google.com/>`__ are **not allowed for first-time account creation**.
+   This means that if you try to use them for registering a new account, you will be shown an error message similar to:
 
-   * Click on the ``Register`` button on the login page,
-   * Please provide all the details that are listed in the registration form and preferably use your **institutional account** (university, research center).
-   * After you have filled in all the details, click on the ``Register`` button. You will receive an email with a link to confirm your registration. Click on the link to confirm your registration.
+   ``We are sorry... User ***@gmail.com authenticated with identity provider google does not exist. Please contact your administrator.``
 
-   Once created, you can input your credentials using the ``Sign In`` option, at the top of the page.
+   So you will need to first create an account with one of the above options.
+   However :fab:`github` `Github <https://github.com/>`__ and :fab:`google` `Google <https://accounts.google.com/>`__  are *allowed for subsequent logins*, as long as they share the **same institutional email with you initial identity provider**.
+   
+   So you can authenticate the first time with EduGain, then can subsequently authenticate with any other option (eg. Github), as long as they share the same email.
+   If you prefer, you can also manually link your accounts in the `AI4EOSC Profile manager <https://login.cloud.ai4eosc.eu/realms/ai4eosc/account/#/account-security/linked-accounts>`__.
 
-.. tip::
-
-  Accounts are mapped by email. So you can authenticate the first time with EduGain, then can subsequently authenticate with any other option (eg. Github), as long as they share the same email.
-  If you prefer, you can also manually link your accounts in the `AI4EOSC Profile manager <https://login.cloud.ai4eosc.eu/realms/ai4eosc/account/#/account-security/linked-accounts>`__.
-
-In summary, each authentication system will grant different :doc:`user access levels </reference/user-access-levels>`.
+In summary, each authentication flow will grant different :doc:`user access levels </reference/user-access-levels>`.
 In short:
 
 * users coming from the of the supported projects will have **full access** level.
@@ -95,7 +92,7 @@ In short:
   .. include:: /snippets/supported-projects.rst
 
 * user coming from |myaccessid| `EduGain <https://edugain.org/>`__ will have **intermediate access** level.
-* remaining users (eg. :fab:`github` `Github <https://github.com/>`__, :fab:`google` `Google <https://accounts.google.com/>`__, |ifca| `IFCA SSO <https://sso.ifca.es>`__ and manual registration) will only have **basic access** level (observers).
+* remaining users (eg. |ifca| `IFCA SSO <https://sso.ifca.es>`__) will only have **basic access** level (observers).
 
 We are also able to :ref:`upgrade the access level of selected users <reference/user-access-levels:Option 2. Make a special request>` with interesting usecases, even if they are not members of a selected project.
 
