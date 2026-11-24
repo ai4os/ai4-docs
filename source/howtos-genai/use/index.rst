@@ -23,7 +23,7 @@ This includes both:
 
   .. container:: table-title
 
-    *(TPM = Tokens Per Minute, RPM = Requests Per Minute)*
+    *(TPM = Tokens Per Minute (input+output), RPM = Requests Per Minute)*
 
   .. list-table::
     :header-rows: 1
