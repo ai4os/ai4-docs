@@ -9,8 +9,6 @@ on:
 jobs:
   check-agent:
     runs-on: ubuntu-latest
-    permissions:
-      issues: write
 
     steps:
       - name: Checkout repository
@@ -27,7 +25,6 @@ jobs:
           pip install -r requirements.txt
 
       - name: Run agent check script
-        id: check_agent
         env:
           LITELLM_API_KEY: ${{ secrets.LITELLM_API_KEY }}
         run: |
