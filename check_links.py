@@ -15,17 +15,17 @@ urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 
 session = requests.Session()
 
-source_folder = 'source'
+source_folder = "source"
 
 links = []
 for root, _, files in os.walk(source_folder):
     for file in files:
-        if file.endswith('.rst'):
+        if file.endswith(".rst"):
             print(f"[blue]Parsing: {file}[/blue]")
             file_path = os.path.join(root, file)
-            with open(file_path, 'r') as file:
+            with open(file_path, "r") as file:
                 content = file.read()
-                links += re.findall(r'<\s*(http[s]?://[^>\s]+)\s*>`__', content)
+                links += re.findall(r"<\s*(http[s]?://[^>\s]+)\s*>`__", content)
 
 # Remove duplicates
 links = set(links)
@@ -44,4 +44,4 @@ for link in links:
             print(f"[magenta3]{link}, {r.status_code}[/magenta3]")
 
     except requests.RequestException:
-            print(f"[red]{link}, invalid URL[/red]")
+        print(f"[red]{link}, invalid URL[/red]")
