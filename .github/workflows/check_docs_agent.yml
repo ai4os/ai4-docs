@@ -6,6 +6,9 @@ on:
     - cron: '0 8 * * *'
   workflow_dispatch:
 
+permissions:
+  contents: write
+
 jobs:
   check-agent:
     runs-on: ubuntu-latest
@@ -29,3 +32,15 @@ jobs:
           LITELLM_API_KEY: ${{ secrets.LITELLM_API_KEY }}
         run: |
           python check_docs_agent.py
+
+      - name: Commit updated agent ID
+        run: |
+          if git diff --quiet -- source/conf.py; then
+            echo "Agent ID unchanged, nothing to commit."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add source/conf.py
+          git commit -m "chore: update documentation assistant agent ID"
+          git push
