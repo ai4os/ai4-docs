@@ -28,7 +28,6 @@ jobs:
 
       - name: Run agent check script
         id: check_agent
-        continue-on-error: true
         env:
           LITELLM_API_KEY: ${{ secrets.LITELLM_API_KEY }}
         run: |
