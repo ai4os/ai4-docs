@@ -1,8 +1,16 @@
 AI Modules
 ==========
 
-AI modules are the building blocks of the platform. They are AI models developed by users to solve particular usecases.
-And of course, they are open-source! This means that every model you develop in the platform can be :doc:`deployed anywhere else </howtos/deploy/cloud>`.
+AI modules are the building blocks of the platform. They are developed by users to solve particular usecases (e.g. identity phytoplankton species from images).
+And of course, they are open-source! This means that every module you develop in the platform can be :doc:`deployed anywhere else </howtos/deploy/cloud>`.
+
+What is an AI *module* and how is it different from an AI *model*? An AI module is the conceptual bundle of the following assets:
+
+* an AI model weights,
+* an AI model code,
+* the documentations that explain how to use it,
+* the Docker image that allows to deploy it,
+* the metadata that describes it.
 
 Modules can be explored interactively from the :ref:`Dashboard <dashboard>`, their source code is in `Github <https://github.com/ai4os-hub>`__ and the corresponding images are hosted in `DockerHub <https://hub.docker.com/u/ai4oshub/>`__.
 
